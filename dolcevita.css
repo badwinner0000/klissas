@@ -1,0 +1,157 @@
+@import url('https://fonts.cdnfonts.com/css/eu-alonira');
+@import url('https://fonts.cdnfonts.com/css/gurnie');
+@import url('https://fonts.cdnfonts.com/css/legquinne');
+@import url('https://fonts.cdnfonts.com/css/flower-show');
+
+.dolcevita {
+  width: 650px;
+  margin: auto;
+  display: flex;
+  background-color: var(--dolvi-sc);
+  border: 1px solid var(--dolvi-bg);
+  outline: 2px solid var(--dolvi-sc);
+}
+
+.dolcevita-bg {
+  width: 96.5%;
+  margin: 8px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dolvi-bg);
+  border: 2px solid var(--dolvi-sc);
+  outline: 5px solid var(--dolvi-bg);
+}
+
+.dolvi1 {
+  margin: 100px auto 0;
+  width: 90%;
+  max-width: 400px;
+}
+
+.dolvi1b {
+  background-image: var(--dolvi-im);
+  background-size: cover;
+  background-position: center;
+  width: 400px;
+  height: 250px;
+  margin: 0 auto 10px;
+}
+
+.dolvi1a {
+  margin: auto auto 0 auto;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Gurnie', sans-serif;
+  color: var(--dolvi-tx);
+  letter-spacing: 3px;
+}
+
+.dolvi1c {
+  font-family: 'Eu Alonira', sans-serif;
+  text-transform: uppercase;
+  margin: 0 auto;
+  color: var(--dolvi-cl);
+  text-align: center;
+  font-size: 35px;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+}
+
+.dolvi1d {
+  margin: 15px auto auto auto;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1em;
+  font-family: 'Legquinne', sans-serif;
+  letter-spacing: 1px;
+  color: var(--dolvi-tx);
+  font-style: italic;
+}
+
+.dolvi2 {
+  text-align: center;
+  margin: 50px auto 0;
+  display: flex;
+  width: 90%;
+}
+
+.dolvi2a {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
+}
+
+.dolvi2bn {
+  font-family: 'Gurnie', sans-serif;
+  font-size: 12px;
+  margin: auto;
+  text-transform: uppercase;
+  color: var(--dolvi-cl);
+  border-bottom: 1px solid var(--dolvi-sc);
+  padding: 5px;
+}
+
+.dolvi2bn span {
+  font-size: 10px;
+  text-transform: lowercase;
+  margin-right: 2px;
+  color: var(--dolvi-tx);
+}
+
+.dolvi3 {
+  width: 95%;
+  margin: 50px auto;
+  border: 0px solid var(--dolvi-sc);
+}
+
+.dolvi3a {
+  font-family: Georgia;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 10px;
+  color: var(--dolvi-tx);
+}
+
+.dolvi4 {
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.dolvi4a {
+  font-size: 9px;
+  text-align: center;
+  font-family: 'Gurnie', sans-serif;
+  text-transform: uppercase;
+  color: var(--dolvi-tx);
+  line-height: 1em;
+}
+
+.dolvi4a span {
+  font-family: 'Legquinne', sans-serif;
+  letter-spacing: 3px;
+  color: var(--dolvi-cl);
+  font-style: italic;
+}
+
+.dolvi4b {
+  font-family: 'Flower Show', sans-serif;
+  text-align: center;
+  margin: 10px auto 0;
+  color: var(--dolvi-cl);
+  font-size: 70px;
+}
+
+.gnomo {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 8px;
+  text-align: center;
+  color: #E86B82;
+  font-family: verdana;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
