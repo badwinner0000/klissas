@@ -143,7 +143,7 @@ Falta decidir o que acontece depois do beijo. E o beijo, as duas sabem, não pre
 
 NOS['ts_c10_final'] = dict(tipo='final', cap=10, lugar='Roma', hora='Sexta · 18h30',
  finais=[
-  dict(se='flag:aceitou_ficar && vinc>=11', texto="""Em frente ao Coliseu, com o sol de janeiro batendo de lado em dois rostos, uma pessoa que nunca quebrou uma rotina segura, com as duas mãos, o rosto de outra que nunca ficou em silêncio, e as duas se beijam. O beijo não tem hesitação, nem pressa, nem plateia. Um grupo de turistas japoneses, em fila, desvia para não atrapalhar. Um vendedor de água, de saco plástico no ombro, assovia uma canção de Roma.
+  dict(se='flag:aceitou_ficar && vinc>=8', texto="""Em frente ao Coliseu, com o sol de janeiro batendo de lado em dois rostos, uma pessoa que nunca quebrou uma rotina segura, com as duas mãos, o rosto de outra que nunca ficou em silêncio, e as duas se beijam. O beijo não tem hesitação, nem pressa, nem plateia. Um grupo de turistas japoneses, em fila, desvia para não atrapalhar. Um vendedor de água, de saco plástico no ombro, assovia uma canção de Roma.
 
 Em fevereiro, uma carta da Sapienza, assinada por um orientador de lápis vermelho, confirma a transferência de {{B.nome}}, com bolsa e com média nove, e uma nota à margem: *Eu sabia desde o capítulo cinco.* Em março, uma diretora de criação de óculos vermelhos entrega a {{A.nome}} um primeiro desfile, e diz, de cara séria: *aqui trabalhamos em silêncio. Mas você, aprendo, faz uma coisa que não é silêncio nem barulho: faz sentido.*
 
