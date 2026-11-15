@@ -1143,7 +1143,7 @@
         "dory"
       ],
       "tipo": "segue",
-      "texto": "De volta ao cais, a Dory tira as luvas e cospe no chão, que é como ela fecha negócio.\n\n— Amanhã, segunda. Às sete. Aqui na praia de Madaket. Eu faço um jantar de prova. Lagosta, milho, batata, chouriço, do jeito da minha avó. Vocês provam. Se gostarem, eu faço o casamento. — Ela aponta para os dois. — Mas vocês dois provam juntos. Eu não cozinho para quem briga na mesa. Estraga o tempero.\n\n{{se (flag:dory_preco) || (flag:conta_lagosta)}}Ela aperta a mão de cada um. A mão dela parece uma luva de beisebol de couro velho.{{senao}}Ela não aperta a mão de ninguém. Mas também não diz não.{{/se}}\n\nNo caminho de volta, na caminhonete, o rádio toca *Rhinestone Cowboy*. Ninguém desliga.",
+      "texto": "De volta ao cais, a Dory tira as luvas e cospe no chão, que é como ela fecha negócio.\n\n— Amanhã, segunda. Às sete. Aqui na praia de Madaket. Eu faço um jantar de prova. Lagosta, milho, batata, chouriço, do jeito da minha avó. Vocês provam. Se gostarem, eu faço o casamento. — Ela aponta para os dois. — Mas vocês dois provam juntos. Eu não cozinho para quem briga na mesa. Estraga o tempero.\n\n{{se (flag:dory_preco) || (flag:conta_lagosta)}}Ela aperta a mão de cada um. A mão dela parece uma luva de beisebol de couro velho.{{senao}}Ela não aperta a mão de ninguém. Mas também não diz não.{{/se}}\n\nNo caminho de volta, na caminhonete, o rádio toca *Rhinestone Cowboy*. Ninguém desliga.\n\n{{se flag:puxou_armadilha}}As mãos de quem puxou a armadilha ainda estão abertas em bolha, e a Dory olha para elas antes de olhar para o resto. É por elas que ela decide.{{/se}}\n\n{{se flag:arenque}}O cheiro da isca de arenque ficou no cais, e a Dory, no meio da explicação, pigarreia para não rir de novo.{{/se}}",
       "ir": "pd_c2_carro"
     },
     "pd_c2_carro": {
@@ -1151,7 +1151,7 @@
       "lugar": "Caminhonete da Dory · estrada de Madaket",
       "hora": "Domingo, 11 de junho · 9h40",
       "tipo": "dialogo",
-      "texto": "A estrada de areia e pinheiros. O rádio ainda toca *Rhinestone Cowboy*. A cláusula 14.c está na pasta, no colo de {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}, e nenhum dos dois falou dela desde o cais. A Dory tem licença de pesca. O clube exige licença de bufê. A diferença entre as duas é de vinte e cinco mil e novecentos dólares.",
+      "texto": "A estrada de areia e pinheiros. O rádio ainda toca *Rhinestone Cowboy*. A cláusula 14.c está na pasta, no colo de {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}, e nenhum dos dois falou dela desde o cais. A Dory tem licença de pesca. O clube exige licença de bufê. A diferença entre as duas é de vinte e cinco mil e novecentos dólares.\n\n{{se flag:enjoou}}O banco do carro é o primeiro chão que não se mexe desde o *Maria do Fogo*, e o estômago de {{A.ref}} ainda não foi avisado.{{/se}}",
       "comeca": "B",
       "turnos": [
         {
@@ -1374,7 +1374,7 @@
         "rosa"
       ],
       "tipo": "dialogo",
-      "texto": "A Brant Point Bakery é uma confeitaria do tamanho de um armário, com vitrine de doces e um ventilador de teto que gira devagar. Seis fatias de bolo numa bandeja: baunilha com framboesa, chocolate com avelã, cenoura, coco, amêndoa e limão-siciliano com merengue.\n\nA Rosa provou duas fatias e chorou nas duas. Agora está lá fora, na calçada, ao telefone com a tia Concetta, chorando a terceira.\n\nSobraram vocês dois, quatro garfos, e a pasta aberta na aba *Bolo*.",
+      "texto": "A Brant Point Bakery é uma confeitaria do tamanho de um armário, com vitrine de doces e um ventilador de teto que gira devagar. Seis fatias de bolo numa bandeja: baunilha com framboesa, chocolate com avelã, cenoura, coco, amêndoa e limão-siciliano com merengue.\n\nA Rosa provou duas fatias e chorou nas duas. Agora está lá fora, na calçada, ao telefone com a tia Concetta, chorando a terceira.\n\nSobraram vocês dois, quatro garfos, e a pasta aberta na aba *Bolo*.\n\n{{se flag:covalente}}A Rosa, que não esquece frase nenhuma, apresenta {{B.nome}} à balconista da confeitaria como *a pessoa da ligação covalente*.{{/se}}\n\n{{se eu:B && flag:grupo_alunos}}O celular vibra no seu bolso a cada trinta segundos: o grupo dos alunos descobriu que você lê as mensagens.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -1534,7 +1534,7 @@
         "pippa"
       ],
       "tipo": "decisao",
-      "texto": "Nove da noite. O mapa de mesas na mesa da cozinha: catorze mesas redondas de dez lugares, desenhadas a lápis pela Courtney, apagadas a borracha pela Rosa, redesenhadas a caneta pela Rosa de madrugada, e corrigidas em silêncio, com post-its amarelos, pela juíza Funmi, hoje à tarde, sem dizer nada a ninguém.\n\nA mesa sete, a da frente, ao lado da pista, tem dois lugares vagos. As duas mães mandaram, cada uma, uma mensagem com as próprias regras. A Rosa mandou para {{se eu:A}}você{{senao}}{{A.ref}}{{/se}}. A juíza mandou para {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}. Nenhuma das duas mandou para os dois.\n\nA Pippa, de pijama de flamingo, traz duas canecas de chá e se senta para assistir, como quem vai ver uma final de campeonato.\n\n*Dois lugares vagos na mesa sete, a da frente. Quatro candidatos: a tia Concetta, o tio Sal, a tia Bisi e o Graham Whitfield, colega de trabalho da noiva. Juntem as regras das duas mães.*\n\n{{se eu:A}}{{se eu:A}}A mensagem da Rosa, de 3h12: \"A tia Concetta TEM que ficar na mesa da frente, ela é a madrinha de batismo da Gemma. E o tio Sal NÃO pode ficar na mesma mesa que a Concetta. 1974. Um funeral. Uma lasanha. Não pergunta.\" E, no fim da lista de convidados, um nome que você lê duas vezes: Graham Whitfield, mesa onze. Você não diz nada.{{senao}}A mensagem da juíza, de 14h40, de três linhas: \"A irmã Bisi senta na mesa da frente. É a mais velha dos Okoro. A Bisi não suporta gente que fala alto durante a comida. O tio Sal, pelo que a sra. Castellano me contou no cais, fala alto.\"{{/se}}{{senao}}{{se eu:A}}A mensagem da Rosa, de 3h12: \"A tia Concetta TEM que ficar na mesa da frente, ela é a madrinha de batismo da Gemma. E o tio Sal NÃO pode ficar na mesma mesa que a Concetta. 1974. Um funeral. Uma lasanha. Não pergunta.\" E, no fim da lista de convidados, um nome que você lê duas vezes: Graham Whitfield, mesa onze. Você não diz nada.{{senao}}A mensagem da juíza, de 14h40, de três linhas: \"A irmã Bisi senta na mesa da frente. É a mais velha dos Okoro. A Bisi não suporta gente que fala alto durante a comida. O tio Sal, pelo que a sra. Castellano me contou no cais, fala alto.\"{{/se}}{{/se}}",
+      "texto": "Nove da noite. O mapa de mesas na mesa da cozinha: catorze mesas redondas de dez lugares, desenhadas a lápis pela Courtney, apagadas a borracha pela Rosa, redesenhadas a caneta pela Rosa de madrugada, e corrigidas em silêncio, com post-its amarelos, pela juíza Funmi, hoje à tarde, sem dizer nada a ninguém.\n\nA mesa sete, a da frente, ao lado da pista, tem dois lugares vagos. As duas mães mandaram, cada uma, uma mensagem com as próprias regras. A Rosa mandou para {{se eu:A}}você{{senao}}{{A.ref}}{{/se}}. A juíza mandou para {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}. Nenhuma das duas mandou para os dois.\n\nA Pippa, de pijama de flamingo, traz duas canecas de chá e se senta para assistir, como quem vai ver uma final de campeonato.\n\n*Dois lugares vagos na mesa sete, a da frente. Quatro candidatos: a tia Concetta, o tio Sal, a tia Bisi e o Graham Whitfield, colega de trabalho da noiva. Juntem as regras das duas mães.*\n\n{{se eu:A}}{{se eu:A}}A mensagem da Rosa, de 3h12: \"A tia Concetta TEM que ficar na mesa da frente, ela é a madrinha de batismo da Gemma. E o tio Sal NÃO pode ficar na mesma mesa que a Concetta. 1974. Um funeral. Uma lasanha. Não pergunta.\" E, no fim da lista de convidados, um nome que você lê duas vezes: Graham Whitfield, mesa onze. Você não diz nada.{{senao}}A mensagem da juíza, de 14h40, de três linhas: \"A irmã Bisi senta na mesa da frente. É a mais velha dos Okoro. A Bisi não suporta gente que fala alto durante a comida. O tio Sal, pelo que a sra. Castellano me contou no cais, fala alto.\"{{/se}}{{senao}}{{se eu:A}}A mensagem da Rosa, de 3h12: \"A tia Concetta TEM que ficar na mesa da frente, ela é a madrinha de batismo da Gemma. E o tio Sal NÃO pode ficar na mesma mesa que a Concetta. 1974. Um funeral. Uma lasanha. Não pergunta.\" E, no fim da lista de convidados, um nome que você lê duas vezes: Graham Whitfield, mesa onze. Você não diz nada.{{senao}}A mensagem da juíza, de 14h40, de três linhas: \"A irmã Bisi senta na mesa da frente. É a mais velha dos Okoro. A Bisi não suporta gente que fala alto durante a comida. O tio Sal, pelo que a sra. Castellano me contou no cais, fala alto.\"{{/se}}{{/se}}\n\n{{se flag:salvou_mapa}}A mesa sete, pelo menos, ainda está a lápis: o mapa saiu do alcance da caneta da Rosa antes da sobremesa.{{/se}}\n\n{{se flag:serviu_funmi}}Por mensagem de voz, a juíza Funmi avisa que a mesa das tias pode mudar quantas vezes quiserem, desde que o prato dela chegue com tudo separado.{{/se}}\n\n{{se flag:traduziu}}A tia Concetta pergunta algo à Pippa em italiano, e a Pippa traduz sem liberdade nenhuma, o que deixa a mesa com uma sinceridade que ninguém pediu.{{/se}}",
       "pergunta": "A mesa sete",
       "acoes": [
         {
@@ -1593,7 +1593,7 @@
         "pippa"
       ],
       "tipo": "segue",
-      "texto": "Café da manhã na Gull House: o Barnaby faz ovos mexidos, torrada de pão de forma e café de coador, e não aceita reclamação nem elogio.\n\nNa mesa comprida da cozinha, de um lado, a Rosa Castellano, de robe de seda, lendo em voz alta, com lágrimas, as mensagens de felicitação dos primos de Nápoles. Do outro, a juíza Funmi Okoro, de vestido de algodão, lendo o *Inquirer and Mirror*, o jornal da ilha, com um lápis na mão, corrigindo os erros de concordância.\n\nAs duas não se olham. Entre as duas, o pote de geleia de framboesa, como uma fronteira.\n\nA Pippa entra com as três agendas, atualiza a tabela da parede, e risca uma linha: *Bufê: Dory Barros. Prova: hoje, 19h, Madaket.* E embaixo, em vermelho, outra que ninguém riscou ainda: *Licença do condado (14.c). Prazo: quarta, 17h30.*\n\nO dia se divide sozinho.",
+      "texto": "Café da manhã na Gull House: o Barnaby faz ovos mexidos, torrada de pão de forma e café de coador, e não aceita reclamação nem elogio.\n\nNa mesa comprida da cozinha, de um lado, a Rosa Castellano, de robe de seda, lendo em voz alta, com lágrimas, as mensagens de felicitação dos primos de Nápoles. Do outro, a juíza Funmi Okoro, de vestido de algodão, lendo o *Inquirer and Mirror*, o jornal da ilha, com um lápis na mão, corrigindo os erros de concordância.\n\nAs duas não se olham. Entre as duas, o pote de geleia de framboesa, como uma fronteira.\n\nA Pippa entra com as três agendas, atualiza a tabela da parede, e risca uma linha: *Bufê: Dory Barros. Prova: hoje, 19h, Madaket.* E embaixo, em vermelho, outra que ninguém riscou ainda: *Licença do condado (14.c). Prazo: quarta, 17h30.*\n\nO dia se divide sozinho.\n\n{{se flag:mesa7}}A Pippa passa a caneca de chá com a ponta do dedo apontada para o mapa de mesas, e ninguém precisa perguntar por que a mesa sete lembra tanto a noite passada.{{/se}}\n\n{{se eu:A && flag:pippa_filmou}}A Pippa deixa o celular com a tela para baixo, ao lado da xícara, como prometeu.{{/se}}\n\n{{se eu:B && flag:carta_deja}}Na tela do seu celular, a carta de recomendação da Deja espera só o botão de enviar, com prazo na sexta.{{/se}}",
       "ir": {
         "A": "pd_c3_a",
         "B": "pd_c3_b"
@@ -4179,7 +4179,7 @@
         "barnaby"
       ],
       "tipo": "dialogo",
-      "texto": "A Pippa foi dormir. O Barnaby também, depois de deixar na mesa, sem perguntar nada, um prato de biscoito de aveia e uma garrafa de leite.\n\nFicou a cozinha: a luz amarela, o sino de boia no porto, a pasta aberta na aba do bolo. E no fim da pasta, aparecendo por baixo das abas coloridas, o canto de uma página grampeada por cima das outras, com uma letra D escrita à mão, com uma caneta que não é a de trabalho.",
+      "texto": "A Pippa foi dormir. O Barnaby também, depois de deixar na mesa, sem perguntar nada, um prato de biscoito de aveia e uma garrafa de leite.\n\nFicou a cozinha: a luz amarela, o sino de boia no porto, a pasta aberta na aba do bolo. E no fim da pasta, aparecendo por baixo das abas coloridas, o canto de uma página grampeada por cima das outras, com uma letra D escrita à mão, com uma caneta que não é a de trabalho.\n\n{{se eu:A && flag:perdeu_newport}}No celular, a carta que você mandou para a noiva de Newport já tem visualização e nenhuma resposta, que é como o silêncio de cliente perdido costuma soar.{{/se}}\n\n{{se eu:A && flag:sabe_novembro}}A planilha continua aberta numa aba do seu celular: com dois casamentos no ano, novembro está mais perto do que a segunda-feira.{{/se}}\n\n{{se eu:B && flag:provas}}A prova da Deja Monteiro, com a nota mais alta da turma e o bilhete a lápis na margem, está dobrada no meio do seu caderno preto.{{/se}}",
       "comeca": "B",
       "turnos": [
         {
@@ -7174,7 +7174,6 @@
   "escolhasMortasToleradas": [
     "a_espera",
     "a_ouviu_tunde",
-    "arenque",
     "assobio",
     "astaxantina",
     "b_cabos9",
@@ -7202,17 +7201,14 @@
     "cafe7",
     "cafe_fuga",
     "cafe_sorriso",
-    "carta_deja",
     "cobertor",
     "conduziu",
-    "covalente",
     "dez_minutos",
     "dica_pike",
     "discurso_ajuda",
     "dory_proposta",
     "dory_receita",
     "dory_socia",
-    "enjoou",
     "ensaiou",
     "estaca",
     "estufa_torta",
@@ -7235,27 +7231,21 @@
     "graham_cumprimento",
     "graham_perguntou",
     "graham_vem",
-    "grupo_alunos",
     "lagosta_limpa",
     "leu_planod",
     "luzes_salvas",
     "medo_barco",
     "mentiu_pippa",
     "mentiu_rosa2",
-    "mesa7",
     "noite3_nao",
     "noite6_nao",
     "olhou4",
     "ouviu_riso",
     "pasta_seca",
     "pediu_graham",
-    "perdeu_newport",
     "pippa_esperar",
-    "pippa_filmou",
     "pippa_futuro",
     "pippa_video",
-    "provas",
-    "puxou_armadilha",
     "quase_pippa",
     "quase_rosa",
     "regra_mole",
@@ -7264,12 +7254,8 @@
     "rosa_desconfia",
     "rosa_funmi",
     "rosa_hortensia",
-    "sabe_novembro",
-    "salvou_mapa",
     "sem_pasta",
-    "serviu_funmi",
     "som_tunde",
-    "traduziu",
     "v18",
     "vento_calculo",
     "vento_lideranca",

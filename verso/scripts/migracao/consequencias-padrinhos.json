@@ -1,16 +1,144 @@
 {
   "_doc": "Consequências das escolhas que o original gravava e nenhuma cena lia. Cada item acrescenta um trecho condicional a uma cena POSTERIOR. privadoDe: a escolha foi feita numa cena solo, então só aquele assento vê a reação.",
   "itens": [
-    { "flag": "sabe_courtney", "no": "pd_c1_neblina", "privadoDe": "A", "texto": "A Pippa pula a parte que você já sabe, e a notícia, que podia vir inteira, chega pela metade." },
-    { "flag": "cronograma", "no": "pd_c1_tabela", "privadoDe": "A", "texto": "Você olha a tabela como olhou a pasta na fila: item por item. A lista dos lagosteiros já existe na sua cabeça, na ordem em que vai ligar, e a coluna *QUEM* é a única linha que não tem solução de bolso." },
-    { "flag": "recado_gemma", "no": "pd_c1_balsa", "privadoDe": "A", "texto": "*Seja boazinha*, a voz da Gemma repete no recado que você ouviu de novo, e a balsa, com a máquina de café quebrada e um banco só, não ajuda em nada." },
-    { "flag": "acenou", "no": "pd_c1_farpas", "privadoDe": "A", "texto": "O sorriso de cerimonialista ainda está no seu rosto, de plantão, sem ninguém para quem trabalhar." },
-    { "flag": "frase2", "no": "pd_c1_jantar", "privadoDe": "B", "texto": "No caderno preto, debaixo da mesa, a segunda frase do discurso espera, a lápis, para ser riscada ou não." },
-    { "flag": "ligou_funmi", "no": "pd_c1_maes", "privadoDe": "B", "texto": "Você sabe uma coisa que a tabela da Pippa não sabe: a sua mãe não vai responder à mensagem da mesa sete, nem hoje, nem amanhã." },
-    { "flag": "ouviu_tunde", "no": "pd_c1_maes", "privadoDe": "B", "texto": "O recado do Tunde continua no seu bolso, a dez centímetros de uma decisão que ninguém pediu para você tomar." },
-    { "flag": "cumprimentou", "no": "pd_c1_farpas", "privadoDe": "B", "texto": "O caderno preto está ao lado do seu cotovelo, o mesmo que subiu um palmo na fila e desceu sem dizer nada." },
-    { "flag": "barnaby_flores", "no": "pd_c1_jantar", "texto": "O Barnaby não comenta as hortênsias. Mas a maior concha de ensopado, como quem não está fazendo nada, vai para o prato de quem carregou vaso." },
-    { "flag": "barnaby_viu", "no": "pd_c1_maes", "texto": "Na pia, o Barnaby não perguntou nada a quem ficou na varanda ouvindo o mesmo recado duas vezes. Vindo dele, isso é uma pergunta." },
-    { "flag": "mentiu_rosa", "no": "pd_c2_maes", "texto": "A Rosa abraça e lembra, no meio do abraço, que ontem à noite ouviu pelo telefone que estava tudo sob controle. Olha em volta procurando o controle." }
+    {
+      "flag": "sabe_courtney",
+      "no": "pd_c1_neblina",
+      "privadoDe": "A",
+      "texto": "A Pippa pula a parte que você já sabe, e a notícia, que podia vir inteira, chega pela metade."
+    },
+    {
+      "flag": "cronograma",
+      "no": "pd_c1_tabela",
+      "privadoDe": "A",
+      "texto": "Você olha a tabela como olhou a pasta na fila: item por item. A lista dos lagosteiros já existe na sua cabeça, na ordem em que vai ligar, e a coluna *QUEM* é a única linha que não tem solução de bolso."
+    },
+    {
+      "flag": "recado_gemma",
+      "no": "pd_c1_balsa",
+      "privadoDe": "A",
+      "texto": "*Seja boazinha*, a voz da Gemma repete no recado que você ouviu de novo, e a balsa, com a máquina de café quebrada e um banco só, não ajuda em nada."
+    },
+    {
+      "flag": "acenou",
+      "no": "pd_c1_farpas",
+      "privadoDe": "A",
+      "texto": "O sorriso de cerimonialista ainda está no seu rosto, de plantão, sem ninguém para quem trabalhar."
+    },
+    {
+      "flag": "frase2",
+      "no": "pd_c1_jantar",
+      "privadoDe": "B",
+      "texto": "No caderno preto, debaixo da mesa, a segunda frase do discurso espera, a lápis, para ser riscada ou não."
+    },
+    {
+      "flag": "ligou_funmi",
+      "no": "pd_c1_maes",
+      "privadoDe": "B",
+      "texto": "Você sabe uma coisa que a tabela da Pippa não sabe: a sua mãe não vai responder à mensagem da mesa sete, nem hoje, nem amanhã."
+    },
+    {
+      "flag": "ouviu_tunde",
+      "no": "pd_c1_maes",
+      "privadoDe": "B",
+      "texto": "O recado do Tunde continua no seu bolso, a dez centímetros de uma decisão que ninguém pediu para você tomar."
+    },
+    {
+      "flag": "cumprimentou",
+      "no": "pd_c1_farpas",
+      "privadoDe": "B",
+      "texto": "O caderno preto está ao lado do seu cotovelo, o mesmo que subiu um palmo na fila e desceu sem dizer nada."
+    },
+    {
+      "flag": "barnaby_flores",
+      "no": "pd_c1_jantar",
+      "texto": "O Barnaby não comenta as hortênsias. Mas a maior concha de ensopado, como quem não está fazendo nada, vai para o prato de quem carregou vaso."
+    },
+    {
+      "flag": "barnaby_viu",
+      "no": "pd_c1_maes",
+      "texto": "Na pia, o Barnaby não perguntou nada a quem ficou na varanda ouvindo o mesmo recado duas vezes. Vindo dele, isso é uma pergunta."
+    },
+    {
+      "flag": "mentiu_rosa",
+      "no": "pd_c2_maes",
+      "texto": "A Rosa abraça e lembra, no meio do abraço, que ontem à noite ouviu pelo telefone que estava tudo sob controle. Olha em volta procurando o controle."
+    },
+    {
+      "flag": "puxou_armadilha",
+      "no": "pd_c2_dory",
+      "texto": "As mãos de quem puxou a armadilha ainda estão abertas em bolha, e a Dory olha para elas antes de olhar para o resto. É por elas que ela decide."
+    },
+    {
+      "flag": "arenque",
+      "no": "pd_c2_dory",
+      "texto": "O cheiro da isca de arenque ficou no cais, e a Dory, no meio da explicação, pigarreia para não rir de novo."
+    },
+    {
+      "flag": "enjoou",
+      "no": "pd_c2_carro",
+      "texto": "O banco do carro é o primeiro chão que não se mexe desde o *Maria do Fogo*, e o estômago de {{A.ref}} ainda não foi avisado."
+    },
+    {
+      "flag": "mesa7",
+      "no": "pd_c3_inicio",
+      "texto": "A Pippa passa a caneca de chá com a ponta do dedo apontada para o mapa de mesas, e ninguém precisa perguntar por que a mesa sete lembra tanto a noite passada."
+    },
+    {
+      "flag": "covalente",
+      "no": "pd_c2_bolo",
+      "texto": "A Rosa, que não esquece frase nenhuma, apresenta {{B.nome}} à balconista da confeitaria como *a pessoa da ligação covalente*."
+    },
+    {
+      "flag": "salvou_mapa",
+      "no": "pd_c2_mesas",
+      "texto": "A mesa sete, pelo menos, ainda está a lápis: o mapa saiu do alcance da caneta da Rosa antes da sobremesa."
+    },
+    {
+      "flag": "serviu_funmi",
+      "no": "pd_c2_mesas",
+      "texto": "Por mensagem de voz, a juíza Funmi avisa que a mesa das tias pode mudar quantas vezes quiserem, desde que o prato dela chegue com tudo separado."
+    },
+    {
+      "flag": "traduziu",
+      "no": "pd_c2_mesas",
+      "texto": "A tia Concetta pergunta algo à Pippa em italiano, e a Pippa traduz sem liberdade nenhuma, o que deixa a mesa com uma sinceridade que ninguém pediu."
+    },
+    {
+      "flag": "perdeu_newport",
+      "no": "pd_c2_planod",
+      "privadoDe": "A",
+      "texto": "No celular, a carta que você mandou para a noiva de Newport já tem visualização e nenhuma resposta, que é como o silêncio de cliente perdido costuma soar."
+    },
+    {
+      "flag": "sabe_novembro",
+      "no": "pd_c2_planod",
+      "privadoDe": "A",
+      "texto": "A planilha continua aberta numa aba do seu celular: com dois casamentos no ano, novembro está mais perto do que a segunda-feira."
+    },
+    {
+      "flag": "provas",
+      "no": "pd_c2_planod",
+      "privadoDe": "B",
+      "texto": "A prova da Deja Monteiro, com a nota mais alta da turma e o bilhete a lápis na margem, está dobrada no meio do seu caderno preto."
+    },
+    {
+      "flag": "pippa_filmou",
+      "no": "pd_c3_inicio",
+      "privadoDe": "A",
+      "texto": "A Pippa deixa o celular com a tela para baixo, ao lado da xícara, como prometeu."
+    },
+    {
+      "flag": "carta_deja",
+      "no": "pd_c3_inicio",
+      "privadoDe": "B",
+      "texto": "Na tela do seu celular, a carta de recomendação da Deja espera só o botão de enviar, com prazo na sexta."
+    },
+    {
+      "flag": "grupo_alunos",
+      "no": "pd_c2_bolo",
+      "privadoDe": "B",
+      "texto": "O celular vibra no seu bolso a cada trinta segundos: o grupo dos alunos descobriu que você lê as mensagens."
+    }
   ]
 }
