@@ -1767,11 +1767,411 @@
       "hora": "Quinta · 01h00",
       "texto": "À uma da manhã de quinta, o céu sobre Pine Hollow tem tantas estrelas que parece um engano. {{se flag:subiram_telhado}}No telhado do chalé, duas pessoas, de cervejas quase vazias, falam baixo, em frases curtas, de coisas que nenhuma delas pretendia dizer. {{/se}}{{se flag:ficaram_varanda}}Na varanda do chalé, duas pessoas deitadas lado a lado olham o mesmo céu e não se tocam, e a ausência de toque é mais clara do que um abraço. {{/se}}{{se flag:foram_dormir}}No chalé, uma pessoa dorme mal, e, na picape, a caminho de casa, outra pensa em uma tarde. {{/se}}{{se flag:a_confessou_bloqueio}}Alguém disse, em voz alta, que não sabe mais escrever, e ninguém riu. {{/se}}{{se flag:b_confessou_banda}}Alguém disse, em voz alta, que quase foi para Seattle, e ninguém riu. {{/se}}{{se flag:a_enviou_demo}}Em algum satélite, um arquivo de quarenta e um segundos viaja sem destino certo. {{/se}}{{se flag:a_nao_enviou}}No celular, uma melodia de quarenta e um segundos espera sem plateia. {{/se}}\n\nMais tarde, quando a outra pessoa finalmente dorme, no quarto do avô, uma coisa, no escuro, se mexe no fundo da cabeça, e não é um pensamento, é uma música inteira. Os versos vêm em ordem, como uma carta. O refrão chega por último, simples, de quatro palavras, que ninguém, na história do pop, usou desse jeito.\n\nNa penumbra, a mão procura o caderno e uma caneta.",
       "gancho": "Pela primeira vez em oito meses, uma música inteira chega de uma vez.",
+      "ir": "rv_c5_composicao"
+    },
+    "rv_c5_composicao": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Quinta a sábado · junho",
+      "ir": {
+        "A": "rv_c5_a",
+        "B": "rv_c5_b"
+      },
+      "texto": "Em três dias, o chalé do velho Henry muda de cheiro. O de cachimbo ainda está lá, nas cortinas, mas por cima dele, em camadas, chegam outros: café de coador, cedro novo, papel e lápis. O piano de armário, desafinado, ganha uma fita crepe em três teclas e um caderno aberto em cima, de capa preta, que já tem onze páginas rabiscadas, riscadas e reescritas.\n\n{{se flag:a_enviou_demo}}A Lorna ainda não respondeu ao arquivo de quarenta e um segundos. {{/se}}{{se flag:a_nao_enviou}}A Lorna ainda espera um sinal de vida. {{/se}}O telhado, lá fora, tem agora três quartos de telhas novas, e o carpinteiro, que chega todo dia às sete com o rádio dois pontos mais baixo, aprendeu, sem que ninguém combinasse, a martelar em compasso de quatro por quatro.\n\nÉ sábado. Em duas semanas, uma música inteira saiu de uma noite sem sono, e ainda precisa de quem a ouça."
+    },
+    "rv_c5_a": {
+      "tipo": "solo",
+      "cap": 5,
+      "seat": "A",
+      "lugar": "Sala do chalé dos Ashby",
+      "hora": "Sábado · 15h00",
+      "texto": "A música, a de uma noite só, tem seis versos, um refrão de quatro palavras e uma ponte que ainda não fecha. Você a toca no piano de armário desafinado, com as três teclas de fita crepe, e é a primeira vez em oito meses que uma música sua não soa como outra música sua.\n\nA letra fala de verão, de perder, de aprender a perder. Fala de uma casa de madeira, de um riacho e de um telhado. Não fala de ninguém por nome, e o nome que não aparece em nenhum verso é um que você conhece de cor.\n\nPela janela aberta, o martelo bate em compasso. Você nunca mostrou uma música a ninguém antes de ela estar pronta. Hoje, a única pessoa em um raio de quatro quilômetros que poderia ouvi-la está a cinco metros, em cima de um telhado.",
+      "acoes": [
+        {
+          "id": "chamar",
+          "texto": "Abrir a janela e chamar o carpinteiro: \"Vem ouvir uma coisa.\"",
+          "ir": "rv_c5_demo",
+          "efeitos": {
+            "flag": "a_chamou_ouvir",
+            "vinculo": 2
+          },
+          "resultado": "Você abre a janela. O martelo para. De cima, uma cabeça de boné aparece, com a testa franzida de quem esperava uma reclamação. *Vem ouvir uma coisa*, você diz, sem preâmbulo. A cabeça de boné some, a escada de alumínio range, e, em dez segundos, a porta da frente se abre, com o carpinteiro limpando as mãos no jeans, sem perguntar o que é."
+        },
+        {
+          "id": "ensaiar",
+          "texto": "Tocar mais uma vez, até ter certeza de que ela merece ser ouvida",
+          "ir": "rv_c5_demo",
+          "efeitos": {
+            "flag": "a_ensaiou_demo",
+            "abalo": 1
+          },
+          "resultado": "Você toca mais uma vez, e outra, e outra. A cada repetição, a música parece menos sua e mais verdadeira. Às quatro e meia, com os dedos doloridos e a ponte ainda aberta, você decide que a única maneira de saber se uma música está pronta é entregá-la a alguém. Abre a janela, e o carpinteiro, que parou de martelar já faz um tempo, está sentado na escada, ouvindo."
+        },
+        {
+          "id": "esconder",
+          "texto": "Fechar o caderno e a tampa do piano: ainda não, talvez nunca",
+          "ir": "rv_c5_demo",
+          "efeitos": {
+            "flag": "a_escondeu_musica",
+            "abalo": 1
+          },
+          "resultado": "Você fecha o caderno e a tampa do piano, num gesto que é um reflexo. É a música mais íntima que já escreveu, e a ideia de que outra pessoa a ouça é, de repente, mais nua do que qualquer foto de capa. Do lado de fora, o martelo continua. Você respira devagar, e a porta da frente se abre, sem aviso: o carpinteiro, com um copo de água na mão, pergunta *tudo bem aí?*"
+        }
+      ]
+    },
+    "rv_c5_b": {
+      "tipo": "solo",
+      "cap": 5,
+      "seat": "B",
+      "lugar": "Telhado do chalé dos Ashby",
+      "hora": "Sábado · 15h00",
+      "texto": "Você está no último quadrante do telhado, o do canto norte, o mais velho e mais teimoso, com um prego de cobre na boca e o cheiro de cedro por todo lado. Há três dias, de dentro do chalé, o som de um piano desafinado começou a chegar pela janela aberta, em pedaços, em notas soltas, em repetições de quem procura.\n\nHoje, pela primeira vez, as notas se juntam. Você pára de martelar sem decidir. O prego sai da boca, a mão fica no ar. Do chão, a melodia sobe pelo telhado e entra pelo corpo, e é a coisa mais bonita e mais triste que você ouve desde a música do seu pai, aos dezessete.\n\nVocê não sabe o que fazer com isso. O silêncio do martelo parou, e você tem consciência de que, dentro da casa, a pessoa que toca também parou.",
+      "acoes": [
+        {
+          "id": "ouvir",
+          "texto": "Descer a escada devagar e sentar nos degraus, ouvindo, sem entrar",
+          "ir": "rv_c5_demo",
+          "efeitos": {
+            "flag": "b_ouviu_escada",
+            "vinculo": 2
+          },
+          "resultado": "Você desce a escada sem fazer barulho e senta no último degrau, de costas para a casa, de frente para o riacho. A música, que vem pela janela, é uma coisa nova, uma música que ninguém nunca ouviu, e você, o primeiro ouvinte do mundo, sente uma responsabilidade absurda: a de ouvir bem."
+        },
+        {
+          "id": "martelar",
+          "texto": "Continuar martelando em compasso, para acompanhar a música sem interromper",
+          "ir": "rv_c5_demo",
+          "efeitos": {
+            "flag": "b_acompanhou_martelo",
+            "vinculo": 1
+          },
+          "resultado": "Você volta a martelar, em compasso de quatro por quatro, suave, no tempo da música. Lá dentro, a pessoa ao piano, que ouve, entende. A melodia e o martelo, sem se falar, acertam o mesmo ritmo, e é o primeiro dueto que você faz em quatorze anos: um prego de cobre contra um piano desafinado."
+        },
+        {
+          "id": "bater",
+          "texto": "Descer e bater na porta, com a desculpa de pedir água, sem coragem de dizer o resto",
+          "ir": "rv_c5_demo",
+          "efeitos": {
+            "flag": "b_bateu_porta",
+            "vinculo": 1
+          },
+          "resultado": "Você desce e bate na porta, três vezes, em compasso. A música para. A pessoa que abre tem o cabelo desfeito, olhos brilhantes de quem esteve muito dentro de si mesma, e um lápis atrás da orelha. *Água?*, você pergunta. *Água*, ela diz, e vai à cozinha buscar um copo, sem perceber que o sorriso, nos lábios dela, é de quem acaba de ser ouvido."
+        }
+      ]
+    },
+    "rv_c5_demo": {
+      "tipo": "dialogo",
+      "cap": 5,
+      "lugar": "Sala do chalé dos Ashby",
+      "hora": "Sábado · 17h00",
+      "comeca": "A",
+      "texto": "A sala do chalé tem a luz dourada de fim de tarde, que entra pela janela e cai no piano de armário, no caderno preto, num copo de água e em duas pessoas que, a um metro de distância, se olham como quem espera um veredito.\n\nO violão do pai de {{B.nome}}, que ficou encostado ao corrimão da varanda desde terça, foi trazido para dentro por alguém, sem que ninguém admita ter sido.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v0_a_abre",
+              "texto": "— É uma coisa que eu escrevi. Ninguém nunca ouviu. Eu estou com medo.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v0_a_seco",
+              "texto": "— Vou tocar. Sem comentários até o final.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "v0_a_flerte",
+              "texto": "— Se for ruim, finja que gostou. Se for boa, finja que não percebeu.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "cuida",
+              "tag": "v0_b_cuida",
+              "texto": "— Senta. Eu fico em pé, perto da janela. Toca.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "v0_b_abre",
+              "texto": "— Eu estou nervos{{eu.o_a}} também. Eu nunca ouvi uma música antes de ela existir.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v0_b_seco",
+              "texto": "— Toca. Eu não sou crítico, mas sei quando uma coisa é verdadeira.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v1_b_abre",
+              "texto": "— É a melhor coisa que eu ouvi na vida. E eu não sei dizer por quê.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v1_b_seco",
+              "texto": "— A ponte não fecha. O resto está ótimo.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "v1_b_flerte",
+              "texto": "— Eu esperava uma coisa mais complicada. Isso é simples e dói. É o melhor tipo.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "v1_a_abre",
+              "texto": "— A ponte não fecha. Eu sei. Eu não sei como fechar.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v1_a_seco",
+              "texto": "— Valeu, mas eu preciso de crítica. Fala do que não funciona.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "v1_a_flerte",
+              "texto": "— Eu não esperava que um carpinteiro tivesse ouvido tão bom.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v2_b_abre",
+              "texto": "— A ponte pede um acorde de lá menor. Eu tentei uma coisa assim, aos dezessete. Posso mostrar?",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "b_deu_acorde",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "v2_b_flerte",
+              "texto": "— Dá licença? Eu estou com o violão. Tem um truque de quem fica quatro anos só com três acordes.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "v2_b_cuida",
+              "texto": "— Não precisa fechar hoje. Uma ponte que não fecha às vezes é só uma ponte esperando.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "v2_a_abre",
+              "texto": "— Mostra. Eu nunca deixei ninguém mexer numa música minha. Mas eu quero.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v2_a_seco",
+              "texto": "— Tenta. Se estragar, eu volto à versão de ontem.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "v2_a_flerte",
+              "texto": "— Se for ruim, eu acabo com o seu violão.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da sala é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v3_a_abre",
+              "texto": "— Funcionou. A ponte fechou. Isso nunca me aconteceu com outra pessoa na sala.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "v3_a_flerte",
+              "texto": "— A música é nossa, então. Eu aceito dividir os direitos, mas não o refrão.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "v3_a_seco",
+              "texto": "— Anotado. Amanhã, de novo. Mesma hora.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "v3_b_abre",
+              "texto": "— Eu nunca deixei ninguém ouvir eu tocar uma coisa nova. Hoje foi a primeira vez.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "v3_b_flerte",
+              "texto": "— Está bom o violão, né? Ele só toca bem para quem sabe esperar.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "v3_b_seco",
+              "texto": "— Amanhã, de novo. Mesma hora. Eu trago pregos e acordes.",
+              "se": "eu:B"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Quer parar um pouco? A mão está cansada."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Ok."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Você é melhor do que o seu rádio."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu nunca fiz isso com outra pessoa."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Isso é perigoso. Você sabe."
+        }
+      ],
+      "fecho": "A última nota da ponte, agora fechada, fica no ar por muito tempo, depois que as cordas e as teclas silenciam. A tarde, pela janela, tem a cor de uma pêra madura. E, ao lado do piano, uma cópia do caderno preto, com uma letra de carpinteiro riscada na margem, diz: *e a gente?*",
+      "ir": "rv_c5_decisao"
+    },
+    "rv_c5_decisao": {
+      "tipo": "decisao",
+      "cap": 5,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Sábado · 21h30",
+      "texto": "A noite cai como uma manta. O jantar, de ovos e pão, foi dividido numa mesa de cozinha sem toalha. O copo de vinho barato, de um vinho que a Doris insistiu em recomendar, esvaziou. O telhado, pronto, tem agora todas as telhas, e a escada de alumínio ainda está encostada.\n\nA música ficou no piano. A conversa ficou na sala. O resto da noite, agora, é uma pergunta.",
+      "pergunta": "O que vocês fazem com a noite?",
+      "ir": "rv_c5_consente",
+      "acoes": [
+        {
+          "id": "telhado",
+          "texto": "Subir ao telhado novo, para ver as estrelas e o vale iluminado de vaga-lumes",
+          "efeitos": {
+            "flag": "noite_telhado_novo",
+            "vinculo": 1
+          },
+          "resultado": "Vocês sobem. As telhas novas guardam o cheiro de cedro, e, do alto, o vale tem vaga-lumes aos milhares, como se o céu tivesse caído e preferido ficar. É a vista mais bonita de Pine Hollow, e só pode ser vista de um telhado que alguém fez."
+        },
+        {
+          "id": "riacho",
+          "texto": "Descer ao riacho, descalços, e pisar na água fria",
+          "efeitos": {
+            "flag": "noite_riacho",
+            "vinculo": 1
+          },
+          "resultado": "Vocês descem ao riacho, de pés descalços, e a água, gelada, tira o fôlego. Uma das pessoas ri, a outra também, e, no escuro, com a lua no meio da correnteza, as duas ficam ali, de calças arregaçadas, sem pressa de sair."
+        },
+        {
+          "id": "varanda",
+          "texto": "Ficar na varanda, com o violão, tocando baixinho, sem pensar em mais nada",
+          "efeitos": {
+            "flag": "noite_varanda"
+          },
+          "resultado": "Vocês ficam na varanda. Um com o violão, outro com o caderno, uma lanterna a querosene no gancho. A noite passa em compasso de quatro por quatro. É uma maneira tranquila de prolongar um dia que nenhum dos dois quer que acabe."
+        }
+      ]
+    },
+    "rv_c5_consente": {
+      "tipo": "consentimento",
+      "cap": 5,
+      "lugar": "Telhado do chalé dos Ashby",
+      "hora": "Sábado · 23h10",
+      "texto": "Às onze e dez da noite, no telhado, com uma manta xadrez sobre os joelhos, as estrelas até o horizonte e a música, ainda, no ar, a conversa chegou a um ponto em que ninguém tem mais nada a dizer. A distância entre os dois, de um palmo, é a menor que já houve, e, ao mesmo tempo, a maior.\n\nO silêncio que sobra tem a forma exata de uma pergunta. Ninguém vai fazê-la em voz alta. Cada um decide por dentro, e só se os dois quiserem alguma coisa acontece.",
+      "pergunta": "O que você quer?",
+      "avancar": "Beijar. Agora, aqui em cima, sem plano.",
+      "ficar": "Ficar perto, e ainda não atravessar.",
+      "flag": "beijo_telhado",
+      "irAvancou": "rv_c5_sim",
+      "irSem": "rv_c5_nao"
+    },
+    "rv_c5_sim": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Telhado do chalé dos Ashby",
+      "hora": "Sábado · 23h12",
+      "requer": [
+        "beijo_telhado"
+      ],
+      "ir": "rv_c5_fim",
+      "texto": "Não é um beijo de clipe. É curto, torto, começa meio sem jeito, porque os dois estão sentados numa telha inclinada e um deles apoia a mão no lugar errado. Depois encontra o lugar certo, e fica. O gosto é de vinho barato e de cedro, e as mãos, que passaram a semana inteira pregando e tocando, sabem o que fazer. A manta xadrez escorrega para as telhas, e ninguém a pega.\n\nQuando se afastam, de olhos abertos, a Via Láctea ocupa o céu inteiro, e um vaga-lume, lá embaixo, acende e apaga como quem faz uma pergunta. Ninguém diz uma palavra. Em Pine Hollow, às onze e doze de uma noite de junho, uma popstar mundial e um carpinteiro da cidade são, por um instante, só duas pessoas que se acharam."
+    },
+    "rv_c5_nao": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Telhado do chalé dos Ashby",
+      "hora": "Sábado · 23h12",
+      "exclui": [
+        "beijo_telhado"
+      ],
+      "ir": "rv_c5_fim",
+      "texto": "Nada acontece, e nada acontecer também diz alguma coisa. Os dois ficam onde estão, a um palmo um do outro, olhando os vaga-lumes lá embaixo, com a manta xadrez dividida sobre os joelhos. Um vaga-lume, mais corajoso, sobe até a altura do telhado, pisca duas vezes e vai embora.\n\nUm dos dois, depois de um minuto, diz *está tarde*, e o outro responde *é*. Nenhum se mexe. É a conversa mais curta e mais cheia da semana."
+    },
+    "rv_c5_fim": {
+      "tipo": "fim",
+      "cap": 5,
+      "lugar": "Telhado do chalé dos Ashby",
+      "hora": "Domingo · 00h20",
+      "texto": "À meia-noite e vinte, no telhado, a escada de alumínio ainda encostada, a noite fria e o vale cheio de vaga-lumes. {{se flag:beijo_telhado}}O gosto de vinho barato e de cedro ainda está na boca de cada um. {{/se}}{{se !flag:beijo_telhado}}O que não aconteceu está entre os dois, como uma terceira pessoa de manta xadrez. {{/se}}{{se flag:noite_telhado_novo}}As estrelas, o telhado e os vaga-lumes eram uma cena que ninguém planejou. {{/se}}{{se flag:noite_riacho}}Os pés ainda estão frios do riacho, e a pele ainda lembra a água. {{/se}}{{se flag:noite_varanda}}O violão, encostado ao corrimão, guarda o calor das mãos que o tocaram. {{/se}}{{se flag:b_deu_acorde}}O acorde de lá menor, na ponte, é a primeira coisa que alguém mudou numa música sem estragá-la. {{/se}}\n\nA pessoa que mora na casa, depois de um silêncio comprido, desce a escada de alumínio com o cuidado de quem tem pernas pouco confiáveis. Do último degrau, olha para cima, para o carpinteiro, que ficou no telhado, com a manta nos joelhos. A luz da lanterna, no gancho da varanda, dá ao rosto dela uma cor que não é a de nenhum palco.\n\n— Eu não posso — diz ela, ou ele, em voz tão baixa que o riacho quase cobre. — Eu não posso me envolver. Eu vou embora em agosto.",
+      "gancho": "Uma frase dita do último degrau: eu vou embora em agosto.",
       "ir": "rv_rascunho_fim"
     },
     "rv_rascunho_fim": {
       "tipo": "final",
-      "cap": 4,
+      "cap": 5,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
