@@ -117,18 +117,18 @@ Dois quilômetros e duzentos metros até o chalé. Em dois quilômetros e duzent
  ir='rv_c2_decisao')
 
 NOS['rv_c2_decisao'] = dict(tipo='decisao', cap=2, lugar='Varanda do chalé dos Ashby', hora='Terça · 12h30',
- texto="""As sacolas já estão na cozinha. O fogão a lenha, aceso por um carpinteiro em dois minutos, solta uma fumaça fina pela chaminé. Há ovos, pão, uma panela de macarrão e um silêncio de duas pessoas que ainda não sabem se querem ou não se ver à noite.
+ texto="""As sacolas já estão na cozinha. O fogão a lenha, aceso por um carpinteiro em dois minutos, solta uma fumaça fina pela chaminé. Há ovos, pão, uma panela de macarrão e um silêncio de duas pessoas que ainda não sabem como se ver à noite.
 
-O convite ficou no ar, e agora precisa de uma resposta.""",
- pergunta='E o bar, hoje à noite?',
+O convite para a Lanterna ficou no ar, e a resposta, agora, não é se vai, mas como.""",
+ pergunta='Como vocês vão à Lanterna?',
  ir={'A': 'rv_c2_noite_a', 'B': 'rv_c2_noite_b'},
  acoes=[
-  dict(id='ir', texto='Ir ao bar: um verão inteiro de silêncio é muito tempo', efeitos=dict(flag='vai_ao_bar', vinculo=1),
-   resultado="""Vocês combinam: oito horas, na Lanterna. Ninguém diz *é um encontro*, e cada um sabe que não é. O carpinteiro volta à picape, de boné, e a outra pessoa entra na casa pela porta que range, com uma ideia estranha na cabeça, a de talvez ter acabado de aceitar a primeira coisa que não estava na agenda."""),
-  dict(id='recusar', texto='Ficar em casa: o primeiro dia já foi gente demais', efeitos=dict(flag='ficou_em_casa'),
-   resultado="""Vocês combinam que não. Fica em casa quem precisa de silêncio, e vai ao bar quem precisa de gente. A decisão tem a clareza de uma porta fechada, e os dois, por motivos diferentes, sentem um pouco de falta do que não aconteceu."""),
-  dict(id='suco', texto='Aparecer só um pouco, tomar um suco e ir embora cedo', efeitos=dict(flag='so_um_pouco'),
-   resultado="""Vocês combinam um meio-termo: aparecer, tomar alguma coisa sem álcool e voltar antes das dez. É uma negociação de dois adultos que acabaram de descobrir que não sabem negociar, e funciona justamente por isso."""),
+  dict(id='ir', texto='Juntos, na picape: ele passa pelo chalé às oito', efeitos=dict(flag='foram_juntos', vinculo=1),
+   resultado="""Vocês combinam: às oito, o carpinteiro passa na estrada do riacho, e os dois descem juntos. Ninguém diz *é um encontro*, e cada um sabe que não é. A picape de 1998 tem um banco só, e uma negociação silenciosa sobre quem fica do lado da janela."""),
+  dict(id='recusar', texto='Separados: cada um chega por conta própria, no seu horário', efeitos=dict(flag='foram_separados'),
+   resultado="""Vocês combinam que cada um vai por conta própria. O carpinteiro chega no horário dele, e a outra pessoa, no dela, de bicicleta, de um modelo que o avô deixou no galpão. A decisão tem a clareza de uma porta aberta pelos dois lados, e os dois, por motivos diferentes, sentem um pouco de falta da outra versão."""),
+  dict(id='suco', texto='Só um pouco: aparecer, tomar alguma coisa sem álcool e voltar antes das dez', efeitos=dict(flag='so_um_pouco'),
+   resultado="""Vocês combinam um meio-termo: aparecer, tomar um suco e voltar antes das dez. É uma negociação de dois adultos que acabaram de descobrir que não sabem negociar, e funciona justamente por isso."""),
  ])
 
 NOS['rv_c2_noite_a'] = dict(tipo='solo', cap=2, seat='A', lugar='Sala do chalé dos Ashby', hora='Terça · 18h30',
@@ -170,7 +170,7 @@ Você não sabe. Cada vez que o seu irmão começa uma frase com *você sabe o q
  ])
 
 NOS['rv_c2_fim'] = dict(tipo='fim', cap=2, lugar='Chalé dos Ashby / A Lanterna, Pine Hollow', hora='Terça · 19h50',
- texto="""Às sete e cinquenta da noite, em Pine Hollow, ainda é dia: o verão do noroeste do Pacífico estica a luz até as nove e meia, e o céu, atrás dos pinheiros, é uma aquarela de pêssego e lavanda. {{se flag:vai_ao_bar}}Na casa do riacho, alguém abre a mala de seiscentos dólares e procura, entre peças de grife, a única coisa que parece uma roupa de gente. {{/se}}{{se flag:ficou_em_casa}}Na casa do riacho, alguém acende o fogão e fica olhando as chamas, sozinh{{eu.o_a}}, como combinado, sem ter certeza de que combinou a coisa certa. {{/se}}{{se flag:so_um_pouco}}Na casa do riacho, alguém procura um suéter, para tomar um suco e ir embora às dez. {{/se}}{{se flag:a_tocou_escala}}No piano, uma escala imperfeita ainda ressoa no ar. {{/se}}{{se flag:a_abriu_cartas}}Na mesa, quarenta e três cartas de um avô esperam, em ordem, para serem lidas. {{/se}}{{se flag:a_fechou_piano}}O piano, de tampa fechada, guarda a sua poeira. {{/se}}
+ texto="""Às sete e cinquenta da noite, em Pine Hollow, ainda é dia: o verão do noroeste do Pacífico estica a luz até as nove e meia, e o céu, atrás dos pinheiros, é uma aquarela de pêssego e lavanda. {{se flag:foram_juntos}}Na casa do riacho, alguém abre a mala de seiscentos dólares e procura, entre peças de grife, a única coisa que parece uma roupa de gente, enquanto uma picape de 1998 desce a estrada. {{/se}}{{se flag:foram_separados}}Na casa do riacho, alguém empurra uma bicicleta antiga para fora do galpão e confere os pneus, sem saber por que está sorrindo. {{/se}}{{se flag:so_um_pouco}}Na casa do riacho, alguém procura um suéter, para tomar um suco e ir embora às dez. {{/se}}{{se flag:a_tocou_escala}}No piano, uma escala imperfeita ainda ressoa no ar. {{/se}}{{se flag:a_abriu_cartas}}Na mesa, quarenta e três cartas de um avô esperam, em ordem, para serem lidas. {{/se}}{{se flag:a_fechou_piano}}O piano, de tampa fechada, guarda a sua poeira. {{/se}}
 
 A Lanterna fica numa casa de tijolos, no fim da Rua Principal, com uma lanterna de ferro na porta, um balcão de nogueira e um palco de dois metros por três, onde um banjo, um violão e um contrabaixo dividem espaço com um microfone dos anos oitenta.
 
@@ -178,4 +178,4 @@ Na parede, ao lado do palco, uma fotografia emoldurada de uma banda de rock de a
 
 Alguém está prestes a entrar.""",
  gancho="A Lanterna, uma banda de adolescentes na parede e um nome na caneta.",
- ir='rv_c3_lanterna')
+ ir='rv_c3_entrada')
