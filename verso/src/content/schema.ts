@@ -135,6 +135,18 @@ export const No = z.discriminatedUnion('tipo', [
 ]);
 export type No = z.infer<typeof No>;
 
+const Personagem = z
+  .object({
+    papel: z.string(), // "A cerimonialista de Boston"
+    nomePadrao: z.string(),
+    generoPadrao: z.enum(['ele', 'ela']),
+    idade: z.number().int(),
+    origem: z.string().optional(),
+    ferida: z.string().optional(), // PRIVADO: só o próprio assento vê
+  })
+  .strict();
+export type Personagem = z.infer<typeof Personagem>;
+
 export const Livro = z
   .object({
     id: z.string(),
@@ -147,6 +159,10 @@ export const Livro = z
     vinculoPorCapitulo: z.number().int().min(1).default(2),
     /** idades padrão dos personagens A e B, usadas por {{A.idade}} */
     idades: z.object({ A: z.number().int(), B: z.number().int() }).optional(),
+    sinopse: z.string().optional(),
+    personagens: z.object({ A: Personagem, B: Personagem }).strict().optional(),
+    /** fatos básicos sempre visíveis na ficha (quem é quem), sem depender de gênero */
+    fatos: z.array(z.string()).default([]),
     npcs: z.record(z.object({ nome: z.string(), voz: z.string() }).strict()).default({}),
     nomesProibidos: z.array(z.string()).default([]),
     /** Baseline de dívida: flags gravadas que nenhuma cena lê (livros migrados). Vira aviso; livros novos devem ter lista vazia. */

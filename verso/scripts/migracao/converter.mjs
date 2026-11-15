@@ -539,8 +539,21 @@ for (const n of Object.values(nos)) {
 }
 
 // NPCs e metadados vêm de base.js (parseados como dados)
+// personagens: dados do JOG_PD em base.js (papel, idade, origem e a ferida, que é privada)
+const basePd = parse(readFileSync(new URL('base.js', DIR), 'utf8'), { ecmaVersion: 'latest', sourceType: 'script' });
+let jog = [];
+for (const st of basePd.body) if (st.type === 'VariableDeclaration') for (const d of st.declarations) if (d.id.name === 'JOG_PD') jog = d.init.elements;
+const pers = (o) => ({ papel: prop(o, 'arq').value, nomePadrao: prop(o, 'ap').value, generoPadrao: prop(o, 'g').value === 'f' ? 'ela' : 'ele', idade: prop(o, 'idade').value, origem: prop(o, 'origem').value, ferida: prop(o, 'medo').value });
 const livro = {
   id: 'padrinhos',
+  sinopse: 'Nantucket, junho de 2023. A cerimonialista fugiu com o dono do bufê, os noivos estão num retiro de silêncio e sobraram a madrinha, o padrinho, uma pasta e um encontro às cegas que cada um conta de um jeito.',
+  personagens: { A: pers(jog[0]), B: pers(jog[1]) },
+  fatos: [
+    'Casamento de Gemma Castellano (noiva) e Tunde Okoro (noivo), sábado, 17 de junho de 2023, no Nantucket Yacht Club.',
+    'Um dos protagonistas é do lado da noiva; o outro, do lado do noivo.',
+    'Mãe da noiva: Rosa Castellano. Mãe do noivo: a juíza Funmi Okoro.',
+    'Pippa Lund é a estagiária da Castellano Eventos. Barnaby Cole é dono da pousada Gull House e florista da ilha.',
+  ],
   titulo: 'Padrinho e Madrinha',
   secao: 'love-sparks',
   adulto: false,

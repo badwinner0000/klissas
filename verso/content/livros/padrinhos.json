@@ -1,5 +1,30 @@
 {
   "id": "padrinhos",
+  "sinopse": "Nantucket, junho de 2023. A cerimonialista fugiu com o dono do bufê, os noivos estão num retiro de silêncio e sobraram a madrinha, o padrinho, uma pasta e um encontro às cegas que cada um conta de um jeito.",
+  "personagens": {
+    "A": {
+      "papel": "A cerimonialista de Boston",
+      "nomePadrao": "Ivy",
+      "generoPadrao": "ela",
+      "idade": 33,
+      "origem": "Boston, Massachusetts",
+      "ferida": "Não ser amada sem estar útil."
+    },
+    "B": {
+      "papel": "O professor de química",
+      "nomePadrao": "Sam",
+      "generoPadrao": "ele",
+      "idade": 35,
+      "origem": "Providence, Rhode Island",
+      "ferida": "Ser deixado sem aviso, como o pai deixou a mãe."
+    }
+  },
+  "fatos": [
+    "Casamento de Gemma Castellano (noiva) e Tunde Okoro (noivo), sábado, 17 de junho de 2023, no Nantucket Yacht Club.",
+    "Um dos protagonistas é do lado da noiva; o outro, do lado do noivo.",
+    "Mãe da noiva: Rosa Castellano. Mãe do noivo: a juíza Funmi Okoro.",
+    "Pippa Lund é a estagiária da Castellano Eventos. Barnaby Cole é dono da pousada Gull House e florista da ilha."
+  ],
   "titulo": "Padrinho e Madrinha",
   "secao": "love-sparks",
   "adulto": false,

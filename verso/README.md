@@ -37,6 +37,19 @@ Dívida conhecida, a resolver depois (não bloqueia):
 - **Cerimônia do cap. 9 corrigida:** o discurso dos protagonistas virou o diálogo `pd_c9_microfone` (3 tons por jogador). Há ainda 34 nós com falas sem atribuição na fila de revisão (`fala-sem-atribuicao`); li os suspeitos e são de NPC.
 - O lint de agência cobre fala e sentimento de protagonista; ações do próprio personagem em cenas solo lineares ("Você senta...") continuam como no original.
 
+## Rodar o app (local, dois navegadores)
+
+```
+npm install
+npm run build && npm start        # http://localhost:3100
+```
+Abra duas janelas (ou dois aparelhos na mesma rede): numa, "Jogar a dois" → código de 5 letras; na outra, "Entrar numa sala". Modo solo: "Jogar solo".
+`npm run dev` roda em modo desenvolvimento. Teste E2E com dois navegadores: `node tests/e2e/dois-jogadores.cjs` (variáveis `E2E_POLITICA=ambos|nenhum|soA|soB`, `E2E_SEMENTE`).
+
+Como funciona: o servidor roda o motor (`src/lib/jogo.ts`) e devolve **só a visão do assento** de quem pergunta (`GET /api/salas/:codigo`, cabeçalho `x-token`). O cliente nunca recebe flags, estado, votos nem ids internos de cena. A sala guarda um **snapshot do livro** (hash) e nunca muda de versão no meio da partida. As salas ficam em `.data/` (arquivo): `src/lib/store.ts` é a interface a trocar pelo Supabase.
+
+**Não feito / não testado nesta etapa:** adaptador Supabase (auth, Realtime, `secret_votes` por RLS; o SQL de `supabase/migrations/0001_init.sql` nunca foi executado), verificação de idade para conteúdo +18, tela de administração, capas, Tailwind (o CSS é próprio), Lighthouse. O tempo real é por *polling* de 1,2 s.
+
 ## Comandos (dentro de `verso/`)
 
 ```
