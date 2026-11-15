@@ -169,6 +169,8 @@ export const Livro = z
     /** fatos básicos sempre visíveis na ficha (quem é quem), sem depender de gênero */
     fatos: z.array(z.string()).default([]),
     npcs: z.record(z.object({ nome: z.string(), voz: z.string() }).strict()).default({}),
+    /** falas de reserva genéricas, usadas só quando o `pool` da cena já se esgotou (nunca repetem uma fala já dita) */
+    poolGeral: z.array(OpDialogo).default([]),
     nomesProibidos: z.array(z.string()).default([]),
     /** Baseline de dívida: flags gravadas que nenhuma cena lê (livros migrados). Vira aviso; livros novos devem ter lista vazia. */
     escolhasMortasToleradas: z.array(z.string()).default([]),

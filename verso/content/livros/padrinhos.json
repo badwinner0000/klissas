@@ -7182,5 +7182,107 @@
     "enjoou",
     "gesto_quase_b",
     "olhou4"
+  ],
+  "poolGeral": [
+    {
+      "tom": "seco",
+      "tag": "pg_s1",
+      "texto": "— Anotado. Próximo assunto."
+    },
+    {
+      "tom": "seco",
+      "tag": "pg_s2",
+      "texto": "— Isso é um fato, não uma opinião."
+    },
+    {
+      "tom": "seco",
+      "tag": "pg_s3",
+      "texto": "— Pode ser. Eu não vou discutir isso agora."
+    },
+    {
+      "tom": "seco",
+      "tag": "pg_s4",
+      "texto": "— Eu ouvi. Não precisa repetir."
+    },
+    {
+      "tom": "abre",
+      "tag": "pg_a1",
+      "texto": "— Eu não sei dizer isso direito. Mas é verdade."
+    },
+    {
+      "tom": "abre",
+      "tag": "pg_a2",
+      "texto": "— Estou cansad{{eu.o_a}}. Não de você. Do dia."
+    },
+    {
+      "tom": "abre",
+      "tag": "pg_a3",
+      "texto": "— Isso é mais difícil do que eu pensei que seria."
+    },
+    {
+      "tom": "abre",
+      "tag": "pg_a4",
+      "texto": "— Eu não costumo falar dessas coisas. Hoje, saiu."
+    },
+    {
+      "tom": "cuida",
+      "tag": "pg_c1",
+      "texto": "— Você já comeu alguma coisa? Eu posso pegar um café."
+    },
+    {
+      "tom": "cuida",
+      "tag": "pg_c2",
+      "texto": "— Respira. A gente resolve isso depois."
+    },
+    {
+      "tom": "cuida",
+      "tag": "pg_c3",
+      "texto": "— Se precisar de uma pausa, é só dizer. Eu espero."
+    },
+    {
+      "tom": "cuida",
+      "tag": "pg_c4",
+      "texto": "— Não precisa responder agora. Eu fico por aqui."
+    },
+    {
+      "tom": "flerte",
+      "tag": "pg_f1",
+      "texto": "— Você é mais difícil de ler do que parece. Eu gosto do desafio."
+    },
+    {
+      "tom": "flerte",
+      "tag": "pg_f2",
+      "texto": "— Se isso foi uma indireta, eu entendi."
+    },
+    {
+      "tom": "flerte",
+      "tag": "pg_f3",
+      "texto": "— Você fica interessante quando se irrita."
+    },
+    {
+      "tom": "flerte",
+      "tag": "pg_f4",
+      "texto": "— Isso foi quase um elogio. Vou fingir que não percebi."
+    },
+    {
+      "tom": "fere",
+      "tag": "pg_r1",
+      "texto": "— Você sempre tem uma resposta pronta. Isso cansa."
+    },
+    {
+      "tom": "fere",
+      "tag": "pg_r2",
+      "texto": "— Isso soou melhor na sua cabeça."
+    },
+    {
+      "tom": "fere",
+      "tag": "pg_r3",
+      "texto": "— Eu esperava mais de você."
+    },
+    {
+      "tom": "fere",
+      "tag": "pg_r4",
+      "texto": "— Não é a primeira vez que você faz isso."
+    }
   ]
 }
