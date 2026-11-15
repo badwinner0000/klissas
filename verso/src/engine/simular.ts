@@ -25,7 +25,11 @@ export interface Partida {
 const DEFEITOS = /\$\{|undefined|\bnull\b|NaN|\[object|\{\{|\}\}/;
 const marca = { esc: '▸', fala: '“', txt: '' } as const;
 
-export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, maxPassos = 1500): Partida {
+/** Peso por tom: quando informado, o jogador simulado prefere o tom de maior peso (ex.: casal que briga) em vez de escolher ao acaso. */
+export type PesoTom = Partial<Record<string, number>>;
+export const CASAL_QUE_BRIGA: PesoTom = { fere: 3, seco: 2, flerte: 0, abre: -1, cuida: -2 };
+
+export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, maxPassos = 1500, pesoTom?: PesoTom): Partida {
   let e = iniciar(l, jog);
   const visitados = new Set<string>(typeof l.inicio === 'string' ? [l.inicio] : [l.inicio.A, l.inicio.B]);
   const textos: Record<Seat, string[]> = { A: [], B: [] };
@@ -57,7 +61,12 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
         acao = { tipo: 'voto', id: quer ? 'avancar' : 'ficar' };
       } else if (v.opcoes[0]!.id === 'continuar') acao = { tipo: 'continuar' };
       else if (v.tipo === 'decisao' && v.votoDoOutro && v.opcoes.some((o) => o.id === v.votoDoOutro!.id)) acao = { tipo: 'opcao', id: v.votoDoOutro.id };
-      else acao = { tipo: 'opcao', id: v.opcoes[Math.floor(rng() * v.opcoes.length)]!.id };
+      else if (pesoTom && v.opcoes.some((o) => o.tom)) {
+        const pt = (o: (typeof v.opcoes)[number]) => pesoTom[o.tom ?? ''] ?? 0;
+        const melhor = Math.max(...v.opcoes.map(pt));
+        const cand = v.opcoes.filter((o) => pt(o) === melhor);
+        acao = { tipo: 'opcao', id: cand[Math.floor(rng() * cand.length)]!.id };
+      } else acao = { tipo: 'opcao', id: v.opcoes[Math.floor(rng() * v.opcoes.length)]!.id };
       try {
         const r = agir(l, e, s, acao, jog);
         for (const ev of r.eventos) if ((ev.tipo === 'escolha' || ev.tipo === 'decisao') && typeof ev.payload.variante === 'number') { const k = `${ev.payload.no}.${ev.payload.acao}`; (usos.get(k) ?? usos.set(k, new Set()).get(k)!).add(ev.payload.variante as number); }

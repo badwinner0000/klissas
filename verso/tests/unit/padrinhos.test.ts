@@ -4,7 +4,7 @@ import { lerBruto, lerLivro } from '../../src/content/carregar';
 import { lintarBruto } from '../../src/engine/lint';
 import { flagsPrivadas } from '../../src/engine/motor';
 import { criarRng } from '../../src/engine/rng';
-import { GENEROS, POLITICAS, jogadoresDe, jogar, simular } from '../../src/engine/simular';
+import { CASAL_QUE_BRIGA, GENEROS, POLITICAS, jogadoresDe, jogar, simular } from '../../src/engine/simular';
 
 const livro = () => lerLivro('padrinhos');
 
@@ -20,7 +20,7 @@ describe('consequências das escolhas (antes mortas)', () => {
   // joga até ver todas as reações (ou 700 partidas): metade com consentimento, metade sem
   let pendentes = arq.itens.length;
   for (let seed = 1; seed <= 700 && pendentes > 0; seed++) {
-    const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, seed % 2 ? 'ambos' : 'nenhum', criarRng(seed));
+    const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, seed % 2 ? 'ambos' : 'nenhum', criarRng(seed), 1500, seed % 3 === 0 ? CASAL_QUE_BRIGA : undefined); // 1/3 das partidas: casal que briga (alcança finais de ruptura)
     vistos.A += p.textos.A.join('\n').replace(/\*/g, '');
     vistos.B += p.textos.B.join('\n').replace(/\*/g, '');
     if (seed % 25 === 0) pendentes = faltam().length; // varre só de vez em quando: os textos crescem

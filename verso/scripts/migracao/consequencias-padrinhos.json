@@ -507,6 +507,105 @@
       "flag": "brinde_tunde",
       "no": "pd_c8_fim",
       "texto": "A bicicleta de vinte anos do Tunde entrou num brinde sem caderno, e a cozinha, que ria, ficou um instante em silêncio quando ele ouviu."
+    },
+    {
+      "flag": "b_cabos9",
+      "no": "pd_c9_panico",
+      "privadoDe": "B",
+      "texto": "Os cabos que você enrolou em silêncio, de manhã, estão numa pilha arrumada ao lado da mesa de som. É a única coisa na tenda que ninguém precisa conferir duas vezes."
+    },
+    {
+      "flag": "b_equacao9",
+      "no": "pd_c9_panico",
+      "privadoDe": "B",
+      "texto": "As nove horas de que você falou de manhã viraram vinte e cinco minutos, e a equação que parecia tão limpa de manhã agora tem uma incógnita do tamanho de um microfone."
+    },
+    {
+      "flag": "b_ouviu_recado9",
+      "no": "pd_c9_panico",
+      "privadoDe": "B",
+      "texto": "A voz do Tunde, de dois de junho, ainda sai da caixa de som na sua cabeça, mais baixa, mais perto, e dessa vez você sabe de quem ela está falando."
+    },
+    {
+      "flag": "vento_calculo",
+      "no": "pd_c9_cerimonia2",
+      "texto": "As quatro estacas do lado do mar seguram a lona num ângulo que alguém calculou de cabeça, e o vento, que mudou duas vezes, desiste na terceira."
+    },
+    {
+      "flag": "vento_lideranca",
+      "no": "pd_c9_cerimonia2",
+      "texto": "Os primos Barros, de avental, ainda andam em fila indiana por onde o apito de dois dedos mandou, como uma procissão de lagosta."
+    },
+    {
+      "flag": "graham_aceno",
+      "no": "pd_c9_cerimonia2",
+      "texto": "Na terceira fila, o Graham, que chegou em quarenta segundos, acena uma vez para a Rosa e uma vez, bem menor, para a primeira fila."
+    },
+    {
+      "flag": "graham_cumprimento",
+      "no": "pd_c9_cerimonia2",
+      "texto": "O aperto de mão do Graham, no meio do gramado, foi o primeiro em nove meses que não pesou, e a Rosa, que viu de longe, finge que está olhando as peônias que não vieram."
+    },
+    {
+      "flag": "graham_apresentou",
+      "no": "pd_c9_cerimonia2",
+      "texto": "Na mesa onze, o tio Sal e o Graham trocam duas frases de cortesia, uma de futebol e uma de lasanha, e é o diálogo mais pacífico do dia."
+    },
+    {
+      "flag": "graham_perguntou",
+      "no": "pd_c9_cerimonia2",
+      "texto": "*Estou melhor do que quando a gente terminou*, o Graham tinha dito, baixinho, e a frase flutua por entre as cadeiras como uma toalha de mesa que ninguém sabe de quem é."
+    },
+    {
+      "flag": "gesto_pasta",
+      "no": "pd_c10_salao",
+      "texto": "A pasta de couro, quatro dedos de grossura, mudou de mãos esta noite e ainda está na mesa mais próxima, aberta no plano D, como um bicho que acabou de aprender a dormir longe do dono."
+    },
+    {
+      "flag": "gesto_quase",
+      "no": "pd_c10_salao",
+      "texto": "A tenda guardou a frase de quem subiu na cadeira para pedir ajuda em voz alta. Ela não se repete, mas as cadeiras empilhadas do fundo parecem mais alinhadas por causa dela."
+    },
+    {
+      "flag": "final_ruptura",
+      "no": "pd_c10_amanhecer",
+      "texto": "As setenta cadeiras de cada lado ficaram em duas pilhas retas, simétricas, e a pista de madeira, vazia no meio, parece a régua de uma conta que não fechou."
+    },
+    {
+      "flag": "dory_proposta",
+      "no": "pd_c10_salao",
+      "privadoDe": "A",
+      "texto": "O cheiro de palha de aço e manteiga clarificada ainda está nas suas mãos, e a conta que a Dory deixou no ar não é de dinheiro."
+    },
+    {
+      "flag": "dory_receita",
+      "no": "pd_c10_salao",
+      "privadoDe": "A",
+      "texto": "O papelzinho tão gasto que parece pano, a receita da avó da Dory, ficou na sua memória na letra dela, que você só viu por cima do ombro dela."
+    },
+    {
+      "flag": "dory_socia",
+      "no": "pd_c10_salao",
+      "privadoDe": "A",
+      "texto": "Sete casamentos por ano ficaram anotados no seu caderno com a letra de quem faz a conta antes de pensar, e você ainda não decidiu se isso é um começo ou uma fuga."
+    },
+    {
+      "flag": "b_ruth",
+      "no": "pd_c10_salao",
+      "privadoDe": "B",
+      "texto": "*Ela diria que a gente se achou*, o Barnaby disse, e a frase, que você ia guardar para depois, já escolheu um lugar para morar no seu caderno preto."
+    },
+    {
+      "flag": "b_silencio_cais",
+      "no": "pd_c10_salao",
+      "privadoDe": "B",
+      "texto": "A lanterna acesa na popa do *Maria do Fogo*, que ninguém apagou, ainda balança atrás dos seus olhos como um batimento."
+    },
+    {
+      "flag": "b_vaga_ilha",
+      "no": "pd_c10_salao",
+      "privadoDe": "B",
+      "texto": "A frase que você disse em voz alta a um velho florista, *não sei se volto*, deixou de ser só sua, e o peso dela agora tem ouvido."
     }
   ]
 }
