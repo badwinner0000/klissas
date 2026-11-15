@@ -1,45 +1,47 @@
 # Capas ilustradas
 
-**Estilo (definido pela referência da Tânia Tamires / rom-coms contemporâneos):** fundo de UMA cor chapada e saturada, título grande e grosso, casal pequeno em ilustração vetorial chapada, de corpo inteiro, rostos minimalistas, poucos detalhes e muito espaço vazio. Nada pintado, sem gradiente.
+**Estilo atual (referência: capas da Ali Hazelwood):** ilustração semi-realista de um casal grande e próximo (quase beijo / abraço), rostos expressivos, fundo de uma cor viva com poucos adereços, título misturando letra grossa sem serifa com letra manuscrita a pincel.
 
-As capas foram geradas com o modelo gratuito `recraft/recraft-v4.1-flash-v2:free` da OpenRouter (`POST /api/v1/images`, tamanho `896x1280`, o único vertical que ele aceita; proporção 7:10). A chave da OpenRouter nunca é guardada no repositório.
+**Os personagens da capa têm que bater com o livro.** Antes de gerar, escreva no prompt a aparência exata de cada protagonista conforme a história (etnia, tom de pele, cabelo, idade, roupa, objeto que carregam). Exemplo: Sam Okoro (Padrinho e Madrinha) é de origem nigeriana, então é um homem negro de pele escura; Ivy Castellano é ítalo-americana. Capas de livros ainda não escritos (as "em breve") são provisórias: refaça quando os personagens forem definidos.
 
-**Regra do texto:** o gerador inventa texto (nomes de autor, slogans, placas) e às vezes perde palavras do título. Todo prompt exige que o ÚNICO texto seja o título completo, e **cada capa é conferida a olho antes de entrar**. Gere 2 variantes e escolha.
+Geradas com o modelo gratuito `recraft/recraft-v4.1-flash-v2:free` da OpenRouter (`POST /api/v1/images`, `896x1280`, proporção 7:10). A chave nunca é guardada no repositório.
+
+**Regra do texto:** o gerador inventa texto (autor, slogans, placas) e às vezes perde palavras do título. Todo prompt exige que o ÚNICO texto seja o título completo, e **cada capa é conferida a olho**. Gere 2 variantes e escolha.
 
 Salve em `verso/public/capas/<slug>.jpg`; o site usa sozinho.
 
 ## Prompt-base (cole antes da cena)
 ```
-Contemporary romantic comedy book cover, modern flat vector illustration style as in current bestselling rom-coms: ONE solid saturated flat background color covering the whole cover, no gradients, no texture. A big, bold, friendly sans-serif title with comfortable margins (never touching the edges), exactly as written with every word. Below it, a stylized flat-color couple drawn full-body (simple minimal faces, no outlines, chunky colorful shapes), LARGE: the couple fills about 40 percent of the cover height, with only two or three tiny scene details. Graphic poster design, clean and playful. Vertical 7:10.
-STRICT TEXT RULES: the ONLY text on the cover is the title exactly as written, complete, with correct accents. No author name, no publisher, no subtitle, no slogan, no quotation marks, no signs, no extra words anywhere.
+Contemporary romance novel cover illustration in the style of current bestselling rom-com paperbacks: a semi-realistic digital illustration of a couple in a close, intimate embrace, large in the frame (about two thirds of the cover), expressive detailed faces with warm natural skin tones and soft shading over clean line art, hair and clothing with texture and folds. Behind them a saturated solid color background with a few simple props. The title lettering mixes a bold clean sans-serif with a hand-lettered brush script. Polished professional publishing quality. Vertical 7:10.
+STRICT TEXT RULES: the ONLY text on the cover is the title exactly as written, complete, with correct Portuguese accents (and the small top line when given). No author name, no publisher, no tagline, no quotes, no signs, no extra words anywhere.
 ```
 
 ## padrinhos.jpg · Padrinho e Madrinha (Love Story Nº 5)
 ```
-Background: deep cobalt blue. Small top line in cream: "LOVE STORY · Nº 5". Title in cream and warm peach, stacked: "Padrinho" / "& Madrinha". Couple: a woman in a navy dress hugging a thick brown binder with colorful tabs and a man in a dark suit holding a black notebook, standing a few steps apart (a visible gap) on a tiny wooden dock; tiny details: a small white lighthouse, a blue hydrangea bush, a string of warm lights.
+Background: deep cobalt blue with a few pale blue hydrangea blooms and a tiny white lighthouse far behind. Small top line in cream: "LOVE STORY · Nº 5". Title: "Padrinho" in bold cream sans-serif and "& Madrinha" in peach brush script. Characters (be precise): a Black man in his mid-thirties of Nigerian descent, deep brown skin, short black hair, round glasses, rumpled navy suit and loosened tie, holding a black notebook; and a woman in her early thirties of Italian-American descent, olive skin, dark brown hair in a messy bun with loose strands, navy dress, hugging a thick brown binder with colored tabs. They stand very close, foreheads almost touching, on the verge of a kiss, both a little flustered.
 ```
 
 ## a-reclamacao-de-barulho.jpg · A Reclamação de Barulho
 ```
-Background: bright tomato red. Title in cream: "A Reclamação de Barulho". Couple: a woman in workout clothes on a spinning bike with headphones, and a grumpy man in pajamas covering his ears with a pillow standing next to her on a small floor; tiny details: musical notes, a speaker.
+Background: bright tomato red with small white musical notes. Title: "A Reclamação" in bold cream sans-serif and "de Barulho" in white brush script. Characters: a Brazilian woman with brown skin and long curly dark hair in a high ponytail, in a bright yellow workout top with headphones around her neck; and a tired man with warm light-brown skin, dark messy hair, stubble and a rumpled gray t-shirt, one earplug in. They lean toward each other, arguing with their faces very close, hands on her shoulders.
 ```
 
 ## o-teste-de-visto.jpg · O Teste de Visto
 ```
-Background: sunny mustard yellow. Title in deep navy blue in two lines: "O Teste" / "de Visto". Couple: a woman in a pink sweater and a man in a green jacket sitting stiffly side by side on a bright blue sofa, holding hands awkwardly with worried smiles; tiny details: two mismatched coffee mugs and a small framed photo.
+Background: sunny mustard yellow with a few small kitchen props. Title: "O Teste" in bold navy sans-serif and "de Visto" in deep blue brush script. Characters: a young woman of South Asian descent with light brown skin, long black hair and a green cardigan; and a man with fair skin and curly auburn hair in a flannel shirt. They sit pressed together pretending to be a couple, hands clasped, looking at each other with nervous half-smiles.
 ```
 
 ## a-aposta-do-escritorio.jpg · A Aposta do Escritório
 ```
-Background: bold orange. Title in cream in two lines: "A Aposta" / "do Escritório". Couple: a woman in a white blouse and a man in a blue shirt sitting close at a small desk with hands clasped under it, nervous smiles; tiny details: two balloons and a few tiny coworkers peeking from behind a small partition.
+Background: bold orange with small office plant and balloon props. Title: "A Aposta" in bold cream sans-serif and "do Escritório" in white brush script. Characters: a Black woman with short natural curls, in a white blouse; and a man with light skin and dark hair in a blue shirt with rolled sleeves. They hold hands under a desk and look at each other with conspiratorial smiles, faces close.
 ```
 
 ## o-casamento-do-ex.jpg · O Casamento do Ex
 ```
-Background: soft lilac violet. Title in deep plum in two lines: "O Casamento" / "do Ex". Couple: a woman in an emerald green dress and a man in a white suit tiptoeing away together hand in hand and glancing back with guilty smiles; tiny details: a small floral wedding arch and two white chairs.
+Background: soft lilac violet with white wedding flowers. Title: "O Casamento" in bold deep-plum sans-serif and "do Ex" in pink brush script. Characters: a woman with medium-brown skin and wavy dark hair in an emerald green bridesmaid dress; and a man with olive skin, dark hair and a rumpled white suit jacket. They embrace behind a floral arch, her hand on his lapel, about to kiss, glancing guiltily aside.
 ```
 
 ## a-viagem-de-onibus.jpg · A Viagem de Ônibus
 ```
-Background: vivid teal. Title in cream: "A Viagem de Ônibus". Couple: a backpacker woman with a big map and a grumpy man in a shirt and tie gripping his armrest, sitting side by side in a double bus seat; tiny details: a bus window with stars, a small backpack.
+Background: vivid teal with a few stars. Title: "A Viagem" in bold cream sans-serif and "de Ônibus" in coral brush script. Characters: a backpacker woman with light brown skin, freckles and a messy braid, travel scarf; and a man in a loosened tie and white shirt with dark skin and short hair. They are squeezed together in a bus seat, shoulders touching, looking at each other with reluctant smiles.
 ```
