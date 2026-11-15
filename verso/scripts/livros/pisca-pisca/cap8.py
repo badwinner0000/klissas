@@ -130,4 +130,4 @@ Seis e cinquenta e três. As duas casas, a nº 8 e a nº 11, sem luz desde o dia
 
 No topo, a estrela de oito pontas gira, devagar, empurrada pelo vento. Nenhuma lâmpada acende. Nenhuma, nenhuma, nenhuma.""",
  gancho="A estrela de 1987 não acende a sete minutos da Noite da Árvore.",
- ir='pp_rascunho_fim')
+ ir='pp_c9_praca')

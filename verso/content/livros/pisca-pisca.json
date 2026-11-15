@@ -2708,12 +2708,482 @@
       "hora": "Quarta, 24 de dezembro · 18h10",
       "texto": "Às seis e dez, a pracinha de Cooper Green começa a encher. Cinquenta pessoas, depois duzentas, depois quatrocentas, todas de gorro e de copo de chocolate quente na mão, vindas das doze casas, da avenida, da igreja de cima. Gus Pappas montou uma barraca de pretzel ao lado do coreto. Odalys, de megafone com bateria nova, ensaia a contagem regressiva sob um poste.\n\n{{se flag:testou_estrela}}O teste da tarde não acendeu nem uma ponta, e o seu Szymanski, sem dizer nada, passou uma hora com o ferro de solda. {{/se}}{{se flag:subiu_estrela}}A estrela está a doze metros, pendurada nos oito pontos, e ninguém sabe se ela acende. {{/se}}{{se flag:abriu_estrela}}O fio cortado do motor foi emendado, mas o seu Szymanski admitiu, em voz baixa, que *a emenda é de quem sabe de fio, não de quem sabe de estrela*. {{/se}}\n\nSeis e cinquenta e três. As duas casas, a nº 8 e a nº 11, sem luz desde o dia 17, ligadas à árvore pelos cabos de aço, aguardam. Em um minuto, o transformador da cidade vai ser religado, e a árvore, doze metros de aço, fio e história, vai acender, ou não.\n\nNo topo, a estrela de oito pontas gira, devagar, empurrada pelo vento. Nenhuma lâmpada acende. Nenhuma, nenhuma, nenhuma.",
       "gancho": "A estrela de 1987 não acende a sete minutos da Noite da Árvore.",
-      "ir": "pp_rascunho_fim"
+      "ir": "pp_c9_praca"
     },
-    "pp_rascunho_fim": {
+    "pp_c9_praca": {
+      "tipo": "segue",
+      "cap": 9,
+      "lugar": "Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h20",
+      "npcs": [
+        "odalys",
+        "szymanski",
+        "gus"
+      ],
+      "ir": "pp_c9_dividir",
+      "texto": "A Noite da Árvore começa, na verdade, às seis, com a Ceia da Praça: mesas de armar em volta de Cooper Green, toalhas de plástico, travessas de lasanha, dumplings, pierogi da senhora Wójcik, pernil da família Quiñones e o chocolate quente do Gus em um tambor de aço com torneira. Quatrocentas pessoas comem de pé, de gorro, no meio da neve, entre doze metros de árvore apagada e uma tempestade que acabou de passar.\n\nOdalys Quiñones, de megafone, anuncia a ordem do evento com a solenidade de uma cerimônia de posse. O seu Szymanski, de colete laranja, caminha entre as mesas com um multímetro no bolso, como um médico de plantão. A nonna Concetta e a Pó-pó, de cobertor nos ombros, dividem um banco de pedra e uma travessa de biscoitos de amêndoa, e não conversam, mas as duas mastigam no mesmo ritmo.\n\n{{se flag:cabos_misturados}}As duas famílias que seguraram os cabos juntos de manhã não se afastam, como se o gesto tivesse deixado uma cola invisível. {{/se}}{{se flag:sopa_na_kessler}}A sopa do Gus, feita de manhã para todos, virou assunto: alguém já a chama de *a sopa da trégua*. {{/se}}Às seis e quarenta, a nº 8 e a nº 11, ligadas à árvore pelos cabos de aço, estão com as janelas escuras, e o bairro inteiro olha para elas, esperando.\n\nDepois, o seu Szymanski chega, devagar, e fala baixo, de modo que só dois ouvidos escutam: *a estrela não acende. Preciso de vocês dois no depósito. Agora.*"
+    },
+    "pp_c9_dividir": {
+      "tipo": "dividir",
+      "cap": 9,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quarta, 24 de dezembro · 18h30",
+      "cada": 1,
+      "texto": "No depósito, o seu Szymanski acende a lâmpada nua e fecha a porta de ferro. Em cima da mesa de marceneiro, a estrela de oito pontas está aberta, com o motorzinho de relógio à mostra, ao lado da caixa de papelão sem nome, a do X de fita adesiva, que alguém empurrou para o centro da mesa.\n\n— O fio foi emendado, o motor gira, as lâmpadas estão boas. — Ele coça a nuca. — Mas tem uma coisa nessa estrela que eu nunca entendi. Dois fios, dois contatos, duas fechaduras. Como se ela fosse feita para ser ligada por duas pessoas ao mesmo tempo.\n\nTem vinte e cinco minutos. A pergunta é por onde começar.",
+      "pergunta": "O que você investiga?",
+      "acoes": [
+        {
+          "id": "caixa",
+          "texto": "Abrir a caixa do X e ver o que tem dentro",
+          "efeitos": {
+            "flag": "abriu_caixa_x",
+            "vinculo": 1
+          },
+          "resultado": "Você rasga a fita adesiva, com a unha, devagar. Dentro, enrolado em papel de seda amarelado, há um molho de chaves pequenas, de latão, cada uma com um número gravado, e debaixo delas, dobrado em quatro, um papel de caderno com a letra inclinada e antiga que você já conhece: *Duas chaves. Uma minha, uma do Wing. A estrela só acende quando as duas giram juntas. Assim a gente nunca esquece que uma árvore dá trabalho para dois.*"
+        },
+        {
+          "id": "motor",
+          "texto": "Examinar o motor da estrela por dentro, procurando a segunda fechadura",
+          "efeitos": {
+            "flag": "achou_fechadura",
+            "vinculo": 1
+          },
+          "resultado": "Você aproxima a lâmpada nua e, com a ponta de uma chave de fenda, afasta as engrenagens. No fundo do mecanismo, escondida por uma placa de latão, há uma fechadura pequena, redonda, e ao lado dela, a quinze centímetros de distância, uma segunda. Duas fendas, dois contatos, e uma etiqueta amarelada com uma letra apertada, de bigode e de lápis: *tem de ser dois, ao mesmo tempo, senão o motor não parte*."
+        },
+        {
+          "id": "lista",
+          "texto": "Ler a lista da parede dos fundos, a de cabo-tronco-base-copa-carga-estrela",
+          "efeitos": {
+            "flag": "leu_lista_parede"
+          },
+          "resultado": "Você volta à lista da parede, a que está lá desde a primeira noite, e agora, com a luz nova, lê o que não tinha visto: uma sétima palavra, bem em baixo, quase apagada, na mesma letra inclinada de todas as caixas. *Chave.* E ao lado, a lápis, mais fino, como uma resposta: *duas*."
+        }
+      ],
+      "desfecho": "Com as três pistas na mesa, o seu Szymanski faz a conta em voz alta, sem olhar para ninguém: duas chaves, duas fechaduras, um segundo exato. Uma chave, diz, ficou com a família do Gennaro. A outra, com a do Wing.",
+      "ir": {
+        "A": "pp_c9_chave_a",
+        "B": "pp_c9_chave_b"
+      }
+    },
+    "pp_c9_chave_a": {
+      "tipo": "solo",
+      "cap": 9,
+      "seat": "A",
+      "lugar": "Praça de Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h42",
+      "texto": "Você sai do depósito correndo e acha a nonna Concetta onde a deixou, no banco de pedra, com o cobertor nos ombros e o prato de biscoitos no colo. Ela olha você chegar, com a respiração rasa, e antes que você abra a boca, enfia a mão no bolso do avental, entre o terço e um lenço bordado, e tira, num gesto de quem já ensaiou a cena durante treze anos, uma chave pequena de latão presa a um barbante vermelho.\n\n— O seu nonno me deu isso em 2011, uma noite, sem explicar. Disse: *se um dia a estrela não acender, entrega à pessoa mais teimosa dos dois.* — Ela olha, de lado, para a Pó-pó, que dorme sentada ao lado, de boca aberta. — Eu esperei treze anos para saber se era você.",
+      "acoes": [
+        {
+          "id": "pegar",
+          "texto": "Pegar a chave e abraçar a nonna",
+          "ir": "pp_c9_dialogo",
+          "efeitos": {
+            "flag": "a_pegou_chave",
+            "vinculo": 1
+          },
+          "resultado": "Você pega a chave, com a mão trêmula, e abraça a nonna por cima do cobertor, do terço e do prato de biscoitos. O cheiro dela é de talco e de molho de tomate. *Vai*, diz ela no seu ouvido. *E não confere duas vezes. Dessa vez, uma só.*"
+        },
+        {
+          "id": "perguntar",
+          "texto": "Perguntar à nonna se ela sabia do que o Wing estava fazendo no dia do velório",
+          "ir": "pp_c9_dialogo",
+          "efeitos": {
+            "flag": "a_perguntou_wing",
+            "abalo": 1
+          },
+          "resultado": "A nonna fica um tempo olhando a Pó-pó dormir. *Eu soube ontem à noite*, ela diz, devagar. *Ela me contou, aqui, neste banco, sem eu perguntar.* Põe a mão sobre a mão da outra velha, que continua dormindo. *Treze anos, minha filha. Treze anos de mulher orgulhosa de cada lado.* Depois olha para você: *vai, e acende isso por nós duas.*"
+        }
+      ]
+    },
+    "pp_c9_chave_b": {
+      "tipo": "solo",
+      "cap": 9,
+      "seat": "B",
+      "lugar": "Praça de Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h42",
+      "texto": "Você sai do depósito e acha a Pó-pó onde a deixou, no banco de pedra, de cobertor, e a nonna Concetta Tedeschi, ao lado, dormindo com a cabeça encostada no ombro dela. As duas, de olhos fechados, parecem as duas metades de uma mesma foto.\n\nA Pó-pó, que não dorme, só fecha os olhos, levanta uma pálpebra e olha você chegar. Sem uma palavra, tira do bolso do xale uma chave pequena de latão, presa a um barbante azul, e, junto dela, um envelope amarelado, fechado com cera, onde se lê, em letra de bigode: *Para Sal Tedeschi. Quando a estrela acender.*\n\n— O seu avô escreveu isso no hospital, em março de 2012. Eu nunca consegui entregar. — Ela põe o envelope na sua mão, com a chave por cima. — Agora você decide.",
+      "acoes": [
+        {
+          "id": "guardar",
+          "texto": "Guardar o envelope junto com a chave e entregar só depois que a árvore acender",
+          "ir": "pp_c9_dialogo",
+          "efeitos": {
+            "flag": "b_guardou_carta",
+            "abalo": 1
+          },
+          "resultado": "Você guarda o envelope no bolso interno do casaco, ao lado da fotografia de 1987, e a chave de latão na mão fechada. Pesa pouco, e pesa tanto que você tem medo de ela cair. A Pó-pó concorda com a cabeça, sem dizer nada: é a resposta que ela teria dado."
+        },
+        {
+          "id": "entregar",
+          "texto": "Levar o envelope agora ao Sal, na frente da praça inteira, antes de qualquer luz",
+          "ir": "pp_c9_dialogo",
+          "efeitos": {
+            "flag": "b_entregou_carta",
+            "vinculo": 1
+          },
+          "resultado": "Você atravessa a pracinha, entre mesas e gorros, e para na frente do seu Sal Tedeschi, de camisa de domingo e de copo de chocolate na mão. Estende o envelope sem dizer nada. Ele olha a letra, a cera, a data, e, quando abre a boca para perguntar, você diz só: *foi o meu avô que escreveu para o seu pai. Está atrasado treze anos.* Sal pega o envelope com as duas mãos, e o copo cai na neve."
+        }
+      ]
+    },
+    "pp_c9_dialogo": {
+      "tipo": "dialogo",
+      "cap": 9,
+      "lugar": "Plataforma da árvore, Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h50",
+      "comeca": "A",
+      "texto": "Às seis e cinquenta, os dois chegam, por lados opostos da pracinha, à plataforma de madeira que fica ao pé da árvore, onde os dois interruptores esperam, a dez metros um do outro. Cada interruptor tem uma fechadura. Cada fechadura tem a forma de uma chave pequena de latão.\n\nDez minutos para sete. Quatrocentas pessoas, em volta, com a respiração suspensa.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "k0_comigo",
+              "texto": "— Você tem a sua chave? Eu tenho a minha. A gente só faz isso junto.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "k0_segundo",
+              "texto": "— Um segundo. A gente tem que apertar no mesmo segundo."
+            },
+            {
+              "tom": "flerte",
+              "tag": "k0_nervosa",
+              "texto": "— Eu estou com as mãos tremendo. Isso nunca me aconteceu na frente de quatrocentas pessoas."
+            },
+            {
+              "tom": "cuida",
+              "tag": "k0_respira",
+              "texto": "— Respira. Eu estou aqui do outro lado, e eu não vou a lugar nenhum."
+            }
+          ]
+        },
+        {
+          "prompt": "Agora é você quem responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "k1_medo",
+              "texto": "— Eu tenho medo de errar o segundo. Eu nunca consegui ser pontual de verdade com ninguém.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "k1_conto",
+              "texto": "— Eu conto até três. Você aperta no três."
+            },
+            {
+              "tom": "flerte",
+              "tag": "k1_ritmo",
+              "texto": "— Vamos pelo ritmo da música da festa, a do Ansel. Eu sei de cor."
+            },
+            {
+              "tom": "cuida",
+              "tag": "k1_olha",
+              "texto": "— Olha para mim e não para a árvore. Eu aperto quando você apertar."
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "k2_quero",
+              "texto": "— Eu queria dizer uma coisa antes. Em voz alta. Para todo mundo ouvir.",
+              "efeitos": {
+                "flag": "ia_falar"
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "k2_depois",
+              "texto": "— O que a gente tem de dizer a gente diz depois. Agora é a árvore."
+            },
+            {
+              "tom": "flerte",
+              "tag": "k2_ouvir",
+              "texto": "— Quatrocentas pessoas. Se a gente errar, é o maior fiasco do Brooklyn."
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra antes do relógio é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "k3_juntos",
+              "texto": "— Eu confio em você. Aperta comigo.",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "k3_agora",
+              "texto": "— Três minutos. Vamos."
+            },
+            {
+              "tom": "cuida",
+              "tag": "k3_nao_solta",
+              "texto": "— Não solta o meu olhar. Eu não solto o seu."
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_fria",
+          "texto": "— Sua mão está gelada. Fica com a minha luva."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_hora",
+          "texto": "— Vamos."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_plateia",
+          "texto": "— Quatrocentas testemunhas. Se der certo, vão contar para sempre."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_medo",
+          "texto": "— Eu estou com medo, e está tudo bem."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_depois",
+          "texto": "— Se der errado, a culpa vai ser da sua pressa."
+        }
+      ],
+      "fecho": "A Pó-pó e a nonna, de cobertores, acordaram ao mesmo tempo, e agora estão de pé, lado a lado, de mãos dadas, na primeira fila da pracinha. O seu Szymanski, ao lado do transformador, levanta o polegar.",
+      "ir": "pp_c9_fim"
+    },
+    "pp_c9_fim": {
+      "tipo": "fim",
+      "cap": 9,
+      "lugar": "Plataforma da árvore, Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h57",
+      "texto": "Seis e cinquenta e sete. Odalys Quiñones sobe no banco de pedra com o megafone de bateria nova e pede silêncio. O silêncio cai sobre Cooper Green como uma segunda neve.\n\n{{se flag:b_entregou_carta}}Do lado esquerdo da praça, Sal Tedeschi lê uma carta de março de 2012, de joelhos na neve, com as duas mãos tremendo e a esposa de mãos no ombro dele. {{/se}}{{se flag:b_guardou_carta}}No bolso de um casaco, ao lado de uma fotografia de 1987, um envelope fechado com cera espera a luz. {{/se}}{{se flag:a_pegou_chave}}Na mão de {{A.nome}}, uma chave de latão pende de um barbante vermelho. {{/se}}{{se flag:duas_metades}}As duas metades da árvore, uma de cada casa, esperam o mesmo segundo. {{/se}}\n\n— Dez! — grita Odalys, e a praça, de gorro e de copo, grita junto. — Nove! Oito!\n\nOs dois estão cada um diante do seu interruptor, a dez metros, com uma chave de latão na mão, uma fechadura pequena à frente e um segundo exato para acertar. Não há plano B. Quatrocentas pessoas respiram no mesmo ritmo.\n\n— Sete! Seis!\n\nFalta uma coisa que nenhuma chave resolve, e que cada um dos dois sabe dizer, em voz alta, ou calar.",
+      "gancho": "Seis segundos, duas chaves, quatrocentas testemunhas, e uma coisa que cada um ainda não disse.",
+      "ir": "pp_c10_contagem"
+    },
+    "pp_c10_contagem": {
+      "tipo": "segue",
+      "cap": 10,
+      "lugar": "Plataforma da árvore, Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h59",
+      "ir": "pp_c10_gesto",
+      "texto": "— Cinco! — grita Odalys Quiñones, e a voz dela, no megafone, falha como a de uma criança. — Quatro!\n\nO mundo, em Cooper Green, reduz-se a poucas coisas. A fechadura pequena, de latão, na frente de cada interruptor. O barbante vermelho ou azul que prende cada chave ao pulso. O rosto do outro, a dez metros, iluminado pela lâmpada de emergência da plataforma. As quatrocentas respirações em volta, que viram uma só. A neve, que parou.\n\n{{se flag:duas_metades}}A árvore está dividida em duas metades, e cada metade tem o seu interruptor: se um dos dois atrasar um segundo, o transformador da cidade corta tudo. {{/se}}Não há tempo para ensaiar uma frase. Há tempo, só, para uma coisa."
+    },
+    "pp_c10_gesto": {
+      "tipo": "dividir",
+      "cap": 10,
+      "lugar": "Plataforma da árvore, Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 18h59",
+      "cada": 1,
+      "texto": "Três segundos. Duas pessoas, cada uma com a sua chave, a sua fechadura, o seu nome na boca de uma cidade inteira que as olha. Todo o trabalho dos últimos sete dias, a planilha, o caderno, a briga, o andaime, a tempestade, cabe agora em um gesto.\n\nCada um tem o mesmo problema, de lados opostos: o que faz, quando não dá mais para esconder o que a gente é?",
+      "pergunta": "O que você faz?",
+      "acoes": [
+        {
+          "id": "falar",
+          "texto": "Falar em voz alta, para a praça inteira, o que você quer de verdade",
+          "efeitos": {
+            "flag": "gesto_falou",
+            "vinculo": 2
+          },
+          "variantes": [
+            {
+              "se": "flag:a_leu_caderno || flag:b_disse_verdade || flag:confessou_cornell || flag:confessou_cornell_festa",
+              "resultado": "Você pega o megafone da mão da Odalys, que o entrega sem protestar, e diz, para quatrocentas pessoas, com a voz firme e o coração aos pulos: *esse ginkgo de vidro é meu. Eu o desenhei, eu o medi, quatro madrugadas. E eu me inscrevi em Cornell, e não sei se vou, e quero decidir olhando para a pessoa que está do outro lado dessa praça.* A praça fica em silêncio. Depois, de algum lugar, alguém bate palmas, e os outros seguem."
+            },
+            {
+              "se": "",
+              "resultado": "Você pega o megafone da mão da Odalys, que o entrega sem protestar, e diz, para quatrocentas pessoas, com a voz firme e o coração aos pulos, a coisa que passou sete dias sem conseguir dizer baixinho. Não é longa, e não é bonita. É verdadeira. Quando termina, a praça fica em silêncio, e depois, de algum lugar, alguém bate palmas, e os outros seguem."
+            }
+          ]
+        },
+        {
+          "id": "soltar",
+          "texto": "Soltar o controle: não conferir nada, não ter plano B, entregar o segundo ao outro",
+          "efeitos": {
+            "flag": "gesto_soltou",
+            "vinculo": 2
+          },
+          "resultado": "Você tira a prancheta do braço, devagar, e a entrega ao Nico, que está ali ao lado, de olhos arregalados. Dobra a folha de cálculo ao meio e a coloca no bolso do menino. Pela primeira vez em dezoito anos, não há uma folha, um cronômetro, um segundo cálculo de reserva. Só uma chave, um olhar do outro lado e a confiança de que o outro vai apertar junto."
+        },
+        {
+          "id": "calar",
+          "texto": "Não dizer nada, só olhar e apertar na hora",
+          "efeitos": {
+            "flag": "gesto_calou"
+          },
+          "resultado": "Você não diz nada. Olha para a outra pessoa, a dez metros, e segura a chave com a mão firme. O que existe entre os dois nesse segundo é um tipo de silêncio que não esconde nada, porque não tem o que esconder. É a primeira vez em dois anos que o silêncio entre vocês não é uma recusa."
+        }
+      ],
+      "desfecho": "Dois segundos. Cada um dos dois, do seu lado da plataforma, fez a sua escolha em frente a quatrocentas testemunhas. A fechadura espera, de latão, brilhando de leve na luz de emergência.",
+      "ir": "pp_c10_acende"
+    },
+    "pp_c10_acende": {
+      "tipo": "decisao",
+      "cap": 10,
+      "lugar": "Plataforma da árvore, Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 19h00",
+      "texto": "— Um! — grita Odalys, e a praça inteira, em coro, repete.\n\nSó falta uma coisa, e é a mais simples e a mais difícil: apertar no mesmo segundo.",
+      "pergunta": "Como vocês apertam?",
+      "ir": "pp_c10_luz",
+      "acoes": [
+        {
+          "id": "juntos",
+          "texto": "Olhar um para o outro e apertar no instante em que o outro apertar",
+          "efeitos": {
+            "flag": "apertaram_olhando",
+            "vinculo": 2
+          },
+          "resultado": "Vocês se olham, e as duas chaves giram ao mesmo tempo, sem sinal nenhum, como se uma só mão controlasse os dois pulsos."
+        },
+        {
+          "id": "contar",
+          "texto": "Contar baixinho, os dois, até três, e apertar no três",
+          "efeitos": {
+            "flag": "apertaram_contando",
+            "vinculo": 1
+          },
+          "resultado": "Vocês contam baixinho, em coro, sem combinar, *um, dois, três*, e as duas chaves giram no três, quase juntas, com a diferença de um piscar de olhos que só a árvore vai saber."
+        },
+        {
+          "id": "respirar",
+          "texto": "Esperar uma respiração, a mesma, e apertar na expiração",
+          "efeitos": {
+            "flag": "apertaram_respirando",
+            "vinculo": 2
+          },
+          "resultado": "Vocês esperam. Os dois inspiram, ao mesmo tempo, sem planejar, e expiram. As duas chaves giram na expiração, e o ar sai dos dois juntos como um suspiro de alívio."
+        }
+      ]
+    },
+    "pp_c10_luz": {
+      "tipo": "segue",
+      "cap": 10,
+      "lugar": "Cooper Green",
+      "hora": "Quarta, 24 de dezembro · 19h00",
+      "ir": "pp_c10_manha",
+      "texto": "Por um segundo e meio, nada acontece. É o mesmo segundo e meio da Acendida, ano após ano, aquele em que a cidade inteira prende a respiração. Depois, no alto de uma árvore de doze metros, uma estrela de oito pontas gira, com o motorzinho de relógio de 1987, e acende, uma ponta por vez, em latão e vidro soprado, e depois todas juntas.\n\nA luz desce pela espiral, ramo após ramo, em fios quentes, de baixo para cima, de cima para baixo, em um desenho que ninguém ensaiou, e que nenhuma planilha previu. {{se flag:cedeu_a}}As mil lâmpadas que a nº 8 perdeu não fazem falta: a árvore é mais bonita assim, mais escura nos lugares certos. {{/se}}{{se flag:cedeu_b}}O buraco no ginkgo, que a nº 11 cedeu, virou o lugar onde a luz da estrela cai, e parece sempre ter estado ali. {{/se}}{{se flag:duas_metades}}As duas metades acendem no mesmo instante, e a cidade vê, pela primeira vez, uma árvore de duas casas. {{/se}}\n\nQuatrocentas pessoas fazem um *ooooh* que sobe até o céu limpo. Na primeira fila, a nonna Concetta e a Pó-pó, de mãos dadas, de cobertor, choram do mesmo jeito. Sal Tedeschi, de joelhos, de carta na mão, olha a estrela, e Lily Lau põe a mão no ombro dele, sem pedir licença. Atrás de todos, Odalys, de megafone baixo, esquece pela segunda vez de dar uma ordem.\n\nO transformador da cidade zumbe, uma vez, e aguenta."
+    },
+    "pp_c10_manha": {
+      "tipo": "segue",
+      "cap": 10,
+      "lugar": "Harmon Place",
+      "hora": "Quinta, 25 de dezembro · 07h30",
+      "ir": {
+        "A": "pp_c10_a",
+        "B": "pp_c10_b"
+      },
+      "texto": "Manhã de Natal em Dyker Heights tem um som de neve derretendo, de calha pingando e de ônibus de turismo longe. Pela primeira vez em onze anos, a nº 8 e a nº 11 acordam sem luzes, sem trenó, sem Papai Noel de braço mecânico, sem ginkgo de vidro. A rua inteira está escura, e é a rua mais bonita que a rua já foi.\n\nNo fim de Harmon Place, em Cooper Green, a árvore de doze metros brilha, sozinha, de dia, porque o seu Szymanski prometeu que o transformador agora aguenta, sempre, qualquer coisa que os dois fizerem juntos. No topo, a estrela de oito pontas continua a girar, devagar.\n\nO celular dos dois vibra, no mesmo minuto, em duas casas diferentes."
+    },
+    "pp_c10_a": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "A",
+      "lugar": "Cozinha da nº 8",
+      "hora": "Quinta, 25 de dezembro · 07h40",
+      "texto": "Você desce a escada da nº 8 de meias e encontra a cozinha ocupada: a nonna Concetta, de avental, na frente do fogão a lenha; o seu pai, Sal, de olhos vermelhos, com um envelope aberto ao lado de uma xícara de café; a sua mãe, Angela, de braços cruzados, mas de sorriso; e o Nico, de pijama de dinossauro, comendo biscoito.\n\nEm cima da mesa, três lugares a mais do que o costume. A nonna, sem se virar, diz: *a Lily e a Pó-pó vêm às nove. Trazem dumplings. Eu fiz o pão de ló.*\n\nNo seu celular, uma mensagem de um número que você sabe de cor.",
+      "acoes": [
+        {
+          "id": "responder",
+          "texto": "Responder agora, sem pensar, o que você sente",
+          "ir": "pp_c10_final",
+          "efeitos": {
+            "flag": "a_respondeu_manha",
+            "vinculo": 1
+          },
+          "resultado": "Você escreve, com o polegar, sem apagar nenhuma letra: *Feliz Natal. Eu quero ver você hoje, e amanhã, e depois de amanhã. Se você for para Ithaca, eu pego o ônibus de seis horas em fevereiro. E em março. E eu não vou fazer planilha.* Envia. Pela primeira vez, você não confere duas vezes."
+        },
+        {
+          "id": "ir_la",
+          "texto": "Largar o café, pôr o casaco e atravessar a rua até a nº 11",
+          "ir": "pp_c10_final",
+          "efeitos": {
+            "flag": "a_atravessou_manha",
+            "vinculo": 2
+          },
+          "resultado": "Você veste o casaco por cima do pijama, calça as botas do seu pai e atravessa Harmon Place, de meias molhadas, até a varanda da nº 11. Antes que você bata, a porta se abre. A pessoa do outro lado está de pijama também, de cabelo bagunçado, com o celular na mão e uma mensagem escrita pela metade."
+        },
+        {
+          "id": "esperar",
+          "texto": "Deixar a mensagem sem resposta até a hora do almoço, e aproveitar o Natal em casa",
+          "ir": "pp_c10_final",
+          "efeitos": {
+            "flag": "a_esperou_manha"
+          },
+          "resultado": "Você põe o celular de lado, de tela para baixo, e se senta à mesa. Come uma fatia de pão de ló. Ouve o seu pai ler, em voz alta, uma carta de treze anos. A resposta pode esperar uma manhã. Hoje, a coisa que precisava de você está dentro da cozinha."
+        }
+      ]
+    },
+    "pp_c10_b": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "B",
+      "lugar": "Varanda da nº 11",
+      "hora": "Quinta, 25 de dezembro · 07h40",
+      "texto": "Você acorda na nº 11 com a luz de um sol de dezembro por cima do ginkgo nu, o caderno de capa verde aberto na mesa, e a Pó-pó, de xale, sentada ao lado, mexendo uma tigela de congee de gengibre.\n\n*A Lily e a Concetta combinaram um café da manhã*, ela diz, sem olhar. *Eu vou fingir que me surpreendi.*\n\nNo celular, dois e-mails. O primeiro, de Cornell, com o assunto *Decisão de Admissão Antecipada*. O segundo, de um número que você sabe de cor: uma mensagem curta, sem ponto final.",
+      "acoes": [
+        {
+          "id": "abrir_junto",
+          "texto": "Atravessar a rua com o e-mail fechado e abrir junto com {{A.nome}}",
+          "ir": "pp_c10_final",
+          "efeitos": {
+            "flag": "b_abriu_junto",
+            "vinculo": 2
+          },
+          "resultado": "Você atravessa a rua de botas, com o celular fechado na mão, até a varanda da nº 8, onde a porta se abre antes de você bater. Vocês sentam nos degraus de entrada, lado a lado, em frente à árvore que brilha de dia, e você estende o telefone. *Abre você*, diz {{A.nome}}, *e eu leio junto.* O e-mail diz o que você esperava e o que você tinha medo de esperar, e fica ali, aberto, entre os dois, sem que nenhum dos dois precise fingir nada."
+        },
+        {
+          "id": "abrir_sozinho",
+          "texto": "Abrir o e-mail agora, na varanda, e contar depois",
+          "ir": "pp_c10_final",
+          "efeitos": {
+            "flag": "b_abriu_sozinho"
+          },
+          "resultado": "Você abre. O e-mail é curto, formal, com um parágrafo de parabéns e uma data limite de resposta que cai em maio. Você lê duas vezes, e o que sente não é alegria nem medo: é o contrário de fugir. Você tem tempo. Pela primeira vez, tem tempo para decidir olhando para alguém."
+        },
+        {
+          "id": "nao_abrir",
+          "texto": "Não abrir o e-mail hoje: Natal é Natal, e a decisão é para depois",
+          "ir": "pp_c10_final",
+          "efeitos": {
+            "flag": "b_nao_abriu",
+            "vinculo": 1
+          },
+          "resultado": "Você põe o celular de lado. O e-mail fica ali, fechado, com a palavra *Decisão* no assunto, e a Pó-pó, sem ter visto nada, murmura: *quando se está com a casa cheia, a resposta pode esperar até depois do pão de ló.* Pela primeira vez, a decisão de não decidir não é fuga: é um jeito de ficar."
+        }
+      ]
+    },
+    "pp_c10_final": {
       "tipo": "final",
-      "cap": 8,
-      "texto": "Fim do trecho escrito até agora (rascunho)."
+      "cap": 10,
+      "lugar": "Harmon Place",
+      "hora": "Quinta, 25 de dezembro · 09h00",
+      "finais": [
+        {
+          "se": "vinc>=14 && flag:beijo_andaime",
+          "texto": "Às nove em ponto, a nº 8 e a nº 11, pela primeira vez em doze anos, têm a mesma mesa. A nonna Concetta partiu o pão de ló em dezesseis fatias, a Pó-pó trouxe os dumplings, Sal Tedeschi e Lily Lau trocaram, numa cozinha, um aperto de mão que durou mais que o necessário. Os dois do projeto, de pijama e de botas, chegaram juntos, cada um por uma porta, e a mesa abriu dois lugares lado a lado, sem que ninguém precisasse dizer o motivo.\n\nDo outro lado da janela, a árvore de doze metros brilha de dia. A estrela gira, devagar, com o motor de 1987. Debaixo dela, no banco de pedra, ninguém.\n\nCornell responde em maio, ou em abril, ou antes. {{A.nome}} e {{B.nome}} não sabem se vão para Ithaca, se ficam, se um segue o outro, se ninguém segue. Mas o beijo do andaime já aconteceu, a árvore já acendeu, e há, em um bairro do Brooklyn, duas casas que, em 2026, vão enfeitar a mesma rua, juntas.\n\n*Pisca-pisca*, diz Mei, de nove anos, olhando a estrela pela janela, com a boca cheia de dumpling. E a rua inteira, sem combinar, repete."
+        },
+        {
+          "se": "vinc>=8",
+          "texto": "Às nove, a mesa da nº 8 tem dezesseis lugares e quinze pessoas, e o décimo sexto fica vazio por um segundo, até alguém, devagar, puxar a cadeira. A nonna Concetta e a Pó-pó trocam receitas. Sal e Lily falam de transformador. Os dois do projeto, sentados lado a lado, sem pressa, descobrem que a coisa mais difícil, em um dia de Natal, é não dizer nada e ficar.\n\nDo lado de fora, a árvore brilha, de dia, de doze metros, de estrela. Cornell responde, em algum momento, sem pressa. {{A.nome}} e {{B.nome}} não sabem o que isso muda, e sabem, os dois, que a decisão é de dois.\n\n*Feliz Natal*, diz alguém, e a mesa inteira responde, em duas línguas e três sotaques."
+        },
+        {
+          "texto": "A árvore acendeu. Por sete noites, duas famílias que não se falavam fizeram uma coisa juntas, e o transformador, a cidade e a estrela de 1987 aguentaram. O que existe entre {{A.nome}} e {{B.nome}} ainda é incerto: uma amizade de infância que quase virou outra coisa, uma carta de Cornell por abrir, uma planilha dobrada numa gaveta.\n\nNão é um final feliz de filme. É um começo de manhã: a rua escura, a árvore acesa, e duas casas com as janelas abertas, uma em frente à outra, como sempre estiveram."
+        }
+      ]
     }
   }
 }

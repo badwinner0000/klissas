@@ -9,7 +9,7 @@ for f in sorted(glob.glob(os.path.join(base, 'cap*.py')), key=lambda x: int(re.s
         nos[k] = v
 ult = max(n['cap'] for n in nos.values())
 # remove o final provisório se a história já tem final de verdade
-if 'pp_final' in nos: pass
+if any(n['tipo']=='final' for n in nos.values()): pass
 else:
     nos['pp_rascunho_fim'] = dict(tipo='final', cap=ult, texto='Fim do trecho escrito até agora (rascunho).')
 livro = dict(
