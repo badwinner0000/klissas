@@ -1,5 +1,6 @@
 # Monta content/livros/pisca-pisca.json a partir dos capítulos. Uso: python3 scripts/livros/pisca-pisca/montar.py
-import json, importlib.util, glob, os, re
+import json, importlib.util, glob, os, re, sys
+sys.path.insert(0, os.path.dirname(__file__))
 base = os.path.dirname(__file__)
 nos = {}
 for f in sorted(glob.glob(os.path.join(base, 'cap*.py')), key=lambda x: int(re.search(r'cap(\d+)', x).group(1))):
@@ -7,6 +8,16 @@ for f in sorted(glob.glob(os.path.join(base, 'cap*.py')), key=lambda x: int(re.s
     for k, v in m.NOS.items():
         assert k not in nos, f'id duplicado: {k}'
         nos[k] = v
+from extras import EXTRAS
+for nid, frases in EXTRAS.items():
+    n = nos[nid]
+    bloco = '\n\n' + '\n\n'.join(frases)
+    if n['tipo'] == 'final':
+        for f in n['finais']: f['texto'] += bloco
+    elif n['tipo'] == 'fim':
+        n['texto'] += bloco
+    else:
+        n['texto'] += bloco
 ult = max(n['cap'] for n in nos.values())
 # remove o final provisório se a história já tem final de verdade
 if any(n['tipo']=='final' for n in nos.values()): pass
