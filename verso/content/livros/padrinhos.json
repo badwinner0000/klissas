@@ -658,7 +658,7 @@
       "lugar": "Balsa rápida · banco do fundo",
       "hora": "Sábado, 10 de junho · 16h10",
       "tipo": "dialogo",
-      "texto": "Dois lugares. Um apoio de braço só. A máquina de café quebrada fazendo um barulho de quem vai morrer a qualquer momento. Duas horas de travessia, porque a neblina começa a fechar em cima do Sound e a balsa rápida, hoje, não vai ser rápida.",
+      "texto": "Dois lugares. Um apoio de braço só. A máquina de café quebrada fazendo um barulho de quem vai morrer a qualquer momento. Duas horas de travessia, porque a neblina começa a fechar em cima do Sound e a balsa rápida, hoje, não vai ser rápida.\n\n{{se eu:A && flag:acenou}}O sorriso de cerimonialista ainda está no seu rosto, de plantão, sem ninguém para quem trabalhar.{{/se}}\n\n{{se eu:B && flag:cumprimentou}}O caderno preto está ao lado do seu cotovelo, o mesmo que subiu um palmo na fila e desceu sem dizer nada.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -808,7 +808,7 @@
         "pippa"
       ],
       "tipo": "segue",
-      "texto": "A neblina fecha. A balsa reduz para a velocidade de um barco a remo, e uma voz no alto-falante pede desculpas pelo *pequeno atraso devido às condições*.\n\nO celular de {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} toca. É a Pippa, de novo, com um e-mail novo da Courtney, que lê no viva-voz, porque o sinal está ruim e porque a Pippa não sabe ler e-mail sem dramatizar:\n\n— *P.S.: O bufê também não vai. O Marco vem comigo, obviamente. Os cozinheiros dele estão de férias. A lagosta estava encomendada no nome dele e foi cancelada. A pasta do casamento está com {{se A.ela}}a madrinha{{senao}}o padrinho da noiva{{/se}} e a pasta do noivo, com a lista de música e os convidados do lado Okoro, está com {{se B.ela}}a madrinha do noivo{{senao}}o padrinho{{/se}}. Vocês vão se sair maravilhosamente. Beijos, C.*\n\nSilêncio no banco do fundo. A máquina de café dá um último gemido e para de vez.\n\nDois pares de olhos baixam ao mesmo tempo. Uma pasta de couro de quatro dedos de grossura. Um caderno quadriculado de capa preta, que dentro, no fim, tem uma pasta de plástico com a playlist da festa e cento e doze nomes do lado Okoro.\n\nA balsa apita na neblina. Lá na frente, sem que se veja ainda, Nantucket.",
+      "texto": "A neblina fecha. A balsa reduz para a velocidade de um barco a remo, e uma voz no alto-falante pede desculpas pelo *pequeno atraso devido às condições*.\n\nO celular de {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} toca. É a Pippa, de novo, com um e-mail novo da Courtney, que lê no viva-voz, porque o sinal está ruim e porque a Pippa não sabe ler e-mail sem dramatizar:\n\n— *P.S.: O bufê também não vai. O Marco vem comigo, obviamente. Os cozinheiros dele estão de férias. A lagosta estava encomendada no nome dele e foi cancelada. A pasta do casamento está com {{se A.ela}}a madrinha{{senao}}o padrinho da noiva{{/se}} e a pasta do noivo, com a lista de música e os convidados do lado Okoro, está com {{se B.ela}}a madrinha do noivo{{senao}}o padrinho{{/se}}. Vocês vão se sair maravilhosamente. Beijos, C.*\n\nSilêncio no banco do fundo. A máquina de café dá um último gemido e para de vez.\n\nDois pares de olhos baixam ao mesmo tempo. Uma pasta de couro de quatro dedos de grossura. Um caderno quadriculado de capa preta, que dentro, no fim, tem uma pasta de plástico com a playlist da festa e cento e doze nomes do lado Okoro.\n\nA balsa apita na neblina. Lá na frente, sem que se veja ainda, Nantucket.\n\n{{se eu:A && flag:sabe_courtney}}A Pippa pula a parte que você já sabe, e a notícia, que podia vir inteira, chega pela metade.{{/se}}",
       "ir": "pd_c1_neblina2"
     },
     "pd_c1_neblina2": {
@@ -1360,7 +1360,7 @@
         "funmi"
       ],
       "tipo": "segue",
-      "texto": "Dez da manhã. A balsa lenta encosta no Steamboat Wharf, e da prancha, antes de todo mundo, de óculos escuros de estrela de cinema, lenço Hermès na cabeça e um vestido de linho amarelo, desce a Rosa Castellano, já chorando. Atrás dela, a tia Concetta, de preto, com uma bolsa térmica de onde sai um cheiro inconfundível de berinjela à parmegiana.\n\n— Filh{{A.o_a}}! — A Rosa abraça {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} como quem abraça um sobrevivente de naufrágio. — Ah, meu Deus, olha esse cabelo, foi a umidade, eu sabia, eu disse para a Gemma, *Nantucket tem umidade*. — Ela vira. Vê {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}. Para de chorar na hora. — Ah. Você.\n\n{{se flag:contou_maes}}A notícia sai ali mesmo, no cais, como ficou combinado ontem à noite: a Courtney, o Marco, Portugal, a lagosta cancelada. A tia Concetta aperta a bolsa térmica contra o peito.\n\nA Rosa escuta tudo de boca aberta. Fecha a boca. Abre de novo.\n\n— Então quem está organizando o casamento da minha filha?\n\nNinguém precisa responder. No cais sobraram duas pessoas, uma pasta e um caderno.\n\nA Rosa olha de um para o outro. E então, para surpresa de todo mundo, para de chorar, segura o rosto de {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} com as duas mãos, e diz, baixinho:\n\n— Graças a Deus. Eu nunca gostei daquela Courtney. Ela tinha unha de gel.{{senao}}— A Courtney? — pergunta a Rosa, olhando em volta. — Cadê a Courtney?\n\nA resposta combinada ontem à noite sai sem ensaio: em reunião, com o bufê.\n\nA Rosa aceita. A tia Concetta, que não fala inglês desde 1974 por opção, olha para {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} de cima a baixo e diz, em italiano, uma palavra só. *Bugiard{{A.o_a}}.* Mentiros{{A.o_a}}.{{/se}}\n\nDuas da tarde. A balsa rápida. A juíza Funmi Okoro desce a prancha sozinha, sem óculos escuros, de vestido de algodão azul-marinho e um chapéu de palha simples, com uma mala de mão que ela mesma carrega e não deixa ninguém pegar.\n\nEla olha para {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}. Põe a mão no {{se eu:B}}seu rosto{{senao}}rosto de {{B.ref}}{{/se}}, um segundo só. Tira.\n\nDepois olha para {{se eu:A}}você{{senao}}{{A.ref}}{{/se}}.\n\n— {{se A.ela}}A madrinha{{senao}}O padrinho da noiva{{/se}} — ela diz. Não é pergunta.\n\n{{se flag:escondeu_maes}}No caminho até a Gull House, a pé, a juíza não fala. Na varanda das hortênsias, para. Olha a tabela da Pippa, colada no vidro da janela da cozinha, com a coluna *QUEM*.\n\n— A sra. Vance não está em reunião — ela diz. — A sra. Vance está em Portugal. — Ela tira o chapéu. — Vocês deviam ter me contado no cais. Eu teria ajudado. Agora eu vou ajudar mesmo assim, mas vou lembrar. — Ela entra, e para na porta, sem virar. — Eu não vou a casamento desde junho de 1989. Eu vim porque é dele. Não me façam me arrepender.\n\nNove minutos. O Barnaby, da porta, levanta um dedo para a Pippa. A Pippa, de dentro da cozinha, paga um dólar.{{senao}}No caminho até a Gull House, a pé, a juíza não fala. Na varanda, a Rosa vem correndo, de lenço Hermès, com o mapa de mesas na mão.\n\n— Funmi! A mesa sete! Você não respondeu a minha mensagem!\n\n— Eu não respondo mensagem às três da manhã, Rosa.\n\n— E a dança das mães? Com os filhos? A gente tem que ensaiar!\n\nA juíza Funmi Okoro olha para a Rosa por cima dos óculos de leitura, que apareceram na ponta do nariz sem ninguém ver de onde vieram.\n\n— Eu não danço em casamento. Eu não vou a casamento desde junho de 1989. — Ela entra na pousada. — Eu vim porque é dele.{{/se}}",
+      "texto": "Dez da manhã. A balsa lenta encosta no Steamboat Wharf, e da prancha, antes de todo mundo, de óculos escuros de estrela de cinema, lenço Hermès na cabeça e um vestido de linho amarelo, desce a Rosa Castellano, já chorando. Atrás dela, a tia Concetta, de preto, com uma bolsa térmica de onde sai um cheiro inconfundível de berinjela à parmegiana.\n\n— Filh{{A.o_a}}! — A Rosa abraça {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} como quem abraça um sobrevivente de naufrágio. — Ah, meu Deus, olha esse cabelo, foi a umidade, eu sabia, eu disse para a Gemma, *Nantucket tem umidade*. — Ela vira. Vê {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}. Para de chorar na hora. — Ah. Você.\n\n{{se flag:contou_maes}}A notícia sai ali mesmo, no cais, como ficou combinado ontem à noite: a Courtney, o Marco, Portugal, a lagosta cancelada. A tia Concetta aperta a bolsa térmica contra o peito.\n\nA Rosa escuta tudo de boca aberta. Fecha a boca. Abre de novo.\n\n— Então quem está organizando o casamento da minha filha?\n\nNinguém precisa responder. No cais sobraram duas pessoas, uma pasta e um caderno.\n\nA Rosa olha de um para o outro. E então, para surpresa de todo mundo, para de chorar, segura o rosto de {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} com as duas mãos, e diz, baixinho:\n\n— Graças a Deus. Eu nunca gostei daquela Courtney. Ela tinha unha de gel.{{senao}}— A Courtney? — pergunta a Rosa, olhando em volta. — Cadê a Courtney?\n\nA resposta combinada ontem à noite sai sem ensaio: em reunião, com o bufê.\n\nA Rosa aceita. A tia Concetta, que não fala inglês desde 1974 por opção, olha para {{se eu:A}}você{{senao}}{{A.ref}}{{/se}} de cima a baixo e diz, em italiano, uma palavra só. *Bugiard{{A.o_a}}.* Mentiros{{A.o_a}}.{{/se}}\n\nDuas da tarde. A balsa rápida. A juíza Funmi Okoro desce a prancha sozinha, sem óculos escuros, de vestido de algodão azul-marinho e um chapéu de palha simples, com uma mala de mão que ela mesma carrega e não deixa ninguém pegar.\n\nEla olha para {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}. Põe a mão no {{se eu:B}}seu rosto{{senao}}rosto de {{B.ref}}{{/se}}, um segundo só. Tira.\n\nDepois olha para {{se eu:A}}você{{senao}}{{A.ref}}{{/se}}.\n\n— {{se A.ela}}A madrinha{{senao}}O padrinho da noiva{{/se}} — ela diz. Não é pergunta.\n\n{{se flag:escondeu_maes}}No caminho até a Gull House, a pé, a juíza não fala. Na varanda das hortênsias, para. Olha a tabela da Pippa, colada no vidro da janela da cozinha, com a coluna *QUEM*.\n\n— A sra. Vance não está em reunião — ela diz. — A sra. Vance está em Portugal. — Ela tira o chapéu. — Vocês deviam ter me contado no cais. Eu teria ajudado. Agora eu vou ajudar mesmo assim, mas vou lembrar. — Ela entra, e para na porta, sem virar. — Eu não vou a casamento desde junho de 1989. Eu vim porque é dele. Não me façam me arrepender.\n\nNove minutos. O Barnaby, da porta, levanta um dedo para a Pippa. A Pippa, de dentro da cozinha, paga um dólar.{{senao}}No caminho até a Gull House, a pé, a juíza não fala. Na varanda, a Rosa vem correndo, de lenço Hermès, com o mapa de mesas na mão.\n\n— Funmi! A mesa sete! Você não respondeu a minha mensagem!\n\n— Eu não respondo mensagem às três da manhã, Rosa.\n\n— E a dança das mães? Com os filhos? A gente tem que ensaiar!\n\nA juíza Funmi Okoro olha para a Rosa por cima dos óculos de leitura, que apareceram na ponta do nariz sem ninguém ver de onde vieram.\n\n— Eu não danço em casamento. Eu não vou a casamento desde junho de 1989. — Ela entra na pousada. — Eu vim porque é dele.{{/se}}\n\n{{se flag:mentiu_rosa}}A Rosa abraça e lembra, no meio do abraço, que ontem à noite ouviu pelo telefone que estava tudo sob controle. Olha em volta procurando o controle.{{/se}}",
       "ir": "pd_c2_almoco",
       "efeitos": {
         "pista": "pd_1989"
@@ -3723,7 +3723,7 @@
       "lugar": "Balsa rápida · Nantucket Sound",
       "hora": "Sábado, 10 de junho · 16h05",
       "tipo": "segue",
-      "texto": "A balsa rápida tem dois andares, trezentos lugares e, nesta tarde de sábado, trezentas e duas pessoas, contando dois labradores e um bebê de colo. O único banco com espaço no andar de baixo é o do fundo, de dois lugares, encostado na máquina de café quebrada.\n\nNum dos lugares, uma pasta de couro de quatro dedos de grossura. No corredor, de pé, um terno numa capa de plástico pendurado num ombro.\n\nA balsa apita. O motor ronca. O chão vibra. Entre a pasta e o terno, dois anos de versões diferentes da mesma noite.\n\n{{se (flag:fingiu) || (flag:mandou_msg)}}Num dos dois celulares, a tela ainda mostra a mensagem das três e cinquenta e sete: *Eu estou vendo você fingindo que não me viu.*\n\n{{/se}}Uma senhora com um labrador molhado pede licença para passar, e o cachorro resolve a questão do jeito dele: senta em cima do pé de quem está de pé e não sai mais. A pasta vai para um colo. Sobra um lugar no banco. Só um.",
+      "texto": "A balsa rápida tem dois andares, trezentos lugares e, nesta tarde de sábado, trezentas e duas pessoas, contando dois labradores e um bebê de colo. O único banco com espaço no andar de baixo é o do fundo, de dois lugares, encostado na máquina de café quebrada.\n\nNum dos lugares, uma pasta de couro de quatro dedos de grossura. No corredor, de pé, um terno numa capa de plástico pendurado num ombro.\n\nA balsa apita. O motor ronca. O chão vibra. Entre a pasta e o terno, dois anos de versões diferentes da mesma noite.\n\n{{se (flag:fingiu) || (flag:mandou_msg)}}Num dos dois celulares, a tela ainda mostra a mensagem das três e cinquenta e sete: *Eu estou vendo você fingindo que não me viu.*\n\n{{/se}}Uma senhora com um labrador molhado pede licença para passar, e o cachorro resolve a questão do jeito dele: senta em cima do pé de quem está de pé e não sai mais. A pasta vai para um colo. Sobra um lugar no banco. Só um.\n\n{{se eu:A && flag:recado_gemma}}*Seja boazinha*, a voz da Gemma repete no recado que você ouviu de novo, e a balsa, com a máquina de café quebrada e um banco só, não ajuda em nada.{{/se}}",
       "ir": "pd_c1_farpas"
     },
     "pd_c1_tabela": {
@@ -3735,7 +3735,7 @@
         "barnaby"
       ],
       "tipo": "segue",
-      "texto": "A cozinha da Gull House tem uma mesa comprida de pinho, um fogão de seis bocas grande demais para a casa e uma lousa verde de escola pendurada ao lado da geladeira. A Pippa prende a tabela dela na parede com fita crepe. A tabela tem cores e legenda.\n\n— Eu vou falar tudo de uma vez, porque se eu parar eu choro — ela avisa. — Sábado que vem, dia dezessete, cinco e meia da tarde, Nantucket Yacht Club. Cento e quarenta convidados. Noiva: Gemma Castellano, vinte e nove anos. — A caneta aponta para {{A.ref}}. — Irmã caçula. Noivo: Tunde Okoro, trinta e um, engenheiro de som. — A caneta vira para {{B.ref}}. — Irmão caçula. Os dois estão num retiro de silêncio em Vermont, sem celular, e só saem na quinta.\n\nEla respira.\n\n— Mãe da noiva: a dona Rosa, chega amanhã na balsa das dez, com uma tia. Mãe do noivo: a juíza Funmi Okoro, chega amanhã na das duas, sozinha. As duas acham que a Courtney Vance está aqui com um cronograma. — Outra respiração. — O que a gente tem: clube pago, banda confirmada, flor. — Ela olha para o Barnaby, que finge que flor não é com ele. — O que a gente não tem: cerimonialista, bufê, lagosta. E esta coluna aqui.\n\nA coluna se chama *QUEM*. Está vazia de cima a baixo.\n\n— Faltou uma linha — diz o Barnaby, mexendo uma panela, de costas. — O que esses dois têm um com o outro.\n\n— Isso não cabe na tabela.\n\n— Então arruma uma tabela maior.",
+      "texto": "A cozinha da Gull House tem uma mesa comprida de pinho, um fogão de seis bocas grande demais para a casa e uma lousa verde de escola pendurada ao lado da geladeira. A Pippa prende a tabela dela na parede com fita crepe. A tabela tem cores e legenda.\n\n— Eu vou falar tudo de uma vez, porque se eu parar eu choro — ela avisa. — Sábado que vem, dia dezessete, cinco e meia da tarde, Nantucket Yacht Club. Cento e quarenta convidados. Noiva: Gemma Castellano, vinte e nove anos. — A caneta aponta para {{A.ref}}. — Irmã caçula. Noivo: Tunde Okoro, trinta e um, engenheiro de som. — A caneta vira para {{B.ref}}. — Irmão caçula. Os dois estão num retiro de silêncio em Vermont, sem celular, e só saem na quinta.\n\nEla respira.\n\n— Mãe da noiva: a dona Rosa, chega amanhã na balsa das dez, com uma tia. Mãe do noivo: a juíza Funmi Okoro, chega amanhã na das duas, sozinha. As duas acham que a Courtney Vance está aqui com um cronograma. — Outra respiração. — O que a gente tem: clube pago, banda confirmada, flor. — Ela olha para o Barnaby, que finge que flor não é com ele. — O que a gente não tem: cerimonialista, bufê, lagosta. E esta coluna aqui.\n\nA coluna se chama *QUEM*. Está vazia de cima a baixo.\n\n— Faltou uma linha — diz o Barnaby, mexendo uma panela, de costas. — O que esses dois têm um com o outro.\n\n— Isso não cabe na tabela.\n\n— Então arruma uma tabela maior.\n\n{{se eu:A && flag:cronograma}}Você olha a tabela como olhou a pasta na fila: item por item. A lista dos lagosteiros já existe na sua cabeça, na ordem em que vai ligar, e a coluna *QUEM* é a única linha que não tem solução de bolso.{{/se}}",
       "ir": "pd_c1_noite"
     },
     "pd_c1_jantar": {
@@ -3747,7 +3747,7 @@
         "barnaby"
       ],
       "tipo": "dialogo",
-      "texto": "Nove da noite. O Barnaby serve ensopado de peixe sem perguntar se alguém quer, em pratos fundos que não combinam entre si. A Pippa espera todo mundo dar a primeira colherada.\n\n— Tá, eu preciso perguntar — ela diz. — A Gemma me falou que vocês *já se conhecem*. Com aquela voz. De onde?\n\nO Barnaby não levanta os olhos do prato. Mas para de mastigar.",
+      "texto": "Nove da noite. O Barnaby serve ensopado de peixe sem perguntar se alguém quer, em pratos fundos que não combinam entre si. A Pippa espera todo mundo dar a primeira colherada.\n\n— Tá, eu preciso perguntar — ela diz. — A Gemma me falou que vocês *já se conhecem*. Com aquela voz. De onde?\n\nO Barnaby não levanta os olhos do prato. Mas para de mastigar.\n\n{{se eu:B && flag:frase2}}No caderno preto, debaixo da mesa, a segunda frase do discurso espera, a lápis, para ser riscada ou não.{{/se}}\n\n{{se flag:barnaby_flores}}O Barnaby não comenta as hortênsias. Mas a maior concha de ensopado, como quem não está fazendo nada, vai para o prato de quem carregou vaso.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -3925,7 +3925,7 @@
         "barnaby"
       ],
       "tipo": "decisao",
-      "texto": "Onze da noite. A cozinha cheira a cebola e a café requentado. A tabela da Pippa já tem algumas linhas preenchidas na coluna *QUEM*{{se flag:achou_dory}}, uma delas com *Dory Barros, Madaket, 6h*{{/se}}{{se flag:clausula_clube}}, e outra, em vermelho, com *Cláusula 14.c, quarta, 17h30*{{/se}}.\n\nAmanhã, domingo, as mães chegam. A Rosa na balsa das dez, com a tia Concetta. A juíza Funmi Okoro na das duas, sozinha. As duas esperam encontrar a Courtney Vance, da Vance & Co., com um sorriso e um cronograma.\n\nA Pippa, de pijama de flamingo, segura uma caneca de chá e olha de um para o outro.\n\n— Então — ela diz. — A gente conta para as mães? Ou não conta?",
+      "texto": "Onze da noite. A cozinha cheira a cebola e a café requentado. A tabela da Pippa já tem algumas linhas preenchidas na coluna *QUEM*{{se flag:achou_dory}}, uma delas com *Dory Barros, Madaket, 6h*{{/se}}{{se flag:clausula_clube}}, e outra, em vermelho, com *Cláusula 14.c, quarta, 17h30*{{/se}}.\n\nAmanhã, domingo, as mães chegam. A Rosa na balsa das dez, com a tia Concetta. A juíza Funmi Okoro na das duas, sozinha. As duas esperam encontrar a Courtney Vance, da Vance & Co., com um sorriso e um cronograma.\n\nA Pippa, de pijama de flamingo, segura uma caneca de chá e olha de um para o outro.\n\n— Então — ela diz. — A gente conta para as mães? Ou não conta?\n\n{{se eu:B && flag:ligou_funmi}}Você sabe uma coisa que a tabela da Pippa não sabe: a sua mãe não vai responder à mensagem da mesa sete, nem hoje, nem amanhã.{{/se}}\n\n{{se eu:B && flag:ouviu_tunde}}O recado do Tunde continua no seu bolso, a dez centímetros de uma decisão que ninguém pediu para você tomar.{{/se}}\n\n{{se flag:barnaby_viu}}Na pia, o Barnaby não perguntou nada a quem ficou na varanda ouvindo o mesmo recado duas vezes. Vindo dele, isso é uma pergunta.{{/se}}",
       "acoes": [
         {
           "id": "o1",
@@ -7174,7 +7174,6 @@
   "escolhasMortasToleradas": [
     "a_espera",
     "a_ouviu_tunde",
-    "acenou",
     "arenque",
     "assobio",
     "astaxantina",
@@ -7185,8 +7184,6 @@
     "b_silencio_cais",
     "b_vaga_ilha",
     "banda_playlist",
-    "barnaby_flores",
-    "barnaby_viu",
     "bilhete_vestido",
     "borra_cafe",
     "brinde_gemma",
@@ -7209,8 +7206,6 @@
     "cobertor",
     "conduziu",
     "covalente",
-    "cronograma",
-    "cumprimentou",
     "dez_minutos",
     "dica_pike",
     "discurso_ajuda",
@@ -7223,7 +7218,6 @@
     "estufa_torta",
     "falou_graham",
     "final_ruptura",
-    "frase2",
     "funana_ok",
     "funana_torto",
     "funmi_cardiga",
@@ -7244,18 +7238,15 @@
     "grupo_alunos",
     "lagosta_limpa",
     "leu_planod",
-    "ligou_funmi",
     "luzes_salvas",
     "medo_barco",
     "mentiu_pippa",
-    "mentiu_rosa",
     "mentiu_rosa2",
     "mesa7",
     "noite3_nao",
     "noite6_nao",
     "olhou4",
     "ouviu_riso",
-    "ouviu_tunde",
     "pasta_seca",
     "pediu_graham",
     "perdeu_newport",
@@ -7267,14 +7258,12 @@
     "puxou_armadilha",
     "quase_pippa",
     "quase_rosa",
-    "recado_gemma",
     "regra_mole",
     "releu_regra",
     "repertorio",
     "rosa_desconfia",
     "rosa_funmi",
     "rosa_hortensia",
-    "sabe_courtney",
     "sabe_novembro",
     "salvou_mapa",
     "sem_pasta",

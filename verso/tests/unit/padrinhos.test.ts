@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { lerBruto, lerLivro } from '../../src/content/carregar';
 import { lintarBruto } from '../../src/engine/lint';
@@ -6,6 +7,39 @@ import { criarRng } from '../../src/engine/rng';
 import { GENEROS, POLITICAS, jogadoresDe, jogar, simular } from '../../src/engine/simular';
 
 const livro = () => lerLivro('padrinhos');
+
+describe('consequências das escolhas (antes mortas)', () => {
+  const arq = JSON.parse(readFileSync(new URL('../../scripts/migracao/consequencias-padrinhos.json', import.meta.url), 'utf8')) as {
+    itens: { flag: string; no: string; texto: string; privadoDe?: 'A' | 'B' }[];
+  };
+  const l = livro();
+  const vistos: Record<'A' | 'B', string> = { A: '', B: '' };
+  for (let seed = 1; seed <= 90; seed++) {
+    const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, 'ambos', criarRng(seed));
+    vistos.A += p.textos.A.join('\n').replace(/\*/g, '');
+    vistos.B += p.textos.B.join('\n').replace(/\*/g, '');
+  }
+  const render = (t: string) => t.replace(/\*/g, '');
+  it('nenhuma flag consequente continua morta', () => {
+    const baseline = new Set(l.escolhasMortasToleradas);
+    for (const it of arq.itens) expect(baseline.has(it.flag), it.flag).toBe(false);
+  });
+  it('reação privada: aparece para quem fez a escolha e NUNCA para o outro jogador', () => {
+    const chave = (t: string) => render(t).slice(0, 40);
+    for (const it of arq.itens.filter((x) => x.privadoDe)) {
+      const dono = it.privadoDe!;
+      const outro = dono === 'A' ? 'B' : 'A';
+      expect(vistos[outro].includes(chave(it.texto)), `${it.flag} vazou para ${outro}`).toBe(false);
+      expect(vistos[dono].includes(chave(it.texto)), `${it.flag} nunca apareceu para ${dono} em 90 partidas`).toBe(true);
+    }
+  });
+  it('reação pública aparece para os dois', () => {
+    const chave = (t: string) => render(t).slice(0, 40);
+    for (const it of arq.itens.filter((x) => !x.privadoDe)) {
+      expect(vistos.A.includes(chave(it.texto)) || vistos.B.includes(chave(it.texto)), `${it.flag} nunca apareceu`).toBe(true);
+    }
+  });
+});
 
 describe('Padrinho e Madrinha (livro migrado)', () => {
   it('lint: zero erros (avisos de baseline e de cena curta são tolerados)', () => {

@@ -566,6 +566,33 @@ const livro = {
   inicio,
   nos,
 };
+
+// ───────────── consequências: escolhas que o original gravava e nenhuma cena lia ─────────────
+{
+  const arq = JSON.parse(readFileSync(new URL('./consequencias-padrinhos.json', import.meta.url), 'utf8'));
+  const lista = (v) => (v === undefined ? [] : Array.isArray(v) ? v : [v]);
+  const dst = (d) => (typeof d === 'string' ? [d] : Array.isArray(d) ? d.flatMap((x) => dst(x.ir)) : d && typeof d === 'object' ? Object.values(d) : []);
+  const saidas = (n) => n.tipo === 'consentimento' ? [n.irAvancou, n.irSem] : n.tipo === 'final' ? [] : n.tipo === 'solo' ? [...dst(n.ir), ...n.acoes.flatMap((a) => (a.ir ? [a.ir] : []))] : dst(n.ir);
+  const setadoEm = (flag) => Object.entries(nos).filter(([, n]) => [n.efeitos, ...(n.efeitosSe ?? []).map((x) => x.efeitos), ...(n.acoes ?? []).flatMap((a) => [a.efeitos, ...(a.variantes ?? []).map((v) => v.efeitos)]), ...(n.turnos ?? []).flatMap((t) => t.opcoes.map((o) => o.efeitos))].some((e) => lista(e?.flag).includes(flag))).map(([id]) => id);
+  const alcanca = (de, para) => { const v = new Set([de]); const f = [de]; while (f.length) { const x = f.pop(); if (x === para) return true; for (const y of saidas(nos[x])) if (!v.has(y)) { v.add(y); f.push(y); } } return false; };
+  const usados = new Set();
+  for (const it of arq.itens) {
+    const alvo = nos[it.no];
+    if (!alvo || typeof alvo.texto !== 'string') { problemas.push(`consequência ${it.flag}: cena-alvo inválida (${it.no})`); continue; }
+    const origem = setadoEm(it.flag);
+    if (!origem.length) { problemas.push(`consequência ${it.flag}: a flag não é gravada em nenhuma cena`); continue; }
+    if (!origem.some((o) => o !== it.no && alcanca(o, it.no))) problemas.push(`consequência ${it.flag}: ${it.no} não vem DEPOIS da escolha (${origem.join(', ')})`);
+    if (it.privadoDe) {
+      if (alvo.tipo === 'solo' && alvo.seat !== it.privadoDe) problemas.push(`consequência ${it.flag}: reação privada de ${it.privadoDe} numa cena solo do outro assento`);
+      if (!origem.every((o) => nos[o].tipo === 'solo' && nos[o].seat === it.privadoDe)) problemas.push(`consequência ${it.flag}: marcada como privada de ${it.privadoDe}, mas a escolha não é só dessa cena solo (${origem.join(', ')})`);
+    } else if (origem.some((o) => nos[o].tipo === 'solo')) problemas.push(`consequência ${it.flag}: a escolha nasce em cena solo, a reação precisa de privadoDe`);
+    const cond = `${it.privadoDe ? `eu:${it.privadoDe} && ` : ''}flag:${it.flag}`;
+    alvo.texto = `${alvo.texto.trimEnd()}\n\n{{se ${cond}}}${it.texto}{{/se}}`;
+    if (usados.has(it.flag)) problemas.push(`consequência ${it.flag}: repetida`);
+    usados.add(it.flag);
+  }
+}
+
 // baseline: flags mortas do original (o lint passa a avisar, não bloquear)
 {
   const parsed = Livro.safeParse(livro);
