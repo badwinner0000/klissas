@@ -2122,7 +2122,7 @@
         "pippa"
       ],
       "tipo": "segue",
-      "texto": "O salão paroquial da Igreja Metodista de Centre Street tem piso de tábua corrida que range, um piano de armário desafinado, cadeiras de plástico empilhadas e um quadro de avisos com o cardápio do jantar de feijão de sexta.\n\nA professora se chama Mrs. Eleanor Starbuck. Oitenta e um anos, um metro e cinquenta, sapatilha de cetim, coque branco, colar de pérola, e uma bengala que ela usa para apontar, nunca para andar.\n\n— Dancei com o Fred Astaire em 1958 — ela diz, antes de bom dia. — No Copley Plaza, em Boston. Uma valsa. Ele pisou no meu pé. Eu nunca contei para ninguém, até agora. — Ela aponta a bengala para os dois. — Vocês. No centro do salão. A Pippa me disse que vocês se odeiam. Ótimo. O ódio dá postura.\n\nA Pippa liga a caixinha de som no celular. *Moon River*, Andy Williams, três minutos e meio. A valsa dos padrinhos, que entra depois da dos noivos, e que na pasta, na aba azul, tem um asterisco: *ensaiar. Muito.*\n\n— Quem conduz? — pergunta a Mrs. Starbuck.\n\nEla olha de um para o outro e espera. A bengala bate no assoalho, uma vez, como relógio de xadrez.",
+      "texto": "O salão paroquial da Igreja Metodista de Centre Street tem piso de tábua corrida que range, um piano de armário desafinado, cadeiras de plástico empilhadas e um quadro de avisos com o cardápio do jantar de feijão de sexta.\n\nA professora se chama Mrs. Eleanor Starbuck. Oitenta e um anos, um metro e cinquenta, sapatilha de cetim, coque branco, colar de pérola, e uma bengala que ela usa para apontar, nunca para andar.\n\n— Dancei com o Fred Astaire em 1958 — ela diz, antes de bom dia. — No Copley Plaza, em Boston. Uma valsa. Ele pisou no meu pé. Eu nunca contei para ninguém, até agora. — Ela aponta a bengala para os dois. — Vocês. No centro do salão. A Pippa me disse que vocês se odeiam. Ótimo. O ódio dá postura.\n\nA Pippa liga a caixinha de som no celular. *Moon River*, Andy Williams, três minutos e meio. A valsa dos padrinhos, que entra depois da dos noivos, e que na pasta, na aba azul, tem um asterisco: *ensaiar. Muito.*\n\n— Quem conduz? — pergunta a Mrs. Starbuck.\n\nEla olha de um para o outro e espera. A bengala bate no assoalho, uma vez, como relógio de xadrez.\n\n{{se eu:A && flag:rosa_funmi}}Você sabe que a dança das mães é uma frente de batalha entre a Rosa e a Funmi, e que a Mrs. Starbuck, de bengala, não faz ideia de que está no meio.{{/se}}",
       "ir": "pd_c5_valsa",
       "efeitos": {
         "pista": "pd_valsa"
@@ -4645,7 +4645,7 @@
       "lugar": "Depósito do Yacht Club",
       "hora": "Terça, 13 de junho · 12h10",
       "tipo": "dialogo",
-      "texto": "No depósito do porão, entre duas pilhas de cadeira dobrável, cabe um metro e meio. Tem uma lâmpada só, pendurada pelo fio, que balança cada vez que alguém anda no bar lá em cima.\n\nA regra do guardanapo está numa carteira, num bolso de trás, a menos de um metro e meio.",
+      "texto": "No depósito do porão, entre duas pilhas de cadeira dobrável, cabe um metro e meio. Tem uma lâmpada só, pendurada pelo fio, que balança cada vez que alguém anda no bar lá em cima.\n\nA regra do guardanapo está numa carteira, num bolso de trás, a menos de um metro e meio.\n\n{{se flag:rosa_desconfia}}Lá em cima, a Rosa ainda defende as peônias para quem quiser escutar, o que, a esta altura, não é ninguém.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -4816,7 +4816,7 @@
       "lugar": "Quintal da Gull House · debaixo da macieira",
       "hora": "Terça, 13 de junho · 20h30",
       "tipo": "dialogo",
-      "texto": "Oito e meia. O banco debaixo da macieira dá para dois, com um palmo de sobra. No colo de {{B.ref}}, um caderno preto aberto e um celular com a tela acesa.\n\nDa cozinha vem a risada da Rosa, ao telefone, em italiano.",
+      "texto": "Oito e meia. O banco debaixo da macieira dá para dois, com um palmo de sobra. No colo de {{B.ref}}, um caderno preto aberto e um celular com a tela acesa.\n\nDa cozinha vem a risada da Rosa, ao telefone, em italiano.\n\n{{se eu:A && flag:mentiu_rosa2}}A mão da Rosa deixou na sua uma frase, *você é forte*, que serve para tudo e não consola ninguém.{{/se}}\n\n{{se eu:A && flag:quase_rosa}}A frase que você largou no meio, *não foi ele*, continua de pé no banco, esperando o resto.{{/se}}\n\n{{se eu:B && flag:ensaiou}}Os três começos que você ensaiou para a estufa estão na ponta da língua, em ordem, e nenhum serve para um banco de dois lugares.{{/se}}\n\n{{se eu:B && flag:ouviu_riso}}O último segundo do recado, o ar que o Tunde soltou quase rindo, não sai da sua cabeça. Foi o único som da gravação que não pedia desculpa.{{/se}}",
       "comeca": "B",
       "turnos": [
         {
@@ -5029,7 +5029,7 @@
       "lugar": "Gull House · quartos três e quatro",
       "hora": "Terça, 13 de junho · meia-noite",
       "tipo": "consentimento",
-      "texto": "Meia-noite. Quarto três e quarto quatro. O banheiro no meio, com duas portas e a tranca do três quebrada desde 1997.\n\nA mesma parede de tábua. {{se flag:bateu1}}No sábado, ela respondeu.{{senao}}{{se (flag:bateu1_a) || (flag:bateu1_b)}}No sábado, alguém bateu nela e ficou sem resposta.{{senao}}No sábado, ninguém encostou nela.{{/se}}{{/se}}\n\n{{se flag:noite3_sim}}A regra do guardanapo está dobrada numa carteira. Ninguém tira a carteira do bolso para conferir o item 3.{{senao}}Oficialmente, ninguém atravessou nada até hoje.{{/se}}",
+      "texto": "Meia-noite. Quarto três e quarto quatro. O banheiro no meio, com duas portas e a tranca do três quebrada desde 1997.\n\nA mesma parede de tábua. {{se flag:bateu1}}No sábado, ela respondeu.{{senao}}{{se (flag:bateu1_a) || (flag:bateu1_b)}}No sábado, alguém bateu nela e ficou sem resposta.{{senao}}No sábado, ninguém encostou nela.{{/se}}{{/se}}\n\n{{se flag:noite3_sim}}A regra do guardanapo está dobrada numa carteira. Ninguém tira a carteira do bolso para conferir o item 3.{{senao}}Oficialmente, ninguém atravessou nada até hoje.{{/se}}\n\n{{se eu:B && flag:releu_regra}}O guardanapo da Gull House está dobrado na sua carteira, com o item 2 virado para dentro.{{/se}}",
       "pergunta": "O que você faz? (a outra pessoa só fica sabendo depois)",
       "avancar": "Bater na parede. Duas vezes.",
       "ficar": "Deixar a parede em paz e olhar o teto.",
@@ -5042,7 +5042,7 @@
       "lugar": "Gull House · quartos três e quatro",
       "hora": "Terça, 13 de junho · meia-noite e vinte",
       "tipo": "fim",
-      "texto": "{{se flag:bateu4}}Duas batidas de um lado. Duas do outro, quase em cima. Desta vez ninguém esperou para ver se a resposta vinha.{{senao}}{{se (flag:bateu4_a) || (flag:bateu4_b)}}Duas batidas, de um lado só. Do outro, alguém olha o teto e escuta, e fica com as duas batidas guardadas, sem devolver.{{senao}}Ninguém bate. Dos dois lados da tábua, duas pessoas olham o mesmo teto.{{/se}}{{/se}}\n\n{{se flag:contou_a_tunde}}Entre os dois quartos existe agora um segredo com dois donos. Ele pesa diferente de cada lado da parede.{{senao}}{{se flag:mentiu_tunde}}Entre os dois quartos existe agora uma meia verdade. Só um lado da parede sabe o tamanho da metade que faltou.{{senao}}Entre os dois quartos existe uma coisa que um lado sabe e o outro não. Por enquanto ela não faz barulho.{{/se}}{{/se}}\n\nAmanhã cedo, aula de dança. A valsa dos padrinhos: *Moon River*, três minutos e meio. A Pippa marcou com uma professora da ilha, uma senhora de oitenta e um anos que dançou com o Fred Astaire em 1958, segundo ela, e com mais ninguém desde então que valesse o trabalho.",
+      "texto": "{{se flag:bateu4}}Duas batidas de um lado. Duas do outro, quase em cima. Desta vez ninguém esperou para ver se a resposta vinha.{{senao}}{{se (flag:bateu4_a) || (flag:bateu4_b)}}Duas batidas, de um lado só. Do outro, alguém olha o teto e escuta, e fica com as duas batidas guardadas, sem devolver.{{senao}}Ninguém bate. Dos dois lados da tábua, duas pessoas olham o mesmo teto.{{/se}}{{/se}}\n\n{{se flag:contou_a_tunde}}Entre os dois quartos existe agora um segredo com dois donos. Ele pesa diferente de cada lado da parede.{{senao}}{{se flag:mentiu_tunde}}Entre os dois quartos existe agora uma meia verdade. Só um lado da parede sabe o tamanho da metade que faltou.{{senao}}Entre os dois quartos existe uma coisa que um lado sabe e o outro não. Por enquanto ela não faz barulho.{{/se}}{{/se}}\n\nAmanhã cedo, aula de dança. A valsa dos padrinhos: *Moon River*, três minutos e meio. A Pippa marcou com uma professora da ilha, uma senhora de oitenta e um anos que dançou com o Fred Astaire em 1958, segundo ela, e com mais ninguém desde então que valesse o trabalho.\n\n{{se flag:a_espera}}Ficou combinado, num banco debaixo da macieira, que a verdade pode esperar até quinta. A Pippa, que não estava lá, escreve *quinta* na lousa sem saber por quê.{{/se}}\n\n{{se flag:discurso_ajuda}}O discurso de padrinho, versão dezessete, ganhou uma ajuda que ninguém comenta em voz alta.{{/se}}",
       "ir": "pd_c5_aula"
     },
     "pd_c5_valsa": {
@@ -7172,7 +7172,6 @@
     }
   },
   "escolhasMortasToleradas": [
-    "a_espera",
     "a_ouviu_tunde",
     "assobio",
     "b_cabos9",
@@ -7202,12 +7201,10 @@
     "conduziu",
     "dez_minutos",
     "dica_pike",
-    "discurso_ajuda",
     "dory_proposta",
     "dory_receita",
     "dory_socia",
     "enjoou",
-    "ensaiou",
     "estaca",
     "estufa_torta",
     "falou_graham",
@@ -7229,20 +7226,14 @@
     "leu_planod",
     "luzes_salvas",
     "medo_barco",
-    "mentiu_rosa2",
     "noite6_nao",
     "olhou4",
-    "ouviu_riso",
     "pasta_seca",
     "pediu_graham",
     "pippa_esperar",
     "pippa_futuro",
     "pippa_video",
-    "quase_rosa",
-    "releu_regra",
     "repertorio",
-    "rosa_desconfia",
-    "rosa_funmi",
     "rosa_hortensia",
     "som_tunde",
     "v18",

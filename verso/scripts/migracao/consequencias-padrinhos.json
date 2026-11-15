@@ -198,6 +198,57 @@
       "flag": "cafe_sorriso",
       "no": "pd_c3_fim",
       "texto": "O sorriso que escapou para o prato ainda está lá. A Rosa jura que viu e não comentou, o que, para a Rosa, é um ato de heroísmo."
+    },
+    {
+      "flag": "rosa_desconfia",
+      "no": "pd_c4_porao",
+      "texto": "Lá em cima, a Rosa ainda defende as peônias para quem quiser escutar, o que, a esta altura, não é ninguém."
+    },
+    {
+      "flag": "mentiu_rosa2",
+      "no": "pd_c4_macieira",
+      "privadoDe": "A",
+      "texto": "A mão da Rosa deixou na sua uma frase, *você é forte*, que serve para tudo e não consola ninguém."
+    },
+    {
+      "flag": "quase_rosa",
+      "no": "pd_c4_macieira",
+      "privadoDe": "A",
+      "texto": "A frase que você largou no meio, *não foi ele*, continua de pé no banco, esperando o resto."
+    },
+    {
+      "flag": "ensaiou",
+      "no": "pd_c4_macieira",
+      "privadoDe": "B",
+      "texto": "Os três começos que você ensaiou para a estufa estão na ponta da língua, em ordem, e nenhum serve para um banco de dois lugares."
+    },
+    {
+      "flag": "ouviu_riso",
+      "no": "pd_c4_macieira",
+      "privadoDe": "B",
+      "texto": "O último segundo do recado, o ar que o Tunde soltou quase rindo, não sai da sua cabeça. Foi o único som da gravação que não pedia desculpa."
+    },
+    {
+      "flag": "releu_regra",
+      "no": "pd_c4_parede",
+      "privadoDe": "B",
+      "texto": "O guardanapo da Gull House está dobrado na sua carteira, com o item 2 virado para dentro."
+    },
+    {
+      "flag": "rosa_funmi",
+      "no": "pd_c5_aula",
+      "privadoDe": "A",
+      "texto": "Você sabe que a dança das mães é uma frente de batalha entre a Rosa e a Funmi, e que a Mrs. Starbuck, de bengala, não faz ideia de que está no meio."
+    },
+    {
+      "flag": "a_espera",
+      "no": "pd_c4_fim",
+      "texto": "Ficou combinado, num banco debaixo da macieira, que a verdade pode esperar até quinta. A Pippa, que não estava lá, escreve *quinta* na lousa sem saber por quê."
+    },
+    {
+      "flag": "discurso_ajuda",
+      "no": "pd_c4_fim",
+      "texto": "O discurso de padrinho, versão dezessete, ganhou uma ajuda que ninguém comenta em voz alta."
     }
   ]
 }
