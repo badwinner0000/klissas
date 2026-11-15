@@ -38,7 +38,8 @@ async function passo(page, seat, tag, votou) {
   const ids = await btns.evaluateAll((els) => els.map((e) => e.getAttribute('data-opcao')));
   const chave = tag + '|' + (await page.locator('.cena').first().innerText().catch(() => '')).slice(0, 60);
   let alvo;
-  if (tipo === 'consentimento') {
+  if (ids.length === 1 && ids[0] === 'continuar') alvo = 0; // decisão já resolvida: só falta continuar
+  else if (tipo === 'consentimento') {
     const quer = POLITICA === 'ambos' || (POLITICA === 'soA' && seat === 'A') || (POLITICA === 'soB' && seat === 'B');
     alvo = ids.indexOf(quer ? 'avancar' : 'ficar');
   } else if (tipo === 'decisao') {
