@@ -14,8 +14,10 @@ describe('consequências das escolhas (antes mortas)', () => {
   };
   const l = livro();
   const vistos: Record<'A' | 'B', string> = { A: '', B: '' };
-  for (let seed = 1; seed <= 90; seed++) {
-    // metade das partidas com consentimento, metade sem: algumas reações só existem do lado "sem"
+  const chave0 = (t: string) => t.replace(/\*/g, '').slice(0, 40);
+  const faltam = () => arq.itens.filter((it) => (it.privadoDe ? !vistos[it.privadoDe].includes(chave0(it.texto)) : !(vistos.A + vistos.B).includes(chave0(it.texto))));
+  // joga até ver todas as reações (ou 700 partidas): metade com consentimento, metade sem
+  for (let seed = 1; seed <= 700 && (seed <= 40 || faltam().length); seed++) {
     const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, seed % 2 ? 'ambos' : 'nenhum', criarRng(seed));
     vistos.A += p.textos.A.join('\n').replace(/\*/g, '');
     vistos.B += p.textos.B.join('\n').replace(/\*/g, '');
@@ -31,7 +33,7 @@ describe('consequências das escolhas (antes mortas)', () => {
       const dono = it.privadoDe!;
       const outro = dono === 'A' ? 'B' : 'A';
       expect(vistos[outro].includes(chave(it.texto)), `${it.flag} vazou para ${outro}`).toBe(false);
-      expect(vistos[dono].includes(chave(it.texto)), `${it.flag} nunca apareceu para ${dono} em 90 partidas`).toBe(true);
+      expect(vistos[dono].includes(chave(it.texto)), `${it.flag} nunca apareceu para ${dono} (ramo inalcançável?)`).toBe(true);
     }
   });
   it('reação pública aparece para os dois', () => {

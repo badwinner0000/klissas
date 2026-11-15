@@ -2302,7 +2302,7 @@
         "barnaby"
       ],
       "tipo": "segue",
-      "texto": "Duas da tarde. {{se flag:banda_problema}}A banda The Salty Dogs confirmou, por mensagem, com três emojis de caveira: o bar mitzvah de Hyannis paga o dobro. Eles não vão.{{senao}}A Pippa entra na cozinha pálida, com o celular na mão. A banda The Salty Dogs mandou mensagem com três emojis de caveira: o contrato dizia domingo. Sábado eles tocam num bar mitzvah em Hyannis, que paga o dobro. Eles não vão.{{/se}}\n\nSem banda. A três dias.\n\nA Pippa abre a terceira agenda e começa a ler nomes de bandas de Cape Cod, todas reservadas desde março.\n\nE da porta dos fundos, com uma caixa de isopor de lagosta nos braços, a Dory Barros, que veio trazer amostra de chouriço, para.\n\n— Vocês estão sem banda? — Ela põe o isopor na mesa. — Os meus primos tocam. Os Barros de Madaket. Cinco. Violão, cavaquinho, baixo, bateria e o meu tio Armando no acordeão. Morna, funaná, e depois, se pagar a cerveja, Earth, Wind & Fire. Eles tocam em batizado, em velório e no Quatro de Julho. Nunca tocaram em casamento de americano. — Ela olha para os dois. — Mas americano casa igual a todo mundo, não casa?\n\nDo outro lado da mesa, a Pippa já está com a playlist aberta no celular: *Casamento G&T, 214 músicas, 11 horas*. E o Tunde, lembra a Pippa, é engenheiro de som. Tem caixas, mesa de som, tudo, num depósito em Boston.",
+      "texto": "Duas da tarde. {{se flag:banda_problema}}A banda The Salty Dogs confirmou, por mensagem, com três emojis de caveira: o bar mitzvah de Hyannis paga o dobro. Eles não vão.{{senao}}A Pippa entra na cozinha pálida, com o celular na mão. A banda The Salty Dogs mandou mensagem com três emojis de caveira: o contrato dizia domingo. Sábado eles tocam num bar mitzvah em Hyannis, que paga o dobro. Eles não vão.{{/se}}\n\nSem banda. A três dias.\n\nA Pippa abre a terceira agenda e começa a ler nomes de bandas de Cape Cod, todas reservadas desde março.\n\nE da porta dos fundos, com uma caixa de isopor de lagosta nos braços, a Dory Barros, que veio trazer amostra de chouriço, para.\n\n— Vocês estão sem banda? — Ela põe o isopor na mesa. — Os meus primos tocam. Os Barros de Madaket. Cinco. Violão, cavaquinho, baixo, bateria e o meu tio Armando no acordeão. Morna, funaná, e depois, se pagar a cerveja, Earth, Wind & Fire. Eles tocam em batizado, em velório e no Quatro de Julho. Nunca tocaram em casamento de americano. — Ela olha para os dois. — Mas americano casa igual a todo mundo, não casa?\n\nDo outro lado da mesa, a Pippa já está com a playlist aberta no celular: *Casamento G&T, 214 músicas, 11 horas*. E o Tunde, lembra a Pippa, é engenheiro de som. Tem caixas, mesa de som, tudo, num depósito em Boston.\n\n{{se eu:A && flag:bilhete_vestido}}O quadradinho de pano com linha azul que você achou na barra do vestido continua no seu bolso, e a banda, ao fundo, afina qualquer coisa que não tem nada a ver com ele.{{/se}}\n\n{{se eu:B && flag:borra_cafe}}As suas unhas ainda têm terra de hortênsia e borra de café, o que, na Gull House, conta como credencial.{{/se}}\n\n{{se eu:B && flag:estufa_torta}}Você pensa na estufa torta do Barnaby: duas pessoas, dois materiais, uma estrutura que não caiu.{{/se}}",
       "ir": "pd_c5_escolha"
     },
     "pd_c5_escolha": {
@@ -2341,7 +2341,7 @@
       "lugar": "Gull House",
       "hora": "Quarta, 14 de junho · 19h00",
       "tipo": "fim",
-      "texto": "O dia acaba com a lousa da cozinha cheia: *Licença: OK. Lagosta: OK. Tenda: {{se flag:tenda_agua}}OK (gramado de baixo!){{senao}}OK (gramado de cima){{/se}}. Banda: {{se flag:banda_primos}}Os Barros{{senao}}playlist{{/se}}. Bolo: limão + coco embaixo. Valsa: ensaiando.*\n\nFalta o ensaio no clube, à noite, às nove. Ver a tenda montada, a luz, o caminho da cerimônia{{se flag:altar_girado}}, o altar girado trinta e oito graus{{/se}}.\n\nA previsão do tempo para a noite, no rádio da cozinha do Barnaby: *pancadas de chuva forte a partir das vinte e uma horas, com rajadas de vento. Fiquem em casa.*\n\nO Barnaby desliga o rádio e entrega a chave da caminhonete, sem dizer nada. Depois diz:\n\n— A caminhonete vaza pelo teto, do lado do passageiro. Desde 1997.\n\n— Tudo nessa ilha quebrou em 1997? — pergunta a Pippa.\n\n— Foi um ano difícil — diz o Barnaby.",
+      "texto": "O dia acaba com a lousa da cozinha cheia: *Licença: OK. Lagosta: OK. Tenda: {{se flag:tenda_agua}}OK (gramado de baixo!){{senao}}OK (gramado de cima){{/se}}. Banda: {{se flag:banda_primos}}Os Barros{{senao}}playlist{{/se}}. Bolo: limão + coco embaixo. Valsa: ensaiando.*\n\nFalta o ensaio no clube, à noite, às nove. Ver a tenda montada, a luz, o caminho da cerimônia{{se flag:altar_girado}}, o altar girado trinta e oito graus{{/se}}.\n\nA previsão do tempo para a noite, no rádio da cozinha do Barnaby: *pancadas de chuva forte a partir das vinte e uma horas, com rajadas de vento. Fiquem em casa.*\n\nO Barnaby desliga o rádio e entrega a chave da caminhonete, sem dizer nada. Depois diz:\n\n— A caminhonete vaza pelo teto, do lado do passageiro. Desde 1997.\n\n— Tudo nessa ilha quebrou em 1997? — pergunta a Pippa.\n\n— Foi um ano difícil — diz o Barnaby.\n\n{{se flag:conduziu}}Na saída, a Mrs. Starbuck anotou na caderneta de capa de couro: *quem conduz precisa aprender a ser conduzido*. Ninguém viu para quem ela olhava ao escrever.{{/se}}\n\n{{se flag:funana_ok}}O tio Armando, que não elogia ninguém, chama quem dançou o funaná de *o único turista com joelho*.{{/se}}\n\n{{se flag:funana_torto}}O tio Armando, que não perdoa, imita a dança torta para os primos, e os primos riem para dentro, por educação.{{/se}}\n\n{{se flag:repertorio}}A lista do tio Armando ganhou uma linha a lápis, na margem: *morna só depois do bolo*.{{/se}}\n\n{{se flag:zumbido}}O baixo do primo da Dory toca limpo, sem o zumbido, e ele agradece a quem achou o pino serrado com um aceno que, na família Barros, equivale a uma medalha.{{/se}}\n\n{{se eu:A && flag:pippa_esperar}}A Pippa guardou o vídeo na pasta *rascunho*, onde ele fica, de lente para cima, esperando o prazo que você deu.{{/se}}\n\n{{se eu:A && flag:pippa_futuro}}A Pippa anda meio centímetro mais alta e jura que é do sapato.{{/se}}\n\n{{se eu:A && flag:pippa_video}}O que a Pippa viu no seu rosto, naquele segundo do vídeo, é a coisa mais fácil de negar e a mais difícil de esquecer.{{/se}}\n\n{{se eu:B && flag:funmi_cardiga}}A cardigã azul-marinho da sua mãe, grande nos ombros e perfeita nas mangas, está nas suas costas, e o cheiro dela chega antes dos seus pensamentos.{{/se}}\n\n{{se eu:B && flag:funmi_cruzadas}}A grade de palavras cruzadas, completa a caneta, é o único documento da semana em que nada ficou em branco.{{/se}}\n\n{{se eu:B && flag:funmi_prometeu_de_novo}}Pela segunda vez, a sua mãe prometeu contar *depois*, e você, que corrige prova há onze anos, sabe contar quantos *depois* ainda faltam.{{/se}}",
       "ir": "pd_c6_chuva"
     },
     "pd_c6_carro": {
@@ -2891,7 +2891,7 @@
           "ir": "pd_c8_neblina",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você abre a boca para dizer *não*. Para dizer que ele vai contar para ela, hoje, que você vai estar do lado.\n\nSai outra coisa.\n\n— Vou ver o que dá para fazer.\n\nO Tunde agradece. Você não sabe o que acabou de prometer. Você sabe exatamente o que acabou de prometer.",
               "efeitos": {
                 "flag": "a_esconde"
@@ -2948,7 +2948,7 @@
           "ir": "pd_c8_neblina",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você tenta dizer *pergunta para ele*. Sai torto, tarde, depois de um silêncio que já respondeu tudo.\n\nA Gemma faz que sim, devagar.\n\n— Tá. Eu pergunto. — Ela levanta. — Você nunca soube disfarçar, sabia? Nem quando a gente era criança e você me escondia os presentes de Natal. — Ela entra.\n\nEla sabe que tem alguma coisa. Não sabe o quê. E agora vai passar a noite imaginando.",
               "efeitos": {
                 "flag": "b_devolveu"
@@ -3460,7 +3460,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você sobe na cadeira. Abre a boca. *Eu preciso de ajuda.* A frase está pronta.\n\nSai: *Obrigad{{eu.o_a}} a todos. Foi um trabalho de equipe.*\n\nVocê desce da cadeira. A Pippa olha para você de baixo, com o bolo no colo, com uma cara de quem ouviu a frase que não saiu.\n\n— Quase — ela diz, baixinho. — Na próxima.",
               "efeitos": {
                 "flag": "gesto_quase"
@@ -5086,7 +5086,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você troca de posição e avisa que agora não conduz. Em quatro compassos, já está conduzindo de novo, sem perceber.\n\nA bengala bate no chão.\n\n— Sete segundos — diz a Mrs. Starbuck. — Eu contei. O Fred Astaire aguentava dez."
             },
             {
@@ -5176,7 +5176,7 @@
           "texto": "Passar o vestido a vapor, prega por prega",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:B",
+              "se": "abalo>=1",
               "resultado": "O vapor sai de uma vez e pega o seu dedo. Você larga o ferro, que cai de pé, por sorte, a um palmo da seda.\n\nDa porta, a sua mãe solta um grito que se ouve em Madaket. O vestido não tem nada. O seu dedo tem uma bolha.",
               "efeitos": {
                 "abalo": 1,
@@ -5233,7 +5233,7 @@
           "texto": "Replantar as hortênsias do jeito que ele manda",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:B",
+              "se": "abalo>=1",
               "resultado": "Você segura pela base, mas puxa cedo, e o torrão desmancha na sua mão. Sobra uma hortênsia de raiz nua, com cara de ofendida.\n\nO Barnaby toma a planta de você com as duas mãos e replanta em silêncio.\n\n— Vai lavar a mão — ele diz. — E olha de longe."
             },
             {
@@ -5279,7 +5279,7 @@
         "pippa"
       ],
       "tipo": "dividir",
-      "texto": "{{se flag:banda_primos}}Quatro da tarde, na garagem dos Barros, em Madaket: cinco primos, uma bateria montada entre redes de pesca e um acordeão de 1962. O tio Armando tem setenta e três anos e chora antes de tocar a primeira nota, de felicidade, como a Dory tinha avisado.\n\n— Funaná se dança junto e ligeiro — explica a Dory, afastando um isopor com o pé. — É condição. Quero ver antes de sábado.{{senao}}Quatro da tarde, na tenda do clube. A Pippa liga o celular na caixa de som emprestada e testa a playlist, da faixa um à faixa nove. Na faixa dez, o tio Armando, que veio com a Dory entregar gelo, tira o acordeão do carro, *só para ouvir a acústica*.\n\n— Funaná se dança junto e ligeiro — explica a Dory, pondo o gelo no chão. — Já que estão aqui, quero ver.{{/se}}\n\nO acordeão começa. É uma música que não deixa ninguém parado, nem quem quer.",
+      "texto": "{{se flag:banda_primos}}Quatro da tarde, na garagem dos Barros, em Madaket: cinco primos, uma bateria montada entre redes de pesca e um acordeão de 1962. O tio Armando tem setenta e três anos e chora antes de tocar a primeira nota, de felicidade, como a Dory tinha avisado.\n\n— Funaná se dança junto e ligeiro — explica a Dory, afastando um isopor com o pé. — É condição. Quero ver antes de sábado.{{senao}}Quatro da tarde, na tenda do clube. A Pippa liga o celular na caixa de som emprestada e testa a playlist, da faixa um à faixa nove. Na faixa dez, o tio Armando, que veio com a Dory entregar gelo, tira o acordeão do carro, *só para ouvir a acústica*.\n\n— Funaná se dança junto e ligeiro — explica a Dory, pondo o gelo no chão. — Já que estão aqui, quero ver.{{/se}}\n\nO acordeão começa. É uma música que não deixa ninguém parado, nem quem quer.\n\n{{se flag:banda_playlist}}Os primos da Dory estão no ensaio apesar de a playlist ter ganhado, e o tio Armando afina o acordeão como quem não aceitou perder.{{/se}}\n\n{{se eu:A && flag:pediu_graham}}A balsa das nove e vinte de amanhã já está na sua agenda, entre a lagosta e a valsa, como um compromisso que você não marcou.{{/se}}\n\n{{se eu:A && flag:viu_vestido}}A barra marcada com alfinete, na foto do seu vestido, continua desenhada atrás dos seus olhos quando o acordeão começa.{{/se}}\n\n{{se eu:B && flag:medo_barco}}O que o Barnaby disse sobre beijo ser fácil roda na sua cabeça mais alto do que o acordeão.{{/se}}",
       "cada": 1,
       "acoes": [
         {
@@ -5287,7 +5287,7 @@
           "texto": "Dançar o funaná. De verdade, no ritmo do acordeão.",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:B",
+              "se": "abalo>=1",
               "resultado": "{{Quem}} entra no passo errado, corrige para outro mais errado ainda, e termina dançando uma coisa que não existe em nenhum país.\n\nO tio Armando para de tocar, de tanto rir. Depois recomeça, bem devagar, do jeito que se toca para criança.",
               "efeitos": {
                 "flag": "funana_torto"
@@ -5690,7 +5690,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você senta no banco de vime. No segundo minuto, já reorganizou de cabeça os vasos de hortênsia por altura. No quarto, está de pé, trocando dois de lugar.\n\nO Barnaby aparece na porta, olha os vasos e troca os dois de volta, sem dizer nada."
             },
             {
@@ -6136,7 +6136,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você levanta, começa com *a minha irmã*, e no meio da frase a voz de trabalho assume o comando. Sai um brinde de fornecedor: agradecimentos, parceiros, o clima ajudou.\n\nA Gemma bate palma mesmo assim. Ela sempre bate."
             },
             {
@@ -6249,7 +6249,7 @@
           "se": "(((!(flag:a_verdade)) && (!(flag:a_contou_gemma9))) && (!(flag:a_escondeu9))) && (!(flag:a_perguntou9))",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você abre a boca. Sai: *o Graham e eu...* E a porta abre. É a Rosa, de lenço na mão, com a notícia de que a tia Bisi trouxe o turbante errado, um amarelo, e que *isso é um sinal*.\n\nA Gemma ri. Você ri. A frase some no meio das duas risadas, de um jeito que você já conhece, porque a empresa inteira foi construída em cima de frases que somem.",
               "efeitos": {
                 "abalo": 1,
@@ -6457,7 +6457,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você anda. No meio do caminho o salto afunda no gramado, a hortênsia do Barnaby rouba o equilíbrio, e a recepção que você ensaiou vira *oi*.\n\n— Oi — diz o Graham, que sabe a diferença.\n\nVocês trocam três frases sobre o tempo. É um começo."
             },
             {
@@ -6677,7 +6677,7 @@
           "texto": "Dizer que não sabe se volta a Providence em setembro",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você abre a boca. A frase não sai. O que sai é: *a escola começa em setembro*, no tom de professor, de quem recita calendário.\n\nO Barnaby ouve, assente, e não insiste.\n\n— Setembro. — Ele pensa. — É longe. Ou é amanhã. Depende de quem pergunta."
             },
             {
@@ -6737,7 +6737,7 @@
           "texto": "Perguntar o que ela viu no seu rosto naquele segundo",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você pergunta, mas sai com tom de reunião: *e qual foi sua leitura?* A Pippa, que é boa, responde no mesmo tom: *percepção de marca, tom autêntico, bom potencial de engajamento.* E ri de si mesma, e você ri junto, mas o momento já passou, como a luz do farol que acendeu cedo demais.",
               "efeitos": {
                 "abalo": 1,
@@ -6810,7 +6810,7 @@
           "texto": "Perguntar pelo seu pai. Só uma pergunta.",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você pergunta. Mas a pergunta sai torta, como um enunciado de prova: *qual é a relação entre a data do casamento e o que a senhora sente pelo meu pai?* A juíza ouve com a expressão de quem lê petição mal redigida.\n\n— A relação — ela diz — é de causalidade, e eu não vou responder a uma pergunta com cinco verbos. — Ela dá uma batidinha com a caneta. — Reformule depois do casamento. Eu respondo.",
               "efeitos": {
                 "abalo": 1,
@@ -6991,7 +6991,7 @@
           "texto": "Escolher as que ainda vão abrir. Pela que vai ser.",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você escolhe as que ainda vão abrir, mas calcula mal o tempo: as brancas, na manhã de sábado, vão estar ainda cedo demais para abrir, e na hora da cerimônia ainda vão parecer bolinhas verdes.\n\n— Elas abrem — diz o Barnaby, otimista. — Se o dia for quente. — Ele olha o céu pela janela quebrada. — Mas não prometo.",
               "efeitos": {
                 "flag": "c7c_branca_cedo",
@@ -7061,7 +7061,7 @@
           "texto": "Bater na janela acesa do zelador e perguntar sobre a escola",
           "variantes": [
             {
-              "se": "abalo>=1 || eu:A",
+              "se": "abalo>=1",
               "resultado": "Você bate, mas a janela do zelador está do outro lado de um canteiro de rosas-do-mato, e você pisa na rosa errada. Um grito de dor, um *meu Deus*, um zelador que sai de pijama e botina para ver o intruso. Você se desculpa seis vezes. Ele aceita uma só.\n\nVocê vai embora sem saber de nada sobre a casa. Com um espinho no dedo e um pouco menos de dignidade.",
               "efeitos": {
                 "abalo": 1,
@@ -7180,9 +7180,6 @@
     "b_ruth",
     "b_silencio_cais",
     "b_vaga_ilha",
-    "banda_playlist",
-    "bilhete_vestido",
-    "borra_cafe",
     "brinde_gemma",
     "brinde_tunde",
     "c6a_barnaby",
@@ -7198,7 +7195,6 @@
     "cadeiras_porto",
     "cafe7",
     "cobertor",
-    "conduziu",
     "dez_minutos",
     "dica_pike",
     "dory_proposta",
@@ -7206,15 +7202,9 @@
     "dory_socia",
     "enjoou",
     "estaca",
-    "estufa_torta",
     "falou_graham",
     "final_ruptura",
-    "funana_ok",
-    "funana_torto",
-    "funmi_cardiga",
-    "funmi_cruzadas",
     "funmi_promete",
-    "funmi_prometeu_de_novo",
     "funmi_quase",
     "gesto_pasta",
     "gesto_quase",
@@ -7225,21 +7215,13 @@
     "graham_perguntou",
     "leu_planod",
     "luzes_salvas",
-    "medo_barco",
     "noite6_nao",
     "olhou4",
     "pasta_seca",
-    "pediu_graham",
-    "pippa_esperar",
-    "pippa_futuro",
-    "pippa_video",
-    "repertorio",
     "rosa_hortensia",
     "som_tunde",
     "v18",
     "vento_calculo",
-    "vento_lideranca",
-    "viu_vestido",
-    "zumbido"
+    "vento_lideranca"
   ]
 }

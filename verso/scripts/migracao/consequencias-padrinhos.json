@@ -249,6 +249,108 @@
       "flag": "discurso_ajuda",
       "no": "pd_c4_fim",
       "texto": "O discurso de padrinho, versão dezessete, ganhou uma ajuda que ninguém comenta em voz alta."
+    },
+    {
+      "flag": "banda_playlist",
+      "no": "pd_c5_ensaio",
+      "texto": "Os primos da Dory estão no ensaio apesar de a playlist ter ganhado, e o tio Armando afina o acordeão como quem não aceitou perder."
+    },
+    {
+      "flag": "conduziu",
+      "no": "pd_c5_fim",
+      "texto": "Na saída, a Mrs. Starbuck anotou na caderneta de capa de couro: *quem conduz precisa aprender a ser conduzido*. Ninguém viu para quem ela olhava ao escrever."
+    },
+    {
+      "flag": "funana_ok",
+      "no": "pd_c5_fim",
+      "texto": "O tio Armando, que não elogia ninguém, chama quem dançou o funaná de *o único turista com joelho*."
+    },
+    {
+      "flag": "funana_torto",
+      "no": "pd_c5_fim",
+      "texto": "O tio Armando, que não perdoa, imita a dança torta para os primos, e os primos riem para dentro, por educação."
+    },
+    {
+      "flag": "repertorio",
+      "no": "pd_c5_fim",
+      "texto": "A lista do tio Armando ganhou uma linha a lápis, na margem: *morna só depois do bolo*."
+    },
+    {
+      "flag": "zumbido",
+      "no": "pd_c5_fim",
+      "texto": "O baixo do primo da Dory toca limpo, sem o zumbido, e ele agradece a quem achou o pino serrado com um aceno que, na família Barros, equivale a uma medalha."
+    },
+    {
+      "flag": "bilhete_vestido",
+      "no": "pd_c5_banda",
+      "privadoDe": "A",
+      "texto": "O quadradinho de pano com linha azul que você achou na barra do vestido continua no seu bolso, e a banda, ao fundo, afina qualquer coisa que não tem nada a ver com ele."
+    },
+    {
+      "flag": "pediu_graham",
+      "no": "pd_c5_ensaio",
+      "privadoDe": "A",
+      "texto": "A balsa das nove e vinte de amanhã já está na sua agenda, entre a lagosta e a valsa, como um compromisso que você não marcou."
+    },
+    {
+      "flag": "viu_vestido",
+      "no": "pd_c5_ensaio",
+      "privadoDe": "A",
+      "texto": "A barra marcada com alfinete, na foto do seu vestido, continua desenhada atrás dos seus olhos quando o acordeão começa."
+    },
+    {
+      "flag": "borra_cafe",
+      "no": "pd_c5_banda",
+      "privadoDe": "B",
+      "texto": "As suas unhas ainda têm terra de hortênsia e borra de café, o que, na Gull House, conta como credencial."
+    },
+    {
+      "flag": "estufa_torta",
+      "no": "pd_c5_banda",
+      "privadoDe": "B",
+      "texto": "Você pensa na estufa torta do Barnaby: duas pessoas, dois materiais, uma estrutura que não caiu."
+    },
+    {
+      "flag": "medo_barco",
+      "no": "pd_c5_ensaio",
+      "privadoDe": "B",
+      "texto": "O que o Barnaby disse sobre beijo ser fácil roda na sua cabeça mais alto do que o acordeão."
+    },
+    {
+      "flag": "pippa_esperar",
+      "no": "pd_c5_fim",
+      "privadoDe": "A",
+      "texto": "A Pippa guardou o vídeo na pasta *rascunho*, onde ele fica, de lente para cima, esperando o prazo que você deu."
+    },
+    {
+      "flag": "pippa_futuro",
+      "no": "pd_c5_fim",
+      "privadoDe": "A",
+      "texto": "A Pippa anda meio centímetro mais alta e jura que é do sapato."
+    },
+    {
+      "flag": "pippa_video",
+      "no": "pd_c5_fim",
+      "privadoDe": "A",
+      "texto": "O que a Pippa viu no seu rosto, naquele segundo do vídeo, é a coisa mais fácil de negar e a mais difícil de esquecer."
+    },
+    {
+      "flag": "funmi_cardiga",
+      "no": "pd_c5_fim",
+      "privadoDe": "B",
+      "texto": "A cardigã azul-marinho da sua mãe, grande nos ombros e perfeita nas mangas, está nas suas costas, e o cheiro dela chega antes dos seus pensamentos."
+    },
+    {
+      "flag": "funmi_cruzadas",
+      "no": "pd_c5_fim",
+      "privadoDe": "B",
+      "texto": "A grade de palavras cruzadas, completa a caneta, é o único documento da semana em que nada ficou em branco."
+    },
+    {
+      "flag": "funmi_prometeu_de_novo",
+      "no": "pd_c5_fim",
+      "privadoDe": "B",
+      "texto": "Pela segunda vez, a sua mãe prometeu contar *depois*, e você, que corrige prova há onze anos, sabe contar quantos *depois* ainda faltam."
     }
   ]
 }

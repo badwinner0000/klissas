@@ -266,7 +266,7 @@ function acao(o, id) {
     };
     const attr = prop(o, 'at').value;
     const seats = a.seat ? [a.seat] : ['A', 'B'];
-    const fraco = seats.filter((x) => (AFIN[x][attr] ?? 0) <= 0).map((x) => `eu:${x}`);
+    const fraco = seats.filter((x) => (AFIN[x][attr] ?? 0) < 0).map((x) => `eu:${x}`);
     const seFalha = [LIMIAR_FALHA, ...(process.env.SEM_PERFIL ? [] : fraco)].join(' || ');
     a.variantes = [{ ...v(falha, seFalha) }, { ...v(ok, '') }];
   } else if (x) a.resultado = tpl(x);
