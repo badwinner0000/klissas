@@ -7,7 +7,7 @@ const { tmpdir } = require('node:os');
 const { join } = require('node:path');
 
 const PORTA = process.env.E2E_PORT || '3101';
-const BASE = `http://localhost:${PORTA}`;
+const BASE = process.env.E2E_URL || `http://localhost:${PORTA}`; // E2E_URL: testa um servidor já no ar (ex.: wrangler dev)
 const POLITICA = process.env.E2E_POLITICA || 'ambos'; // ambos | nenhum | soA | soB
 const SEMENTE = Number(process.env.E2E_SEMENTE || 1);
 let s = SEMENTE >>> 0;
@@ -17,9 +17,10 @@ const falhas = [];
 const checa = (ok, msg) => { if (!ok) { falhas.push(msg); console.log('  ✗', msg); } };
 
 // encerra o grupo inteiro (npx + next-server); matar só o npx deixava o servidor vivo na porta
-const matar = (p) => { try { process.kill(-p.pid, 'SIGKILL'); } catch { try { p.kill('SIGKILL'); } catch {} } };
+const matar = (p) => { if (!p.pid) return; try { process.kill(-p.pid, 'SIGKILL'); } catch { try { p.kill('SIGKILL'); } catch {} } };
 
 async function subirServidor() {
+  if (process.env.E2E_URL) return { pid: 0, kill() {} }; // servidor externo: não sobe nem derruba
   try { await fetch(`${BASE}/api/livros`); throw new Error(`a porta ${PORTA} já está em uso: encerre o servidor antigo antes de rodar o E2E`); } catch (e) { if (/já está em uso/.test(String(e))) throw e; }
   const dir = mkdtempSync(join(tmpdir(), 'verso-e2e-'));
   const p = spawn('npx', ['next', 'start', '-p', PORTA], { env: { ...process.env, VERSO_DATA_DIR: dir, ...(process.env.DATABASE_URL ? { DATABASE_SSL: 'disable' } : {}) }, stdio: 'pipe', detached: true });

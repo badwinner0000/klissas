@@ -1,16 +1,45 @@
 // Implementação em Postgres (Supabase). Conexão direta, só do servidor.
 // Concorrência: UPDATE ... WHERE rev = <lido>. Se outra instância gravou antes, relê e reaplica.
-import { Pool } from 'pg';
+import { Client, Pool } from 'pg';
 import type { Livro } from '../content/schema';
 import { Livro as LivroSchema } from '../content/schema';
 import { type Relato, type Sala, type Store, ErroSalaInexistente } from './store';
 
 const livros = new Map<string, Livro>(); // cache por instância: o conteúdo de um hash nunca muda
 
+const naCloudflare = () => typeof navigator !== 'undefined' && navigator.userAgent === 'Cloudflare-Workers';
+
+/** Node (Vercel, local): pool normal. Cloudflare Workers: não pode reaproveitar conexões entre requisições, então abre uma por consulta. */
+function criarConexao(url: string, ssl: false | { rejectUnauthorized: boolean }) {
+  if (!naCloudflare()) {
+    const pool = new Pool({ connectionString: url, max: Number(process.env.DATABASE_POOL ?? 3), ssl, idleTimeoutMillis: 10_000, connectionTimeoutMillis: 8_000 });
+    pool.on('error', (e) => console.error('pg: erro em conexão ociosa', e.message));
+    return pool;
+  }
+  const novo = async () => {
+    const c = new Client({ connectionString: url, ssl, connectionTimeoutMillis: 8_000 });
+    await c.connect();
+    return c;
+  };
+  return {
+    async query(texto: string, valores?: unknown[]) {
+      const c = await novo();
+      try {
+        return await c.query(texto, valores as never);
+      } finally {
+        await c.end().catch(() => {});
+      }
+    },
+    async connect() {
+      const c = await novo();
+      return Object.assign(c, { release: () => void c.end().catch(() => {}) });
+    },
+  } as unknown as Pool;
+}
+
 export function storePg(url: string): Store {
   const ssl = process.env.DATABASE_SSL === 'disable' ? false : { rejectUnauthorized: false };
-  const pool = new Pool({ connectionString: url, max: Number(process.env.DATABASE_POOL ?? 3), ssl, idleTimeoutMillis: 10_000, connectionTimeoutMillis: 8_000 });
-  pool.on('error', (e) => console.error('pg: erro em conexão ociosa', e.message));
+  const pool = criarConexao(url, ssl);
 
   const livroPorHash = async (hash: string): Promise<Livro> => {
     const c = livros.get(hash);
