@@ -1,0 +1,644 @@
+{
+  "id": "voo-cancelado",
+  "titulo": "Voo Cancelado",
+  "secao": "love-sparks",
+  "adulto": false,
+  "tropes": [
+    "only-one-bed",
+    "rivals-to-lovers",
+    "forced-proximity"
+  ],
+  "atributos": [
+    "Corpo",
+    "Jeito",
+    "Coragem",
+    "Cabeça",
+    "Charme"
+  ],
+  "linhaDoTempo": [
+    {
+      "quando": "Quinta, 22h10",
+      "evento": "Voo cancelado por tempestade"
+    },
+    {
+      "quando": "Quinta, 23h47",
+      "evento": "Quarto 7 do hotel do aeroporto"
+    },
+    {
+      "quando": "Sexta, 6h12",
+      "evento": "Mensagem sobre a vaga de gerência"
+    },
+    {
+      "quando": "Sexta, 9h",
+      "evento": "Dona Cida entrega as passagens"
+    }
+  ],
+  "npcs": {
+    "cida": {
+      "nome": "Dona Cida",
+      "voz": "seca, prática, sem paciência para drama e com um coração escondido atrás do balcão"
+    }
+  },
+  "nomesProibidos": [
+    "Lia",
+    "Davi",
+    "Bia",
+    "Caio"
+  ],
+  "inicio": "c1_abertura",
+  "nos": {
+    "c1_abertura": {
+      "cap": 1,
+      "tipo": "segue",
+      "lugar": "Aeroporto Regional de Serra Azul",
+      "hora": "Quinta, 22h10",
+      "texto": "O painel do Aeroporto Regional de Serra Azul pisca em vermelho, linha por linha: CANCELADO, CANCELADO, CANCELADO. Lá fora, a chuva bate de lado nas janelas, e o saguão cheira a café requentado e guarda-chuva molhado. Atrás do balcão, Dona Cida levanta um microfone que já viu dias melhores. “Atenção, passageiros do último voo da noite: a tempestade não pediu licença e nós também não vamos pedir desculpas. Fila única.”\n\nDona Cida não sabe, mas {{A.nome}} e {{B.nome}} trabalham na mesma empresa e disputam a mesma vaga de gerência. Isso, em breve, vai virar um problema.",
+      "ir": {
+        "A": "c1_solo_a",
+        "B": "c1_solo_b"
+      }
+    },
+    "c1_solo_a": {
+      "cap": 1,
+      "tipo": "solo",
+      "seat": "A",
+      "lugar": "Fila do balcão",
+      "texto": "Faltam doze pessoas na fila e a bateria do seu celular está em 4%. Dona Cida atende como quem corta pão: rápido e sem sorrir. O que você faz com esse tempo?",
+      "acoes": [
+        {
+          "id": "a_insistir",
+          "texto": "Insistir com Dona Cida por outro voo",
+          "teste": {
+            "attr": "Charme",
+            "mod": 0,
+            "ok": {
+              "texto": "Dona Cida ergue uma sobrancelha, quase sorri e anota seu nome numa lista que, segundo ela, “não existe”.",
+              "efeitos": {
+                "flag": "a_insistiu"
+              }
+            },
+            "parcial": {
+              "texto": "Dona Cida suspira, promete ver o que pode fazer e pede que você pare de debruçar no balcão.",
+              "efeitos": {
+                "flag": "a_insistiu"
+              }
+            },
+            "falha": {
+              "texto": "Dona Cida aponta um cartaz: “Reclamações: segunda a sexta, em horário comercial”. A fila inteira ouve o seu silêncio.",
+              "efeitos": {
+                "flag": "a_insistiu",
+                "abalo": 1
+              }
+            }
+          }
+        },
+        {
+          "id": "a_avisar",
+          "texto": "Ligar para o trabalho e avisar do atraso",
+          "resultado": "A chamada cai duas vezes e, na terceira, alguém promete avisar a chefia. O alívio dura até você lembrar que a chefia também tem Wi-Fi.",
+          "efeitos": {
+            "flag": "a_avisou"
+          }
+        },
+        {
+          "id": "a_tomada",
+          "texto": "Procurar uma tomada para o celular",
+          "teste": {
+            "attr": "Jeito",
+            "mod": 0,
+            "ok": {
+              "texto": "Achou! Atrás da máquina de salgadinhos, uma tomada esquecida. O celular volta a respirar.",
+              "efeitos": {
+                "flag": "a_tomada"
+              }
+            },
+            "parcial": {
+              "texto": "A tomada funciona, mas o cabo curto deixa você agachad{{A.o_a}} ao lado da máquina de salgadinhos, como quem reza.",
+              "efeitos": {
+                "flag": "a_tomada"
+              }
+            },
+            "falha": {
+              "texto": "Só encontra tomadas lacradas com fita adesiva. Alguém colou um bilhete: “Não insista”.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          }
+        }
+      ],
+      "ir": "c1_encontro"
+    },
+    "c1_solo_b": {
+      "cap": 1,
+      "tipo": "solo",
+      "seat": "B",
+      "lugar": "Saguão",
+      "texto": "A fila anda em câmera lenta. Do seu lugar dá para ver o painel de voos, a lanchonete e uma senhora lutando com uma mala do tamanho de uma geladeira.",
+      "acoes": [
+        {
+          "id": "b_cafe",
+          "texto": "Trocar o lugar na fila por um café",
+          "resultado": "O café vem “quente” só no rótulo, mas o copo aquece as suas mãos, e isso já ajuda.",
+          "efeitos": {
+            "flag": "b_cafe"
+          }
+        },
+        {
+          "id": "b_painel",
+          "texto": "Estudar o painel de voos até decorar",
+          "teste": {
+            "attr": "Cabeça",
+            "mod": 0,
+            "ok": {
+              "texto": "Nenhum voo decola antes de sábado de manhã, e agora você sabe disso antes de todo mundo.",
+              "efeitos": {
+                "flag": "b_sabe_voos"
+              }
+            },
+            "parcial": {
+              "texto": "Você entende metade do painel, o suficiente para se preocupar.",
+              "efeitos": {
+                "flag": "b_sabe_voos"
+              }
+            },
+            "falha": {
+              "texto": "As letras vermelhas embaralham e você lê “Lisboa” onde estava escrito “Londrina”.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          }
+        },
+        {
+          "id": "b_mala",
+          "texto": "Ajudar a senhora com a mala",
+          "teste": {
+            "attr": "Corpo",
+            "mod": 0,
+            "ok": {
+              "texto": "Você ergue a mala numa tentativa só. A senhora aplaude e jura que vai convidar você para o casamento da neta.",
+              "efeitos": {
+                "flag": "b_ajudou"
+              }
+            },
+            "parcial": {
+              "texto": "A mala sobe, o seu ombro reclama, a senhora agradece em dobro.",
+              "efeitos": {
+                "flag": "b_ajudou"
+              }
+            },
+            "falha": {
+              "texto": "A mala vence. A senhora consola você, e a fila inteira assiste.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          }
+        }
+      ],
+      "ir": "c1_encontro"
+    },
+    "c1_encontro": {
+      "cap": 1,
+      "tipo": "segue",
+      "lugar": "Balcão",
+      "hora": "Quinta, 23h20",
+      "texto": "Com a fila encolhida, Dona Cida atende os dois ao mesmo tempo, porque a paciência dela também encolheu. Ela abre uma pasta, confere duas vezes e levanta os olhos. “Hotel do aeroporto. Sobrou um quarto. Um.” Faz uma pausa de quem já viu esse filme. “Cama de casal.”{{se flag:a_insistiu}} Numa folha ao lado do telefone, o nome de {{A.nome}} aparece anotado a lápis: a lista que não existe.{{/se}}{{se flag:a_tomada}} O celular de {{A.nome}} está com 60%, o que, naquela noite, já é um status social.{{/se}}",
+      "ir": "c1_dialogo"
+    },
+    "c1_dialogo": {
+      "cap": 1,
+      "tipo": "dialogo",
+      "lugar": "Balcão",
+      "hora": "Quinta, 23h30",
+      "texto": "Dona Cida empurra uma chave pelo balcão. “Quarto 7. Sem reembolso, sem troca, sem novela.” O silêncio pede que alguém fale primeiro.{{se flag:b_sabe_voos}} O painel atrás dela confirma o que {{B.nome}} já sabia: nada decola antes de sábado.{{/se}}{{se flag:b_cafe}} Um copo de café requentado repousa no balcão, esquecido por alguém que teve coisa melhor a fazer.{{/se}}",
+      "turnos": [
+        {
+          "p": "A",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "texto": "Eu não queria te dar trabalho. Se preferir, eu durmo na poltrona do saguão.",
+              "tag": "a_abre",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "texto": "Ótimo. Um quarto, uma cama e nenhum plano. Perfeito.",
+              "tag": "a_seco"
+            },
+            {
+              "tom": "flerte",
+              "texto": "Tem certeza de que a tempestade não foi encomendada por você?",
+              "tag": "a_flerte"
+            }
+          ]
+        },
+        {
+          "p": "B",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "texto": "Podemos resolver isso com calma, os dois. Ninguém precisa dormir mal por orgulho.",
+              "tag": "b_cuida",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "texto": "Vou fingir que não ouvi isso.",
+              "tag": "b_seco"
+            },
+            {
+              "tom": "flerte",
+              "texto": "Que tal começar com uma trégua e terminar com um colchão?",
+              "tag": "b_flerte"
+            }
+          ],
+          "porTom": {
+            "abre": [
+              {
+                "tom": "cuida",
+                "texto": "Ninguém dorme na poltrona. A gente resolve isso como adultos.",
+                "tag": "b_cuida_abre",
+                "efeitos": {
+                  "vinculo": 1
+                }
+              },
+              {
+                "tom": "seco",
+                "texto": "Poltrona do tamanho de um gato. Esquece.",
+                "tag": "b_seco_abre"
+              },
+              {
+                "tom": "flerte",
+                "texto": "Que gentileza. Isso me assusta um pouco.",
+                "tag": "b_flerte_abre"
+              }
+            ],
+            "seco": [
+              {
+                "tom": "fere",
+                "texto": "Se for para reclamar, reclama com a Dona Cida.",
+                "tag": "b_fere_seco",
+                "efeitos": {
+                  "vinculo": -1,
+                  "flag": "brigaram"
+                }
+              },
+              {
+                "tom": "cuida",
+                "texto": "Eu também estou no limite. Podemos ser ruins de convivência só amanhã?",
+                "tag": "b_cuida_seco",
+                "efeitos": {
+                  "vinculo": 1
+                }
+              },
+              {
+                "tom": "flerte",
+                "texto": "Perfeito é um bom começo.",
+                "tag": "b_flerte_seco"
+              }
+            ],
+            "flerte": [
+              {
+                "tom": "flerte",
+                "texto": "Se fosse encomenda, eu teria pedido vista para o mar.",
+                "tag": "b_flerte_flerte"
+              },
+              {
+                "tom": "seco",
+                "texto": "Muito engraçado. Tente de novo amanhã.",
+                "tag": "b_seco_flerte"
+              },
+              {
+                "tom": "abre",
+                "texto": "Sinceramente? Eu ia te perguntar a mesma coisa.",
+                "tag": "b_abre_flerte",
+                "efeitos": {
+                  "vinculo": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "p": "A",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "texto": "Fica com o lado da janela. Eu aguento o barulho do ar-condicionado.",
+              "tag": "a_cuida2",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "texto": "Cada um no seu quadrado. Combinado?",
+              "tag": "a_seco2"
+            },
+            {
+              "tom": "fere",
+              "texto": "Só não vem com mais regras, que hoje eu já recebi todas.",
+              "tag": "a_fere2",
+              "efeitos": {
+                "vinculo": -1,
+                "flag": "brigaram"
+              }
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "abre",
+          "texto": "Estou cansando de fingir que isso não me incomoda.",
+          "tag": "pool_abre"
+        },
+        {
+          "tom": "seco",
+          "texto": "Anotado. Próximo assunto.",
+          "tag": "pool_seco"
+        },
+        {
+          "tom": "flerte",
+          "texto": "Quem diria que o dia acabaria assim.",
+          "tag": "pool_flerte"
+        },
+        {
+          "tom": "cuida",
+          "texto": "Vamos subir. Você precisa descansar.",
+          "tag": "pool_cuida"
+        },
+        {
+          "tom": "fere",
+          "texto": "Isso você deixou claro faz tempo.",
+          "tag": "pool_fere"
+        }
+      ],
+      "fecho": "Dona Cida arrasta a chave com dois dedos, como quem sela um acordo comercial. “Boa noite. O elevador está quebrado. Tem escada.”",
+      "ir": "c1_dividir"
+    },
+    "c1_dividir": {
+      "cap": 1,
+      "tipo": "dividir",
+      "lugar": "Quarto 7",
+      "hora": "Quinta, 23h47",
+      "texto": "O quarto 7 tem uma cama de casal, uma janela que não abre direito, uma TV de tubo e um frigobar que zumbe como se estivesse ofendido. A chuva marca o compasso no vidro. Há muito o que fazer e ninguém pretende fazer junto.",
+      "acoes": [
+        {
+          "id": "d_muralha",
+          "texto": "Montar uma muralha de travesseiros no meio da cama",
+          "resultado": "Quatro travesseiros, uma toalha enrolada e a convicção de que fronteiras resolvem tudo. A muralha fica torta, mas imponente.",
+          "efeitos": {
+            "flag": "muralha"
+          }
+        },
+        {
+          "id": "d_tv",
+          "seat": "A",
+          "texto": "Ligar a TV e procurar um canal",
+          "teste": {
+            "attr": "Jeito",
+            "mod": 0,
+            "ok": {
+              "texto": "O canal pega de primeira: uma novela dublada, a trilha sonora mais reconfortante do mundo.",
+              "efeitos": {
+                "flag": "tv_ligada"
+              }
+            },
+            "parcial": {
+              "texto": "A imagem vem e vai, mas o som aguenta firme.",
+              "efeitos": {
+                "flag": "tv_ligada"
+              }
+            },
+            "falha": {
+              "texto": "A TV pisca, faz um barulho de chaleira e apaga de vez.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          }
+        },
+        {
+          "id": "d_frigobar",
+          "texto": "Abrir o frigobar",
+          "teste": {
+            "attr": "Jeito",
+            "mod": 0,
+            "ok": {
+              "texto": "Água, dois chocolates e uma minigarrafa de espumante. O preço na lista é uma ofensa pessoal.",
+              "efeitos": {
+                "flag": "frigobar"
+              }
+            },
+            "parcial": {
+              "texto": "Só água e amendoim. Já serve.",
+              "efeitos": {
+                "flag": "frigobar"
+              }
+            },
+            "falha": {
+              "texto": "A porta emperra e quase leva um dedo. O frigobar zumbe, triunfante.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          }
+        },
+        {
+          "id": "d_cobertor",
+          "texto": "Ligar na recepção e pedir um cobertor extra",
+          "resultado": "Dona Cida atende na primeira chamada e diz que o cobertor extra mora no armário do corredor. Você descobre que ela também é governanta, recepcionista e oráculo.",
+          "efeitos": {
+            "flag": "cobertor"
+          }
+        },
+        {
+          "id": "d_banho",
+          "seat": "B",
+          "texto": "Tomar banho primeiro",
+          "resultado": "Água quente por quinze minutos e a sensação de que o mundo, afinal, tem conserto.",
+          "efeitos": {
+            "flag": "banho_b"
+          }
+        }
+      ],
+      "desfecho": "O quarto agora tem cara de quem decidiu alguma coisa.{{se flag:tv_ligada}} A TV de tubo chia uma novela dublada em volume baixo.{{/se}}{{se flag:banho_b}} O banheiro ainda solta vapor pela fresta da porta.{{/se}} O relógio da cabeceira marca 23h47 e ninguém menciona isso.",
+      "ir": "c1_consent"
+    },
+    "c1_consent": {
+      "cap": 1,
+      "tipo": "consentimento",
+      "lugar": "Quarto 7",
+      "hora": "Sexta, 0h40",
+      "texto": "A chuva engrossou. A luz do abajur é amarela demais, o quarto é pequeno demais e o silêncio ficou grande demais. Algo no ar mudou, e cada um suspeita que o outro também percebeu.",
+      "pergunta": "O ambiente está pesado. O que você faz?",
+      "avancar": "Avançar",
+      "ficar": "Ficar onde está",
+      "flag": "consent_noite",
+      "irAvancou": "c1_beijo",
+      "irSem": "c1_sem"
+    },
+    "c1_beijo": {
+      "cap": 1,
+      "tipo": "segue",
+      "requer": [
+        "consent_noite"
+      ],
+      "lugar": "Quarto 7",
+      "hora": "Sexta, 0h52",
+      "texto": "Primeiro é a aproximação, devagar, como quem testa o gelo. Depois deixa de ser teste. O beijo tem gosto de chuva e de café requentado, e a muralha de travesseiros {{se flag:muralha}}desaba no chão sem que ninguém se dê o trabalho de erguê-la{{senao}}fica imaginária, desnecessária{{/se}}. Quando se afastam, o relógio já passou da meia-noite faz tempo. Nenhum dos dois quer ser o primeiro a explicar.",
+      "ir": "c1_fim"
+    },
+    "c1_sem": {
+      "cap": 1,
+      "tipo": "segue",
+      "exclui": [
+        "consent_noite"
+      ],
+      "lugar": "Quarto 7",
+      "hora": "Sexta, 0h52",
+      "texto": "Ninguém atravessa a linha. {{se flag:muralha}}A muralha de travesseiros continua de pé e, pela primeira vez, parece menos fronteira e mais abrigo.{{senao}}A cama permanece larga o bastante para duas pessoas e dois silêncios.{{/se}} A chuva segue indiferente. Dormir ao lado de alguém sem que nada aconteça também é uma forma de intimidade, e o quarto aceita isso com uma dignidade que ninguém esperava dele.",
+      "ir": "c1_fim"
+    },
+    "c1_fim": {
+      "cap": 1,
+      "tipo": "fim",
+      "lugar": "Quarto 7",
+      "hora": "Sexta, 6h12",
+      "texto": "Às 6h12, um celular vibra no criado-mudo. {{se flag:a_avisou}}É a chefia, que prometeu não ligar e ligou.{{senao}}É um número desconhecido, insistente como quem sabe a resposta.{{/se}} Na tela, uma mensagem: “Soubemos do voo. Precisamos conversar sobre a vaga antes de sábado.”",
+      "gancho": "Um dos dois guarda um segredo sobre essa vaga, e a manhã não vai esperar.",
+      "ir": "c2_manha"
+    },
+    "c2_manha": {
+      "cap": 2,
+      "tipo": "segue",
+      "lugar": "Quarto 7",
+      "hora": "Sexta, 6h40",
+      "texto": "Sexta-feira, 6h40. A chuva virou garoa e a garoa virou névoa. {{se flag:consent_noite}}O quarto guarda os rastros da noite: um travesseiro fora do lugar, um silêncio que já não incomoda.{{senao}}O quarto guarda a dignidade da noite anterior: duas pessoas, uma cama, nenhum acidente.{{/se}}{{se flag:brigaram}} A última discussão ainda paira, como cheiro de cigarro em roupa limpa.{{/se}}{{se flag:cobertor}} O cobertor extra, dobrado no pé da cama, ficou intacto.{{/se}}{{se flag:frigobar}} O frigobar zumbe, orgulhoso de ter sobrevivido.{{/se}}{{se flag:b_ajudou}} Lá embaixo, a senhora da mala acena do saguão e avisa que reservou duas cadeiras no casamento da neta.{{/se}}",
+      "ir": "c2_decisao"
+    },
+    "c2_decisao": {
+      "cap": 2,
+      "tipo": "decisao",
+      "lugar": "Quarto 7",
+      "hora": "Sexta, 7h",
+      "texto": "A mensagem sobre a vaga está aberta nos dois celulares. A diretoria quer a resposta até sábado, e só há uma cadeira. Cada um sabe algo que o outro desconhece, e isso muda tudo.",
+      "acoes": [
+        {
+          "id": "c_contar",
+          "texto": "Contar tudo o que sabe sobre a vaga, mesmo que isso custe a cadeira",
+          "resultado": "Dizer a verdade custa menos do que parecia, e o silêncio depois vale mais do que a resposta.",
+          "efeitos": {
+            "flag": "contou_vaga",
+            "vinculo": 1
+          }
+        },
+        {
+          "id": "c_guardar",
+          "texto": "Guardar a informação para a reunião",
+          "resultado": "A informação fica no bolso, pesada como moeda de troca. Você ainda não sabe se vai usá-la.",
+          "efeitos": {
+            "flag": "guardou_vaga"
+          }
+        },
+        {
+          "id": "c_regra",
+          "texto": "Propor uma regra: o que um sabe, os dois sabem",
+          "resultado": "A frase sai mais firme do que você esperava. Combinar regras com um rival é, no mínimo, uma ideia ousada.",
+          "efeitos": {
+            "vinculo": 1
+          }
+        }
+      ],
+      "desfecho": "Do outro lado do quarto, o celular volta a vibrar: é a diretoria, de novo, agora com um horário.",
+      "ir": "c2_gesto"
+    },
+    "c2_gesto": {
+      "cap": 2,
+      "tipo": "segue",
+      "lugar": "Aeroporto",
+      "hora": "Sexta, 9h",
+      "texto": "No saguão, Dona Cida chama os dois ao balcão com um envelope. Dentro, duas passagens para o único voo de sábado, assentos 14A e 14B, lado a lado, e um bilhete preso com clipe: “Quem abrir mão primeiro leva o café pago.”{{se flag:contou_vaga}} Alguém abriu o jogo, e isso mudou a temperatura da conversa.{{/se}}{{se flag:guardou_vaga}} Alguém guardou uma carta, e isso também mudou a temperatura.{{/se}}",
+      "ir": "c2_gesto_decisao"
+    },
+    "c2_gesto_decisao": {
+      "cap": 2,
+      "tipo": "decisao",
+      "lugar": "Aeroporto",
+      "hora": "Sexta, 9h20",
+      "texto": "A reunião é amanhã, e a atitude que cada um tomar agora vai dizer quem essa pessoa se tornou desde quinta à noite.",
+      "acoes": [
+        {
+          "id": "g_abrir_mao",
+          "texto": "Abrir mão da vaga diante da diretoria",
+          "resultado": "Você escreve a mensagem antes de mudar de ideia. Enviar é a parte difícil, e você envia.",
+          "efeitos": {
+            "flag": "abriu_mao",
+            "vinculo": 2
+          }
+        },
+        {
+          "id": "g_dividir",
+          "texto": "Propor à diretoria dividir a gerência",
+          "resultado": "A ideia nunca foi feita antes naquela empresa. Isso a torna, no mínimo, memorável.",
+          "efeitos": {
+            "flag": "cogestao",
+            "vinculo": 1
+          }
+        },
+        {
+          "id": "g_disputar",
+          "texto": "Disputar a vaga de cabeça erguida",
+          "resultado": "Você respira fundo. Querer a vaga nunca foi o problema, e você não vai pedir desculpas por isso."
+        }
+      ],
+      "ir": "c2_fim"
+    },
+    "c2_fim": {
+      "cap": 2,
+      "tipo": "fim",
+      "lugar": "Portão 3",
+      "hora": "Sábado, 6h",
+      "texto": "Sábado, 6h. O voo 14 chama para o embarque, e a chuva finalmente cansou. Algo foi decidido ali que não dá para desfazer.",
+      "gancho": "Os assentos 14A e 14B continuam lado a lado, e o próximo capítulo começa com o cinto afivelado.",
+      "ir": "final"
+    },
+    "final": {
+      "cap": 2,
+      "tipo": "final",
+      "finais": [
+        {
+          "se": [
+            {
+              "flag": "abriu_mao"
+            },
+            {
+              "vinculoMin": 3
+            }
+          ],
+          "texto": "No portão 3, {{A.nome}} e {{B.nome}} dividem um café que não é de nenhum dos dois. Abrir mão da vaga foi o gesto que nenhum deles teria feito na quinta à noite. {{se flag:consent_noite}}A noite no quarto 7 deixou de ser um acaso e virou um começo.{{senao}}A noite sem beijo no quarto 7 provou que respeito também é um jeito de dizer “fica”.{{/se}} Dona Cida, de longe, finge não olhar."
+        },
+        {
+          "se": [
+            {
+              "flag": "cogestao"
+            }
+          ],
+          "texto": "Dividir a gerência é uma ideia estranha, ousada e, quem sabe, a única que cabe nos dois. Dona Cida carimba os dois cartões de embarque com uma pancada seca. “Que ninguém reclame depois.”"
+        },
+        {
+          "se": [],
+          "texto": "Cada um segue para o seu assento com a cabeça erguida e um respeito novo, ainda sem nome. O voo decola. A vaga continua em aberto, e a história, também."
+        }
+      ]
+    }
+  }
+}
