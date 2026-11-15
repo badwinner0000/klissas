@@ -72,16 +72,16 @@ NOS['up_c1_dialogo'] = dict(tipo='dialogo', cap=1, lugar='Elevador, Hale & Brand
 Em quarenta e dois segundos dá para dizer muita coisa, ou nenhuma.""",
  turnos=[
   dict(prompt='A primeira frase é sua.', opcoes=[
-    op('seco', 'e0_a_seco', '— Joanna Nicholls. Diretora de contas. Não precisamos nos apresentar, mas é educado.', se='eu:A'),
+    op('seco', 'e0_a_seco', '— {{eu.nome}} Nicholls. Diretora de contas. Não precisamos nos apresentar, mas é educado.', se='eu:A'),
     op('flerte', 'e0_a_flerte', '— Você é mais alto do que no organograma.', se='eu:A'),
     op('cuida', 'e0_a_cuida', '— Sinto muito pela venda. Imagino que não tenha sido fácil.', se='eu:A'),
-    op('seco', 'e0_b_seco', '— Dean Tillman. Eu seria o filho do dono, mas parece que agora sou só filho.', se='eu:B'),
+    op('seco', 'e0_b_seco', '— {{eu.nome}} Tillman. Eu seria filh{{eu.o_a}} do dono, mas parece que agora sou só filh{{eu.o_a}}.', se='eu:B'),
     op('flerte', 'e0_b_flerte', '— Então você é a pessoa que escreveu a análise. Eu tinha uma imagem diferente. Menos... horário comercial.', se='eu:B'),
     op('abre', 'e0_b_abre', '— Eu não sabia que ia ter concorrência. Achei que fosse formalidade.', se='eu:B'),
   ]),
   dict(prompt='Agora você responde.', opcoes=[
     op('seco', 'e1_a_seco', '— Não é concorrência. É um processo seletivo. Há um critério, e eu o conheço.', se='eu:A'),
-    op('fere', 'e1_a_fere', '— O senhor tem sobrenome. Eu tenho resultados. Vamos ver o que pesa mais.', se='eu:A', ef=dict(abalo=1)),
+    op('fere', 'e1_a_fere', '— Você tem sobrenome. Eu tenho resultados. Vamos ver o que pesa mais.', se='eu:A', ef=dict(abalo=1)),
     op('abre', 'e1_a_abre', '— Eu também não sabia. Descobri hoje às 9h40, por um post-it.', se='eu:A', ef=dict(vinculo=1)),
     op('seco', 'e1_b_seco', '— Eu conheço o mercado regional, os clientes, os caminhões e o nome de cada motorista. O que você conhece é planilha.', se='eu:B'),
     op('fere', 'e1_b_fere', '— Sobrenome, resultados, post-it. Que lista de justificativas completa para uma pessoa que não precisa se justificar.', se='eu:B', ef=dict(abalo=1)),
@@ -106,7 +106,7 @@ Em quarenta e dois segundos dá para dizer muita coisa, ou nenhuma.""",
  ],
  pool=[
   op('seco', 'pl_seco', '— Isso é tudo?'),
-  op('cuida', 'pl_cuida', '— Você parece cansado ou cansada. Quer carona?'),
+  op('cuida', 'pl_cuida', '— Você está com cara de quem não dormiu. Quer carona?'),
   op('flerte', 'pl_flerte', '— Quarenta e dois segundos dão para muita coisa.'),
   op('abre', 'pl_abre', '— Eu não sei fazer isso, sabe. Ser educado com quem eu deveria odiar.'),
   op('fere', 'pl_fere', '— Você tem cara de quem vai me atrapalhar.'),
@@ -129,26 +129,26 @@ Vão ser três semanas, uma vaga e dois candidatos. Alguém precisa dizer como s
    resultado="""Vocês fazem um pacto estranho, de poucas palavras: se um descobrir algo sobre a vaga, avisa o outro. Nenhum dos dois acredita que o outro vai cumprir. Os dois, em segredo, já planejam cumprir."""),
  ])
 
-NOS['up_c1_noite_a'] = dict(tipo='solo', cap=1, seat='A', lugar='Apartamento de Joanna, Lincoln Park', hora='Segunda · 22h30',
+NOS['up_c1_noite_a'] = dict(tipo='solo', cap=1, seat='A', lugar='Apartamento, Lincoln Park', hora='Segunda · 22h30',
  texto="""O seu apartamento, em Lincoln Park, tem um sofá cinza, uma mesa de jantar sem cadeira de jantar e uma geladeira com três potes de iogurte e uma garrafa de vinho aberta há cinco dias. Você nunca foi uma pessoa de móveis. Foi uma pessoa de resultados.
 
 Às dez e meia da noite, de meias, em pé na cozinha, você abre o laptop e olha a fotografia que tirou da página do arquivo da aquisição: *US$ 41 milhões*, uma nota de rodapé em letra miúda, e uma assinatura de Marcus Webb ao lado de uma cláusula que você nunca tinha visto.
 
-O celular vibra duas vezes. A sua irmã, Megan, de Dayton: *Você viu a mamãe? Ela perguntou de você. Liga.* E, embaixo, uma segunda mensagem, de Nina: *Joanna. Come alguma coisa que não seja iogurte.*""",
+O celular vibra duas vezes. A sua irmã, Megan, de Dayton: *Você viu a mamãe? Ela perguntou de você. Liga.* E, embaixo, uma segunda mensagem, de Nina: *{{A.nome}}. Come alguma coisa que não seja iogurte.*""",
  acoes=[
   dict(id='investigar', texto='Ignorar as mensagens e investigar a nota de rodapé até achar a origem', ir='up_c1_fim',
    efeitos=dict(flag='a_investigou', abalo=1),
    resultado="""Você ignora as mensagens. Abre o histórico do documento, o controle de versões, as datas de edição. A nota de rodapé foi inserida às 23h47 de uma quinta-feira, por um usuário que não tem nome: só uma matrícula, *MW-0017*. Você escreve a matrícula numa folha, e a risca, e a escreve de novo."""),
   dict(id='ligar_megan', texto='Ligar para a Megan e dizer a primeira coisa que vier à cabeça', ir='up_c1_fim',
    efeitos=dict(flag='a_ligou_megan', vinculo=1),
-   resultado="""Você liga. A Megan atende no segundo toque, com uma criança chorando ao fundo e a voz de quem faz três coisas ao mesmo tempo. *Joanna?* O que sai da sua boca é: *eu tenho um concorrente.* Do outro lado, um silêncio curto, e depois, sem ironia nenhuma, a frase mais gentil que alguém disse a você em semanas: *então ele que se cuide.*"""),
+   resultado="""Você liga. A Megan atende no segundo toque, com uma criança chorando ao fundo e a voz de quem faz três coisas ao mesmo tempo. *{{A.nome}}?* O que sai da sua boca é: *eu tenho um concorrente.* Do outro lado, um silêncio curto, e depois, sem ironia nenhuma, a frase mais gentil que alguém disse a você em semanas: *então ele que se cuide.*"""),
   dict(id='comer', texto='Fechar o laptop e preparar um jantar de verdade, pela primeira vez em um mês', ir='up_c1_fim',
    efeitos=dict(flag='a_cozinhou'),
    resultado="""Você fecha o laptop. Procura na geladeira, nos armários, no congelador, e acha uma massa de espaguete e um limão que não está de todo morto. Cozinha devagar, de pé, olhando o relógio do forno. É uma refeição pequena, sem nome, e você come na bancada, sem pressa, ouvindo o silêncio do apartamento."""),
  ])
 
 NOS['up_c1_noite_b'] = dict(tipo='solo', cap=1, seat='B', lugar='Tillman & Sons, River North', hora='Segunda · 22h30',
- texto="""O galpão da Tillman & Sons, às dez e meia da noite, é o lugar mais grande e mais vazio de Chicago. Você mora aqui, numa sala de arquivo reformada às pressas, com um sofá-cama, uma chapa elétrica e uma foto do seu avô na parede que você nunca teve coragem de tirar. O seu divórcio fez cinco anos em outubro e você nunca comprou uma cama.
+ texto="""O galpão da Tillman & Sons, às dez e meia da noite, é o lugar mais amplo e mais vazio de Chicago. Você mora aqui, numa sala de arquivo reformada às pressas, com um sofá-cama, uma chapa elétrica e uma foto do seu avô na parede que você nunca teve coragem de tirar. O seu divórcio fez cinco anos em outubro e você nunca comprou uma cama.
 
 O celular vibra. É o seu pai, em chamada de vídeo, com o rosto tão perto da câmera que só se vê um olho. Atrás dele, no sofá, um vira-lata marrom de dois anos, com uma orelha caída e outra em pé, olha você pela tela com a expressão de um adolescente que não aprova nenhuma das suas escolhas de vida.
 
@@ -162,16 +162,16 @@ O celular vibra. É o seu pai, em chamada de vídeo, com o rosto tão perto da c
    resultado="""A pergunta sai antes que você decida. O seu pai demora a responder. *Menos do que eu devia ter pedido*, diz, afinal. *Mais do que eu devia ter pagado, se você contar o que devo.* A conversa termina com um *boa noite* seco, e a tela do celular, preta, guarda por um instante o seu rosto cansado."""),
   dict(id='chloe', texto='Mandar uma mensagem para a Chloe e pedir que ela descubra o que puder sobre a Meridian', ir='up_c1_fim',
    efeitos=dict(flag='b_pediu_chloe'),
-   resultado="""Você escreve: *Preciso de tudo que for público sobre a Meridian. Quem manda, quem saiu, quem entrou.* A resposta de Chloe chega em doze segundos: *Eu estava esperando você pedir. Já comecei. Dorme.* Você sabe que ela vai passar a noite acordada, e sabe que é a coisa mais lealdade que alguém fez por você neste mês."""),
+   resultado="""Você escreve: *Preciso de tudo que for público sobre a Meridian. Quem manda, quem saiu, quem entrou.* A resposta de Chloe chega em doze segundos: *Eu estava esperando você pedir. Já comecei. Dorme.* Você sabe que ela vai passar a noite acordada, e sabe que é a coisa mais leal que alguém fez por você neste mês."""),
  ])
 
 NOS['up_c1_fim'] = dict(tipo='fim', cap=1, lugar='Chicago', hora='Terça · 06h12',
  texto="""Na manhã de terça, às seis e doze, dois e-mails idênticos chegam a duas caixas de entrada em lados diferentes de Chicago, com o mesmo assunto e a mesma assinatura:
 
-*De: Marcus Webb. Assunto: Congresso Global de Operações, Viena. Os dois candidatos viajam juntos, quinta-feira, voo AA 88 das 17h40. Passagens e hotel já reservados. Apresentações no sábado. Quero ver como vocês trabalham em equipe. Que vença o melhor. — M.*
+*De: Marcus Webb. Assunto: Congresso Global de Operações, Viena. Os dois candidatos viajam juntos, quinta-feira, voo noturno da Austrian Airlines, saída às 17h40. Passagens e hotel já reservados. Apresentações no sábado. Quero ver como vocês trabalham em equipe. Que vença o melhor. — M.*
 
 {{se flag:competir_limpo}}Os dois combinaram competir limpo, e a primeira ordem do chefe é viajarem juntos, no mesmo voo, no mesmo hotel, por seis dias. {{/se}}{{se flag:sem_regras}}Nenhum dos dois combinou nada, e agora vão dividir um avião. {{/se}}{{se flag:trocar_info}}Os dois prometeram trocar informação, e a primeira informação é esta: eles vão viajar juntos. {{/se}}
 
 Ao lado do e-mail, em anexo, a confirmação da reserva: *Hotel Imperial Wien, 1 quarto, 1 cama king, 6 noites.* O erro, se foi um erro, vem em letra de sistema, sem rosto.""",
  gancho="Viena, seis noites, e uma reserva que diz um quarto só.",
- ir='up_rascunho_fim')
+ ir='up_c2_aeroporto')
