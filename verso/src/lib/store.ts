@@ -57,6 +57,8 @@ export interface Store {
 }
 
 let impl: Store | undefined;
+/** Como o servidor chegou (ou tentou chegar) ao banco; aparece em /api/saude. */
+export let viaBanco: 'hyperdrive' | 'direto' | 'arquivo' | 'nenhum' = 'nenhum';
 
 /** Na Cloudflare, o Hyperdrive (se ligado no wrangler.jsonc) faz a conexão segura com o Supabase; o Worker não consegue validar o certificado do Supabase sozinho. */
 async function urlDoHyperdrive(): Promise<string | undefined> {
@@ -75,13 +77,16 @@ async function escolher(): Promise<Store> {
   const hyper = await urlDoHyperdrive();
   if (hyper) {
     const { storePg } = await import('./store-pg');
+    viaBanco = 'hyperdrive';
     impl = storePg(hyper, { semSsl: true });
   } else if (process.env.DATABASE_URL) {
     const { storePg } = await import('./store-pg');
+    viaBanco = 'direto';
     impl = storePg(process.env.DATABASE_URL);
   } else {
     const naCloudflare = typeof navigator !== 'undefined' && navigator.userAgent === 'Cloudflare-Workers';
     if (process.env.VERCEL || naCloudflare) throw new ErroBancoIndisponivel('DATABASE_URL não configurada: este servidor não guarda arquivos entre requisições.');
+    viaBanco = 'arquivo';
     impl = storeArquivo();
   }
   return impl;

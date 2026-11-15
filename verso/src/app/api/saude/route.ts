@@ -1,6 +1,6 @@
 // Diagnóstico: o banco responde? Nunca devolve segredos, só o tipo do problema.
 import { NextResponse } from 'next/server';
-import { store } from '../../../lib/store';
+import { store, viaBanco } from '../../../lib/store';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,16 +32,16 @@ const POR_MENSAGEM: [RegExp, string][] = [
 const limpa = (m: string) => m.replace(/postgres(ql)?:\/\/\S+/gi, '<url>').replace(/\b[\w.-]+\.(supabase\.(co|com)|pooler\.supabase\.com|vercel\.app)\b/gi, '<host>').slice(0, 160);
 
 export async function GET() {
-  const base = { banco: process.env.DATABASE_URL ? 'postgres' : 'arquivo', vercel: !!process.env.VERCEL };
+  const base = () => ({ via: viaBanco, banco: process.env.DATABASE_URL ? 'postgres' : 'arquivo', vercel: !!process.env.VERCEL });
   try {
     await store.obter('ZZZZZ');
-    return NextResponse.json({ ok: true, ...base }, { headers: { 'Cache-Control': 'no-store' } });
+    return NextResponse.json({ ok: true, ...base() }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (e) {
     const err = e as { code?: string; name?: string; message?: string };
     const codigo = err.code ?? err.name ?? 'desconhecido';
     console.error('saude: falha', codigo, err.message);
     const msg = err.message ?? '';
     const dica = DICAS[codigo] ?? POR_MENSAGEM.find(([r]) => r.test(msg))?.[1] ?? 'veja os logs da função na Vercel (Logs)';
-    return NextResponse.json({ ok: false, ...base, codigo, mensagem: limpa(msg), dica }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    return NextResponse.json({ ok: false, ...base(), codigo, mensagem: limpa(msg), dica }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
   }
 }
