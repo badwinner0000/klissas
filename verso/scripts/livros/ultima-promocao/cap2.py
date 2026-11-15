@@ -37,7 +37,7 @@ A pessoa que vai se sentar no 24B está na outra ponta do portão, de gravata af
  ])
 
 NOS['up_c2_b'] = dict(tipo='solo', cap=2, seat='B', lugar="Portão K14, O'Hare", hora='Quinta · 16h50',
- texto="""O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentado numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.
+ texto="""O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentad{{eu.o_a}} numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.
 
 Na tela, uma mensagem da Chloe, de oito minutos atrás, com um anexo de duas páginas: *Meridian Group. Três diretores saíram em dezoito meses. Todos de áreas que o Marcus Webb comandou. Ninguém quis falar. Priya Patel foi a única que atendeu o telefone e desligou em quatro segundos. Mais amanhã.*
 
@@ -87,7 +87,7 @@ Com a cabine em penumbra e o motor roncando, é a primeira vez em três dias em 
     op('cuida', 'f1_cuida', '— Eu sei. Percebi no portão. Você contou as saídas de emergência.', se='eu:B'),
     op('flerte', 'f1_flerte', '— Quarenta e dois países, e ainda assim a mão aperta como se fosse o primeiro.', se='eu:B'),
     op('seco', 'f1_seco', '— Não vou contar. Eu não sou esse tipo de rival.', se='eu:B'),
-    op('abre', 'f1_a_abre', '— Obrigada ou obrigado. Por não rir.', se='eu:A', ef=dict(vinculo=1)),
+    op('abre', 'f1_a_abre', '— Valeu por não rir.', se='eu:A', ef=dict(vinculo=1)),
     op('seco', 'f1_a_seco', '— Chega. Eu não preciso de plateia.', se='eu:A'),
     op('flerte', 'f1_a_flerte', '— Você é mais atento do que o seu perfil no LinkedIn.', se='eu:A'),
   ]),
@@ -103,7 +103,7 @@ Com a cabine em penumbra e o motor roncando, é a primeira vez em três dias em 
     op('abre', 'f3_abre', '— Boa noite. E, se ajudar, eu não vou a lugar nenhum.', se='eu:B', ef=dict(vinculo=1)),
     op('flerte', 'f3_flerte', '— Se eu cair no sono no seu ombro, finja que não viu.', se='eu:B'),
     op('seco', 'f3_seco', '— Boa noite. Amanhã a gente volta a ser inimigos.', se='eu:B'),
-    op('abre', 'f3_a_abre', '— Boa noite. E obrigada, de verdade.', se='eu:A', ef=dict(vinculo=1)),
+    op('abre', 'f3_a_abre', '— Boa noite. E valeu, de verdade.', se='eu:A', ef=dict(vinculo=1)),
     op('flerte', 'f3_a_flerte', '— Se eu cair no sono no seu ombro, finja que foi acidente.', se='eu:A'),
     op('seco', 'f3_a_seco', '— Boa noite. Amanhã, de volta ao sobrenome.', se='eu:A'),
   ]),
