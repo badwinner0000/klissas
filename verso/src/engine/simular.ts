@@ -1,6 +1,6 @@
 import type { Livro, Seat } from '../content/schema';
 import { type Rng, criarRng } from './rng';
-import { type Acao_, ErroJogo, type Estado, type Jogadores, agir, estadoInicial, visao } from './motor';
+import { type Acao_, ErroJogo, type Estado, type Jogadores, agir, iniciar, visao } from './motor';
 import type { Genero } from './template';
 
 export type Politica = 'ambos' | 'nenhum' | 'soA' | 'soB';
@@ -21,9 +21,10 @@ export interface Partida {
 }
 
 const DEFEITOS = /\$\{|undefined|\bnull\b|NaN|\[object|\{\{|\}\}/;
+const marca = { esc: '▸', fala: '“', txt: '' } as const;
 
-export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, maxPassos = 600): Partida {
-  let e = estadoInicial(l);
+export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, maxPassos = 1500): Partida {
+  let e = iniciar(l, jog);
   const visitados = new Set<string>([l.inicio]);
   const textos: Record<Seat, string[]> = { A: [], B: [] };
   const erros: string[] = [];
@@ -36,32 +37,29 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
     for (const s of ordem) {
       const v = visao(l, e, s, jog);
       visitados.add(e.pos[s]);
-      const chave = `${e.pos[s]}|${v.texto}|${v.transcricao.length}|${v.opcoes.length}|${v.aguardando}`;
-      if (chave !== ultimo[s]) {
-        ultimo[s] = chave;
-        if (DEFEITOS.test(v.texto)) erros.push(`texto quebrado em ${e.pos[s]}: ${v.texto.slice(0, 80)}`);
-        const falas = v.transcricao.map((t) => `${t.seat}: “${t.texto}”`).join('\n');
-        const corpo = falas ? `${v.texto}\n\n${falas}` : v.texto;
-        // uma entrada por nó: a mesma cena, evoluindo, substitui a anterior
+      const linhas = v.registro.map((r) => (r.k === 'esc' ? `${marca.esc} [${jog[r.seat].nome}] ${r.texto}` : r.k === 'fala' ? `[${jog[r.seat].nome}] ${r.texto}` : r.texto));
+      const corpo = [v.texto, ...linhas].filter(Boolean).join('\n\n');
+      if (corpo !== ultimo[s]) {
+        ultimo[s] = corpo;
+        if (DEFEITOS.test(corpo)) erros.push(`texto quebrado em ${e.pos[s]}: ${corpo.match(DEFEITOS)?.[0]}`);
         if (noAnterior[s] === e.pos[s] && textos[s].length) textos[s][textos[s].length - 1] = corpo;
         else textos[s].push(corpo);
         noAnterior[s] = e.pos[s];
       }
       if (!v.opcoes.length) continue;
-      let op = v.opcoes[Math.floor(rng() * v.opcoes.length)]!;
       let acao: Acao_;
       if (v.tipo === 'consentimento') {
         const quer = politica === 'ambos' || (politica === 'soA' && s === 'A') || (politica === 'soB' && s === 'B');
         acao = { tipo: 'voto', id: quer ? 'avancar' : 'ficar' };
-      } else if (op.id === 'continuar') acao = { tipo: 'continuar' };
-      else acao = { tipo: 'opcao', id: op.id };
+      } else if (v.opcoes[0]!.id === 'continuar') acao = { tipo: 'continuar' };
+      else if (v.tipo === 'decisao' && v.votoDoOutro && v.opcoes.some((o) => o.id === v.votoDoOutro!.id)) acao = { tipo: 'opcao', id: v.votoDoOutro.id };
+      else acao = { tipo: 'opcao', id: v.opcoes[Math.floor(rng() * v.opcoes.length)]!.id };
       try {
         e = agir(l, e, s, acao, jog).estado;
       } catch (err) {
         erros.push(err instanceof ErroJogo ? err.message : String(err));
         return { visitados, textos, erros, estado: e, passos };
       }
-      void op;
       passos++;
       agiu = true;
       break;
@@ -74,7 +72,10 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
   if (!e.fim && !erros.length) erros.push('limite de passos sem chegar ao fim');
   visitados.add(e.pos.A);
   visitados.add(e.pos.B);
-  if (e.finalTexto) textos.A.push(e.finalTexto), textos.B.push(e.finalTexto);
+  if (e.finalTexto) {
+    textos.A.push(e.finalTexto);
+    textos.B.push(e.finalTexto);
+  }
   return { visitados, textos, erros, estado: e, passos };
 }
 

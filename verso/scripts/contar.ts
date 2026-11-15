@@ -8,7 +8,7 @@ const porCap: Record<number, number> = {};
 let total = 0;
 for (const [id, no] of Object.entries(l.nos)) {
   const w = textosDoNo(no).reduce((s, t) => s + t.texto.split(/\s+/).filter(Boolean).length, 0);
-  const principal = ('texto' in no ? no.texto : '').split(/\s+/).filter(Boolean).length;
+  const principal = (('texto' in no ? no.texto : '') ?? '').split(/\s+/).filter(Boolean).length;
   porCap[no.cap] = (porCap[no.cap] ?? 0) + w;
   total += w;
   const alerta = principal && principal < 150 ? '  ⚠ <150' : principal > 400 ? '  ⚠ >400' : '';

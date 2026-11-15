@@ -63,11 +63,7 @@
           "texto": "Insistir com Dona Cida por outro voo",
           "variantes": [
             {
-              "se": [
-                {
-                  "abaloMin": 2
-                }
-              ],
+              "se": "abalo>=2",
               "resultado": "Dona Cida aponta um cartaz: “Reclamações: segunda a sexta, em horário comercial”. A fila inteira ouve o seu silêncio.",
               "efeitos": {
                 "flag": "a_insistiu",
@@ -75,13 +71,14 @@
               }
             },
             {
-              "se": [],
+              "se": "",
               "resultado": "Dona Cida ergue uma sobrancelha, quase sorri e anota seu nome numa lista que, segundo ela, “não existe”.",
               "efeitos": {
                 "flag": "a_insistiu"
               }
             }
-          ]
+          ],
+          "ir": "c1_encontro"
         },
         {
           "id": "a_avisar",
@@ -89,31 +86,29 @@
           "resultado": "A chamada cai duas vezes e, na terceira, alguém promete avisar a chefia. O alívio dura até você lembrar que a chefia também tem Wi-Fi.",
           "efeitos": {
             "flag": "a_avisou"
-          }
+          },
+          "ir": "c1_encontro"
         },
         {
           "id": "a_tomada",
           "texto": "Procurar uma tomada para o celular",
           "variantes": [
             {
-              "se": [
-                {
-                  "abaloMin": 2
-                }
-              ],
+              "se": "abalo>=2",
               "resultado": "Só encontra tomadas lacradas com fita adesiva. Alguém colou um bilhete: “Não insista”.",
               "efeitos": {
                 "abalo": 1
               }
             },
             {
-              "se": [],
+              "se": "",
               "resultado": "Achou! Atrás da máquina de salgadinhos, uma tomada esquecida. O celular volta a respirar.",
               "efeitos": {
                 "flag": "a_tomada"
               }
             }
-          ]
+          ],
+          "ir": "c1_encontro"
         }
       ],
       "ir": "c1_encontro"
@@ -131,55 +126,50 @@
           "resultado": "O café vem “quente” só no rótulo, mas o copo aquece as suas mãos, e isso já ajuda.",
           "efeitos": {
             "flag": "b_cafe"
-          }
+          },
+          "ir": "c1_encontro"
         },
         {
           "id": "b_painel",
           "texto": "Estudar o painel de voos até decorar",
           "variantes": [
             {
-              "se": [
-                {
-                  "abaloMin": 2
-                }
-              ],
+              "se": "abalo>=2",
               "resultado": "As letras vermelhas embaralham e você lê “Lisboa” onde estava escrito “Londrina”.",
               "efeitos": {
                 "abalo": 1
               }
             },
             {
-              "se": [],
+              "se": "",
               "resultado": "Nenhum voo decola antes de sábado de manhã, e agora você sabe disso antes de todo mundo.",
               "efeitos": {
                 "flag": "b_sabe_voos"
               }
             }
-          ]
+          ],
+          "ir": "c1_encontro"
         },
         {
           "id": "b_mala",
           "texto": "Ajudar a senhora com a mala",
           "variantes": [
             {
-              "se": [
-                {
-                  "abaloMin": 2
-                }
-              ],
+              "se": "abalo>=2",
               "resultado": "A mala vence. A senhora consola você, e a fila inteira assiste.",
               "efeitos": {
                 "abalo": 1
               }
             },
             {
-              "se": [],
+              "se": "",
               "resultado": "Você ergue a mala numa tentativa só. A senhora aplaude e jura que vai convidar você para o casamento da neta.",
               "efeitos": {
                 "flag": "b_ajudou"
               }
             }
-          ]
+          ],
+          "ir": "c1_encontro"
         }
       ],
       "ir": "c1_encontro"
@@ -200,7 +190,6 @@
       "texto": "Dona Cida empurra uma chave pelo balcão. “Quarto 7. Sem reembolso, sem troca, sem novela.” O silêncio pede que alguém fale primeiro.{{se flag:b_sabe_voos}} O painel atrás dela confirma o que {{B.nome}} já sabia: nada decola antes de sábado.{{/se}}{{se flag:b_cafe}} Um copo de café requentado repousa no balcão, esquecido por alguém que teve coisa melhor a fazer.{{/se}}",
       "turnos": [
         {
-          "p": "A",
           "opcoes": [
             {
               "tom": "abre",
@@ -223,7 +212,6 @@
           ]
         },
         {
-          "p": "B",
           "opcoes": [
             {
               "tom": "cuida",
@@ -231,88 +219,91 @@
               "tag": "b_cuida",
               "efeitos": {
                 "vinculo": 1
-              }
+              },
+              "se": "tom[0]:cuida || tom[0]:fere"
             },
             {
               "tom": "seco",
               "texto": "Vou fingir que não ouvi isso.",
-              "tag": "b_seco"
+              "tag": "b_seco",
+              "se": "tom[0]:cuida || tom[0]:fere"
             },
             {
               "tom": "flerte",
               "texto": "Que tal começar com uma trégua e terminar com um colchão?",
-              "tag": "b_flerte"
+              "tag": "b_flerte",
+              "se": "tom[0]:cuida || tom[0]:fere"
+            },
+            {
+              "tom": "cuida",
+              "texto": "Ninguém dorme na poltrona. A gente resolve isso como adultos.",
+              "tag": "b_cuida_abre",
+              "efeitos": {
+                "vinculo": 1
+              },
+              "se": "tom[0]:abre"
+            },
+            {
+              "tom": "seco",
+              "texto": "Poltrona do tamanho de um gato. Esquece.",
+              "tag": "b_seco_abre",
+              "se": "tom[0]:abre"
+            },
+            {
+              "tom": "flerte",
+              "texto": "Que gentileza. Isso me assusta um pouco.",
+              "tag": "b_flerte_abre",
+              "se": "tom[0]:abre"
+            },
+            {
+              "tom": "fere",
+              "texto": "Se for para reclamar, reclama com a Dona Cida.",
+              "tag": "b_fere_seco",
+              "efeitos": {
+                "vinculo": -1,
+                "flag": "brigaram"
+              },
+              "se": "tom[0]:seco"
+            },
+            {
+              "tom": "cuida",
+              "texto": "Eu também estou no limite. Podemos ser ruins de convivência só amanhã?",
+              "tag": "b_cuida_seco",
+              "efeitos": {
+                "vinculo": 1
+              },
+              "se": "tom[0]:seco"
+            },
+            {
+              "tom": "flerte",
+              "texto": "Perfeito é um bom começo.",
+              "tag": "b_flerte_seco",
+              "se": "tom[0]:seco"
+            },
+            {
+              "tom": "flerte",
+              "texto": "Se fosse encomenda, eu teria pedido vista para o mar.",
+              "tag": "b_flerte_flerte",
+              "se": "tom[0]:flerte"
+            },
+            {
+              "tom": "seco",
+              "texto": "Muito engraçado. Tente de novo amanhã.",
+              "tag": "b_seco_flerte",
+              "se": "tom[0]:flerte"
+            },
+            {
+              "tom": "abre",
+              "texto": "Sinceramente? Eu ia te perguntar a mesma coisa.",
+              "tag": "b_abre_flerte",
+              "efeitos": {
+                "vinculo": 1
+              },
+              "se": "tom[0]:flerte"
             }
-          ],
-          "porTom": {
-            "abre": [
-              {
-                "tom": "cuida",
-                "texto": "Ninguém dorme na poltrona. A gente resolve isso como adultos.",
-                "tag": "b_cuida_abre",
-                "efeitos": {
-                  "vinculo": 1
-                }
-              },
-              {
-                "tom": "seco",
-                "texto": "Poltrona do tamanho de um gato. Esquece.",
-                "tag": "b_seco_abre"
-              },
-              {
-                "tom": "flerte",
-                "texto": "Que gentileza. Isso me assusta um pouco.",
-                "tag": "b_flerte_abre"
-              }
-            ],
-            "seco": [
-              {
-                "tom": "fere",
-                "texto": "Se for para reclamar, reclama com a Dona Cida.",
-                "tag": "b_fere_seco",
-                "efeitos": {
-                  "vinculo": -1,
-                  "flag": "brigaram"
-                }
-              },
-              {
-                "tom": "cuida",
-                "texto": "Eu também estou no limite. Podemos ser ruins de convivência só amanhã?",
-                "tag": "b_cuida_seco",
-                "efeitos": {
-                  "vinculo": 1
-                }
-              },
-              {
-                "tom": "flerte",
-                "texto": "Perfeito é um bom começo.",
-                "tag": "b_flerte_seco"
-              }
-            ],
-            "flerte": [
-              {
-                "tom": "flerte",
-                "texto": "Se fosse encomenda, eu teria pedido vista para o mar.",
-                "tag": "b_flerte_flerte"
-              },
-              {
-                "tom": "seco",
-                "texto": "Muito engraçado. Tente de novo amanhã.",
-                "tag": "b_seco_flerte"
-              },
-              {
-                "tom": "abre",
-                "texto": "Sinceramente? Eu ia te perguntar a mesma coisa.",
-                "tag": "b_abre_flerte",
-                "efeitos": {
-                  "vinculo": 1
-                }
-              }
-            ]
-          }
+          ]
         },
         {
-          "p": "A",
           "opcoes": [
             {
               "tom": "cuida",
@@ -367,7 +358,8 @@
         }
       ],
       "fecho": "Dona Cida arrasta a chave com dois dedos, como quem sela um acordo comercial. “Boa noite. O elevador está quebrado. Tem escada.”",
-      "ir": "c1_dividir"
+      "ir": "c1_dividir",
+      "comeca": "A"
     },
     "c1_dividir": {
       "cap": 1,
@@ -390,18 +382,14 @@
           "texto": "Ligar a TV e procurar um canal",
           "variantes": [
             {
-              "se": [
-                {
-                  "abaloMin": 2
-                }
-              ],
+              "se": "abalo>=2",
               "resultado": "A TV pisca, faz um barulho de chaleira e apaga de vez.",
               "efeitos": {
                 "abalo": 1
               }
             },
             {
-              "se": [],
+              "se": "",
               "resultado": "O canal pega de primeira: uma novela dublada, a trilha sonora mais reconfortante do mundo.",
               "efeitos": {
                 "flag": "tv_ligada"
@@ -414,18 +402,14 @@
           "texto": "Abrir o frigobar",
           "variantes": [
             {
-              "se": [
-                {
-                  "abaloMin": 2
-                }
-              ],
+              "se": "abalo>=2",
               "resultado": "A porta emperra e quase leva um dedo. O frigobar zumbe, triunfante.",
               "efeitos": {
                 "abalo": 1
               }
             },
             {
-              "se": [],
+              "se": "",
               "resultado": "Água, dois chocolates e uma minigarrafa de espumante. O preço na lista é uma ofensa pessoal.",
               "efeitos": {
                 "flag": "frigobar"
@@ -597,29 +581,19 @@
       "tipo": "final",
       "finais": [
         {
-          "se": [
-            {
-              "flag": "abriu_mao"
-            },
-            {
-              "vinculoMin": 3
-            }
-          ],
+          "se": "flag:abriu_mao && vinc>=3",
           "texto": "No portão 3, {{A.nome}} e {{B.nome}} dividem um café que não é de nenhum dos dois. Abrir mão da vaga foi o gesto que nenhum deles teria feito na quinta à noite. {{se flag:consent_noite}}A noite no quarto 7 deixou de ser um acaso e virou um começo.{{senao}}A noite sem beijo no quarto 7 provou que respeito também é um jeito de dizer “fica”.{{/se}} Dona Cida, de longe, finge não olhar."
         },
         {
-          "se": [
-            {
-              "flag": "cogestao"
-            }
-          ],
+          "se": "flag:cogestao",
           "texto": "Dividir a gerência é uma ideia estranha, ousada e, quem sabe, a única que cabe nos dois. Dona Cida carimba os dois cartões de embarque com uma pancada seca. “Que ninguém reclame depois.”"
         },
         {
-          "se": [],
+          "se": "",
           "texto": "Cada um segue para o seu assento com a cabeça erguida e um respeito novo, ainda sem nome. O voo decola. A vaga continua em aberto, e a história, também."
         }
       ]
     }
-  }
+  },
+  "vinculoPorCapitulo": 2
 }

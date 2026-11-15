@@ -31,13 +31,17 @@ describe('template', () => {
 });
 
 describe('diálogo em turnos', () => {
-  it('sempre ≥3 opções com 3 tons, para qualquer tom anterior', () => {
+  const env = (eu: 'A' | 'B', hist: { tag: string; tom: string }[], flags = false, n = 0) => ({
+    flags: new Proxy({}, { get: () => flags }) as Record<string, boolean>, vinculo: n, fa: n, abalo: { A: n, B: n }, eu,
+    generos: { A: 'ela' as const, B: 'ele' as const }, hist,
+  });
+  it('sempre ≥3 opções com 3 tons, qualquer que seja o tom anterior', () => {
     const l = livro();
     const no = l.nos.c1_dialogo!;
     if (no.tipo !== 'dialogo') throw 0;
-    for (const tom of [undefined, 'abre', 'seco', 'flerte', 'cuida', 'fere'] as const)
+    for (const tom of ['abre', 'seco', 'flerte', 'cuida', 'fere'])
       for (let i = 0; i < no.turnos.length; i++) {
-        const o = opcoesTurno(no, i, i === 0 ? undefined : tom);
+        const o = opcoesTurno(no, i, env(i % 2 ? 'B' : 'A', i === 0 ? [] : [{ tag: 'x', tom }]));
         expect(o.length).toBeGreaterThanOrEqual(3);
         expect(new Set(o.map((x) => x.tom)).size).toBeGreaterThanOrEqual(3);
       }
@@ -47,7 +51,7 @@ describe('diálogo em turnos', () => {
     const no = l.nos.c1_dialogo!;
     if (no.tipo !== 'dialogo') throw 0;
     no.turnos[0]!.opcoes = no.turnos[0]!.opcoes.slice(0, 2);
-    expect(opcoesTurno(no, 0).length).toBe(3);
+    expect(opcoesTurno(no, 0, env('A', [])).length).toBe(3);
   });
   it('não há sobreposição: quem não é da vez não age nem vê opções', () => {
     const l = livro();
@@ -80,7 +84,7 @@ describe('resultado sem dados (escolhas decidem)', () => {
       e.pos = { A: 'c1_solo_a', B: 'c1_solo_b' };
       e.nervosismo.A = abalo;
       const r = agir(l, e, 'A', { tipo: 'opcao', id: 'a_insistir' }, jog);
-      return visao(l, r.estado, 'A', jog).texto;
+      return visao(l, r.estado, 'A', jog).registro.map((x) => x.texto).join('\n');
     };
     expect(rodar(0)).toContain('anota seu nome');
     expect(rodar(0)).toBe(rodar(0));
@@ -241,7 +245,7 @@ describe('lint reprova defeitos plantados (regressão)', () => {
   });
   it('dividir com ações insuficientes por assento', () => {
     const l = livro();
-    (l.nos.c1_dividir as any).acoes = (l.nos.c1_dividir as any).acoes.slice(0, 3);
+    (l.nos.c1_dividir as any).acoes = (l.nos.c1_dividir as any).acoes.slice(0, 2);
     expect(regras(lintarLivro(l))).toContain('dividir-poucas-acoes');
   });
 });
