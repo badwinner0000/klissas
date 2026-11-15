@@ -6,3 +6,8 @@ node_modules
 *.tsbuildinfo
 __pycache__/
 *.pyc
+
+# Cloudflare
+.open-next/
+.wrangler/
+.dev.vars

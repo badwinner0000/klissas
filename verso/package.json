@@ -13,7 +13,13 @@
     "migrar:padrinhos": "tsx scripts/migracao/converter.mjs && node scripts/migracao/ajustes-sam.mjs",
     "dev": "next dev -p 3100",
     "build": "next build",
-    "start": "next start -p 3100"
+    "start": "next start -p 3100",
+    "prebuild": "node scripts/gerar-biblioteca.mjs",
+    "predev": "node scripts/gerar-biblioteca.mjs",
+    "pretypecheck": "node scripts/gerar-biblioteca.mjs",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "next": "^15.5.29",
@@ -23,6 +29,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.17",
     "@types/node": "^22.0.0",
     "@types/pg": "^8.23.1",
     "@types/react": "^19.3.0",
@@ -31,6 +38,7 @@
     "acorn-walk": "^8.3.5",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
-    "vitest": "^2.1.0"
+    "vitest": "^2.1.0",
+    "wrangler": "^4.162.0"
   }
 }
