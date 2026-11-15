@@ -18,6 +18,7 @@ const DICAS: Record<string, string> = {
 };
 
 const POR_MENSAGEM: [RegExp, string][] = [
+  [/DATABASE_URL não configurada/i, 'o servidor não enxerga a DATABASE_URL: cadastre como Secret em Variables and secrets do Worker (runtime, não só do build) e faça um novo deploy'],
   [/tenant or user not found/i, 'o pooler não reconhece o usuário: na DATABASE_URL o usuário precisa ser postgres.<ref-do-projeto> (copie a URL do botão Connect > Transaction pooler)'],
   [/password authentication failed/i, 'senha do banco recusada: troque a senha dentro da DATABASE_URL (sem colchetes; símbolos especiais precisam de %-codificação)'],
   [/self[- ]signed|certificate/i, 'problema de certificado SSL com o banco'],
