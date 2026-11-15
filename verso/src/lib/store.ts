@@ -63,7 +63,8 @@ async function escolher(): Promise<Store> {
     const { storePg } = await import('./store-pg');
     impl = storePg(process.env.DATABASE_URL);
   } else {
-    if (process.env.VERCEL) throw new ErroBancoIndisponivel('DATABASE_URL não configurada: a Vercel não guarda arquivos entre requisições.');
+    const naCloudflare = typeof navigator !== 'undefined' && navigator.userAgent === 'Cloudflare-Workers';
+    if (process.env.VERCEL || naCloudflare) throw new ErroBancoIndisponivel('DATABASE_URL não configurada: este servidor não guarda arquivos entre requisições.');
     impl = storeArquivo();
   }
   return impl;
