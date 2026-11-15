@@ -3198,11 +3198,397 @@
       "hora": "Quarta · 07h00",
       "texto": "Na manhã de quarta, a folha de papel de pão, colada na parede do chalé, tem duas linhas. {{se flag:aceitou_voltar}}*13 DIAS. 30 DE AGOSTO.* A data, escrita a lápis, é de uma letra segura, a de quem decide e não olha para trás. {{/se}}{{se flag:cancelou_turne}}*13 DIAS. CANCELADA.* A palavra, escrita a lápis, é de uma letra trêmula, a de quem decide e ainda não acredita. {{/se}}{{se flag:negociou_volta}}*13 DIAS. OUTUBRO?* O ponto de interrogação, escrito a lápis, é a única honestidade da folha. {{/se}}\n\n{{se flag:b_ajudou_album}}Ao piano, uma nona faixa, pronta, tem um acorde de lá menor na ponte. {{/se}}{{se flag:b_pediu_ficar}}No ar, uma frase dita sem teatro, *eu não quero que você suma*, ainda não teve resposta. {{/se}}{{se flag:b_nao_pediu}}No ar, uma frase dita com nobreza, *é decisão sua*, ainda tem o gosto de covardia. {{/se}}{{se flag:a_ouviu_sarah}}Na varanda, uma pergunta de Sarah, *você vai dizer a ele de frente?*, ainda espera. {{/se}}{{se flag:a_convidou_sarah}}No sofá, duas xícaras de café, e uma conversa que nunca vai ser contada. {{/se}}{{se flag:a_expulsou_sarah}}Na estrada, uma picape que foi embora, e uma frase: *ele merece que alguém lhe deva uma explicação.* {{/se}}\n\nDo lado de fora, o sol sobe, e o riacho, que nunca soube nada de turnê, continua falando. Dentro, no piano, quatro notas esperam, e uma pessoa, de olhos vermelhos, olha a folha da parede e conta, nos dedos, quantos dias faltam para ser outra vez uma pessoa que todo mundo conhece.",
       "gancho": "A data está escrita na parede, e a despedida começa a ter um dia.",
+      "ir": "rv_c9_despedida"
+    },
+    "rv_c9_despedida": {
+      "tipo": "segue",
+      "cap": 9,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Sexta · 29 de agosto · 08h00",
+      "npcs": [
+        "lorna"
+      ],
+      "ir": "rv_c9_dialogo",
+      "texto": "O último dia de agosto, ou quase: sexta, vinte e nove. As folhas dos pinheiros mudaram de verde para um verde mais cansado, o riacho está baixo, e o céu da manhã tem uma limpeza de quem sabe que a estação vai virar. No chalé do velho Henry, as janelas estão abertas, as malas de seiscentos dólares fechadas, e um carro preto, o mesmo da chegada, está estacionado no cascalho, com um motorista de óculos escuros que lê o jornal sem ler.\n\n{{se flag:aceitou_voltar}}Lorna Feldt avisou: o carro leva a Seattle para a turnê, que começa no dia dois. {{/se}}{{se flag:cancelou_turne}}Lorna Feldt avisou: a turnê foi cancelada, mas o contrato do show de Seattle, o último, de dezoito mil ingressos já vendidos, não pode ser desfeito sem uma multa que a gravadora não perdoa. É por esse show, e só por ele, que o carro está ali. {{/se}}{{se flag:negociou_volta}}Lorna Feldt avisou: a gravadora aceitou três semanas, e o primeiro compromisso é em Seattle, no dia dois, num show que não dá para adiar. {{/se}}\n\nO álbum, de doze faixas, está pronto, e o chalé, depois de três meses, tem a forma de uma pessoa que mora ali. Falta uma coisa: o carpinteiro, que não sobe a estrada desde terça."
+    },
+    "rv_c9_dialogo": {
+      "tipo": "dialogo",
+      "cap": 9,
+      "lugar": "Varanda do chalé dos Ashby",
+      "hora": "Sexta · 09h30",
+      "comeca": "B",
+      "texto": "Às nove e meia da manhã, uma picape de 1998 sobe a estrada de terra, devagar, com o motor de gato com raiva. Estaciona atrás do carro preto. O carpinteiro desce, de boné, de camiseta de banda, de mãos nos bolsos. Não traz caixa de ferramentas, nem rádio.\n\nHá três meses, os dois se conheceram numa varanda, a dois metros de distância. A distância, agora, é a mesma. Só mudou o que cabe dentro dela.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "y0_b_seco",
+              "texto": "— Eu vim ver a calha. Está firme. Não precisa mexer em nada.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "y0_b_abre",
+              "texto": "— Eu vim dizer tchau. Eu não sei como se faz isso. Eu nunca fiz direito.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "y0_b_flerte",
+              "texto": "— O carro preto é bonito. Não tem goteira, né?",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "y0_a_abre",
+              "texto": "— Eu esperei que você viesse. Eu não sabia se ia vir. Eu estou feliz por ter vindo.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y0_a_seco",
+              "texto": "— Você demorou. O carro sai ao meio-dia.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "y0_a_flerte",
+              "texto": "— A calha está ótima. O carpinteiro, nem tanto.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "y1_a_abre",
+              "texto": "— O álbum está pronto. Doze faixas. A última, eu escrevi para você, sem nome.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y1_a_seco",
+              "texto": "— Eu volto a Seattle hoje. Não é o fim do mundo. Tem estrada.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "y1_a_fere",
+              "texto": "— Você sempre foge antes de ser deixado. Hoje, só está sendo mais rápido.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "y1_b_abre",
+              "texto": "— Eu vou ouvir. Quando sair. Eu vou ouvir a última faixa, e vou saber que é para mim.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y1_b_seco",
+              "texto": "— Boa viagem. A estrada de Republic tem buracos. O motorista que se cuide.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "fere",
+              "tag": "y1_b_fere",
+              "texto": "— Você vai voltar a ser famos{{A.o_a}}, e eu vou voltar a ser quem conserta telhado. É natural.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "y2_b_abre",
+              "texto": "— Eu não vou à festa de despedida. Eu não consigo. Se eu for, eu peço para você ficar. E eu não tenho direito.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "b_avisou_festa",
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y2_b_seco",
+              "texto": "— Eu tenho trabalho hoje à noite. A Lanterna é a casa da Doris. Você vai se despedir lá, sem mim.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "y2_b_flerte",
+              "texto": "— Se você aparecer em Pine Hollow de novo, a calha vai estar esperando.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "y2_a_abre",
+              "texto": "— Eu queria que você fosse. Mas eu entendo. Eu também não aguentaria.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y2_a_seco",
+              "texto": "— A despedida é um direito, não uma obrigação. Eu entendo.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "y2_a_fere",
+              "texto": "— Então você vai me deixar ir sem uma palavra. É isso?",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da varanda é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "y3_a_abre",
+              "texto": "— Eu te amo. Eu não sei o que fazer com isso. Mas eu precisava dizer em voz alta, uma vez.",
+              "se": "eu:A",
+              "efeitos": {
+                "flag": "disse_amo_a",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y3_a_seco",
+              "texto": "— Cuida do violão do seu pai. E do telhado. Foi o melhor que eu vi na vida.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "y3_a_flerte",
+              "texto": "— Se um dia você quiser ouvir um show de verdade, eu mando ingresso.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "y3_b_abre",
+              "texto": "— Eu também. Mas eu não sei dizer. Eu escrevo, um dia, se eu aprender.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "disse_amo_b",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "y3_b_seco",
+              "texto": "— Boa viagem. Tchau.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "y3_b_flerte",
+              "texto": "— O violão fica aqui, até você pedir de volta. É o penhor.",
+              "se": "eu:B"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Come alguma coisa antes de viajar."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Ok."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Foi um bom verão."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu não sei como fazer isso."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Era isso que eu esperava."
+        }
+      ],
+      "fecho": "A picape, sem pressa, dá marcha a ré e desce a estrada de terra, e o motor de gato com raiva some entre os pinheiros. O motorista do carro preto, que ouviu tudo e fingiu que lia, vira a página do jornal.",
+      "ir": {
+        "A": "rv_c9_a",
+        "B": "rv_c9_b"
+      }
+    },
+    "rv_c9_a": {
+      "tipo": "solo",
+      "cap": 9,
+      "seat": "A",
+      "lugar": "Quarto do avô, chalé dos Ashby",
+      "hora": "Sexta · 11h00",
+      "texto": "Às onze da manhã, no quarto do avô, com o sol atravessando a cortina de renda amarelada, você tem duas malas abertas, uma cama de dossel, uma caixa de sapatos com quarenta e três cartas e um caderno de capa preta, com doze músicas, todas escritas ali, todas inacabadas à sua maneira.\n\nVocê olha as coisas, uma por uma. Há o que você leva: o violão, as roupas, a fotografia de uma menina de maria-chiquinha. E o que você deixa, se deixar: os dias, os cheiros, o riacho. O caderno é a única coisa que cabe nas duas listas.",
+      "acoes": [
+        {
+          "id": "deixar_caderno",
+          "texto": "Deixar o caderno preto na mesa da cozinha, aberto na última página, para o carpinteiro achar",
+          "ir": "rv_c9_a2",
+          "efeitos": {
+            "flag": "a_deixou_caderno",
+            "vinculo": 2
+          },
+          "resultado": "Você carrega o caderno até a cozinha, abre na última página, onde a letra é miúda e apressada, e o deixa na mesa de pinho, ao lado do fogão apagado, com um prato de cerâmica em cima, para o vento não virar as folhas. Não escreve bilhete. A página fala por você."
+        },
+        {
+          "id": "bilhete",
+          "texto": "Levar o caderno e deixar só um bilhete, curto, no verso de uma fotografia",
+          "ir": "rv_c9_a2",
+          "efeitos": {
+            "flag": "a_deixou_bilhete",
+            "vinculo": 1
+          },
+          "resultado": "Você guarda o caderno na mala e, no verso da fotografia da menina de maria-chiquinha, a mesma que o avô deixou, escreve três linhas, a lápis, com a letra mais clara que consegue. Põe a fotografia sobre o piano, apoiada na caixa de cartas. Não é uma carta de amor. É um jeito de dizer *eu passei por aqui*."
+        },
+        {
+          "id": "levar_tudo",
+          "texto": "Levar tudo e não deixar nada: o que ficou está ficando, e não precisa de prova",
+          "ir": "rv_c9_a2",
+          "efeitos": {
+            "flag": "a_levou_tudo",
+            "abalo": 1
+          },
+          "resultado": "Você guarda o caderno, as cartas, a fotografia e o violão nas malas, fecha os fechos e põe a chave debaixo do tapete, onde o advogado mandou. Não deixa bilhete, nem recado, nem um fio de cabelo. É a atitude de quem foi treinada a nunca deixar rastro, e, pela primeira vez, você a odeia."
+        }
+      ]
+    },
+    "rv_c9_a2": {
+      "tipo": "solo",
+      "cap": 9,
+      "seat": "A",
+      "lugar": "A Lanterna, Rua Principal",
+      "hora": "Sexta · 20h00",
+      "npcs": [
+        "doris",
+        "caleb"
+      ],
+      "texto": "A festa de despedida na Lanterna não foi planejada por ninguém e foi organizada por todo mundo. Há uma faixa de papel pardo no teto, escrita a pincel: *BOA VIAGEM, NETA DO HENRY.* Há uma travessa de biscoitos de aveia da Doris, uma garrafa de vinho barato do posto e uma banda de três, o banjo, o violão e o contrabaixo, tocando uma música que você escreveu em junho, de ouvido, que alguém aprendeu pelo caminho.\n\nQuarenta e cinco pessoas, entre vizinhos e fotógrafos de camisa havaiana que se renderam. Caleb, de camiseta de banda, está ao lado de uma mesa de som improvisada. Doris, de blusa de domingo, de olhos úmidos, segura o seu cotovelo.\n\nA cadeira ao lado do palco, a de {{B.nome}}, está vazia.",
+      "acoes": [
+        {
+          "id": "cantar",
+          "texto": "Subir ao palco e cantar a música do verão, a deles, sem apresentar",
+          "ir": "rv_c9_fim",
+          "efeitos": {
+            "flag": "a_cantou_despedida",
+            "vinculo": 2
+          },
+          "resultado": "Você sobe os dois degraus do palco, pega o violão do banjista e canta, sem apresentação, sem luz, sem nome, a música que escreveu no piano desafinado. A sala fica em silêncio, o silêncio inteiro de quarenta e cinco pessoas que não têm celular na mão. Quando você acaba, ninguém grita o seu nome. Alguém, no fundo, diz *obrigada*, só isso, e é a ovação mais bonita da sua vida."
+        },
+        {
+          "id": "doris",
+          "texto": "Procurar a Doris, no canto, e agradecer a ela por ter fechado os olhos do avô",
+          "ir": "rv_c9_fim",
+          "efeitos": {
+            "flag": "a_agradeceu_doris",
+            "vinculo": 2
+          },
+          "resultado": "Você atravessa a sala até Doris, que finge procurar uma colher. *Obrigada*, você diz, *por ter ficado com ele. Quando eu não estava.* A mulher de avental, a que avaliou a sua mala em junho e apostou cinco dólares, fica sem fala por um segundo. Depois diz, rouca: *eu perdi a aposta*, e te abraça, com um cheiro de farinha e de querosene que você nunca vai esquecer."
+        },
+        {
+          "id": "esperar",
+          "texto": "Ficar de pé, perto da porta, olhando se alguém chega, até o último minuto",
+          "ir": "rv_c9_fim",
+          "efeitos": {
+            "flag": "a_esperou_porta",
+            "abalo": 1
+          },
+          "resultado": "Você não canta, não agradece, não dança. Fica de pé, perto da porta, de olho no sino. Cada vez que ele toca, o seu coração acelera, e cada vez, é outra pessoa: um vizinho, um fotógrafo, uma criança. Às onze, a Doris coloca a mão no seu ombro, sem dizer nada. Às onze e quinze, o carro preto buzina, uma vez, e o sino toca pela última vez, com você saindo."
+        }
+      ]
+    },
+    "rv_c9_b": {
+      "tipo": "solo",
+      "cap": 9,
+      "seat": "B",
+      "lugar": "Casa dos Lindqvist",
+      "hora": "Sexta · 20h00",
+      "texto": "Às oito da noite, a Lanterna está cheia, e você não está lá. Você está sentad{{eu.o_a}} no degrau da varanda da casa onde cresceu, com uma cerveja que não bebeu e o violão do seu pai no colo, que foi buscar no chalé às quatro da tarde, quando teve a certeza de que ninguém estaria lá.\n\nDá para ouvir, do alto do morro, ao longe, o som de um banjo e de um violão, tocando uma música em ré. Você a reconhece. É a de dezessete anos? Não. É uma que você ouviu em junho, em pedaços, de uma sala com janela aberta. Alguém, na cidade, aprendeu.\n\nO céu, de fim de agosto, tem as primeiras estrelas de outono, mais limpas, mais frias.",
+      "acoes": [
+        {
+          "id": "ficar",
+          "texto": "Ficar no degrau, ouvindo de longe, sem ir",
+          "ir": "rv_c9_fim",
+          "efeitos": {
+            "flag": "b_ficou_longe",
+            "abalo": 1
+          },
+          "resultado": "Você fica. Ouve, de longe, uma música que não tem o seu nome em nenhum verso e que fala de tudo o que você viveu. Quando acaba, às nove e quarenta, a sala aplaude, e o som chega até aqui, como uma onda, pequena e quente. Você aplaude também, sozinh{{eu.o_a}}, no escuro, com a cerveja que ninguém vê."
+        },
+        {
+          "id": "estrada",
+          "texto": "Pegar a picape e ir até a estrada de Republic, esperar o carro preto passar",
+          "ir": "rv_c9_fim",
+          "efeitos": {
+            "flag": "b_esperou_estrada",
+            "vinculo": 1
+          },
+          "resultado": "Você pega a picape e vai até a curva da estrada de Republic, a única que sai de Pine Hollow. Estaciona atrás de um abeto, com o motor desligado, e espera. Às onze e meia, um carro preto passa, devagar, com um vidro que desce três centímetros. Você não sabe se ela o viu. Fica ali até o carro virar um ponto de luz, e depois um nada."
+        },
+        {
+          "id": "caderno",
+          "texto": "Subir de madrugada ao chalé, entrar com a chave do telhado, e olhar a casa vazia uma última vez",
+          "ir": "rv_c9_fim",
+          "efeitos": {
+            "flag": "b_foi_ao_chale",
+            "vinculo": 2
+          },
+          "resultado": "Você sobe de madrugada, à luz de uma lanterna, e entra no chalé pela porta que não tem chave, só trinco. A sala está vazia, o piano de tampa fechada, o fogão apagado. Sobre a mesa da cozinha, sob um prato de cerâmica, uma coisa pequena e escura espera, e você sabe, antes de se aproximar, o que é."
+        }
+      ]
+    },
+    "rv_c9_fim": {
+      "tipo": "fim",
+      "cap": 9,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Sábado · 05h30",
+      "texto": "Às cinco e meia da manhã de sábado, o chalé do velho Henry está vazio. {{se flag:a_cantou_despedida}}Na Lanterna, a canção ainda vibra nas tábuas. {{/se}}{{se flag:a_agradeceu_doris}}Na Pruitt's Mercantile, uma mulher de avental guarda, pela primeira vez, uma aposta perdida num cofre. {{/se}}{{se flag:a_esperou_porta}}No sino da porta da Lanterna, uma última badalada ficou no ar, sem dono. {{/se}}{{se flag:b_ficou_longe}}No degrau da casa dos Lindqvist, uma cerveja esquentou, sem ser bebida. {{/se}}{{se flag:b_esperou_estrada}}Na curva da estrada de Republic, uma picape velha esfriou, de motor desligado. {{/se}}{{se flag:disse_amo_a}}Na varanda, uma pessoa disse *eu te amo*, em voz alta, uma vez, e a frase, sem resposta, ainda está lá. {{/se}}{{se flag:disse_amo_b}}Na varanda, uma pessoa disse *eu também*, e a frase, sem verbo, ainda está lá. {{/se}}\n\nA porta da frente abre com o rangido de sempre. Quem entra, de boné, com uma lanterna na mão, faz o que ninguém, nesta casa, esperava: não procura nada. Anda até a cozinha, e fica parado, diante da mesa de pinho.\n\n{{se flag:a_deixou_caderno}}Sobre a mesa, sob um prato de cerâmica, um caderno de capa preta, aberto na última página. A letra é miúda, apressada. No alto da página, escrito a lápis e riscado três vezes, um título: *Refrão de Verão.* Embaixo, doze versos. O último verso diz: *e se eu ficasse?*{{/se}}{{se flag:a_deixou_bilhete}}Sobre o piano, apoiada na caixa de cartas, uma fotografia antiga, de uma menina de maria-chiquinha. No verso, a lápis, três linhas: *Eu não sei dizer. Escrevi. A música é nossa. Eu volto, se você me pedir.*{{/se}}{{se flag:a_levou_tudo}}Sobre a mesa, nada. Só uma marca de poeira, retangular, onde um caderno ficou por três meses, e, na bancada, ao lado do fogão, um prato de cerâmica vazio. O que ela levou, ela levou inteiro. Mas, no chão, junto à porta, caída da mala fechada às pressas, uma folha de papel de pão, com *13 DIAS* escrito a lápis, e, embaixo, uma letra diferente: *e se eu voltasse?*{{/se}}",
+      "gancho": "Um caderno, uma fotografia ou uma folha caída, e um verso com a pergunta que ela não fez em voz alta.",
       "ir": "rv_rascunho_fim"
     },
     "rv_rascunho_fim": {
       "tipo": "final",
-      "cap": 8,
+      "cap": 9,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
