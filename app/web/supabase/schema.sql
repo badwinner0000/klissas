@@ -305,6 +305,19 @@ drop policy if exists p_flags_ins on flags;         create policy p_flags_ins on
   with check (user_id = auth.uid() and exists (select 1 from entries e where e.id = entry_id and is_member(e.group_id) and e.user_id <> auth.uid()));
 drop policy if exists p_flags_del on flags;         create policy p_flags_del on flags for delete using (user_id = auth.uid());
 
+-- ============ permissões da API ============
+-- explícitas, para funcionar mesmo com "Automatically expose new tables" desligado.
+-- só usuários logados acessam; quem não está logado não vê nada. As regras acima (RLS) filtram o resto.
+grant usage on schema public to authenticated;
+grant select, insert, update, delete on profiles, groups, group_members, group_minimums,
+  promises, promise_items, entries, comments, reactions, flags to authenticated;
+revoke all on profiles, groups, group_members, group_minimums,
+  promises, promise_items, entries, comments, reactions, flags from anon;
+grant execute on function is_member(uuid), is_admin(uuid), shares_group(uuid), promessa_aberta(uuid, date),
+  postagem_aberta(uuid, date), habito_na_promessa(uuid, uuid, text, date), entrar_no_grupo(text),
+  placar(uuid, date), placar_geral(uuid) to authenticated;
+revoke execute on function entrar_no_grupo(text), placar(uuid, date), placar_geral(uuid) from anon, public;
+
 -- ============ fotos de evidência ============
 -- arquivos ficam em evidencias/<id do grupo>/<id do usuário>/<arquivo>
 insert into storage.buckets (id, name, public) values ('evidencias', 'evidencias', false) on conflict do nothing;

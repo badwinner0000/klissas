@@ -12,7 +12,7 @@ create table storage.buckets (id text primary key, name text, public boolean);
 create table storage.objects (id uuid default gen_random_uuid(), bucket_id text, name text);
 create function storage.foldername(name text) returns text[] language sql immutable as $$ select (string_to_array(name,'/'))[1:array_length(string_to_array(name,'/'),1)-1] $$;
 create publication supabase_realtime; alter table storage.objects enable row level security;
-create role authenticated;
+create role authenticated; create role anon;
 `
 await db.exec(stubs)
 await db.exec(schema)
