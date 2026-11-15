@@ -160,4 +160,4 @@ Quando a primeira acorda, com um gosto de vinho velho e uma dor de cabeça peque
 
 A pessoa ao lado já está acordada. Está de costas para a cabeceira de ferro, de braços em volta dos joelhos, olhando a parede. O rosto, de perfil, é o de quem passou a noite em claro, e a boca, apertada, não diz bom-dia. Em cima da cômoda, o relógio de mesa marca, em verde, 09:34.""",
  gancho="De manhã, uma pessoa de costas, de braços em volta dos joelhos, olhando a parede, e nenhum bom-dia.",
- ir='ts_c6_medo')
+ ir='ts_c6_manha')
