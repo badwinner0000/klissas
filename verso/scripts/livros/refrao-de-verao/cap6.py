@@ -83,7 +83,7 @@ NOS['rv_c6_dialogo'] = dict(tipo='dialogo', cap=6, lugar='Cais do Lago Cinza', h
     op('abre', 'w1_b_abre', '— Você vai voltar a ser famos{{A.o_a}}, em letras maiúsculas, em estádios. E eu vou ser o cara que consertou o seu telhado.', se='eu:B', ef=dict(vinculo=1)),
     op('seco', 'w1_b_seco', '— Isso não muda nada. Um verão é um verão.', se='eu:B'),
     op('fere', 'w1_b_fere', '— Você diz *envolvida* como quem fala de um contrato. Eu não sou um contrato.', se='eu:B', ef=dict(abalo=1)),
-    op('abre', 'w1_a_abre', '— Eu não quero ser a famosa com você. Eu quero ser só quem eu sou quando estou aqui.', se='eu:A', ef=dict(vinculo=2)),
+    op('abre', 'w1_a_abre', '— Eu não quero ser famos{{eu.o_a}} com você. Eu quero ser só quem eu sou quando estou aqui.', se='eu:A', ef=dict(vinculo=2)),
     op('seco', 'w1_a_seco', '— Eu sei o que é um verão. Eu só não sei o que fazer com ele.', se='eu:A'),
     op('flerte', 'w1_a_flerte', '— Você é o primeiro que me diz *maiúsculas* sem tremer. Eu gosto disso.', se='eu:A'),
   ]),

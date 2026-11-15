@@ -2389,7 +2389,7 @@
             {
               "tom": "abre",
               "tag": "w1_a_abre",
-              "texto": "— Eu não quero ser a famosa com você. Eu quero ser só quem eu sou quando estou aqui.",
+              "texto": "— Eu não quero ser famos{{eu.o_a}} com você. Eu quero ser só quem eu sou quando estou aqui.",
               "se": "eu:A",
               "efeitos": {
                 "vinculo": 2
@@ -2577,11 +2577,632 @@
       "hora": "Segunda · 07h30",
       "texto": "Às sete e meia da manhã, o sino da Pruitt's Mercantile toca duas vezes, e entre uma e outra, a cidade de Pine Hollow muda de natureza. Doris Pruitt, de avental, olha a foto por muito tempo. {{se flag:noite_lago}}No chalé do riacho, ao mesmo tempo, duas pessoas acordam em uma cama de dossel, sem saber que, a quatro quilômetros, um site de fofoca acaba de revelar o que ninguém nunca revelou. {{/se}}{{se !flag:noite_lago}}No chalé do riacho, ao mesmo tempo, uma pessoa acorda sozinha, sem saber que, a quatro quilômetros, um site de fofoca acaba de revelar o que ninguém nunca revelou. {{/se}}{{se flag:a_respondeu_lorna}}O celular, na pedra, a trezentos metros, acaba de receber um sinal. {{/se}}{{se flag:nadou}}O cabelo ainda cheira a lago. {{/se}}{{se flag:escreveu_lago}}A segunda estrofe, escrita à sombra do abeto, está no caderno preto. {{/se}}\n\nDoris, depois de um minuto, pega o telefone fixo da mercearia e disca um número que sabe de cor. *Caleb*, diz, *me liga assim que acordar. A hóspede do Henry é uma pessoa famosa. O Lindqvist sabe, o irmão dele sabe, e eu acho que só eu estava de fora.*\n\nDo lado de fora, o sol da manhã bate na vitrine. A rua principal, vazia, tem uma bicicleta antiga encostada, de guidão torto. Em menos de uma hora, ela vai ter vinte fotógrafos em volta.",
       "gancho": "Uma foto vazou, e a cidade, finalmente, sabe quem ela é.",
+      "ir": "rv_c7_bar"
+    },
+    "rv_c7_bar": {
+      "tipo": "segue",
+      "cap": 7,
+      "lugar": "Rua Principal, Pine Hollow",
+      "hora": "Segunda · 11h00",
+      "npcs": [
+        "doris",
+        "sarah"
+      ],
+      "ir": {
+        "A": "rv_c7_a",
+        "B": "rv_c7_b"
+      },
+      "texto": "Às onze da manhã de segunda, Pine Hollow, população mil duzentos e catorze, tem mil duzentos e catorze opiniões e, ao que parece, trinta e duas picapes e quatro vans de emissora estacionadas em fila dupla na Rua Principal. A notícia saiu do computador de 2009 da Pruitt's Mercantile e pegou carona em três satélites. Há um homem de colete refletivo da *Seattle Weekly*, uma moça de microfone de espuma, e dois rapazes de câmera no ombro, de bermuda e sandália, discutindo com o dono do posto de gasolina por causa de uma vaga.\n\nA Lanterna, que costuma abrir às seis da tarde, abriu às dez. Dentro, quarenta e cinco pessoas, a maior parte curiosos de fora, bebem a cerveja ruim da casa e comentam uma foto de uma bicicleta antiga na vitrine.\n\nDoris Pruitt, de avental, de mãos na cintura, em frente à mercearia, faz uma coisa que nunca fez em trinta e seis anos: fecha a porta, com a chave, no meio do dia."
+    },
+    "rv_c7_a": {
+      "tipo": "solo",
+      "cap": 7,
+      "seat": "A",
+      "lugar": "Chalé dos Ashby",
+      "hora": "Segunda · 11h30",
+      "npcs": [
+        "lorna"
+      ],
+      "texto": "O barulho vem antes do carro: o ronco de um motor de van, de dois, de três, na estrada de terra, e um som que você conhece como a trilha sonora de uma vida inteira, o de pessoas que gritam o seu nome. Pela janela, entre os pinheiros, três vans de emissora, uma fila de carros, dois fotógrafos já na porteira e um homem de colete refletivo com uma câmera de teleobjetiva, na beira do riacho.\n\nVocê, de pijama e meia grossa, com um café na mão e o caderno preto aberto sobre o piano, não se mexe. Em seis semanas, a coisa que você mais queria era anonimato, e acaba de perdê-lo. A única diferença é que, desta vez, há um telhado novo sobre a sua cabeça, e uma pessoa a quatro quilômetros dali que você ainda não avisou.",
+      "acoes": [
+        {
+          "id": "enfrentar",
+          "texto": "Sair para a varanda, de pijama, e falar com os repórteres, antes que inventem uma versão",
+          "ir": "rv_c7_dialogo",
+          "efeitos": {
+            "flag": "a_enfrentou_imprensa",
+            "abalo": 1
+          },
+          "resultado": "Você abre a porta, e o mundo explode em flashes. Você diz uma frase só, em voz clara: *estou escrevendo um álbum, em paz, na casa do meu avô, que morreu em março. Peço que respeitem a cidade.* Duas vans baixam as câmeras, e uma, ao fundo, continua. Quando você entra, com a mão tremendo na maçaneta, o telefone fixo da cozinha, que você não sabia que funcionava, toca."
+        },
+        {
+          "id": "esconder",
+          "texto": "Fechar as cortinas, trancar a porta e esperar a poeira baixar",
+          "ir": "rv_c7_dialogo",
+          "efeitos": {
+            "flag": "a_escondeu_casa",
+            "abalo": 1
+          },
+          "resultado": "Você fecha as cortinas, passa a tranca, desliga a lanterna e se senta no chão, no meio da sala, encostad{{eu.o_a}} na parede, como na adolescência, quando a fama era uma ideia e não uma casa. Lá fora, o motor das vans fica, o sol sobe, e a cabine do tempo passa devagar. Você ouve, lá longe, o som de uma picape, que vem subindo a estrada."
+        },
+        {
+          "id": "lorna",
+          "texto": "Ir até a pedra do sinal, ligar para a Lorna e pedir que ela tire isso de cima",
+          "ir": "rv_c7_dialogo",
+          "efeitos": {
+            "flag": "a_ligou_lorna",
+            "vinculo": 0
+          },
+          "resultado": "Você sai pelos fundos, corre até a pedra de sinal e liga. A Lorna atende no primeiro toque. *Eu soube às sete*, diz. *Já tem comunicado, já tem equipe indo daqui.* Uma pausa. *Querida, eu vou ser honesta: foi bom. A internet está dizendo que você está de volta. Os streams do arquivo de quarenta e um segundos, que o Marco vazou, subiram quatrocentos por cento.* Você não sabe o que sentir sobre ter sido vazada por um homem de quem nunca ouviu."
+        }
+      ]
+    },
+    "rv_c7_b": {
+      "tipo": "solo",
+      "cap": 7,
+      "seat": "B",
+      "lugar": "Lanterna, Rua Principal",
+      "hora": "Segunda · 11h30",
+      "npcs": [
+        "caleb",
+        "sarah"
+      ],
+      "texto": "Você entra na Lanterna às onze e meia, com a camisa para fora da calça e o cabelo de quem dormiu pouco e acordou com o mundo do avesso. Quarenta e cinco pessoas se viram, e Caleb, no balcão, de camiseta de banda e cara de quem tem uma notícia que prefere não dar, empurra uma cerveja para você.\n\n— Eu ia te contar — diz Caleb. — Mas a Doris me ligou antes de eu abrir a boca. — Ele vira o celular na sua direção. — Essa é a moça. A que você levou ao lago. A que você deixou tocar o violão do papai.\n\nNa tela, uma manchete de letras gordas, com um nome em maiúsculas acima de uma foto de capa de revista, de uma pessoa de cabelo perfeito, de roupa de estádio, numa pose de quem tem doze Grammys e uma vida que não cabe em nenhuma cidade. Você lê as primeiras linhas duas vezes. Nenhuma frase diz *carpinteiro*.",
+      "acoes": [
+        {
+          "id": "ler",
+          "texto": "Ler a notícia inteira, devagar, até o último parágrafo",
+          "ir": "rv_c7_dialogo",
+          "efeitos": {
+            "flag": "b_leu_noticia",
+            "abalo": 2
+          },
+          "resultado": "Você lê tudo. Doze Grammys. Quatro turnês mundiais. Uma casa em Malibu, uma em Londres, uma em Maui. Um álbum que a crítica chamou de *a última grande obra do pop*, e, três anos depois, de *a última*. Uma frase solta, no meio de um parágrafo: *Fontes dizem que a artista passa por um bloqueio criativo severo.* Você ergue os olhos. Pensa na tarde em que ela, no degrau da varanda, disse *eu não sei mais escrever*. Ela falou a verdade. E não falou a outra metade."
+        },
+        {
+          "id": "sair",
+          "texto": "Largar a cerveja e sair, antes que alguém veja a sua cara",
+          "ir": "rv_c7_dialogo",
+          "efeitos": {
+            "flag": "b_saiu_bar",
+            "abalo": 1
+          },
+          "resultado": "Você deixa a cerveja, empurra a porta e sai para o sol da Rua Principal, de olhos semicerrados. Os fotógrafos, que você nunca viu na vida, já o fotografam. Alguém pergunta *você é o carpinteiro?* Você não responde. Sobe na picape e dá a partida, sem destino, e o rádio, ligado sem querer, toca a música que ele tocou no bar, a de dezessete anos."
+        },
+        {
+          "id": "sarah",
+          "texto": "Olhar para a Sarah, no canto, que não disse nada e já sabia",
+          "ir": "rv_c7_dialogo",
+          "efeitos": {
+            "flag": "b_olhou_sarah",
+            "vinculo": 0
+          },
+          "resultado": "Você procura, na sala, o canto onde Sarah Brandt, de braços cruzados, de casaco azul-marinho, observa a cena. Ela encontra o seu olhar e não desvia. Não há triunfo, não há *eu avisei*, há só uma lucidez cansada. Ela faz um gesto pequeno, de cabeça, que você entende: *você sabia que tinha data*."
+        }
+      ]
+    },
+    "rv_c7_dialogo": {
+      "tipo": "dialogo",
+      "cap": 7,
+      "lugar": "Varanda do chalé dos Ashby",
+      "hora": "Segunda · 14h00",
+      "comeca": "B",
+      "texto": "A varanda do chalé, com a porta aberta e a poeira da estrada ainda no ar, tem um barulho de fundo de motores, flashes e passarinhos que não perceberam nada. As vans foram, aos poucos, empurradas para a porteira pelo xerife do condado, um homem de setenta anos e bigode de morsa que disse *aqui é propriedade privada* sem levantar a voz.\n\nNa varanda, a dois metros de distância um do outro, estão duas pessoas que, na noite anterior, estavam a nenhuma.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "fere",
+              "tag": "x0_b_fere",
+              "texto": "— Doze Grammys. E eu aqui, explicando como se prega uma telha.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x0_b_seco",
+              "texto": "— Você podia ter me contado. Eu não ia reagir mal.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "x0_b_abre",
+              "texto": "— Eu li a notícia. Eu li que você não sabe mais escrever. Foi a única coisa que você me contou de verdade.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "x0_a_abre",
+              "texto": "— Eu ia contar. Eu juro. Eu esperei o dia certo, e o dia certo nunca veio.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x0_a_seco",
+              "texto": "— Eu não menti. Eu não disse tudo. É diferente.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "x0_a_fere",
+              "texto": "— Você não ia ter reagido normal. Ninguém reage. Por isso eu vim para cá.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "fere",
+              "tag": "x1_a_fere",
+              "texto": "— Você não me deixou ser o que você queria que eu fosse. Você me deixou ser o que eu sou, e agora está bravo por isso.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "x1_a_abre",
+              "texto": "— Eu sei como parece. Eu sei. Eu queria uma pessoa que não soubesse quem eu era. E você foi essa pessoa. Eu fui egoísta.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x1_a_seco",
+              "texto": "— Isso é verdade, e não muda o que aconteceu.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "x1_b_fere",
+              "texto": "— Você usou a cidade como um refúgio descartável. A Doris, o bar, eu. Tudo.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x1_b_seco",
+              "texto": "— Eu não estou bravo. Estou... eu não sei o que eu estou.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "x1_b_abre",
+              "texto": "— Eu fui o primeiro que tratou você como pessoa. E você tratou a mim como cenário.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "x2_a_abre",
+              "texto": "— Eu não usei você. Eu estava com medo de que você mudasse. De que você me olhasse como todo mundo olha.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "x2_a_fere",
+              "texto": "— Você também escondeu uma coisa. A banda. Seattle. Você nunca disse que quase foi.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x2_a_seco",
+              "texto": "— Eu não vou me desculpar por ter querido um verão normal.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "x2_b_abre",
+              "texto": "— Eu teria olhado. De outro jeito, talvez. Mas teria olhado igual. Era meu direito saber.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "x2_b_fere",
+              "texto": "— A cidade inteira vai ser o seu cenário agora. E vai sobrar para mim limpar a bagunça.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x2_b_seco",
+              "texto": "— Eu preciso de um tempo. Para pensar.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da varanda é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "x3_b_abre",
+              "texto": "— Eu não sei se eu consigo fazer isso. Ser a pessoa de uma pessoa que as pessoas conhecem.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x3_b_seco",
+              "texto": "— Eu volto amanhã, para terminar a calha. É trabalho. Não é outra coisa.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "fere",
+              "tag": "x3_b_fere",
+              "texto": "— Eu acho que a gente se enganou. Eu me enganei, pelo menos.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 2
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "x3_a_abre",
+              "texto": "— Eu não sei se eu consigo ficar sem você. E eu sei que isso é um problema.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "x3_a_seco",
+              "texto": "— Eu vou terminar o álbum. Com você ou sem você. Mas eu preferia com.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "x3_a_fere",
+              "texto": "— Você pode ir embora. É a coisa que você faz. Você vai embora antes de ser deixado.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 2
+              }
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Senta. A gente não precisa brigar de pé."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Ok."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Você fica bem quando está bravo."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu estou com medo."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Isso é o que eu esperava."
+        }
+      ],
+      "fecho": "O sol, a pino, bate na varanda. Os flashes distantes ainda cintilam na porteira, como vaga-lumes de uma vida diferente. Entre os dois, uma tábua de madeira velha cede um centímetro, e é o único som que a conversa faz.",
+      "ir": "rv_c7_decisao"
+    },
+    "rv_c7_decisao": {
+      "tipo": "decisao",
+      "cap": 7,
+      "lugar": "Varanda do chalé dos Ashby",
+      "hora": "Segunda · 15h00",
+      "texto": "Dois adultos, uma discussão comprida e uma pergunta no ar: o que se faz com o que acabou de ser dito? Nenhuma das respostas é limpa. Todas custam, e custam coisas diferentes.",
+      "pergunta": "O que vocês fazem agora?",
+      "ir": "rv_c7_fim",
+      "acoes": [
+        {
+          "id": "espaco",
+          "texto": "Dar espaço: cada um fica quieto um dia, e voltam a se falar quando estiverem mais calmos",
+          "efeitos": {
+            "flag": "deram_espaco",
+            "abalo": 1
+          },
+          "resultado": "Vocês combinam espaço. O carpinteiro volta à picape, e a outra pessoa, ao piano. A discussão não acaba, só se afasta, como uma tempestade que vira para o outro lado do vale. É uma decisão madura, e doída, e funciona só para quem tem tempo."
+        },
+        {
+          "id": "insistir",
+          "texto": "Ficar: sentar na varanda e conversar até resolver, mesmo que dure a noite inteira",
+          "efeitos": {
+            "flag": "insistiram",
+            "vinculo": 2
+          },
+          "resultado": "Vocês ficam. A tarde vira noite, o fogão se acende, e a conversa, que começou como briga, vai mudando de cor, devagar, de vermelho para um cinza mais suave. Nada se resolve, mas uma coisa melhora: a certeza de que nenhum dos dois vai sair da sala batendo a porta."
+        },
+        {
+          "id": "romper",
+          "texto": "Encerrar: dizer que foi bom enquanto durou, e que o verão, para os dois, acabou aí",
+          "efeitos": {
+            "flag": "romperam",
+            "abalo": 2
+          },
+          "resultado": "Vocês decidem encerrar. A frase, dita com educação, tem o som de uma tábua que cede. O carpinteiro, depois de um minuto, estende a mão, como se fechasse um contrato. A outra pessoa a aperta, com um sorriso torto. É a coisa mais civilizada e mais triste que fizeram juntos."
+        }
+      ]
+    },
+    "rv_c7_fim": {
+      "tipo": "fim",
+      "cap": 7,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Segunda · 20h30",
+      "npcs": [
+        "lorna"
+      ],
+      "texto": "À noite, o chalé do velho Henry está cercado, a quinhentos metros, por uma fila de carros que o xerife não deixa passar da porteira. {{se flag:deram_espaco}}O carpinteiro foi embora, com a promessa de uma volta, e o violão do pai dele, deixado de propósito ou por esquecimento, está encostado no piano. {{/se}}{{se flag:insistiram}}O carpinteiro ainda está na varanda, com um copo de água e uma conversa que parou no meio. {{/se}}{{se flag:romperam}}O carpinteiro foi embora, de picape, sem olhar para trás, e a calha, que ele não terminou, balança com o vento. {{/se}}{{se flag:a_enfrentou_imprensa}}A frase dita aos repórteres já está em oito sites. {{/se}}{{se flag:a_escondeu_casa}}As cortinas fechadas viraram, nas redes, *a mansão do mistério*. {{/se}}{{se flag:b_leu_noticia}}A notícia, lida inteira, deixou na cabeça uma frase: *bloqueio criativo severo*. {{/se}}{{se flag:noite_lago}}A cama de dossel, lá em cima, ainda guarda a forma de duas pessoas. {{/se}}\n\nÀs oito e meia, o telefone fixo da cozinha, que ninguém sabia que funcionava, toca. A pessoa que atende ouve, do outro lado, uma voz de planilha, a de uma mulher de quarenta e cinco anos que não perde tempo com saudação.\n\n— Eu soube de tudo. — É Lorna Feldt. — O Marco ouviu o arquivo, ouviu o que vazou, e quer o álbum inteiro. Não em outubro. Em duas semanas. Eles já remarcaram a turnê, e a primeira data é em Seattle, no dia dois de setembro. Querida, a gravadora não vai esperar. Você tem quatorze dias para escrever um álbum, ou eles chamam um compositor.",
+      "gancho": "Quatorze dias para escrever um álbum inteiro.",
+      "ir": "rv_c8_noite"
+    },
+    "rv_c8_noite": {
+      "tipo": "segue",
+      "cap": 8,
+      "lugar": "Pine Hollow",
+      "hora": "Segunda · 22h00",
+      "ir": {
+        "A": "rv_c8_a",
+        "B": "rv_c8_b"
+      },
+      "texto": "Quatorze dias é um prazo cruel para qualquer coisa, e um absurdo para um álbum. Em Pine Hollow, às dez da noite, o xerife conseguiu limpar a porteira do chalé, as vans foram embora para o motel de Republic, a trinta quilômetros, e a Rua Principal, que passou o dia como feira, voltou a ser uma rua. Os grilos, que não leem notícia, recomeçaram o coro.\n\n{{se flag:noite_lago}}Na cama de dossel, ainda há o cheiro de duas pessoas. {{/se}}{{se flag:deram_espaco}}O combinado de dar espaço dura menos do que se esperava. {{/se}}{{se flag:insistiram}}A conversa da varanda não acabou. {{/se}}{{se flag:romperam}}O encerramento foi educado, e a educação, quando passa a hora, pesa mais do que a raiva. {{/se}}O telefone fixo, na cozinha, está fora do gancho, e o celular, na pedra, desligado.\n\nA noite, que parecia ter acabado de começar, é a única ferramenta que sobrou."
+    },
+    "rv_c8_a": {
+      "tipo": "solo",
+      "cap": 8,
+      "seat": "A",
+      "lugar": "Sala do chalé dos Ashby",
+      "hora": "Terça · 02h00",
+      "texto": "Você começa às dez, com um café de coador, o piano desafinado, o caderno preto e uma folha de papel de pão colada na parede, onde escreveu *14 DIAS*. Às meia-noite, tem duas faixas. À uma, quatro. Às duas, com os dedos doloridos e a garganta rouca, tem seis, e a sétima, que ainda não tem nome, está se escrevendo sozinha.\n\nAs músicas são todas tristes. Isso não era o plano. O plano era um álbum de verão, de batida, de refrão que se canta no carro. Mas cada canção que sai das suas mãos tem o peso de uma casa de madeira, de um riacho, de um telhado, de uma pessoa que talvez não volte. A palavra *perder* aparece em cinco títulos.\n\nVocê olha a folha da parede. Faltam treze dias, e a sua mão não sabe escrever outra coisa.",
+      "acoes": [
+        {
+          "id": "escrever",
+          "texto": "Continuar escrevendo até o amanhecer, sem corrigir, sem julgar",
+          "ir": "rv_c8_a2",
+          "efeitos": {
+            "flag": "a_escreveu_noite",
+            "vinculo": 1
+          },
+          "resultado": "Você escreve até o amanhecer. A sétima faixa vira oitava, depois nona, depois uma coisa que não tem título, só uma melodia de quatro notas e uma frase: *o verão é uma coisa que a gente aprende a perder.* Quando a luz do dia entra pela janela, o chão da sala está coberto de folhas, e você, pela primeira vez em oito meses, tem um álbum."
+        },
+        {
+          "id": "alegre",
+          "texto": "Parar e tentar escrever uma música alegre, só para equilibrar",
+          "ir": "rv_c8_a2",
+          "efeitos": {
+            "flag": "a_tentou_alegre",
+            "abalo": 1
+          },
+          "resultado": "Você tenta. Um refrão de verão, de batida, de carro de janela aberta. Vem em dez minutos, redondo, um hit de rádio, o tipo que a gravadora ama. Você o toca duas vezes e o rasga. É bom, e é mentira. Volta ao caderno e escreve, por cima, uma estrofe triste, e o refrão alegre vira, sem querer, uma ironia."
+        },
+        {
+          "id": "ligar",
+          "texto": "Ir até a pedra do sinal, de madrugada, e ligar para a pessoa que deixou o violão",
+          "ir": "rv_c8_a2",
+          "efeitos": {
+            "flag": "a_tentou_ligar",
+            "vinculo": 1
+          },
+          "resultado": "Você sai de madrugada, de lanterna na mão, até a pedra de sinal. Digita o número, e para, com o dedo sobre a tela. Quatro horas da manhã. Nenhuma frase serve. Guarda o telefone no bolso, e volta pelo mato, com o orvalho molhando as botas, mais leve e mais pesada, de quem quase fez uma coisa."
+        }
+      ]
+    },
+    "rv_c8_a2": {
+      "tipo": "solo",
+      "cap": 8,
+      "seat": "A",
+      "lugar": "Varanda do chalé dos Ashby",
+      "hora": "Terça · 10h00",
+      "npcs": [
+        "sarah"
+      ],
+      "texto": "De manhã, depois de uma noite sem dormir, com os olhos vermelhos e uma xícara de café já fria, você abre a porta da varanda e dá de cara com uma mulher de trinta anos, de cabelo preto, de casaco azul-marinho, parada no último degrau. Ela não traz máquina, nem microfone, nem sorriso.\n\n— Sarah Brandt — diz ela, sem estender a mão. — Eu sou a ex de {{B.nome}}. Eu não vim brigar. — Uma pausa curta. — Eu vim perguntar uma coisa, e eu quero que você responda de verdade, porque eu vou saber se for mentira.\n\nO vento mexe no casaco azul-marinho. Atrás dela, uma picape velha, de adesivo de *Eu freio para alces*, está estacionada na beira da estrada, vazia. Você não sabe se ela veio sozinha, ou se foi mandada.",
+      "acoes": [
+        {
+          "id": "responder",
+          "texto": "Dizer que ouvirá a pergunta, e que responderá com a verdade",
+          "ir": "rv_c8_dividir",
+          "efeitos": {
+            "flag": "a_ouviu_sarah",
+            "vinculo": 1
+          },
+          "resultado": "— Pergunte — você diz. Sarah olha você por um tempo comprido. *Você vai embora*, diz, *em agosto. Eu quero saber se você já decidiu se vai dizer isso a ele de frente, ou se vai deixar a cidade fazer isso por você.* A pergunta, tão simples, é a mais dura que você ouve na semana. *Eu ainda não sei*, você diz. *Mas eu não vou fugir sem dizer.*"
+        },
+        {
+          "id": "defender",
+          "texto": "Dizer que não deve explicações a ninguém, e pedir que ela vá embora",
+          "ir": "rv_c8_dividir",
+          "efeitos": {
+            "flag": "a_expulsou_sarah",
+            "abalo": 1
+          },
+          "resultado": "— Eu não devo explicação a ninguém — você diz, e a frase sai com a mesma firmeza de um comunicado de imprensa. Sarah assente, sem raiva. *Entendi*, diz. *Foi o que eu pensei.* Desce os degraus, e, no último, vira o rosto: *ele merece que alguém lhe deva uma explicação.* A picape dá a partida, e a frase, pesada, fica na varanda."
+        },
+        {
+          "id": "convidar",
+          "texto": "Convidar a Sarah a entrar e a tomar um café, como duas adultas",
+          "ir": "rv_c8_dividir",
+          "efeitos": {
+            "flag": "a_convidou_sarah",
+            "vinculo": 2
+          },
+          "resultado": "— Quer entrar? — você pergunta. — O café está horrível, mas está quente. — Sarah hesita, e entra, e senta na beira do sofá de manta xadrez, com a caneca na mão, olhando o piano. Em dez minutos, as duas, que não se conhecem, estão conversando sobre um homem de boné, e, sem querer, sobre quanto cada uma o ama. É a conversa mais estranha e mais honesta do verão."
+        }
+      ]
+    },
+    "rv_c8_b": {
+      "tipo": "solo",
+      "cap": 8,
+      "seat": "B",
+      "lugar": "Casa dos Lindqvist",
+      "hora": "Terça · 08h00",
+      "npcs": [
+        "caleb"
+      ],
+      "texto": "Você acorda no sofá, com o violão da sua infância no peito, a luz da manhã nos olhos e uma sensação de ressaca sem cerveja. O seu irmão Caleb está de pé, na frente da janela, de braços cruzados, com a cara de um oficial de justiça.\n\n— Eu vou dizer uma coisa, e você vai ficar quieto — diz. — Você é o melhor homem que eu conheço. E é um idiota. — A palavra cai como uma ferramenta. — A moça mentiu? Mentiu. Por omissão. Você teria feito o mesmo se tivesse doze Grammys e um país inteiro atrás. Ela veio para cá para fugir de uma coisa, e achou uma pessoa. Você acha que isso é *usar*? Isso é sorte.\n\n— Eu não — você começa. — Cala a boca — diz Caleb. — O violão do papai está no chalé dela, ou estava, até você deixar. Você abriu o coração para uma pessoa pela primeira vez em dois anos, e agora você vai fingir que foi tudo cenário.",
+      "acoes": [
+        {
+          "id": "ouvir",
+          "texto": "Ouvir o Caleb até o fim, em silêncio, e admitir que ele tem razão em parte",
+          "ir": "rv_c8_dividir",
+          "efeitos": {
+            "flag": "b_ouviu_caleb",
+            "vinculo": 2
+          },
+          "resultado": "Você ouve. O irmão fala por cinco minutos, em voz baixa, sem teatro, como nunca falou. No fim, você diz uma só frase: *em parte.* Caleb sorri, sem triunfo. *Em parte é um começo*, diz. *Come alguma coisa. Depois você decide o resto.*"
+        },
+        {
+          "id": "brigar",
+          "texto": "Discordar: dizer ao Caleb que ele não sabe o que é ser deixado para trás",
+          "ir": "rv_c8_dividir",
+          "efeitos": {
+            "flag": "b_brigou_caleb",
+            "abalo": 2
+          },
+          "resultado": "— Você não sabe o que é ficar — você diz. — Você vai e volta quando quer. Eu fiquei. Eu fiquei com o papai, com a casa, com a cidade. E agora tem alguém que, em dois meses, vai embora, e eu sou o cara que vai assistir. — Caleb fica em silêncio. Depois, baixo: *eu sei o que é ficar. Eu só nunca falei.* E sai, batendo a porta com o tipo de silêncio que dói."
+        },
+        {
+          "id": "sair",
+          "texto": "Pegar a picape e ir para o telhado do chalé: a calha precisa ser terminada",
+          "ir": "rv_c8_dividir",
+          "efeitos": {
+            "flag": "b_foi_calha",
+            "vinculo": 1
+          },
+          "resultado": "Você pega a caixa de ferramentas e a picape, e sobe a estrada de terra. A calha do chalé, que ficou para o fim, está do jeito que você deixou. Você sobe a escada, pega o martelo, e trabalha em silêncio, com o riacho ao fundo e a janela do piano, lá embaixo, aberta. Não olha para dentro. Mas ouve."
+        }
+      ]
+    },
+    "rv_c8_dividir": {
+      "tipo": "dividir",
+      "cap": 8,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Terça · 16h00",
+      "cada": 1,
+      "texto": "À tarde, o chalé do velho Henry tem as janelas abertas, cheiro de tinta fresca e uma folha na parede, onde está escrito *13 DIAS*. A calha, a última peça do telhado, está pronta. As vans foram embora. O sol do fim de julho entra pelas frestas e marca um quadrado dourado no tapete.\n\nEntre as duas pessoas, a única coisa que falta ser dita é o que cada uma vai fazer com a data de volta.",
+      "pergunta": "O que você decide?",
+      "acoes": [
+        {
+          "id": "voltar",
+          "seat": "A",
+          "texto": "Aceitar a turnê: voltar para Seattle e para a vida, no dia 30 de agosto",
+          "efeitos": {
+            "flag": "aceitou_voltar",
+            "abalo": 1
+          },
+          "resultado": "Você diz à Lorna, pelo telefone fixo, às quatro e dez da tarde: *eu volto no dia trinta.* A palavra *volto* sai com a facilidade de uma coisa antiga. Do outro lado, a Lorna suspira, de alívio ou de pena. *Eu mando um carro*, ela diz. *Eu sabia que você ia aceitar.* Você desliga, e o chalé, em volta, parece ter ficado menor."
+        },
+        {
+          "id": "cancelar",
+          "seat": "A",
+          "texto": "Cancelar a turnê: dizer à Lorna que você precisa de mais do que um verão",
+          "efeitos": {
+            "flag": "cancelou_turne",
+            "vinculo": 2
+          },
+          "resultado": "Você diz à Lorna, pelo telefone fixo, com a voz mais calma que já usou: *eu não vou voltar para a turnê.* Do outro lado, um silêncio de planilha em chamas. *Você sabe o que isso custa*, diz Lorna. *Eu sei*, você diz. *Eu também sei o que custa não fazer.* Você desliga, de mãos tremendo, e a folha de papel de pão, na parede, parece mais leve."
+        },
+        {
+          "id": "negociar",
+          "seat": "A",
+          "texto": "Negociar: dizer que volta, mas só depois de dois meses de álbum em Pine Hollow",
+          "efeitos": {
+            "flag": "negociou_volta"
+          },
+          "resultado": "Você diz à Lorna: *eu volto, mas em outubro. Eu termino o álbum aqui.* Lorna faz uma pausa. *Eu vou tentar*, diz, *mas o Marco vai dizer não.* Você diz *então peça de novo*. É uma negociação de adulta, e a mais egoísta e mais honesta que você faz. Ela desliga, e o resultado, como toda negociação, é incerto."
+        },
+        {
+          "id": "pedir",
+          "seat": "B",
+          "texto": "Pedir a ela, de frente, que não vá, ou que volte logo",
+          "efeitos": {
+            "flag": "b_pediu_ficar",
+            "vinculo": 2
+          },
+          "resultado": "Você diz, sem teatro: *eu não sei se eu quero que você vá. Eu sei que eu não quero que você suma.* A frase sai mais clara do que você planejou. A pessoa à sua frente olha para você com os olhos úmidos, e a resposta, que não vem, é um tipo de resposta."
+        },
+        {
+          "id": "nao_pedir",
+          "seat": "B",
+          "texto": "Não pedir nada: dizer que é decisão dela, e que você aceita o que ela escolher",
+          "efeitos": {
+            "flag": "b_nao_pediu",
+            "abalo": 1
+          },
+          "resultado": "Você diz: *é decisão sua. Eu aceito o que você escolher.* A frase, dita com a mão firme e o rosto calmo, é a coisa mais nobre e mais covarde que você faz. A pessoa à sua frente assente, devagar, e é tarde demais para você perceber que esperava, no fundo, que ela discordasse."
+        },
+        {
+          "id": "ajudar",
+          "seat": "B",
+          "texto": "Oferecer ajuda com o álbum: sentar ao piano, tocar, dar ritmo às músicas tristes",
+          "efeitos": {
+            "flag": "b_ajudou_album",
+            "vinculo": 2
+          },
+          "resultado": "Você senta ao piano, ao lado dela, e toca as primeiras notas de uma música triste, em lá menor, com a mão esquerda. *Deixa eu ajudar*, você diz. *Nem que seja pelo álbum.* Os dois, lado a lado, passam a tarde inteira transformando tristezas em refrões, e, quando o sol cai, a nona faixa está pronta."
+        }
+      ],
+      "desfecho": "Ao anoitecer, a folha da parede, onde estava escrito *13 DIAS*, ganha uma segunda linha, a lápis, em letra miúda, que alguém escreveu e não assinou: *30 de agosto.*",
+      "ir": "rv_c8_fim"
+    },
+    "rv_c8_fim": {
+      "tipo": "fim",
+      "cap": 8,
+      "lugar": "Chalé dos Ashby",
+      "hora": "Quarta · 07h00",
+      "texto": "Na manhã de quarta, a folha de papel de pão, colada na parede do chalé, tem duas linhas. {{se flag:aceitou_voltar}}*13 DIAS. 30 DE AGOSTO.* A data, escrita a lápis, é de uma letra segura, a de quem decide e não olha para trás. {{/se}}{{se flag:cancelou_turne}}*13 DIAS. CANCELADA.* A palavra, escrita a lápis, é de uma letra trêmula, a de quem decide e ainda não acredita. {{/se}}{{se flag:negociou_volta}}*13 DIAS. OUTUBRO?* O ponto de interrogação, escrito a lápis, é a única honestidade da folha. {{/se}}\n\n{{se flag:b_ajudou_album}}Ao piano, uma nona faixa, pronta, tem um acorde de lá menor na ponte. {{/se}}{{se flag:b_pediu_ficar}}No ar, uma frase dita sem teatro, *eu não quero que você suma*, ainda não teve resposta. {{/se}}{{se flag:b_nao_pediu}}No ar, uma frase dita com nobreza, *é decisão sua*, ainda tem o gosto de covardia. {{/se}}{{se flag:a_ouviu_sarah}}Na varanda, uma pergunta de Sarah, *você vai dizer a ele de frente?*, ainda espera. {{/se}}{{se flag:a_convidou_sarah}}No sofá, duas xícaras de café, e uma conversa que nunca vai ser contada. {{/se}}{{se flag:a_expulsou_sarah}}Na estrada, uma picape que foi embora, e uma frase: *ele merece que alguém lhe deva uma explicação.* {{/se}}\n\nDo lado de fora, o sol sobe, e o riacho, que nunca soube nada de turnê, continua falando. Dentro, no piano, quatro notas esperam, e uma pessoa, de olhos vermelhos, olha a folha da parede e conta, nos dedos, quantos dias faltam para ser outra vez uma pessoa que todo mundo conhece.",
+      "gancho": "A data está escrita na parede, e a despedida começa a ter um dia.",
       "ir": "rv_rascunho_fim"
     },
     "rv_rascunho_fim": {
       "tipo": "final",
-      "cap": 6,
+      "cap": 8,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
