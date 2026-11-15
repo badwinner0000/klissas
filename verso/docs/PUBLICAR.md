@@ -36,7 +36,7 @@ Tempo: ~15 minutos. Você só precisa de contas gratuitas no Supabase e na Verce
 ## Cloudflare Workers (alternativa à Vercel)
 Endereço: **https://lovesparks.verso.business** (domínio `verso.business` na Cloudflare).
 
-1. Workers & Pages → Create → Import a repository → `klissas`.
+1. Workers & Pages → Create → Import a repository → `klissas`. Nome do projeto: **`lovesparks`** (igual ao `name` do `wrangler.jsonc`).
    Root directory `verso` · branch `main` · build `npm ci && npx opennextjs-cloudflare build` · deploy `npx wrangler deploy`.
 2. Settings → Variables and secrets → segredo `DATABASE_URL` (Supabase, Transaction pooler, porta 6543).
 3. O `wrangler.jsonc` já declara a rota `lovesparks.verso.business` como custom domain: o deploy cria o DNS.
