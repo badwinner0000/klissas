@@ -42,6 +42,14 @@ livro = dict(
     megan=dict(nome='Megan Nicholls', voz='42 anos, irmã, cansada e engraçada'),
     frank=dict(nome='Frank Delaney', voz='60 anos, cliente antigo, devagar e leal')),
   nomesProibidos=['Joanna', 'Dean'], escolhasMortasToleradas=[],
+  tema=dict(a='#12343b', b='#2f6f73', destaque='#e0b96a'),
+  personagens=dict(
+    A=dict(papel='Diretora de contas da Meridian Group', nomePadrao='Joanna', generoPadrao='ela', idade=38, origem='Dayton, Ohio; mora em Lincoln Park, Chicago', ferida='Descobrir que passou a vida tentando provar algo que ninguém estava olhando.'),
+    B=dict(papel='Diretor de operações da Tillman & Sons', nomePadrao='Dean', generoPadrao='ele', idade=41, origem='Chicago, Illinois', ferida='Que todos achem que só chegou onde chegou por ser o filho do dono.')),
+  fatos=['Chicago e Viena, cerca de três semanas, do anúncio da venda da Tillman & Sons ao congresso global de operações.',
+         'A Meridian Group comprou a empresa da família Tillman; a vaga de diretor regional do Meio-Oeste é disputada pelos dois.',
+         'Marcus Webb é o chefe de Joanna e prometeu a mesma vaga aos dois.',
+         'Há um quarto só reservado no Hotel Imperial, em Viena, para os seis dias do congresso.'],
   inicio=dict(A='up_c1_a', B='up_c1_b'), nos=nos)
 open(os.path.join(base, '../../../content/livros/ultima-promocao.json'), 'w').write(json.dumps(livro, ensure_ascii=False, indent=2) + '\n')
 print('nós:', len(nos), '| capítulo mais alto:', ult)

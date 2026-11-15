@@ -3,7 +3,7 @@
   "titulo": "A Última Promoção",
   "secao": "love-sparks",
   "adulto": true,
-  "rascunho": true,
+  "rascunho": false,
   "tropes": [
     "rivals-to-lovers",
     "workplace-romance",
@@ -66,6 +66,35 @@
     "Dean"
   ],
   "escolhasMortasToleradas": [],
+  "tema": {
+    "a": "#12343b",
+    "b": "#2f6f73",
+    "destaque": "#e0b96a"
+  },
+  "personagens": {
+    "A": {
+      "papel": "Diretora de contas da Meridian Group",
+      "nomePadrao": "Joanna",
+      "generoPadrao": "ela",
+      "idade": 38,
+      "origem": "Dayton, Ohio; mora em Lincoln Park, Chicago",
+      "ferida": "Descobrir que passou a vida tentando provar algo que ninguém estava olhando."
+    },
+    "B": {
+      "papel": "Diretor de operações da Tillman & Sons",
+      "nomePadrao": "Dean",
+      "generoPadrao": "ele",
+      "idade": 41,
+      "origem": "Chicago, Illinois",
+      "ferida": "Que todos achem que só chegou onde chegou por ser o filho do dono."
+    }
+  },
+  "fatos": [
+    "Chicago e Viena, cerca de três semanas, do anúncio da venda da Tillman & Sons ao congresso global de operações.",
+    "A Meridian Group comprou a empresa da família Tillman; a vaga de diretor regional do Meio-Oeste é disputada pelos dois.",
+    "Marcus Webb é o chefe de Joanna e prometeu a mesma vaga aos dois.",
+    "Há um quarto só reservado no Hotel Imperial, em Viena, para os seis dias do congresso."
+  ],
   "inicio": {
     "A": "up_c1_a",
     "B": "up_c1_b"
@@ -544,7 +573,7 @@
       "seat": "A",
       "lugar": "Portão K14, O'Hare",
       "hora": "Quinta · 16h50",
-      "texto": "Você tem trinta e oito anos, um passaporte com quarenta e dois carimbos e um segredo que nunca contou a ninguém da Meridian: você tem pavor de avião.\n\nNão é um medo comum. É um medo organizado, com ritual. Você chega duas horas antes, escolhe sempre o corredor, conta as saídas de emergência, e não bebe nada com álcool antes da decolagem porque o álcool, dizem, piora. Fez isso em quarenta e dois países. Nunca disse a ninguém, nem a Nina, nem à Megan, porque *medo de avião* é um assunto que alguém resolve com uma frase gentil, e você não suporta frase gentil.\n\nA pessoa que vai se sentar no 24B está na outra ponta do portão, de gravata afrouxada, olhando para o celular com a testa franzida. Você sente a palma da mão úmida contra o couro da pasta.",
+      "texto": "Você tem trinta e oito anos, um passaporte com quarenta e dois carimbos e um segredo que nunca contou a ninguém da Meridian: você tem pavor de avião.\n\nNão é um medo comum. É um medo organizado, com ritual. Você chega duas horas antes, escolhe sempre o corredor, conta as saídas de emergência, e não bebe nada com álcool antes da decolagem porque o álcool, dizem, piora. Fez isso em quarenta e dois países. Nunca disse a ninguém, nem a Nina, nem à Megan, porque *medo de avião* é um assunto que alguém resolve com uma frase gentil, e você não suporta frase gentil.\n\nA pessoa que vai se sentar no 24B está na outra ponta do portão, de gravata afrouxada, olhando para o celular com a testa franzida. Você sente a palma da mão úmida contra o couro da pasta.\n\n{{se flag:a_fechou_hartwell}}A Hartwell, fechada na segunda sem desconto, ainda é o único número limpo da semana.{{/se}}\n\n{{se flag:a_perguntou_priya}}A palavra *outro candidato*, dita pela Priya na copa, volta a cada portão de embarque.{{/se}}\n\n{{se flag:a_conferiu_arquivo}}A foto da página do arquivo, com os quarenta e um milhões, continua no celular, no meio das fotos de aeroporto.{{/se}}",
       "acoes": [
         {
           "id": "ritual",
@@ -583,7 +612,7 @@
       "seat": "B",
       "lugar": "Portão K14, O'Hare",
       "hora": "Quinta · 16h50",
-      "texto": "O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentad{{eu.o_a}} numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.\n\nNa tela, uma mensagem da Chloe, de oito minutos atrás, com um anexo de duas páginas: *Meridian Group. Três diretores saíram em dezoito meses. Todos de áreas que o Marcus Webb comandou. Ninguém quis falar. Priya Patel foi a única que atendeu o telefone e desligou em quatro segundos. Mais amanhã.*\n\nDo outro lado do portão, a pessoa que vai se sentar no 24A está de pé, de costas, segurando a alça de uma pasta de couro com tanta força que os nós dos dedos estão brancos. Você conhece essa postura. É a de quem está tentando não cair de um lugar alto.",
+      "texto": "O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentad{{eu.o_a}} numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.\n\nNa tela, uma mensagem da Chloe, de oito minutos atrás, com um anexo de duas páginas: *Meridian Group. Três diretores saíram em dezoito meses. Todos de áreas que o Marcus Webb comandou. Ninguém quis falar. Priya Patel foi a única que atendeu o telefone e desligou em quatro segundos. Mais amanhã.*\n\nDo outro lado do portão, a pessoa que vai se sentar no 24A está de pé, de costas, segurando a alça de uma pasta de couro com tanta força que os nós dos dedos estão brancos. Você conhece essa postura. É a de quem está tentando não cair de um lugar alto.\n\n{{se flag:b_aplaudiu}}O aplauso no galpão, sozinho no começo, foi uma despedida que parecia uma celebração.{{/se}}\n\n{{se flag:b_perguntou_pai}}A palavra *depois*, dita pelo pai na reunião, ainda cai como uma bandeja no chão.{{/se}}\n\n{{se flag:b_saiu}}A volta pelo quarteirão, no vento de março, foi o lugar onde os balanços de três anos finalmente fizeram sentido.{{/se}}",
       "acoes": [
         {
           "id": "observar",
@@ -888,7 +917,7 @@
       "cap": 2,
       "lugar": "Hotel Imperial, Kärntner Ring, Viena",
       "hora": "Sexta · 14h20",
-      "texto": "O Hotel Imperial, em Viena, tem lustres do tamanho de carros pequenos, tapetes que absorvem o som das pessoas e um balcão de recepção onde uma mulher de coque perfeito, crachá *Frau Hofer*, digita por trinta e oito segundos e olha, enfim, para duas pessoas que estão há vinte horas sem dormir.\n\n— Há um problema — diz ela, no tom de quem avisa que o problema é de outra pessoa. — O congresso lotou o hotel. Tenho uma reserva em nome dos senhores: um quarto, cama king, seis noites. Não tenho nenhum outro.\n\nAtrás dos dois, uma fila de executivos de terno amarrotado espera para dizer a mesma coisa.",
+      "texto": "O Hotel Imperial, em Viena, tem lustres do tamanho de carros pequenos, tapetes que absorvem o som das pessoas e um balcão de recepção onde uma mulher de coque perfeito, crachá *Frau Hofer*, digita por trinta e oito segundos e olha, enfim, para duas pessoas que estão há vinte horas sem dormir.\n\n— Há um problema — diz ela, no tom de quem avisa que o problema é de outra pessoa. — O congresso lotou o hotel. Tenho uma reserva em nome dos senhores: um quarto, cama king, seis noites. Não tenho nenhum outro.\n\nAtrás dos dois, uma fila de executivos de terno amarrotado espera para dizer a mesma coisa.\n\n{{se flag:voo_trabalhou}}No avião, uma apresentação foi revisada slide por slide, e a turbulência derrubou a concentração.{{/se}}\n\n{{se flag:voo_conversou}}No avião, uma comédia romântica ruim e uma mini-garrafa de vinho viraram a primeira conversa em que ninguém quis ganhar.{{/se}}\n\n{{se flag:voo_dormiu}}No avião, uma cabeça caiu do lado errado e acordou com um peso conhecido no ombro.{{/se}}",
       "pergunta": "O que vocês fazem?",
       "ir": {
         "A": "up_c2_noite_a",
@@ -929,7 +958,7 @@
       "seat": "A",
       "lugar": "Quarto 412, Hotel Imperial",
       "hora": "Sexta · 15h10",
-      "texto": "O quarto 412 tem pé-direito de quatro metros, uma cama king de colcha de damasco, duas poltronas de veludo cor de vinho e uma janela que dá para o Ring, onde um bonde amarelo passa em silêncio. Há um frigobar, uma escrivaninha, um sofá de dois lugares que você mede, com os olhos, em centímetros, e conclui que ninguém dorme ali.\n\nNa mesa de cabeceira, uma garrafa de champanhe num balde de gelo, com um cartão: *À dupla mais promissora da Meridian. Que vença o melhor. — M.W.* Você segura o cartão com dois dedos. A letra de Marcus é grande, redonda, de quem escreve para ser lido por outras pessoas.",
+      "texto": "O quarto 412 tem pé-direito de quatro metros, uma cama king de colcha de damasco, duas poltronas de veludo cor de vinho e uma janela que dá para o Ring, onde um bonde amarelo passa em silêncio. Há um frigobar, uma escrivaninha, um sofá de dois lugares que você mede, com os olhos, em centímetros, e conclui que ninguém dorme ali.\n\nNa mesa de cabeceira, uma garrafa de champanhe num balde de gelo, com um cartão: *À dupla mais promissora da Meridian. Que vença o melhor. — M.W.* Você segura o cartão com dois dedos. A letra de Marcus é grande, redonda, de quem escreve para ser lido por outras pessoas.\n\n{{se flag:a_investigou}}A matrícula *MW-0017*, escrita e riscada numa folha, ainda tem o mesmo número de letras.{{/se}}\n\n{{se flag:a_ligou_megan}}A voz da Megan dizendo *então ele que se cuide* ainda é a frase mais gentil da semana.{{/se}}\n\n{{se flag:a_cozinhou}}O espaguete com limão de domingo foi a primeira refeição de verdade em um mês, e o gosto ficou.{{/se}}",
       "acoes": [
         {
           "id": "cama",
@@ -967,7 +996,7 @@
       "seat": "B",
       "lugar": "Lobby, Hotel Imperial",
       "hora": "Sexta · 15h10",
-      "texto": "Você deixa a pessoa subir primeiro, com a desculpa de ligar para casa. Na cadeira de couro do lobby, sob um lustre de cristal que provavelmente vale mais do que o seu primeiro carro, você abre o celular e liga para o seu pai.\n\nEm Chicago, são oito da manhã. O seu pai atende no quinto toque, e a sua voz sai sozinha, antes de você pensar: *Pai, eu fui para Viena com uma pessoa que quer a minha vaga.* Do outro lado, o barulho de uma colher batendo numa xícara, e depois o Buster latindo, longe, para um carteiro.\n\n— E ela é boa? — pergunta o seu pai.",
+      "texto": "Você deixa a pessoa subir primeiro, com a desculpa de ligar para casa. Na cadeira de couro do lobby, sob um lustre de cristal que provavelmente vale mais do que o seu primeiro carro, você abre o celular e liga para o seu pai.\n\nEm Chicago, são oito da manhã. O seu pai atende no quinto toque, e a sua voz sai sozinha, antes de você pensar: *Pai, eu fui para Viena com uma pessoa que quer a minha vaga.* Do outro lado, o barulho de uma colher batendo numa xícara, e depois o Buster latindo, longe, para um carteiro.\n\n— E ela é boa? — pergunta o seu pai.\n\n{{se flag:b_falou_buster}}O *oi, cara* ao Buster, pela tela, valeu mais do que qualquer conselho.{{/se}}\n\n{{se flag:b_perguntou_valor}}A pergunta sobre o valor da venda teve uma resposta que não cabia em número.{{/se}}\n\n{{se flag:b_pediu_chloe}}O pedido à Chloe, *tudo que for público*, já virou uma noite acordada dela.{{/se}}",
       "acoes": [
         {
           "id": "verdade",
@@ -1062,7 +1091,7 @@
       "lugar": "Quarto 412, Hotel Imperial",
       "hora": "Sexta · 21h00",
       "comeca": "A",
-      "texto": "Às nove da noite, com o banho tomado, a TV desligada e uma garrafa de vinho aberta sobre a escrivaninha, os dois sentam em lados opostos do quarto, cada um em uma poltrona de veludo, com um copo na mão e uma folha de papel do hotel entre os dois.\n\nAlguém, em algum momento, vai ter de escrever a primeira regra.",
+      "texto": "Às nove da noite, com o banho tomado, a TV desligada e uma garrafa de vinho aberta sobre a escrivaninha, os dois sentam em lados opostos do quarto, cada um em uma poltrona de veludo, com um copo na mão e uma folha de papel do hotel entre os dois.\n\nAlguém, em algum momento, vai ter de escrever a primeira regra.\n\n{{se flag:pegou_tv}}O controle da TV ficou com quem chegou primeiro, em um canal austríaco de notícias.{{/se}}\n\n{{se flag:pegou_chuveiro}}A água quente do chuveiro acabou depois de uma hora, sem ninguém avisar.{{/se}}\n\n{{se flag:pegou_cama}}O lado da cama, declarado de sapato, virou uma fronteira aceita sem concordância.{{/se}}",
       "turnos": [
         {
           "prompt": "A primeira frase é sua.",
@@ -1331,7 +1360,7 @@
       "seat": "A",
       "lugar": "Quarto 412, Hotel Imperial",
       "hora": "Sábado · 01h30",
-      "texto": "À uma e meia da manhã, no escuro do quarto 412, com a respiração da outra pessoa ao lado e o ruído distante de um bonde na Ring, você está acordad{{eu.o_a}}. Está com o laptop fechado, o celular em silêncio e os olhos abertos para o teto.\n\nNa tela do celular, ainda aberta desde o aeroporto, a fotografia da página do arquivo da aquisição: *US$ 41 milhões*, uma nota de rodapé, uma matrícula de usuário: *MW-0017*. Na outra mão, o cartão de Marcus que veio com o champanhe: *À dupla.* Você compara as duas letras, a do cartão e a da nota de rodapé, e a coincidência, que não é coincidência, não deixa você dormir.",
+      "texto": "À uma e meia da manhã, no escuro do quarto 412, com a respiração da outra pessoa ao lado e o ruído distante de um bonde na Ring, você está acordad{{eu.o_a}}. Está com o laptop fechado, o celular em silêncio e os olhos abertos para o teto.\n\nNa tela do celular, ainda aberta desde o aeroporto, a fotografia da página do arquivo da aquisição: *US$ 41 milhões*, uma nota de rodapé, uma matrícula de usuário: *MW-0017*. Na outra mão, o cartão de Marcus que veio com o champanhe: *À dupla.* Você compara as duas letras, a do cartão e a da nota de rodapé, e a coincidência, que não é coincidência, não deixa você dormir.\n\n{{se flag:a_fez_ritual}}O ritual das saídas de emergência, feito no portão, é um mapa que a mão ainda sabe de cor.{{/se}}\n\n{{se flag:a_bebeu}}A dose dupla no bar do terminal, contra todas as regras, foi o único desvio de um ano.{{/se}}\n\n{{se flag:a_contou_nina}}A mensagem para a Nina, *eu tenho medo de avião*, tem a resposta guardada: *eu sei desde 2019*.{{/se}}",
       "acoes": [
         {
           "id": "contar",
@@ -1371,7 +1400,7 @@
       "seat": "B",
       "lugar": "Quarto 412, Hotel Imperial",
       "hora": "Sábado · 01h30",
-      "texto": "À uma e meia da manhã, no escuro do quarto, você está acordad{{eu.o_a}}. Não é insônia: é costume. Em cinco anos de escritório, o seu corpo aprendeu a dormir em turnos de quatro horas, e agora, numa cama de hotel de seiscentos euros, ele acorda no horário certo, como um relógio despertador ressentido.\n\nA respiração ao lado é leve, mas não é de quem dorme. Você conhece a diferença. É a respiração de quem finge.\n\nO celular vibra duas vezes, debaixo do travesseiro. A Chloe, de Chicago, em hora de almoço: *Achei uma coisa. Ligação de três diretores que saíram. Todos viram o Marcus assinar a mesma coisa. Uma auditoria que nunca foi publicada. Me liga.*",
+      "texto": "À uma e meia da manhã, no escuro do quarto, você está acordad{{eu.o_a}}. Não é insônia: é costume. Em cinco anos de escritório, o seu corpo aprendeu a dormir em turnos de quatro horas, e agora, numa cama de hotel de seiscentos euros, ele acorda no horário certo, como um relógio despertador ressentido.\n\nA respiração ao lado é leve, mas não é de quem dorme. Você conhece a diferença. É a respiração de quem finge.\n\nO celular vibra duas vezes, debaixo do travesseiro. A Chloe, de Chicago, em hora de almoço: *Achei uma coisa. Ligação de três diretores que saíram. Todos viram o Marcus assinar a mesma coisa. Uma auditoria que nunca foi publicada. Me liga.*\n\n{{se flag:b_notou_medo}}A mão apertando a pasta no portão, vista de longe e guardada, é uma informação que dá vergonha ter.{{/se}}\n\n{{se flag:b_levou_cafe}}O café de papel, estendido sem explicação, foi a primeira coisa dividida.{{/se}}\n\n{{se flag:b_pediu_marcus}}O pedido para procurar tudo o que o Marcus assinou rendeu um *cuidado com todo mundo* que não sai da cabeça.{{/se}}",
       "acoes": [
         {
           "id": "ligar",
@@ -1409,7 +1438,7 @@
       "cap": 3,
       "lugar": "Quarto 412, Hotel Imperial",
       "hora": "Sábado · 07h00",
-      "texto": "O despertador do hotel toca às sete em ponto, com um acorde de piano que parece ter sido composto para ofender. O quarto 412 tem, a esta hora, uma luz cinza e fria, uma TV ligada sem som, uma cama king que alguém, durante a noite, ocupou por inteiro, e um bilhete de papel timbrado que alguém, durante a madrugada, escreveu e deixou na escrivaninha.\n\n{{se flag:dormiram_cama}}Vocês dividiram a cama, com um travesseiro no meio. De manhã, o travesseiro estava no chão. {{/se}}{{se flag:dormiram_sofa}}Um dos dois dormiu no sofá de um metro e sessenta e cinco e acordou com a coluna em formato de ponto de interrogação. {{/se}}{{se flag:dormiram_chao}}Vocês dormiram no tapete, e o tapete, de manhã, tinha as marcas de duas pessoas que, de algum modo, se aproximaram. {{/se}}{{se flag:a_contou_fraude}}O que foi contado de madrugada, no escuro, agora está sobre a escrivaninha, escrito à mão em papel do hotel. {{/se}}\n\nAntes que alguém possa dizer bom dia, o celular de cada um vibra, no mesmo segundo. Um e-mail do Marcus, enviado às 6h58, de um telefone, com um erro de digitação que ele jamais cometeria em horário comercial:\n\n*Pequena mudança: as duas apresentações serão no MESMO dia, às 9h, na MESMA sala. O grande palco, o Salão Strauss. Avisem a equipe de tecnologia que, para a dupla, só haverá um projetor. — M.*\n\nA palavra *um* vem em negrito.",
+      "texto": "O despertador do hotel toca às sete em ponto, com um acorde de piano que parece ter sido composto para ofender. O quarto 412 tem, a esta hora, uma luz cinza e fria, uma TV ligada sem som, uma cama king que alguém, durante a noite, ocupou por inteiro, e um bilhete de papel timbrado que alguém, durante a madrugada, escreveu e deixou na escrivaninha.\n\n{{se flag:dormiram_cama}}Vocês dividiram a cama, com um travesseiro no meio. De manhã, o travesseiro estava no chão. {{/se}}{{se flag:dormiram_sofa}}Um dos dois dormiu no sofá de um metro e sessenta e cinco e acordou com a coluna em formato de ponto de interrogação. {{/se}}{{se flag:dormiram_chao}}Vocês dormiram no tapete, e o tapete, de manhã, tinha as marcas de duas pessoas que, de algum modo, se aproximaram. {{/se}}{{se flag:a_contou_fraude}}O que foi contado de madrugada, no escuro, agora está sobre a escrivaninha, escrito à mão em papel do hotel. {{/se}}\n\nAntes que alguém possa dizer bom dia, o celular de cada um vibra, no mesmo segundo. Um e-mail do Marcus, enviado às 6h58, de um telefone, com um erro de digitação que ele jamais cometeria em horário comercial:\n\n*Pequena mudança: as duas apresentações serão no MESMO dia, às 9h, na MESMA sala. O grande palco, o Salão Strauss. Avisem a equipe de tecnologia que, para a dupla, só haverá um projetor. — M.*\n\nA palavra *um* vem em negrito.\n\n{{se flag:a_confiou_cama}}A confiança dita em voz alta, *a cama é grande*, foi cumprida sem ninguém comentar.{{/se}}\n\n{{se flag:b_confiou_cama}}A confiança dita em voz alta, *eu confio que você vai ficar do seu lado*, foi cumprida sem ninguém comentar.{{/se}}",
       "gancho": "As apresentações são hoje, às 9h, no mesmo palco, e só há um projetor.",
       "ir": "up_c4_apresentacao"
     },
@@ -1436,7 +1465,7 @@
       "npcs": [
         "priya"
       ],
-      "texto": "Nos bastidores, uma cortina de veludo vermelho, um espelho de camarim com lâmpadas redondas, um frigobar com água sem gás e a pior luz fluorescente da Áustria. Você conferiu os slides onze vezes. Cada um tem um número, um gráfico, uma conclusão. Nenhum tem um adjetivo.\n\nPriya Patel, de crachá da Meridian e laptop contra o peito, aparece atrás de você, de olhos no chão, e fala em um volume que dá a impressão de que a frase não existe. *O Marcus mudou a lista de candidatos duas vezes. A primeira tinha só um nome.* Ela mexe nos fones de ouvido como quem precisa de ocupar as mãos. *O segundo foi adicionado na semana passada.*\n\nA pergunta que fica no ar é de quem era o primeiro nome. A resposta vem sem rosto, antes que alguém a faça: *O seu. Então eu pensei que você devia saber.*",
+      "texto": "Nos bastidores, uma cortina de veludo vermelho, um espelho de camarim com lâmpadas redondas, um frigobar com água sem gás e a pior luz fluorescente da Áustria. Você conferiu os slides onze vezes. Cada um tem um número, um gráfico, uma conclusão. Nenhum tem um adjetivo.\n\nPriya Patel, de crachá da Meridian e laptop contra o peito, aparece atrás de você, de olhos no chão, e fala em um volume que dá a impressão de que a frase não existe. *O Marcus mudou a lista de candidatos duas vezes. A primeira tinha só um nome.* Ela mexe nos fones de ouvido como quem precisa de ocupar as mãos. *O segundo foi adicionado na semana passada.*\n\nA pergunta que fica no ar é de quem era o primeiro nome. A resposta vem sem rosto, antes que alguém a faça: *O seu. Então eu pensei que você devia saber.*\n\n{{se flag:a_marcou_lado}}A pasta no travesseiro, marcando o lado da janela, é uma bandeira infantil que funcionou.{{/se}}\n\n{{se flag:a_desconfiou_marcus}}O cartão do champanhe, *à dupla*, não sai da cabeça: Marcus nunca usou essa palavra.{{/se}}\n\n{{se flag:a_tomou_banho}}A hora na banheira de cobre foi a primeira hora inteira só sua desde segunda-feira.{{/se}}",
       "acoes": [
         {
           "id": "agradecer",
@@ -1475,7 +1504,7 @@
       "seat": "B",
       "lugar": "Bastidores do Salão Strauss",
       "hora": "Sábado · 08h45",
-      "texto": "Atrás da cortina, com a gravata endireitada três vezes e um cartão de anotações na mão, você olha para o relógio digital do podium. Vinte minutos. Você tem uma apresentação de trinta e oito slides, escrita na madrugada, e nenhum deles é um gráfico. Os seus slides são fotos: de motoristas, de armazéns, de uma doca de carga em Gary, Indiana, às quatro da manhã.\n\nO seu telefone vibra: Chloe, em Chicago, de madrugada. *Sorte. Respira. E lembra: você não é o filho do dono. Você é a pessoa que sabe o nome de cada motorista. Vai lá.*\n\nVocê relê a mensagem. Depois, sem saber por quê, relê de novo.",
+      "texto": "Atrás da cortina, com a gravata endireitada três vezes e um cartão de anotações na mão, você olha para o relógio digital do podium. Vinte minutos. Você tem uma apresentação de trinta e oito slides, escrita na madrugada, e nenhum deles é um gráfico. Os seus slides são fotos: de motoristas, de armazéns, de uma doca de carga em Gary, Indiana, às quatro da manhã.\n\nO seu telefone vibra: Chloe, em Chicago, de madrugada. *Sorte. Respira. E lembra: você não é o filho do dono. Você é a pessoa que sabe o nome de cada motorista. Vai lá.*\n\nVocê relê a mensagem. Depois, sem saber por quê, relê de novo.\n\n{{se flag:b_admitiu_pai}}A frase *ela é melhor do que eu*, dita ao pai, foi a verdade mais barata e mais difícil.{{/se}}\n\n{{se flag:b_mentiu_pai}}A mentira *nem tanto*, dita ao pai, ficou com o gosto de uma coisa antiga.{{/se}}\n\n{{se flag:b_ouviu_buster}}O latido curto do Buster, ouvido pelo telefone no lobby do hotel, ainda é a melhor notícia da viagem.{{/se}}",
       "acoes": [
         {
           "id": "respirar",
@@ -1595,7 +1624,7 @@
       "seat": "A",
       "lugar": "Corredor do Congress Center",
       "hora": "Sábado · 12h30",
-      "texto": "Você sai do Salão Strauss às 12h30 com o cartão do crachá apertado entre dois dedos. O corredor do Congress Center é largo, de mármore claro, com bancos de couro onde dezenas de executivos conferem o celular com a expressão de quem espera uma ressurreição. Você pega um café de máquina e senta num banco vazio.\n\nNinguém nunca tinha olhado para um slide seu e chorado. Hoje, na quarta fileira, uma mulher de blazer vermelho passou o lenço no rosto durante a história do Walter, que não era sua. A história do Walter fez a sala inteira lembrar de alguém. Você tem uma planilha para cada coisa da sua vida, e nunca soube que isso era possível.",
+      "texto": "Você sai do Salão Strauss às 12h30 com o cartão do crachá apertado entre dois dedos. O corredor do Congress Center é largo, de mármore claro, com bancos de couro onde dezenas de executivos conferem o celular com a expressão de quem espera uma ressurreição. Você pega um café de máquina e senta num banco vazio.\n\nNinguém nunca tinha olhado para um slide seu e chorado. Hoje, na quarta fileira, uma mulher de blazer vermelho passou o lenço no rosto durante a história do Walter, que não era sua. A história do Walter fez a sala inteira lembrar de alguém. Você tem uma planilha para cada coisa da sua vida, e nunca soube que isso era possível.\n\n{{se flag:a_agradeceu_priya}}O agradecimento à Priya, mais gentil do que o costume, ainda tem um resto de calor.{{/se}}\n\n{{se flag:a_ensaiou}}O ensaio no espelho, ignorando o aviso, rendeu uma abertura sem falha e um resto de culpa.{{/se}}\n\n{{se flag:a_mudou_slide}}A frase sobre o cliente que ligou às 23h, trocada pelo gráfico de abertura, foi a coisa mais corajosa do palco.{{/se}}",
       "acoes": [
         {
           "id": "admitir",
@@ -1638,7 +1667,7 @@
       "npcs": [
         "frank"
       ],
-      "texto": "Você sai do Salão Strauss com o coração batendo no ritmo de uma banda de marcha. O corredor, de mármore claro, tem uma fila de executivos que passam e acenam e dizem *great presentation* com a boca e *quem é você* com os olhos.\n\nO celular vibra. É um número de Indiana, que você conhece de cor. Frank Delaney, sessenta anos, cliente da Tillman & Sons desde 1996, dono de três centros de distribuição em Gary, com a voz arenosa de quem fuma há quarenta anos e nunca admite.\n\n— Eu estou vendo uma transmissão no computador da minha filha — diz ele, sem dizer oi. — Aquele é o Walter, no slide? O Walter com o dente de ouro?",
+      "texto": "Você sai do Salão Strauss com o coração batendo no ritmo de uma banda de marcha. O corredor, de mármore claro, tem uma fila de executivos que passam e acenam e dizem *great presentation* com a boca e *quem é você* com os olhos.\n\nO celular vibra. É um número de Indiana, que você conhece de cor. Frank Delaney, sessenta anos, cliente da Tillman & Sons desde 1996, dono de três centros de distribuição em Gary, com a voz arenosa de quem fuma há quarenta anos e nunca admite.\n\n— Eu estou vendo uma transmissão no computador da minha filha — diz ele, sem dizer oi. — Aquele é o Walter, no slide? O Walter com o dente de ouro?\n\n{{se flag:b_ligou_chloe}}A informação da Chloe, *a página dezessete não está na versão pública*, vira uma pergunta sem rosto.{{/se}}\n\n{{se flag:b_esperou_chloe}}A noite de espera, ouvindo a respiração do outro lado do colchão, tinha forma e calor.{{/se}}\n\n{{se flag:b_perguntou_acordada}}A pergunta no escuro, *você também está acordada?*, ganhou uma resposta e uma promessa de não rir.{{/se}}",
       "acoes": [
         {
           "id": "confirmar",
@@ -1735,7 +1764,7 @@
       "lugar": "Salão de baile, Palácio Auersperg",
       "hora": "Sábado · 23h00",
       "comeca": "B",
-      "texto": "Dançar valsa, para duas pessoas que nunca dançaram valsa, é uma conversa em que os pés falam primeiro. A orquestra toca, em compasso de três por quatro, uma melodia que todo mundo conhece e ninguém acompanha. Entre os casais de uma plateia de executivos, no meio de um salão barroco, os dois contam, baixinho, *um, dois, três*.\n\nUma mão na cintura, outra na mão. A distância, a menor que já houve, é uma regra do jogo.",
+      "texto": "Dançar valsa, para duas pessoas que nunca dançaram valsa, é uma conversa em que os pés falam primeiro. A orquestra toca, em compasso de três por quatro, uma melodia que todo mundo conhece e ninguém acompanha. Entre os casais de uma plateia de executivos, no meio de um salão barroco, os dois contam, baixinho, *um, dois, três*.\n\nUma mão na cintura, outra na mão. A distância, a menor que já houve, é uma regra do jogo.\n\n{{se flag:mudou_assunto}}A palavra *casal*, afastada pela conversa sobre o pedágio da União Europeia, ainda voltava, de vez em quando, à mesa.{{/se}}",
       "turnos": [
         {
           "prompt": "A primeira frase é sua.",
@@ -2011,7 +2040,7 @@
       "npcs": [
         "priya"
       ],
-      "texto": "O celular vibra no bolso do casaco, no meio de uma rua vazia de Viena. É Priya Patel, de Chicago, com um texto que parece ter sido escrito e apagado sete vezes: *Eu não devia estar mandando isso. O Marcus pediu que eu imprimisse uma lista, ontem. Era a lista dos candidatos. Só um nome tinha um asterisco ao lado.*\n\nVocê lê duas vezes. Digita: *Qual nome?* A resposta chega depois de um minuto de pontinhos: *Eu não posso dizer. Você vai entender na hora certa.* E depois, uma mensagem a mais, curta: *Cuidado com quem você ama, e com quem você confia. São duas coisas diferentes.*",
+      "texto": "O celular vibra no bolso do casaco, no meio de uma rua vazia de Viena. É Priya Patel, de Chicago, com um texto que parece ter sido escrito e apagado sete vezes: *Eu não devia estar mandando isso. O Marcus pediu que eu imprimisse uma lista, ontem. Era a lista dos candidatos. Só um nome tinha um asterisco ao lado.*\n\nVocê lê duas vezes. Digita: *Qual nome?* A resposta chega depois de um minuto de pontinhos: *Eu não posso dizer. Você vai entender na hora certa.* E depois, uma mensagem a mais, curta: *Cuidado com quem você ama, e com quem você confia. São duas coisas diferentes.*\n\n{{se flag:a_guardou_fraude}}O segredo da fraude, guardado até ter provas, pesa como um segundo travesseiro.{{/se}}\n\n{{se flag:a_buscou_mais}}As duas edições a mais, achadas no banheiro, estão salvas num arquivo sem nome.{{/se}}",
       "acoes": [
         {
           "id": "insistir",
@@ -2050,7 +2079,7 @@
       "seat": "B",
       "lugar": "Rua de Viena, a caminho do hotel",
       "hora": "Domingo · 00h40",
-      "texto": "O celular vibra no bolso do casaco, no meio da noite vienense. É Chloe, de Chicago, com uma foto e uma mensagem: *Achei isso no site da Secretaria de Estado de Illinois. A Meridian Group registrou uma subsidiária três dias antes de comprar a empresa do seu pai. Chama-se MW Holdings. Os sócios não estão no registro, mas o endereço é uma caixa postal em Lincoln Park.*\n\nVocê olha a foto, em preto e branco, de um formulário de registro, com a letra de uma assinatura ilegível. Digita: *Lincoln Park?* A resposta, em oito segundos: *A sua concorrente mora em Lincoln Park.*",
+      "texto": "O celular vibra no bolso do casaco, no meio da noite vienense. É Chloe, de Chicago, com uma foto e uma mensagem: *Achei isso no site da Secretaria de Estado de Illinois. A Meridian Group registrou uma subsidiária três dias antes de comprar a empresa do seu pai. Chama-se MW Holdings. Os sócios não estão no registro, mas o endereço é uma caixa postal em Lincoln Park.*\n\nVocê olha a foto, em preto e branco, de um formulário de registro, com a letra de uma assinatura ilegível. Digita: *Lincoln Park?* A resposta, em oito segundos: *A sua concorrente mora em Lincoln Park.*\n\n{{se flag:b_sem_cartao}}O cartão de anotações, guardado no bolso, foi a decisão mais sincera do palco.{{/se}}\n\n{{se flag:b_ligou_pai}}A voz do pai, *fala do Walter*, ainda é a abertura de qualquer coisa.{{/se}}\n\n{{se flag:b_mudou_ordem}}A doca de Gary, às quatro da manhã, no começo dos slides, foi o primeiro slide que ninguém esqueceu.{{/se}}",
       "acoes": [
         {
           "id": "suspeitar",
@@ -2463,7 +2492,7 @@
           "ir": "up_c7_sem_beijo"
         }
       ],
-      "texto": "O corredor do quarto andar do Imperial tem tapete vermelho com um desenho de rosas, castiçais de bronze e um silêncio de lã. Às três e vinte da manhã, a luz é amarela e baixa, e os passos, mesmo cuidadosos, fazem um som que parece um comentário.\n\nNa porta do 412, com o cartão dourado na mão e a pergunta ainda no ar, dois candidatos a uma vaga que talvez nunca tenha existido ficam parados, como duas pessoas diante do primeiro degrau de uma escada.\n\n{{se flag:confessou_valuation}}Uma delas disse a verdade sobre o valuation, e a outra a ouviu. {{/se}}{{se flag:confessou_prejuizo}}Uma delas disse a verdade sobre o rombo da empresa, e a outra a ouviu. {{/se}}{{se flag:a_confessou_menor}}Uma delas contou uma meia verdade, e a outra a aceitou como uma verdade inteira. {{/se}}{{se flag:b_confessou_menor}}Uma delas contou uma meia verdade, e a outra a aceitou como uma verdade inteira. {{/se}}"
+      "texto": "O corredor do quarto andar do Imperial tem tapete vermelho com um desenho de rosas, castiçais de bronze e um silêncio de lã. Às três e vinte da manhã, a luz é amarela e baixa, e os passos, mesmo cuidadosos, fazem um som que parece um comentário.\n\nNa porta do 412, com o cartão dourado na mão e a pergunta ainda no ar, dois candidatos a uma vaga que talvez nunca tenha existido ficam parados, como duas pessoas diante do primeiro degrau de uma escada.\n\n{{se flag:confessou_valuation}}Uma delas disse a verdade sobre o valuation, e a outra a ouviu. {{/se}}{{se flag:confessou_prejuizo}}Uma delas disse a verdade sobre o rombo da empresa, e a outra a ouviu. {{/se}}{{se flag:a_confessou_menor}}Uma delas contou uma meia verdade, e a outra a aceitou como uma verdade inteira. {{/se}}{{se flag:b_confessou_menor}}Uma delas contou uma meia verdade, e a outra a aceitou como uma verdade inteira. {{/se}}\n\n{{se flag:a_calou_segredo}}Uma delas, no café, bebeu um gole de vinho e disse que não tinha mais nada a contar, e os dois sabiam que era mentira.{{/se}}\n\n{{se flag:b_calou_segredo}}Uma delas, no café, ergueu um *saúde* em vez de uma confissão, e os dois sabiam por quê.{{/se}}"
     },
     "up_c7_consente": {
       "tipo": "consentimento",
@@ -2788,7 +2817,7 @@
       "npcs": [
         "marcus"
       ],
-      "texto": "No brunch do congresso, entre uma mesa de salmão defumado e uma ilha de croissants, o seu celular vibra, em silêncio. Um e-mail, enviado há três minutos, sem saudação, sem assunto, só com duas linhas e uma assinatura:\n\n*Precisamos conversar. Segunda-feira, 8h, na minha sala em Chicago. Sem a outra parte. — M.W.*\n\nVocê lê duas vezes. Em onze anos na Meridian, essa frase, *precisamos conversar*, tem um único significado: demissão, ou o aviso de uma. Você olha em volta. A pessoa que dormiu no 412 está do outro lado do salão, de costas, rindo de uma coisa que um delegado sueco disse. Você nunca a viu rir assim.",
+      "texto": "No brunch do congresso, entre uma mesa de salmão defumado e uma ilha de croissants, o seu celular vibra, em silêncio. Um e-mail, enviado há três minutos, sem saudação, sem assunto, só com duas linhas e uma assinatura:\n\n*Precisamos conversar. Segunda-feira, 8h, na minha sala em Chicago. Sem a outra parte. — M.W.*\n\nVocê lê duas vezes. Em onze anos na Meridian, essa frase, *precisamos conversar*, tem um único significado: demissão, ou o aviso de uma. Você olha em volta. A pessoa que dormiu no 412 está do outro lado do salão, de costas, rindo de uma coisa que um delegado sueco disse. Você nunca a viu rir assim.\n\n{{se flag:a_admitiu}}A frase *foi melhor*, dita sozinha no corredor, deixou uma leveza esquisita no peito.{{/se}}\n\n{{se flag:a_negou}}A oração *dados vencem histórias* já não soa tão firme depois de três repetições.{{/se}}\n\n{{se flag:a_ligou_nina}}A risada da Nina, *finalmente alguém que te impressiona*, ainda toca no ouvido.{{/se}}",
       "acoes": [
         {
           "id": "contar",
@@ -2831,7 +2860,7 @@
       "npcs": [
         "marcus"
       ],
-      "texto": "No brunch do congresso, com um prato de ovos mexidos que você não pediu, o seu celular vibra. Um e-mail, de Marcus Webb, com um assunto cheio de pontos de exclamação, algo que ele jamais escreveria sem um motivo:\n\n*{{B.nome}}! Parabéns pelas duas apresentações. A Meridian precisa de gente como você. Jantar hoje, 20h, só nós dois, Restaurante Steirereck. Quero falar do seu futuro. — Marcus.*\n\nVocê lê três vezes. A palavra *futuro*, em um e-mail de Marcus, nunca é inocente. O primeiro nome, sozinho, é a segunda coisa estranha. Do outro lado do salão, a pessoa do 412 conversa com uma delegada brasileira, de costas, e você sente, pela primeira vez, que tem um segredo que não pode contar.",
+      "texto": "No brunch do congresso, com um prato de ovos mexidos que você não pediu, o seu celular vibra. Um e-mail, de Marcus Webb, com um assunto cheio de pontos de exclamação, algo que ele jamais escreveria sem um motivo:\n\n*{{B.nome}}! Parabéns pelas duas apresentações. A Meridian precisa de gente como você. Jantar hoje, 20h, só nós dois, Restaurante Steirereck. Quero falar do seu futuro. — Marcus.*\n\nVocê lê três vezes. A palavra *futuro*, em um e-mail de Marcus, nunca é inocente. O primeiro nome, sozinho, é a segunda coisa estranha. Do outro lado do salão, a pessoa do 412 conversa com uma delegada brasileira, de costas, e você sente, pela primeira vez, que tem um segredo que não pode contar.\n\n{{se flag:b_falou_frank}}A frase do Frank, *esse é o Tillman que eu conheço*, é o melhor elogio do mês.{{/se}}\n\n{{se flag:b_perguntou_frank}}A conversa de pessoa e não de telefone, prometida pelo Frank, ainda está por vir.{{/se}}\n\n{{se flag:b_desligou_frank}}O telefone desligado depressa, com trezentos executivos esperando, deixou a voz do Frank como alguém que queria contar uma coisa.{{/se}}",
       "acoes": [
         {
           "id": "mostrar",
@@ -2891,7 +2920,7 @@
       "seat": "A",
       "lugar": "Corredor, Hofburg Congress Center",
       "hora": "Domingo · 15h15",
-      "texto": "— Eu abri a página dezessete — diz Chloe, e a voz dela, que nunca treme, treme. — É uma planilha. A original, de março. O seu valuation. Vinte e três milhões de dólares.\n\nVocê não diz nada. O número que você entregou em março, o que você conferiu onze vezes, foi vinte e três. O número que a Meridian pagou, o que você viu no arquivo da aquisição, foi sessenta e quatro. A diferença, quarenta e um milhões, tem nome: *ajuste de sinergias*, assinado por MW-0017.\n\n— Alguém trocou o número depois que você assinou — diz Chloe. — Com a sua assinatura. E o dinheiro da diferença foi para uma empresa chamada MW Holdings. {{A.nome}}... é o Marcus.\n\nNo corredor do Hofburg, de mármore claro, você sente as pernas decidirem sozinhas.",
+      "texto": "— Eu abri a página dezessete — diz Chloe, e a voz dela, que nunca treme, treme. — É uma planilha. A original, de março. O seu valuation. Vinte e três milhões de dólares.\n\nVocê não diz nada. O número que você entregou em março, o que você conferiu onze vezes, foi vinte e três. O número que a Meridian pagou, o que você viu no arquivo da aquisição, foi sessenta e quatro. A diferença, quarenta e um milhões, tem nome: *ajuste de sinergias*, assinado por MW-0017.\n\n— Alguém trocou o número depois que você assinou — diz Chloe. — Com a sua assinatura. E o dinheiro da diferença foi para uma empresa chamada MW Holdings. {{A.nome}}... é o Marcus.\n\nNo corredor do Hofburg, de mármore claro, você sente as pernas decidirem sozinhas.\n\n{{se flag:a_insistiu_priya}}O *desculpa* da Priya, com uma mãe em Mumbai por trás, ficou sem resposta.{{/se}}\n\n{{se flag:a_poupou_priya}}O *obrigada por não insistir* da Priya é uma pequena gentileza que fica.{{/se}}\n\n{{se flag:a_guardou_priya}}A frase *cuidado com quem você confia* ainda se mistura ao passo da pessoa ao lado.{{/se}}",
       "acoes": [
         {
           "id": "provas",
@@ -2932,7 +2961,7 @@
       "seat": "B",
       "lugar": "Corredor, Hofburg Congress Center",
       "hora": "Domingo · 15h15",
-      "texto": "— Eu achei a página dezessete — diz Chloe. — A subsidiária. MW Holdings. É a empresa que recebeu a diferença entre o valuation e o preço de compra. Quarenta e um milhões de dólares. Alguém a registrou em Illinois três dias antes da fusão, com uma caixa postal em Lincoln Park.\n\nVocê já sabia do Lincoln Park. Não sabia o resto.\n\n— O valuation original foi assinado por ela — continua Chloe, e a palavra *ela* pesa como um cabide caindo. — Vinte e três milhões. A Meridian pagou sessenta e quatro. Alguém, depois, adulterou o número. Pode ter sido ela, pode ter sido o Marcus. Mas o endereço... o endereço fica a dois quarteirões do apartamento dela.\n\nVocê olha, no fim do corredor, a pessoa que ontem à noite dançou com você, de costas, conversando com uma delegada brasileira. Os ombros dela, daqui, parecem os de qualquer um.",
+      "texto": "— Eu achei a página dezessete — diz Chloe. — A subsidiária. MW Holdings. É a empresa que recebeu a diferença entre o valuation e o preço de compra. Quarenta e um milhões de dólares. Alguém a registrou em Illinois três dias antes da fusão, com uma caixa postal em Lincoln Park.\n\nVocê já sabia do Lincoln Park. Não sabia o resto.\n\n— O valuation original foi assinado por ela — continua Chloe, e a palavra *ela* pesa como um cabide caindo. — Vinte e três milhões. A Meridian pagou sessenta e quatro. Alguém, depois, adulterou o número. Pode ter sido ela, pode ter sido o Marcus. Mas o endereço... o endereço fica a dois quarteirões do apartamento dela.\n\nVocê olha, no fim do corredor, a pessoa que ontem à noite dançou com você, de costas, conversando com uma delegada brasileira. Os ombros dela, daqui, parecem os de qualquer um.\n\n{{se flag:b_suspeitou}}A suspeita sobre Lincoln Park, guardada como pedra no bolso, tem o gosto de uma dúvida.{{/se}}\n\n{{se flag:b_defendeu}}A defesa de última hora, *não é ela*, teve como resposta *você a conhece há três dias*.{{/se}}\n\n{{se flag:b_vai_contar}}A decisão de contar, sem acusar, é uma aposta que ainda não deu resultado.{{/se}}",
       "acoes": [
         {
           "id": "confiar",
@@ -2975,7 +3004,7 @@
       "npcs": [
         "marcus"
       ],
-      "texto": "O Steirereck tem três estrelas Michelin, uma varanda sobre um riacho e um sommelier que fala de vinhos como outros falam de guerras. Marcus Webb, de terno azul-marinho, sorriso de comercial de seguro de vida, espera você numa mesa para dois, de costas para a parede, com uma garrafa de Riesling Smaragd aberta.\n\n— {{B.nome}}! — diz ele, de braços abertos, como se fosse uma reunião de família. — Senta. Você merece. Duas apresentações. Duas ovações. A Meridian não via isso desde 2011.\n\nEntre o aperitivo e a entrada, ele fala de futuro. Do Meio-Oeste, de metas, de uma *oportunidade de crescimento que raramente aparece para pessoas com o seu perfil*. A palavra *perfil* é a que ele usa quando não quer dizer *sobrenome*. Depois, sem pausa, sorri e diz a frase que você esperava e temia:\n\n— A vaga é sua. Eu só preciso de uma coisa: que você assine uma carta de intenções hoje à noite.",
+      "texto": "O Steirereck tem três estrelas Michelin, uma varanda sobre um riacho e um sommelier que fala de vinhos como outros falam de guerras. Marcus Webb, de terno azul-marinho, sorriso de comercial de seguro de vida, espera você numa mesa para dois, de costas para a parede, com uma garrafa de Riesling Smaragd aberta.\n\n— {{B.nome}}! — diz ele, de braços abertos, como se fosse uma reunião de família. — Senta. Você merece. Duas apresentações. Duas ovações. A Meridian não via isso desde 2011.\n\nEntre o aperitivo e a entrada, ele fala de futuro. Do Meio-Oeste, de metas, de uma *oportunidade de crescimento que raramente aparece para pessoas com o seu perfil*. A palavra *perfil* é a que ele usa quando não quer dizer *sobrenome*. Depois, sem pausa, sorri e diz a frase que você esperava e temia:\n\n— A vaga é sua. Eu só preciso de uma coisa: que você assine uma carta de intenções hoje à noite.\n\n{{se flag:b_mostrou_jantar}}O e-mail do jantar, mostrado no brunch, deu uma informação de graça e recebeu uma confiança.{{/se}}\n\n{{se flag:b_guardou_jantar}}O segredo do jantar, guardado desde o brunch, é o menor e o mais pesado da vida.{{/se}}\n\n{{se flag:b_recusou_jantar}}A recusa ao Marcus, respondida com *eu insisto*, mostra que este jantar não é um jantar.{{/se}}",
       "acoes": [
         {
           "id": "aceitar",
@@ -3019,7 +3048,7 @@
         "marcus",
         "priya"
       ],
-      "texto": "A sala de Marcus Webb, no 41º andar, tem uma mesa de vidro, uma vista do lago e uma planta que, hoje, você descobre ser de plástico. Você chegou às sete e quarenta, direto do aeroporto, com o cabelo ainda cheirando a avião, a pasta de quarenta e três arquivos num pen drive no bolso e a coragem emprestada de uma estagiária.\n\nMarcus, de pé junto à janela, com as mãos nas costas, não se vira.\n\n— Sente, {{A.nome}}. — A voz é a de sempre, a de comunicado interno. — Tenho uma notícia difícil. A Meridian decidiu, em comum acordo com a diretoria, encerrar o seu ciclo conosco. O processo seletivo foi encerrado. O outro candidato foi escolhido. Há um pacote. A Priya está com os papéis.\n\nVocê nem se senta. Do outro lado da mesa de vidro, em uma bandeja, estão os papéis da sua demissão, já assinados por ele, com a data de ontem.",
+      "texto": "A sala de Marcus Webb, no 41º andar, tem uma mesa de vidro, uma vista do lago e uma planta que, hoje, você descobre ser de plástico. Você chegou às sete e quarenta, direto do aeroporto, com o cabelo ainda cheirando a avião, a pasta de quarenta e três arquivos num pen drive no bolso e a coragem emprestada de uma estagiária.\n\nMarcus, de pé junto à janela, com as mãos nas costas, não se vira.\n\n— Sente, {{A.nome}}. — A voz é a de sempre, a de comunicado interno. — Tenho uma notícia difícil. A Meridian decidiu, em comum acordo com a diretoria, encerrar o seu ciclo conosco. O processo seletivo foi encerrado. O outro candidato foi escolhido. Há um pacote. A Priya está com os papéis.\n\nVocê nem se senta. Do outro lado da mesa de vidro, em uma bandeja, estão os papéis da sua demissão, já assinados por ele, com a data de ontem.\n\n{{se flag:a_mostrou_email}}O e-mail *precisamos conversar*, mostrado no brunch, foi a primeira vez que alguém disse *vem aqui*.{{/se}}\n\n{{se flag:a_guardou_email}}O e-mail *precisamos conversar* foi guardado no bolso do blazer, entre um croissant e um sorriso.{{/se}}\n\n{{se flag:a_exigiu_presenca}}A exigência de ter a outra parte presente foi recusada com uma palavra: *sozinha*.{{/se}}",
       "acoes": [
         {
           "id": "provas",
@@ -3153,7 +3182,7 @@
       "npcs": [
         "megan"
       ],
-      "texto": "Dayton, Ohio, tem um céu largo, quarteirões de casas de tijolo com varanda e uma ausência de pressa que você tinha esquecido que existia. A casa de Megan fica numa rua de árvores velhas, com um balanço de pneu pendurado num carvalho e uma bicicleta de criança jogada no gramado.\n\nA sua irmã mais velha, Megan Nicholls, quarenta e dois anos, de pijama de flanela e cabelo preso num lápis, abre a porta antes de você bater. Não pergunta nada. Dá um abraço desajeitado, de quem aprendeu a abraçar com uma criança no colo, e diz a frase que a sua vida inteira esperou ouvir, e que ninguém, nem a sua mãe, tinha dito:\n\n— Entra. O café está pronto. Você não precisa ser {{A.nome}} hoje.\n\nNa cozinha, o cheiro é de torrada com manteiga, e uma criança de três anos, de pijama de dinossauro, olha para você com olhos enormes e diz, com muita seriedade: *você está triste?*",
+      "texto": "Dayton, Ohio, tem um céu largo, quarteirões de casas de tijolo com varanda e uma ausência de pressa que você tinha esquecido que existia. A casa de Megan fica numa rua de árvores velhas, com um balanço de pneu pendurado num carvalho e uma bicicleta de criança jogada no gramado.\n\nA sua irmã mais velha, Megan Nicholls, quarenta e dois anos, de pijama de flanela e cabelo preso num lápis, abre a porta antes de você bater. Não pergunta nada. Dá um abraço desajeitado, de quem aprendeu a abraçar com uma criança no colo, e diz a frase que a sua vida inteira esperou ouvir, e que ninguém, nem a sua mãe, tinha dito:\n\n— Entra. O café está pronto. Você não precisa ser {{A.nome}} hoje.\n\nNa cozinha, o cheiro é de torrada com manteiga, e uma criança de três anos, de pijama de dinossauro, olha para você com olhos enormes e diz, com muita seriedade: *você está triste?*\n\n{{se flag:a_tem_provas}}A pasta de quarenta e três arquivos, pedida e recebida, é a única coisa pesada na bagagem.{{/se}}\n\n{{se flag:a_quer_avisar}}A vontade de avisar a pessoa do 412 antes de qualquer outra coisa ainda não passou.{{/se}}\n\n{{se flag:a_sozinha}}A decisão de resolver sozinho ou sozinha, a de sempre, deu resultado e deixou uma sede.{{/se}}",
       "acoes": [
         {
           "id": "contar",
@@ -3196,7 +3225,7 @@
       "npcs": [
         "nina"
       ],
-      "texto": "À tarde, a Nina Alvarez, trinta e oito anos, melhor amiga desde o ensino médio, aparece na varanda da Megan com uma garrafa de vinho e uma cara de quem foi avisada. Casada, mãe de um menino de três anos, professora de biologia, ela não é de rodeios. Senta no degrau ao seu lado, passa dois copos de plástico e diz:\n\n— A Megan me contou. Não tudo. Contou o que ela entendeu, que é a parte que importa. — Ela serve o vinho. — Eu vou dizer uma coisa que eu nunca disse, porque você nunca deixou. Você passou onze anos provando para um homem que nunca olhou para os seus resultados que você merecia ser olhada. E agora ele te demitiu. E você está arrasada, não porque perdeu a vaga, mas porque perdeu a plateia.\n\nO vinho é um Merlot barato. A frase é a coisa mais cara que alguém lhe diz há anos.",
+      "texto": "À tarde, a Nina Alvarez, trinta e oito anos, melhor amiga desde o ensino médio, aparece na varanda da Megan com uma garrafa de vinho e uma cara de quem foi avisada. Casada, mãe de um menino de três anos, professora de biologia, ela não é de rodeios. Senta no degrau ao seu lado, passa dois copos de plástico e diz:\n\n— A Megan me contou. Não tudo. Contou o que ela entendeu, que é a parte que importa. — Ela serve o vinho. — Eu vou dizer uma coisa que eu nunca disse, porque você nunca deixou. Você passou onze anos provando para um homem que nunca olhou para os seus resultados que você merecia ser olhada. E agora ele te demitiu. E você está arrasada, não porque perdeu a vaga, mas porque perdeu a plateia.\n\nO vinho é um Merlot barato. A frase é a coisa mais cara que alguém lhe diz há anos.\n\n{{se flag:a_insistiu}}Os fatos, repetidos três vezes na chamada, não mudaram, e a falta de resposta continua.{{/se}}\n\n{{se flag:a_desligou}}A chamada desligada antes que a voz falhasse ainda deixa um eco de tela escura.{{/se}}",
       "acoes": [
         {
           "id": "chorar",
@@ -3236,7 +3265,7 @@
       "seat": "A",
       "lugar": "RiverScape MetroPark, Dayton",
       "hora": "Terça · 18h00",
-      "texto": "O RiverScape MetroPark fica na margem do rio Great Miami, no centro de Dayton, e tem uma pista de patinação que no verão vira fonte, uma passarela suspensa sobre a água e uma ponte de pedestres cheia de luzes. Às seis da tarde de uma terça de março, está quase vazio: um casal de corredores, um homem com um cachorro, e você, sentada num banco de madeira, de casaco emprestado da Megan, olhando o rio.\n\nFaz dois dias que você não confere uma planilha. Faz um dia que não pensa no organograma. O celular, no bolso, não vibrou nenhuma vez desde ontem à tarde, e o silêncio, que sempre foi o pior dos sinais, está se mostrando uma coisa mais estranha: uma folga.\n\nVocê pensa na frase da Nina, *você perdeu a plateia*. Pensa na mulher de blazer vermelho, que chorou com a história de um homem que ela nunca conheceu. Pensa que a coisa mais importante que você fez, em onze anos, talvez nunca tenha sido um número.",
+      "texto": "O RiverScape MetroPark fica na margem do rio Great Miami, no centro de Dayton, e tem uma pista de patinação que no verão vira fonte, uma passarela suspensa sobre a água e uma ponte de pedestres cheia de luzes. Às seis da tarde de uma terça de março, está quase vazio: um casal de corredores, um homem com um cachorro, e você, sentada num banco de madeira, de casaco emprestado da Megan, olhando o rio.\n\nFaz dois dias que você não confere uma planilha. Faz um dia que não pensa no organograma. O celular, no bolso, não vibrou nenhuma vez desde ontem à tarde, e o silêncio, que sempre foi o pior dos sinais, está se mostrando uma coisa mais estranha: uma folga.\n\nVocê pensa na frase da Nina, *você perdeu a plateia*. Pensa na mulher de blazer vermelho, que chorou com a história de um homem que ela nunca conheceu. Pensa que a coisa mais importante que você fez, em onze anos, talvez nunca tenha sido um número.\n\n{{se flag:a_confrontou}}O pen drive em cima do vidro, na sala do Marcus, continua sendo a cena que mais se repete na memória.{{/se}}\n\n{{se flag:a_deixou_falar}}A frase final do Marcus, *você sempre soube demais*, é a prova que ele mesmo entregou.{{/se}}\n\n{{se flag:a_saiu_calada}}A saída calada, com os papéis dobrados em três, foi a coisa mais firme dos onze anos.{{/se}}",
       "acoes": [
         {
           "id": "aceitar",
@@ -3276,7 +3305,7 @@
       "seat": "B",
       "lugar": "Quarto 412, Hotel Imperial",
       "hora": "Terça · 13h00",
-      "texto": "{{se flag:acreditou_nela}}A frase *eu acredito*, dita ao telefone, agora precisa de um motivo, e a pasta vai dizer se foi fé ou burrice.{{/se}}{{se flag:duvidou_dela}}A frase *eu preciso ver provas*, dita ao telefone, agora tem as provas, e você não sabe o que desejar que elas digam.{{/se}}{{se flag:pediu_tempo}}As horas pedidas ao telefone viraram um dia.{{/se}} A pasta, de quarenta e três arquivos, está aberta no laptop, em cima da escrivaninha do quarto 412, onde o outro lado da cama continua feito, de colcha lisa, sem ninguém.\n\nVocê lê. Lê tudo. As versões do valuation, as datas de edição, os logs do sistema, as assinaturas. Lê duas vezes o e-mail em que Marcus Webb pede, às 23h47 de uma quinta-feira, que um *ajuste de sinergia* seja inserido *sem notificação à autora*. A autora. Você lê a palavra por muito tempo.\n\nO que está na tela não deixa nenhuma dúvida: a pessoa que dançou com você escreveu um número honesto. Quem o trocou foi o homem que, ontem à noite, ofereceu a você a vaga.",
+      "texto": "{{se flag:acreditou_nela}}A frase *eu acredito*, dita ao telefone, agora precisa de um motivo, e a pasta vai dizer se foi fé ou burrice.{{/se}}{{se flag:duvidou_dela}}A frase *eu preciso ver provas*, dita ao telefone, agora tem as provas, e você não sabe o que desejar que elas digam.{{/se}}{{se flag:pediu_tempo}}As horas pedidas ao telefone viraram um dia.{{/se}} A pasta, de quarenta e três arquivos, está aberta no laptop, em cima da escrivaninha do quarto 412, onde o outro lado da cama continua feito, de colcha lisa, sem ninguém.\n\nVocê lê. Lê tudo. As versões do valuation, as datas de edição, os logs do sistema, as assinaturas. Lê duas vezes o e-mail em que Marcus Webb pede, às 23h47 de uma quinta-feira, que um *ajuste de sinergia* seja inserido *sem notificação à autora*. A autora. Você lê a palavra por muito tempo.\n\nO que está na tela não deixa nenhuma dúvida: a pessoa que dançou com você escreveu um número honesto. Quem o trocou foi o homem que, ontem à noite, ofereceu a você a vaga.\n\n{{se flag:b_confia}}A frase *não foi ela*, dita à Chloe, voltou com uma resposta: *então eu vou ajudar você a provar*.{{/se}}\n\n{{se flag:b_duvida}}A ordem *fica de olho*, dada à Chloe, tem hoje o gosto de ter dançado valsa com a dúvida.{{/se}}\n\n{{se flag:b_vai_perguntar}}A decisão de perguntar sem acusar foi a mais corajosa e a que deu menos resultado.{{/se}}",
       "acoes": [
         {
           "id": "pedir_perdao",
@@ -3319,7 +3348,7 @@
       "npcs": [
         "richard"
       ],
-      "texto": "O celular toca de novo às sete e meia da noite, hora de Viena, uma da tarde em Chicago. É o seu pai, e a voz, que nunca é de pressa, é de pressa.\n\n— O Buster fugiu — diz ele. — Faz duas horas. Eu abri a porta para o carteiro e ele passou por baixo das minhas pernas, filho, eu não vi. Saí atrás dele pelo quarteirão inteiro, na chuva. A vizinha disse que o viu virar a rua do galpão. Eu estou de roupão, no meio da calçada, e eu não sei o que fazer.\n\nUm cachorro de dois anos, vira-lata, de uma orelha caída e outra em pé, está solto em Chicago em março. Você olha a pasta aberta, a mensagem não enviada, o hotel de seiscentos euros. Do outro lado do Atlântico, o homem que te criou chora sem dizer que está chorando.",
+      "texto": "O celular toca de novo às sete e meia da noite, hora de Viena, uma da tarde em Chicago. É o seu pai, e a voz, que nunca é de pressa, é de pressa.\n\n— O Buster fugiu — diz ele. — Faz duas horas. Eu abri a porta para o carteiro e ele passou por baixo das minhas pernas, filho, eu não vi. Saí atrás dele pelo quarteirão inteiro, na chuva. A vizinha disse que o viu virar a rua do galpão. Eu estou de roupão, no meio da calçada, e eu não sei o que fazer.\n\nUm cachorro de dois anos, vira-lata, de uma orelha caída e outra em pé, está solto em Chicago em março. Você olha a pasta aberta, a mensagem não enviada, o hotel de seiscentos euros. Do outro lado do Atlântico, o homem que te criou chora sem dizer que está chorando.\n\n{{se flag:b_recusou_carta}}A carta recusada no Steirereck, com o pedido de ver por escrito, fez do Marcus um inimigo e do alívio, uma amizade nova.{{/se}}\n\n{{se flag:b_perguntou_mw}}A pergunta sobre a MW Holdings, feita em plena entrada, teve como resposta *eu gosto de gente que lê*.{{/se}}",
       "acoes": [
         {
           "id": "frank",
@@ -3362,7 +3391,7 @@
       "npcs": [
         "frank"
       ],
-      "texto": "Às nove da noite, hora de Viena, o telefone toca de novo. Número de Indiana. É Frank Delaney, sessenta anos, a voz de quem fuma há quarenta e nunca admite, com o ruído de um motor de caminhão ao fundo.\n\n— Achei o seu cachorro — diz Frank, sem dizer oi. — Estava dormindo na cabine do caminhão do Walter, no estacionamento do galpão de Gary. A Chloe veio buscar. Está tudo bem. Eu estou com ele aqui, aqui no meu colo, comendo um sanduíche que eu não ofereci.\n\nVocê respira, e sente o ar descer até os pés. Do outro lado, Frank Delaney pigarreia, e a próxima frase vem em um tom que você nunca ouviu nele, o de quem decide contar alguma coisa que prometeu guardar:\n\n— Já que estou falando com você. Quero te contar uma coisa. Faz uns dias, uma moça me ligou. Voz plana, frases curtas. Disse que trabalhava na Meridian. Disse que a empresa que comprou a do seu pai estava mexendo nos números, e que eu devia ficar de olho nos meus contratos.",
+      "texto": "Às nove da noite, hora de Viena, o telefone toca de novo. Número de Indiana. É Frank Delaney, sessenta anos, a voz de quem fuma há quarenta e nunca admite, com o ruído de um motor de caminhão ao fundo.\n\n— Achei o seu cachorro — diz Frank, sem dizer oi. — Estava dormindo na cabine do caminhão do Walter, no estacionamento do galpão de Gary. A Chloe veio buscar. Está tudo bem. Eu estou com ele aqui, aqui no meu colo, comendo um sanduíche que eu não ofereci.\n\nVocê respira, e sente o ar descer até os pés. Do outro lado, Frank Delaney pigarreia, e a próxima frase vem em um tom que você nunca ouviu nele, o de quem decide contar alguma coisa que prometeu guardar:\n\n— Já que estou falando com você. Quero te contar uma coisa. Faz uns dias, uma moça me ligou. Voz plana, frases curtas. Disse que trabalhava na Meridian. Disse que a empresa que comprou a do seu pai estava mexendo nos números, e que eu devia ficar de olho nos meus contratos.\n\n{{se flag:b_planejou_prova}}A lista de três perguntas, escrita no bloco, ainda tem a última linha sublinhada: *ligar para ela*.{{/se}}\n\n{{se flag:b_contou_pai}}A conversa de verdade com o pai, *eu sabia do rombo*, tirou um peso que não era seu.{{/se}}",
       "acoes": [
         {
           "id": "saber",
@@ -3403,12 +3432,441 @@
       "hora": "Terça · 23h45",
       "texto": "Às onze e quarenta e cinco da noite, hora de Viena, cinco e quarenta e cinco da tarde em Dayton, duas pessoas, cada uma de um lado do Atlântico, estão sozinhas com a mesma coisa: uma verdade que descobriram a respeito da outra. {{se flag:a_aceitou_valer}}Uma delas, num banco de madeira, à margem de um rio, aprendeu que não precisa da vaga. {{/se}}{{se flag:a_planejou_vinganca}}Uma delas, num banco de madeira, escreveu um nome numa lista de vingança que não era de vingança. {{/se}}{{se flag:a_escreveu_ele}}Uma delas enviou uma mensagem que dizia *obrigada por ter dançado*. {{/se}}{{se flag:b_soube_de_frank}}A outra, no quarto de um hotel, soube que, semanas antes da fraude estourar, foi avisada, e nunca soube por quem. {{/se}}{{se flag:b_pediu_perdao}}A outra pediu perdão, e a mensagem não teve resposta. {{/se}}\n\nNo Imperial, a pessoa que ficou em Viena fecha o laptop, olha o relógio e puxa uma mala do armário. Na mesa de cabeceira, o champanhe da Meridian continua intacto, com o cartão que diz *Que vença o melhor*. Do outro lado da cidade, o aeroporto tem um voo para Frankfurt às 6h10, e de Frankfurt, um para Cincinnati, que fica a uma hora de carro de Dayton.\n\nNo celular, a última notificação do dia, de um número que nunca ligou antes, de Dayton, Ohio: uma foto do rio, com a ponte de luzes ao fundo, e uma legenda de quatro palavras.\n\n*Eu estou bem. Obrigad{{A.o_a}}.*",
       "gancho": "Ele tem um voo às 6h10, uma pasta de provas e uma mensagem de quatro palavras.",
-      "ir": "up_rascunho_fim"
+      "ir": "up_c10_aviao"
     },
-    "up_rascunho_fim": {
+    "up_c10_aviao": {
+      "tipo": "segue",
+      "cap": 10,
+      "lugar": "Duas cidades",
+      "hora": "Quarta · 05h30",
+      "ir": {
+        "A": "up_c10_a",
+        "B": "up_c10_b"
+      },
+      "texto": "Quarta-feira, cinco e meia da manhã em Viena, vinte e três e meia de terça em Dayton. O aeroporto de Schwechat tem a luz azul de todo aeroporto antes do sol. Em Ohio, o rio Great Miami continua passando, sem ligar para o que cada um decidiu.\n\nHavia uma regra, combinada num domingo de manhã, num quarto de hotel: *não falamos disso até o fim do congresso*. O congresso, afinal, acaba hoje. A regra, tecnicamente, expira em algumas horas, e nenhuma das duas pessoas se lembrou dela.\n\nCada uma tem, no bolso, uma coisa que não existia na segunda-feira. Uma, uma pasta de quarenta e três arquivos que viajou por e-mail. A outra, uma mensagem de quatro palavras."
+    },
+    "up_c10_b": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "B",
+      "lugar": "Aeroporto de Frankfurt, Terminal 1",
+      "hora": "Quarta · 09h40",
+      "npcs": [
+        "marcus"
+      ],
+      "texto": "Frankfurt, a escala de duas horas e dez minutos. Você chegou de Viena às oito e meia, de mala de mão e de terno amarrotado, com a pasta *MW-0017* aberta no celular e o endereço da sede europeia da Meridian Global, a vinte minutos de táxi do aeroporto, copiado numa nota.\n\nVocê tem uma carta de intenções assinada, no bolso, para um cargo que o Marcus ofereceu a você ontem à noite, e que a Meridian, a partir de hoje, vai considerar aceito. Tem também um dever que ninguém lhe deu, e um voo para Cincinnati às onze e vinte.\n\nDuas horas, uma decisão, e um homem que, três anos atrás, aprendeu a assinar com a mão esquerda para parecer outra pessoa.\n\n{{se flag:b_chamou_frank}}A ajuda do Frank Delaney, pedida ao pai, devolveu o Buster e a conta.{{/se}}\n\n{{se flag:b_vai_voltar}}O *dane-se o congresso*, dito ao pai, foi a coisa mais livre que saiu da boca em anos.{{/se}}\n\n{{se flag:b_chamou_chloe}}A Chloe de joelhos numa doca de carga, tentando convencer um vira-lata a sair de baixo do caminhão, é uma foto que fica.{{/se}}",
+      "acoes": [
+        {
+          "id": "entregar",
+          "texto": "Mandar a pasta, com a carta de demissão, para o conselho e para a auditoria da matriz, agora",
+          "ir": "up_c10_b_voo",
+          "efeitos": {
+            "flag": "entregou_prova",
+            "vinculo": 2
+          },
+          "resultado": "Você escreve o e-mail no café do terminal, com o celular em cima da mesa e um espresso esfriando. O destinatário é *Audit Committee, Meridian Global*, com cópia ao presidente do conselho. O assunto: *Evidência de fraude, valuation Tillman & Sons, MW Holdings.* O anexo: quarenta e três arquivos. O corpo: quatro linhas. E, embaixo, uma quinta, que você escreve devagar: *Peço demissão do processo seletivo e de qualquer cargo na Meridian.* Envia, e o *whoosh* do celular é o som mais limpo do dia."
+        },
+        {
+          "id": "presencial",
+          "texto": "Ir de táxi até a sede europeia e entregar a pasta, em mãos, a alguém de confiança",
+          "ir": "up_c10_b_voo",
+          "efeitos": {
+            "flag": "entregou_em_maos",
+            "vinculo": 3,
+            "abalo": 1
+          },
+          "resultado": "Você pega um táxi, e o motorista, de cabelo grisalho, não faz perguntas. A sede europeia da Meridian é um prédio de vidro fumê, com uma recepção de mármore e uma mulher de terninho que não sorri. Você pede a *Frau Kessler, da Auditoria Interna*, sem hora marcada, com a pasta num pen drive, e espera quarenta minutos num sofá de couro, sem tocar o celular. Quando entrega, ela olha o pen drive, olha você, e diz só: *o senhor sabe o que isso significa?* Você diz que sim."
+        },
+        {
+          "id": "confrontar",
+          "texto": "Ligar primeiro para o Marcus, dar a ele uma chance de se explicar, e só depois entregar",
+          "ir": "up_c10_b_voo",
+          "efeitos": {
+            "flag": "b_confrontou_marcus",
+            "abalo": 2
+          },
+          "resultado": "Você liga. Marcus atende no segundo toque, com o sorriso na voz. Você diz *eu li tudo*, e o sorriso, do outro lado, cai uma oitava. *{{B.nome}}*, diz ele, *vamos conversar como adultos. Há uma posição de vice-presidente para você, e uma carta que você já assinou.* Você olha a janela do terminal, onde um avião da Lufthansa roda para a pista, e diz: *eu assinei uma carta de intenções. Não assinei um silêncio.* E desliga, e envia a pasta, e o gosto, na boca, é o de algo que você devia ter feito antes."
+        }
+      ]
+    },
+    "up_c10_b_voo": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "B",
+      "lugar": "Voo Frankfurt–Cincinnati, poltrona 14C",
+      "hora": "Quarta · 14h20",
+      "texto": "Nove horas de voo, uma poltrona de corredor, um vizinho de assento que dorme com a boca aberta, e a certeza de que não há discurso que prepare ninguém para o que se vai dizer. Você abre o bloco de notas do celular, onde escreveu, e apagou, e reescreveu, doze versões de uma frase.\n\nPela primeira vez em quarenta e um anos, você não é o filho do dono, nem o diretor de operações, nem o candidato. Você é uma pessoa em um avião, sem emprego, sem vaga, sem carta de intenções, com um cachorro em Gary e uma mensagem de quatro palavras no bolso.\n\nVocê não vai levar flores. Pensou nisso, no duty-free de Frankfurt, diante de um buquê de tulipas, e decidiu que flores seriam uma maneira de pedir licença. O que você leva é outra coisa.\n\n{{se flag:b_deixou_frank_falar}}O silêncio ouvindo o Frank, em frases lentas e sem enfeite, ensinou mais do que qualquer pergunta.{{/se}}\n\n{{se flag:b_agradeceu_frank}}O *vai, filho*, do Frank, é uma permissão que só um homem de sessenta anos sabe dar.{{/se}}",
+      "acoes": [
+        {
+          "id": "ensaiar",
+          "texto": "Ensaiar a frase em voz baixa, até que ela soe sincera e não ensaiada",
+          "ir": "up_c10_encontro",
+          "efeitos": {
+            "flag": "b_ensaiou"
+          },
+          "resultado": "Você ensaia, em voz tão baixa que o vizinho de poltrona não acorda. A frase tem seis palavras, depois dez, depois vinte, e, na altura de Terra Nova, a palavra *você* aparece três vezes e a palavra *vaga* nenhuma. É a primeira versão que soa verdadeira, e você apaga as outras onze."
+        },
+        {
+          "id": "pai",
+          "texto": "Mandar uma mensagem ao pai: que ele cuide do Buster e confie em você mais uma vez",
+          "ir": "up_c10_encontro",
+          "efeitos": {
+            "flag": "b_avisou_pai",
+            "vinculo": 1
+          },
+          "resultado": "Você escreve: *Pai, eu entreguei a prova, pedi demissão, e vou procurar uma pessoa. Cuida do Buster. Eu te ligo.* A resposta, de um homem que nunca digita sem erro, chega em duas linhas cheias de erros e de ternura: *vai fiilho. o buster esta cmigo. ele aprovou.*"
+        },
+        {
+          "id": "dormir",
+          "texto": "Fechar os olhos e tentar dormir, deixando a frase para a hora certa",
+          "ir": "up_c10_encontro",
+          "efeitos": {
+            "flag": "b_dormiu_voo"
+          },
+          "resultado": "Você fecha os olhos, e, pela primeira vez em cinco anos, dorme sem ser em turno de quatro horas. O sono vem pesado, sem sonho, e acorda no meio da descida, com o comissário pedindo que levante o encosto da poltrona. Você levanta, e a frase, sem ensaio, já está pronta, como um pão que cresceu durante o sono."
+        }
+      ]
+    },
+    "up_c10_a": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "A",
+      "lugar": "RiverScape MetroPark, Dayton",
+      "hora": "Quarta · 17h45",
+      "npcs": [
+        "nina"
+      ],
+      "texto": "Quarta-feira, o fim de tarde, o mesmo banco de madeira, o mesmo rio. Você vem aqui desde terça, sem decidir vir, como quem retorna a um lugar onde parou de se defender. O celular vibrou uma vez às onze, uma notificação da Chloe: *A auditoria da matriz foi aberta. Alguém mandou a pasta antes de você. Não sei quem.* Você não respondeu. Não sabe o que sentir.\n\nA mensagem de quatro palavras, enviada ontem à noite, continua sem resposta. Do outro lado do Atlântico, o silêncio é de um tipo que você não consegue classificar: nem *não*, nem *sim*, nem *espera*.\n\nFaz sol, de um jeito fraco, de março, e o rio brilha. Você pensa que talvez a coisa mais corajosa que fez na vida foi dizer *obrigada*, sem adjetivo, a alguém que talvez nunca responda.\n\n{{se flag:a_contou_megan}}A conversa à mesa da Megan, sem organizar nem tirar adjetivo, ainda é o que mais importa da semana.{{/se}}\n\n{{se flag:a_falou_leo}}O tiranossauro de plástico, de dente quebrado, que o Leo emprestou, está no bolso do casaco.{{/se}}\n\n{{se flag:a_evitou_megan}}A mão da Megan no joelho, debaixo da mesa, foi a resposta a uma mentira de cansaço.{{/se}}",
+      "acoes": [
+        {
+          "id": "ficar",
+          "texto": "Ficar no banco até o sol baixar, sem esperar nada de ninguém",
+          "ir": "up_c10_encontro",
+          "efeitos": {
+            "flag": "a_ficou_parque",
+            "vinculo": 1
+          },
+          "resultado": "Você fica. Observa o sol descer devagar, o rio ficar cor de latão, uma família de patos atravessar a margem. Não espera nada, e esse é o ponto: pela primeira vez, a sua tarde não está pendurada em ninguém. Há uma paz de tipo novo nisso, e você a aceita como quem aceita um presente sem perguntar o preço."
+        },
+        {
+          "id": "nina",
+          "texto": "Ligar para a Nina e perguntar, em voz alta, se ela acha que ele vai vir",
+          "ir": "up_c10_encontro",
+          "efeitos": {
+            "flag": "a_pediu_nina",
+            "vinculo": 1
+          },
+          "resultado": "— Você acha que ele vem? — você pergunta, e a frase, ao sair, é a coisa mais vulnerável que já disse a alguém. A Nina ri, do outro lado, uma risada macia. *Eu acho que ele já veio*, ela diz. *Só falta chegar.* Você diz *que besteira*, e a Nina diz *anda, vai respirar*, e você desliga, de rosto quente."
+        },
+        {
+          "id": "escrever",
+          "texto": "Abrir o caderno e escrever, sem lista, só o que está sentindo",
+          "ir": "up_c10_encontro",
+          "efeitos": {
+            "flag": "a_escreveu_caderno",
+            "vinculo": 1
+          },
+          "resultado": "Você abre o caderno e, sem lista, sem seta, sem item, escreve três linhas: *Eu não sei se ele vem. Eu não sei se eu quero que venha. Eu sei que eu quero que alguém olhe para o meu trabalho e para mim, e que seja a mesma pessoa.* A tinta, no papel, parece mais honesta do que qualquer planilha."
+        }
+      ]
+    },
+    "up_c10_encontro": {
+      "tipo": "segue",
+      "cap": 10,
+      "lugar": "RiverScape MetroPark, Dayton",
+      "hora": "Quarta · 19h05",
+      "ir": "up_c10_dialogo",
+      "texto": "A hora azul chega a Dayton às sete e cinco da noite de uma quarta de março. As luzes da ponte de pedestres acendem, uma a uma, no mesmo compasso de um acorde de piano. No banco de madeira, de casaco emprestado, uma pessoa olha o rio, sem esperar ninguém.\n\nPelo caminho de cascalho, vindo da direção do estacionamento, de terno amarrotado, de mala de mão e de uma pasta de couro embaixo do braço, caminha alguém que passou vinte e quatro horas sem dormir e doze sem saber o que dizer. Não traz flores. Traz outra coisa.\n\nQuando a pessoa do banco o vê, o relógio da ponte marca sete e seis. {{se flag:entregou_prova}}A pasta de provas, mandada à auditoria da matriz, já chegou a quem devia. {{/se}}{{se flag:entregou_em_maos}}A pasta de provas, entregue em mãos, já foi aberta por quem devia. {{/se}}{{se flag:b_confrontou_marcus}}Marcus Webb já sabe que foi descoberto, e a primeira coisa que fez foi apagar o próprio e-mail. {{/se}}"
+    },
+    "up_c10_dialogo": {
+      "tipo": "dialogo",
+      "cap": 10,
+      "lugar": "RiverScape MetroPark, Dayton",
+      "hora": "Quarta · 19h10",
+      "comeca": "B",
+      "texto": "A uns três passos de distância, os dois se olham sem dizer nada. Atrás deles, o rio. À frente, a ponte de pedestres acesa. Não há plateia, nem projetor, nem Marcus Webb, nem vaga. Há duas pessoas e uma conversa que vai ter de ser feita à mão.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "m0_b_abre",
+              "texto": "— Você estava certa. Eu estava errado. E eu não quero a vaga. Eu quero você.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "disse_a_frase",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "m0_b_seco",
+              "texto": "— Entreguei a prova. Pedi demissão. A matriz já sabe de tudo.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "m0_b_flerte",
+              "texto": "— Voei oito mil quilômetros para ver um banco de madeira. Ele tem que valer.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "m0_a_abre",
+              "texto": "— Eu não esperava que você viesse. E, agora que veio, não sei onde pôr as mãos.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "m0_a_seco",
+              "texto": "— Você voou até aqui para me dizer o quê?",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "m0_a_flerte",
+              "texto": "— Você está horrível. Cheira a avião. Fica bem em você.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "m1_a_abre",
+              "texto": "— Eu estava com medo de que você não acreditasse. E, quando você não acreditou, eu entendi.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "m1_a_seco",
+              "texto": "— Eu não pedi que você viesse. Eu só mandei as provas.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "m1_a_fere",
+              "texto": "— Você demorou três dias para acreditar em mim. Eu demorei onze anos para acreditar em mim.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "m1_b_abre",
+              "texto": "— Eu fui um covarde na ligação. Eu devia ter dito *eu acredito* sem pensar. Eu pensei, e perdi três dias.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "m1_b_cuida",
+              "texto": "— Você está com frio? O casaco é emprestado, dá para ver. Fica com o meu.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "m1_b_seco",
+              "texto": "— Eu não vim para ser perdoado. Vim para dizer o que eu devia ter dito.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "m2_a_abre",
+              "texto": "— Eu liguei para o Frank Delaney. Antes de tudo. Eu não consegui ficar quieta.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "m2_a_flerte",
+              "texto": "— O Frank me contou que você ligou. Ele quase chorou. Ele nunca chorou.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "m2_b_abre",
+              "texto": "— O Frank me contou que você ligou para ele. Antes de saber de qualquer coisa de mim. Isso era a prova mais importante.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "m2_a_cuida",
+              "texto": "— Você dormiu? Comeu? Tem um café aqui perto, e o Leo gosta de panqueca.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "m2_a_seco",
+              "texto": "— E agora? Você não tem emprego, eu não tenho emprego.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "m2_b_seco",
+              "texto": "— Eu não tenho emprego, nem vaga, nem carta. Tenho um cachorro e uma ideia.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra do parque é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "m3_a_abre",
+              "texto": "— Qual ideia?",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "m3_a_flerte",
+              "texto": "— Se for uma ideia de empresa, eu aceito. Se for outra, também.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "cuida",
+              "tag": "m3_a_cuida",
+              "texto": "— Primeiro come. Depois a gente fala de ideia.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "m3_b_abre",
+              "texto": "— Uma empresa nova. Tillman e Nicholls. Operações e dados, juntos. Com gente que sabe os nomes.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "m3_b_flerte",
+              "texto": "— Uma empresa que se chame como a gente. E, se não der, ao menos o banco.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "m3_b_seco",
+              "texto": "— Uma empresa. Mas só se você quiser. Eu não faço nada sem você aceitar.",
+              "se": "eu:B"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Vem. A gente pode caminhar até a ponte."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Continua."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Você é teimoso. Eu gosto."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu não esperava ser tão feliz de te ver."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Isso levou tempo demais."
+        }
+      ],
+      "fecho": "As luzes da ponte de pedestres acendem por completo, num acorde de lâmpadas brancas. O rio, escuro, reflete cada uma. E, em um banco de madeira de Dayton, duas pessoas que passaram uma semana inteira com medo de pedir ajuda em voz alta descobrem que a voz funciona.",
+      "ir": "up_c10_decisao"
+    },
+    "up_c10_decisao": {
+      "tipo": "decisao",
+      "cap": 10,
+      "lugar": "RiverScape MetroPark, Dayton",
+      "hora": "Quarta · 19h40",
+      "texto": "Tem uma escolha que só pode ser dos dois, porque só existe se os dois a fizerem. Não é mais sobre a vaga, nem sobre o Marcus, nem sobre a fraude, que a auditoria da matriz vai resolver em meses. É sobre o que vem depois de uma semana em que duas pessoas ficaram sem nada.",
+      "pergunta": "O que vocês fazem com o que vem?",
+      "ir": "up_c10_final",
+      "acoes": [
+        {
+          "id": "empresa",
+          "texto": "Abrir a Tillman & Nicholls juntos: operações e dados, com o Walter, a Chloe e a Priya",
+          "efeitos": {
+            "flag": "abriu_empresa",
+            "vinculo": 3
+          },
+          "resultado": "Vocês decidem abrir a empresa. Será pequena, de início: uma sala em River North, duas mesas, um cachorro. Os primeiros funcionários serão a Chloe, que acabou de achar a página dezessete, e o Walter, que já sabe dirigir. A primeira cliente será o Frank Delaney, que vai pedir que o contrato seja escrito à mão."
+        },
+        {
+          "id": "devagar",
+          "texto": "Ir devagar: um jantar, depois um fim de semana, depois uma conversa sobre trabalho",
+          "efeitos": {
+            "flag": "foi_devagar",
+            "vinculo": 2
+          },
+          "resultado": "Vocês decidem ir devagar. Um jantar, depois um fim de semana, depois uma conversa sobre trabalho, e cada coisa no seu tempo. É uma decisão de adultos que já aprenderam que o que se faz com pressa se desfaz com pressa. Os dois sorriem do mesmo jeito, de lado, como quem guarda uma coisa boa para mais tarde."
+        },
+        {
+          "id": "separado",
+          "texto": "Cada um segue o seu caminho por enquanto: respeito, cuidado, e uma porta aberta",
+          "efeitos": {
+            "flag": "cada_um_segue"
+          },
+          "resultado": "Vocês decidem não decidir tudo hoje. Cada um segue o seu caminho por enquanto: ela, com a Megan e a Nina, a reunir os pedaços; ele, com o pai e o cachorro, a reerguer o galpão. A porta fica aberta, e os dois sabem disso. Não é um fim: é uma pausa de quem ainda tem muita vida pela frente."
+        }
+      ]
+    },
+    "up_c10_final": {
       "tipo": "final",
-      "cap": 9,
-      "texto": "Fim do trecho escrito até agora (rascunho)."
+      "cap": 10,
+      "lugar": "Dayton e Chicago",
+      "hora": "Seis meses depois",
+      "finais": [
+        {
+          "se": "flag:abriu_empresa && vinc>=9",
+          "texto": "Em setembro, num sábado de sol frio, a placa de bronze da porta, em River North, diz **TILLMAN & NICHOLLS · Operações e Dados**. A sala é pequena: duas mesas, uma estante de livros dobrados, uma cafeteira que faz café melhor do que a do galpão. Na parede, uma planilha impressa e, ao lado, uma fotografia de um homem de colete refletivo com um dente de ouro.\n\nA auditoria da Meridian Global durou quatro meses. Marcus Webb saiu da empresa por *motivos pessoais*, e a MW Holdings foi dissolvida por ordem de um juiz federal. O nome da autora do valuation aparece, na versão pública do relatório, como *a analista que primeiro alertou*. Ninguém na Meridian disse *foi um erro*, mas Priya Patel, que entregou a carta de demissão no dia seguinte, passou a trabalhar de segunda a sexta, no fundo da sala, onde, finalmente, fala em voz alta.\n\nOs dois ainda brigam por cada parágrafo de contrato. {{se flag:noite_412}}O que aconteceu no 412 nunca foi tema de nenhuma reunião, e é a razão de todas elas. {{/se}}{{se !flag:noite_412}}O que não aconteceu no 412 foi, com o tempo, acontecendo aos poucos, a cada jantar. {{/se}}{{se flag:beijo_cafe}}Há um café em Viena que ninguém, até agora, voltou a visitar, mas que os dois já combinaram de visitar em março. {{/se}}O Buster dorme embaixo da mesa de operações, de orelha caída e orelha em pé, com a expressão de quem aprovou todas as decisões da vida adulta que ninguém lhe pediu para aprovar.\n\nEm cima da mesa de dados, ao lado de um copo de café, há uma folha de papel do Hotel Imperial, dobrada e amassada, com quatro regras e duas assinaturas, uma em cima da outra, como se feitas pela mesma mão. Na quarta regra, acrescentada a lápis, uma frase nova: *quem ganhar, ganha junto.*\n\n{{se flag:disse_a_frase}}No parque, alguém disse a frase inteira, *você estava certa, eu estava errado, e eu não quero a vaga, eu quero você*, e ela não precisou de mais nada.{{/se}}\n\n{{se flag:cada_um_segue}}Os dois decidiram não decidir tudo naquele dia, e a porta ficou aberta como combinado.{{/se}}\n\n{{se flag:a_chorou}}Foi no degrau de uma varanda de Dayton que uma delas chorou, sem pressa, pela primeira vez em dez anos.{{/se}}\n\n{{se flag:a_discordou_nina}}Houve uma discussão na varanda sobre plateia e trabalho, e as duas tinham razão.{{/se}}\n\n{{se flag:a_falou_da_pessoa}}A Nina descobriu na varanda que a história nunca foi sobre a vaga.{{/se}}\n\n{{se flag:a_ficou_parque}}O banco de madeira do rio viu um fim de tarde sem espera.{{/se}}\n\n{{se flag:a_pediu_nina}}Uma ligação à Nina, *você acha que ele vem?*, teve resposta: *ele já veio, só falta chegar*.{{/se}}\n\n{{se flag:a_escreveu_caderno}}No caderno, três linhas sem lista guardam o que ninguém lê.{{/se}}\n\n{{se flag:b_ensaiou}}No avião, a frase foi ensaiada até a palavra *vaga* sumir.{{/se}}\n\n{{se flag:b_avisou_pai}}O pai respondeu com erros de digitação e ternura: *o buster esta cmigo. ele aprovou*.{{/se}}\n\n{{se flag:b_dormiu_voo}}A frase cresceu no sono, como um pão.{{/se}}"
+        },
+        {
+          "se": "flag:foi_devagar || flag:abriu_empresa",
+          "texto": "Em setembro, num sábado de sol frio, uma pessoa de Chicago e uma pessoa de Dayton jantam num restaurante pequeno de Oakwood, de toalha de papel e vela de pote. Passaram o verão assim: uma viagem de carro a Cincinnati, um fim de semana no lago Erie, uma noite de pizza na cozinha da Megan, com o Leo mostrando o tiranossauro de dente quebrado.\n\nA auditoria da Meridian Global durou quatro meses. Marcus Webb saiu da empresa por *motivos pessoais*, e a MW Holdings foi dissolvida. O nome da autora do valuation aparece, na versão pública do relatório, como *a analista que primeiro alertou*. {{se flag:a_aceitou_valer}}Ela não leu o relatório inteiro: já tinha aprendido, num banco de madeira, que não precisa da plateia. {{/se}}\n\nNenhum dos dois tem emprego fixo, e os dois têm planos demais para caber num guardanapo. {{se flag:beijo_cafe}}Há um café em Viena que ninguém, até agora, voltou a visitar, mas que os dois já combinaram de visitar em março. {{/se}}O Buster, que foi apresentado à Megan, ao Leo e à Nina, já escolheu um lado do sofá em cada casa. A vaga que nunca existiu virou piada de família, a primeira que os dois dividem.\n\n{{se flag:disse_a_frase}}No parque, alguém disse a frase inteira, *você estava certa, eu estava errado, e eu não quero a vaga, eu quero você*, e ela não precisou de mais nada.{{/se}}\n\n{{se flag:cada_um_segue}}Os dois decidiram não decidir tudo naquele dia, e a porta ficou aberta como combinado.{{/se}}\n\n{{se flag:a_chorou}}Foi no degrau de uma varanda de Dayton que uma delas chorou, sem pressa, pela primeira vez em dez anos.{{/se}}\n\n{{se flag:a_discordou_nina}}Houve uma discussão na varanda sobre plateia e trabalho, e as duas tinham razão.{{/se}}\n\n{{se flag:a_falou_da_pessoa}}A Nina descobriu na varanda que a história nunca foi sobre a vaga.{{/se}}\n\n{{se flag:a_ficou_parque}}O banco de madeira do rio viu um fim de tarde sem espera.{{/se}}\n\n{{se flag:a_pediu_nina}}Uma ligação à Nina, *você acha que ele vem?*, teve resposta: *ele já veio, só falta chegar*.{{/se}}\n\n{{se flag:a_escreveu_caderno}}No caderno, três linhas sem lista guardam o que ninguém lê.{{/se}}\n\n{{se flag:b_ensaiou}}No avião, a frase foi ensaiada até a palavra *vaga* sumir.{{/se}}\n\n{{se flag:b_avisou_pai}}O pai respondeu com erros de digitação e ternura: *o buster esta cmigo. ele aprovou*.{{/se}}\n\n{{se flag:b_dormiu_voo}}A frase cresceu no sono, como um pão.{{/se}}"
+        },
+        {
+          "texto": "Em setembro, num sábado de sol frio, uma pessoa de Chicago e uma pessoa de Dayton se falam por telefone, às oito da noite, como combinaram. A auditoria da Meridian Global durou quatro meses. Marcus Webb saiu da empresa, e a MW Holdings foi dissolvida. O nome da autora do valuation aparece, na versão pública do relatório, como *a analista que primeiro alertou*.\n\nCada um reconstruiu a sua vida: ela, com um cargo novo numa empresa pequena de logística de Columbus; ele, com o galpão da família alugado a uma cooperativa de motoristas. Não se veem todo mês, nem toda semana, e a distância, que um dia parecia o fim, hoje parece uma escolha. {{se flag:beijo_cafe}}Há um café em Viena que ninguém, até agora, voltou a visitar, e o convite, que nunca foi feito, ainda está de pé. {{/se}}\n\nA vaga nunca existiu, e a coisa que existiu, em vez dela, foi uma semana em que duas pessoas aprenderam a pedir ajuda em voz alta. O resto, como diria o seu Frank Delaney, é viagem.\n\n{{se flag:disse_a_frase}}No parque, alguém disse a frase inteira, *você estava certa, eu estava errado, e eu não quero a vaga, eu quero você*, e ela não precisou de mais nada.{{/se}}\n\n{{se flag:cada_um_segue}}Os dois decidiram não decidir tudo naquele dia, e a porta ficou aberta como combinado.{{/se}}\n\n{{se flag:a_chorou}}Foi no degrau de uma varanda de Dayton que uma delas chorou, sem pressa, pela primeira vez em dez anos.{{/se}}\n\n{{se flag:a_discordou_nina}}Houve uma discussão na varanda sobre plateia e trabalho, e as duas tinham razão.{{/se}}\n\n{{se flag:a_falou_da_pessoa}}A Nina descobriu na varanda que a história nunca foi sobre a vaga.{{/se}}\n\n{{se flag:a_ficou_parque}}O banco de madeira do rio viu um fim de tarde sem espera.{{/se}}\n\n{{se flag:a_pediu_nina}}Uma ligação à Nina, *você acha que ele vem?*, teve resposta: *ele já veio, só falta chegar*.{{/se}}\n\n{{se flag:a_escreveu_caderno}}No caderno, três linhas sem lista guardam o que ninguém lê.{{/se}}\n\n{{se flag:b_ensaiou}}No avião, a frase foi ensaiada até a palavra *vaga* sumir.{{/se}}\n\n{{se flag:b_avisou_pai}}O pai respondeu com erros de digitação e ternura: *o buster esta cmigo. ele aprovou*.{{/se}}\n\n{{se flag:b_dormiu_voo}}A frase cresceu no sono, como um pão.{{/se}}"
+        }
+      ]
     }
   }
 }
