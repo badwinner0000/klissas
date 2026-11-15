@@ -153,6 +153,8 @@ export const Livro = z
     titulo: z.string(),
     secao: z.enum(['love-sparks', 'k-vibes', 'dark-deals', 'bitter-sweet']),
     adulto: z.boolean().default(false),
+    /** livro em escrita: dívidas de conteúdo (flags sem leitura, etc.) viram aviso. Sem `personagens` ele nem aparece na biblioteca. */
+    rascunho: z.boolean().default(false),
     tropes: z.array(z.string()).min(1),
     linhaDoTempo: z.array(z.object({ quando: z.string(), evento: z.string() }).strict()).min(1),
     /** quanto o vínculo pode SUBIR por capítulo (original: 1) */
