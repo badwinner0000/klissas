@@ -3,7 +3,7 @@
   "titulo": "Refrão de Verão",
   "secao": "love-sparks",
   "adulto": true,
-  "rascunho": true,
+  "rascunho": false,
   "tropes": [
     "celebrity-romance",
     "small-town",
@@ -411,7 +411,7 @@
       "npcs": [
         "doris"
       ],
-      "texto": "Você entra na mercearia com uma lista que escreveu no carro, na sua letra de autógrafo, e um chapéu de aba larga que cobriu metade do rosto. O sino toca duas vezes. Dentro, sob um ventilador de teto lento, uma mulher de avental olha você de cima a baixo, com um olhar que mede o preço da sua bolsa, da sua mala e do seu casaco, sem ter pressa.\n\n— Você deve ser a neta do Henry — diz ela, sem sorrir. — Henry Ashby. Doris Pruitt. Eu fui a que fechou os olhos dele em março, porque ninguém mais estava lá. — Uma pausa de efeito. — Faz três meses.\n\nA frase não é uma acusação, mas ocupa o mesmo lugar. Na sua lista, o primeiro item é *café especial (origem única)*, e a mercearia só tem Folgers.",
+      "texto": "Você entra na mercearia com uma lista que escreveu no carro, na sua letra de autógrafo, e um chapéu de aba larga que cobriu metade do rosto. O sino toca duas vezes. Dentro, sob um ventilador de teto lento, uma mulher de avental olha você de cima a baixo, com um olhar que mede o preço da sua bolsa, da sua mala e do seu casaco, sem ter pressa.\n\n— Você deve ser a neta do Henry — diz ela, sem sorrir. — Henry Ashby. Doris Pruitt. Eu fui a que fechou os olhos dele em março, porque ninguém mais estava lá. — Uma pausa de efeito. — Faz três meses.\n\nA frase não é uma acusação, mas ocupa o mesmo lugar. Na sua lista, o primeiro item é *café especial (origem única)*, e a mercearia só tem Folgers.\n\n{{se flag:a_entrou_direto}}A chave do advogado girou no primeiro dia sem hesitar, e a casa ainda tem esse cheiro de cachimbo e de entrada direta.{{/se}}",
       "acoes": [
         {
           "id": "verdade",
@@ -454,7 +454,7 @@
       "npcs": [
         "doris"
       ],
-      "texto": "Você entra na mercearia atrás de uma caixa de pregos de cobre, e dá de cara com a cena: a neta do Henry, de chapéu de aba larga e casaco de caxemira, parada diante do balcão, sendo avaliada por Doris Pruitt, que, em trinta e seis anos, já avaliou um prefeito, dois xerifes e um urso que entrou pela porta dos fundos em 2011.\n\nA cena dura o que dura um café. Quando a neta, ou o neto, de chapéu, se afasta em direção à prateleira de pães, Doris te chama com o dedo, como quem convoca um aluno. Fala baixo, sem mexer os lábios.\n\n— Aquela ali tem cara de problema. — O dedo aponta de leve. — Mala de seiscentos dólares. Mãos que nunca lavaram um prato. Eu aposto cinco dólares que vai embora em duas semanas.",
+      "texto": "Você entra na mercearia atrás de uma caixa de pregos de cobre, e dá de cara com a cena: a neta do Henry, de chapéu de aba larga e casaco de caxemira, parada diante do balcão, sendo avaliada por Doris Pruitt, que, em trinta e seis anos, já avaliou um prefeito, dois xerifes e um urso que entrou pela porta dos fundos em 2011.\n\nA cena dura o que dura um café. Quando a neta, ou o neto, de chapéu, se afasta em direção à prateleira de pães, Doris te chama com o dedo, como quem convoca um aluno. Fala baixo, sem mexer os lábios.\n\n— Aquela ali tem cara de problema. — O dedo aponta de leve. — Mala de seiscentos dólares. Mãos que nunca lavaram um prato. Eu aposto cinco dólares que vai embora em duas semanas.\n\n{{se flag:b_ignorou}}A martelada no primeiro dia, sem descer da escada, ficou como uma opinião do telhado.{{/se}}",
       "acoes": [
         {
           "id": "defender",
@@ -533,7 +533,7 @@
       "lugar": "Picape, estrada do riacho",
       "hora": "Terça · 12h10",
       "comeca": "B",
-      "texto": "A picape de 1998 tem um banco único, de vinil rachado, onde cabem três pessoas ou duas com muitas opiniões. O motor faz o barulho de um gato com raiva, o câmbio só engata a terceira com paciência, e a estrada de terra, de pedras soltas, tem o ritmo de um tambor.\n\nDois quilômetros e duzentos metros até o chalé. Em dois quilômetros e duzentos metros, dá para falar de muita coisa, ou de nada.",
+      "texto": "A picape de 1998 tem um banco único, de vinil rachado, onde cabem três pessoas ou duas com muitas opiniões. O motor faz o barulho de um gato com raiva, o câmbio só engata a terceira com paciência, e a estrada de terra, de pedras soltas, tem o ritmo de um tambor.\n\nDois quilômetros e duzentos metros até o chalé. Em dois quilômetros e duzentos metros, dá para falar de muita coisa, ou de nada.\n\n{{se flag:carregou_sozinha}}As sacolas carregadas de uma vez, e a omelete de ovos no chão da mercearia, ainda rendem uma risada seca no banco da picape.{{/se}}\n\n{{se flag:dividiu_peso}}As sacolas divididas até a picape foram um silêncio em fila, sem incômodo.{{/se}}\n\n{{se flag:fez_piada}}A piada do chapéu, *disfarçar ou carregar peso*, rendeu um riso de nariz que foi logo negado.{{/se}}",
       "turnos": [
         {
           "prompt": "A primeira frase é sua.",
@@ -839,7 +839,7 @@
       "npcs": [
         "caleb"
       ],
-      "texto": "A casa onde você mora é a casa onde o seu pai morreu, onde a sua mãe morou e de onde saiu para um lar de idosos em Spokane, e onde o seu irmão Caleb, vinte e oito anos, técnico de som freelancer, aparece a cada duas semanas para lavar a roupa, comer sua comida e deixar uma pilha de louça no seu pia. Hoje é um desses dias.\n\nCaleb está sentado no balcão da cozinha, com os pés na cadeira, uma cerveja e um sorriso de quem ouviu uma fofoca. Doris já ligou, claro.\n\n— Então a neta do Henry — diz ele. — Mala de seiscentos dólares e olheiras de quem vive na estrada. Dizem que é um nome de estrela de rádio. Eu fui pesquisar, e a internet, em Pine Hollow, só pega no fundo da mercearia. Você sabe o que isso significa.\n\nVocê não sabe. Cada vez que o seu irmão começa uma frase com *você sabe o que isso significa*, é para você descobrir sozinho.",
+      "texto": "A casa onde você mora é a casa onde o seu pai morreu, onde a sua mãe morou e de onde saiu para um lar de idosos em Spokane, e onde o seu irmão Caleb, vinte e oito anos, técnico de som freelancer, aparece a cada duas semanas para lavar a roupa, comer sua comida e deixar uma pilha de louça no seu pia. Hoje é um desses dias.\n\nCaleb está sentado no balcão da cozinha, com os pés na cadeira, uma cerveja e um sorriso de quem ouviu uma fofoca. Doris já ligou, claro.\n\n— Então a neta do Henry — diz ele. — Mala de seiscentos dólares e olheiras de quem vive na estrada. Dizem que é um nome de estrela de rádio. Eu fui pesquisar, e a internet, em Pine Hollow, só pega no fundo da mercearia. Você sabe o que isso significa.\n\nVocê não sabe. Cada vez que o seu irmão começa uma frase com *você sabe o que isso significa*, é para você descobrir sozinho.\n\n{{se flag:b_defendeu}}A defesa feita à Doris, *ela acabou de enterrar o avô*, rendeu um pacote de biscoitos de aveia para a casa.{{/se}}\n\n{{se flag:b_apostou}}A aposta de dez dólares com a Doris saiu sozinha, como um prego que escolhe a madeira.{{/se}}\n\n{{se flag:b_neutro}}A neutralidade na mercearia foi uma lição antiga: quem tem opinião sobre todo mundo termina sem amigo.{{/se}}",
       "acoes": [
         {
           "id": "perguntar",
@@ -887,7 +887,7 @@
       "lugar": "Pine Hollow",
       "hora": "Terça · 20h00",
       "ir": "rv_c3_lanterna",
-      "texto": "Às oito da noite, a luz do vale é a de um quadro que alguém esqueceu de acabar: dourada nas bordas, lilás no meio, com um fio de nuvem encostado nas montanhas. De cima do morro, a Rua Principal de Pine Hollow parece uma coisa que cabe numa mão.\n\n{{se flag:foram_juntos}}Os dois combinaram ir juntos, e a picape sobe a estrada com um rádio baixo. {{/se}}{{se flag:foram_separados}}Os dois combinaram ir separados, e uma bicicleta antiga desce a estrada, rangendo. {{/se}}{{se flag:so_um_pouco}}Os dois combinaram um meio-termo: aparecer, tomar um suco, ir embora antes das dez. {{/se}}As decisões, em cidade pequena, têm o prazo de validade de uma cerveja quente."
+      "texto": "Às oito da noite, a luz do vale é a de um quadro que alguém esqueceu de acabar: dourada nas bordas, lilás no meio, com um fio de nuvem encostado nas montanhas. De cima do morro, a Rua Principal de Pine Hollow parece uma coisa que cabe numa mão.\n\n{{se flag:foram_juntos}}Os dois combinaram ir juntos, e a picape sobe a estrada com um rádio baixo. {{/se}}{{se flag:foram_separados}}Os dois combinaram ir separados, e uma bicicleta antiga desce a estrada, rangendo. {{/se}}{{se flag:so_um_pouco}}Os dois combinaram um meio-termo: aparecer, tomar um suco, ir embora antes das dez. {{/se}}As decisões, em cidade pequena, têm o prazo de validade de uma cerveja quente.\n\n{{se flag:convidou_bar}}O convite ao bar, dito no fim da viagem, *tem cerveja ruim e um banjo*, ainda vale.{{/se}}"
     },
     "rv_c3_lanterna": {
       "tipo": "segue",
@@ -1031,7 +1031,7 @@
       "lugar": "Varanda dos fundos da Lanterna",
       "hora": "Terça · 22h10",
       "comeca": "A",
-      "texto": "A varanda dos fundos da Lanterna dá para um beco com contêineres de lixo, uma lâmpada de sódio e uma vista, entre dois telhados, de um pedaço de céu salpicado de estrelas. O barulho da música, abafado pela parede, chega como um coração dentro de uma garrafa.\n\nEm cidade pequena, as melhores conversas são as que acontecem no beco.",
+      "texto": "A varanda dos fundos da Lanterna dá para um beco com contêineres de lixo, uma lâmpada de sódio e uma vista, entre dois telhados, de um pedaço de céu salpicado de estrelas. O barulho da música, abafado pela parede, chega como um coração dentro de uma garrafa.\n\nEm cidade pequena, as melhores conversas são as que acontecem no beco.\n\n{{se flag:sentou_balcao}}A cerveja da torneira, a mais barata, foi a melhor de meses, segundo quem a bebeu.{{/se}}\n\n{{se flag:ficou_palco}}Ao lado do palco, de braços cruzados, ficou quem viu de perto os arranhões e a fita crepe nos instrumentos.{{/se}}\n\n{{se flag:falou_caleb}}A conversa com o irmão do carpinteiro foi a frase mais direta da noite: *eu acho que é uma pessoa interessante*.{{/se}}",
       "turnos": [
         {
           "prompt": "A primeira frase é sua.",
@@ -1266,7 +1266,7 @@
       "seat": "A",
       "lugar": "Chalé dos Ashby",
       "hora": "Terça · 23h40",
-      "texto": "Você volta ao chalé às onze e quarenta, com o corpo cansado e a cabeça estranha. O fogão, quase apagado, solta um calor baixo. A lanterna a querosene, no gancho da varanda, é a única luz. Você se senta no banco do piano, sem ter decidido sentar.\n\nDentro da cabeça, uma coisa está acontecendo, e você demora a reconhecer, porque faz oito meses que não acontece. É uma melodia. Pequena, torta, de quatro notas, que sobe, hesita e cai, como a voz do carpinteiro no refrão de uma música que você ouviu uma vez. Não é uma frase pronta. É o tipo de coisa que pode se tornar outra coisa, se você tiver coragem de tocá-la.",
+      "texto": "Você volta ao chalé às onze e quarenta, com o corpo cansado e a cabeça estranha. O fogão, quase apagado, solta um calor baixo. A lanterna a querosene, no gancho da varanda, é a única luz. Você se senta no banco do piano, sem ter decidido sentar.\n\nDentro da cabeça, uma coisa está acontecendo, e você demora a reconhecer, porque faz oito meses que não acontece. É uma melodia. Pequena, torta, de quatro notas, que sobe, hesita e cai, como a voz do carpinteiro no refrão de uma música que você ouviu uma vez. Não é uma frase pronta. É o tipo de coisa que pode se tornar outra coisa, se você tiver coragem de tocá-la.\n\n{{se flag:a_ouviu_fechados}}A música ouvida de olhos fechados na Lanterna ainda soa sem microfone, sem compressor, sem filtro.{{/se}}\n\n{{se flag:a_analisou_musica}}A estrutura da música do bar, ré maior e uma ponte que cai um tom, ficou na cabeça como um mapa de coisa simples e impossível de fabricar.{{/se}}\n\n{{se flag:a_saiu_antes}}O último verso da música ficou do lado de fora da parede, na varanda dos fundos, e a cabeça tenta adivinhá-lo.{{/se}}",
       "acoes": [
         {
           "id": "tocar",
@@ -1309,7 +1309,7 @@
       "npcs": [
         "sarah"
       ],
-      "texto": "Você sai da Lanterna às onze e meia, com o violão nas costas e a cabeça no beco. Antes que chegue à picape, uma voz atrás de você diz o seu nome, o primeiro, curto, num tom que você conhece de cor: Sarah Brandt, trinta anos, de cabelo preto, de casaco azul-marinho, olhos educados e cortantes. Ela esteve com você por quatro anos, e se despediu faz dois, quando você disse, sem rodeio, que não sabia se queria mais do que aquilo.\n\n— Você cantou a de dezessete — diz Sarah. Não é uma pergunta. — A que você nunca cantou para mim.\n\nO vento mexe na ponta do casaco dela. Os dois ficam a três passos, no cascalho, sob uma lua de junho.",
+      "texto": "Você sai da Lanterna às onze e meia, com o violão nas costas e a cabeça no beco. Antes que chegue à picape, uma voz atrás de você diz o seu nome, o primeiro, curto, num tom que você conhece de cor: Sarah Brandt, trinta anos, de cabelo preto, de casaco azul-marinho, olhos educados e cortantes. Ela esteve com você por quatro anos, e se despediu faz dois, quando você disse, sem rodeio, que não sabia se queria mais do que aquilo.\n\n— Você cantou a de dezessete — diz Sarah. Não é uma pergunta. — A que você nunca cantou para mim.\n\nO vento mexe na ponta do casaco dela. Os dois ficam a três passos, no cascalho, sob uma lua de junho.\n\n{{se flag:b_perguntou_caleb}}A conversa com o irmão, *ou é invisível, ou sabe desaparecer*, ainda não tem conclusão.{{/se}}\n\n{{se flag:b_ignorou_caleb}}O jantar com o irmão, falando de lenha e de motor, deixou a neta do Henry pendurada no ar como roupa no varal.{{/se}}\n\n{{se flag:b_contou_aposta}}O riso do Caleb diante da aposta, *você, que nunca apostou em nada*, continua soando.{{/se}}",
       "acoes": [
         {
           "id": "verdade",
@@ -1372,7 +1372,7 @@
         "doris",
         "lorna"
       ],
-      "texto": "Você pedalou os quatro quilômetros até a Rua Principal na bicicleta do avô, de guidão torto e sino enferrujado. Nos fundos da Pruitt's Mercantile, atrás de uma cortina de contas, há uma mesa com um computador de 2009, um modem satelital de luz piscante e um cartaz: *US$ 3 / 15 MIN. NÃO É CULPA MINHA SE CAIR.*\n\nDoris, de óculos na corrente, põe um cronômetro de cozinha ao lado do teclado. *Quinze minutos*, diz, *e eu não devolvo se cair.*\n\nVocê tem a melodia gravada no celular, um arquivo de voz de quarenta e um segundos. Quer mandá-lo à Lorna Feldt, a agente, para provar que está viva. A conexão carrega a primeira barra, a segunda e a terceira, e você, pela primeira vez em dias, quase sente que tem o controle.",
+      "texto": "Você pedalou os quatro quilômetros até a Rua Principal na bicicleta do avô, de guidão torto e sino enferrujado. Nos fundos da Pruitt's Mercantile, atrás de uma cortina de contas, há uma mesa com um computador de 2009, um modem satelital de luz piscante e um cartaz: *US$ 3 / 15 MIN. NÃO É CULPA MINHA SE CAIR.*\n\nDoris, de óculos na corrente, põe um cronômetro de cozinha ao lado do teclado. *Quinze minutos*, diz, *e eu não devolvo se cair.*\n\nVocê tem a melodia gravada no celular, um arquivo de voz de quarenta e um segundos. Quer mandá-lo à Lorna Feldt, a agente, para provar que está viva. A conexão carrega a primeira barra, a segunda e a terceira, e você, pela primeira vez em dias, quase sente que tem o controle.\n\n{{se flag:a_disse_verdade}}A frase dita à Doris, *eu estava em turnê, em Tóquio*, ainda é a única verdade que a cidade recebeu de graça.{{/se}}\n\n{{se flag:a_mentiu_doris}}A palavra *marketing*, dita depressa demais à Doris, continua pendurada no balcão como uma moeda mordida.{{/se}}\n\n{{se flag:a_cartao_preto}}O cartão preto, devolvido pela Doris com *aqui a gente só aceita dinheiro*, ainda está no fundo da carteira, inútil.{{/se}}",
       "acoes": [
         {
           "id": "enviar",
@@ -1412,7 +1412,7 @@
       "seat": "B",
       "lugar": "Telhado do chalé dos Ashby",
       "hora": "Quarta · 11h00",
-      "texto": "Do alto do telhado, de onde você vê a estrada de terra inteira até a curva do riacho, você observa a bicicleta do velho Henry descer, de guidão torto, com uma figura curvada sobre ela, a caminho da Rua Principal. A figura pedala mal, e pedala teimosa. No caminho, tropeça numa raiz, quase cai, se endireita, e continua.\n\nVocê deixa o martelo de lado. Há uma ideia ruim em cima de uma ideia pior: a de que você, que nunca perguntou a ninguém o que a pessoa foi fazer na cidade, quer saber.\n\nEmbaixo, no chão da varanda, deixado sem querer, o violão do seu pai espera, encostado no corrimão, onde você o largou ontem à noite, antes de ir embora do bar.",
+      "texto": "Do alto do telhado, de onde você vê a estrada de terra inteira até a curva do riacho, você observa a bicicleta do velho Henry descer, de guidão torto, com uma figura curvada sobre ela, a caminho da Rua Principal. A figura pedala mal, e pedala teimosa. No caminho, tropeça numa raiz, quase cai, se endireita, e continua.\n\nVocê deixa o martelo de lado. Há uma ideia ruim em cima de uma ideia pior: a de que você, que nunca perguntou a ninguém o que a pessoa foi fazer na cidade, quer saber.\n\nEmbaixo, no chão da varanda, deixado sem querer, o violão do seu pai espera, encostado no corrimão, onde você o largou ontem à noite, antes de ir embora do bar.\n\n{{se flag:b_disse_sarah}}A frase da Sarah, *gente assim tem data de ir embora*, é uma previsão que ainda não acabou.{{/se}}\n\n{{se flag:b_negou_sarah}}A negativa dada à Sarah, *foi só uma música*, foi lida como a mentira que é.{{/se}}\n\n{{se flag:b_calou_sarah}}O silêncio diante da Sarah no cascalho deixou, no retrovisor, uma cidade do tamanho de uma mão.{{/se}}",
       "acoes": [
         {
           "id": "trabalhar",
@@ -1452,7 +1452,7 @@
       "lugar": "Chalé dos Ashby",
       "hora": "Quarta · 15h00",
       "cada": 1,
-      "texto": "Às três da tarde, o chalé tem as janelas abertas, um cheiro de cedro novo e uma discussão no ar que ainda não começou. O carpinteiro desce a escada de alumínio, de camiseta suada, e a outra pessoa volta da cidade, de bicicleta, com o rosto vermelho de sol e uma sacola de pão. Os dois se encontram na varanda, e nenhum dos dois, por orgulho, diz *oi*.\n\nEntre eles, uma moldura invisível.",
+      "texto": "Às três da tarde, o chalé tem as janelas abertas, um cheiro de cedro novo e uma discussão no ar que ainda não começou. O carpinteiro desce a escada de alumínio, de camiseta suada, e a outra pessoa volta da cidade, de bicicleta, com o rosto vermelho de sol e uma sacola de pão. Os dois se encontram na varanda, e nenhum dos dois, por orgulho, diz *oi*.\n\nEntre eles, uma moldura invisível.\n\n{{se flag:a_quase_contou}}A frase *eu trabalho com música, mais ou menos* ficou pela metade, na varanda dos fundos da Lanterna.{{/se}}\n\n{{se flag:b_quase_contou}}A frase *eu tive uma banda, aos catorze* ficou pela metade, na varanda dos fundos da Lanterna.{{/se}}",
       "pergunta": "O que você diz ao outro?",
       "acoes": [
         {
@@ -1491,7 +1491,7 @@
       "lugar": "Degraus da varanda, chalé dos Ashby",
       "hora": "Quarta · 16h00",
       "comeca": "B",
-      "texto": "A varanda de madeira cinza tem tábuas que cedem e uma vista, entre os pinheiros, do riacho. O sol de meio de junho, a esta hora, dá aos dois a cor de mel. Um pão de forma, uma faca de cozinha e um pote de manteiga de amendoim são o único cardápio.\n\nQuando duas pessoas dividem pão em silêncio, uma delas, cedo ou tarde, diz uma coisa que não pensava dizer.",
+      "texto": "A varanda de madeira cinza tem tábuas que cedem e uma vista, entre os pinheiros, do riacho. O sol de meio de junho, a esta hora, dá aos dois a cor de mel. Um pão de forma, uma faca de cozinha e um pote de manteiga de amendoim são o único cardápio.\n\nQuando duas pessoas dividem pão em silêncio, uma delas, cedo ou tarde, diz uma coisa que não pensava dizer.\n\n{{se flag:perguntou_direto}}A pergunta direta, *o que você faz da vida*, soou mais íntima do que um beijo.{{/se}}\n\n{{se flag:falou_do_telhado}}O quadrante sul, mostrado com onze palavras, foi a conversa mais pequena e mais completa da semana.{{/se}}\n\n{{se flag:provocou}}A provocação sobre os pratos, *eu lavei dois, em 2019, foi traumático*, virou piada fixa.{{/se}}",
       "turnos": [
         {
           "prompt": "A primeira frase é sua.",
@@ -1826,7 +1826,7 @@
       "seat": "B",
       "lugar": "Telhado do chalé dos Ashby",
       "hora": "Sábado · 15h00",
-      "texto": "Você está no último quadrante do telhado, o do canto norte, o mais velho e mais teimoso, com um prego de cobre na boca e o cheiro de cedro por todo lado. Há três dias, de dentro do chalé, o som de um piano desafinado começou a chegar pela janela aberta, em pedaços, em notas soltas, em repetições de quem procura.\n\nHoje, pela primeira vez, as notas se juntam. Você pára de martelar sem decidir. O prego sai da boca, a mão fica no ar. Do chão, a melodia sobe pelo telhado e entra pelo corpo, e é a coisa mais bonita e mais triste que você ouve desde a música do seu pai, aos dezessete.\n\nVocê não sabe o que fazer com isso. O silêncio do martelo parou, e você tem consciência de que, dentro da casa, a pessoa que toca também parou.",
+      "texto": "Você está no último quadrante do telhado, o do canto norte, o mais velho e mais teimoso, com um prego de cobre na boca e o cheiro de cedro por todo lado. Há três dias, de dentro do chalé, o som de um piano desafinado começou a chegar pela janela aberta, em pedaços, em notas soltas, em repetições de quem procura.\n\nHoje, pela primeira vez, as notas se juntam. Você pára de martelar sem decidir. O prego sai da boca, a mão fica no ar. Do chão, a melodia sobe pelo telhado e entra pelo corpo, e é a coisa mais bonita e mais triste que você ouve desde a música do seu pai, aos dezessete.\n\nVocê não sabe o que fazer com isso. O silêncio do martelo parou, e você tem consciência de que, dentro da casa, a pessoa que toca também parou.\n\n{{se flag:b_trabalhou}}O quadrante sul do telhado, terminado por teimosia, continua sendo o único trabalho sem testemunha.{{/se}}\n\n{{se flag:b_tocou_varanda}}O violão na varanda, tocado baixinho, fez de um carpinteiro, por duas horas, alguém que toca.{{/se}}\n\n{{se flag:b_foi_ver}}A viagem à Rua Principal, só para ver a bicicleta na vitrine, ainda dá vergonha e dá paz.{{/se}}",
       "acoes": [
         {
           "id": "ouvir",
@@ -2189,7 +2189,7 @@
       "npcs": [
         "lorna"
       ],
-      "texto": "O celular, que só pega sinal numa pedra a trezentos metros do chalé, recebeu, durante a noite, uma mensagem de voz, que você só escuta de manhã, em pé sobre a pedra, de pijama e botas. Lorna Feldt, a agente, quarenta e cinco anos, voz de planilha:\n\n*Oi, querida. Chegou o arquivo de quarenta e um segundos. É... é uma coisa. É boa. É diferente. O Marco, da gravadora, ouviu e disse que não tem batida. Eu disse que tem coração. Ele disse que coração não vende. Eu disse que a gente vê. Enfim. A turnê de outono foi confirmada: dois de setembro, em Seattle. Você volta no dia trinta de agosto. Eu mando um carro.*\n\nA mensagem acaba. O vento mexe no seu cabelo, e a pedra, debaixo dos pés, é fria.",
+      "texto": "O celular, que só pega sinal numa pedra a trezentos metros do chalé, recebeu, durante a noite, uma mensagem de voz, que você só escuta de manhã, em pé sobre a pedra, de pijama e botas. Lorna Feldt, a agente, quarenta e cinco anos, voz de planilha:\n\n*Oi, querida. Chegou o arquivo de quarenta e um segundos. É... é uma coisa. É boa. É diferente. O Marco, da gravadora, ouviu e disse que não tem batida. Eu disse que tem coração. Ele disse que coração não vende. Eu disse que a gente vê. Enfim. A turnê de outono foi confirmada: dois de setembro, em Seattle. Você volta no dia trinta de agosto. Eu mando um carro.*\n\nA mensagem acaba. O vento mexe no seu cabelo, e a pedra, debaixo dos pés, é fria.\n\n{{se flag:a_chamou_ouvir}}A janela aberta, o martelo parado e *vem ouvir uma coisa* foram a primeira vez em que uma música saiu de casa antes de estar pronta.{{/se}}\n\n{{se flag:a_ensaiou_demo}}O piano, tocado até os dedos doerem, ainda tem na tecla de fita crepe uma marca de unha.{{/se}}\n\n{{se flag:a_escondeu_musica}}A tampa do piano, fechada por reflexo, ainda guarda o medo de uma música nua demais.{{/se}}",
       "acoes": [
         {
           "id": "responder",
@@ -2232,7 +2232,7 @@
       "npcs": [
         "caleb"
       ],
-      "texto": "Você acorda com a luz da manhã batendo no teto de gesso e com a sensação, recente, de ter uma coisa a perder. O seu irmão Caleb está na cozinha, de cueca e camiseta de banda, com uma panela de ovos mexidos que ninguém pediu. Quando você aparece, ele aponta o garfo na sua direção.\n\n— A cidade inteira sabe — diz. — Que você sobe a estrada todo dia. Que você levou o violão do papai para lá. Que o Henry Ashby, que nunca teve visita, agora tem uma visita todo dia, às sete. A Doris está aceitando apostas, sabia? Doze dólares que vocês dois estão juntos antes do fim do mês. Eu apostei vinte.\n\nA resposta de que não tem nada já está pronta. Caleb diz *tá*, no tom de quem ouviu a que queria.",
+      "texto": "Você acorda com a luz da manhã batendo no teto de gesso e com a sensação, recente, de ter uma coisa a perder. O seu irmão Caleb está na cozinha, de cueca e camiseta de banda, com uma panela de ovos mexidos que ninguém pediu. Quando você aparece, ele aponta o garfo na sua direção.\n\n— A cidade inteira sabe — diz. — Que você sobe a estrada todo dia. Que você levou o violão do papai para lá. Que o Henry Ashby, que nunca teve visita, agora tem uma visita todo dia, às sete. A Doris está aceitando apostas, sabia? Doze dólares que vocês dois estão juntos antes do fim do mês. Eu apostei vinte.\n\nA resposta de que não tem nada já está pronta. Caleb diz *tá*, no tom de quem ouviu a que queria.\n\n{{se flag:b_ouviu_escada}}O degrau da escada, de costas para a casa, foi o melhor lugar do mundo para ser o primeiro ouvinte.{{/se}}\n\n{{se flag:b_acompanhou_martelo}}O dueto de martelo e piano, em quatro por quatro, foi o primeiro em quatorze anos.{{/se}}\n\n{{se flag:b_bateu_porta}}O pedido de água na porta, com a desculpa pronta, ainda tem na memória um sorriso de quem foi ouvida.{{/se}}",
       "acoes": [
         {
           "id": "negar",
@@ -2553,7 +2553,7 @@
       "lugar": "Chalé dos Ashby",
       "hora": "Domingo · 22h45",
       "ir": "rv_c6_foto",
-      "texto": "{{se flag:noite_lago}}Os dezessete degraus são vencidos juntos, em silêncio, com o ranger da madeira velha como único comentário. O quarto do avô, de cama de dossel, cortinas de renda amarelada e um cheiro de cachimbo e de lavanda, tem uma janela aberta para a noite. Lá fora, os grilos fazem o coro de sempre. A lanterna, deixada embaixo, enfeita a escada com uma luz fraca.\n\nHá uma pausa em que os dois, que passaram o verão inteiro a medir o que dizer, não dizem nada. Depois, a noite se encarrega do resto, e é uma noite que o mundo, por respeito, não descreve.\n\nLá fora, em algum ponto do vale, um vaga-lume acende e apaga, e ninguém o vê.{{senao}}Os dois ficam parados, de pé, no pé da escada de dezessete degraus. Há uma pausa em que cada um espera que o outro mude de ideia, e nenhum muda. *Boa noite*, diz um. *Boa noite*, diz o outro. Ninguém sobe, e ninguém sai.\n\nO carpinteiro volta à picape, e a outra pessoa sobe, sozinha, os dezessete degraus. A porta do quarto do avô se fecha, e a picape dá a partida, e a escada, lá embaixo, guarda o resto.{{/se}}"
+      "texto": "{{se flag:noite_lago}}Os dezessete degraus são vencidos juntos, em silêncio, com o ranger da madeira velha como único comentário. O quarto do avô, de cama de dossel, cortinas de renda amarelada e um cheiro de cachimbo e de lavanda, tem uma janela aberta para a noite. Lá fora, os grilos fazem o coro de sempre. A lanterna, deixada embaixo, enfeita a escada com uma luz fraca.\n\nHá uma pausa em que os dois, que passaram o verão inteiro a medir o que dizer, não dizem nada. Depois, a noite se encarrega do resto, e é uma noite que o mundo, por respeito, não descreve.\n\nLá fora, em algum ponto do vale, um vaga-lume acende e apaga, e ninguém o vê.{{senao}}Os dois ficam parados, de pé, no pé da escada de dezessete degraus. Há uma pausa em que cada um espera que o outro mude de ideia, e nenhum muda. *Boa noite*, diz um. *Boa noite*, diz o outro. Ninguém sobe, e ninguém sai.\n\nO carpinteiro volta à picape, e a outra pessoa sobe, sozinha, os dezessete degraus. A porta do quarto do avô se fecha, e a picape dá a partida, e a escada, lá embaixo, guarda o resto.{{/se}}\n\n{{se flag:ficou_cais}}No cais, uma truta saltou ao longe e desenhou um círculo que ninguém viu.{{/se}}"
     },
     "rv_c6_foto": {
       "tipo": "segue",
@@ -2592,7 +2592,7 @@
         "A": "rv_c7_a",
         "B": "rv_c7_b"
       },
-      "texto": "Às onze da manhã de segunda, Pine Hollow, população mil duzentos e catorze, tem mil duzentos e catorze opiniões e, ao que parece, trinta e duas picapes e quatro vans de emissora estacionadas em fila dupla na Rua Principal. A notícia saiu do computador de 2009 da Pruitt's Mercantile e pegou carona em três satélites. Há um homem de colete refletivo da *Seattle Weekly*, uma moça de microfone de espuma, e dois rapazes de câmera no ombro, de bermuda e sandália, discutindo com o dono do posto de gasolina por causa de uma vaga.\n\nA Lanterna, que costuma abrir às seis da tarde, abriu às dez. Dentro, quarenta e cinco pessoas, a maior parte curiosos de fora, bebem a cerveja ruim da casa e comentam uma foto de uma bicicleta antiga na vitrine.\n\nDoris Pruitt, de avental, de mãos na cintura, em frente à mercearia, faz uma coisa que nunca fez em trinta e seis anos: fecha a porta, com a chave, no meio do dia."
+      "texto": "Às onze da manhã de segunda, Pine Hollow, população mil duzentos e catorze, tem mil duzentos e catorze opiniões e, ao que parece, trinta e duas picapes e quatro vans de emissora estacionadas em fila dupla na Rua Principal. A notícia saiu do computador de 2009 da Pruitt's Mercantile e pegou carona em três satélites. Há um homem de colete refletivo da *Seattle Weekly*, uma moça de microfone de espuma, e dois rapazes de câmera no ombro, de bermuda e sandália, discutindo com o dono do posto de gasolina por causa de uma vaga.\n\nA Lanterna, que costuma abrir às seis da tarde, abriu às dez. Dentro, quarenta e cinco pessoas, a maior parte curiosos de fora, bebem a cerveja ruim da casa e comentam uma foto de uma bicicleta antiga na vitrine.\n\nDoris Pruitt, de avental, de mãos na cintura, em frente à mercearia, faz uma coisa que nunca fez em trinta e seis anos: fecha a porta, com a chave, no meio do dia.\n\n{{se flag:cidade_descobriu}}A foto da bicicleta, tirada de longe, já circula em três satélites.{{/se}}"
     },
     "rv_c7_a": {
       "tipo": "solo",
@@ -2603,7 +2603,7 @@
       "npcs": [
         "lorna"
       ],
-      "texto": "O barulho vem antes do carro: o ronco de um motor de van, de dois, de três, na estrada de terra, e um som que você conhece como a trilha sonora de uma vida inteira, o de pessoas que gritam o seu nome. Pela janela, entre os pinheiros, três vans de emissora, uma fila de carros, dois fotógrafos já na porteira e um homem de colete refletivo com uma câmera de teleobjetiva, na beira do riacho.\n\nVocê, de pijama e meia grossa, com um café na mão e o caderno preto aberto sobre o piano, não se mexe. Em seis semanas, a coisa que você mais queria era anonimato, e acaba de perdê-lo. A única diferença é que, desta vez, há um telhado novo sobre a sua cabeça, e uma pessoa a quatro quilômetros dali que você ainda não avisou.",
+      "texto": "O barulho vem antes do carro: o ronco de um motor de van, de dois, de três, na estrada de terra, e um som que você conhece como a trilha sonora de uma vida inteira, o de pessoas que gritam o seu nome. Pela janela, entre os pinheiros, três vans de emissora, uma fila de carros, dois fotógrafos já na porteira e um homem de colete refletivo com uma câmera de teleobjetiva, na beira do riacho.\n\nVocê, de pijama e meia grossa, com um café na mão e o caderno preto aberto sobre o piano, não se mexe. Em seis semanas, a coisa que você mais queria era anonimato, e acaba de perdê-lo. A única diferença é que, desta vez, há um telhado novo sobre a sua cabeça, e uma pessoa a quatro quilômetros dali que você ainda não avisou.\n\n{{se flag:a_apagou_lorna}}A mensagem da Lorna, apagada sem resposta, deixou uma pedra de sinal mais livre e mais perigosa.{{/se}}\n\n{{se flag:a_releu_lorna}}A voz da Lorna, *cuidado com o que você está sentindo*, é a que mais se repete: ela nunca disse isso a ninguém.{{/se}}",
       "acoes": [
         {
           "id": "enfrentar",
@@ -2647,7 +2647,7 @@
         "caleb",
         "sarah"
       ],
-      "texto": "Você entra na Lanterna às onze e meia, com a camisa para fora da calça e o cabelo de quem dormiu pouco e acordou com o mundo do avesso. Quarenta e cinco pessoas se viram, e Caleb, no balcão, de camiseta de banda e cara de quem tem uma notícia que prefere não dar, empurra uma cerveja para você.\n\n— Eu ia te contar — diz Caleb. — Mas a Doris me ligou antes de eu abrir a boca. — Ele vira o celular na sua direção. — Essa é a moça. A que você levou ao lago. A que você deixou tocar o violão do papai.\n\nNa tela, uma manchete de letras gordas, com um nome em maiúsculas acima de uma foto de capa de revista, de uma pessoa de cabelo perfeito, de roupa de estádio, numa pose de quem tem doze Grammys e uma vida que não cabe em nenhuma cidade. Você lê as primeiras linhas duas vezes. Nenhuma frase diz *carpinteiro*.",
+      "texto": "Você entra na Lanterna às onze e meia, com a camisa para fora da calça e o cabelo de quem dormiu pouco e acordou com o mundo do avesso. Quarenta e cinco pessoas se viram, e Caleb, no balcão, de camiseta de banda e cara de quem tem uma notícia que prefere não dar, empurra uma cerveja para você.\n\n— Eu ia te contar — diz Caleb. — Mas a Doris me ligou antes de eu abrir a boca. — Ele vira o celular na sua direção. — Essa é a moça. A que você levou ao lago. A que você deixou tocar o violão do papai.\n\nNa tela, uma manchete de letras gordas, com um nome em maiúsculas acima de uma foto de capa de revista, de uma pessoa de cabelo perfeito, de roupa de estádio, numa pose de quem tem doze Grammys e uma vida que não cabe em nenhuma cidade. Você lê as primeiras linhas duas vezes. Nenhuma frase diz *carpinteiro*.\n\n{{se flag:b_negou_caleb}}A negativa ao irmão, *não tem nada*, valeu menos do que o sorriso na picape.{{/se}}\n\n{{se flag:b_contou_caleb}}A confissão ao irmão, *eu estou gostando e estou com medo*, ainda é a frase mais honesta da cozinha.{{/se}}\n\n{{se flag:b_fugiu_caleb}}A pergunta sobre Spokane, feita para fugir, foi aceita pelo irmão com o tom de quem deixa.{{/se}}",
       "acoes": [
         {
           "id": "ler",
@@ -2999,7 +2999,7 @@
       "seat": "A",
       "lugar": "Sala do chalé dos Ashby",
       "hora": "Terça · 02h00",
-      "texto": "Você começa às dez, com um café de coador, o piano desafinado, o caderno preto e uma folha de papel de pão colada na parede, onde escreveu *14 DIAS*. Às meia-noite, tem duas faixas. À uma, quatro. Às duas, com os dedos doloridos e a garganta rouca, tem seis, e a sétima, que ainda não tem nome, está se escrevendo sozinha.\n\nAs músicas são todas tristes. Isso não era o plano. O plano era um álbum de verão, de batida, de refrão que se canta no carro. Mas cada canção que sai das suas mãos tem o peso de uma casa de madeira, de um riacho, de um telhado, de uma pessoa que talvez não volte. A palavra *perder* aparece em cinco títulos.\n\nVocê olha a folha da parede. Faltam treze dias, e a sua mão não sabe escrever outra coisa.",
+      "texto": "Você começa às dez, com um café de coador, o piano desafinado, o caderno preto e uma folha de papel de pão colada na parede, onde escreveu *14 DIAS*. Às meia-noite, tem duas faixas. À uma, quatro. Às duas, com os dedos doloridos e a garganta rouca, tem seis, e a sétima, que ainda não tem nome, está se escrevendo sozinha.\n\nAs músicas são todas tristes. Isso não era o plano. O plano era um álbum de verão, de batida, de refrão que se canta no carro. Mas cada canção que sai das suas mãos tem o peso de uma casa de madeira, de um riacho, de um telhado, de uma pessoa que talvez não volte. A palavra *perder* aparece em cinco títulos.\n\nVocê olha a folha da parede. Faltam treze dias, e a sua mão não sabe escrever outra coisa.\n\n{{se flag:a_ligou_lorna}}O telefonema da pedra de sinal, com a Lorna dizendo *foi bom, a internet está dizendo que você está de volta*, deixou um gosto de ter sido vazada por alguém que nunca se conheceu.{{/se}}",
       "acoes": [
         {
           "id": "escrever",
@@ -3085,7 +3085,7 @@
       "npcs": [
         "caleb"
       ],
-      "texto": "Você acorda no sofá, com o violão da sua infância no peito, a luz da manhã nos olhos e uma sensação de ressaca sem cerveja. O seu irmão Caleb está de pé, na frente da janela, de braços cruzados, com a cara de um oficial de justiça.\n\n— Eu vou dizer uma coisa, e você vai ficar quieto — diz. — Você é o melhor homem que eu conheço. E é um idiota. — A palavra cai como uma ferramenta. — A moça mentiu? Mentiu. Por omissão. Você teria feito o mesmo se tivesse doze Grammys e um país inteiro atrás. Ela veio para cá para fugir de uma coisa, e achou uma pessoa. Você acha que isso é *usar*? Isso é sorte.\n\n— Eu não — você começa. — Cala a boca — diz Caleb. — O violão do papai está no chalé dela, ou estava, até você deixar. Você abriu o coração para uma pessoa pela primeira vez em dois anos, e agora você vai fingir que foi tudo cenário.",
+      "texto": "Você acorda no sofá, com o violão da sua infância no peito, a luz da manhã nos olhos e uma sensação de ressaca sem cerveja. O seu irmão Caleb está de pé, na frente da janela, de braços cruzados, com a cara de um oficial de justiça.\n\n— Eu vou dizer uma coisa, e você vai ficar quieto — diz. — Você é o melhor homem que eu conheço. E é um idiota. — A palavra cai como uma ferramenta. — A moça mentiu? Mentiu. Por omissão. Você teria feito o mesmo se tivesse doze Grammys e um país inteiro atrás. Ela veio para cá para fugir de uma coisa, e achou uma pessoa. Você acha que isso é *usar*? Isso é sorte.\n\n— Eu não — você começa. — Cala a boca — diz Caleb. — O violão do papai está no chalé dela, ou estava, até você deixar. Você abriu o coração para uma pessoa pela primeira vez em dois anos, e agora você vai fingir que foi tudo cenário.\n\n{{se flag:b_saiu_bar}}A saída da Lanterna, com a cerveja intacta, deixou fotógrafos que ninguém conhecia fotografando um carpinteiro.{{/se}}\n\n{{se flag:b_olhou_sarah}}O olhar da Sarah, sem triunfo, disse com um gesto de cabeça: *você sabia que tinha data*.{{/se}}",
       "acoes": [
         {
           "id": "ouvir",
@@ -3459,7 +3459,7 @@
       "seat": "A",
       "lugar": "Quarto do avô, chalé dos Ashby",
       "hora": "Sexta · 11h00",
-      "texto": "Às onze da manhã, no quarto do avô, com o sol atravessando a cortina de renda amarelada, você tem duas malas abertas, uma cama de dossel, uma caixa de sapatos com quarenta e três cartas e um caderno de capa preta, com doze músicas, todas escritas ali, todas inacabadas à sua maneira.\n\nVocê olha as coisas, uma por uma. Há o que você leva: o violão, as roupas, a fotografia de uma menina de maria-chiquinha. E o que você deixa, se deixar: os dias, os cheiros, o riacho. O caderno é a única coisa que cabe nas duas listas.",
+      "texto": "Às onze da manhã, no quarto do avô, com o sol atravessando a cortina de renda amarelada, você tem duas malas abertas, uma cama de dossel, uma caixa de sapatos com quarenta e três cartas e um caderno de capa preta, com doze músicas, todas escritas ali, todas inacabadas à sua maneira.\n\nVocê olha as coisas, uma por uma. Há o que você leva: o violão, as roupas, a fotografia de uma menina de maria-chiquinha. E o que você deixa, se deixar: os dias, os cheiros, o riacho. O caderno é a única coisa que cabe nas duas listas.\n\n{{se flag:a_escreveu_noite}}A noite inteira de escrita deixou o chão coberto de folhas e um álbum de doze faixas, todas tristes.{{/se}}\n\n{{se flag:a_tentou_alegre}}O refrão alegre, rasgado em dez minutos, virou uma ironia por cima de uma estrofe triste.{{/se}}\n\n{{se flag:a_tentou_ligar}}A caminhada de madrugada até a pedra do sinal, com o dedo parado sobre um número, deixou o orvalho nas botas.{{/se}}",
       "acoes": [
         {
           "id": "deixar_caderno",
@@ -3503,7 +3503,7 @@
         "doris",
         "caleb"
       ],
-      "texto": "A festa de despedida na Lanterna não foi planejada por ninguém e foi organizada por todo mundo. Há uma faixa de papel pardo no teto, escrita a pincel: *BOA VIAGEM, NETA DO HENRY.* Há uma travessa de biscoitos de aveia da Doris, uma garrafa de vinho barato do posto e uma banda de três, o banjo, o violão e o contrabaixo, tocando uma música que você escreveu em junho, de ouvido, que alguém aprendeu pelo caminho.\n\nQuarenta e cinco pessoas, entre vizinhos e fotógrafos de camisa havaiana que se renderam. Caleb, de camiseta de banda, está ao lado de uma mesa de som improvisada. Doris, de blusa de domingo, de olhos úmidos, segura o seu cotovelo.\n\nA cadeira ao lado do palco, a de {{B.nome}}, está vazia.",
+      "texto": "A festa de despedida na Lanterna não foi planejada por ninguém e foi organizada por todo mundo. Há uma faixa de papel pardo no teto, escrita a pincel: *BOA VIAGEM, NETA DO HENRY.* Há uma travessa de biscoitos de aveia da Doris, uma garrafa de vinho barato do posto e uma banda de três, o banjo, o violão e o contrabaixo, tocando uma música que você escreveu em junho, de ouvido, que alguém aprendeu pelo caminho.\n\nQuarenta e cinco pessoas, entre vizinhos e fotógrafos de camisa havaiana que se renderam. Caleb, de camiseta de banda, está ao lado de uma mesa de som improvisada. Doris, de blusa de domingo, de olhos úmidos, segura o seu cotovelo.\n\nA cadeira ao lado do palco, a de {{B.nome}}, está vazia.\n\n{{se flag:a_perguntou_doris}}A frase da Doris, *seu avô voltou para ele mesmo no fim*, é a que mais pesa neste último dia.{{/se}}",
       "acoes": [
         {
           "id": "cantar",
@@ -3543,7 +3543,7 @@
       "seat": "B",
       "lugar": "Casa dos Lindqvist",
       "hora": "Sexta · 20h00",
-      "texto": "Às oito da noite, a Lanterna está cheia, e você não está lá. Você está sentad{{eu.o_a}} no degrau da varanda da casa onde cresceu, com uma cerveja que não bebeu e o violão do seu pai no colo, que foi buscar no chalé às quatro da tarde, quando teve a certeza de que ninguém estaria lá.\n\nDá para ouvir, do alto do morro, ao longe, o som de um banjo e de um violão, tocando uma música em ré. Você a reconhece. É a de dezessete anos? Não. É uma que você ouviu em junho, em pedaços, de uma sala com janela aberta. Alguém, na cidade, aprendeu.\n\nO céu, de fim de agosto, tem as primeiras estrelas de outono, mais limpas, mais frias.",
+      "texto": "Às oito da noite, a Lanterna está cheia, e você não está lá. Você está sentad{{eu.o_a}} no degrau da varanda da casa onde cresceu, com uma cerveja que não bebeu e o violão do seu pai no colo, que foi buscar no chalé às quatro da tarde, quando teve a certeza de que ninguém estaria lá.\n\nDá para ouvir, do alto do morro, ao longe, o som de um banjo e de um violão, tocando uma música em ré. Você a reconhece. É a de dezessete anos? Não. É uma que você ouviu em junho, em pedaços, de uma sala com janela aberta. Alguém, na cidade, aprendeu.\n\nO céu, de fim de agosto, tem as primeiras estrelas de outono, mais limpas, mais frias.\n\n{{se flag:b_ouviu_caleb}}O sermão do Caleb, ouvido até o fim, resumiu-se em *em parte*, e em parte já é começo.{{/se}}\n\n{{se flag:b_brigou_caleb}}A briga com o irmão, *você não sabe o que é ficar*, terminou numa porta batida e numa frase que dói: *eu sei, só nunca falei*.{{/se}}\n\n{{se flag:b_foi_calha}}A calha, terminada em silêncio com a janela do piano aberta, foi o melhor jeito de ouvir sem olhar.{{/se}}",
       "acoes": [
         {
           "id": "ficar",
@@ -3582,14 +3582,463 @@
       "cap": 9,
       "lugar": "Chalé dos Ashby",
       "hora": "Sábado · 05h30",
-      "texto": "Às cinco e meia da manhã de sábado, o chalé do velho Henry está vazio. {{se flag:a_cantou_despedida}}Na Lanterna, a canção ainda vibra nas tábuas. {{/se}}{{se flag:a_agradeceu_doris}}Na Pruitt's Mercantile, uma mulher de avental guarda, pela primeira vez, uma aposta perdida num cofre. {{/se}}{{se flag:a_esperou_porta}}No sino da porta da Lanterna, uma última badalada ficou no ar, sem dono. {{/se}}{{se flag:b_ficou_longe}}No degrau da casa dos Lindqvist, uma cerveja esquentou, sem ser bebida. {{/se}}{{se flag:b_esperou_estrada}}Na curva da estrada de Republic, uma picape velha esfriou, de motor desligado. {{/se}}{{se flag:disse_amo_a}}Na varanda, uma pessoa disse *eu te amo*, em voz alta, uma vez, e a frase, sem resposta, ainda está lá. {{/se}}{{se flag:disse_amo_b}}Na varanda, uma pessoa disse *eu também*, e a frase, sem verbo, ainda está lá. {{/se}}\n\nA porta da frente abre com o rangido de sempre. Quem entra, de boné, com uma lanterna na mão, faz o que ninguém, nesta casa, esperava: não procura nada. Anda até a cozinha, e fica parado, diante da mesa de pinho.\n\n{{se flag:a_deixou_caderno}}Sobre a mesa, sob um prato de cerâmica, um caderno de capa preta, aberto na última página. A letra é miúda, apressada. No alto da página, escrito a lápis e riscado três vezes, um título: *Refrão de Verão.* Embaixo, doze versos. O último verso diz: *e se eu ficasse?*{{/se}}{{se flag:a_deixou_bilhete}}Sobre o piano, apoiada na caixa de cartas, uma fotografia antiga, de uma menina de maria-chiquinha. No verso, a lápis, três linhas: *Eu não sei dizer. Escrevi. A música é nossa. Eu volto, se você me pedir.*{{/se}}{{se flag:a_levou_tudo}}Sobre a mesa, nada. Só uma marca de poeira, retangular, onde um caderno ficou por três meses, e, na bancada, ao lado do fogão, um prato de cerâmica vazio. O que ela levou, ela levou inteiro. Mas, no chão, junto à porta, caída da mala fechada às pressas, uma folha de papel de pão, com *13 DIAS* escrito a lápis, e, embaixo, uma letra diferente: *e se eu voltasse?*{{/se}}",
+      "texto": "Às cinco e meia da manhã de sábado, o chalé do velho Henry está vazio. {{se flag:a_cantou_despedida}}Na Lanterna, a canção ainda vibra nas tábuas. {{/se}}{{se flag:a_agradeceu_doris}}Na Pruitt's Mercantile, uma mulher de avental guarda, pela primeira vez, uma aposta perdida num cofre. {{/se}}{{se flag:a_esperou_porta}}No sino da porta da Lanterna, uma última badalada ficou no ar, sem dono. {{/se}}{{se flag:b_ficou_longe}}No degrau da casa dos Lindqvist, uma cerveja esquentou, sem ser bebida. {{/se}}{{se flag:b_esperou_estrada}}Na curva da estrada de Republic, uma picape velha esfriou, de motor desligado. {{/se}}{{se flag:disse_amo_a}}Na varanda, uma pessoa disse *eu te amo*, em voz alta, uma vez, e a frase, sem resposta, ainda está lá. {{/se}}{{se flag:disse_amo_b}}Na varanda, uma pessoa disse *eu também*, e a frase, sem verbo, ainda está lá. {{/se}}\n\nA porta da frente abre com o rangido de sempre. Quem entra, de boné, com uma lanterna na mão, faz o que ninguém, nesta casa, esperava: não procura nada. Anda até a cozinha, e fica parado, diante da mesa de pinho.\n\n{{se flag:a_deixou_caderno}}Sobre a mesa, sob um prato de cerâmica, um caderno de capa preta, aberto na última página. A letra é miúda, apressada. No alto da página, escrito a lápis e riscado três vezes, um título: *Refrão de Verão.* Embaixo, doze versos. O último verso diz: *e se eu ficasse?*{{/se}}{{se flag:a_deixou_bilhete}}Sobre o piano, apoiada na caixa de cartas, uma fotografia antiga, de uma menina de maria-chiquinha. No verso, a lápis, três linhas: *Eu não sei dizer. Escrevi. A música é nossa. Eu volto, se você me pedir.*{{/se}}{{se flag:a_levou_tudo}}Sobre a mesa, nada. Só uma marca de poeira, retangular, onde um caderno ficou por três meses, e, na bancada, ao lado do fogão, um prato de cerâmica vazio. O que ela levou, ela levou inteiro. Mas, no chão, junto à porta, caída da mala fechada às pressas, uma folha de papel de pão, com *13 DIAS* escrito a lápis, e, embaixo, uma letra diferente: *e se eu voltasse?*{{/se}}\n\n{{se flag:b_avisou_festa}}A frase *se eu for à festa, vou pedir que você fique, e não tenho direito*, ficou na varanda, dita uma vez.{{/se}}",
       "gancho": "Um caderno, uma fotografia ou uma folha caída, e um verso com a pergunta que ela não fez em voz alta.",
-      "ir": "rv_rascunho_fim"
+      "ir": "rv_c10_caminhao"
     },
-    "rv_rascunho_fim": {
+    "rv_c10_caminhao": {
+      "tipo": "segue",
+      "cap": 10,
+      "lugar": "Pine Hollow e Seattle",
+      "hora": "Sábado · 30 de agosto a terça · 2 de setembro",
+      "ir": {
+        "A": "rv_c10_a",
+        "B": "rv_c10_b"
+      },
+      "texto": "Em três dias, as coisas mudam de lugar. O carro preto leva uma pessoa por uma estrada de montanha, por uma passagem de neve que ainda não é neve, por um vale de pomares e de rodovias, até uma cidade de vidro e de chuva fina, onde um hotel de trinta andares tem, na cobertura, uma suíte com vista para a baía e um cartaz de seis metros: *MAYA · TERÇA, 2 DE SETEMBRO · ARENA RAVENNA · ESGOTADO.*\n\nEm Pine Hollow, que sabe de tudo, ninguém fala de outra coisa. A mercearia abre às seis. Doris Pruitt, de avental, de pé no balcão, faz uma coisa que nunca fez: pendura na porta, a lápis, um cartaz de papel pardo. *FECHADO PARA O FERIADO. QUEM PRECISAR DE PREGO, PROCURE O CALEB.*\n\nHá uma pergunta, na cidade, que ninguém, em voz alta, quer fazer. A de quanto custa, para um carpinteiro, uma passagem de avião."
+    },
+    "rv_c10_a": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "A",
+      "lugar": "Camarim, Arena Ravenna, Seattle",
+      "hora": "Terça · 17h30",
+      "npcs": [
+        "lorna"
+      ],
+      "texto": "O camarim da Arena Ravenna tem sofás de couro, uma mesa de frutas que ninguém come, quatro espelhos de lâmpadas redondas e um ar-condicionado a dezoito graus. Dezoito mil pessoas, lá fora, entram em fila, com os celulares erguidos, e o barulho vem pelo corredor como um mar de cabeça para baixo.\n\nLorna Feldt, de tailleur cinza, com a prancheta sob o braço, traz a lista de músicas, que você nem leu. *São quinze*, diz. *As de sempre. Mais a nova, a do arquivo vazado, que o público já sabe de cor. Você abre com a nova, e a gente vê.*\n\nVocê, de vestido de cena, de maquiagem pronta, de rosto que não é o seu, olha o espelho de lâmpadas redondas e vê, atrás de seu próprio ombro, uma varanda de madeira que não existe.",
+      "acoes": [
+        {
+          "id": "nova",
+          "texto": "Abrir o show com a música nova, a do telhado, a que você escreveu em Pine Hollow",
+          "ir": "rv_c10_palco",
+          "efeitos": {
+            "flag": "a_abriu_nova",
+            "vinculo": 1
+          },
+          "resultado": "— Abro com a nova — você diz. — A do refrão de quatro palavras. — Lorna, que nunca discute com uma decisão, concorda com a cabeça. *É sua*, diz. Você sobe ao palco às oito e quatro, de luz em cima, de dezoito mil vozes embaixo, e a primeira nota, de um piano em lá, soa como um piano desafinado de uma sala de madeira. A plateia, que sabia a letra, canta."
+        },
+        {
+          "id": "tradicional",
+          "texto": "Abrir com o repertório de sempre, o que a plateia pagou para ouvir",
+          "ir": "rv_c10_palco",
+          "efeitos": {
+            "flag": "a_abriu_classico",
+            "abalo": 1
+          },
+          "resultado": "— Abro com a de sempre — você diz. — Eles pagaram por ela. — Lorna anota, sem expressão. Você sobe ao palco às oito e quatro, e a primeira música, a que abriu sessenta shows, sai com perfeição de máquina. A plateia canta junto, em coro, de olhos fechados. Você canta, e, ao fundo da cabeça, uma voz pequena pergunta: *quem está ouvindo?*"
+        },
+        {
+          "id": "procurar",
+          "texto": "Pedir à Lorna que alguém procure, na plateia, uma pessoa de boné",
+          "ir": "rv_c10_palco",
+          "efeitos": {
+            "flag": "a_procurou_plateia",
+            "vinculo": 2
+          },
+          "resultado": "— Pede para alguém olhar na plateia — você diz, baixo. — Uma pessoa de boné. De camiseta de banda. Que não vai estar. — Lorna ergue os olhos da prancheta, e a expressão dela, pela primeira vez em dez anos, não é de planilha. *Querida*, diz, *há dezoito mil pessoas.* Você diz *eu sei*. E sobe ao palco, olhando só para a fileira do fundo."
+        }
+      ]
+    },
+    "rv_c10_b": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "B",
+      "lugar": "Pruitt's Mercantile, Pine Hollow",
+      "hora": "Segunda · 06h30",
+      "npcs": [
+        "doris",
+        "caleb"
+      ],
+      "texto": "Você chega à mercearia às seis e meia, de boné, de camiseta de banda, de uma mochila no ombro e de uma ideia que não é bem uma ideia, é uma teimosia. Doris Pruitt, de avental, está de pé atrás do balcão, com uma xícara de café e a cara de quem esperava você.\n\n— Eu perdi a aposta — diz ela. — Mas eu também perdi cinco dólares com o outro lado, que era o que eu tinha apostado você ia fazer. Passagem de avião: quatrocentos e noventa dólares. Eu sei porque pesquisei, no computador do fundo, esta madrugada.\n\nVocê não tem quatrocentos e noventa dólares. Tem trezentos e doze, uma picape com o freio gasto e um irmão em Seattle, que já avisou: *o show é terça, às oito, na Arena Ravenna. Eu estou na produção. Eu consigo te colocar.* Doris tira, do bolso do avental, uma chave com um chaveiro de plástico de uma marca de pão.\n\n{{se flag:b_foi_ao_chale}}O chalé vazio, visitado de madrugada, ainda guarda a forma de uma pessoa que passou por ali.{{/se}}",
+      "acoes": [
+        {
+          "id": "aceitar",
+          "texto": "Aceitar a chave do caminhão de entregas da mercearia e o troco da Doris",
+          "ir": "rv_c10_b2",
+          "efeitos": {
+            "flag": "b_aceitou_caminhao",
+            "vinculo": 2
+          },
+          "resultado": "— É um Ford de 2003 — diz Doris. — Faz dez quilômetros por litro, e a embreagem tem humor. A caixa de câmbio só engata a quinta se você pedir com carinho. Você leva até Seattle, entrega duas caixas de biscoitos de aveia no mercado Pike Place, para o meu primo, e volta. — Ela empurra a chave. — O que acontecer no meio, não é da minha conta."
+        },
+        {
+          "id": "recusar",
+          "texto": "Agradecer, mas recusar: você vai de picape, com a sua própria ruína",
+          "ir": "rv_c10_b2",
+          "efeitos": {
+            "flag": "b_foi_de_picape",
+            "abalo": 1
+          },
+          "resultado": "— Obrigado, Doris — você diz. — Mas eu vou na minha. — Doris olha você por um segundo, e dá de ombros. *Orgulhoso*, diz. *Como o pai.* Você sai, de boné, e a picape, com o freio gasto, sobe a primeira curva de Republic com uma tosse de gato velho. Você sabe que a picape vai quebrar. Vai de qualquer jeito."
+        },
+        {
+          "id": "caleb",
+          "texto": "Ligar para o Caleb e perguntar se há um jeito de entrar sem ingresso",
+          "ir": "rv_c10_b2",
+          "efeitos": {
+            "flag": "b_ligou_caleb",
+            "vinculo": 1
+          },
+          "resultado": "Você liga, da pedra do sinal, de mochila nas costas. Caleb atende no primeiro toque, com o barulho de uma arena ao fundo. *Eu sabia*, ele diz, sem dizer oi. *Eu estou na mesa de som. Você chega pela porta de carga, a número quatro. Eu digo que você é o meu cunhado.* Você diz que não é cunhado de ninguém. *Ainda*, diz Caleb, e desliga."
+        }
+      ]
+    },
+    "rv_c10_b2": {
+      "tipo": "solo",
+      "cap": 10,
+      "seat": "B",
+      "lugar": "Rodovia 2, Passagem de Stevens, Washington",
+      "hora": "Terça · 11h00",
+      "texto": "Seis horas de estrada, de pomares, de montanha, de uma passagem cheia de pinheiros e de neblina, com um caminhão que tem humor, um rádio que só pega rock clássico e a sensação, nova, de estar indo na direção do próprio medo. Às onze da manhã, na descida da Passagem de Stevens, o ponteiro da temperatura do motor começa a subir.\n\nVocê encosta no acostamento. Debaixo do capô, uma mangueira soltou. A solução é de um minuto, de uma braçadeira. Mas, ao lado do rio, há uma queda d'água, e uma tabuleta de madeira que diz *CACHOEIRA, 200 M*. Você tem nove horas até o show, e um ensaio que ainda não fez: o do que vai dizer.\n\n{{se flag:b_aceitou_caminhao}}O Ford de 2003, com embreagem de humor e duas caixas de biscoitos de aveia, é a prova de que alguém emprestou sem fazer pergunta.{{/se}}\n\n{{se flag:b_foi_de_picape}}A picape de freio gasto, mantida por orgulho, sobe cada curva com uma tosse de gato velho.{{/se}}\n\n{{se flag:b_ligou_caleb}}A porta de carga número quatro, indicada pelo irmão, é o único endereço que importa na arena.{{/se}}",
+      "acoes": [
+        {
+          "id": "ensaiar",
+          "texto": "Ensaiar com o violão, no acostamento, o que vai tocar e o que vai dizer",
+          "ir": "rv_c10_palco",
+          "efeitos": {
+            "flag": "b_ensaiou_musica",
+            "vinculo": 1
+          },
+          "resultado": "Você tira o violão do banco, senta no para-choque e toca, baixo, a música dos dois, a de junho. Ensaiou um discurso, e o discurso virou uma frase só. Repete, para o vento: *eu não vim para te tirar do mundo.* A frase sai, na terceira vez, sem tremer. O resto, você decide, é de improviso, o único jeito de uma frase ser verdadeira."
+        },
+        {
+          "id": "cachoeira",
+          "texto": "Andar duzentos metros até a cachoeira e ficar um minuto em silêncio",
+          "ir": "rv_c10_palco",
+          "efeitos": {
+            "flag": "b_foi_cachoeira",
+            "vinculo": 1
+          },
+          "resultado": "Você caminha pela trilha, de botas, entre samambaias. A cachoeira, de vinte metros, cai sobre uma pedra preta, e o som da água é o mesmo do riacho do chalé, maior. Você fica ali um minuto, com os olhos fechados, e a frase que ensaiou some, e o que sobra é uma coisa mais simples: o desejo de estar no mesmo lugar que ela, e de não prometer nada."
+        },
+        {
+          "id": "pai",
+          "texto": "Ligar para a Doris e dizer que, se der errado, volta amanhã com o caminhão, e ninguém comenta",
+          "ir": "rv_c10_palco",
+          "efeitos": {
+            "flag": "b_ligou_doris",
+            "vinculo": 1
+          },
+          "resultado": "Você liga, de uma pedra de sinal, para o telefone fixo da mercearia. Doris atende no segundo toque. *Se der errado*, você diz, *eu volto amanhã.* A resposta é de uma frase: *se der errado, eu nunca soube de nada. Mas não vai dar.* E desliga, antes de você responder, o que, vindo de Doris, é a forma mais clara de abraço."
+        }
+      ]
+    },
+    "rv_c10_palco": {
+      "tipo": "dialogo",
+      "cap": 10,
+      "lugar": "Palco da Arena Ravenna, Seattle",
+      "hora": "Terça · 21h40",
+      "comeca": "B",
+      "texto": "Às nove e quarenta, no meio do show, entre a quinta e a sexta música, uma coisa acontece que nenhum produtor previu: uma pessoa de boné, de camiseta de banda, de violão a tiracolo, sobe ao palco pela lateral esquerda, ajudada por um técnico de som de camiseta de flanela que faz um sinal de *calma* à segurança. Dezoito mil pessoas, de celulares erguidos, olham. O refletor, de um branco duro, acha os dois.\n\nA artista, no centro, de vestido de cena, de microfone na mão, vê o rosto que não esperava e, por um segundo, esquece como se respira.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "z0_b_abre",
+              "texto": "— Eu não vim para te tirar do mundo. Eu vim para fazer parte dele.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "disse_a_frase",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "z0_b_flerte",
+              "texto": "— A calha está ótima. Eu vim dizer isso pessoalmente.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "z0_b_seco",
+              "texto": "— Oi. Eu peguei emprestado um caminhão de pão. Foi uma viagem.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "z0_a_abre",
+              "texto": "— Você veio. Eu não achei que você viria. Eu... eu estou muito feliz.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "z0_a_seco",
+              "texto": "— Isso é loucura. Você não devia estar aqui.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "z0_a_flerte",
+              "texto": "— O violão do seu pai viajou muito mais do que eu pensava.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "z1_a_abre",
+              "texto": "— Eu escrevi o último verso do caderno. *E se eu ficasse?* Eu quis dizer em voz alta. Eu estava com medo.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "z1_a_flerte",
+              "texto": "— Você é completamente maluco. E isso está sendo transmitido ao vivo.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "z1_a_seco",
+              "texto": "— Dezoito mil pessoas. Você sabe cantar essa?",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "z1_b_abre",
+              "texto": "— Eu li o verso. E eu vim responder. Sim. Fica. Ou eu vou. Ou a gente dá um jeito. Mas junto.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "z1_b_flerte",
+              "texto": "— Eu sei cantar. Foi você que escreveu em lá menor.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "z1_b_seco",
+              "texto": "— Eu sei. Eu estou com os dedos gelados.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "z2_b_abre",
+              "texto": "— Eu fiquei dois anos sem mostrar uma música a ninguém. Você fez eu mostrar. Eu vim devolver.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "z2_b_seco",
+              "texto": "— A gente toca. E depois a gente conversa.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "z2_b_cuida",
+              "texto": "— Respira. Eles são só gente. Eu também.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "z2_a_abre",
+              "texto": "— Eu escrevi um álbum com a sua mão. Eu nunca disse. Cada faixa tem você.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "z2_a_seco",
+              "texto": "— Vamos tocar. Eu faço o refrão. Você faz o violão.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "z2_a_flerte",
+              "texto": "— Se desafinar, eu finjo que foi proposital.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra antes da música é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "z3_a_abre",
+              "texto": "— Eu te amo. Em voz alta. Na frente de todo mundo. Agora, sim.",
+              "se": "eu:A",
+              "efeitos": {
+                "flag": "disse_amo_palco",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "z3_a_flerte",
+              "texto": "— Dois, três, quatro.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "z3_a_seco",
+              "texto": "— Lá menor. Agora.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "z3_b_abre",
+              "texto": "— Eu também te amo. E eu aprendi a dizer.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "disse_amo_palco",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "z3_b_flerte",
+              "texto": "— Dois, três, quatro.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "z3_b_seco",
+              "texto": "— Lá menor. Agora.",
+              "se": "eu:B"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Respira. Eu estou aqui."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Ok."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Dezoito mil pessoas, e eu só olho para você."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu nunca fiz isso."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Se for tarde demais, diz agora."
+        }
+      ],
+      "fecho": "A arena, de dezoito mil pessoas, está em um silêncio que ninguém no palco, em onze anos, ouviu. Atrás, a banda, de olhos arregalados, baixa os instrumentos. Em cima do piano de cauda, em lá menor, uma nota, a primeira, soa como um piano desafinado de uma sala de madeira.",
+      "ir": "rv_c10_decisao"
+    },
+    "rv_c10_decisao": {
+      "tipo": "decisao",
+      "cap": 10,
+      "lugar": "Palco da Arena Ravenna, Seattle",
+      "hora": "Terça · 21h55",
+      "texto": "A música dos dois, a de junho, a do telhado, a do refrão de quatro palavras, tem duas partes: uma de piano e voz, outra de violão. Os dois, no meio do palco, com dezoito mil pessoas, têm uma decisão que só vale se for dos dois: como terminar a canção, e o que fazer depois.",
+      "pergunta": "O que vocês fazem com a música, e com o depois?",
+      "ir": "rv_c10_final",
+      "acoes": [
+        {
+          "id": "juntos",
+          "texto": "Cantar juntos, os dois, sem banda, até o fim, e decidir o resto depois do show",
+          "efeitos": {
+            "flag": "cantaram_juntos",
+            "vinculo": 2
+          },
+          "resultado": "Vocês cantam. Piano e violão, duas vozes de tons diferentes que, no refrão, acham o mesmo. A arena inteira, depois de um segundo, canta o refrão junto, e o som sobe como uma maré. É a coisa mais pequena e mais enorme que qualquer dos dois já fez, e acaba com um acorde de lá menor que vibra três segundos."
+        },
+        {
+          "id": "ela",
+          "texto": "A artista canta, o outro toca: um fica no centro, o outro na sombra, como sempre foi",
+          "efeitos": {
+            "flag": "um_canta_outro_toca",
+            "vinculo": 1
+          },
+          "resultado": "Um canta, o outro toca. O refletor, a princípio, acompanha só quem está no centro. Mas, no segundo refrão, quem canta faz um gesto, e o refletor, sem ninguém pedir, se abre e engloba os dois. A arena, que viu uma estrela, vê, por um instante, duas pessoas, e não sabe dizer qual das duas é a coisa mais bonita."
+        },
+        {
+          "id": "sair",
+          "texto": "Terminar a música e descer juntos, antes do bis: o show é do público, mas a vida é dos dois",
+          "efeitos": {
+            "flag": "desceram_juntos",
+            "vinculo": 2
+          },
+          "resultado": "Quando a música acaba, os dois se olham, e uma frase não dita passa entre eles. Quem canta pega a mão do outro, curva-se, e desce junto, pela lateral esquerda, entre a banda e os técnicos, deixando a plateia de dezoito mil pessoas com um bis que não vem. Atrás do cenário, entre cabos, caixas e caixas de som, os dois ficam a dois palmos de distância, a primeira vez em três meses."
+        }
+      ]
+    },
+    "rv_c10_final": {
       "tipo": "final",
-      "cap": 9,
-      "texto": "Fim do trecho escrito até agora (rascunho)."
+      "cap": 10,
+      "lugar": "Seattle e Pine Hollow",
+      "hora": "Um ano depois",
+      "finais": [
+        {
+          "se": "flag:cancelou_turne && vinc>=9",
+          "texto": "Um ano depois, o álbum *Refrão de Verão*, de doze faixas, saiu em junho, gravado no chalé do velho Henry Ashby, em Pine Hollow, Washington, com um piano de armário desafinado, um violão de verniz gasto e um microfone dos anos oitenta. Foi o disco mais vendido do ano, e a artista não deu uma entrevista sequer sobre ele. A crítica escreveu: *a primeira grande obra do pop que ninguém sabe onde foi feita.*\n\nNo chalé, o telhado, de cedro, aguentou o inverno. No fundo de uma gaveta, na cozinha, uma folha de papel de pão, com *13 DIAS* escrito a lápis, ficou emoldurada, ao lado da fotografia de uma menina de maria-chiquinha. Na Lanterna, toda terça, a banda de três, com um violão, um banjo e um contrabaixo, toca a mesma música, e a cidade inteira canta o refrão, desafinada e feliz.\n\n{{se flag:disse_amo_palco}}Na primeira terça de cada mês, o carpinteiro e a compositora sobem ao palco da Lanterna e dizem *eu te amo* em voz alta, de brincadeira, para a plateia, e de verdade, para ninguém. {{/se}}{{se flag:cantaram_juntos}}Em Seattle, uma gravação amadora do dueto de dezoito mil vozes tem onze milhões de visualizações e nenhum nome. {{/se}}Doris Pruitt, de avental, de bule fervendo, ganhou a aposta de cinco dólares, que nunca cobrou.\n\n{{se flag:a_abriu_nova}}O show abriu com a música nova, a do telhado, e dezoito mil vozes sabiam a letra.{{/se}}\n\n{{se flag:a_abriu_classico}}O show abriu com a música de sempre, e uma voz pequena, ao fundo da cabeça, perguntou: quem está ouvindo?{{/se}}\n\n{{se flag:a_procurou_plateia}}Da lateral do palco, uma pessoa procurou na fileira do fundo um boné que não esperava ver.{{/se}}\n\n{{se flag:b_ensaiou_musica}}No acostamento, a frase ensaiada, *eu não vim para te tirar do mundo*, saiu na terceira vez sem tremer.{{/se}}\n\n{{se flag:b_foi_cachoeira}}Numa cachoeira da Passagem de Stevens, um minuto de silêncio trocou uma frase ensaiada por um desejo simples.{{/se}}\n\n{{se flag:b_ligou_doris}}Do outro lado de uma linha fixa, uma mulher de avental disse que, se desse errado, ela nunca soube de nada.{{/se}}\n\n{{se flag:disse_a_frase}}No palco, a frase inteira foi dita: *eu não vim para te tirar do mundo; eu vim para fazer parte dele*.{{/se}}\n\n{{se flag:um_canta_outro_toca}}Um cantou, o outro tocou, e no segundo refrão o refletor se abriu para os dois sem que ninguém pedisse.{{/se}}"
+        },
+        {
+          "se": "flag:aceitou_voltar && vinc>=7",
+          "texto": "Um ano depois, o álbum *Refrão de Verão* saiu em junho, em doze faixas, e vendeu o suficiente para a gravadora dizer *eu sabia*, e para a artista dizer *não, você não sabia*. A turnê de outono, que a Lorna refez em três semanas, passou por quarenta e uma cidades. Em todas, no segundo bis, um técnico de som de camiseta de flanela e, ao lado dele, um carpinteiro de boné, de violão, subiam ao palco para tocar a mesma música.\n\nNa casa do velho Henry, o telhado aguentou o inverno. Há uma data na parede da cozinha, escrita a lápis: *30 de agosto.* Todo ano, nesse dia, os dois voltam a Pine Hollow, sem avisar, e encontram a mesa posta, com biscoitos de aveia, na casa da Doris.\n\n{{se flag:disse_amo_palco}}Nas entrevistas, quando perguntam o que fez o álbum ser o que é, a artista diz *um telhado*, e mais nada. {{/se}}{{se flag:desceram_juntos}}O carpinteiro nunca soube explicar o que pensou ao descer do palco de mãos dadas. Diz que foi uma ideia boa. {{/se}}Não é uma história com final fechado. É uma estrada, de duas pessoas, com buracos, e um violão no banco de trás.\n\n{{se flag:a_abriu_nova}}O show abriu com a música nova, a do telhado, e dezoito mil vozes sabiam a letra.{{/se}}\n\n{{se flag:a_abriu_classico}}O show abriu com a música de sempre, e uma voz pequena, ao fundo da cabeça, perguntou: quem está ouvindo?{{/se}}\n\n{{se flag:a_procurou_plateia}}Da lateral do palco, uma pessoa procurou na fileira do fundo um boné que não esperava ver.{{/se}}\n\n{{se flag:b_ensaiou_musica}}No acostamento, a frase ensaiada, *eu não vim para te tirar do mundo*, saiu na terceira vez sem tremer.{{/se}}\n\n{{se flag:b_foi_cachoeira}}Numa cachoeira da Passagem de Stevens, um minuto de silêncio trocou uma frase ensaiada por um desejo simples.{{/se}}\n\n{{se flag:b_ligou_doris}}Do outro lado de uma linha fixa, uma mulher de avental disse que, se desse errado, ela nunca soube de nada.{{/se}}\n\n{{se flag:disse_a_frase}}No palco, a frase inteira foi dita: *eu não vim para te tirar do mundo; eu vim para fazer parte dele*.{{/se}}\n\n{{se flag:um_canta_outro_toca}}Um cantou, o outro tocou, e no segundo refrão o refletor se abriu para os dois sem que ninguém pedisse.{{/se}}"
+        },
+        {
+          "texto": "Um ano depois, o álbum *Refrão de Verão* saiu em junho, e foi um sucesso silencioso, o tipo que se descobre com o tempo. A artista seguiu em turnê, de cidade em cidade, e, em cada uma, no último bis, tocou uma música, em piano e voz, que ninguém sabia de onde vinha.\n\nNo chalé do velho Henry Ashby, em Pine Hollow, o telhado aguentou o inverno. Um carpinteiro de boné segue consertando o que quebra, de goteira a coração partido, e canta, toda terça, na Lanterna. Os dois se falam por telefone, em horas estranhas, de lugares diferentes, e, de vez em quando, uma picape velha sobe uma estrada de terra em direção a um carro preto, ou o contrário.\n\nNão é um final feliz de filme. É um começo de verão, de novo: o riacho enchendo com o degelo, a porta do chalé aberta, e uma pergunta, escrita no último verso de um caderno, ainda esperando que alguém lhe responda.\n\n{{se flag:a_abriu_nova}}O show abriu com a música nova, a do telhado, e dezoito mil vozes sabiam a letra.{{/se}}\n\n{{se flag:a_abriu_classico}}O show abriu com a música de sempre, e uma voz pequena, ao fundo da cabeça, perguntou: quem está ouvindo?{{/se}}\n\n{{se flag:a_procurou_plateia}}Da lateral do palco, uma pessoa procurou na fileira do fundo um boné que não esperava ver.{{/se}}\n\n{{se flag:b_ensaiou_musica}}No acostamento, a frase ensaiada, *eu não vim para te tirar do mundo*, saiu na terceira vez sem tremer.{{/se}}\n\n{{se flag:b_foi_cachoeira}}Numa cachoeira da Passagem de Stevens, um minuto de silêncio trocou uma frase ensaiada por um desejo simples.{{/se}}\n\n{{se flag:b_ligou_doris}}Do outro lado de uma linha fixa, uma mulher de avental disse que, se desse errado, ela nunca soube de nada.{{/se}}\n\n{{se flag:disse_a_frase}}No palco, a frase inteira foi dita: *eu não vim para te tirar do mundo; eu vim para fazer parte dele*.{{/se}}\n\n{{se flag:um_canta_outro_toca}}Um cantou, o outro tocou, e no segundo refrão o refletor se abriu para os dois sem que ninguém pedisse.{{/se}}"
+        }
+      ]
     }
-  }
+  },
+  "tema": {
+    "a": "#3a2a5c",
+    "b": "#c4688a",
+    "destaque": "#f4c36b"
+  },
+  "personagens": {
+    "A": {
+      "papel": "A popstar em crise",
+      "nomePadrao": "Maya",
+      "generoPadrao": "ela",
+      "idade": 26,
+      "origem": "Los Angeles, Califórnia",
+      "ferida": "Descobrir que a única coisa que tem é a fama."
+    },
+    "B": {
+      "papel": "O carpinteiro da cidade",
+      "nomePadrao": "Jack",
+      "generoPadrao": "ele",
+      "idade": 31,
+      "origem": "Pine Hollow, Washington",
+      "ferida": "Ser deixado para trás por quem não pertence ao lugar."
+    }
+  },
+  "fatos": [
+    "Pine Hollow, cidade de mil e poucas pessoas nas montanhas do leste do estado de Washington; sinal de celular ruim, internet por satélite.",
+    "A casa é do avô de Maya, Henry Ashby, que morreu em março; o carpinteiro foi contratado pelo espólio para reformá-la.",
+    "Maya tem um verão, três meses, para compor o próximo álbum.",
+    "Ninguém na cidade sabe quem Maya é."
+  ]
 }
