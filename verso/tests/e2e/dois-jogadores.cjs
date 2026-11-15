@@ -133,7 +133,8 @@ async function passo(page, seat, tag, votou) {
     // vazamento: nada do outro jogador nas respostas que B recebeu
     const todoB = respostasB.join('\n');
     checa(!todoB.includes(tokenA), 'B nunca recebeu o token de A');
-    checa(!todoB.includes('uma mala de rodinha'), 'B nunca recebeu a cena solo de A');
+    // frase que existe SÓ na cena solo de A (verificada como única no livro); 'mala de rodinha' sozinha reaparece em cenas compartilhadas
+    checa(!todoB.includes('uma bolsa de lona com três carregadores'), 'B nunca recebeu a cena solo de A');
     checa(!/"flags"|"segredos"|noite3_a|noite3_b|"estado"/.test(todoB), 'B nunca recebeu flags, segredos nem o estado interno');
     checa(!/"no":"pd_/.test(todoB), 'B nunca recebeu ids internos de cena');
 
