@@ -21,15 +21,17 @@ export const Clausula = z
     naoFlag: z.string().optional(),
     vinculoMin: z.number().optional(),
     vinculoMax: z.number().optional(),
+    /** nervosismo de QUEM age (acumulado por escolhas anteriores; não há dados) */
+    abaloMin: z.number().optional(),
+    abaloMax: z.number().optional(),
   })
   .strict();
 export type Clausula = z.infer<typeof Clausula>;
 
-const Res = z.object({ texto: z.string(), efeitos: Efeitos.optional() }).strict();
-const Teste = z
-  .object({ attr: z.string(), mod: z.number().default(0), ok: Res, parcial: Res, falha: Res })
+const Variante = z
+  .object({ se: z.array(Clausula), resultado: z.string(), efeitos: Efeitos.optional() })
   .strict();
-export type Teste = z.infer<typeof Teste>;
+export type Variante = z.infer<typeof Variante>;
 
 export const Acao = z
   .object({
@@ -38,10 +40,11 @@ export const Acao = z
     texto: z.string(), // rótulo do botão (escolhido pelo jogador)
     resultado: z.string().optional(),
     efeitos: Efeitos.optional(),
-    teste: Teste.optional(),
+    /** Resultado condicional ao estado (primeira variante cujo `se` vale). Sem dados: o que o jogador fez antes decide. */
+    variantes: z.array(Variante).min(1).optional(),
   })
   .strict()
-  .refine((a) => !!a.resultado !== !!a.teste, { message: 'ação precisa de resultado OU teste' });
+  .refine((a) => !!a.resultado !== !!a.variantes, { message: 'ação precisa de resultado OU variantes' });
 export type Acao = z.infer<typeof Acao>;
 
 export const OpDialogo = z
@@ -123,7 +126,6 @@ export const Livro = z
     secao: z.enum(['love-sparks', 'k-vibes', 'dark-deals', 'bitter-sweet']),
     adulto: z.boolean().default(false),
     tropes: z.array(z.string()).min(1),
-    atributos: z.array(z.string()).min(1),
     linhaDoTempo: z.array(z.object({ quando: z.string(), evento: z.string() }).strict()).min(1),
     npcs: z.record(z.object({ nome: z.string(), voz: z.string() }).strict()).default({}),
     nomesProibidos: z.array(z.string()).default([]),

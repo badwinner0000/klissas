@@ -8,13 +8,6 @@
     "rivals-to-lovers",
     "forced-proximity"
   ],
-  "atributos": [
-    "Corpo",
-    "Jeito",
-    "Coragem",
-    "Cabeça",
-    "Charme"
-  ],
   "linhaDoTempo": [
     {
       "quando": "Quinta, 22h10",
@@ -68,29 +61,27 @@
         {
           "id": "a_insistir",
           "texto": "Insistir com Dona Cida por outro voo",
-          "teste": {
-            "attr": "Charme",
-            "mod": 0,
-            "ok": {
-              "texto": "Dona Cida ergue uma sobrancelha, quase sorri e anota seu nome numa lista que, segundo ela, “não existe”.",
-              "efeitos": {
-                "flag": "a_insistiu"
-              }
-            },
-            "parcial": {
-              "texto": "Dona Cida suspira, promete ver o que pode fazer e pede que você pare de debruçar no balcão.",
-              "efeitos": {
-                "flag": "a_insistiu"
-              }
-            },
-            "falha": {
-              "texto": "Dona Cida aponta um cartaz: “Reclamações: segunda a sexta, em horário comercial”. A fila inteira ouve o seu silêncio.",
+          "variantes": [
+            {
+              "se": [
+                {
+                  "abaloMin": 2
+                }
+              ],
+              "resultado": "Dona Cida aponta um cartaz: “Reclamações: segunda a sexta, em horário comercial”. A fila inteira ouve o seu silêncio.",
               "efeitos": {
                 "flag": "a_insistiu",
                 "abalo": 1
               }
+            },
+            {
+              "se": [],
+              "resultado": "Dona Cida ergue uma sobrancelha, quase sorri e anota seu nome numa lista que, segundo ela, “não existe”.",
+              "efeitos": {
+                "flag": "a_insistiu"
+              }
             }
-          }
+          ]
         },
         {
           "id": "a_avisar",
@@ -103,28 +94,26 @@
         {
           "id": "a_tomada",
           "texto": "Procurar uma tomada para o celular",
-          "teste": {
-            "attr": "Jeito",
-            "mod": 0,
-            "ok": {
-              "texto": "Achou! Atrás da máquina de salgadinhos, uma tomada esquecida. O celular volta a respirar.",
-              "efeitos": {
-                "flag": "a_tomada"
-              }
-            },
-            "parcial": {
-              "texto": "A tomada funciona, mas o cabo curto deixa você agachad{{A.o_a}} ao lado da máquina de salgadinhos, como quem reza.",
-              "efeitos": {
-                "flag": "a_tomada"
-              }
-            },
-            "falha": {
-              "texto": "Só encontra tomadas lacradas com fita adesiva. Alguém colou um bilhete: “Não insista”.",
+          "variantes": [
+            {
+              "se": [
+                {
+                  "abaloMin": 2
+                }
+              ],
+              "resultado": "Só encontra tomadas lacradas com fita adesiva. Alguém colou um bilhete: “Não insista”.",
               "efeitos": {
                 "abalo": 1
               }
+            },
+            {
+              "se": [],
+              "resultado": "Achou! Atrás da máquina de salgadinhos, uma tomada esquecida. O celular volta a respirar.",
+              "efeitos": {
+                "flag": "a_tomada"
+              }
             }
-          }
+          ]
         }
       ],
       "ir": "c1_encontro"
@@ -147,54 +136,50 @@
         {
           "id": "b_painel",
           "texto": "Estudar o painel de voos até decorar",
-          "teste": {
-            "attr": "Cabeça",
-            "mod": 0,
-            "ok": {
-              "texto": "Nenhum voo decola antes de sábado de manhã, e agora você sabe disso antes de todo mundo.",
-              "efeitos": {
-                "flag": "b_sabe_voos"
-              }
-            },
-            "parcial": {
-              "texto": "Você entende metade do painel, o suficiente para se preocupar.",
-              "efeitos": {
-                "flag": "b_sabe_voos"
-              }
-            },
-            "falha": {
-              "texto": "As letras vermelhas embaralham e você lê “Lisboa” onde estava escrito “Londrina”.",
+          "variantes": [
+            {
+              "se": [
+                {
+                  "abaloMin": 2
+                }
+              ],
+              "resultado": "As letras vermelhas embaralham e você lê “Lisboa” onde estava escrito “Londrina”.",
               "efeitos": {
                 "abalo": 1
               }
+            },
+            {
+              "se": [],
+              "resultado": "Nenhum voo decola antes de sábado de manhã, e agora você sabe disso antes de todo mundo.",
+              "efeitos": {
+                "flag": "b_sabe_voos"
+              }
             }
-          }
+          ]
         },
         {
           "id": "b_mala",
           "texto": "Ajudar a senhora com a mala",
-          "teste": {
-            "attr": "Corpo",
-            "mod": 0,
-            "ok": {
-              "texto": "Você ergue a mala numa tentativa só. A senhora aplaude e jura que vai convidar você para o casamento da neta.",
-              "efeitos": {
-                "flag": "b_ajudou"
-              }
-            },
-            "parcial": {
-              "texto": "A mala sobe, o seu ombro reclama, a senhora agradece em dobro.",
-              "efeitos": {
-                "flag": "b_ajudou"
-              }
-            },
-            "falha": {
-              "texto": "A mala vence. A senhora consola você, e a fila inteira assiste.",
+          "variantes": [
+            {
+              "se": [
+                {
+                  "abaloMin": 2
+                }
+              ],
+              "resultado": "A mala vence. A senhora consola você, e a fila inteira assiste.",
               "efeitos": {
                 "abalo": 1
               }
+            },
+            {
+              "se": [],
+              "resultado": "Você ergue a mala numa tentativa só. A senhora aplaude e jura que vai convidar você para o casamento da neta.",
+              "efeitos": {
+                "flag": "b_ajudou"
+              }
             }
-          }
+          ]
         }
       ],
       "ir": "c1_encontro"
@@ -403,54 +388,50 @@
           "id": "d_tv",
           "seat": "A",
           "texto": "Ligar a TV e procurar um canal",
-          "teste": {
-            "attr": "Jeito",
-            "mod": 0,
-            "ok": {
-              "texto": "O canal pega de primeira: uma novela dublada, a trilha sonora mais reconfortante do mundo.",
-              "efeitos": {
-                "flag": "tv_ligada"
-              }
-            },
-            "parcial": {
-              "texto": "A imagem vem e vai, mas o som aguenta firme.",
-              "efeitos": {
-                "flag": "tv_ligada"
-              }
-            },
-            "falha": {
-              "texto": "A TV pisca, faz um barulho de chaleira e apaga de vez.",
+          "variantes": [
+            {
+              "se": [
+                {
+                  "abaloMin": 2
+                }
+              ],
+              "resultado": "A TV pisca, faz um barulho de chaleira e apaga de vez.",
               "efeitos": {
                 "abalo": 1
               }
+            },
+            {
+              "se": [],
+              "resultado": "O canal pega de primeira: uma novela dublada, a trilha sonora mais reconfortante do mundo.",
+              "efeitos": {
+                "flag": "tv_ligada"
+              }
             }
-          }
+          ]
         },
         {
           "id": "d_frigobar",
           "texto": "Abrir o frigobar",
-          "teste": {
-            "attr": "Jeito",
-            "mod": 0,
-            "ok": {
-              "texto": "Água, dois chocolates e uma minigarrafa de espumante. O preço na lista é uma ofensa pessoal.",
-              "efeitos": {
-                "flag": "frigobar"
-              }
-            },
-            "parcial": {
-              "texto": "Só água e amendoim. Já serve.",
-              "efeitos": {
-                "flag": "frigobar"
-              }
-            },
-            "falha": {
-              "texto": "A porta emperra e quase leva um dedo. O frigobar zumbe, triunfante.",
+          "variantes": [
+            {
+              "se": [
+                {
+                  "abaloMin": 2
+                }
+              ],
+              "resultado": "A porta emperra e quase leva um dedo. O frigobar zumbe, triunfante.",
               "efeitos": {
                 "abalo": 1
               }
+            },
+            {
+              "se": [],
+              "resultado": "Água, dois chocolates e uma minigarrafa de espumante. O preço na lista é uma ofensa pessoal.",
+              "efeitos": {
+                "flag": "frigobar"
+              }
             }
-          }
+          ]
         },
         {
           "id": "d_cobertor",

@@ -7,7 +7,7 @@ Livros-jogo em pt-BR para duas pessoas. Plano completo em `docs/PLANO.md`; schem
 | Marco | Situação |
 | --- | --- |
 | a) schema + auth + RLS | schema escrito, **ainda não executado nem testado** (sem Supabase local neste ambiente) |
-| b) motor + testes | feito: `src/engine/` (puro) + `tests/unit/` |
+| b) motor + testes | feito (sem dados): `src/engine/` (puro) + `tests/unit/` |
 | f) lint / sim / trilha / contar | feito |
 | c) leitor e lobby em tempo real, d) biblioteca e tema, e) modo solo, g) E2E + CI | pendentes |
 
@@ -22,6 +22,8 @@ Levantamento para a migração (feito sobre o material, ainda sem converter nada
 - Textos são funções JS com poucos helpers: `c.f(flag)` (166 usos), `lsNoite` (consentimento), `lsSeat`, `lsSim`, nome e gênero (`pda`, `pdgA`...). Isso torna a conversão para templates seguros viável, mas não 100% automática: cadeias de ternário precisam de revisão humana.
 - Lacunas do meu motor a fechar antes: nó `puzzle`; opções de diálogo que dependem do histórico inteiro (`ops:(c,h)=>`), não só do tom anterior; faixas de nervosismo que mudam texto; atributos do livro (Lábia, Cabeça, Agilidade, Coragem, Força) no lugar dos de exemplo; ordem real dos votos secretos.
 - Gabarito: o `.md` completo (caminho em que os dois aceitam) deve bater com a trilha gerada pelo Verso para a mesma política.
+
+Plano detalhado da migração: `docs/MIGRACAO-PADRINHOS.md`.
 
 ## Comandos (dentro de `verso/`)
 
@@ -44,5 +46,6 @@ O lint emite avisos `cena-curta` por isso.
 
 - Estado do motor tem `segredos` (votos). O servidor nunca o projeta ao cliente; vai para `secret_votes`.
 - `requer` / `exclui` em nós: declaram de qual lado do consentimento o nó vive. O lint exige isso e o motor lança "contradição" se um nó for visitado do lado errado.
+- **Sem dados.** O Verso não é RPG: não há rolagem nem atributos. O resultado de uma ação é escolhido por `variantes` (primeira cuja condição vale), e a condição pode olhar flags, vínculo e o nervosismo acumulado por escolhas anteriores. Mesmo estado, mesmo resultado.
 - Nó `puzzle` ainda não implementado.
 - Linha do tempo: só exigida e exibida; a checagem de consistência de datas/horários ainda **não** existe.

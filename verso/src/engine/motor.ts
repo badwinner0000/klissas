@@ -1,13 +1,10 @@
 // Motor determinístico e puro. Sem React, sem I/O. O servidor chama agir() e persiste o resultado.
 import type { Acao, Clausula, Efeitos, Livro, No, OpDialogo, Seat, Tom } from '../content/schema';
-import { type Rng, testar } from './dados';
 import { type Perfil, renderizar } from './template';
 
 export class ErroJogo extends Error {}
 
-export interface Jogador extends Perfil {
-  atributos: Record<string, number>;
-}
+export type Jogador = Perfil;
 export type Jogadores = Record<Seat, Jogador>;
 
 export interface Estado {
@@ -66,7 +63,9 @@ function render(txt: string, jog: Jogadores, e: Estado): string {
   return renderizar(txt, { A: jog.A, B: jog.B, flags: e.flags });
 }
 
-function clausulaOk(c: Clausula, e: Estado): boolean {
+function clausulaOk(c: Clausula, e: Estado, seat?: Seat): boolean {
+  if (seat && c.abaloMin !== undefined && e.nervosismo[seat] < c.abaloMin) return false;
+  if (seat && c.abaloMax !== undefined && e.nervosismo[seat] > c.abaloMax) return false;
   if (c.flag !== undefined && !e.flags[c.flag]) return false;
   if (c.naoFlag !== undefined && e.flags[c.naoFlag]) return false;
   if (c.vinculoMin !== undefined && e.vinculo < c.vinculoMin) return false;
@@ -203,7 +202,6 @@ export function agir(
   seat: Seat,
   acao: Acao_,
   jog: Jogadores,
-  rng: Rng,
 ): { estado: Estado; eventos: Evento[] } {
   if (e0.fim) throw new ErroJogo('a história já terminou');
   const e = structuredClone(e0);
@@ -226,13 +224,13 @@ export function agir(
   };
 
   const rodarAcao = (a: Acao): string => {
-    if (a.teste) {
-      const t = a.teste;
-      const r = testar(rng, jog[seat].atributos[t.attr] ?? 0, t.mod);
-      const res = t[r.nivel];
-      aplicar(e, seat, res.efeitos);
-      ev('teste', { acao: a.id, attr: t.attr, dados: r.dados, total: r.total, nivel: r.nivel }, seat);
-      return render(res.texto, jog, e);
+    if (a.variantes) {
+      const v = a.variantes.find((x) => x.se.every((c) => clausulaOk(c, e, seat)));
+      if (!v) throw new ErroJogo(`nenhuma variante vale para a ação ${a.id}`);
+      aplicar(e, seat, a.efeitos);
+      aplicar(e, seat, v.efeitos);
+      ev('resultado', { acao: a.id, variante: a.variantes.indexOf(v) }, seat);
+      return render(v.resultado, jog, e);
     }
     aplicar(e, seat, a.efeitos);
     return render(a.resultado!, jog, e);

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { lerBruto, lerLivro } from '../../src/content/carregar';
-import { criarRng, nivelDoTotal } from '../../src/engine/dados';
+import { criarRng } from '../../src/engine/rng';
 import { chavesDuplicadas, lintarBruto, lintarLivro } from '../../src/engine/lint';
 import { ErroJogo, agir, estadoInicial, opcoesTurno, visao } from '../../src/engine/motor';
 import { POLITICAS, GENEROS, jogadoresDe, jogar, simular } from '../../src/engine/simular';
@@ -9,14 +9,6 @@ import { ErroTemplate, renderizar } from '../../src/engine/template';
 const livro = () => structuredClone(lerLivro('voo-cancelado'));
 const raw = () => lerBruto('voo-cancelado');
 const regras = (r: { erros: { regra: string }[] }) => r.erros.map((e) => e.regra);
-
-describe('dados', () => {
-  it('limiares 2d6: ≥10 ok, 7–9 parcial, ≤6 falha', () => {
-    expect([12, 10].map(nivelDoTotal)).toEqual(['ok', 'ok']);
-    expect([9, 7].map(nivelDoTotal)).toEqual(['parcial', 'parcial']);
-    expect([6, 2].map(nivelDoTotal)).toEqual(['falha', 'falha']);
-  });
-});
 
 describe('template', () => {
   const ctx = (ga: 'ele' | 'ela', gb: 'ele' | 'ela', flags = {}) => ({ A: { nome: 'Lia', genero: ga }, B: { nome: 'Davi', genero: gb }, flags });
@@ -62,7 +54,7 @@ describe('diálogo em turnos', () => {
     const jog = jogadoresDe(l, 'ela', 'ele');
     let e = estadoInicial(l);
     const rng = criarRng(1);
-    const ir = (id: string, s: 'A' | 'B') => { e = agir(l, e, s, id === 'continuar' ? { tipo: 'continuar' } : { tipo: 'opcao', id }, jog, rng).estado; };
+    const ir = (id: string, s: 'A' | 'B') => { e = agir(l, e, s, id === 'continuar' ? { tipo: 'continuar' } : { tipo: 'opcao', id }, jog).estado; };
     ir('continuar', 'A'); ir('continuar', 'B');
     ir('a_insistir', 'A'); ir('continuar', 'A');
     ir('b_cafe', 'B'); ir('continuar', 'B');
@@ -70,12 +62,33 @@ describe('diálogo em turnos', () => {
     expect(e.pos.A).toBe('c1_dialogo');
     expect(visao(l, e, 'B', jog).opcoes).toHaveLength(0);
     expect(visao(l, e, 'B', jog).aguardando).toBeTruthy();
-    expect(() => agir(l, e, 'B', { tipo: 'opcao', id: '0:b_cuida' }, jog, rng)).toThrow(ErroJogo);
+    expect(() => agir(l, e, 'B', { tipo: 'opcao', id: '0:b_cuida' }, jog)).toThrow(ErroJogo);
     ir('0:a_seco', 'A');
     // opções de B dependem do tom escolhido por A (seco)
     const ids = visao(l, e, 'B', jog).opcoes.map((o) => o.id);
     expect(ids).toContain('1:b_fere_seco');
     expect(ids).not.toContain('1:b_cuida_abre');
+  });
+});
+
+describe('resultado sem dados (escolhas decidem)', () => {
+  it('a variante depende do nervosismo acumulado, nunca de sorte: mesma entrada, mesmo resultado', () => {
+    const l = livro();
+    const jog = jogadoresDe(l, 'ela', 'ele');
+    const rodar = (abalo: number) => {
+      const e = estadoInicial(l);
+      e.pos = { A: 'c1_solo_a', B: 'c1_solo_b' };
+      e.nervosismo.A = abalo;
+      const r = agir(l, e, 'A', { tipo: 'opcao', id: 'a_insistir' }, jog);
+      return visao(l, r.estado, 'A', jog).texto;
+    };
+    expect(rodar(0)).toContain('anota seu nome');
+    expect(rodar(0)).toBe(rodar(0));
+    expect(rodar(3)).toContain('Reclamações');
+  });
+  it('o livro não contém dados nem atributos', () => {
+    const bruto = raw();
+    expect(bruto).not.toMatch(/"teste"|"atributos"|2d6/);
   });
 });
 
@@ -87,17 +100,17 @@ describe('dividir: exclusividade e não-repetição', () => {
     e.pos = { A: 'c1_dividir', B: 'c1_dividir' };
     return { l, jog, e: () => e, set: (x: typeof e) => (e = x) };
   };
-  it('a ação escolhida por A some para B; ação de teste é só de quem escolheu', () => {
+  it('a ação escolhida por A some para B; ação exclusiva é só de quem escolheu', () => {
     const { l, jog, e, set } = chegar();
     expect(visao(l, e(), 'B', jog).opcoes.map((o) => o.id)).not.toContain('d_tv'); // exclusiva do assento A
-    set(agir(l, e(), 'A', { tipo: 'opcao', id: 'd_frigobar' }, jog, criarRng(3)).estado);
+    set(agir(l, e(), 'A', { tipo: 'opcao', id: 'd_frigobar' }, jog).estado);
     expect(visao(l, e(), 'B', jog).opcoes.map((o) => o.id)).not.toContain('d_frigobar');
-    expect(() => agir(l, e(), 'B', { tipo: 'opcao', id: 'd_frigobar' }, jog, criarRng(3))).toThrow(ErroJogo);
-    expect(() => agir(l, e(), 'A', { tipo: 'opcao', id: 'd_muralha' }, jog, criarRng(3))).toThrow(/já escolheu/);
+    expect(() => agir(l, e(), 'B', { tipo: 'opcao', id: 'd_frigobar' }, jog)).toThrow(ErroJogo);
+    expect(() => agir(l, e(), 'A', { tipo: 'opcao', id: 'd_muralha' }, jog)).toThrow(/já escolheu/);
   });
-  it('resultado do teste do A é privado: B não vê o texto dele', () => {
+  it('resultado da ação do A é privado: B não vê o texto dele', () => {
     const { l, jog, e, set } = chegar();
-    set(agir(l, e(), 'A', { tipo: 'opcao', id: 'd_cobertor' }, jog, criarRng(3)).estado);
+    set(agir(l, e(), 'A', { tipo: 'opcao', id: 'd_cobertor' }, jog).estado);
     expect(visao(l, e(), 'B', jog).texto).not.toContain('armário do corredor');
   });
 });
@@ -108,10 +121,10 @@ describe('consentimento oculto (§5.4)', () => {
     const jog = jogadoresDe(l, 'ela', 'ele');
     let e = estadoInicial(l);
     e.pos = { A: 'c1_consent', B: 'c1_consent' };
-    const r = agir(l, e, 'A', { tipo: 'voto', id: 'ficar' }, jog, criarRng(1));
+    const r = agir(l, e, 'A', { tipo: 'voto', id: 'ficar' }, jog);
     expect(r.eventos).toHaveLength(0);
     expect(visao(l, r.estado, 'B', jog).opcoes).toHaveLength(2);
-    const r2 = agir(l, r.estado, 'B', { tipo: 'voto', id: 'avancar' }, jog, criarRng(1));
+    const r2 = agir(l, r.estado, 'B', { tipo: 'voto', id: 'avancar' }, jog);
     const pub = r2.eventos.find((x) => x.tipo === 'consentimento')!;
     expect(pub.payload).toEqual({ no: 'c1_consent', avancou: false }); // sem dizer quem recuou
     expect(r2.estado.pos.A).toBe('c1_sem');

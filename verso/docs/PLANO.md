@@ -55,7 +55,7 @@ Tema: tokens extraídos das imagens (fundo escuro azul-petróleo com gradiente +
 | Marco | Entrega | Prova |
 | --- | --- | --- |
 | a | Next + schema + auth + RLS | testes SQL/JS com chave anônima: não lê sala alheia, não lê voto do outro, não escreve `game_state`, não vira admin |
-| b | motor + template + testes | Vitest: 2d6 (limiares 7/10), 3 opções por turno com pool, não-repetição em `dividir`, consentimento nas 4 políticas |
+| b | motor + template + testes | Vitest: resultado por escolha, sem dados (variantes por nervosismo), 3 opções por turno com pool, não-repetição em `dividir`, consentimento nas 4 políticas |
 | c | lobby + leitor em tempo real | teste de integração com 2 clientes, reconexão relê o estado |
 | d | biblioteca + tema | screenshots Playwright em 375/768/1280, Lighthouse |
 | e | modo solo | IA mockada: só devolve ids válidos; fallback quando falha/timeout |

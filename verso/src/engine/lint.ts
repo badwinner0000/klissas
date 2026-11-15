@@ -39,7 +39,7 @@ export function textosDoNo(no: No): { campo: string; texto: string; narracao: bo
     as.forEach((a) => {
       add(`acao:${a.id}`, a.texto, false);
       add(`acao:${a.id}.resultado`, a.resultado, true);
-      for (const n of ['ok', 'parcial', 'falha'] as const) add(`acao:${a.id}.${n}`, a.teste?.[n].texto, true);
+      a.variantes?.forEach((v, i) => add(`acao:${a.id}.v${i}`, v.resultado, true));
     });
   if ('texto' in no) add('texto', no.texto, true);
   switch (no.tipo) {
@@ -249,6 +249,7 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
       const idsA = new Set<string>();
       for (const a of no.acoes) {
         if (idsA.has(a.id)) E('id-duplicado', id, `ação repetida: ${a.id}`);
+        if (a.variantes && a.variantes[a.variantes.length - 1]!.se.length !== 0) E('variante-sem-padrao', id, `ação ${a.id}: a última variante precisa ter se: [] (padrão)`);
         idsA.add(a.id);
       }
     }
@@ -267,7 +268,10 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
     if ('acoes' in no)
       for (const a of no.acoes) {
         ef(a.efeitos);
-        for (const n of ['ok', 'parcial', 'falha'] as const) ef(a.teste?.[n].efeitos);
+        for (const v of a.variantes ?? []) {
+          ef(v.efeitos);
+          for (const c of v.se) { if (c.flag) lidas.add(c.flag); if (c.naoFlag) lidas.add(c.naoFlag); }
+        }
       }
     if (no.tipo === 'dialogo') for (const t of no.turnos) for (const o of [...t.opcoes, ...Object.values(t.porTom ?? {}).flat()]) ef(o.efeitos);
     if (no.tipo === 'dialogo') for (const o of no.pool) ef(o.efeitos);

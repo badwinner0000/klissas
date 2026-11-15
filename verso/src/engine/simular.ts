@@ -1,5 +1,5 @@
 import type { Livro, Seat } from '../content/schema';
-import { type Rng, criarRng } from './dados';
+import { type Rng, criarRng } from './rng';
 import { type Acao_, ErroJogo, type Estado, type Jogadores, agir, estadoInicial, visao } from './motor';
 import type { Genero } from './template';
 
@@ -8,11 +8,8 @@ export const POLITICAS: Politica[] = ['ambos', 'nenhum', 'soA', 'soB'];
 export const GENEROS: [Genero, Genero][] = [['ele', 'ele'], ['ele', 'ela'], ['ela', 'ele'], ['ela', 'ela']];
 
 export function jogadoresDe(l: Livro, ga: Genero, gb: Genero): Jogadores {
-  const attrs = Object.fromEntries(l.atributos.map((a) => [a, 2]));
-  return {
-    A: { nome: 'Lia', genero: ga, atributos: attrs },
-    B: { nome: 'Davi', genero: gb, atributos: attrs },
-  };
+  void l;
+  return { A: { nome: 'Lia', genero: ga }, B: { nome: 'Davi', genero: gb } };
 }
 
 export interface Partida {
@@ -59,7 +56,7 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
       } else if (op.id === 'continuar') acao = { tipo: 'continuar' };
       else acao = { tipo: 'opcao', id: op.id };
       try {
-        e = agir(l, e, s, acao, jog, rng).estado;
+        e = agir(l, e, s, acao, jog).estado;
       } catch (err) {
         erros.push(err instanceof ErroJogo ? err.message : String(err));
         return { visitados, textos, erros, estado: e, passos };

@@ -1,5 +1,5 @@
 import { lerLivro } from '../src/content/carregar';
-import { criarRng } from '../src/engine/dados';
+import { criarRng } from '../src/engine/rng';
 import { type Politica, jogadoresDe, jogar } from '../src/engine/simular';
 
 const [slug, politica = 'ambos', seed = '1'] = process.argv.slice(2);
