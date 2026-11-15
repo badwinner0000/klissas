@@ -2091,11 +2091,792 @@
       "hora": "Domingo · 01h10",
       "texto": "Existe um café em Viena, na Gumpendorfer Straße, que está aberto desde 1880 e que parece não ter mudado uma cadeira desde então. O Café Sperl tem mesas de mármore, bancos de veludo verde, jornais pendurados em varões de madeira e uma mesa de bilhar no fundo, onde ninguém joga há décadas. Às uma e dez da manhã, tem um garçom de colete e bigode, um casal de idosos que divide uma torta Sachertorte e uma mesa de canto, perto da janela, vazia.\n\n{{se flag:voltou_taxi}}Vocês voltaram de táxi, e o táxi passou duas vezes em frente ao café, sem que ninguém pedisse. {{/se}}{{se flag:voltou_a_pe}}Vocês voltaram a pé, e as pernas, sozinhas, escolheram esta rua. {{/se}}{{se flag:foi_ao_cafe}}Vocês escolheram o café, de comum acordo, sem dizer o nome. {{/se}}{{se flag:entrou_na_farsa}}A farsa dos parceiros ainda está no ar, e ninguém a desfez. {{/se}}{{se flag:corrigiu_casal}}A palavra *casamento arranjado*, dita à mesa, ficou martelando nos dois. {{/se}}\n\nO garçom, de bandeja, aponta a mesa de canto sem perguntar. Dois menus em alemão, duas velas pequenas, uma janela que dá para uma rua de calçada molhada. O garçom volta com uma garrafa de vinho que ninguém pediu, serve dois copos e diz, num inglês de dicionário:\n\n— A casa oferece. Para quem está cansado de ser inteligente.\n\nEm cima da mesa, entre os dois copos, a vela pisca uma vez.",
       "gancho": "Meia-noite e dez em Viena, uma mesa de canto, uma vela e duas pessoas cansadas de ser inteligentes.",
+      "ir": "up_c6_cafe"
+    },
+    "up_c6_cafe": {
+      "tipo": "segue",
+      "cap": 6,
+      "lugar": "Café Sperl, Viena",
+      "hora": "Domingo · 01h30",
+      "ir": "up_c6_dialogo",
+      "texto": "O vinho da casa é um Zweigelt tinto, servido em copos de pé curto, e cheira a cereja e a madeira velha. A vela pisca de novo. No canto do salão, o casal de idosos divide a Sachertorte em silêncio, com a ternura de quem não precisa mais de assunto.\n\nHá uma hora, na escadaria do palácio, os dois eram candidatos à mesma vaga. Agora, numa mesa de mármore com marcas de copos de oitenta anos, são só duas pessoas que passaram quarenta horas acordadas, dançaram valsa na frente de quatrocentos executivos e entraram num café por vontade própria.\n\n{{se flag:entrou_na_farsa}}A farsa dos parceiros ficou no palácio, e nenhum dos dois a trouxe. {{/se}}{{se flag:dean_contou_escritorio}}O outro já sabe que o escritório virou casa. {{/se}}{{se flag:joanna_contou_apto}}O outro já sabe do apartamento sem cadeiras. {{/se}}Nenhum dos dois sabe o que dizer, e é essa a melhor notícia da noite."
+    },
+    "up_c6_dialogo": {
+      "tipo": "dialogo",
+      "cap": 6,
+      "lugar": "Café Sperl, Viena",
+      "hora": "Domingo · 01h50",
+      "comeca": "A",
+      "texto": "A segunda taça chega sem ninguém pedir. As conversas de trabalho acabaram na primeira, e o que sobrou é o tipo de assunto que não cabe em planilha: o que cada um faz quando ninguém olha, e por quê.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "i0_a_abre",
+              "texto": "— Eu não tenho amigos em Chicago. Tenho colegas, clientes e um sistema de agenda. Tenho a Nina, em Dayton, mas ela é de outra vida.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "i0_a_flerte",
+              "texto": "— Você não é como eu imaginava. Eu esperava alguém mais irritante.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "i0_a_seco",
+              "texto": "— O vinho é bom. Isso não é uma confissão, é uma observação.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "i0_b_abre",
+              "texto": "— Eu moro no escritório. Cinco anos. A cama nunca chegou, e eu parei de esperar.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "i0_b_flerte",
+              "texto": "— Você dança melhor do que mente. E mente muito bem.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "i0_b_seco",
+              "texto": "— Eu não costumo beber com concorrentes. Hoje é exceção.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "i1_b_abre",
+              "texto": "— Eu sei como é. Eu tenho cento e doze funcionários e nenhum amigo que não dependa do meu cheque.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "i1_b_cuida",
+              "texto": "— Come alguma coisa. Você está pálid{{A.o_a}} de quem não faz refeição. Eu peço o strudel.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "i1_b_seco",
+              "texto": "— Isso é uma tristeza muito organizada.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "i1_a_abre",
+              "texto": "— No escritório? Cinco anos? Isso é... é triste, e eu entendo. Eu sei contar pelas luzes do prédio quando o seu andar apaga.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "i1_a_cuida",
+              "texto": "— Você merece uma cama. De verdade. Com lençol e com travesseiro, e com um colchão que não seja o de um hotel.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "i1_a_seco",
+              "texto": "— Isso é uma escolha. Cada um tem a sua.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "i2_a_abre",
+              "texto": "— Eu tenho medo de que eu tenha passado a vida inteira provando uma coisa que ninguém estava olhando.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "i2_a_flerte",
+              "texto": "— Se eu perder a vaga para você, eu quero que seja uma perda boa. Uma perda com vinho.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "i2_a_fere",
+              "texto": "— Se você ganhar a vaga por causa do sobrenome, eu nunca vou te perdoar.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "i2_b_abre",
+              "texto": "— Eu tenho medo de que todo mundo ache que eu só cheguei aqui porque era o filho do dono.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "i2_b_flerte",
+              "texto": "— Se eu perder a vaga para você, eu quero que seja uma perda boa. Com uma pessoa que merece.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "fere",
+              "tag": "i2_b_fere",
+              "texto": "— Se você ganhar com dados e não com gente, eu nunca vou entender o que você quer de verdade.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da mesa é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "i3_a_abre",
+              "texto": "— Eu gosto de estar aqui. Com você. Isso é... não é o plano.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "i3_a_flerte",
+              "texto": "— Se eu te pedir para ficar mais um pouco, você fica?",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "i3_a_seco",
+              "texto": "— É tarde. Eu devia ir.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "i3_b_abre",
+              "texto": "— Eu gosto de estar aqui. Com você. Eu não sei o que é isso, mas eu gosto.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "i3_b_flerte",
+              "texto": "— Se você me pedir para ficar mais um pouco, eu fico até o café fechar.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "i3_b_seco",
+              "texto": "— É tarde. Eu acompanho você até o hotel.",
+              "se": "eu:B"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Você quer o meu casaco? Está frio perto da janela."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Continua."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— A vela te favorece."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu nunca falei tanto assim com ninguém."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Você sempre foge quando fica perto demais."
+        }
+      ],
+      "fecho": "A vela, quase no fim, pisca duas vezes. O garçom, de longe, finge que não vê nada. Entre os dois copos, a distância, que era de um braço, agora é de um suspiro.",
+      "ir": "up_c6_segredo"
+    },
+    "up_c6_segredo": {
+      "tipo": "dividir",
+      "cap": 6,
+      "lugar": "Café Sperl, Viena",
+      "hora": "Domingo · 02h20",
+      "cada": 1,
+      "texto": "Existe uma coisa que cada um dos dois ainda não disse, a que pesa mais do que as outras, a que fica no fundo da gaveta. O vinho ajuda, e a vela, e o silêncio do casal de idosos. Falta decidir se a noite é a hora.\n\nUma delas é sobre o que cada um sabe da fusão. A outra, sobre o que cada um fez.",
+      "pergunta": "O que você confessa?",
+      "acoes": [
+        {
+          "id": "valuation",
+          "seat": "A",
+          "texto": "Confessar que foi você quem escreveu o valuation que a Meridian usou para comprar a empresa dele",
+          "efeitos": {
+            "flag": "confessou_valuation",
+            "vinculo": 2
+          },
+          "resultado": "Você diz, olhando o copo: *fui eu quem escreveu a análise. O valuation da Tillman & Sons. A Meridian usou o meu trabalho para comprar a empresa da sua família.* A pessoa à sua frente fica parada por um tempo longo. Depois, sem raiva, só com cansaço: *eu sei. A Chloe achou o nome da autora numa nota de rodapé. Eu estava esperando você contar.*"
+        },
+        {
+          "id": "menor_a",
+          "seat": "A",
+          "texto": "Contar só uma coisa menor: que você chegou a pensar em recusar a promoção, e nunca disse",
+          "efeitos": {
+            "flag": "a_confessou_menor"
+          },
+          "resultado": "Você diz uma coisa verdadeira, menor do que a que pesa: *eu pensei em recusar a promoção. Duas vezes. Nunca disse a ninguém.* A pessoa à sua frente assente, devagar, e entende que a confissão é uma porta entreaberta, e não a sala. Não insiste. É um dos poucos gestos de cuidado que você já recebeu."
+        },
+        {
+          "id": "calar_a",
+          "seat": "A",
+          "texto": "Não confessar nada: a vaga continua sendo uma disputa",
+          "efeitos": {
+            "flag": "a_calou_segredo",
+            "abalo": 1
+          },
+          "resultado": "Você toma um gole de vinho e diz que não tem mais nada a contar. É uma mentira, e tem a firmeza de todas as suas mentiras: curta, completa, sem adjetivo. A pessoa à sua frente sabe que é mentira, e deixa passar, por educação ou por cálculo."
+        },
+        {
+          "id": "prejuizo",
+          "seat": "B",
+          "texto": "Confessar que você sabia que a Tillman & Sons perdia dinheiro havia anos e nunca contou a ninguém",
+          "efeitos": {
+            "flag": "confessou_prejuizo",
+            "vinculo": 2
+          },
+          "resultado": "Você diz, devagar: *a empresa perdia dinheiro há anos. Eu sabia. Eu escondi do meu pai, dos funcionários, de todo mundo. Eu vendi a empresa para não ter que contar que ela já estava vendida.* A pessoa à sua frente fica quieta. Depois, em voz baixa: *a Meridian pagou quarenta e um milhões a mais do que ela valia. Você não escondeu o rombo. Alguém o escondeu por você.*"
+        },
+        {
+          "id": "menor_b",
+          "seat": "B",
+          "texto": "Contar só uma coisa menor: que você nunca quis dirigir a empresa do seu pai",
+          "efeitos": {
+            "flag": "b_confessou_menor"
+          },
+          "resultado": "Você diz uma coisa verdadeira, menor do que a que pesa: *eu nunca quis dirigir a empresa. Eu queria ser motorista de caminhão, como o Walter.* A pessoa à sua frente ri, baixo, com os olhos úmidos. A confissão é uma porta entreaberta, e ela a deixa assim."
+        },
+        {
+          "id": "calar_b",
+          "seat": "B",
+          "texto": "Não confessar nada: o vinho não é testemunha",
+          "efeitos": {
+            "flag": "b_calou_segredo",
+            "abalo": 1
+          },
+          "resultado": "Você ergue o copo e diz um *saúde*, o que é uma maneira de dizer que não vai dizer nada. A pessoa à sua frente brinda, sem tirar os olhos de você. Você sabe que ela percebeu. Sabe também que, por enquanto, é a única coisa que você consegue fazer."
+        }
+      ],
+      "desfecho": "O garçom traz a conta, sem ninguém pedir, e a deixa em cima da mesa, de cabeça para baixo, com a gentileza de quem sabe que ainda não é a hora. Na rua, a chuva começou, uma chuva fina de Viena, que não molha, só enfeita.",
+      "ir": "up_c6_consente"
+    },
+    "up_c6_consente": {
+      "tipo": "consentimento",
+      "cap": 6,
+      "lugar": "Café Sperl, Viena",
+      "hora": "Domingo · 02h40",
+      "texto": "A vela chegou ao fim, e o fim dela é uma poça de cera clara sobre o mármore. Do lado de fora, a chuva fina faz a rua brilhar. No canto, o casal de idosos já foi embora, e o garçom, de pé junto ao balcão, finge polir um copo.\n\nEntre os dois copos vazios, a mesa tem a largura exata de uma pergunta. Ninguém vai fazê-la em voz alta. Cada um decide por dentro, e só se os dois quiserem alguma coisa acontece.",
+      "pergunta": "O que você quer?",
+      "avancar": "Beijar. Agora, nesta mesa, sem plano.",
+      "ficar": "Ficar perto, e ainda não atravessar.",
+      "flag": "beijo_cafe",
+      "irAvancou": "up_c6_sim",
+      "irSem": "up_c6_nao"
+    },
+    "up_c6_sim": {
+      "tipo": "segue",
+      "cap": 6,
+      "lugar": "Café Sperl, Viena",
+      "hora": "Domingo · 02h42",
+      "requer": [
+        "beijo_cafe"
+      ],
+      "ir": "up_c6_fim",
+      "texto": "Não é um beijo de cinema. É um beijo de duas pessoas de quarenta anos que sabem exatamente o que estão fazendo e que, ainda assim, erram o nariz na primeira tentativa. Depois, ele encontra o lugar certo, e fica. O gosto é de Zweigelt e de cera de vela. Do outro lado do salão, o garçom deixa cair uma colher, e o barulho é a única opinião que o mundo tem a oferecer.\n\nQuando se afastam, de olhos abertos, a vela já apagou. Ninguém diz uma palavra. Em Viena, às duas e quarenta e dois da manhã, dois candidatos à mesma vaga são, por um instante, duas pessoas que se acharam."
+    },
+    "up_c6_nao": {
+      "tipo": "segue",
+      "cap": 6,
+      "lugar": "Café Sperl, Viena",
+      "hora": "Domingo · 02h42",
+      "exclui": [
+        "beijo_cafe"
+      ],
+      "ir": "up_c6_fim",
+      "texto": "Nada acontece, e nada acontecer também diz alguma coisa. A mesa continua sendo uma mesa, o vinho continua sendo vinho, e a vela, a essa altura só um toco, apaga sozinha. Os dois ficam onde estão, a trinta centímetros um do outro, olhando a chuva fina na janela, em um silêncio que tem a forma exata do que não foi dito.\n\nDo balcão, o garçom pigarreia, e é o som que fecha a noite. Ninguém pede a conta, porque ninguém quer admitir que a conta é o que os traz de volta à realidade."
+    },
+    "up_c6_fim": {
+      "tipo": "fim",
+      "cap": 6,
+      "lugar": "Ringstrasse, Viena",
+      "hora": "Domingo · 03h10",
+      "texto": "A chuva parou, e a Ringstrasse tem o cheiro de asfalto molhado e de tílias adormecidas. Os dois caminham de volta ao Imperial, lado a lado, sem se tocar, mas sem se afastar, com os ombros a dez centímetros de distância. {{se flag:beijo_cafe}}O gosto de vinho ainda está na boca de cada um, e a rua, inteira, parece ter virado uma pergunta que ninguém sabe formular. {{/se}}{{se !flag:beijo_cafe}}O que não aconteceu no café caminha com os dois, como uma terceira pessoa que ninguém convidou, e ninguém ousa mencionar. {{/se}}{{se flag:confessou_valuation}}A confissão do valuation, feita no meio do vinho, ainda pesa no ar, e quem a ouviu não a devolveu. {{/se}}{{se flag:confessou_prejuizo}}A confissão do rombo da empresa, feita no meio do vinho, ainda pesa no ar, e quem a ouviu não a devolveu. {{/se}}\n\nNa porta do Hotel Imperial, o porteiro, de cartola e de casaco longo, abre a porta e diz *Guten Morgen*, com a gentileza de quem sabe que três da manhã é hora de bom-dia. Do elevador, o quarto 412 está a quatro andares. No espelho dourado da cabine, duas pessoas olham o mesmo ponto na parede.\n\nNa frente da porta do quarto, com o cartão dourado na mão, uma delas diz a frase que ninguém, em seis noites, tinha ousado dizer em voz alta:\n\n— E agora?",
+      "gancho": "Três da manhã, a porta do quarto único, e uma pergunta que ninguém sabe responder.",
+      "ir": "up_c7_manha"
+    },
+    "up_c7_manha": {
+      "tipo": "segue",
+      "cap": 7,
+      "lugar": "Corredor do 4º andar, Hotel Imperial",
+      "hora": "Domingo · 03h20",
+      "ir": [
+        {
+          "se": "flag:beijo_cafe",
+          "ir": "up_c7_consente"
+        },
+        {
+          "ir": "up_c7_sem_beijo"
+        }
+      ],
+      "texto": "O corredor do quarto andar do Imperial tem tapete vermelho com um desenho de rosas, castiçais de bronze e um silêncio de lã. Às três e vinte da manhã, a luz é amarela e baixa, e os passos, mesmo cuidadosos, fazem um som que parece um comentário.\n\nNa porta do 412, com o cartão dourado na mão e a pergunta ainda no ar, dois candidatos a uma vaga que talvez nunca tenha existido ficam parados, como duas pessoas diante do primeiro degrau de uma escada.\n\n{{se flag:confessou_valuation}}Uma delas disse a verdade sobre o valuation, e a outra a ouviu. {{/se}}{{se flag:confessou_prejuizo}}Uma delas disse a verdade sobre o rombo da empresa, e a outra a ouviu. {{/se}}{{se flag:a_confessou_menor}}Uma delas contou uma meia verdade, e a outra a aceitou como uma verdade inteira. {{/se}}{{se flag:b_confessou_menor}}Uma delas contou uma meia verdade, e a outra a aceitou como uma verdade inteira. {{/se}}"
+    },
+    "up_c7_consente": {
+      "tipo": "consentimento",
+      "cap": 7,
+      "lugar": "Porta do quarto 412, Hotel Imperial",
+      "hora": "Domingo · 03h22",
+      "requer": [
+        "beijo_cafe"
+      ],
+      "texto": "A porta, de mogno escuro, tem um olho mágico de bronze e um número em relevo: 412. O cartão está na mão. Dentro, uma cama king, um sofá de metro e sessenta e cinco, e as regras que os dois assinaram em um papel do hotel, três noites atrás, uma delas sobre *território neutro*.\n\nNinguém diz nada. Cada um, por dentro, decide o que a próxima hora vai ser.",
+      "pergunta": "O que você quer?",
+      "avancar": "Entrar juntos, e deixar a noite acontecer.",
+      "ficar": "Entrar, cada um no seu lado, e deixar a noite ser só uma noite.",
+      "flag": "noite_412",
+      "irAvancou": "up_c7_noite",
+      "irSem": "up_c7_noite"
+    },
+    "up_c7_noite": {
+      "tipo": "segue",
+      "cap": 7,
+      "lugar": "Quarto 412, Hotel Imperial",
+      "hora": "Domingo · 03h30",
+      "requer": [
+        "beijo_cafe"
+      ],
+      "ir": "up_c7_acorda",
+      "texto": "{{se flag:noite_412}}A porta fecha atrás dos dois com o clique suave de uma fechadura de hotel de luxo, e o mundo, do lado de fora, diminui de tamanho. A cama king, que durante três noites foi uma fronteira, deixa de ser uma coisa para medir. A luz do abajur é amarela. O Ring, lá embaixo, está em silêncio, e a cortina, de damasco, se mexe sozinha com uma corrente de ar da janela entreaberta.\n\nHá uma pausa em que os dois, que passaram a semana inteira a medir o que dizer, não dizem nada. Depois, a noite se encarrega do resto, e é uma noite que o mundo, por educação, não descreve.\n\nLá fora, em algum ponto de Viena, um bonde amarelo passa em silêncio.{{senao}}Os dois entram. O clique suave da fechadura de hotel de luxo ecoa no quarto, e a cama king, que durante três noites foi uma fronteira, continua sendo uma fronteira. Cada um se troca no banheiro, cada um escolhe o seu lado do colchão, cada um se deita de costas, com uma colcha por cima e os olhos abertos para um teto de gesso com rosáceas.\n\nNão há travesseiro no meio, desta vez. Há dez centímetros de espaço, e o espaço pesa. Ninguém tenta atravessá-lo, e, de algum modo, os dois sabem que essa também é uma resposta. Por volta das quatro, uma respiração mais lenta indica que um dos dois, afinal, adormeceu.{{/se}}"
+    },
+    "up_c7_sem_beijo": {
+      "tipo": "segue",
+      "cap": 7,
+      "lugar": "Quarto 412, Hotel Imperial",
+      "hora": "Domingo · 03h30",
+      "exclui": [
+        "beijo_cafe"
+      ],
+      "ir": "up_c7_acorda",
+      "texto": "Os dois entram. A fechadura de hotel de luxo faz o seu clique, e a cama king, que durante três noites foi uma fronteira, continua sendo uma fronteira. Do café, ninguém trouxe nada além do cheiro de vinho e de papel de jornal nas roupas.\n\nCada um se troca no banheiro, cada um escolhe o seu lado, cada um se deita de costas, a um palmo de distância, com os olhos abertos para um teto de gesso com rosáceas. O que quase aconteceu, na mesa de mármore, ocupa o espaço no meio do colchão, e é uma presença que não cabe em nenhuma das regras escritas no papel do hotel.\n\nPelas quatro da manhã, a respiração do outro lado finalmente fica regular."
+    },
+    "up_c7_acorda": {
+      "tipo": "dialogo",
+      "cap": 7,
+      "lugar": "Quarto 412, Hotel Imperial",
+      "hora": "Domingo · 09h40",
+      "comeca": "B",
+      "texto": "{{se flag:noite_412}}Acordar com a luz de Viena pelas cortinas de damasco, às nove e quarenta, ao lado de alguém que, três dias antes, era uma concorrente, é uma experiência que nenhuma planilha previu. O quarto cheira a sabonete de hotel e a café requentado. Os lençóis têm a forma de duas pessoas que, de algum modo, pararam de ser duas.{{/se}}{{se !flag:noite_412}}Acordar com a luz de Viena pelas cortinas de damasco, às nove e quarenta, sem ter sido nada além de colegas num colchão, é uma experiência que nenhuma planilha previu. O quarto cheira a sabonete de hotel e a café requentado. O espaço no meio do colchão continua lá, e ninguém sabe se é uma muralha ou uma ponte.{{/se}}\n\nO sol, oblíquo, atravessa a cortina e desenha no tapete um retângulo dourado. Alguém, em voz baixa, começa a dizer alguma coisa.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "j0_b_abre",
+              "texto": "— Bom dia. Eu dormi melhor do que em cinco anos de escritório.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "j0_b_flerte",
+              "texto": "— Você fala dormindo. Eu anotei tudo. Vou usar na negociação.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "j0_b_seco",
+              "texto": "— Bom dia. Eu peço o café da manhã. Você quer o quê?",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "j0_a_abre",
+              "texto": "— Eu não sei o que dizer. Isso, para mim, é novidade.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "j0_a_flerte",
+              "texto": "— Você ronca. Baixinho. É quase simpático.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "j0_a_seco",
+              "texto": "— Bom dia. São 9h40. O brunch do congresso é às onze.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "j1_a_abre",
+              "texto": "— Eu também não. E, curiosamente, não estou com medo.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "j1_a_cuida",
+              "texto": "— Pede o café. Eu quero o forte, com leite quente. Valeu, se eu já não disse.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "j1_a_seco",
+              "texto": "— Isso não muda o fato de que estamos competindo pela mesma vaga.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "j1_b_abre",
+              "texto": "— Eu estou com medo, na verdade. Mas é do tipo bom.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "j1_b_cuida",
+              "texto": "— Eu peço o café. E você fica aí mais cinco minutos. Ninguém está com pressa.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "j1_b_seco",
+              "texto": "— Isso não muda o fato de que somos concorrentes. Mas muda muita coisa.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "j2_a_abre",
+              "texto": "— O que a gente faz agora? Eu preciso saber o que você quer, para eu saber o que eu quero.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "j2_a_flerte",
+              "texto": "— Podemos fingir que nada aconteceu, mas eu sou péssima mentirosa.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "j2_a_seco",
+              "texto": "— Proponho uma regra: não falamos disso até o fim do congresso. Quarta-feira, e voltamos à conversa.",
+              "se": "eu:A",
+              "efeitos": {
+                "flag": "propos_regra_silencio"
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "j2_b_abre",
+              "texto": "— O que a gente faz agora? Eu quero que seja você a dizer. Eu aceito qualquer coisa que você disser.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "j2_b_flerte",
+              "texto": "— Podemos fingir que nada aconteceu, mas eu sou péssimo mentiroso.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "j2_b_seco",
+              "texto": "— Proponho uma regra: não falamos disso até o fim do congresso. Quarta-feira, e voltamos à conversa.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "propos_regra_silencio"
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da manhã é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "j3_a_abre",
+              "texto": "— Combinado. Mas, só para constar: o que aconteceu não foi um erro.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "j3_a_seco",
+              "texto": "— Combinado. Regra: ninguém comenta. Ninguém analisa. Ninguém conta para a Nina.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "j3_a_flerte",
+              "texto": "— Combinado. Mas quarta, eu quero um jantar de verdade, com garçom e tudo.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "j3_b_abre",
+              "texto": "— Combinado. Mas, só para constar: eu não me arrependo.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "j3_b_seco",
+              "texto": "— Combinado. Regra: ninguém comenta. Ninguém analisa. Ninguém conta para o meu pai.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "j3_b_flerte",
+              "texto": "— Combinado. Mas quarta, o jantar é meu, com garçom e tudo.",
+              "se": "eu:B"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Quer que eu abra a cortina? Ou fecho?"
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Ok."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— O café da manhã não vai ser tão bom quanto o resto."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu estou feliz. Isso é assustador."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Isso foi um erro, e nós dois sabemos."
+        }
+      ],
+      "fecho": "A regra fica no ar como uma promessa de duas pessoas que, em quarenta e oito horas, descobriram que promessas são a única coisa que sabem fazer em dupla. Do lado de fora, o bonde amarelo passa, silencioso, e a Ringstrasse acorda para um domingo de céu limpo.",
+      "ir": "up_c7_regra"
+    },
+    "up_c7_regra": {
+      "tipo": "decisao",
+      "cap": 7,
+      "lugar": "Quarto 412, Hotel Imperial",
+      "hora": "Domingo · 10h30",
+      "texto": "Uma regra, para valer, precisa de dois. Os dois já a combinaram em voz alta. Falta saber como cada um pretende cumpri-la, e se os dois pretendem a mesma coisa.",
+      "pergunta": "Como vocês vão agir daqui até quarta?",
+      "ir": {
+        "A": "up_c7_a",
+        "B": "up_c7_b"
+      },
+      "acoes": [
+        {
+          "id": "normal",
+          "texto": "Agir como se nada tivesse acontecido: colegas, concorrentes, com educação",
+          "efeitos": {
+            "flag": "fingir_normal",
+            "abalo": 1
+          },
+          "resultado": "Vocês combinam agir normalmente. Colegas em público, concorrentes na sala, educados no corredor. É um plano de adultos com a lógica de crianças, e os dois sabem. Mas é o plano, e planos, quando se cumprem, parecem sempre ser a coisa certa."
+        },
+        {
+          "id": "aberto",
+          "texto": "Agir abertamente: se alguém perguntar, a verdade; se ninguém perguntar, nada",
+          "efeitos": {
+            "flag": "agir_aberto",
+            "vinculo": 2
+          },
+          "resultado": "Vocês combinam não esconder nada. Se alguém perguntar, vocês dizem a verdade. Se ninguém perguntar, ninguém diz nada. É uma regra mais difícil do que parece, porque exige que os dois escolham, a cada olhar, não desviar."
+        },
+        {
+          "id": "distancia",
+          "texto": "Manter distância: passar os próximos dois dias em salas diferentes, e voltar a conversar na quarta",
+          "efeitos": {
+            "flag": "manter_distancia"
+          },
+          "resultado": "Vocês combinam distância. Salas separadas nos painéis, almoços em mesas diferentes, um quarto dividido como se fosse de dois hóspedes que nunca se viram. É a decisão mais prática e a mais triste, e dura menos de um dia, como toda decisão prática e triste."
+        }
+      ]
+    },
+    "up_c7_a": {
+      "tipo": "solo",
+      "cap": 7,
+      "seat": "A",
+      "lugar": "Brunch do congresso, Hofburg",
+      "hora": "Domingo · 11h30",
+      "npcs": [
+        "marcus"
+      ],
+      "texto": "No brunch do congresso, entre uma mesa de salmão defumado e uma ilha de croissants, o seu celular vibra, em silêncio. Um e-mail, enviado há três minutos, sem saudação, sem assunto, só com duas linhas e uma assinatura:\n\n*Precisamos conversar. Segunda-feira, 8h, na minha sala em Chicago. Sem a outra parte. — M.W.*\n\nVocê lê duas vezes. Em onze anos na Meridian, essa frase, *precisamos conversar*, tem um único significado: demissão, ou o aviso de uma. Você olha em volta. A pessoa que dormiu no 412 está do outro lado do salão, de costas, rindo de uma coisa que um delegado sueco disse. Você nunca a viu rir assim.",
+      "acoes": [
+        {
+          "id": "contar",
+          "texto": "Atravessar o salão e mostrar o e-mail à pessoa do 412, agora",
+          "ir": "up_c7_fim",
+          "efeitos": {
+            "flag": "a_mostrou_email",
+            "vinculo": 2
+          },
+          "resultado": "Você atravessa o salão, com o celular na mão. A pessoa do 412 vê o seu rosto antes de ver a tela, e a risada some. Você estende o celular, em silêncio. Depois de dois segundos, ela diz, em voz baixa, uma frase que não está no seu manual: *vem aqui. Fica comigo um minuto.*"
+        },
+        {
+          "id": "guardar",
+          "texto": "Guardar o e-mail, não dizer nada e esperar até segunda",
+          "ir": "up_c7_fim",
+          "efeitos": {
+            "flag": "a_guardou_email",
+            "abalo": 1
+          },
+          "resultado": "Você guarda o celular no bolso do blazer. A regra do silêncio, combinada de manhã, sobre outro assunto, agora tem um segundo uso. Você sorri para um delegado alemão, pega um croissant, e a primeira coisa que pensa é que a sua vida, nos últimos dias, anda cheia de assuntos que não pode contar a ninguém."
+        },
+        {
+          "id": "responder",
+          "texto": "Responder ao Marcus: aceito, mas quero que a pessoa do 412 também esteja",
+          "ir": "up_c7_fim",
+          "efeitos": {
+            "flag": "a_exigiu_presenca",
+            "abalo": 1
+          },
+          "resultado": "Você digita: *Aceito. Quero a outra parte presente.* A resposta, em quarenta segundos: *Não.* E, logo depois, uma segunda mensagem: *Segunda, 8h. Sozinha.* A palavra *sozinha* é a primeira vez que o Marcus usa o feminino para se referir a você em onze anos, e você sente, pelo mesmo motivo, um frio."
+        }
+      ]
+    },
+    "up_c7_b": {
+      "tipo": "solo",
+      "cap": 7,
+      "seat": "B",
+      "lugar": "Brunch do congresso, Hofburg",
+      "hora": "Domingo · 11h30",
+      "npcs": [
+        "marcus"
+      ],
+      "texto": "No brunch do congresso, com um prato de ovos mexidos que você não pediu, o seu celular vibra. Um e-mail, de Marcus Webb, com um assunto cheio de pontos de exclamação, algo que ele jamais escreveria sem um motivo:\n\n*{{B.nome}}! Parabéns pelas duas apresentações. A Meridian precisa de gente como você. Jantar hoje, 20h, só nós dois, Restaurante Steirereck. Quero falar do seu futuro. — Marcus.*\n\nVocê lê três vezes. A palavra *futuro*, em um e-mail de Marcus, nunca é inocente. O primeiro nome, sozinho, é a segunda coisa estranha. Do outro lado do salão, a pessoa do 412 conversa com uma delegada brasileira, de costas, e você sente, pela primeira vez, que tem um segredo que não pode contar.",
+      "acoes": [
+        {
+          "id": "mostrar",
+          "texto": "Mostrar o e-mail à pessoa do 412 e contar do jantar, mesmo sendo uma vantagem",
+          "ir": "up_c7_fim",
+          "efeitos": {
+            "flag": "b_mostrou_jantar",
+            "vinculo": 2
+          },
+          "resultado": "Você atravessa o salão e estende o celular. A pessoa do 412 lê, devagar. O rosto não muda. Depois, ela devolve o celular e diz, com a voz de quem escolhe cada palavra: *vai. E me conta tudo.* Você percebe que acabou de dar a ela uma informação, e que ela acabou de dar a você uma confiança."
+        },
+        {
+          "id": "guardar",
+          "texto": "Guardar o e-mail e ir ao jantar sem dizer nada",
+          "ir": "up_c7_fim",
+          "efeitos": {
+            "flag": "b_guardou_jantar",
+            "abalo": 1
+          },
+          "resultado": "Você guarda o celular. A regra do silêncio, combinada de manhã, ganha um segundo uso. Você sabe que vai ao jantar, e sabe que não vai contar. Sorri para uma delegada alemã, aceita um café e pensa que nunca, em quarenta e um anos, teve um segredo tão pequeno e tão pesado."
+        },
+        {
+          "id": "recusar",
+          "texto": "Responder ao Marcus: valeu, mas prefiro jantar com a equipe",
+          "ir": "up_c7_fim",
+          "efeitos": {
+            "flag": "b_recusou_jantar",
+            "vinculo": 1
+          },
+          "resultado": "Você digita: *Valeu, Marcus. Prefiro jantar com a delegação.* A resposta chega em três segundos: *Que pena.* E, logo depois, uma segunda mensagem: *Eu insisto.* É a palavra *insisto*, de um homem que nunca insiste, que faz você perceber que há uma coisa nesse jantar que não é um jantar."
+        }
+      ]
+    },
+    "up_c7_fim": {
+      "tipo": "fim",
+      "cap": 7,
+      "lugar": "Hofburg Congress Center, Viena",
+      "hora": "Domingo · 13h00",
+      "texto": "Ao meio-dia, o brunch acaba, a plateia se dispersa e a tarde de domingo se abre em painéis, visitas à Ópera e um passeio de barco no Danúbio. {{se flag:fingir_normal}}Os dois, de acordo, são educados no corredor. {{/se}}{{se flag:agir_aberto}}Os dois, de acordo, não se escondem de ninguém. {{/se}}{{se flag:manter_distancia}}Os dois, de acordo, passam a tarde em salas separadas, e a distância dói mais do que o combinado. {{/se}}\n\n{{se flag:noite_412}}O que aconteceu no 412 está em todo lugar e em lugar nenhum, em um olhar de rabo de olho, em uma mão que não se estende e quase se estende. {{/se}}{{se !flag:noite_412}}O que não aconteceu no 412 é o que mais pesa, em um olhar de rabo de olho, em uma mão que não se estende e quase se estende. {{/se}}{{se flag:propos_regra_silencio}}A regra do silêncio foi proposta, e aceita, e já tem cheiro de promessa quebrada. {{/se}}\n\nÀs três da tarde, em lados diferentes do Hofburg, dois celulares vibram quase ao mesmo tempo. Cada um recebe uma notificação do mesmo remetente, Chloe Bennett, em Chicago, com a mesma frase, dita de dois jeitos, para duas pessoas que ainda acreditam que a outra não sabe de nada:\n\n*Achei a página dezessete. Preciso que você me ligue hoje, a sós.*",
+      "gancho": "A estagiária achou a página que faltava, e cada um dos dois pensa que é o único a saber.",
       "ir": "up_rascunho_fim"
     },
     "up_rascunho_fim": {
       "tipo": "final",
-      "cap": 5,
+      "cap": 7,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
