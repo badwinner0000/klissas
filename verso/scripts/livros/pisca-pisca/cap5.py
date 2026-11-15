@@ -29,7 +29,7 @@ Ela mexe a colher, em círculos, mais devagar.
 
 — Wing Lau. Vinte e cinco anos de amigo. Estrela feita junto, árvore montada junto, filho batizado quase junto. E não veio. Nem mandou flor. Nem mandou um bilhete. — A colher bate duas vezes na borda da panela. — O seu pai, que ama o próprio pai mais do que a si mesmo, nunca perdoou. E eu, que sou velha e ruim, deixei.""",
  acoes=[
-  dict(id='defender', texto='Dizer que deve ter havido uma razão, que ninguém some por cinquenta anos de amizade sem motivo', ir='pp_c5_almoco',
+  dict(id='defender', texto='Dizer que deve ter havido uma razão, que ninguém some depois de vinte e cinco anos de amizade sem motivo', ir='pp_c5_almoco',
    efeitos=dict(flag='a_defendeu_wing', vinculo=1),
    resultado="""— Deve ter havido uma razão — você diz, e é a primeira vez que você diz uma frase assim naquela cozinha. A nonna levanta os olhos da panela, surpresa, como quem ouve uma língua que já falou. *Se houve, ninguém nunca me contou*, responde. *E eu nunca perguntei.* Pelo jeito como ela diz, você percebe que a segunda frase pesa mais do que a primeira."""),
   dict(id='concordar', texto='Dizer que foi uma falta de respeito que a família tem direito de sentir até hoje', ir='pp_c5_almoco',

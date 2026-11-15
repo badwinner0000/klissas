@@ -1551,7 +1551,7 @@
       "acoes": [
         {
           "id": "defender",
-          "texto": "Dizer que deve ter havido uma razão, que ninguém some por cinquenta anos de amizade sem motivo",
+          "texto": "Dizer que deve ter havido uma razão, que ninguém some depois de vinte e cinco anos de amizade sem motivo",
           "ir": "pp_c5_almoco",
           "efeitos": {
             "flag": "a_defendeu_wing",
