@@ -9,7 +9,8 @@
     "lint:livros": "tsx scripts/lint-livros.ts",
     "sim": "tsx scripts/sim.ts",
     "trilha": "tsx scripts/trilha.ts",
-    "contar": "tsx scripts/contar.ts"
+    "contar": "tsx scripts/contar.ts",
+    "migrar:padrinhos": "tsx scripts/migracao/converter.mjs"
   },
   "dependencies": {
     "zod": "^3.23.8"

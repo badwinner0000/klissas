@@ -12,6 +12,8 @@ export const Efeitos = z
   .object({
     flag: z.union([z.string(), z.array(z.string())]).optional(),
     nflag: z.union([z.string(), z.array(z.string())]).optional(),
+    /** grava `<nome>_a` ou `<nome>_b` conforme QUEM age (marca individual, ex.: quem mandou o recado) */
+    flagSeat: z.union([z.string(), z.array(z.string())]).optional(),
     vinculo: z.number().int().optional(),
     fa: z.number().int().optional(), // faísca (química)
     abalo: z.number().int().optional(), // nervosismo de quem age
@@ -147,7 +149,9 @@ export const Livro = z
     idades: z.object({ A: z.number().int(), B: z.number().int() }).optional(),
     npcs: z.record(z.object({ nome: z.string(), voz: z.string() }).strict()).default({}),
     nomesProibidos: z.array(z.string()).default([]),
-    inicio: z.string(),
+    /** Baseline de dívida: flags gravadas que nenhuma cena lê (livros migrados). Vira aviso; livros novos devem ter lista vazia. */
+    escolhasMortasToleradas: z.array(z.string()).default([]),
+    inicio: z.union([z.string(), z.object({ A: z.string(), B: z.string() }).strict()]),
     nos: z.record(No),
   })
   .strict();

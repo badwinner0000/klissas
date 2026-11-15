@@ -7,23 +7,34 @@ Livros-jogo em pt-BR para duas pessoas. Plano completo em `docs/PLANO.md`; schem
 | Marco | Situação |
 | --- | --- |
 | a) schema + auth + RLS | schema escrito, **ainda não executado nem testado** (sem Supabase local neste ambiente) |
-| b) motor + testes | feito (sem dados): `src/engine/` (puro) + `tests/unit/` |
+| b) motor v2 + testes | feito, sem dados e sem puzzle: `src/engine/` (puro) + `tests/unit/` (40 testes) |
 | f) lint / sim / trilha / contar | feito |
+| Padrinho e Madrinha migrado | feito (ver abaixo) |
 | c) leitor e lobby em tempo real, d) biblioteca e tema, e) modo solo, g) E2E + CI | pendentes |
 
-## Prioridade de conteúdo
+## Padrinho e Madrinha (primeiro livro real) — migrado
 
-**O primeiro livro real do Verso é "Padrinho e Madrinha"** (Love Story Nº 5). O material de origem está em
-`fontes/padrinho-e-madrinha/` (código JS dos 21 arquivos de capítulo, motor de referência, ferramentas antigas e o texto
-lido de ponta a ponta, que serve de gabarito da migração). `voo-cancelado` fica só como fixture de teste.
+`content/livros/padrinhos.json` é gerado por `npm run migrar:padrinhos` a partir de `fontes/padrinho-e-madrinha/` (conversor por AST em `scripts/migracao/converter.mjs`; nada é copiado à mão).
 
-Levantamento para a migração (feito sobre o material, ainda sem converter nada):
-- ~120 cenas e ~26,6 mil palavras; tipos usados: segue 35, dividir 26, dialogo 19, fim 9, decisao 5, puzzle 1, final 1 (e as cenas solo).
-- Textos são funções JS com poucos helpers: `c.f(flag)` (166 usos), `lsNoite` (consentimento), `lsSeat`, `lsSim`, nome e gênero (`pda`, `pdgA`...). Isso torna a conversão para templates seguros viável, mas não 100% automática: cadeias de ternário precisam de revisão humana.
-- Lacunas do meu motor a fechar antes: nó `puzzle`; opções de diálogo que dependem do histórico inteiro (`ops:(c,h)=>`), não só do tom anterior; faixas de nervosismo que mudam texto; atributos do livro (Lábia, Cabeça, Agilidade, Coragem, Força) no lugar dos de exemplo; ordem real dos votos secretos.
-- Gabarito: o `.md` completo (caminho em que os dois aceitam) deve bater com a trilha gerada pelo Verso para a mesma política.
+| Verificação | Resultado |
+| --- | --- |
+| Conversão | 122 nós, 0 problemas não mapeados |
+| `lint:livros padrinhos` | **0 erros**, 183 avisos |
+| `sim padrinhos` | 640 partidas (4 políticas × 4 gêneros × 40): 0 erros, todos os 122 nós visitados |
+| Consentimento (4 políticas) | chega ao fim sem texto contraditório; nó "sim" nunca aparece se alguém recusou |
+| Cobertura vs gabarito do zip | 96,4% dos parágrafos (400 partidas aleatórias, `npx tsx scripts/migracao/comparar.ts`) |
 
-Plano detalhado da migração: `docs/MIGRACAO-PADRINHOS.md`.
+Decisões da migração:
+- **Sem dados e sem puzzle.** Os 58 testes viram variantes: o ramo `falha` do original vale quando o personagem está com nervosismo ≥ 3 (`abalo>=3`); caso contrário, o ramo `ok`. O único puzzle (a mesa 7) virou uma decisão conjunta.
+- **Consentimento:** as 7 cenas `secreto` viraram nós `consentimento`; as flags individuais (`noite3_a`/`_b`...) são **privadas** (`flagsPrivadas()`), e o servidor não pode projetá-las ao cliente.
+- **Correções editoriais** (o original violava as regras do Verso em 4 trechos que narravam fala de protagonista sem escolha) e 2 opções com gênero fixo: ficam listadas em `CORRECOES` no conversor, com o motivo.
+- **Perspectiva:** resultados são escritos em 2ª pessoa de quem age e o parceiro lê em 3ª (porte de `terceira()/vistaDoPar()` do motor original).
+
+Dívida conhecida, a resolver depois (não bloqueia):
+- **114 "escolhas mortas"**: flags que o original grava e nenhuma cena lê. Estão no `escolhasMortasToleradas` do livro (aviso, não erro). Cada uma é uma escolha que não muda nada: ligar a uma cena posterior ou cortar. Livros novos têm baseline vazio.
+- **Ramos `falha`** só aparecem com nervosismo alto, então são raros (parte dos 3,6% de parágrafos do gabarito não cobertos).
+- **64 cenas < 150 palavras** (a Bíblia pede 150–400); 5 acima de 400.
+- O lint de agência cobre fala e sentimento de protagonista; ações do próprio personagem em cenas solo lineares ("Você senta...") continuam como no original.
 
 ## Comandos (dentro de `verso/`)
 

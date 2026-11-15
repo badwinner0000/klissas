@@ -25,7 +25,7 @@ const marca = { esc: '▸', fala: '“', txt: '' } as const;
 
 export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, maxPassos = 1500): Partida {
   let e = iniciar(l, jog);
-  const visitados = new Set<string>([l.inicio]);
+  const visitados = new Set<string>(typeof l.inicio === 'string' ? [l.inicio] : [l.inicio.A, l.inicio.B]);
   const textos: Record<Seat, string[]> = { A: [], B: [] };
   const erros: string[] = [];
   const ultimo: Record<Seat, string> = { A: '', B: '' };

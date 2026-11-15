@@ -18,17 +18,38 @@ const VERBOS = 'diz|disse|dizia|responde|respondeu|pergunta|perguntou|sussurra|s
 const PROT = String.raw`(?:você|\{\{\s*[AB]\.(?:nome|ref)\s*\}\}|\{\{\s*(?:par|eu|ator|outro)\.(?:nome|ref)\s*\}\}|\{\{\s*(?:quem|outroquem)\s*\}\})`;
 /** Só o OUTRO protagonista: em resultado de ação escolhida, o ator pode falar/agir (ele escolheu), o par não. */
 const PAR = String.raw`(?:\{\{\s*(?:par|outro)\.(?:nome|ref)\s*\}\}|\{\{\s*outroquem\s*\}\})`;
-const padroes = (p: string): RegExp[] => [
-  new RegExp(String.raw`(?<![\p{L}])${p}\s+(?:${VERBOS})(?![\p{L}])`, 'iu'),
-  new RegExp(String.raw`(?<![\p{L}])(?:${VERBOS})\s+${p}`, 'iu'),
-  new RegExp(String.raw`[“"][^”"]{2,}[”"],?\s*(?:${VERBOS})\s+[^.]{0,30}${p}`, 'iu'),
-  new RegExp(String.raw`(?:^|\n)\s*[—–-]\s*[^\n]*[—–-]\s*(?:${VERBOS})\s+${p}`, 'iu'),
-  new RegExp(String.raw`(?<![\p{L}])${p}\s+(?:sente|pensa|percebe|nota|vê|olha para)(?![\p{L}])[^.]*(?:apaixonad|amor|desejo)`, 'iu'),
-];
-export const PADROES_AGENCIA = padroes(PROT);
-const PADROES_PAR = padroes(PAR);
+const SEMQUE = String.raw`(?!\s+que(?![\p{L}]))`;
+/**
+ * Violações de agência numa narração, por parágrafo.
+ *  - parágrafo de fala (começa com travessão): só a ATRIBUIÇÃO ("— Cético — você diz,"), nunca fala de NPC que cita "você disse que...".
+ *  - parágrafo de narração: "Você diz que...", "{{A.nome}} responde...", sentimento presumido do protagonista.
+ * `quem` = quais referências contam como protagonista (todas, ou só o par em resultado de ação escolhida).
+ */
+export function violacoesAgencia(texto: string, quem: string): string[] {
+  const out: string[] = [];
+  const V = `(?:${VERBOS})(?![\\p{L}])`;
+  const atrib = new RegExp(String.raw`(?<=\S\s)[—–]\s*${quem}\s+${V}${SEMQUE}`, 'iu');
+  const inicio = new RegExp(String.raw`(?:^|[.!?:]\s+|\n)${quem}\s+${V}`, 'iu');
+  const invertido = new RegExp(String.raw`(?<![\p{L}])(?:${VERBOS})\s+${quem}`, 'iu');
+  const aspas = new RegExp(String.raw`[“"][^”"]{2,}[”"],?\s*(?:${VERBOS})\s+[^.]{0,30}${quem}`, 'iu');
+  const sentir = new RegExp(String.raw`(?<![\p{L}])${quem}\s+(?:sente|pensa|percebe|nota|vê|olha para)(?![\p{L}])[^.]*(?:apaixonad|amor|desejo)`, 'iu');
+  // marcadores de controle ({{se}}, {{senao}}, {{/se}}) não contam como texto: escondiam a pontuação antes do verbo
+  const limpo = texto.replace(/\{\{(?:se [^}]*|senao|\/se)\}\}/g, '');
+  for (const par of limpo.split('\n')) {
+    const fala = /^\s*[—–]/.test(par);
+    const res = fala ? [atrib, invertido, sentir] : [inicio, atrib, invertido, aspas, sentir];
+    for (const re of res) {
+      const m = par.match(re);
+      if (m) out.push(m[0].trim().slice(0, 70));
+    }
+  }
+  return out;
+}
+export const PADROES_AGENCIA = [] as RegExp[]; // compat: a regra agora é por parágrafo (violacoesAgencia)
 const DEFEITOS = /\$\{|undefined|\bnull\b|NaN|\[object|\{\{|\}\}/;
-const GENERO_FIXO = /\b(sozinh[oa]|cansad[oa]|exaust[oa]|obrigad[oa]|educad[oa]|nervos[oa]|sério|séria|bonit[oa]|lind[oa])\b/i;
+// só autorreferência: "estou cansada", "obrigado", ", sozinho," (adjetivo sobre terceiros ou sobre substantivo não conta)
+const ADJ = String.raw`(?:cansad|nervos|sozinh|exaust|obrigad|bonit|lind|educad|ocupad|sozinh)[oa]|sério|séria`;
+const GENERO_FIXO = new RegExp(String.raw`(?:\b(?:estou|sou|fiquei|fico|me sinto|me senti)\s+(?:muito\s+|tão\s+|meio\s+|bem\s+)?(?:${ADJ})(?![\p{L}]))|(?:,\s*sozinh[oa](?![\p{L}]))|(?:\bler sozinh[oa](?![\p{L}]))|(?:\bobrigad[oa](?![\p{L}]))`, 'iu');
 
 type Kind = 'narracao' | 'resultado' | 'opcao';
 export function textosDoNo(no: No): { campo: string; texto: string; kind: Kind }[] {
@@ -130,9 +151,9 @@ export function chavesDuplicadas(raw: string): string[] {
   return dups;
 }
 
-function alcancaveis(l: LivroT, de: string): Set<string> {
+function alcancaveis(l: LivroT, de: string | string[]): Set<string> {
   const vis = new Set<string>();
-  const fila = [de];
+  const fila = Array.isArray(de) ? [...de] : [de];
   while (fila.length) {
     const id = fila.pop()!;
     if (vis.has(id) || !l.nos[id]) continue;
@@ -177,7 +198,8 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
   const W = (regra: string, no: string | undefined, msg: string) => avisos.push({ regra, no, msg });
   const ids = Object.keys(l.nos);
 
-  if (!l.nos[l.inicio]) E('destino', undefined, `início "${l.inicio}" não existe`);
+  const inicios = typeof l.inicio === 'string' ? [l.inicio] : [l.inicio.A, l.inicio.B];
+  for (const i0 of inicios) if (!l.nos[i0]) E('destino', undefined, `início "${i0}" não existe`);
   for (const [id, no] of Object.entries(l.nos)) {
     for (const d of destinos(no)) if (!l.nos[d]) E('destino', id, `destino inexistente: ${d}`);
     if (no.tipo === 'solo' && !no.ir && !no.acoes.some((a) => a.ir)) E('solo-sem-saida', id, 'nó solo sem ação de saída (ir)');
@@ -205,7 +227,7 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
     }
   }
 
-  const vivos = alcancaveis(l, l.inicio);
+  const vivos = alcancaveis(l, inicios);
   for (const id of ids) if (!vivos.has(id)) E('orfao', id, 'nó nunca visitado (inalcançável)');
   if (!ids.some((i) => l.nos[i]!.tipo === 'final')) E('sem-final', undefined, 'livro sem nó final');
   for (const id of vivos) {
@@ -237,10 +259,7 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
       for (const n of proibidos) if (new RegExp(`(^|[^\\p{L}])${n}([^\\p{L}]|$)`, 'u').test(t.texto)) E('nome-fixo', id, `${onde}: nome fixo "${n}" no texto`);
       // agência: narração livre não pode falar/agir/sentir por protagonista; resultado de ação escolhida só não pode falar/sentir pelo PAR
       if (t.kind !== 'opcao') {
-        for (const re of t.kind === 'narracao' ? PADROES_AGENCIA : PADROES_PAR) {
-          const m = t.texto.match(re);
-          if (m) E('agencia', id, `${onde}: narra fala/ação/sentimento de protagonista não escolhido → "${m[0].slice(0, 70)}"`);
-        }
+        for (const v of violacoesAgencia(t.texto, t.kind === 'narracao' ? PROT : PAR)) E('agencia', id, `${onde}: narra fala/ação/sentimento de protagonista não escolhido → "${v}"`);
       }
       if (t.kind === 'opcao') {
         const m = t.texto.replace(/\{\{[^}]*\}\}/g, '').match(GENERO_FIXO);
@@ -259,6 +278,11 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
         const quem: Seat = i % 2 === 0 ? no.comeca : no.comeca === 'A' ? 'B' : 'A';
         const o = opcoesTurno(no, i, envBase(flags, num, quem, hist));
         const tons = new Set(o.map((x) => x.tom));
+        const tg = o.map((x) => x.tag);
+        if (new Set(tg).size !== tg.length) {
+          const k = `dup|${i}|${hist.map((h) => h.tag).join('>')}`;
+          if (!reportado.has(k)) { reportado.add(k); E('id-duplicado', id, `turno ${i}: duas opções visíveis ao mesmo tempo com a mesma tag`); }
+        }
         if (o.length < 3 || tons.size < 3) {
           const k = `${i}|${hist.map((h) => h.tag).join('>')}`;
           if (!reportado.has(k)) {
@@ -269,13 +293,6 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
         for (const x of o) dfs(i + 1, [...hist, { tag: x.tag, tom: x.tom }]);
       };
       dfs(0, []);
-    }
-    for (const [i, t] of no.turnos.entries()) {
-      const tags = new Set<string>();
-      for (const o of t.opcoes) {
-        if (tags.has(o.tag)) E('id-duplicado', id, `tag repetida no turno ${i}: ${o.tag}`);
-        tags.add(o.tag);
-      }
     }
   }
 
@@ -307,11 +324,16 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
   };
   for (const no of Object.values(l.nos)) {
     if (no.tipo === 'consentimento') {
+      if (no.irAvancou !== no.irSem) lidas.add(no.flag); // o próprio roteamento lê a flag
       escritas.add(no.flag);
       opcionais.add(`${no.flag}_a`); // votos individuais (privados): podem ficar sem leitura
       opcionais.add(`${no.flag}_b`);
     }
     if (no.tipo === 'segue' || no.tipo === 'solo') ef(no.efeitos);
+    const fs = (e: { flagSeat?: string | string[] } | undefined) => { for (const f of Array.isArray(e?.flagSeat) ? e!.flagSeat : e?.flagSeat ? [e.flagSeat] : []) { opcionais.add(`${f}_a`); opcionais.add(`${f}_b`); } };
+    if ('efeitos' in no) fs(no.efeitos as never);
+    if ('acoes' in no) for (const a of no.acoes) { fs(a.efeitos); for (const v of a.variantes ?? []) fs(v.efeitos); }
+    if (no.tipo === 'dialogo') for (const t of no.turnos) for (const o of t.opcoes) fs(o.efeitos);
     if (no.tipo === 'segue') for (const x of no.efeitosSe ?? []) ef(x.efeitos);
     if ('acoes' in no)
       for (const a of no.acoes) {
@@ -324,13 +346,19 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
     for (const f of [...(no.requer ?? []), ...(no.exclui ?? [])]) lidas.add(f);
   }
   for (const c of conds) for (const f of flagsDaCond(c.expr)) lidas.add(f);
-  for (const f of escritas) if (!lidas.has(f)) E('escolha-morta', undefined, `flag "${f}" é gravada mas nenhuma cena a lê`);
+  const tolerada = new Set(l.escolhasMortasToleradas);
+  for (const f of escritas) if (!lidas.has(f)) (tolerada.has(f) ? W : E)('escolha-morta', undefined, `flag "${f}" é gravada mas nenhuma cena a lê${tolerada.has(f) ? ' (baseline tolerado)' : ''}`);
   for (const f of lidas) if (!escritas.has(f) && !opcionais.has(f)) E('flag-nunca-gravada', undefined, `flag "${f}" é lida mas nunca gravada`);
 
   // consentimento: variantes e coerência
   for (const [id, no] of Object.entries(l.nos)) {
     if (no.tipo !== 'consentimento') continue;
-    if (no.irAvancou === no.irSem) E('consentimento-sem-variante', id, 'irAvancou e irSem são o mesmo nó: falta variante "sem"');
+    if (no.irAvancou === no.irSem) {
+      // destino único: aceito SE o texto do destino ramifica pela flag do consentimento
+      const alvo = l.nos[no.irAvancou];
+      const lê = alvo ? textosDoNo(alvo).some((t) => flagsLidas(t.texto).some((f) => f === no.flag || f === `${no.flag}_a` || f === `${no.flag}_b`)) : false;
+      if (!lê) E('consentimento-sem-variante', id, 'irAvancou e irSem são o mesmo nó e o texto dele não ramifica pela flag: falta variante "sem"');
+    }
     const av = alcancaveis(l, no.irAvancou);
     const sem = alcancaveis(l, no.irSem);
     for (const n of av) if (!sem.has(n) && !(l.nos[n]!.requer ?? []).includes(no.flag)) E('consentimento-sem-requer', n, `só alcançável após aceitar "${no.flag}" mas não declara requer`);

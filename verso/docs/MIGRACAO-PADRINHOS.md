@@ -1,3 +1,5 @@
+> **Status: concluída.** Resultado e dívida conhecida em `README.md`. O texto abaixo é o plano original; o motor v2 descrito já existe.
+
 # Migração de Padrinho e Madrinha (primeiro livro real)
 
 Fonte: `fontes/padrinho-e-madrinha/`. Inventário reproduzível: `node scripts/migracao/inventario.mjs`.
@@ -19,7 +21,7 @@ Se você preferir outra regra (por exemplo, sempre o ramo `ok`), é só uma troc
 4. **`dividir` com `cada: N`** (N ações por jogador), `secreto` (escolhas reveladas só depois dos dois), `se`/`req`/`nao`/`so` por ação.
 5. **Diálogo com histórico:** opções dependem de `tag`/`tom` de qualquer turno anterior, não só do último; `apos`; reciprocidade que sobe vínculo; `fa` (faísca) e nervosismo por tom (`cuida` alivia o outro, `fere` derruba vínculo).
 6. **`decisao`**: voto dos dois, só vale quando coincidem; `prox` pode ser função.
-7. **`puzzle`** (`escolha`, tentativas, dicas) e **`final`** com texto composto por blocos condicionais.
+7. ~~`puzzle`~~ (removido a pedido: virou decisão conjunta) e **`final`** com texto composto por blocos condicionais.
 8. **Votos como flags por assento** (`bateu1_a`/`bateu1_b`) já existem no livro; o consentimento do Verso (`secret_votes`) precisa produzir as mesmas flags para o texto não mudar.
 
 ## Validação (aceite da migração)

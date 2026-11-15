@@ -34,6 +34,7 @@ const PRON: Record<string, [string, string]> = {
   senhor_senhora: ['senhor', 'senhora'],
   ao_a: ['ao', 'à'],
   seu_sua: ['seu', 'sua'],
+  lo_la: ['lo', 'la'],
 };
 export const CHAVES_VALIDAS = ['nome', ...Object.keys(PRON)];
 
@@ -75,7 +76,7 @@ function parse(src: string): Nodo[] {
       alvo().push({ t: 'quem', chave: m[1]!.toLowerCase() as 'quem' | 'outroquem', cap: m[1]![0] !== m[1]![0]!.toLowerCase() });
     } else if ((m = tok.match(/^(A|B|eu|par|ator|outro)\.([A-Za-z_]+)$/))) {
       const chave = m[2]!;
-      if (![...CHAVES_VALIDAS, 'ref', 'idade'].includes(chave.toLowerCase())) throw new ErroTemplate(`variável desconhecida: ${tok}`);
+      if (![...CHAVES_VALIDAS, 'ref', 'idade', 'inicial'].includes(chave.toLowerCase())) throw new ErroTemplate(`variável desconhecida: ${tok}`);
       alvo().push({ t: 'var', suj: m[1] as Suj, chave });
     } else {
       throw new ErroTemplate(`token inválido: {{${tok}}}`);
@@ -121,9 +122,10 @@ function emit(ns: Nodo[], ctx: CtxTpl): string {
       let v: string;
       if (baixa === 'nome') v = perfil.nome;
       else if (baixa === 'idade') v = String(perfil.idade ?? '');
+      else if (baixa === 'inicial') v = perfil.nome.charAt(0);
       else if (baixa === 'ref') v = (ctx.eu ?? 'A') === seat ? 'você' : perfil.nome;
       else v = PRON[baixa]![perfil.genero === 'ele' ? 0 : 1];
-      if (baixa !== 'nome' && baixa !== 'idade' && n.chave[0] !== n.chave[0]!.toLowerCase()) v = cap1(v);
+      if (baixa !== 'nome' && baixa !== 'idade' && baixa !== 'inicial' && n.chave[0] !== n.chave[0]!.toLowerCase()) v = cap1(v);
       out += v;
     } else out += emit(avaliarCond(n.cond, env(ctx)) ? n.sim : n.nao, ctx);
   }

@@ -69,7 +69,7 @@ export function flagsPrivadas(l: Livro): string[] {
 
 export function estadoInicial(l: Livro): Estado {
   return {
-    pos: { A: l.inicio, B: l.inicio },
+    pos: typeof l.inicio === 'string' ? { A: l.inicio, B: l.inicio } : { ...l.inicio },
     flags: {},
     vinculo: 0,
     fa: 0,
@@ -126,6 +126,7 @@ function aplicar(l: Livro, e: Estado, ator: Seat | 'ab', cap: number, ef?: Efeit
   if (!ef) return;
   for (const f of lista(ef.flag)) e.flags[f] = true;
   for (const f of lista(ef.nflag)) delete e.flags[f];
+  for (const f of lista(ef.flagSeat)) for (const s of ator === 'ab' ? SEATS : [ator]) e.flags[`${f}_${s.toLowerCase()}`] = true;
   const quem: Seat[] = ator === 'ab' ? SEATS : [ator];
   if (ef.abalo) for (const s of quem) e.nervosismo[s] = clamp(e.nervosismo[s] + ef.abalo, 0, 6);
   if (ef.abaloPar && ator !== 'ab') e.nervosismo[outro(ator)] = clamp(e.nervosismo[outro(ator)] + ef.abaloPar, 0, 6);
