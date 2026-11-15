@@ -192,6 +192,10 @@ export async function visaoDaSala(codigo: string, token: string | null) {
   const base = {
     codigo: sala.codigo,
     titulo: sala.livro.titulo,
+    slug: sala.slug,
+    serie: sala.livro.serie,
+    tema: sala.livro.tema,
+    capsTotal: Math.max(...Object.values(sala.livro.nos).map((n) => n.cap)),
     modo: sala.modo,
     status: sala.status,
     rev: sala.rev,

@@ -53,3 +53,32 @@ export function partes(texto: string): { fala: boolean; trechos: { t: string; em
       trechos: p.split(/(\*[^*\n]+\*)/).filter(Boolean).map((t) => (t.startsWith('*') && t.endsWith('*') && t.length > 2 ? { t: t.slice(1, -1), em: true } : { t, em: false })),
     }));
 }
+
+export function listarSessoes(): { codigo: string; sessao: Sessao }[] {
+  const out: { codigo: string; sessao: Sessao }[] = [];
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i) ?? '';
+      if (k.startsWith('verso:sessao:')) {
+        const v = JSON.parse(localStorage.getItem(k) ?? 'null') as Sessao | null;
+        if (v?.token) out.push({ codigo: k.slice('verso:sessao:'.length), sessao: v });
+      }
+    }
+  } catch { /* sem armazenamento: lista vazia */ }
+  return out;
+}
+export interface ResumoPartida {
+  codigo: string; titulo: string; slug: string; serie?: string; tema?: { a: string; b: string; destaque: string };
+  status: 'lobby' | 'jogando' | 'fim'; cap: number; capsTotal: number; modo: 'dupla' | 'solo';
+}
+export async function carregarPartidas(): Promise<ResumoPartida[]> {
+  const r = await Promise.all(
+    listarSessoes().map(async ({ codigo, sessao }) => {
+      try {
+        const s = await api<{ titulo: string; slug: string; serie?: string; tema?: ResumoPartida['tema']; status: ResumoPartida['status']; capsTotal: number; modo: 'dupla' | 'solo'; visao: { cap: number } | null }>(`/api/salas/${codigo}`, { token: sessao.token });
+        return { codigo, titulo: s.titulo, slug: s.slug, serie: s.serie, tema: s.tema, status: s.status, cap: s.visao?.cap ?? 0, capsTotal: s.capsTotal, modo: s.modo } as ResumoPartida;
+      } catch { return null; } // sala apagada ou sessão inválida: some da lista
+    }),
+  );
+  return r.filter((x): x is ResumoPartida => !!x);
+}

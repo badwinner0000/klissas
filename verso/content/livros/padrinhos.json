@@ -1,6 +1,12 @@
 {
   "id": "padrinhos",
   "sinopse": "Nantucket, junho de 2023. A cerimonialista fugiu com o dono do bufê, os noivos estão num retiro de silêncio e sobraram a madrinha, o padrinho, uma pasta e um encontro às cegas que cada um conta de um jeito.",
+  "serie": "Love Story · Nº 5",
+  "tema": {
+    "a": "#12354a",
+    "b": "#6f909f",
+    "destaque": "#a9c4d6"
+  },
   "personagens": {
     "A": {
       "papel": "A cerimonialista de Boston",

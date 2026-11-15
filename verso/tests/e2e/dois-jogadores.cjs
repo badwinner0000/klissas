@@ -85,7 +85,7 @@ async function passo(page, seat, tag, votou) {
     ouvirB(B);
 
     // A cria a sala
-    await A.goto(BASE);
+    await A.goto(`${BASE}/livro/padrinhos`);
     await A.getByRole('button', { name: /Jogar a dois/ }).waitFor();
     await A.getByRole('button', { name: /Jogar a dois/ }).click();
     await A.waitForURL(/\/sala\/[A-Z]{5}/);
@@ -94,7 +94,7 @@ async function passo(page, seat, tag, votou) {
     const tokenA = await A.evaluate((c) => JSON.parse(localStorage.getItem('verso:sessao:' + c)).token, codigo);
 
     // B entra pelo código
-    await B.goto(BASE);
+    await B.goto(`${BASE}/entrar`);
     await B.locator('#cod').fill(codigo);
     await B.locator('#nj').fill('Sam');
     await B.locator('#gj').selectOption('ele');
