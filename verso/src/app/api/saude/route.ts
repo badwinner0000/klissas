@@ -17,6 +17,18 @@ const DICAS: Record<string, string> = {
   XX000: 'o pooler recusou a conexão: confira usuário (postgres.<ref>) e senha',
 };
 
+const POR_MENSAGEM: [RegExp, string][] = [
+  [/tenant or user not found/i, 'o pooler não reconhece o usuário: na DATABASE_URL o usuário precisa ser postgres.<ref-do-projeto> (copie a URL do botão Connect > Transaction pooler)'],
+  [/password authentication failed/i, 'senha do banco recusada: troque a senha dentro da DATABASE_URL (sem colchetes; símbolos especiais precisam de %-codificação)'],
+  [/self[- ]signed|certificate/i, 'problema de certificado SSL com o banco'],
+  [/timeout|timed out/i, 'o banco não respondeu a tempo: use o Transaction pooler (porta 6543) e confira o host'],
+  [/ENOTFOUND|getaddrinfo/i, 'endereço do banco não encontrado: confira o host da DATABASE_URL'],
+  [/relation .* does not exist/i, 'tabela não existe: rode supabase/migrations/0001_init.sql e depois 0002_salas.sql no SQL Editor'],
+  [/invalid (url|connection)|ERR_INVALID_URL|Cannot read propert/i, 'DATABASE_URL malformada: confira se há espaços, aspas ou [colchetes] na senha'],
+  [/too many (clients|connections)|remaining connection slots/i, 'conexões demais: use o Transaction pooler (porta 6543)'],
+];
+const limpa = (m: string) => m.replace(/postgres(ql)?:\/\/\S+/gi, '<url>').replace(/\b[\w.-]+\.(supabase\.(co|com)|pooler\.supabase\.com|vercel\.app)\b/gi, '<host>').slice(0, 160);
+
 export async function GET() {
   const base = { banco: process.env.DATABASE_URL ? 'postgres' : 'arquivo', vercel: !!process.env.VERCEL };
   try {
@@ -26,6 +38,8 @@ export async function GET() {
     const err = e as { code?: string; name?: string; message?: string };
     const codigo = err.code ?? err.name ?? 'desconhecido';
     console.error('saude: falha', codigo, err.message);
-    return NextResponse.json({ ok: false, ...base, codigo, dica: DICAS[codigo] ?? 'veja os logs da função na Vercel (Logs)' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    const msg = err.message ?? '';
+    const dica = DICAS[codigo] ?? POR_MENSAGEM.find(([r]) => r.test(msg))?.[1] ?? 'veja os logs da função na Vercel (Logs)';
+    return NextResponse.json({ ok: false, ...base, codigo, mensagem: limpa(msg), dica }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
   }
 }
