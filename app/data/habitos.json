@@ -803,10 +803,10 @@
       "nome": "Água",
       "unidade": "ml",
       "modo": "min",
-      "meta_sugerida": 2000,
+      "meta_sugerida": 14000,
       "teto_por_dia": 4000,
       "evidencia": "foto da garrafa ou nota com ml",
-      "nota": "Pontua proporcional: meta 3000, bebeu 500 → 17%. Teto diário protege contra exagero"
+      "nota": "Meta da semana: 2 L por dia × 7 = 14.000 ml. Pontua proporcional ao que foi postado. Teto de 4 L por dia protege contra exagero"
     },
     {
       "id": "garrafa_cheia",
