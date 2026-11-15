@@ -1,7 +1,6 @@
-// Capa tipográfica (sem ilustração gerada): gradiente do tema do livro, grão suave e título em letras grandes.
-// É o substituto até existir arte de capa; a arte entra por `imagem` quando houver.
+// Capa: usa a ilustração /capas/<slug>.jpg quando existir. Sem ela, mostra um espaço provisório simples
+// (gradiente do tema + título) até a arte chegar. Não desenhamos capas em vetor.
 import { type CSSProperties, useState } from 'react';
-import { ARTES } from './ArteCapa';
 
 export interface DadosCapa {
   titulo: string;
@@ -18,17 +17,15 @@ export default function Capa({ c, tamanho = 'm', inclinacao = 0 }: { c: DadosCap
   const [semImagem, setSemImagem] = useState(false);
   const t = c.tema ?? PADRAO;
   const estilo = { '--ca': t.a, '--cb': t.b, '--cd': t.destaque, transform: inclinacao ? `rotate(${inclinacao}deg)` : undefined } as CSSProperties;
-  const Arte = !c.imagem && c.slug ? ARTES[c.slug] : undefined;
   const palavras = c.titulo.split(' ');
   // o título cabe na largura da capa: o tamanho da letra segue a palavra mais longa
   const maior = Math.max(...palavras.map((p) => p.length), 4);
   const tam = `${Math.min(17, 80 / (maior * 0.72)).toFixed(1)}cqw`;
   return (
-    <div className={`capa capa-${tamanho}${c.embreve ? ' capa-embreve' : ''}${Arte ? ' capa-arte' : ''}`} style={estilo} role="img" aria-label={`Capa de ${c.titulo}${c.embreve ? ' (em breve)' : ''}`}>
+    <div className={`capa capa-${tamanho}${c.embreve ? ' capa-embreve' : ''}`} style={estilo} role="img" aria-label={`Capa de ${c.titulo}${c.embreve ? ' (em breve)' : ''}`}>
       {c.imagem && <img src={c.imagem} alt="" />}
       {!c.imagem && c.slug && !semImagem && <img className="capa-foto" src={`/capas/${c.slug}.jpg`} alt="" onError={() => setSemImagem(true)} />}
-      {Arte && <div className="capa-ilustracao">{Arte()}</div>}
-      {!c.imagem && !Arte && (
+      {!c.imagem && (
         <div className="capa-corpo">
           {c.serie && <span className="capa-serie">{c.serie}</span>}
           <span className="capa-titulo" style={{ fontSize: tam }}>{palavras.map((p, i) => <span key={i}>{p}</span>)}</span>

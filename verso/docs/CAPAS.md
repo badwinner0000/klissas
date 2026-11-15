@@ -1,5 +1,7 @@
 # Capas ilustradas: prompts
 
+Alternativa para eu gerar as imagens daqui: crie uma chave do Gemini em aistudio.google.com/apikey e salve-a como segredo do ambiente (nas configurações do ambiente do Claude Code, variável `SKILL_IMAGE_GEN_GEMINI_KEY`), sem colar no chat. Aí eu gero e coloco em `public/capas/`.
+
 Como usar: cole o prompt no gerador (Gemini "Nano Banana", ChatGPT/gpt-image, Midjourney...), peça **proporção vertical 2:3** (1024×1536), salve como JPG e coloque em `verso/public/capas/<slug>.jpg`. O site usa a imagem sozinho. Faça deploy (merge no `main`).
 
 Dica: peça **com o título escrito na imagem** (os geradores atuais escrevem bem). Se o título sair errado, gere de novo ou peça "sem texto" e adicione o título num editor.
