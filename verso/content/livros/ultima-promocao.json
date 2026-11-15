@@ -736,7 +736,7 @@
             {
               "tom": "abre",
               "tag": "f1_a_abre",
-              "texto": "— Obrigada ou obrigado. Por não rir.",
+              "texto": "— Valeu por não rir.",
               "se": "eu:A",
               "efeitos": {
                 "vinculo": 1
@@ -832,7 +832,7 @@
             {
               "tom": "abre",
               "tag": "f3_a_abre",
-              "texto": "— Boa noite. E obrigada, de verdade.",
+              "texto": "— Boa noite. E valeu, de verdade.",
               "se": "eu:A",
               "efeitos": {
                 "vinculo": 1
