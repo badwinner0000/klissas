@@ -37,8 +37,8 @@ function criarConexao(url: string, ssl: false | { rejectUnauthorized: boolean })
   } as unknown as Pool;
 }
 
-export function storePg(url: string): Store {
-  const ssl = process.env.DATABASE_SSL === 'disable' ? false : { rejectUnauthorized: false };
+export function storePg(url: string, opc: { semSsl?: boolean } = {}): Store {
+  const ssl = opc.semSsl || process.env.DATABASE_SSL === 'disable' ? false : { rejectUnauthorized: false };
   const pool = criarConexao(url, ssl);
 
   const livroPorHash = async (hash: string): Promise<Livro> => {

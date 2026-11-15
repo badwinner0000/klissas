@@ -26,6 +26,7 @@ const POR_MENSAGEM: [RegExp, string][] = [
   [/ENOTFOUND|getaddrinfo/i, 'endereço do banco não encontrado: confira o host da DATABASE_URL'],
   [/relation .* does not exist/i, 'tabela não existe: rode supabase/migrations/0001_init.sql e depois 0002_salas.sql no SQL Editor'],
   [/invalid (url|connection)|ERR_INVALID_URL|Cannot read propert/i, 'DATABASE_URL malformada: confira se há espaços, aspas ou [colchetes] na senha'],
+  [/Connection terminated unexpectedly/i, 'a conexão caiu: na Cloudflare isso costuma ser o certificado do Supabase, que o Worker não valida; ligue o Hyperdrive (docs/PUBLICAR.md) ou confira usuário/senha/porta 6543'],
   [/too many (clients|connections)|remaining connection slots/i, 'conexões demais: use o Transaction pooler (porta 6543)'],
 ];
 const limpa = (m: string) => m.replace(/postgres(ql)?:\/\/\S+/gi, '<url>').replace(/\b[\w.-]+\.(supabase\.(co|com)|pooler\.supabase\.com|vercel\.app)\b/gi, '<host>').slice(0, 160);
