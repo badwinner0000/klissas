@@ -170,4 +170,4 @@ Na Harmon Place, as luzes continuam apagadas. Mas há um celular acordado em cad
 
 *Odalys Quiñones* aparece no topo da notificação, em letras de contato. A mensagem, curta, chega aos dois: *Bom dia. Vi o vídeo. Almoço de domingo, na minha casa, 1h da tarde. As duas famílias. É uma ordem.*""",
  gancho="As duas famílias, à mesma mesa, pela primeira vez em doze anos: quem vai contar o que na frente de quem?",
- ir='pp_rascunho_fim')
+ ir='pp_c5_manha')
