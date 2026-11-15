@@ -176,4 +176,4 @@ Quando as duas, quase ao mesmo tempo, chegam à cozinha, encontram, por baixo da
 
 Atrás da porta, de fato, pendurado no gancho, um guarda-chuva verde, de cabo de madeira, comprido, de tamanho de duas pessoas muito próximas.""",
  gancho="Um temporal anunciado, um só guarda-chuva e o aviso: não briguem por ele.",
- ir='ts_c4_chuva')
+ ir='ts_c4_biblioteca')
