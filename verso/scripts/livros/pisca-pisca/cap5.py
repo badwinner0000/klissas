@@ -120,4 +120,4 @@ Ninguém fala por um bom tempo. O seu Szymanski, de colete laranja, tira do bols
 
 Ele devolve a caneta, sem esperar resposta, e sai.""",
  gancho="Uma árvore de doze metros, um transformador pequeno demais e um jeito de resolver que exige que alguém ceda.",
- ir='pp_rascunho_fim')
+ ir='pp_c6_manha')
