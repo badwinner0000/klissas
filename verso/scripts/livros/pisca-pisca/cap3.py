@@ -149,4 +149,4 @@ A luz do corredor acende com um estalo.
 
 — Gente! — diz Fran, de roupão, de braços abertos, com um sorriso enorme e um celular na mão, apontado para os dois. — Eu estava só procurando a minha caneca!""",
  gancho="A prima da Fran estava mesmo procurando uma caneca, ou estava filmando?",
- ir='pp_rascunho_fim')
+ ir='pp_c4_volta')

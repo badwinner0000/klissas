@@ -1136,11 +1136,887 @@
       "hora": "Sábado, 20 de dezembro · 02h30",
       "texto": "Às duas e meia, a cozinha da Fran tem uma luz só, a do fogão, e dois copos de leite morno em cima do balcão. {{se flag:dormiu_revezando}}O acordo de revezar o sofá deixou os dois acordados, no mesmo cômodo, no mesmo horário. {{/se}}{{se flag:dormiu_separado}}O colchão de casaco e almofada não chegou a ser montado, porque nenhum dos dois conseguiu deitar. {{/se}}{{se flag:aceitou_cama}}A cama, de um palmo no meio, ficou vazia dos dois lados. {{/se}}\n\nNenhum dos dois combinou de estar ali, e os dois estão. Descalços, de meias de lã emprestadas e olhos inchados de sono, cada um ocupa um lado do balcão como se o outro fosse chegar mais tarde.\n\nA neve do lado de fora ilumina as janelas de azul. O silêncio que sobra entre os dois tem o tamanho exato de um beijo.\n\nA luz do corredor acende com um estalo.\n\n— Gente! — diz Fran, de roupão, de braços abertos, com um sorriso enorme e um celular na mão, apontado para os dois. — Eu estava só procurando a minha caneca!",
       "gancho": "A prima da Fran estava mesmo procurando uma caneca, ou estava filmando?",
+      "ir": "pp_c4_volta"
+    },
+    "pp_c4_volta": {
+      "tipo": "segue",
+      "cap": 4,
+      "lugar": "Harmon Place",
+      "hora": "Sábado, 20 de dezembro · 14h20",
+      "npcs": [
+        "odalys",
+        "gus"
+      ],
+      "ir": "pp_c4_convite",
+      "texto": "O reboque chega às nove e quarenta, o mecânico da Elizabeth Auto Tow diagnostica *a bomba-d'água, filho* em quatro segundos, e a van da Padaria Tedeschi, com o cannoli na lateral, volta a Dyker Heights ao meio-dia e meia, atrás de um guincho amarelo, com oitenta quilos de fio e dois passageiros que não dormiram.\n\nHarmon Place está exatamente como foi deixada: doze casas de vela na janela, o poste mudo da esquina e uma fila de vizinhos na calçada, de braços cruzados, esperando para saber o que aconteceu na Turnpike. A notícia chegou antes: Fran, de Hoboken, mandou *ótima manhã com os dois, muito fofos* para a tia Angela, que mandou para a mãe de {{B.nome}}, que mandou para a Odalys.\n\nOdalys Quiñones, de pé na frente da Kessler Hardware com o megafone debaixo do braço, só ergue uma sobrancelha. Gus Pappas, atrás dela, de avental, segura uma bandeja de coxinhas de pretzel e finge que a bandeja é o assunto.\n\n— Fio chegou? — pergunta Odalys.\n\nÉ uma pergunta sobre fio, e é a única que ninguém ali tem coragem de fazer de outro jeito."
+    },
+    "pp_c4_convite": {
+      "tipo": "segue",
+      "cap": 4,
+      "lugar": "Harmon Place",
+      "hora": "Sábado, 20 de dezembro · 17h00",
+      "ir": {
+        "A": "pp_c4_festa_a",
+        "B": "pp_c4_festa_b"
+      },
+      "texto": "O fio é descarregado e guardado no depósito, entre a mesa de marceneiro e a estrela. Às cinco da tarde, depois de um banho de dez minutos e de um prato de sobras de lasanha que a mãe de um e a avó do outro, cada uma na sua casa, servem sem fazer pergunta, chega o convite no celular dos dois, no mesmo minuto, de dois números diferentes:\n\n*Festa do último ano, hoje, 21h, porão do Ansel. É a última antes do Natal. Vem. (E traz o outro, se quiser.)*\n\nSábado à noite, duas semanas antes de a vida de todo mundo mudar de endereço. A turma inteira vai estar lá. A turma inteira, aliás, já sabe da van, do diner e do sofá. Em cidade de bairro, a velocidade de uma notícia é medida em minutos de WhatsApp."
+    },
+    "pp_c4_festa_a": {
+      "tipo": "solo",
+      "cap": 4,
+      "seat": "A",
+      "lugar": "Porão do Ansel",
+      "hora": "Sábado, 20 de dezembro · 21h40",
+      "texto": "O porão do Ansel Reyes tem pé-direito baixo, um sofá de couro cor de mostarda, uma bola de espelhos pendurada num cano e uma playlist que alterna Taylor Swift com salsa. Sessenta pessoas, o cheiro de pizza fria e gente de gorro, e todos, sem exceção, olham para a porta quando você entra, e depois fingem que não olharam.\n\nA sua amiga de infância, Bea Kowalczyk, de cabelo cor de laranja de tinta de mercado, puxa você pelo cotovelo para trás de uma pilha de casacos. Fala baixo, que é um modo de falar alto.\n\n— Você não vai gostar disso — diz ela. — Mas melhor você ouvir de mim. A Dani, que trabalha no balcão da biblioteca, disse que {{B.nome}} passou a semana inteira lá, de capuz, com um tubo de projetos. Plantas. Cornell, tipo, a faculdade de arquitetura. — Ela morde o lábio. — {{B.nome}} nunca te contou?\n\nCornell, a seis horas de ônibus, e você, que chegou a escrever num arquivo de quarenta e um kilobytes *mesma faculdade, mesma república*.",
+      "acoes": [
+        {
+          "id": "negar",
+          "texto": "Dizer à Bea que isso é impossível e procurar {{B.nome}} na festa para tirar isso a limpo",
+          "ir": "pp_c4_festa",
+          "efeitos": {
+            "flag": "a_confrontou_boato",
+            "abalo": 1
+          },
+          "resultado": "Você diz *impossível* com uma voz um pouco mais alta do que pretendia, e uma garota ao lado derruba o copo. Bea levanta as duas mãos, num gesto de paz. Mas você já está olhando por cima da bola de espelhos, procurando uma cabeça escura de cabelo cacheado no meio do porão, com uma raiva que não tem forma ainda e uma pergunta que tem."
+        },
+        {
+          "id": "guardar",
+          "texto": "Agradecer à Bea, guardar o que ouviu e esperar o outro contar sozinho",
+          "ir": "pp_c4_festa",
+          "efeitos": {
+            "flag": "a_guardou_boato"
+          },
+          "resultado": "Você agradece, de um jeito calmo demais, e pega um copo de refrigerante sem gás na mesa de bebidas. A informação fica na sua mão como uma pedra de rio, lisa e fria. Você decide que o outro vai ter uma chance de falar antes de você acusar. Não é generosidade: é o hábito de conferir duas vezes."
+        },
+        {
+          "id": "rir",
+          "texto": "Rir, mudar de assunto e tirar a Bea para dançar",
+          "ir": "pp_c4_festa",
+          "efeitos": {
+            "flag": "a_fingiu"
+          },
+          "resultado": "Você ri, alto, e diz que a Bea tem a fofoca mais lenta do Brooklyn. Em quinze segundos as duas estão na pista, no meio de uma salsa que nenhuma sabe dançar. A pedra continua no bolso, mas você sabe carregar coisas pesadas sorrindo."
+        }
+      ]
+    },
+    "pp_c4_festa_b": {
+      "tipo": "solo",
+      "cap": 4,
+      "seat": "B",
+      "lugar": "Porão do Ansel",
+      "hora": "Sábado, 20 de dezembro · 21h40",
+      "texto": "O porão do Ansel Reyes tem pé-direito baixo, um sofá cor de mostarda, uma bola de espelhos e a mesma playlist de sempre. Sessenta pessoas viram o rosto quando você entra, e depois se dedicam, com talento, a olhar para o chão.\n\nO seu amigo Marcus Oyelaran, de moletom do time de debate e óculos de armação grossa, aparece do seu lado com um copo de suco de uva em cada mão e uma expressão de quem não sabe como começar.\n\n— Eu tenho duas notícias — diz ele. — Uma é que você é o assunto da noite. A outra é que {{A.nome}}, pelo que a Bea contou, ainda guarda um arquivo no celular. Um tal de *Plano {{A.nome}} + {{B.nome}} 2029*. Ela chegou a mostrar para a Bea no ano passado, tipo, rindo, mas com uma cara que não era de riso.\n\nUm plano, com data e com o seu nome, escrito por alguém que você deixou sem resposta durante dois anos.",
+      "acoes": [
+        {
+          "id": "perguntar",
+          "texto": "Perguntar ao Marcus exatamente o que estava escrito no arquivo",
+          "ir": "pp_c4_festa",
+          "efeitos": {
+            "flag": "b_perguntou_plano",
+            "abalo": 1
+          },
+          "resultado": "Você pergunta. Marcus conta o que sabe: abas coloridas, horários de ônibus, os cursos que vocês iam fazer juntos. *Parecia um mapa*, ele diz. *Um mapa de uma cidade que só existe se os dois forem.* Você agradece sem dizer nada, e o suco de uva, por algum motivo, fica sem gosto."
+        },
+        {
+          "id": "mudar",
+          "texto": "Dizer ao Marcus que não quer falar disso hoje",
+          "ir": "pp_c4_festa",
+          "efeitos": {
+            "flag": "b_fugiu_do_assunto"
+          },
+          "resultado": "Você diz que hoje não, e Marcus, que te conhece desde o sexto ano, aceita sem insistir e muda para o debate de sexta. Mas a palavra *mapa* ficou rondando no ar, e você sabe, como sempre soube, que fugir é uma resposta também."
+        },
+        {
+          "id": "procurar",
+          "texto": "Atravessar o porão e procurar {{A.nome}} agora",
+          "ir": "pp_c4_festa",
+          "efeitos": {
+            "flag": "b_foi_atras"
+          },
+          "resultado": "Você devolve o copo ao Marcus, abre caminho entre gente de gorro, desvia de uma garrafa de cidra e para no meio do porão, sem saber ainda o que dizer. É a primeira vez em dois anos que você começa uma conversa em vez de esperar o outro começar. Não é fácil, e não parece mais fácil por ser a primeira."
+        }
+      ]
+    },
+    "pp_c4_festa": {
+      "tipo": "dividir",
+      "cap": 4,
+      "lugar": "Porão do Ansel",
+      "hora": "Sábado, 20 de dezembro · 22h30",
+      "cada": 1,
+      "texto": "Às dez e meia, a festa atinge o ponto em que ninguém mais fala em frases inteiras. O Ansel, de pé em cima do sofá, tenta fazer um brinde que é interrompido por uma salva de palmas por motivo nenhum. Dos quatro cantos do porão chega a mesma pergunta, em formas diferentes: *vocês voltaram? vocês dois estão juntos? é verdade que vocês dormiram em Hoboken?*\n\nSessenta pessoas esperam uma resposta, e cada uma já tem a sua.",
+      "pergunta": "O que você faz com os olhares?",
+      "acoes": [
+        {
+          "id": "pista",
+          "texto": "Ir para a pista de dança e deixar o barulho responder por você",
+          "efeitos": {
+            "flag": "festa_pista"
+          },
+          "resultado": "Você vai para o meio do porão, entre a bola de espelhos e o sofá mostarda, e dança, mal, com o corpo inteiro. As perguntas viram ruído de fundo. É uma forma de estar numa festa sem estar nela: presente, visível e, de algum modo, intocável."
+        },
+        {
+          "id": "escada",
+          "texto": "Subir os degraus do porão até o quintal e respirar",
+          "efeitos": {
+            "flag": "festa_escada",
+            "abalo": 1
+          },
+          "resultado": "Você sobe os seis degraus de madeira até o quintal do Ansel, onde o frio acerta o rosto como um tapa gentil. Há uma árvore pelada, uma churrasqueira coberta de neve e um banco de ferro. O barulho do porão chega abafado, como um motor distante. Do alto, dá para ver o brilho fraco de uma vela em cada janela da vizinhança."
+        },
+        {
+          "id": "roda",
+          "texto": "Ficar com os amigos e rir das perguntas, sem responder nenhuma",
+          "efeitos": {
+            "flag": "festa_roda",
+            "vinculo": 1
+          },
+          "resultado": "Você se encosta na parede, entre dois amigos, e transforma cada pergunta em uma piada pequena. *Voltamos de quê?* *Do Hoboken ou do diner?* A roda ri, e a resposta, de tanto circular, vira folclore: a de que nada aconteceu, e a de que algo, talvez, esteja prestes a acontecer."
+        }
+      ],
+      "desfecho": "Os dois acabam, por caminhos diferentes, no mesmo ponto: a porta dos fundos do porão, que dá para o quintal coberto de neve, onde só cabe uma conversa de cada vez.",
+      "ir": "pp_c4_dialogo"
+    },
+    "pp_c4_dialogo": {
+      "tipo": "dialogo",
+      "cap": 4,
+      "lugar": "Quintal do Ansel",
+      "hora": "Sábado, 20 de dezembro · 23h05",
+      "comeca": "A",
+      "texto": "O banco de ferro do quintal é pequeno, gelado e cheio de neve nas laterais, e só dois cabem nele, se os dois aceitarem. Do porão, o baixo de uma música abafada faz vibrar a tampa da churrasqueira. Entre as árvores peladas, o céu é de um cinza claro de cidade, sem estrelas.\n\nNinguém aqui tem plateia. É a primeira vez em dois dias.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "w0_ouvi",
+              "texto": "— Ouvi uma coisa hoje. Quero que você me conte antes que eu invente o resto.",
+              "se": "flag:a_guardou_boato || flag:a_confrontou_boato"
+            },
+            {
+              "tom": "abre",
+              "tag": "w0_cansada",
+              "texto": "— Eu não sei mais o que dizer para essa festa inteira."
+            },
+            {
+              "tom": "flerte",
+              "tag": "w0_banco",
+              "texto": "— Tem lugar nesse banco, se você promete não falar de planilha."
+            },
+            {
+              "tom": "cuida",
+              "tag": "w0_casaco",
+              "texto": "— Está frio demais para ficar lá fora sem casaco. Toma o meu."
+            }
+          ]
+        },
+        {
+          "prompt": "Agora é você quem responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "w1_conto",
+              "texto": "— Eu me inscrevi em Cornell. Em outubro. Eu ia te contar.",
+              "efeitos": {
+                "flag": "confessou_cornell_festa",
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "w1_depois",
+              "texto": "— Isso a gente fala depois. Hoje a festa é demais."
+            },
+            {
+              "tom": "fere",
+              "tag": "w1_plano",
+              "texto": "— E você? Ainda tem um plano com o meu nome no celular? Para um cara que você diz que odeia.",
+              "se": "flag:b_perguntou_plano",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "w1_vem",
+              "texto": "— Senta aqui. Eu faço espaço."
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "w2_dois_anos",
+              "texto": "— Eu fiquei dois anos sem falar com você porque eu não sabia dizer não.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "w2_sumiu",
+              "texto": "— Você sumiu. Isso não foi falta de palavra, foi escolha.",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "w2_hoje",
+              "texto": "— Eu não quero brigar hoje. Quero só saber se a gente consegue acender uma árvore."
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da festa é sua.",
+          "opcoes": [
+            {
+              "tom": "flerte",
+              "tag": "w3_volta",
+              "texto": "— Voltamos, então? Para todo mundo ouvir?"
+            },
+            {
+              "tom": "abre",
+              "tag": "w3_parceiros",
+              "texto": "— Eu quero, pelo menos, ser seu parceiro de projeto. O resto, devagar.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "w3_nada",
+              "texto": "— Fala para eles que a gente só está construindo uma árvore."
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_frio",
+          "texto": "— Entra daqui a pouco. Você está roxo de frio."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_depois",
+          "texto": "— Depois a gente retoma isso."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_neve",
+          "texto": "— Tem neve no seu cabelo. Ficou bonito."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_dificil",
+          "texto": "— Isso é mais difícil do que eu pensei que seria."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fugir",
+          "texto": "— Você vai fugir de novo? A porta está ali."
+        }
+      ],
+      "fecho": "Do porão, alguém grita o nome de uma música, e a festa inteira canta junto, abafada, como um coro atrás de uma parede. No quintal, as duas pessoas ficam em silêncio, olhando a neve que cai sobre uma churrasqueira coberta.",
+      "ir": "pp_c4_resposta"
+    },
+    "pp_c4_resposta": {
+      "tipo": "decisao",
+      "cap": 4,
+      "lugar": "Porão do Ansel",
+      "hora": "Sábado, 20 de dezembro · 23h40",
+      "texto": "Quando os dois voltam ao porão, o Ansel, de microfone de karaokê na mão, anuncia que os *dois da árvore* chegaram, e a sala inteira vira o rosto de novo. Alguém grita *beijo!*, e o grito pega, vira coro, e vira, em dez segundos, uma parede de gente.\n\nO microfone chega às mãos dos dois, que precisam responder ao mesmo tempo, com uma só voz.",
+      "pergunta": "O que vocês dizem?",
+      "ir": {
+        "A": "pp_c4_noite_a",
+        "B": "pp_c4_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "projeto",
+          "texto": "Dizer que é só um projeto de árvore e mais nada",
+          "efeitos": {
+            "flag": "disse_projeto"
+          },
+          "resultado": "Vocês dizem, juntos, no microfone, que é só um projeto, e a sala geme de decepção. O Ansel faz uma careta. Em algum lugar, uma garota de gorro verde baixa o celular, com uma expressão de quem queria o outro final."
+        },
+        {
+          "id": "segredo",
+          "texto": "Dizer que a gente não deve nada a ninguém e devolver o microfone",
+          "efeitos": {
+            "flag": "disse_nada_a_ninguem",
+            "vinculo": 1
+          },
+          "resultado": "Vocês devolvem o microfone, sem dizer nada, com o olhar de quem já falou o que ia falar. O porão fica em silêncio meio segundo, e depois explode num *ooooh* mais alto do que qualquer beijo. A falta de resposta, de repente, é a melhor das respostas."
+        },
+        {
+          "id": "beijo_falso",
+          "texto": "Fazer uma piada, e dizer que o beijo está marcado para o dia 22",
+          "efeitos": {
+            "flag": "disse_dia22",
+            "vinculo": 1
+          },
+          "resultado": "Vocês dizem, em coro, que o beijo está *marcado para o dia 22*, às oito da noite, no depósito da Kessler, e que quem quiser ingresso fala com a Odalys. A sala vira uma gargalhada só. Ninguém imagina que, para os dois, a piada é um pouco menos piada do que parece."
+        }
+      ]
+    },
+    "pp_c4_noite_a": {
+      "tipo": "solo",
+      "cap": 4,
+      "seat": "A",
+      "lugar": "Calçada da nº 8",
+      "hora": "Domingo, 21 de dezembro · 00h50",
+      "texto": "Você volta a pé pela calçada da Harmon Place, pisando na neve nova com as botas que o seu pai calçou nos anos oitenta. Doze janelas com vela, uma lua pequena atrás de uma nuvem, e, na nº 11, a luz de uma lanterna passeando de cômodo em cômodo.\n\nNo bolso do casaco, o celular vibra uma vez. É o grupo da turma. Uma notificação, de uma conta que você não conhece:",
+      "acoes": [
+        {
+          "id": "abrir",
+          "texto": "Abrir o vídeo agora, ali mesmo, na calçada",
+          "ir": "pp_c4_fim",
+          "efeitos": {
+            "flag": "a_viu_video",
+            "abalo": 1
+          },
+          "resultado": "Você abre. São sete segundos, filmados pelo alto, de um ângulo de cozinha. Dois vultos sob a luz de um fogão, de meias de lã, a um passo um do outro, em silêncio, enquanto a neve cai na janela de trás. Uma legenda em letras brancas: *a gente achava que era só planilha 👀*. Quarenta e três curtidas. Você nem sabe quem postou."
+        },
+        {
+          "id": "ignorar",
+          "texto": "Guardar o celular sem abrir e entrar em casa",
+          "ir": "pp_c4_fim",
+          "efeitos": {
+            "flag": "a_ignorou_video"
+          },
+          "resultado": "Você guarda o celular no fundo do bolso, aperta o casaco e entra. Sabe, antes de fechar a porta, que o que não abriu agora vai abrir sozinho amanhã, na boca de alguém, no almoço de domingo, com a família inteira à mesa."
+        }
+      ]
+    },
+    "pp_c4_noite_b": {
+      "tipo": "solo",
+      "cap": 4,
+      "seat": "B",
+      "lugar": "Varanda da nº 11",
+      "hora": "Domingo, 21 de dezembro · 00h50",
+      "texto": "Você volta pela calçada da Harmon Place com o casaco molhado e o caderno de capa verde debaixo do braço, e do outro lado da rua uma luz de lanterna passeia pela nº 8. Na varanda da nº 11, a Pó-pó, de xale, de lampião aceso e de olhos bem abertos, espera você, sentada, como quem sabe que só o silêncio traz a verdade de volta.\n\nNo bolso, o celular vibra uma vez. É o grupo da turma. Uma notificação de uma conta que você não conhece:",
+      "acoes": [
+        {
+          "id": "abrir",
+          "texto": "Abrir o vídeo ali mesmo, na frente da Pó-pó",
+          "ir": "pp_c4_fim",
+          "efeitos": {
+            "flag": "b_viu_video",
+            "abalo": 1
+          },
+          "resultado": "Você abre, com a luz do lampião sobre a tela. São sete segundos de uma cozinha escura, com neve na janela e dois vultos de meias de lã, a um passo um do outro, e uma legenda: *a gente achava que era só planilha 👀*. A Pó-pó, sem erguer a voz, observa de lado e diz apenas: *então é por isso que você voltou com cara de dia de festa*."
+        },
+        {
+          "id": "guardar",
+          "texto": "Guardar o celular e perguntar à Pó-pó por que ela está acordada",
+          "ir": "pp_c4_fim",
+          "efeitos": {
+            "flag": "b_perguntou_vo"
+          },
+          "resultado": "Você guarda o celular e pergunta o que sempre pergunta, na hora certa ou errada: *por que a senhora está acordada?* A Pó-pó olha o lampião por um tempo, e responde, como quem lê uma carta: *porque tem coisa que eu devia ter te contado antes de você descobrir sozinho.*"
+        }
+      ]
+    },
+    "pp_c4_fim": {
+      "tipo": "fim",
+      "cap": 4,
+      "lugar": "Harmon Place",
+      "hora": "Domingo, 21 de dezembro · 01h20",
+      "texto": "Em algum momento depois da uma da manhã, o vídeo de sete segundos já passou das duzentas visualizações e está, agora, na mão de gente que nunca esteve em Hoboken. {{se flag:disse_projeto}}Por mais que os dois tenham dito que era só um projeto, a legenda não concorda. {{/se}}{{se flag:disse_nada_a_ninguem}}Como os dois não disseram nada, a legenda disse por eles. {{/se}}{{se flag:disse_dia22}}A piada do dia 22, ao microfone, já virou meme: alguém criou uma contagem regressiva. {{/se}}\n\nNa Harmon Place, as luzes continuam apagadas. Mas há um celular acordado em cada casa, e outro, mais distante, na rua de trás, na mão de alguém que acabou de colar o link no grupo errado.\n\n*Odalys Quiñones* aparece no topo da notificação, em letras de contato. A mensagem, curta, chega aos dois: *Bom dia. Vi o vídeo. Almoço de domingo, na minha casa, 1h da tarde. As duas famílias. É uma ordem.*",
+      "gancho": "As duas famílias, à mesma mesa, pela primeira vez em doze anos: quem vai contar o que na frente de quem?",
+      "ir": "pp_c5_manha"
+    },
+    "pp_c5_manha": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Harmon Place",
+      "hora": "Domingo, 21 de dezembro · 09h30",
+      "ir": {
+        "A": "pp_c5_nonna",
+        "B": "pp_c5_po"
+      },
+      "texto": "Domingo de manhã em Dyker Heights tem som de sino e cheiro de café passado. Os sinos são os da igreja de Saint Rose of Lima, duas quadras acima; o café vem de todas as janelas, porque ninguém, nem a Con Edison, consegue impedir um brooklynita de passar café, mesmo à luz de vela, mesmo no escuro.\n\nA luz, aliás, voltou ontem à noite, às nove e quatro, em todas as casas da Harmon Place menos nas duas do fundo, que seguem na lista de espera da companhia. A nº 8 e a nº 11 acordam, cada uma do seu lado, com a casa gelada, a mensagem da Odalys fixada no topo do celular e uma família inteira com perguntas.\n\n*Almoço de domingo, na minha casa, 1h da tarde. As duas famílias. É uma ordem.*\n\nFaltam três horas e meia. Antes da ordem, cada uma das avós tem uma coisa a dizer."
+    },
+    "pp_c5_nonna": {
+      "tipo": "solo",
+      "cap": 5,
+      "seat": "A",
+      "lugar": "Cozinha da nº 8",
+      "hora": "Domingo, 21 de dezembro · 10h10",
+      "texto": "A nonna Concetta Tedeschi tem oitenta e quatro anos, um avental com bordado de limões e a regra de que, na cozinha dela, quem entra sem fome sai com uma fatia de pão de ló. Está de pé, junto ao fogão a lenha que o seu pai nunca teve coragem de tirar, mexendo uma panela de molho que ninguém pediu e que dará para trinta pessoas.\n\nVocê chega e encosta no balcão sem dizer boa-dia. Ela não pergunta nada, e a ausência da pergunta é o convite.\n\n— Era uma conversa de telefone, eu disse que não era. — Ela baixa o fogo, olha o molho, não olha você. — O seu nonno Gennaro morreu no dia onze de março de 2012. Cinco dias depois, o velório, na igreja de cima. Veio a rua inteira, veio gente de Staten Island, veio o prefeito, veio o padre Tom. Um só homem não veio.\n\nEla mexe a colher, em círculos, mais devagar.\n\n— Wing Lau. Vinte e cinco anos de amigo. Estrela feita junto, árvore montada junto, filho batizado quase junto. E não veio. Nem mandou flor. Nem mandou um bilhete. — A colher bate duas vezes na borda da panela. — O seu pai, que ama o próprio pai mais do que a si mesmo, nunca perdoou. E eu, que sou velha e ruim, deixei.",
+      "acoes": [
+        {
+          "id": "defender",
+          "texto": "Dizer que deve ter havido uma razão, que ninguém some depois de vinte e cinco anos de amizade sem motivo",
+          "ir": "pp_c5_almoco",
+          "efeitos": {
+            "flag": "a_defendeu_wing",
+            "vinculo": 1
+          },
+          "resultado": "— Deve ter havido uma razão — você diz, e é a primeira vez que você diz uma frase assim naquela cozinha. A nonna levanta os olhos da panela, surpresa, como quem ouve uma língua que já falou. *Se houve, ninguém nunca me contou*, responde. *E eu nunca perguntei.* Pelo jeito como ela diz, você percebe que a segunda frase pesa mais do que a primeira."
+        },
+        {
+          "id": "concordar",
+          "texto": "Dizer que foi uma falta de respeito que a família tem direito de sentir até hoje",
+          "ir": "pp_c5_almoco",
+          "efeitos": {
+            "flag": "a_concordou_nonna",
+            "abalo": 1
+          },
+          "resultado": "— Foi falta de respeito — você diz, e a nonna faz que sim, devagar, aliviada de ser compreendida. *É isso, bambina. Foi isso.* Ela põe uma colher de molho no seu pão e você come, sem sentir o gosto, com a sensação de ter acabado de assinar um lado de um contrato que não leu inteiro."
+        },
+        {
+          "id": "silencio",
+          "texto": "Ficar em silêncio, comer o pão e deixar a nonna terminar o molho",
+          "ir": "pp_c5_almoco",
+          "efeitos": {
+            "flag": "a_calou_nonna"
+          },
+          "resultado": "Você não diz nada. Come o pão, ouve o molho borbulhar, e deixa que a história pese dentro da cozinha sem tentar consertá-la. A nonna, que conhece o seu silêncio melhor do que o seu pai, murmura: *você pensa como o Gennaro. Fica calado e depois faz a coisa certa.*"
+        }
+      ]
+    },
+    "pp_c5_po": {
+      "tipo": "solo",
+      "cap": 5,
+      "seat": "B",
+      "lugar": "Varanda da nº 11",
+      "hora": "Domingo, 21 de dezembro · 10h10",
+      "texto": "A Pó-pó, oitenta e um anos, de xale cinza e de tigela de congee de gengibre, espera você na varanda, onde a vela rosa de aniversário ainda está meio derretida na mesa. Não pergunta se você dormiu, nem se aquilo no vídeo é verdade. Diz, de olhos no jardim, onde o ginkgo está nu, sem fios:\n\n— Você me mandou uma mensagem às duas da manhã. Uma pergunta que eu já esperava há treze anos.\n\nEla vira a tigela de congee nas mãos, devagar, como quem escolhe a ordem das palavras.\n\n— Seu avô Wing e o Gennaro Tedeschi fizeram a estrela em 1987. Foram vinte e cinco anos de amigos, de verdade, de ir ao jogo de beisebol juntos. Em março de 2012, o Gennaro morreu. Cinco dias depois, no dia do velório, seu avô estava no Maimonides, numa cama, com o coração parado. Ele pediu que eu fosse até a igreja e dissesse à família Tedeschi o que estava acontecendo. Eu fui até a porta. — A tigela para. — Vi o Sal, o filho, de olhos vermelhos, de terno, na entrada, e não consegui falar. Voltei para o hospital. E fiquei calada. Treze anos.",
+      "acoes": [
+        {
+          "id": "perdoar",
+          "texto": "Dizer à Pó-pó que ela não precisava ter carregado isso sozinha",
+          "ir": "pp_c5_almoco",
+          "efeitos": {
+            "flag": "b_acolheu_po",
+            "vinculo": 1
+          },
+          "resultado": "Você pega a mão dela, a mão pequena de pele fina, e diz que não precisava. A Pó-pó sorri, de um jeito que você nunca viu. *Eu tinha vergonha*, ela diz, *de ter sido covarde justo no dia em que o seu avô precisava que eu fosse corajosa.* E depois, mais baixo: *Eu tinha vergonha de ser um pouco igual a você.*"
+        },
+        {
+          "id": "cobrar",
+          "texto": "Perguntar por que, em treze anos, ela nunca contou nada a ninguém",
+          "ir": "pp_c5_almoco",
+          "efeitos": {
+            "flag": "b_cobrou_po",
+            "abalo": 1
+          },
+          "resultado": "— Por que a senhora nunca contou? — você pergunta, mais duro do que quis. A Pó-pó não se defende. *Porque quanto mais o tempo passava, mais difícil ficava abrir a boca. Chega uma hora em que o silêncio vira casa, e você mora nele.* Você pensa, sem querer, em dois anos de mensagens sem resposta."
+        },
+        {
+          "id": "ouvir",
+          "texto": "Ficar quieto e deixar ela terminar a tigela e a história",
+          "ir": "pp_c5_almoco",
+          "efeitos": {
+            "flag": "b_ouviu_po"
+          },
+          "resultado": "Você não diz nada. A Pó-pó termina o congee, devagar, e fica olhando o ginkgo. O vento mexe um galho nu, e você escuta, pela primeira vez, a própria avó pensar. *Hoje à tarde eu conto o resto*, diz ela, *se a Concetta deixar.*"
+        }
+      ]
+    },
+    "pp_c5_almoco": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Casa de Odalys Quiñones",
+      "hora": "Domingo, 21 de dezembro · 13h00",
+      "npcs": [
+        "odalys"
+      ],
+      "ir": "pp_c5_dividir",
+      "texto": "A casa de Odalys Quiñones, na Eighty-Fifth, tem uma mesa para dezesseis e uma toalha de plástico com estampa de poinsétias. Quando as duas famílias chegam, cada uma por uma porta, com um prato de comida debaixo do braço por educação, a sala fica do tamanho de um corredor de tribunal.\n\nDe um lado, os Tedeschi: Sal, de camisa de domingo, ombros em guarda; Angela, com uma travessa de lasanha que serve de escudo; a nonna Concetta, de bengala e de terço no bolso; e o Nico, de onze anos, que acha tudo aquilo o melhor episódio de série da vida dele.\n\nDo outro, os Lau: Lily, de olheiras de plantão, com um prato de dumplings de nabo; a Pó-pó, de xale e de passos curtos; e a Mei, de nove anos, que conta com cuidado as cadeiras e conclui em voz alta que *são dezesseis lugares e treze pessoas, então três ficam vazios*.\n\n— Sentem — diz Odalys, e tira o megafone de cima da cadeira antes de servir. — E ninguém levanta antes da sobremesa.\n\nTreze pessoas, uma mesa e doze anos de silêncio. Alguém vai ter que quebrar o gelo, e o gelo é fino."
+    },
+    "pp_c5_dividir": {
+      "tipo": "dividir",
+      "cap": 5,
+      "lugar": "Casa de Odalys Quiñones",
+      "hora": "Domingo, 21 de dezembro · 13h40",
+      "cada": 1,
+      "texto": "A primeira meia hora segue o protocolo de uma cúpula diplomática: *passa o sal*, *obrigado*, *está ótimo*. Depois Sal pergunta, sem olhar para ninguém, se alguém sabe quem foi que *puxou a instalação improvisada da nº 11 sem aprovação da companhia*. Lily responde, com o garfo no ar, que a instalação foi aprovada em novembro. Em dois minutos, os dois estão de pé.\n\nNo meio da mesa, a poinsétia de plástico balança. As duas avós, uma ao lado da outra por acaso, não dizem nada.",
+      "pergunta": "O que você faz?",
+      "acoes": [
+        {
+          "id": "interromper",
+          "texto": "Levantar a voz e pedir que parem os dois",
+          "efeitos": {
+            "flag": "interrompeu_briga",
+            "vinculo": 1
+          },
+          "resultado": "Você diz *chega*, alto, no meio de uma frase de Sal, e a mesa inteira vira o rosto. O silêncio é tão completo que dá para ouvir o gotejar de uma torneira na cozinha. Ninguém esperava que a pessoa mais calma da família fosse quem pararia a briga. Odalys, de braços cruzados, faz um sinal mínimo de aprovação."
+        },
+        {
+          "id": "sair",
+          "texto": "Sair da sala sem fazer barulho e esperar na cozinha",
+          "efeitos": {
+            "flag": "saiu_da_sala",
+            "abalo": 1
+          },
+          "resultado": "Você empurra a cadeira devagar e vai até a cozinha, onde encontra a Mei, de nove anos, de joelhos no chão, fingindo que procura uma colher. *Eu vim aqui para não ouvir*, diz ela, *mas dá para ouvir de qualquer lugar.* Vocês ficam os dois ali, sentados no linóleo, com as vozes dos adultos atravessando a parede como chuva."
+        },
+        {
+          "id": "perguntar",
+          "texto": "Perguntar, diante de todos, por que as duas famílias pararam de se falar",
+          "efeitos": {
+            "flag": "perguntou_a_mesa",
+            "abalo": 1
+          },
+          "resultado": "Você pergunta, com a voz firme e o coração aos pulos: *alguém aqui sabe por que a gente parou de se falar?* A mesa fica muda. Sal, com o garfo no ar, olha para a mãe. Lily olha para a sogra. Duas senhoras de xale, de lados opostos da toalha de poinsétias, desviam o rosto no mesmo segundo."
+        }
+      ],
+      "desfecho": "Nos dez minutos seguintes ninguém grita, e é o silêncio mais perigoso do almoço. Depois da sobremesa, de pé na entrada, as duas famílias se despedem num cumprimento seco, cada uma com a sua versão incompleta da mesma história, e os dois do projeto seguem, sozinhos, para a calçada.",
+      "ir": "pp_c5_decisao"
+    },
+    "pp_c5_decisao": {
+      "tipo": "decisao",
+      "cap": 5,
+      "lugar": "Calçada da Eighty-Fifth Street",
+      "hora": "Domingo, 21 de dezembro · 15h30",
+      "texto": "Na calçada da casa de Odalys, longe das janelas, os dois ficam parados, cada um com meia história no bolso: a nonna, que culpa o amigo que não veio ao velório, e a Pó-pó, que sabe o que o amigo estava fazendo naquele dia.\n\nQuem tem uma metade da verdade precisa decidir se entrega a outra metade ao dono dela. Para isso, os dois precisam querer a mesma coisa.",
+      "pergunta": "O que vocês fazem com o que cada um ouviu hoje de manhã?",
+      "ir": "pp_c5_deposito",
+      "acoes": [
+        {
+          "id": "contar",
+          "texto": "Contar tudo um ao outro, agora, na calçada",
+          "efeitos": {
+            "flag": "trocaram_versoes",
+            "vinculo": 2
+          },
+          "resultado": "Vocês contam. As duas metades, na boca de duas pessoas de pé na neve, formam uma história inteira em três minutos: um velório, um hospital, um silêncio que nasceu de vergonha e cresceu de orgulho. Quando a segunda metade acaba, nenhum dos dois consegue dizer nada. O vento levanta um pouco de neve da calçada e a joga entre os dois, como uma cortina."
+        },
+        {
+          "id": "esperar",
+          "texto": "Esperar, e primeiro perguntar cada um à sua avó",
+          "efeitos": {
+            "flag": "guardaram_versoes"
+          },
+          "resultado": "Vocês combinam esperar: cada um pergunta à própria avó o que falta, antes de contar ao outro. É um jeito de proteger duas pessoas velhas de uma verdade que ainda não aprenderam a dizer. Também é um jeito, os dois sabem, de adiar uma conversa que dói."
+        },
+        {
+          "id": "planta",
+          "texto": "Guardar a história e voltar ao trabalho: a árvore tem prazo",
+          "efeitos": {
+            "flag": "voltaram_ao_trabalho"
+          },
+          "resultado": "Vocês decidem que, por enquanto, a árvore é o único assunto. A história dos avós fica no bolso, ao lado do postal de 1987, até chegar a hora certa. Nenhum dos dois acredita muito na hora certa, mas ambos concordam em fingir que ela existe."
+        }
+      ]
+    },
+    "pp_c5_deposito": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Domingo, 21 de dezembro · 19h20",
+      "npcs": [
+        "szymanski"
+      ],
+      "ir": "pp_c5_fim",
+      "texto": "Às sete e vinte, no depósito, sob a lâmpada nua, os dois montam a primeira versão da tabela de carga: uma folha, duas colunas, doze linhas de cálculo. De um lado, a estrela de oito pontas, com oito lâmpadas de vidro soprado. Do outro, o tronco de cabo, a espiral da copa, os quarenta circuitos.\n\n{{se flag:comprou_grosso}}O fio grosso, que custou o envelope inteiro, aguenta o calor de qualquer coisa que os dois inventem. {{/se}}{{se flag:comprou_fino}}O fio fino, barato e leve, só funciona se cada metade da árvore acender separada. {{/se}}{{se flag:comprou_misto}}Um pouco de cada fio, e a tabela precisa de duas colunas só para explicar quem ligou onde. {{/se}}{{se flag:comecou_copa}}Como começaram pela copa, o desenho está lindo e a conta está atrasada. {{/se}}{{se flag:comecou_carga}}Como começaram pela conta, a árvore ainda parece um esqueleto. {{/se}}{{se flag:comecou_junto}}Como a folha passou de mão em mão, cada linha tem duas letras. {{/se}}\n\nSeu Szymanski, que chegou sem fazer barulho, de colete laranja, olha por cima dos ombros dos dois, sem tocar em nada, por um minuto inteiro. Depois pergunta, como quem não quer nada, qual é a soma da coluna da direita."
+    },
+    "pp_c5_fim": {
+      "tipo": "fim",
+      "cap": 5,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Domingo, 21 de dezembro · 22h10",
+      "texto": "A soma da coluna da direita, feita três vezes, dá o mesmo resultado, e o mesmo resultado é um número que não cabe. Com a estrela acesa, as quarenta e duas fileiras de fio e as cinco mil lâmpadas da nº 8, a árvore de doze metros puxa quarenta por cento a mais do que o transformador da cidade aguenta.\n\nNinguém fala por um bom tempo. O seu Szymanski, de colete laranja, tira do bolso uma caneta, risca a última linha da folha e escreve ao lado, com letra de eletricista:\n\n*A carga não fecha. Faltam três dias para alguém descobrir que a árvore tem de ser menor, ou de ser acesa em duas metades, ou de ter menos luz. Qualquer uma das três vai exigir que um de vocês ceda.*\n\nEle devolve a caneta, sem esperar resposta, e sai.",
+      "gancho": "Uma árvore de doze metros, um transformador pequeno demais e um jeito de resolver que exige que alguém ceda.",
+      "ir": "pp_c6_manha"
+    },
+    "pp_c6_manha": {
+      "tipo": "segue",
+      "cap": 6,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Segunda, 22 de dezembro · 07h30",
+      "npcs": [
+        "szymanski",
+        "gus"
+      ],
+      "ir": "pp_c6_carga",
+      "texto": "Segunda-feira de manhã, a três dias da Noite da Árvore, a Kessler Hardware está com a porta de ferro aberta e o beco cheio de gente de colete laranja. O seu Szymanski, sem avisar, chamou três ex-colegas da Con Edison, que desceram do Queens de caminhonete, com cintos de ferramentas e um termo de café.\n\nGus Pappas, de avental e de boné dos Yankees, distribui sanduíches de ovo com bacon embrulhados em papel pardo. Na calçada, um menino de onze anos mede o beco com passos de gigante: Nico Tedeschi, que decidiu, sem pedir licença a ninguém, que agora é o assistente-chefe da obra.\n\nA estrela de oito pontas, limpa, polida, fora do lençol, brilha em cima da mesa como uma coisa que acordou de um sono comprido. Em volta dela, três metros de papel pardo com o desenho da árvore, rabiscado a lápis, riscado, redesenhado.\n\n— Antes de montar qualquer coisa — diz o seu Szymanski, apontando a folha da carga com o dedo seco — a árvore precisa de um dono. Quem decide quando alguém tem de ceder?"
+    },
+    "pp_c6_carga": {
+      "tipo": "decisao",
+      "cap": 6,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Segunda, 22 de dezembro · 08h40",
+      "texto": "Uma árvore de doze metros que puxa quarenta por cento a mais do que o transformador aguenta tem, para existir, três saídas. Todas custam alguma coisa a alguém, e as duas pessoas que mandam no projeto precisam escolher a mesma.",
+      "pergunta": "Como a árvore passa a caber na carga?",
+      "ir": "pp_c6_andaime",
+      "acoes": [
+        {
+          "id": "tedeschi",
+          "texto": "Tirar mil lâmpadas da nº 8: a árvore usa menos das luzes do Papai Noel",
+          "efeitos": {
+            "flag": "cedeu_a",
+            "vinculo": 1
+          },
+          "resultado": "Vocês decidem tirar mil lâmpadas da conta da nº 8, e a nº 8 vai sentir a falta delas. O trenó fica mais escuro; o Papai Noel de braço mecânico, que o seu Sal jura consertar desde 2019, perde as luzes do capuz. É um corte de orgulho, e um corte de orgulho dói mais do que um corte de energia."
+        },
+        {
+          "id": "lau",
+          "texto": "Tirar a metade dos fios do ginkgo de vidro: a árvore usa menos da constelação da nº 11",
+          "efeitos": {
+            "flag": "cedeu_b",
+            "vinculo": 1
+          },
+          "resultado": "Vocês decidem tirar a metade dos fios do ginkgo da conta. A constelação que levou quatro madrugadas de novembro para ser medida vai ficar com um buraco no meio. É um corte de coisa que ninguém viu e todo mundo já ama."
+        },
+        {
+          "id": "metades",
+          "texto": "Acender a árvore em duas metades, em sincronia: uma metade de cada casa, no mesmo segundo",
+          "efeitos": {
+            "flag": "duas_metades",
+            "abalo": 1
+          },
+          "resultado": "Vocês decidem não cortar nada. A árvore vai acender em duas metades, uma por casa, e o interruptor de cada metade vai estar na mão de uma pessoa. Se um dos dois atrasar um segundo, o transformador não aguenta. Foi a solução mais bonita e a mais arriscada: ela só funciona se os dois confiarem um no outro."
+        }
+      ]
+    },
+    "pp_c6_andaime": {
+      "tipo": "dividir",
+      "cap": 6,
+      "lugar": "Cooper Green",
+      "hora": "Segunda, 22 de dezembro · 16h20",
+      "cada": 1,
+      "texto": "Às quatro e vinte, o tronco da árvore, doze metros de cabo trançado e um poste de aço escorado em três pontos, está de pé em Cooper Green, preso por andaimes de tubo, no meio da pracinha de grama pelada. Em volta, dezenas de bicos de fio esperam ser puxados para cima.\n\nOs colegas do seu Szymanski foram embora. O sol de dezembro já cai pelo lado da igreja, e o frio sobe do chão. No topo do andaime, onde a estrela vai ser presa, ninguém precisa de ninguém, e é por isso que alguém precisa subir.",
+      "pergunta": "Quem faz o quê?",
+      "acoes": [
+        {
+          "id": "subir",
+          "texto": "Subir pelo andaime até o topo, com a corda de segurança, para prender o último cabo",
+          "efeitos": {
+            "flag": "subiu_topo",
+            "abalo": 1
+          },
+          "resultado": "Você sobe os degraus de tubo um a um, com a corda de segurança presa ao cinto e as luvas de couro do seu Szymanski, grandes demais. Doze metros acima da pracinha, o bairro se abre: as doze casas da Harmon Place, as duas de vela nas janelas, os telhados de Dyker Heights como uma maré cinzenta e, ao longe, a ponte Verrazzano com seus cabos acesos. O vento faz o andaime cantar de leve."
+        },
+        {
+          "id": "segurar",
+          "texto": "Ficar embaixo, segurando a escada e passando os cabos para quem sobe",
+          "efeitos": {
+            "flag": "ficou_embaixo",
+            "vinculo": 1
+          },
+          "resultado": "Você fica embaixo, com os pés bem plantados no pé da escada, as duas mãos no tubo gelado e o pescoço dobrado para cima. É o trabalho de quem confia, e confiar, para você, dá mais trabalho do que subir: você não pode fazer nada além de olhar, avisar, esperar e acreditar que a pessoa lá em cima sabe o que está fazendo."
+        },
+        {
+          "id": "medir",
+          "texto": "Medir a tensão dos cabos com o aparelho do seu Szymanski, de olho nos números",
+          "efeitos": {
+            "flag": "mediu_cabos"
+          },
+          "resultado": "Você aponta o medidor para cada cabo, um por vez, anotando no caderno os números do visor, e eles ficam, todos, dentro da faixa. Há um prazer pequeno e honesto em ver um problema se comportar. Pela primeira vez em três dias, uma coisa se resolve sozinha."
+        }
+      ],
+      "desfecho": "Quando o sol cai atrás da igreja de Saint Rose of Lima, os dois acabam, por acaso ou não, no mesmo andar do andaime, a seis metros do chão, sozinhos, com os colegas do seu Szymanski longe e a pracinha vazia lá embaixo.",
+      "ir": "pp_c6_dialogo"
+    },
+    "pp_c6_dialogo": {
+      "tipo": "dialogo",
+      "cap": 6,
+      "lugar": "Andaime, Cooper Green",
+      "hora": "Segunda, 22 de dezembro · 17h05",
+      "comeca": "B",
+      "texto": "A seis metros do chão, entre duas barras de aço, há um patamar de madeira em que cabem, com folga, duas pessoas sentadas. O vento é frio e limpo. A cidade começa a acender as luzes de verdade, uma janela por vez, e a Harmon Place, lá embaixo, continua escura.\n\nQuando não há mais nada a medir, a conversa tem de ser a própria coisa.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "x0_foto",
+              "texto": "— Eu achei uma foto, no pano da estrela. Meu avô e o seu. Você viu?",
+              "se": "flag:b_mostrou_foto || flag:b_guardou_foto || flag:a_leu_caixa"
+            },
+            {
+              "tom": "abre",
+              "tag": "x0_aqui",
+              "texto": "— Dá para ver a rua inteira daqui. Eu nunca tinha visto a nossa rua assim."
+            },
+            {
+              "tom": "flerte",
+              "tag": "x0_vento",
+              "texto": "— Se você cair, eu não te seguro. Mas eu grito bonito."
+            },
+            {
+              "tom": "seco",
+              "tag": "x0_trabalho",
+              "texto": "— Esse andaime balança. A gente termina isso e desce."
+            }
+          ]
+        },
+        {
+          "prompt": "Agora é você quem responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "x1_verdade",
+              "texto": "— Eu soube ontem o que aconteceu no velório. Você também, né?",
+              "se": "flag:trocaram_versoes || flag:b_acolheu_po || flag:a_defendeu_wing"
+            },
+            {
+              "tom": "cuida",
+              "tag": "x1_vento",
+              "texto": "— Você está com frio. Vem para o meu lado, tem menos vento."
+            },
+            {
+              "tom": "flerte",
+              "tag": "x1_grito",
+              "texto": "— Eu grito bonito, é verdade. Mas ninguém aqui vai ter coragem de te deixar cair."
+            },
+            {
+              "tom": "seco",
+              "tag": "x1_ok",
+              "texto": "— Tá. A gente desce em cinco minutos."
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "x2_cornell",
+              "texto": "— Eu entrei em Cornell. Ainda não sei se eu vou. Mas eu me inscrevi para ver se eu era capaz.",
+              "se": "flag:confessou_cornell || flag:confessou_cornell_festa",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "x2_medo",
+              "texto": "— Eu tenho medo de que, se eu falar o que eu quero, você ache que eu estou largando você de novo.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "x2_plano",
+              "texto": "— Você escreveu um plano de vida para a gente sem me perguntar. Isso não era cuidado.",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "x2_obrigado",
+              "texto": "— Eu não quero brigar aqui em cima. Hoje, não."
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da tarde é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "x3_quero",
+              "texto": "— Eu estou com vontade de te beijar. Se você também estiver, eu quero saber agora.",
+              "efeitos": {
+                "flag": "disse_quero",
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "x3_quase",
+              "texto": "— Acho que a gente está a um passo de fazer uma coisa que não estava no plano."
+            },
+            {
+              "tom": "cuida",
+              "tag": "x3_devagar",
+              "texto": "— Sem pressa. Eu não vou a lugar nenhum hoje."
+            },
+            {
+              "tom": "seco",
+              "tag": "x3_descer",
+              "texto": "— Vamos descer. Eu preciso pensar."
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_luvas",
+          "texto": "— Fica com as minhas luvas. As suas são grandes demais."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_depois",
+          "texto": "— Isso a gente decide embaixo."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_cabelo",
+          "texto": "— O vento bagunçou o seu cabelo. Ficou bem."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_dificil",
+          "texto": "— Eu não sabia que isso ia ser tão fácil de falar aqui em cima."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fugir",
+          "texto": "— Você vai descer correndo? Seria típico."
+        }
+      ],
+      "fecho": "A luz do último sol toca a ponta da estrela, guardada na caixa de madeira ao lado, e por um segundo a pracinha lá embaixo vira um tanque de ouro. Em cima do andaime, ninguém se mexe.",
+      "ir": "pp_c6_consente"
+    },
+    "pp_c6_consente": {
+      "tipo": "consentimento",
+      "cap": 6,
+      "lugar": "Andaime, Cooper Green",
+      "hora": "Segunda, 22 de dezembro · 17h40",
+      "texto": "O vento parou, por um momento, como se também esperasse. A seis metros do chão, entre duas barras de aço, o silêncio que sobrou depois da conversa tem a forma exata de uma pergunta.\n\nNinguém vai perguntar em voz alta. Cada um decide por dentro, e só se os dois quiserem alguma coisa acontece.",
+      "pergunta": "O que você quer?",
+      "avancar": "Beijar. Agora, aqui em cima, sem plano.",
+      "ficar": "Ficar perto, e ainda não atravessar.",
+      "flag": "beijo_andaime",
+      "irAvancou": "pp_c6_sim",
+      "irSem": "pp_c6_nao"
+    },
+    "pp_c6_sim": {
+      "tipo": "segue",
+      "cap": 6,
+      "lugar": "Andaime, Cooper Green",
+      "hora": "Segunda, 22 de dezembro · 17h42",
+      "requer": [
+        "beijo_andaime"
+      ],
+      "ir": "pp_c6_fim",
+      "texto": "Não é um beijo de cinema. É curto, e começa meio desajeitado, porque as luvas do seu Szymanski são grandes demais e o nariz de um acerta o do outro. Depois encontra a posição certa, e fica. O frio some por uns segundos. O andaime balança de leve, e nenhum dos dois cai.\n\nQuando se afastam, o rosto de cada um está na mesma cor que o céu, e nenhum deles sabe o que dizer. A primeira luz acesa de verdade da noite aparece, por acaso, na janela da Kessler Hardware, lá embaixo."
+    },
+    "pp_c6_nao": {
+      "tipo": "segue",
+      "cap": 6,
+      "lugar": "Andaime, Cooper Green",
+      "hora": "Segunda, 22 de dezembro · 17h42",
+      "exclui": [
+        "beijo_andaime"
+      ],
+      "ir": "pp_c6_fim",
+      "texto": "Nada acontece, e nada acontecer também é um jeito de a noite dizer alguma coisa. Os dois ficam onde estão, perto, a uns dez centímetros um do outro, olhando a rua escura lá embaixo. Ninguém se afasta. Ninguém atravessa.\n\nO andaime balança de leve com o vento que voltou. A primeira luz acesa de verdade da noite aparece, por acaso, na janela da Kessler Hardware, lá embaixo, e os dois, sem combinar, esperam que ela acenda inteira antes de dizer qualquer coisa."
+    },
+    "pp_c6_fim": {
+      "tipo": "fim",
+      "cap": 6,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Segunda, 22 de dezembro · 20h30",
+      "texto": "Às oito e meia, os dois voltam ao depósito para guardar as luvas e as cordas. {{se flag:beijo_andaime}}O que aconteceu no andaime ainda está nos lábios e não está em nenhuma lista. {{/se}}{{se !flag:beijo_andaime}}O que não aconteceu no andaime também está em todos os cantos do depósito, e fica entre os dois como uma terceira pessoa que ninguém convidou. {{/se}}{{se flag:cedeu_a}}A nº 8 abriu mão de mil lâmpadas, e ninguém lá em casa sabe disso ainda. {{/se}}{{se flag:cedeu_b}}O ginkgo vai ter um buraco no meio, e ninguém lá em casa sabe disso ainda. {{/se}}{{se flag:duas_metades}}A árvore só acende se os dois interruptores forem apertados no mesmo segundo. {{/se}}\n\nEm cima da mesa de marceneiro, a prancheta azul de {{A.nome}} está aberta no cálculo da carga, com uma folha solta dobrada no meio. Uma janela do depósito, mal fechada, deixa entrar uma rajada de vento que levanta a folha, a sopra pela mesa, e a deixa cair no chão, aberta, de frente para cima.\n\nNão é a folha da carga. É a folha de trás, a que ninguém devia ver: um arquivo impresso, de abas coloridas, com um título comprido, uma data de dois anos atrás, e, na margem, a letra de {{B.nome}}, a lápis, de hoje: *isso é um contrato, não um plano*.",
+      "gancho": "A planilha caiu no chão, aberta, com uma frase a lápis na margem que ninguém deveria ter lido.",
       "ir": "pp_rascunho_fim"
     },
     "pp_rascunho_fim": {
       "tipo": "final",
-      "cap": 3,
+      "cap": 6,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
