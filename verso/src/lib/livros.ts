@@ -11,6 +11,9 @@ export interface ResumoLivro {
   secao: string;
   tropes: string[];
   sinopse?: string;
+  serie?: string;
+  tema?: Livro['tema'];
+  capitulos: number;
   personagens?: Livro['personagens'];
   pronto: boolean;
 }
@@ -22,7 +25,7 @@ export function listarLivros(): ResumoLivro[] {
       const slug = f.replace(/\.json$/, '');
       const l = Livro.parse(JSON.parse(readFileSync(join(DIR(), f), 'utf8')));
       // livros de teste (fixtures) não aparecem na biblioteca
-      return { slug, titulo: l.titulo, secao: l.secao, tropes: l.tropes, sinopse: l.sinopse, personagens: l.personagens, pronto: !!l.personagens };
+      return { slug, titulo: l.titulo, secao: l.secao, tropes: l.tropes, sinopse: l.sinopse, serie: l.serie, tema: l.tema, capitulos: Math.max(...Object.values(l.nos).map((n) => n.cap)), personagens: l.personagens, pronto: !!l.personagens };
     })
     .filter((l) => l.pronto);
 }

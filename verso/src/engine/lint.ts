@@ -196,7 +196,8 @@ const envBase = (flags: boolean, num: number, eu: Seat, hist: EnvCond['hist']): 
 export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
   const erros: Achado[] = [];
   const avisos: Achado[] = [];
-  const E = (regra: string, no: string | undefined, msg: string) => erros.push({ regra, no, msg });
+  const RASCUNHO_TOLERA = ['escolha-morta', 'flag-nunca-gravada'];
+  const E = (regra: string, no: string | undefined, msg: string) => (l.rascunho && RASCUNHO_TOLERA.includes(regra) ? avisos.push({ regra, no, msg: `${msg} (rascunho)` }) : erros.push({ regra, no, msg }));
   const W = (regra: string, no: string | undefined, msg: string) => avisos.push({ regra, no, msg });
   const ids = Object.keys(l.nos);
 

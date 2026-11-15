@@ -1,5 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { IcBandeira, IcDiario, IcLista, IcVolta } from '../../../components/Icones';
 import { ErroCliente, type Sessao, api, gravarSessao, lerSessao, partes } from '../../../lib/cliente';
 
 interface Visao {
@@ -14,7 +15,7 @@ interface Ficha {
   fatos: string[]; vinculo: number; fa: number; nervosismo: number; pistas: string[];
 }
 interface Estado {
-  codigo: string; titulo: string; modo: 'dupla' | 'solo'; status: 'lobby' | 'jogando' | 'fim'; rev: number;
+  codigo: string; titulo: string; serie?: string; capsTotal: number; modo: 'dupla' | 'solo'; status: 'lobby' | 'jogando' | 'fim'; rev: number;
   eu: { seat: 'A' | 'B'; nome: string; genero: string; criador: boolean };
   par: { nome: string; genero: string; ia: boolean } | null;
   ficha: Ficha; visao: Visao | null; diario: number; final?: string; semMudanca?: boolean;
@@ -144,15 +145,11 @@ export default function Sala({ codigo }: { codigo: string }) {
   const link = typeof window !== 'undefined' ? `${window.location.origin}/sala/${codigo}` : '';
   return (
     <main className="leitor">
-      <header className="topo">
-        <div>
+      <header className="leitor-topo">
+        <a href="/" className="btn icb" aria-label="Voltar ao início"><IcVolta /></a>
+        <div className="tt">
           <strong>{st.titulo}</strong>
-          {v && <div className="mut sm">{[v.lugar, v.hora].filter(Boolean).join(' · ')}</div>}
-        </div>
-        <div className="row" role="toolbar" aria-label="Menu">
-          <button aria-label="Ficha do personagem" onClick={() => setPainel('ficha')}>Ficha</button>
-          <button aria-label="Resumo do que aconteceu" onClick={abrirDiario}>Resumo</button>
-          <button aria-label="Reportar problema nesta cena" onClick={() => { setRelatoOk(false); setPainel('relato'); }}>⚑</button>
+          <span>{st.serie ?? (st.modo === 'solo' ? 'Jogo solo' : 'A dois')}</span>
         </div>
       </header>
       {erro && <p role="alert" className="erro sm">{erro}</p>}
@@ -177,18 +174,24 @@ export default function Sala({ codigo }: { codigo: string }) {
 
       {st.status !== 'lobby' && v && (
         <>
-          <div className="cena" key={`${v.cap}-${v.texto.slice(0, 20)}`}>
-            <Texto t={v.texto} />
+          <div className="cartao cena" key={`${v.cap}-${v.texto.slice(0, 20)}`}>
+            <h2 className="cap-tit">Capítulo {v.cap}</h2>
+            <p className="cap-sub">{[v.lugar, v.hora].filter(Boolean).join(' · ')}</p>
+            <div className="leitura"><Texto t={v.texto} /></div>
+            {v.registro.length > 0 && (
+              <div className="reg leitura">
+                {v.registro.map((r, i) => (
+                  r.k === 'esc'
+                    ? <p key={i} className="esc sm">▸ {r.seat === st.eu.seat ? 'Você escolheu' : 'Escolhido pelo outro'}: {r.texto}</p>
+                    : <Texto key={i} t={r.texto} className={r.k === 'fala' ? 'fala' : ''} />
+                ))}
+              </div>
+            )}
           </div>
-          {v.registro.length > 0 && (
-            <div className="reg">
-              {v.registro.map((r, i) => (
-                r.k === 'esc'
-                  ? <p key={i} className="esc sm">▸ {r.seat === st.eu.seat ? 'Você escolheu' : 'Escolhido pelo outro'}: {r.texto}</p>
-                  : <Texto key={i} t={r.texto} className={r.k === 'fala' ? 'fala' : ''} />
-              ))}
-            </div>
-          )}
+          <div className="progresso" aria-label={`Capítulo ${v.cap} de ${st.capsTotal}`}>
+            <div className="barra"><i style={{ width: `${Math.min(100, (v.cap / st.capsTotal) * 100)}%` }} /></div>
+            <span>{v.cap}/{st.capsTotal}</span>
+          </div>
           {st.status === 'fim' ? (
             <section className="card">
               <h2>Fim</h2>
@@ -212,6 +215,12 @@ export default function Sala({ codigo }: { codigo: string }) {
           )}
         </>
       )}
+
+      <div className="controles" role="toolbar" aria-label="Menu da leitura">
+        <button aria-label="Ficha do personagem" onClick={() => setPainel('ficha')}><IcLista /><span>Ficha</span></button>
+        <button aria-label="Resumo do que aconteceu" onClick={abrirDiario}><IcDiario /><span>Resumo</span></button>
+        <button aria-label="Reportar problema nesta cena" onClick={() => { setRelatoOk(false); setPainel('relato'); }}><IcBandeira /><span>Reportar</span></button>
+      </div>
 
       <dialog ref={dlg} onClose={() => setPainel(null)} aria-label="Painel">
         <div className="topo"><h2>{painel === 'ficha' ? 'Ficha' : painel === 'diario' ? 'O que aconteceu até agora' : 'Reportar problema'}</h2><button onClick={() => setPainel(null)}>Fechar</button></div>

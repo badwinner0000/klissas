@@ -153,6 +153,8 @@ export const Livro = z
     titulo: z.string(),
     secao: z.enum(['love-sparks', 'k-vibes', 'dark-deals', 'bitter-sweet']),
     adulto: z.boolean().default(false),
+    /** livro em escrita: dívidas de conteúdo (flags sem leitura, etc.) viram aviso. Sem `personagens` ele nem aparece na biblioteca. */
+    rascunho: z.boolean().default(false),
     tropes: z.array(z.string()).min(1),
     linhaDoTempo: z.array(z.object({ quando: z.string(), evento: z.string() }).strict()).min(1),
     /** quanto o vínculo pode SUBIR por capítulo (original: 1) */
@@ -160,6 +162,9 @@ export const Livro = z
     /** idades padrão dos personagens A e B, usadas por {{A.idade}} */
     idades: z.object({ A: z.number().int(), B: z.number().int() }).optional(),
     sinopse: z.string().optional(),
+    serie: z.string().optional(), // ex.: "Love Story · Nº 5"
+    /** cores da capa e do tema do livro (hex) */
+    tema: z.object({ a: z.string(), b: z.string(), destaque: z.string() }).strict().optional(),
     personagens: z.object({ A: Personagem, B: Personagem }).strict().optional(),
     /** fatos básicos sempre visíveis na ficha (quem é quem), sem depender de gênero */
     fatos: z.array(z.string()).default([]),

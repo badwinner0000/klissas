@@ -558,6 +558,8 @@ const pers = (o) => ({ papel: prop(o, 'arq').value, nomePadrao: prop(o, 'ap').va
 const livro = {
   id: 'padrinhos',
   sinopse: 'Nantucket, junho de 2023. A cerimonialista fugiu com o dono do bufê, os noivos estão num retiro de silêncio e sobraram a madrinha, o padrinho, uma pasta e um encontro às cegas que cada um conta de um jeito.',
+  serie: 'Love Story · Nº 5',
+  tema: { a: '#12354a', b: '#6f909f', destaque: '#a9c4d6' }, // hortênsia azul, névoa e o pôr do sol de Nantucket
   personagens: { A: pers(jog[0]), B: pers(jog[1]) },
   fatos: [
     'Casamento de Gemma Castellano (noiva) e Tunde Okoro (noivo), sábado, 17 de junho de 2023, no Nantucket Yacht Club.',
