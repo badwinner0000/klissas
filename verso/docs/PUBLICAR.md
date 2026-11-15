@@ -32,3 +32,14 @@ Tempo: ~15 minutos. Você só precisa de contas gratuitas no Supabase e na Verce
 - Salas antigas não são apagadas. Para limpar: `delete from salas where atualizada < now() - interval '30 days';`
 - Adicionar um livro novo: coloque o JSON em `content/livros/`, rode `npm run lint:livros` e `npm run sim -- <slug>`, faça deploy. Salas em andamento continuam na versão antiga (ficam presas ao hash).
 - Falta antes de divulgar: login/contas, verificação de idade para +18, moderação dos relatos (hoje só gravam em `relatos`), limite de uso por IP.
+
+## Cloudflare Workers (alternativa à Vercel)
+Endereço: **https://lovesparks.verso.business** (domínio `verso.business` na Cloudflare).
+
+1. Workers & Pages → Create → Import a repository → `klissas`.
+   Root directory `verso` · branch `main` · build `npm ci && npx opennextjs-cloudflare build` · deploy `npx wrangler deploy`.
+2. Settings → Variables and secrets → segredo `DATABASE_URL` (Supabase, Transaction pooler, porta 6543).
+3. O `wrangler.jsonc` já declara a rota `lovesparks.verso.business` como custom domain: o deploy cria o DNS.
+4. Conferir `https://lovesparks.verso.business/api/saude` (deve vir `"ok": true`).
+
+Notas técnicas: os livros entram no bundle (`scripts/gerar-biblioteca.mjs`, no `prebuild`); o Workers abre uma conexão Postgres por consulta (não reaproveita entre requisições); teste local: `npm run cf:preview` (segredos em `.dev.vars`, fora do Git).
