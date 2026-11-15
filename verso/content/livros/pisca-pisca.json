@@ -479,11 +479,668 @@
       "hora": "Quinta, 18 de dezembro · 02h07",
       "texto": "À meia-noite e doze a luz volta em Dyker Heights inteira, menos em Harmon Place, que passa a noite escura, com doze casas de vela na janela e um poste mudo na esquina. {{se flag:regra_horario}}Das sete às dez, tinha ficado combinado, e a rua dorme com o horário na cabeça. {{/se}}{{se flag:regra_ideias}}Uma ideia maluca por noite, tinha ficado combinado, e a rua dorme sem imaginar que ideia será essa. {{/se}}{{se flag:regra_passado}}Nada de passado até o dia 25, tinha ficado combinado, e a rua dorme com o passado inteiro ao lado da cama. {{/se}}\n\nÀs duas e sete da manhã, dois celulares vibram ao mesmo tempo, um em cada casa. O mesmo recado, de um número que nenhum dos dois tem salvo:\n\n*A estrela da árvore não vai ser comprada. Ela já existe. Está no depósito da Kessler desde 1987. Amanhã, às sete. Eu abro. S.*",
       "gancho": "Quem guardou uma estrela por trinta e oito anos, e por que as duas famílias nunca mais falaram dela?",
+      "ir": "pp_c2_chegada"
+    },
+    "pp_c2_chegada": {
+      "tipo": "segue",
+      "cap": 2,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quinta, 18 de dezembro · 18h58",
+      "npcs": [
+        "szymanski"
+      ],
+      "ir": "pp_c2_dividir",
+      "texto": "A Kessler Hardware fechou em agosto, depois de sessenta e dois anos, e ninguém na Treze desfez a vitrine: ainda dá para ver o cartaz de *Fechadura e Chave em 10 Minutos* desbotado pelo sol. O depósito fica nos fundos, por um corredor entre a lavanderia e o beco, com porta de ferro que rasga o chão quando alguém a puxa.\n\nÀs sete menos dois, o seu Szymanski já está lá, de colete laranja da Con Edison que ele nunca devolveu, segurando um molho de chaves do tamanho de um cacho de uvas. Setenta e um anos, dois joelhos novos, nenhuma pressa. Abre a porta, acende a lâmpada nua do teto e fica em silêncio tempo demais, como quem decide o que não vai dizer.\n\n— Tem tomada nova aqui, tem a velha ali, e o que está escrito *não mexa* é para ser levado a sério. — Ele entrega a chave grande a quem chegou primeiro e a pequena ao outro. — Eu abro hoje. Amanhã vocês se viram.\n\n{{se flag:a_marcou}}Foi a sua mensagem de ontem que marcou o horário, e todo mundo aqui sabe disso. {{/se}}{{se flag:regra_horario}}Passaram cinco minutos da hora combinada e nenhum dos dois comentou. {{/se}}O depósito tem cheiro de óleo de máquina, serragem e Natal guardado: quarenta caixas de papelão empilhadas até o teto, cada uma com um nome escrito a caneta, e no centro, em cima de uma mesa de marceneiro, um volume do tamanho de uma criança, enrolado num lençol branco e amarrado com barbante de padaria.\n\n— É isso — diz o seu Szymanski. — Desde 1987. — E vai embora, deixando a porta entreaberta e a pergunta fechada."
+    },
+    "pp_c2_dividir": {
+      "tipo": "dividir",
+      "cap": 2,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quinta, 18 de dezembro · 19h10",
+      "cada": 1,
+      "texto": "Com a porta fechada, o depósito parece ainda menor. A lâmpada nua balança de leve. A estrela está ali, a três passos de cada um, e na parede do fundo, em letra de mão, alguém deixou escrita a lista de tudo o que esta cidade pequena do Brooklyn acha que uma árvore de doze metros precisa: *cabo, tronco, base, copa, carga, estrela*.\n\nSão sete noites e só uma árvore. Dá para ir por um lado ou por outro.",
+      "pergunta": "O que você faz primeiro?",
+      "acoes": [
+        {
+          "id": "medir",
+          "texto": "Abrir a prancheta e começar a calcular a carga da árvore",
+          "efeitos": {
+            "flag": "a_medindo"
+          },
+          "variantes": [
+            {
+              "se": "flag:a_quadro",
+              "resultado": "Você repete o que já sabe fazer: confere tudo duas vezes. Dessa vez são os circuitos, e dá o mesmo resultado de ontem à noite, no quadro de casa. O transformador aguenta, no máximo, o que as duas casas gastam em um dia comum, mais um tanto. Cinco mil lâmpadas somadas aos fios do ginkgo dão um número que não cabe.\n\nVocê escreve o número maior no alto da folha e sublinha duas vezes: **a carga não fecha com tudo ligado**."
+            },
+            {
+              "se": "",
+              "resultado": "Você abre a prancheta numa folha em branco e escreve o que o seu Szymanski deixou implícito: o transformador da esquina aguenta o que as duas casas gastam em um dia comum, e a árvore tem de caber nisso. Doze metros de copa, cinco mil lâmpadas de uma casa, os fios da outra, e nenhuma margem.\n\nVocê sublinha duas vezes: **a carga não fecha com tudo ligado**. A boa notícia é que o problema, agora, tem nome."
+            }
+          ]
+        },
+        {
+          "id": "estrela",
+          "texto": "Desamarrar o barbante e abrir o lençol da estrela",
+          "efeitos": {
+            "flag": "b_abriu_estrela",
+            "vinculo": 1
+          },
+          "variantes": [
+            {
+              "se": "flag:b_telhado",
+              "resultado": "Você tira o barbante nó por nó, do jeito de quem sobe em telhado e sabe que nó apressado cai. O lençol desliza e, por baixo, a estrela é menor do que você imaginou e mais bonita: oito pontas de latão, cada uma com uma lâmpada de vidro soprado dentro de uma gaiola de fio fino, e no centro um motor pequeno que ainda gira se você empurra com o dedo.\n\nLá de cima, na noite do apagão, você viu um céu com essa mesma geometria. Fica um segundo em silêncio, e é um silêncio bom."
+            },
+            {
+              "se": "",
+              "resultado": "Você desfaz o barbante nó por nó, com o cuidado de quem não quer estragar a surpresa. O lençol desliza e, por baixo, a estrela é menor do que você imaginou e mais bonita: oito pontas de latão, cada uma com uma lâmpada de vidro soprado dentro de uma gaiola de fio fino, e no centro um motor pequeno que ainda gira se você empurra com o dedo.\n\nEm trinta e oito anos ninguém a acendeu. Dá para ver pela poeira: ela está limpa só nas pontas, onde alguém passou o pano com carinho."
+            }
+          ]
+        },
+        {
+          "id": "caixas",
+          "texto": "Ler os nomes escritos a caneta nas caixas empilhadas",
+          "efeitos": {
+            "flag": "achou_nomes"
+          },
+          "resultado": "Cada caixa tem um nome e um ano, na mesma letra inclinada: *Pappas 1991*, *Quiñones 1996*, *Szymanski 2003*. Você anda entre as pilhas como numa biblioteca de Natais. Quase todas as caixas vieram de casas da rua, entregues à Kessler para guardar, e nunca mais foram buscadas.\n\nHá uma pilha de caixas sem ano e sem nome, só com um X de fita adesiva por cima. Você escolhe uma ao acaso, só para ter o que fazer com as mãos, e ela pesa mais do que parece."
+        }
+      ],
+      "desfecho": "O depósito se organiza sozinho: um de vocês na prancheta, outro no lençol ou nas caixas, e entre os dois uma mesa de marceneiro, uma lâmpada nua e a primeira noite de sete.\n\nDurante vinte minutos, os únicos sons são o de lápis, o de papelão e o do vento no beco. Alguém precisa romper isso.",
+      "ir": "pp_c2_dialogo"
+    },
+    "pp_c2_dialogo": {
+      "tipo": "dialogo",
+      "cap": 2,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quinta, 18 de dezembro · 19h50",
+      "comeca": "B",
+      "texto": "A estrela está agora de pé sobre a mesa, sem o lençol, e joga uma sombra de oito pontas na parede dos fundos. A lista de *cabo, tronco, base, copa, carga, estrela* ganha, com a sombra, uma sétima palavra que ninguém escreveu.\n\nVinte minutos de silêncio é o limite que dois ex-melhores-amigos aguentam.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "u0_linda",
+              "texto": "— É linda. Eu achei que fosse ser mais feia. Mais fácil de odiar.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "u0_carga",
+              "texto": "— Linda não acende. Preciso saber quanta carga ela puxa."
+            },
+            {
+              "tom": "flerte",
+              "tag": "u0_trinta",
+              "texto": "— Trinta e oito anos de espera e ela aparece num lençol de padaria. Tem estilo."
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "u1_numero",
+              "texto": "— Eu já tenho o número. Ela puxa menos do que a minha casa inteira. A questão é a copa."
+            },
+            {
+              "tom": "abre",
+              "tag": "u1_nonno",
+              "texto": "— Alguém a guardou direito. Cuidou. Isso não é abandono, é espera.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "u1_ordem",
+              "texto": "— Você começou pelo bonito. Eu comecei pela conta. Foi sempre assim entre nós.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "tag": "u2_regra",
+              "texto": "— Pela regra de ontem: uma ideia maluca cada um. Eu começo, se você quiser.",
+              "se": "flag:regra_ideias",
+              "efeitos": {
+                "flag": "ideia_a"
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "u2_horario",
+              "texto": "— Já passou das oito. A gente combinou até as dez.",
+              "se": "flag:regra_horario"
+            },
+            {
+              "tom": "flerte",
+              "tag": "u2_passado",
+              "texto": "— Nada de passado até o dia 25. Então me conta do presente: o que você faz quando acende uma luz?",
+              "se": "flag:regra_passado"
+            },
+            {
+              "tom": "abre",
+              "tag": "u2_ideia",
+              "texto": "— Posso propor uma coisa? Não é plano, é só uma ideia.",
+              "se": "!flag:regra_ideias && !flag:regra_horario && !flag:regra_passado"
+            },
+            {
+              "tom": "cuida",
+              "tag": "u2_comeu",
+              "texto": "— Você comeu alguma coisa hoje? Tem pretzel no carrinho, ainda deve estar aberto.",
+              "se": "!flag:regra_ideias && !flag:regra_horario && !flag:regra_passado"
+            },
+            {
+              "tom": "seco",
+              "tag": "u2_foco",
+              "texto": "— Vamos ao que importa: tronco e base. O resto eu resolvo depois.",
+              "se": "!flag:regra_ideias && !flag:regra_horario && !flag:regra_passado"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da noite é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "u3_obrigado",
+              "texto": "— Valeu por não ter ido embora quando viu a mesa.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "u3_amanha",
+              "texto": "— Amanhã às sete. Traz fita métrica."
+            },
+            {
+              "tom": "flerte",
+              "tag": "u3_estrela",
+              "texto": "— Se a estrela acender, você paga o chocolate quente. Se não, eu pago."
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_frio",
+          "texto": "— O depósito é gelado. Tem um aquecedor em algum canto?"
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_ok",
+          "texto": "— Ok. Seguimos."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_poeira",
+          "texto": "— Você tem poeira no cabelo. Aqui, do lado."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_cansado",
+          "texto": "— Foi um dia longo. Mas foi melhor do que eu esperava."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_sempre",
+          "texto": "— Você sempre faz isso: espera o outro falar primeiro."
+        }
+      ],
+      "fecho": "A sombra da estrela, de oito pontas, atravessa a mesa e chega às mãos dos dois. Ninguém comenta.",
+      "ir": "pp_c2_decisao"
+    },
+    "pp_c2_decisao": {
+      "tipo": "decisao",
+      "cap": 2,
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quinta, 18 de dezembro · 21h15",
+      "texto": "Antes de ir embora, falta uma escolha que muda como as outras seis noites vão ser: por onde começar a árvore. Os dois olham para a mesma parede, a da lista, e cada um vê uma ordem diferente.",
+      "pergunta": "Por onde a árvore começa?",
+      "ir": {
+        "A": "pp_c2_noite_a",
+        "B": "pp_c2_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "copa",
+          "texto": "Pela copa: desenhar a forma da árvore antes de saber o que ela puxa",
+          "efeitos": {
+            "flag": "comecou_copa",
+            "vinculo": 1
+          },
+          "resultado": "Vocês decidem começar pelo bonito. A copa vai ser uma espiral de fios, de baixo para cima, terminando na estrela. A carga, por enquanto, é um problema de amanhã."
+        },
+        {
+          "id": "carga",
+          "texto": "Pela carga: fechar a conta de energia e só depois desenhar",
+          "efeitos": {
+            "flag": "comecou_carga"
+          },
+          "resultado": "Vocês decidem começar pela conta. Sem número, nada sobe. A copa, por enquanto, é um desenho que espera a carga fechar."
+        },
+        {
+          "id": "junto",
+          "texto": "Pelas duas coisas ao mesmo tempo, uma de cada vez, passando a folha de um para o outro",
+          "efeitos": {
+            "flag": "comecou_junto",
+            "vinculo": 1
+          },
+          "resultado": "Vocês decidem não decidir: um desenha, o outro calcula, e a folha passa de mão em mão a cada vinte minutos. É a ordem mais lenta e a única em que os dois precisam ler o que o outro escreveu."
+        }
+      ]
+    },
+    "pp_c2_noite_a": {
+      "tipo": "solo",
+      "cap": 2,
+      "seat": "A",
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quinta, 18 de dezembro · 21h40",
+      "texto": "Por dois minutos, enquanto o outro devolve a chave ao molho, você faz o que sempre faz: confere. Dá a volta na mesa, passa a lanterna do celular pelos cantos e levanta, por hábito, a caixa de baixo da pilha sem nome, a do X de fita adesiva.\n\nPor baixo da fita, em letra inclinada e antiga, a mesma letra de todas as outras caixas, está escrito um nome que você leu a vida inteira num barco de lembrança de comunhão, no cartão de Natal da sua nonna e no túmulo do cemitério de Green-Wood: *G. Tedeschi*.\n\nAo lado, num sinal de mais, outro nome. Você ainda não leu.",
+      "acoes": [
+        {
+          "id": "ler",
+          "texto": "Ler o segundo nome na caixa",
+          "ir": "pp_c2_fim",
+          "efeitos": {
+            "flag": "a_leu_caixa",
+            "abalo": 1
+          },
+          "resultado": "Você inclina a lanterna e lê o que estava escrito do outro lado do sinal de mais: *W. Lau*. A data embaixo é a mesma da estrela: *Natal de 1987*.\n\nO seu avô, Gennaro, e o avô do vizinho, Wing, assinaram juntos uma caixa. Em onze anos de rivalidade, nenhum adulto das duas casas disse esse nome em voz alta."
+        },
+        {
+          "id": "fechar",
+          "texto": "Fechar a caixa e dizer a si mesmo que é só coincidência",
+          "ir": "pp_c2_fim",
+          "efeitos": {
+            "flag": "a_fechou_caixa"
+          },
+          "resultado": "Você empurra a caixa de volta ao lugar com a ponta do pé, como se fosse a de qualquer outra pessoa. O nome ao lado do seu, no entanto, já está dentro da sua cabeça, e nenhuma pilha de papelão consegue empurrá-lo de volta."
+        }
+      ]
+    },
+    "pp_c2_noite_b": {
+      "tipo": "solo",
+      "cap": 2,
+      "seat": "B",
+      "lugar": "Depósito da Kessler Hardware",
+      "hora": "Quinta, 18 de dezembro · 21h40",
+      "texto": "Você vai guardar o lençol na pilha onde o encontrou, e de dentro dele, quando o dobra, cai um papel quadrado, antigo, do tamanho de um postal. Você o pega do chão com dois dedos.\n\nÉ uma fotografia de 1987, com a borda dentada e a cor desbotada para laranja. Dois homens de casaco grosso, ao lado de uma árvore alta e apagada num terreno vazio, e entre eles, apoiada no ombro de um e na mão do outro, uma estrela de oito pontas. Um é italiano de cabelo ralo e sorriso grande. O outro, de bigode fino, é o seu avô.\n\nNo verso, em letra inclinada: *G.T. + W.L. · primeira árvore · Natal 87*.",
+      "acoes": [
+        {
+          "id": "guardar",
+          "texto": "Guardar a fotografia no bolso, sem contar a ninguém",
+          "ir": "pp_c2_fim",
+          "efeitos": {
+            "flag": "b_guardou_foto",
+            "abalo": 1
+          },
+          "resultado": "Você enfia o postal no bolso interno do casaco, junto da dobra do caderno. Seu avô morreu antes de você aprender a perguntar as coisas. Você nunca soube que ele tinha um amigo ali, a duas casas de distância, que um dia dividiu com ele uma estrela.\n\nPela primeira vez em muito tempo, tem algo seu, e ao mesmo tempo dos dois lados da rua."
+        },
+        {
+          "id": "mostrar",
+          "texto": "Levar a fotografia até quem está do outro lado da mesa",
+          "ir": "pp_c2_fim",
+          "efeitos": {
+            "flag": "b_mostrou_foto",
+            "vinculo": 1
+          },
+          "resultado": "Você atravessa o depósito com o postal na mão. Não diz nada: só o estende sobre a mesa, sob a lâmpada nua, virado para cima. A outra pessoa olha por muito tempo e depois, devagar, vira a fotografia e lê o verso.\n\nNenhum dos dois fala. Do lado de fora, um caminhão de lixo passa pela Treze, e o barulho cobre o que poderia ter sido dito."
+        }
+      ]
+    },
+    "pp_c2_fim": {
+      "tipo": "fim",
+      "cap": 2,
+      "lugar": "Harmon Place",
+      "hora": "Quinta, 18 de dezembro · 23h50",
+      "texto": "Em casa, a luz ainda não voltou em Harmon Place, e a única coisa acesa na quadra inteira é o lampião de querosene que a Pó-pó pendurou na varanda da nº 11. Do outro lado da rua, a luz de uma vela anda de janela em janela na nº 8.\n\n{{se flag:a_leu_caixa}}Um nome numa caixa de papelão. {{/se}}{{se flag:b_guardou_foto}}Uma fotografia no bolso do casaco. {{/se}}{{se flag:b_mostrou_foto}}Uma fotografia, de mão em mão, sobre uma mesa. {{/se}}Uma estrela guardada por trinta e oito anos, e nenhum dos adultos das duas casas jamais mencionou que ela existia.\n\nÀs onze e cinquenta, dois celulares vibram de novo, no mesmo segundo. Um número desconhecido. Uma foto de uma lápide, já com neve em cima, e uma legenda curta:\n\n*Pergunte à sua avó por que as duas famílias pararam de se falar. Ela sabe. Não foi 2013.*",
+      "gancho": "Quem sabe que a briga não começou em 2013, e por que quer que os dois saibam agora?",
+      "ir": "pp_c3_estrada"
+    },
+    "pp_c3_estrada": {
+      "tipo": "segue",
+      "cap": 3,
+      "lugar": "Padaria Tedeschi, Thirteenth Avenue",
+      "hora": "Sexta, 19 de dezembro · 07h15",
+      "ir": "pp_c3_van",
+      "texto": "A van da Padaria Tedeschi tem um cannoli gigante pintado na lateral e um câmbio que só engata a terceira se você pedir com educação. Angela Tedeschi entrega a chave com uma mão e segura o próprio pulso com a outra, como quem acaba de assinar um papel que não leu.\n\n— Para Nova Jersey. Paterson. Dona Yesenia Delgado, a loja azul com o letreiro de cabo coaxial. Tem fio de oito milímetros que a Home Depot não tem. — Ela olha para o outro lado da calçada, onde alguém da nº 11 espera com um caderno debaixo do braço e um copo de café que não é para dividir. — Volta antes de escurecer. A previsão é de neve.\n\n{{se flag:regra_horario}}Quinze para as oito, cinco minutos de tolerância: vocês chegaram com três de sobra. {{/se}}A Padaria cheira a anis e a canela. No balcão, o Nico, de onze anos, faz sinal de joia para a irmã ou irmão mais velho e depois, por precaução, esconde a mão atrás de um cesto de biscoitos.\n\n— E se a van quebrar — diz Angela, de longe — liga para a prima Fran, em Hoboken. Ela tem sofá.\n\nA van engata a terceira na segunda tentativa, e a rua vira para a ponte."
+    },
+    "pp_c3_van": {
+      "tipo": "dividir",
+      "cap": 3,
+      "lugar": "Van da padaria, Goethals Bridge",
+      "hora": "Sexta, 19 de dezembro · 08h20",
+      "cada": 1,
+      "texto": "Da Gowanus até Paterson são pouco mais de cinquenta minutos, se o trânsito colaborar, e o trânsito de sexta antes do Natal nunca colabora. A van cheira a pão amanhecido, o rádio só pega uma estação de oldies e o aquecedor tem duas posições: *morno* e *incêndio*.\n\nSão duas pessoas que se conhecem desde os oito anos, no mesmo banco, com um pé de distância entre elas. Ninguém avisou como se enche esse espaço.",
+      "pergunta": "O que você faz durante a viagem?",
+      "acoes": [
+        {
+          "id": "musica",
+          "texto": "Mexer no rádio até achar uma música que os dois conheçam",
+          "efeitos": {
+            "flag": "viagem_musica"
+          },
+          "resultado": "Você gira o botão pelas estações de oldies, de reggaeton, de rádio de notícias, e para numa de rock dos anos noventa que está tocando no meio. Os dois sabem a letra. Nenhum dos dois canta, mas os dois mexem a boca, e por um refrão inteiro a van fica quase confortável."
+        },
+        {
+          "id": "caderno",
+          "texto": "Tirar o caderno e desenhar a paisagem pela janela, sem mostrar a ninguém",
+          "efeitos": {
+            "flag": "viagem_desenho",
+            "abalo": 1
+          },
+          "resultado": "Você abre o caderno no joelho e desenha a ponte, a refinaria de Linden, o aviso de *Welcome to New Jersey*. É a primeira vez que desenha com outra pessoa a menos de um metro. A página fica escondida do lado da janela, mas o lápis faz barulho, e o barulho diz o que a mão não diz."
+        },
+        {
+          "id": "silencio",
+          "texto": "Ficar em silêncio, olhando a estrada, até alguém falar",
+          "efeitos": {
+            "flag": "viagem_silencio"
+          },
+          "resultado": "Você olha a estrada e deixa a van falar sozinha: o motor, o aquecedor, a faixa dupla. O silêncio dura quarenta minutos e dói, mas é um silêncio honesto, do tipo que não finge ser outra coisa. Ao entrar na New Jersey Turnpike, a pessoa ao lado suspira, e você percebe que também estava segurando o ar."
+        }
+      ],
+      "desfecho": "Aos poucos, o espaço entre os dois bancos mudou de tamanho, ou de natureza. O que era um pé de distância passou a ser só um pé.",
+      "ir": "pp_c3_loja"
+    },
+    "pp_c3_loja": {
+      "tipo": "decisao",
+      "cap": 3,
+      "lugar": "Delgado Cable Supply, Paterson, NJ",
+      "hora": "Sexta, 19 de dezembro · 10h05",
+      "texto": "A loja azul, com o letreiro de cabo coaxial, é um corredor de três metros de largura e vinte de comprimento, cheio de carretéis como num sonho de eletricista. Dona Yesenia Delgado, de óculos pendurados no pescoço por uma corrente, escuta os dois contarem o projeto sem interromper, e depois mostra, em silêncio, o que tem.\n\nHá duas opções, e o dinheiro das duas casas junto, que vem num envelope dos pais, só cobre uma.",
+      "pergunta": "Qual fio vocês levam?",
+      "ir": "pp_c3_pane",
+      "acoes": [
+        {
+          "id": "grosso",
+          "texto": "O fio grosso, de oito milímetros: aguenta a carga inteira, mas é caro e pesado",
+          "efeitos": {
+            "flag": "comprou_grosso"
+          },
+          "resultado": "Vocês levam o fio grosso. Dona Yesenia pesa oitenta quilos de cabo no carrinho, escreve o valor num recibo à mão e avisa, sem erguer a voz: *quem carrega isso na árvore vai querer ter feito academia*."
+        },
+        {
+          "id": "fino",
+          "texto": "O fio fino, de quatro milímetros: barato e leve, mas só aguenta se dividirem a carga em duas fases",
+          "efeitos": {
+            "flag": "comprou_fino",
+            "vinculo": 1
+          },
+          "resultado": "Vocês levam o fio fino, o dobro da metragem pelo mesmo preço. Dona Yesenia concorda com a cabeça: *com dois cérebros, dá*. A árvore agora precisa ser ligada em duas partes, e as duas pessoas precisam se entender no segundo exato."
+        },
+        {
+          "id": "misto",
+          "texto": "Um pouco de cada, e o que sobrar a gente resolve no depósito",
+          "efeitos": {
+            "flag": "comprou_misto"
+          },
+          "resultado": "Vocês levam metade de cada, e dona Yesenia faz a conta em voz baixa, com a calculadora de mesa de teclas gastas. Sobram doze dólares, que ela empurra de volta pelo balcão: *para o chocolate quente, que o dia vai ser longo*."
+        }
+      ]
+    },
+    "pp_c3_pane": {
+      "tipo": "segue",
+      "cap": 3,
+      "lugar": "New Jersey Turnpike, saída 13",
+      "hora": "Sexta, 19 de dezembro · 15h40",
+      "ir": "pp_c3_dialogo",
+      "texto": "A neve começa às três e meia, finíssima, e às quatro já é um lençol que apaga as faixas da estrada. A van da Padaria Tedeschi, com oitenta quilos de fio atrás e dois adolescentes na frente, faz um som de tosse no meio da Turnpike, depois um de pigarro, e por fim para no acostamento da saída treze, em Elizabeth, com o ponteiro da temperatura no vermelho.\n\n{{se flag:comprou_grosso}}O fio grosso pesa uma tonelada, e a van parece ter decidido que não vai carregar mais nem um grama. {{/se}}{{se flag:comprou_fino}}O fio fino é leve, e mesmo assim a van parece ter decidido que não vai carregar nem um grama. {{/se}}{{se flag:comprou_misto}}Metade fina, metade grossa, e a van parece ter decidido que não vai carregar nem um grama. {{/se}}O reboque, pelo telefone, só chega de manhã. A prima Fran, também pelo telefone, responde com três pontos de exclamação e um endereço em Hoboken.\n\nAté o ônibus chegar, os dois têm quarenta minutos de neve, um pacote de pretzel que sobrou do café e um acostamento. Nenhum dos dois consegue ficar calado."
+    },
+    "pp_c3_dialogo": {
+      "tipo": "dialogo",
+      "cap": 3,
+      "lugar": "Skylark Diner, Elizabeth, NJ",
+      "hora": "Sexta, 19 de dezembro · 17h30",
+      "comeca": "A",
+      "texto": "O ônibus 40 deixa os dois, sacudidos e ensopados, na frente do Skylark Diner, que ficou aberto por pura teimosia. Dentro, um letreiro vermelho de neon, cabines de vinil e uma garçonete chamada Doreen, que traz duas canecas de café sem perguntar.\n\nÉ a primeira vez, em dois anos, que os dois se sentam frente a frente numa mesa, sem nenhuma lista entre eles.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "tag": "v0_frio",
+              "texto": "— Você está tremendo. Fica com o meu casaco, eu estou bem."
+            },
+            {
+              "tom": "seco",
+              "tag": "v0_plano",
+              "texto": "— Reboque às nove da manhã, sofá em Hoboken às sete da noite. Plano B resolvido."
+            },
+            {
+              "tom": "flerte",
+              "tag": "v0_doreen",
+              "texto": "— Olha só, a Doreen acha que a gente é um casal. Ela trouxe duas colheres para um pudim."
+            }
+          ]
+        },
+        {
+          "prompt": "Agora é você quem responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v1_obrigado",
+              "texto": "— Valeu. Eu fiquei com medo de a gente passar a noite inteira sem falar.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v1_pudim",
+              "texto": "— Eu não pedi pudim."
+            },
+            {
+              "tom": "fere",
+              "tag": "v1_frio",
+              "texto": "— Eu sempre fico tremendo quando discuto. Você sabe disso. Ou sabia.",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v2_faculdade",
+              "texto": "— Tem uma coisa que eu nunca contei para ninguém da minha casa.",
+              "efeitos": {
+                "flag": "confessou_cornell"
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "v2_vo",
+              "texto": "— Sua avó disse algo sobre a estrela, ontem, quando você chegou?"
+            },
+            {
+              "tom": "flerte",
+              "tag": "v2_plano",
+              "texto": "— Você fez planilha dessa viagem, né? Pode admitir."
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra do jantar é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "v3_verdade",
+              "texto": "— Eu senti sua falta. Mais do que eu queria sentir.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "v3_conta",
+              "texto": "— Eu pago a conta. Fica por minha conta."
+            },
+            {
+              "tom": "flerte",
+              "tag": "v3_tentou",
+              "texto": "— Se a neve não parar, você vai ter que dormir de pé no sofá da Fran."
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_come",
+          "texto": "— Come alguma coisa. Você não almoçou."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_depois",
+          "texto": "— A gente fala disso depois."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_neon",
+          "texto": "— O neon do Skylark te favorece. Tá vermelho no seu cabelo."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_estranho",
+          "texto": "— É estranho falar com você sem uma lista na mão."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_cala",
+          "texto": "— Pelo menos hoje você não vai fugir. Não tem para onde."
+        }
+      ],
+      "fecho": "Doreen deixa a conta, dois pedaços de torta que ninguém pediu e uma frase que serve de moral: *neve em dezembro dá liberdade para quem quer ficar*.",
+      "ir": "pp_c3_sofa"
+    },
+    "pp_c3_sofa": {
+      "tipo": "decisao",
+      "cap": 3,
+      "lugar": "Apartamento da Fran, Hoboken",
+      "hora": "Sexta, 19 de dezembro · 21h50",
+      "texto": "Fran Ruocco, prima de Angela, trinta e cinco anos, gerente de um bar de vinhos, abre a porta de um apartamento de quarenta metros quadrados e uma só cama de casal, e já avisa: *o sofá é de dois lugares e o colchão inflável furou em outubro*.\n\nEla não faz nenhuma pergunta sobre quem é o outro. Já sabe, pela cara dos dois, e por três dias de mensagens da tia.",
+      "pergunta": "Como vocês dormem?",
+      "ir": {
+        "A": "pp_c3_noite_a",
+        "B": "pp_c3_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "sofa",
+          "texto": "Um no sofá, o outro no chão com o travesseiro da Fran",
+          "efeitos": {
+            "flag": "dormiu_separado"
+          },
+          "resultado": "Vocês combinam um sistema: sofá para quem chegou primeiro à porta, e para quem chegou depois, um colchão de casaco e almofada no chão da sala. Fran, da porta do quarto, só levanta uma sobrancelha."
+        },
+        {
+          "id": "revezar",
+          "texto": "Revezar o sofá: metade da noite cada um",
+          "efeitos": {
+            "flag": "dormiu_revezando",
+            "vinculo": 1
+          },
+          "resultado": "Vocês acertam: três horas para cada um no sofá, e quem não está dormindo fica acordado na cozinha. O acordo tem um bônus que ninguém menciona: sobrarão duas horas, no meio, em que os dois estarão acordados."
+        },
+        {
+          "id": "cama",
+          "texto": "Aceitar a cama da Fran, que insiste em dormir no sofá",
+          "efeitos": {
+            "flag": "aceitou_cama"
+          },
+          "resultado": "Fran insiste, com os dois braços cruzados, que ela fica no sofá e vocês ficam com a cama, desde que seja do jeito mais civilizado possível. A cama tem dois travesseiros, uma coberta só e um espaço de um palmo no meio, que ninguém menciona."
+        }
+      ]
+    },
+    "pp_c3_noite_a": {
+      "tipo": "solo",
+      "cap": 3,
+      "seat": "A",
+      "lugar": "Apartamento da Fran, Hoboken",
+      "hora": "Sexta, 19 de dezembro · 01h10",
+      "texto": "Uma da manhã, e você está acordado na cozinha de uma prima com a luz do fogão acesa, uma caneca de leite morno e a neve caindo do lado de fora da janela, em linha reta, sem vento. No seu celular, aberta desde a van, a conversa de ontem à noite com o número desconhecido: *Pergunte à sua avó por que as duas famílias pararam de se falar. Ela sabe. Não foi 2013.*\n\nA sua nonna Concetta tem oitenta e quatro anos, mora no segundo andar da nº 8 e nunca, em toda a sua vida, falou do vizinho da frente. Você sempre achou que era por educação.",
+      "acoes": [
+        {
+          "id": "ligar",
+          "texto": "Ligar para a nonna agora, mesmo que sejam uma da manhã",
+          "ir": "pp_c3_fim",
+          "efeitos": {
+            "flag": "a_ligou_nonna",
+            "abalo": 1
+          },
+          "resultado": "Ela atende no segundo toque, porque nonna Concetta não dorme: *vigia a casa*. Você pergunta a coisa mais simples: *nonna, por que a gente parou de falar com os Lau?* Do outro lado, três segundos de silêncio, o barulho de um terço de contas contra a madeira, e uma resposta curta:\n\n— Não é uma conversa de telefone. Amanhã, quando você voltar, eu conto. — E desliga."
+        },
+        {
+          "id": "esperar",
+          "texto": "Deixar a pergunta para depois: a nonna merece o tempo dela",
+          "ir": "pp_c3_fim",
+          "efeitos": {
+            "flag": "a_esperou"
+          },
+          "resultado": "Você guarda o celular. A pergunta fica ali, entre você e o leite que esfria, e vira uma coisa a mais para carregar. Mas há um respeito, que você aprendeu com a própria nonna, em deixar uma pergunta dormir antes de acordá-la."
+        }
+      ]
+    },
+    "pp_c3_noite_b": {
+      "tipo": "solo",
+      "cap": 3,
+      "seat": "B",
+      "lugar": "Apartamento da Fran, Hoboken",
+      "hora": "Sexta, 19 de dezembro · 01h10",
+      "texto": "Uma da manhã, e você está acordado na sala de uma estranha com o travesseiro de um prédio de Hoboken e a fotografia de 1987 aberta na palma da mão, sob a luz do poste que entra pela janela. Lá fora, a neve cai sem vento.\n\nNo celular, a mensagem que chegou duas vezes: *Pergunte à sua avó por que as duas famílias pararam de se falar.* Você pensa na Pó-pó, de camisola, acendendo velas de aniversário durante um apagão. Ela guarda a coisa certa para a hora errada. Talvez ela tenha guardado essa.",
+      "acoes": [
+        {
+          "id": "mandar",
+          "texto": "Mandar uma mensagem para a Pó-pó, mesmo sabendo que ela só lê de manhã",
+          "ir": "pp_c3_fim",
+          "efeitos": {
+            "flag": "b_mandou_vo",
+            "abalo": 1
+          },
+          "resultado": "Você escreve com o polegar: *Pó-pó, por que a gente e os Tedeschi pararam de se falar?* Apaga. Escreve de novo, mais curto: *Pó-pó, o que aconteceu com o vovô Wing e o amigo dele?* Envia. As duas marcas azuis nunca aparecem, mas o telefone, ao lado do seu rosto, parece mais quente."
+        },
+        {
+          "id": "foto",
+          "texto": "Ficar olhando a fotografia até decorar cada detalhe, e guardar o resto da pergunta",
+          "ir": "pp_c3_fim",
+          "efeitos": {
+            "flag": "b_olhou_foto"
+          },
+          "resultado": "Você olha a fotografia até as bordas dentadas virarem desenho. O homem italiano ri com o corpo todo. O seu avô, de bigode, sorri só com um canto da boca, como você faz. Entre os dois, a estrela parece segurar o ombro dos dois ao mesmo tempo."
+        }
+      ]
+    },
+    "pp_c3_fim": {
+      "tipo": "fim",
+      "cap": 3,
+      "lugar": "Apartamento da Fran, Hoboken",
+      "hora": "Sábado, 20 de dezembro · 02h30",
+      "texto": "Às duas e meia, a cozinha da Fran tem uma luz só, a do fogão, e dois copos de leite morno em cima do balcão. {{se flag:dormiu_revezando}}O acordo de revezar o sofá deixou os dois acordados, no mesmo cômodo, no mesmo horário. {{/se}}{{se flag:dormiu_separado}}O colchão de casaco e almofada não chegou a ser montado, porque nenhum dos dois conseguiu deitar. {{/se}}{{se flag:aceitou_cama}}A cama, de um palmo no meio, ficou vazia dos dois lados. {{/se}}\n\nNenhum dos dois combinou de estar ali, e os dois estão. Descalços, de meias de lã emprestadas e olhos inchados de sono, cada um ocupa um lado do balcão como se o outro fosse chegar mais tarde.\n\nA neve do lado de fora ilumina as janelas de azul. O silêncio que sobra entre os dois tem o tamanho exato de um beijo.\n\nA luz do corredor acende com um estalo.\n\n— Gente! — diz Fran, de roupão, de braços abertos, com um sorriso enorme e um celular na mão, apontado para os dois. — Eu estava só procurando a minha caneca!",
+      "gancho": "A prima da Fran estava mesmo procurando uma caneca, ou estava filmando?",
       "ir": "pp_rascunho_fim"
     },
     "pp_rascunho_fim": {
       "tipo": "final",
-      "cap": 1,
+      "cap": 3,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }

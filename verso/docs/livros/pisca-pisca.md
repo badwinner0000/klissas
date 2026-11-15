@@ -9,7 +9,7 @@
 | | A · **Roz Tedeschi**, 18 | B · **Teddy Lau**, 18 |
 | --- | --- | --- |
 | Papel | quem planeja tudo | quem desenha em silêncio |
-| Casa | nº 8 de Harmon Place (ítalo-americanos): cinco mil lâmpadas, trenó no telhado, Papai Noel de braço mecânico. Pai Sal (motorista de ônibus da MTA), mãe Angela (dona da padaria), irmão Nico, 11 | nº 147, em frente: nenhum trenó, só fios de luz quente que formam "a ginkgo de vidro". Mãe Silvana (enfermeira), avó Dirce, 81, irmã Maju, 9 |
+| Casa | nº 8 de Harmon Place (ítalo-americanos): cinco mil lâmpadas, trenó no telhado, Papai Noel de braço mecânico. Pai Sal (motorista de ônibus da MTA), mãe Angela (dona da padaria), irmão Nico, 11 | nº 11, em frente: nenhum trenó, só fios de luz quente que formam "a ginkgo de vidro". Mãe Lily (enfermeira no Maimonides), avó Pó-pó, 81, irmã Mei, 9 |
 | **Quer** (desejo) | que a 140 ganhe o 12º Natal seguido e que tudo dê certo, do jeito que está na planilha | que ninguém descubra que ele desenha, e que a ginkgo de vidro continue sendo "hobby da vó" |
 | **Precisa** | confiar em quem não está no plano; deixar o outro ser surpresa | dizer a verdade em voz alta, mesmo sem saber como vai ser recebida |
 | **Ferida** | medo de ser largada: quem se afasta "some" | medo de decepcionar: cala para não brigar, e o silêncio vira a briga |
