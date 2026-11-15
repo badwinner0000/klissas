@@ -85,7 +85,7 @@ async function passo(page, seat, tag, votou) {
     ouvirB(B);
 
     // A cria a sala
-    await A.goto(`${BASE}/livro/padrinhos`);
+    await A.goto(`${BASE}/livro/${process.env.E2E_LIVRO || "padrinhos"}`);
     await A.getByRole('button', { name: /Jogar a dois/ }).waitFor();
     await A.getByRole('button', { name: /Jogar a dois/ }).click();
     await A.waitForURL(/\/sala\/[A-Z]{5}/);
@@ -154,8 +154,9 @@ async function passo(page, seat, tag, votou) {
 
     // diário e exportação (nomes reais, sem ids)
     const md = await (await fetch(`${BASE}/api/salas/${codigo}/exportar?token=${tokenA}`)).text();
-    const mm = md.match(/pd_c\d|undefined|\{\{/);
-    checa(md.includes('# Padrinho e Madrinha') && md.includes('Ivy') && !mm, 'exportação em Markdown com nomes reais e sem ids internos' + (mm ? ` (achei "${mm[0]}")` : ''));
+    const mm = md.match(/pd_c\d|pp_c\d|undefined|\{\{/);
+    const PP = process.env.E2E_LIVRO === 'pisca-pisca';
+    checa(md.includes(PP ? '# Pisca-Pisca' : '# Padrinho e Madrinha') && md.includes(PP ? 'Roz' : 'Ivy') && !mm, 'exportação em Markdown com nomes reais e sem ids internos' + (mm ? ` (achei "${mm[0]}")` : ''));
     // quem não é da sala não lê nada
     const r403 = await fetch(`${BASE}/api/salas/${codigo}`, { headers: { 'x-token': 'invalido' } });
     checa(r403.status === 403, 'token inválido recebe 403');
