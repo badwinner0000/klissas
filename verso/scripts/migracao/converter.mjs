@@ -224,9 +224,16 @@ function efeitos(n) {
   return Object.keys(out).length ? out : undefined;
 }
 
+// perfil dos personagens (base.js): em que cada um é bom ou ruim. Sem dados, isso decide, por caracterização, quem escorrega em quê.
+let AFIN = { A: {}, B: {} };
+{
+  const b = parse(readFileSync(new URL('base.js', DIR), 'utf8'), { ecmaVersion: 'latest', sourceType: 'script' });
+  for (const st of b.body) if (st.type === 'VariableDeclaration') for (const d of st.declarations) if (d.id.name === 'JOG_PD') d.init.elements.forEach((o, i) => { const at = o.properties.find((q) => q.key.name === 'at').value; for (const p of at.properties) AFIN[i === 0 ? 'A' : 'B'][p.key.name] = p.value.type === 'UnaryExpression' ? -p.value.argument.value : p.value.value; });
+}
+
 // ───────────── ações ─────────────
 const prop = (o, k) => o.properties.find((p) => (p.key.name ?? p.key.value) === k)?.value;
-const LIMIAR_FALHA = 'abalo>=3'; // sem dados: o ramo `falha` do original vale quando o personagem está abalado
+const LIMIAR_FALHA = process.env.LIMIAR_FALHA ?? 'abalo>=1'; // sem dados: o ramo `falha` do original vale quando o personagem está abalado
 
 function acao(o, id) {
   const a = { id };
@@ -257,7 +264,11 @@ function acao(o, id) {
       if (e) r.efeitos = e;
       return r;
     };
-    a.variantes = [{ ...v(falha, LIMIAR_FALHA) }, { ...v(ok, '') }];
+    const attr = prop(o, 'at').value;
+    const seats = a.seat ? [a.seat] : ['A', 'B'];
+    const fraco = seats.filter((x) => (AFIN[x][attr] ?? 0) <= 0).map((x) => `eu:${x}`);
+    const seFalha = [LIMIAR_FALHA, ...(process.env.SEM_PERFIL ? [] : fraco)].join(' || ');
+    a.variantes = [{ ...v(falha, seFalha) }, { ...v(ok, '') }];
   } else if (x) a.resultado = tpl(x);
   else a.resultado = '';
   return a;

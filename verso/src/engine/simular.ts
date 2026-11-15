@@ -18,6 +18,8 @@ export interface Partida {
   erros: string[];
   estado: Estado;
   passos: number;
+  /** variantes usadas por ação ("nó.ação" → índices): mostra ramos que o jogador nunca vê */
+  usos: Map<string, Set<number>>;
 }
 
 const DEFEITOS = /\$\{|undefined|\bnull\b|NaN|\[object|\{\{|\}\}/;
@@ -30,6 +32,7 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
   const erros: string[] = [];
   const ultimo: Record<Seat, string> = { A: '', B: '' };
   const noAnterior: Record<Seat, string> = { A: '', B: '' };
+  const usos = new Map<string, Set<number>>();
   let passos = 0;
   while (!e.fim && passos < maxPassos) {
     let agiu = false;
@@ -56,10 +59,12 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
       else if (v.tipo === 'decisao' && v.votoDoOutro && v.opcoes.some((o) => o.id === v.votoDoOutro!.id)) acao = { tipo: 'opcao', id: v.votoDoOutro.id };
       else acao = { tipo: 'opcao', id: v.opcoes[Math.floor(rng() * v.opcoes.length)]!.id };
       try {
-        e = agir(l, e, s, acao, jog).estado;
+        const r = agir(l, e, s, acao, jog);
+        for (const ev of r.eventos) if ((ev.tipo === 'escolha' || ev.tipo === 'decisao') && typeof ev.payload.variante === 'number') { const k = `${ev.payload.no}.${ev.payload.acao}`; (usos.get(k) ?? usos.set(k, new Set()).get(k)!).add(ev.payload.variante as number); }
+        e = r.estado;
       } catch (err) {
         erros.push(err instanceof ErroJogo ? err.message : String(err));
-        return { visitados, textos, erros, estado: e, passos };
+        return { visitados, textos, erros, estado: e, passos, usos };
       }
       passos++;
       agiu = true;
@@ -77,13 +82,14 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
     textos.A.push(e.finalTexto);
     textos.B.push(e.finalTexto);
   }
-  return { visitados, textos, erros, estado: e, passos };
+  return { visitados, textos, erros, estado: e, passos, usos };
 }
 
 export function simular(l: Livro, n: number, seed = 1) {
   const todos = new Set<string>();
   const erros: string[] = [];
   const finais = new Set<string>();
+  const usos = new Map<string, Set<number>>();
   let partidas = 0;
   for (const politica of POLITICAS)
     for (const [ga, gb] of GENEROS)
@@ -92,10 +98,14 @@ export function simular(l: Livro, n: number, seed = 1) {
         const p = jogar(l, jogadoresDe(l, ga, gb), politica, rng);
         partidas++;
         p.visitados.forEach((v) => todos.add(v));
+        for (const [k, vs] of p.usos) { const a = usos.get(k) ?? usos.set(k, new Set()).get(k)!; vs.forEach((x) => a.add(x)); }
         if (p.estado.finalTexto) finais.add(p.estado.finalTexto.slice(0, 40));
         for (const er of p.erros) erros.push(`[${politica} ${ga}/${gb} #${i}] ${er}`);
       }
   const naoVisitados = Object.keys(l.nos).filter((id) => !todos.has(id));
   for (const id of naoVisitados) erros.push(`nó nunca visitado nas simulações: ${id}`);
-  return { partidas, erros, naoVisitados, finaisDistintos: finais.size };
+  // ramos de resultado que NUNCA apareceram: o jogador não vê esse texto
+  const ramosNunca: string[] = [];
+  for (const [id, no] of Object.entries(l.nos)) if ('acoes' in no) for (const a of no.acoes) if (a.variantes && a.variantes.length > 1) { const u = usos.get(`${id}.${a.id}`); if (u) for (let i = 0; i < a.variantes.length; i++) if (!u.has(i)) ramosNunca.push(`${id}.${a.id}#${i}`); }
+  return { partidas, erros, naoVisitados, finaisDistintos: finais.size, ramosNunca };
 }

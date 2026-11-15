@@ -75,11 +75,6 @@
       "texto": "O cheiro da isca de arenque ficou no cais, e a Dory, no meio da explicação, pigarreia para não rir de novo."
     },
     {
-      "flag": "enjoou",
-      "no": "pd_c2_carro",
-      "texto": "O banco do carro é o primeiro chão que não se mexe desde o *Maria do Fogo*, e o estômago de {{A.ref}} ainda não foi avisado."
-    },
-    {
       "flag": "mesa7",
       "no": "pd_c3_inicio",
       "texto": "A Pippa passa a caneca de chá com a ponta do dedo apontada para o mapa de mesas, e ninguém precisa perguntar por que a mesa sete lembra tanto a noite passada."
@@ -139,6 +134,70 @@
       "no": "pd_c2_bolo",
       "privadoDe": "B",
       "texto": "O celular vibra no seu bolso a cada trinta segundos: o grupo dos alunos descobriu que você lê as mensagens."
+    },
+    {
+      "flag": "graham_vem",
+      "no": "pd_c3_vinho",
+      "privadoDe": "A",
+      "texto": "No bolso de trás, o celular guarda a resposta do Graham, que você ainda não leu."
+    },
+    {
+      "flag": "mentiu_pippa",
+      "no": "pd_c3_vinho",
+      "privadoDe": "A",
+      "texto": "A frase que você deu à Pippa de manhã, *já passou*, volta junto com o vinho, e não desce tão bem quanto ele."
+    },
+    {
+      "flag": "quase_pippa",
+      "no": "pd_c3_manha",
+      "privadoDe": "A",
+      "texto": "A Pippa guardou o *um dia eu te conto* e olha para você de vez em quando, como quem anotou a data."
+    },
+    {
+      "flag": "funmi_sabe_ligou",
+      "no": "pd_c3_vinho",
+      "privadoDe": "B",
+      "texto": "A sua mãe sabe que o Tunde ligou e é a única pessoa da ilha que sabe e não perguntou nada. Isso pesa mais do que se tivesse perguntado."
+    },
+    {
+      "flag": "astaxantina",
+      "no": "pd_c3_dory",
+      "texto": "A Dory repete, entre uma garfada e outra, a palavra *astaxantina*, como quem experimenta um sabor novo."
+    },
+    {
+      "flag": "garra",
+      "no": "pd_c3_dory",
+      "texto": "A Dory olha a mão de quem quebrou a garra sem ferramenta e guarda a informação para uma futura negociação."
+    },
+    {
+      "flag": "lagosta_limpa",
+      "no": "pd_c3_dory",
+      "texto": "As cascas da lagosta aberta pelo tutorial estão no balde numa fila tão reta que a Dory as usa como régua."
+    },
+    {
+      "flag": "sem_pasta",
+      "no": "pd_c3_vinho",
+      "texto": "A pasta está no banco da caminhonete e, nesta mesa, pela primeira vez desde sábado, ninguém sabe qual é o plano C."
+    },
+    {
+      "flag": "noite3_nao",
+      "no": "pd_c3_cafe",
+      "texto": "À mesa, ninguém menciona a beira da água. É a pauta mais barulhenta do café."
+    },
+    {
+      "flag": "regra_mole",
+      "no": "pd_c4_inicio",
+      "texto": "No bolso do casaco, o guardanapo da Gull House com a regra 3 em azul: *o resto a gente vê*. No balcão de licenças, é a única regra que ninguém tenta cumprir."
+    },
+    {
+      "flag": "cafe_fuga",
+      "no": "pd_c3_fim",
+      "texto": "A pergunta que ficou sem resposta no café continua na mesa, entre a manteiga e a geleia, onde a Rosa a vê e a Pippa a anota."
+    },
+    {
+      "flag": "cafe_sorriso",
+      "no": "pd_c3_fim",
+      "texto": "O sorriso que escapou para o prato ainda está lá. A Rosa jura que viu e não comentou, o que, para a Rosa, é um ato de heroísmo."
     }
   ]
 }

@@ -498,7 +498,7 @@
           "texto": "Abrir a pasta e refazer o cronograma da semana na cabeça, item por item",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você abre a pasta e as abas se misturam. Azul com verde, verde com amarelo. O vento do terminal vira três folhas, e uma voa até o asfalto, e um garoto de boné pega e devolve, molhada de refrigerante.\n\nÉ o mapa de mesas. Agora com uma mancha laranja em cima da mesa sete, a das tias.",
               "efeitos": {
                 "abalo": 1,
@@ -597,7 +597,7 @@
           "texto": "Tentar escrever a segunda frase do discurso",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você escreve: *Ele é muito decidido.* Risca. Mentira. Escreve: *Ele sempre soube o que queria.* Risca. Mentira. Escreve: *Ele*. E fica olhando para a palavra até a fila andar.\n\nVersão quinze. Riscada."
             },
             {
@@ -961,7 +961,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Nove números. Seis não atendem. Dois riem. O nono desliga na sua cara quando você diz *cento e quarenta*.\n\nVocê fica olhando o telefone. Do outro lado da cozinha, o Barnaby, cortando cebola, diz sem levantar os olhos:\n\n— A Dory Barros. Madaket. Ela desligou porque você falou como gente de Boston. Liga de novo e fala como gente.\n\nVocê liga de novo. Fala como gente. Ela diz: *seis da manhã, cais de Madaket*. E desliga de novo.",
               "efeitos": {
                 "flag": "achou_dory"
@@ -992,7 +992,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Doze páginas de juridiquês náutico. Na página seis, você começa a ler a mesma frase três vezes. Na página sete, dorme sentad{{eu.o_a}} na cadeira de vime da varanda, com a caneta na mão e uma mariposa no ombro."
             },
             {
@@ -1021,7 +1021,7 @@
           "texto": "Ajudar o Barnaby a carregar as hortênsias do caminhão, que ninguém pediu",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você pega o primeiro vaso, ele escorrega, e meio quilo de terra molhada vai parar no seu sapato.\n\nO Barnaby olha. Não ri. Pega o vaso das suas mãos.\n\n— Pela base — ele diz. — Planta é que nem gente. Se você segura pelas folhas, ela solta."
             },
             {
@@ -1072,7 +1072,7 @@
           "texto": "Puxar armadilha. De verdade. Até a mão abrir.",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "{{Quem}} pega a corda, puxa, e a armadilha não sobe. {{Quem}} puxa de novo, com o corpo inteiro, e o pé escorrega no convés molhado, e {{quem}} cai sentad{{eu.o_a}} numa caixa de isca de arenque.\n\nA Dory ri tanto que tem que desligar o motor.\n\n— Isso — ela diz, enxugando o olho — vale o casamento. Eu escuto vocês. Pelo arenque.",
               "efeitos": {
                 "flag": "arenque"
@@ -1094,7 +1094,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você abre a boca para negociar e o barco sobe uma onda e desce outra, e o seu estômago fica lá em cima.\n\nVocê passa os vinte minutos seguintes debruçad{{eu.o_a}} na amurada do *Maria do Fogo*. A Dory segura a sua pasta para não voar, e lê o plano A inteiro enquanto você vomita no Atlântico.\n\n— Esse plano é bom — ela diz, quando você volta, branc{{eu.o_a}}. — Mas tá faltando comida.",
               "efeitos": {
                 "flag": "enjoou",
@@ -1118,7 +1118,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você faz a conta, e refaz, e o barco balança, e a caneta escorrega, e no fim você tem um número de manteiga que daria para afogar a ilha inteira.\n\nA Dory olha por cima do seu ombro.\n\n— Professor — ela diz — eu cozinho lagosta há quarenta anos. Deixa a conta comigo. Você puxa."
             },
             {
@@ -1151,7 +1151,7 @@
       "lugar": "Caminhonete da Dory · estrada de Madaket",
       "hora": "Domingo, 11 de junho · 9h40",
       "tipo": "dialogo",
-      "texto": "A estrada de areia e pinheiros. O rádio ainda toca *Rhinestone Cowboy*. A cláusula 14.c está na pasta, no colo de {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}, e nenhum dos dois falou dela desde o cais. A Dory tem licença de pesca. O clube exige licença de bufê. A diferença entre as duas é de vinte e cinco mil e novecentos dólares.\n\n{{se flag:enjoou}}O banco do carro é o primeiro chão que não se mexe desde o *Maria do Fogo*, e o estômago de {{A.ref}} ainda não foi avisado.{{/se}}",
+      "texto": "A estrada de areia e pinheiros. O rádio ainda toca *Rhinestone Cowboy*. A cláusula 14.c está na pasta, no colo de {{se eu:B}}você{{senao}}{{B.ref}}{{/se}}, e nenhum dos dois falou dela desde o cais. A Dory tem licença de pesca. O clube exige licença de bufê. A diferença entre as duas é de vinte e cinco mil e novecentos dólares.",
       "comeca": "B",
       "turnos": [
         {
@@ -1641,7 +1641,7 @@
           "texto": "Ligar para a vigilância sanitária do condado e descobrir como se tira uma licença de bufê em dois dias",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:B",
               "resultado": "A vigilância sanitária do condado te deixa em espera por quarenta minutos com uma versão de flauta de *Sweet Caroline*. Quando alguém atende, é para dizer que o setor de licenças fecha às dez nas segundas.\n\nSão dez e um.",
               "efeitos": {
                 "abalo": 1,
@@ -1709,7 +1709,7 @@
           "texto": "Pesquisar quem na ilha tem licença de cozinha comercial e poderia assinar pela Dory",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "O site de licenças do condado é de 2004 e cai três vezes. Na terceira, você desiste e vai ajudar o Barnaby a regar hortênsia, que é uma coisa que pelo menos tem resultado visível."
             },
             {
@@ -1746,7 +1746,7 @@
       "lugar": "Praia de Madaket",
       "hora": "Segunda, 12 de junho · 21h30",
       "tipo": "dialogo",
-      "texto": "Nove e meia. A lagosta acabou. A primeira garrafa também. A segunda está pela metade, enterrada na areia para continuar gelada. Os sapatos de alguém estão dentro de um balde de mariscos vazio. O céu ainda tem uma faixa verde no horizonte, que só existe no fim de junho, nessa latitude, por uns dez minutos.\n\nVocês estão sentados na areia, encostados no banco da mesa de piquenique, com os pés quase no mar.",
+      "texto": "Nove e meia. A lagosta acabou. A primeira garrafa também. A segunda está pela metade, enterrada na areia para continuar gelada. Os sapatos de alguém estão dentro de um balde de mariscos vazio. O céu ainda tem uma faixa verde no horizonte, que só existe no fim de junho, nessa latitude, por uns dez minutos.\n\nVocês estão sentados na areia, encostados no banco da mesa de piquenique, com os pés quase no mar.\n\n{{se eu:A && flag:graham_vem}}No bolso de trás, o celular guarda a resposta do Graham, que você ainda não leu.{{/se}}\n\n{{se eu:A && flag:mentiu_pippa}}A frase que você deu à Pippa de manhã, *já passou*, volta junto com o vinho, e não desce tão bem quanto ele.{{/se}}\n\n{{se eu:B && flag:funmi_sabe_ligou}}A sua mãe sabe que o Tunde ligou e é a única pessoa da ilha que sabe e não perguntou nada. Isso pesa mais do que se tivesse perguntado.{{/se}}\n\n{{se flag:sem_pasta}}A pasta está no banco da caminhonete e, nesta mesa, pela primeira vez desde sábado, ninguém sabe qual é o plano C.{{/se}}",
       "comeca": "B",
       "turnos": [
         {
@@ -1947,7 +1947,7 @@
         "dory"
       ],
       "tipo": "segue",
-      "texto": "Nove da manhã, no balcão do setor de licenças do condado, no térreo da prefeitura, um prédio de tijolo com bandeira e gerânio na janela.\n\nO Barnaby Cole, de avental de lona por cima da camisa de domingo, assina três vias do formulário de licença temporária de evento como *responsável técnico pela cozinha base*. A caneta treme um pouco. Na linha *estabelecimento*, ele escreve devagar: *Gull House. Cozinha da Ruth.* A funcionária, a Deb, olha a frase, não corrige, e carimba.\n\nA Dory Barros, de macacão, do lado dele, não fala nada. Põe a mão no ombro dele, um segundo, e tira.\n\n{{se (flag:licenca_barnaby) || (flag:licenca_caminho)}}Na saída, o Barnaby para nos degraus e olha para os dois.{{senao}}Na saída, o Barnaby para nos degraus e olha para os dois, que passaram a segunda inteira sem resolver a licença e que, de manhã, ouviram da Dory que *aquele velho rabugento assina, eu já falei com ele*.{{/se}}\n\n— Eu não assinei por vocês — ele diz. — Eu assinei pela Dory. E pela Ruth, que ia gostar de uma festa. — Ele desce um degrau. — E porque a Pippa me disse que se eu não assinasse ela ia chorar. E ela chora alto.\n\nA cláusula 14.c está resolvida. Faltam quatro dias. Faltam: a tenda, as cadeiras, a banda confirmar o horário, o bolo de limão com uma camada de coco, a valsa dos padrinhos, a dança das mães, e uma regra escrita num guardanapo.",
+      "texto": "Nove da manhã, no balcão do setor de licenças do condado, no térreo da prefeitura, um prédio de tijolo com bandeira e gerânio na janela.\n\nO Barnaby Cole, de avental de lona por cima da camisa de domingo, assina três vias do formulário de licença temporária de evento como *responsável técnico pela cozinha base*. A caneta treme um pouco. Na linha *estabelecimento*, ele escreve devagar: *Gull House. Cozinha da Ruth.* A funcionária, a Deb, olha a frase, não corrige, e carimba.\n\nA Dory Barros, de macacão, do lado dele, não fala nada. Põe a mão no ombro dele, um segundo, e tira.\n\n{{se (flag:licenca_barnaby) || (flag:licenca_caminho)}}Na saída, o Barnaby para nos degraus e olha para os dois.{{senao}}Na saída, o Barnaby para nos degraus e olha para os dois, que passaram a segunda inteira sem resolver a licença e que, de manhã, ouviram da Dory que *aquele velho rabugento assina, eu já falei com ele*.{{/se}}\n\n— Eu não assinei por vocês — ele diz. — Eu assinei pela Dory. E pela Ruth, que ia gostar de uma festa. — Ele desce um degrau. — E porque a Pippa me disse que se eu não assinasse ela ia chorar. E ela chora alto.\n\nA cláusula 14.c está resolvida. Faltam quatro dias. Faltam: a tenda, as cadeiras, a banda confirmar o horário, o bolo de limão com uma camada de coco, a valsa dos padrinhos, a dança das mães, e uma regra escrita num guardanapo.\n\n{{se flag:regra_mole}}No bolso do casaco, o guardanapo da Gull House com a regra 3 em azul: *o resto a gente vê*. No balcão de licenças, é a única regra que ninguém tenta cumprir.{{/se}}",
       "ir": "pd_c4_ashby"
     },
     "pd_c4_clube": {
@@ -1968,7 +1968,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "O Mr. Ashby escuta tudo, com o blazer abotoado, e no fim diz que o regulamento é o regulamento, e que o regulamento foi escrito em 1952 *justamente para evitar casamentos perto da água, depois do que aconteceu com a filha do comodoro*.\n\nVocê não pergunta o que aconteceu com a filha do comodoro. Você tem medo da resposta."
             },
             {
@@ -1996,7 +1996,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você faz a conta, e o celular perde o sinal do GPS, e a fita métrica enrola no salto da Rosa, e a Rosa cai sentada no gramado, de chapéu, e chora.\n\nNão se machuca. Mas chora.",
               "efeitos": {
                 "abalo": 1,
@@ -2357,7 +2357,7 @@
           "texto": "Tentar fazer o motor pegar: a bateria, o afogador, alguma coisa",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "{{Quem}} tenta. Gira a chave, bate no painel, mexe em fios no escuro, e no fim leva um choque pequeno, mas ofendido, e desiste.\n\nA caminhonete continua morta. Faz frio. A roupa molhada gruda. Os vidros embaçam por dentro e escorrem."
             },
             {
@@ -2791,7 +2791,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você esfrega a primeira panela até as mãos arderem, e a segunda, e na terceira a Dory tira o esfregão da sua mão.\n\n— Você está esfregando a panela como se a panela tivesse culpa. — Ela põe o esfregão de lado. — Senta. Toma um café. A panela não fez nada."
             },
             {
@@ -2818,7 +2818,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Versão dezenove. *Meu irmão é a pessoa mais gentil que eu conheço.* E depois, nada. De novo. A segunda frase não vem, e você sabe por quê. A segunda frase depende do que o Tunde vai fazer, e o Tunde está em Vermont, em silêncio."
             },
             {
@@ -2891,7 +2891,7 @@
           "ir": "pd_c8_neblina",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você abre a boca para dizer *não*. Para dizer que ele vai contar para ela, hoje, que você vai estar do lado.\n\nSai outra coisa.\n\n— Vou ver o que dá para fazer.\n\nO Tunde agradece. Você não sabe o que acabou de prometer. Você sabe exatamente o que acabou de prometer.",
               "efeitos": {
                 "flag": "a_esconde"
@@ -2948,7 +2948,7 @@
           "ir": "pd_c8_neblina",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você tenta dizer *pergunta para ele*. Sai torto, tarde, depois de um silêncio que já respondeu tudo.\n\nA Gemma faz que sim, devagar.\n\n— Tá. Eu pergunto. — Ela levanta. — Você nunca soube disfarçar, sabia? Nem quando a gente era criança e você me escondia os presentes de Natal. — Ela entra.\n\nEla sabe que tem alguma coisa. Não sabe o quê. E agora vai passar a noite imaginando.",
               "efeitos": {
                 "flag": "b_devolveu"
@@ -2971,7 +2971,7 @@
           "ir": "pd_c8_neblina",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:B",
               "resultado": "— Ele está cansado — você diz. — Cinco dias de...\n\nA Gemma ri. Não de alegria.\n\n— Você está mentindo. Você pisca três vezes quando mente. Desde os oito anos. — Ela levanta. — Tudo bem. Eu pergunto para ele.\n\nEla entra. Agora ela sabe que tem alguma coisa, e sabe que você mentiu sobre ela.",
               "efeitos": {
                 "flag": "b_mentiu_gemma"
@@ -3022,7 +3022,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "O Judge Pike não atende. Caixa postal três vezes. Na quarta, a mulher dele atende e diz que ele está no barco. Na marina. Não navegando. Só sentado no barco, olhando a neblina, que é o que ele faz quando a neblina vem.",
               "efeitos": {
                 "abalo": 1,
@@ -3054,7 +3054,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Duas horas na tenda com cabo e caixa de som. Você liga a mesa ao contrário, e a caixa dá um estouro que espanta todas as gaivotas do porto. O Tunde ri, pela primeira vez desde que desceu da balsa.\n\n— Química é uma coisa — ele diz. — Som é outra.",
               "efeitos": {
                 "flag": "som_tunde"
@@ -3460,7 +3460,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você sobe na cadeira. Abre a boca. *Eu preciso de ajuda.* A frase está pronta.\n\nSai: *Obrigad{{eu.o_a}} a todos. Foi um trabalho de equipe.*\n\nVocê desce da cadeira. A Pippa olha para você de baixo, com o bolo no colo, com uma cara de quem ouviu a frase que não saiu.\n\n— Quase — ela diz, baixinho. — Na próxima.",
               "efeitos": {
                 "flag": "gesto_quase"
@@ -3514,7 +3514,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você tira a passagem do bolso. Segura com as duas mãos. Pensa em rasgar.\n\nGuarda de novo.\n\nVocê não sabe ficar sem saber. Ainda não. Talvez nunca. Mas a passagem, de volta no bolso, pesa mais do que pesava antes.",
               "efeitos": {
                 "flag": "gesto_quase_b"
@@ -3989,7 +3989,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "— Ela disse que é uma honra — você traduz.\n\nA tia Concetta entende inglês muito bem quando quer. Corrige em voz alta, em italiano, palavra por palavra, e depois repete com as mãos, para não sobrar dúvida.\n\nA juíza acompanha as mãos com atenção profissional.\n\n— Não precisa traduzir — ela diz. — Gesto eu leio desde 1985.",
               "efeitos": {
                 "abalo": 1,
@@ -4030,7 +4030,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "— Eu acredito em... — Você procura uma frase e acha a tabela periódica. — Estatisticamente, quarenta por cento dos...\n\n— *Estatisticamente* — repete a Rosa, com a mão no peito, para a tia Concetta, que não precisava de tradução para essa.\n\nA sua mãe põe a mão no seu braço. É o sinal de parar. Você conhece o sinal desde os quatro anos.",
               "efeitos": {
                 "abalo": 1,
@@ -4089,7 +4089,7 @@
           "texto": "Abrir a planilha da empresa e olhar o número de verdade",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você abre a planilha. Os números se embaralham do jeito que se embaralham às três da manhã. Você fecha o notebook com as duas mãos, devagar, como quem fecha a tampa de uma panela que ainda está fervendo.",
               "efeitos": {
                 "abalo": 1,
@@ -4134,7 +4134,7 @@
           "texto": "Corrigir as provas finais",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você corrige três. Na quarta, uma maçã que não existe cai da macieira que não dá maçã. É uma noz, largada por uma gaivota, bem em cima do elástico. As provas se espalham pelo quintal, e você passa vinte minutos catando química orgânica no meio das hortênsias."
             },
             {
@@ -4329,7 +4329,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "A cauda torce para o lado errado. Um jato de manteiga quente atravessa a mesa e acerta em cheio a pasta de couro, que está dentro de dois sacos plásticos e sobrevive.\n\nA Dory olha os dois sacos plásticos. Olha você.\n\n— Você embrulhou um caderno para vir comer na praia.\n\nNão é um caderno. Você decide não corrigir.",
               "efeitos": {
                 "abalo": 1,
@@ -4362,7 +4362,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você começa pela proteína, volta para o pigmento, abre um parêntese sobre crustáceos em geral. No meio do parêntese, a Dory tira a lagosta do seu prato e põe outra, quente, no lugar.\n\n— Professor — ela diz — a sua esfriou na parte da proteína."
             },
             {
@@ -4381,7 +4381,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você põe a garra na palma e aperta. A garra escapa, sobe, descreve um arco por cima da mesa e cai no mar com um barulhinho.\n\nUma gaivota mergulha atrás e leva.\n\n— Essa aí estava paga — diz a Dory, sem rancor. — Tem mais."
             },
             {
@@ -4415,7 +4415,7 @@
         "dory"
       ],
       "tipo": "segue",
-      "texto": "A Dory come de pé, encostada na caminhonete dela, uma lagosta inteira em quatro minutos.\n\n— O barco tem o nome da minha avó — ela conta, de boca cheia. — Maria. Fogo é a ilha de onde ela veio, a do vulcão. Ela fazia esta comida em casamento, em batizado e em enterro. Dizia que comida de festa tem que sujar a mão. — Ela limpa os dedos no macacão. — De mão suja ninguém consegue se fazer de fino. Aí as pessoas conversam.\n\nEla tira do isopor duas garrafas de vinho verde, geladas, suando, e abre as duas com o cabo da faca.\n\n— Provem tudo. Eu vou ver a minha mãe no asilo e volto às dez. Se sobrar lagosta, eu não faço o casamento. — Ela sobe na caminhonete e fala pela janela. — Se sobrar vinho, também não.\n\nA caminhonete some na estrada de areia. Ficam uma mesa de piquenique, o mar passando de laranja para roxo, e duas garrafas abertas.",
+      "texto": "A Dory come de pé, encostada na caminhonete dela, uma lagosta inteira em quatro minutos.\n\n— O barco tem o nome da minha avó — ela conta, de boca cheia. — Maria. Fogo é a ilha de onde ela veio, a do vulcão. Ela fazia esta comida em casamento, em batizado e em enterro. Dizia que comida de festa tem que sujar a mão. — Ela limpa os dedos no macacão. — De mão suja ninguém consegue se fazer de fino. Aí as pessoas conversam.\n\nEla tira do isopor duas garrafas de vinho verde, geladas, suando, e abre as duas com o cabo da faca.\n\n— Provem tudo. Eu vou ver a minha mãe no asilo e volto às dez. Se sobrar lagosta, eu não faço o casamento. — Ela sobe na caminhonete e fala pela janela. — Se sobrar vinho, também não.\n\nA caminhonete some na estrada de areia. Ficam uma mesa de piquenique, o mar passando de laranja para roxo, e duas garrafas abertas.\n\n{{se flag:astaxantina}}A Dory repete, entre uma garfada e outra, a palavra *astaxantina*, como quem experimenta um sabor novo.{{/se}}\n\n{{se flag:garra}}A Dory olha a mão de quem quebrou a garra sem ferramenta e guarda a informação para uma futura negociação.{{/se}}\n\n{{se flag:lagosta_limpa}}As cascas da lagosta aberta pelo tutorial estão no balde numa fila tão reta que a Dory as usa como régua.{{/se}}",
       "ir": "pd_c3_vinho"
     },
     "pd_c3_manha": {
@@ -4423,7 +4423,7 @@
       "lugar": "{{se flag:noite3_sim}}Gull House · quarto três{{senao}}Praia de Madaket{{/se}}",
       "hora": "Terça, 13 de junho · 6h30",
       "tipo": "dialogo",
-      "texto": "{{se flag:noite3_sim}}Seis e meia. Ninguém falou ainda. Dos dois lados da cama, mãos procuram roupa no chão sem a ajuda dos olhos.{{senao}}Seis e meia. A lona escorrega dos ombros. O mar está cinza e liso, e a brasa da Dory virou um buraco de cinza molhada.{{/se}}\n\nAlguém vai ter que dizer a primeira frase do dia.",
+      "texto": "{{se flag:noite3_sim}}Seis e meia. Ninguém falou ainda. Dos dois lados da cama, mãos procuram roupa no chão sem a ajuda dos olhos.{{senao}}Seis e meia. A lona escorrega dos ombros. O mar está cinza e liso, e a brasa da Dory virou um buraco de cinza molhada.{{/se}}\n\nAlguém vai ter que dizer a primeira frase do dia.\n\n{{se eu:A && flag:quase_pippa}}A Pippa guardou o *um dia eu te conto* e olha para você de vez em quando, como quem anotou a data.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -4581,7 +4581,7 @@
         "funmi"
       ],
       "tipo": "dividir",
-      "texto": "Sete e meia. Café da manhã na Gull House. O Barnaby faz ovos mexidos.\n\n{{se flag:noite3_sim}}A Gull House de 1840 tem duas escadas, a da frente e a dos fundos. Dá para chegar na cozinha por duas portas, com cinco minutos de intervalo.{{senao}}A caminhonete encosta na calçada às sete e vinte, com areia no banco e uma lona molhada na caçamba.{{/se}}\n\nNa cozinha, a Pippa está encostada na pia, de braços cruzados, com a cara de quem acordou às seis só para isso. A Rosa passa manteiga numa torrada sem tirar os olhos da porta. A juíza lê o jornal. Vira a página sem ter lido.\n\n— Bom dia — diz a Pippa. — Dormiram bem? Onde?",
+      "texto": "Sete e meia. Café da manhã na Gull House. O Barnaby faz ovos mexidos.\n\n{{se flag:noite3_sim}}A Gull House de 1840 tem duas escadas, a da frente e a dos fundos. Dá para chegar na cozinha por duas portas, com cinco minutos de intervalo.{{senao}}A caminhonete encosta na calçada às sete e vinte, com areia no banco e uma lona molhada na caçamba.{{/se}}\n\nNa cozinha, a Pippa está encostada na pia, de braços cruzados, com a cara de quem acordou às seis só para isso. A Rosa passa manteiga numa torrada sem tirar os olhos da porta. A juíza lê o jornal. Vira a página sem ter lido.\n\n— Bom dia — diz a Pippa. — Dormiram bem? Onde?\n\n{{se flag:noite3_nao}}À mesa, ninguém menciona a beira da água. É a pauta mais barulhenta do café.{{/se}}",
       "cada": 1,
       "acoes": [
         {
@@ -4624,7 +4624,7 @@
         "pippa"
       ],
       "tipo": "fim",
-      "texto": "O Barnaby serve o café sem perguntar mais nada.\n\nA Pippa atravessa a cozinha até a lousa, com o giz rosa, e embaixo de *PIPPA: terça* desenha, bem pequeno, uma estrela.\n\n{{se flag:noite3_sim}}O Barnaby olha a estrela e fala para a frigideira:\n\n— Beijo não conta. Eles ainda estão fingindo.{{senao}}O Barnaby olha a estrela e balança a cabeça.\n\n— Não teve nem beijo. Eu conheço cara de quem passou a noite conversando.\n\nA Pippa apaga a estrela com o dedo, devagar, e deixa o giz na beirada da lousa, para o caso de precisar.{{/se}}\n\nNa tabela da parede, uma linha em vermelho continua sem risco: *Licença do condado (14.c). Prazo: quarta, 17h30.* A prefeitura abre às nove.",
+      "texto": "O Barnaby serve o café sem perguntar mais nada.\n\nA Pippa atravessa a cozinha até a lousa, com o giz rosa, e embaixo de *PIPPA: terça* desenha, bem pequeno, uma estrela.\n\n{{se flag:noite3_sim}}O Barnaby olha a estrela e fala para a frigideira:\n\n— Beijo não conta. Eles ainda estão fingindo.{{senao}}O Barnaby olha a estrela e balança a cabeça.\n\n— Não teve nem beijo. Eu conheço cara de quem passou a noite conversando.\n\nA Pippa apaga a estrela com o dedo, devagar, e deixa o giz na beirada da lousa, para o caso de precisar.{{/se}}\n\nNa tabela da parede, uma linha em vermelho continua sem risco: *Licença do condado (14.c). Prazo: quarta, 17h30.* A prefeitura abre às nove.\n\n{{se flag:cafe_fuga}}A pergunta que ficou sem resposta no café continua na mesa, entre a manteiga e a geleia, onde a Rosa a vê e a Pippa a anota.{{/se}}\n\n{{se flag:cafe_sorriso}}O sorriso que escapou para o prato ainda está lá. A Rosa jura que viu e não comentou, o que, para a Rosa, é um ato de heroísmo.{{/se}}",
       "ir": "pd_c4_inicio"
     },
     "pd_c4_ashby": {
@@ -5063,7 +5063,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você conduz depressa demais, no tempo do cronograma e não no da música. Na segunda volta, tropeça na tábua solta perto do piano. Na terceira, pisa no pé de {{B.nome}}.\n\nA Mrs. Starbuck suspira.\n\n— O Fred Astaire também pisava. — Ela aponta a bengala. — De novo. Mais devagar. Valsa não tem prazo.",
               "efeitos": {
                 "abalo": 1,
@@ -5086,7 +5086,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você troca de posição e avisa que agora não conduz. Em quatro compassos, já está conduzindo de novo, sem perceber.\n\nA bengala bate no chão.\n\n— Sete segundos — diz a Mrs. Starbuck. — Eu contei. O Fred Astaire aguentava dez."
             },
             {
@@ -5106,7 +5106,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você conta alto, erra a conta, corrige, e a correção sai no tempo errado. No fim da primeira estrofe, você está parad{{B.o_a}} no meio do salão, contando *um, dois, três* para um piano de armário, e a Pippa está filmando tudo."
             },
             {
@@ -5125,7 +5125,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você fecha os olhos e pisa num pé, depois em outro, depois na bengala da Mrs. Starbuck, que estava apontando de muito perto.\n\n— Abra os olhos, {{se B.ela}}moça{{senao}}rapaz{{/se}} — ela manda. — Olho fechado é para quem já sabe."
             },
             {
@@ -5176,7 +5176,7 @@
           "texto": "Passar o vestido a vapor, prega por prega",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:B",
               "resultado": "O vapor sai de uma vez e pega o seu dedo. Você larga o ferro, que cai de pé, por sorte, a um palmo da seda.\n\nDa porta, a sua mãe solta um grito que se ouve em Madaket. O vestido não tem nada. O seu dedo tem uma bolha.",
               "efeitos": {
                 "abalo": 1,
@@ -5233,7 +5233,7 @@
           "texto": "Replantar as hortênsias do jeito que ele manda",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:B",
               "resultado": "Você segura pela base, mas puxa cedo, e o torrão desmancha na sua mão. Sobra uma hortênsia de raiz nua, com cara de ofendida.\n\nO Barnaby toma a planta de você com as duas mãos e replanta em silêncio.\n\n— Vai lavar a mão — ele diz. — E olha de longe."
             },
             {
@@ -5287,7 +5287,7 @@
           "texto": "Dançar o funaná. De verdade, no ritmo do acordeão.",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:B",
               "resultado": "{{Quem}} entra no passo errado, corrige para outro mais errado ainda, e termina dançando uma coisa que não existe em nenhum país.\n\nO tio Armando para de tocar, de tanto rir. Depois recomeça, bem devagar, do jeito que se toca para criança.",
               "efeitos": {
                 "flag": "funana_torto"
@@ -5309,7 +5309,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você explica o cronograma musical da festa, com horário. O tio Armando escuta tudo, concorda com tudo e toca uma morna de sete minutos para mostrar que entendeu.\n\nDois primos choram. A Dory enxuga o olho com a luva.\n\n— Ele não trabalha com horário — ela avisa. — Trabalha com saudade."
             },
             {
@@ -5328,7 +5328,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você segue o cabo até a extensão, mexe no pino errado e leva um choque pequeno, mas ofendido. O amplificador continua zumbindo, agora meio tom acima.\n\n— Deixa — diz o primo do baixo. — A gente toca em cima do zumbido desde 2009. Já virou parte do som."
             },
             {
@@ -5378,7 +5378,7 @@
           "texto": "Segurar a estaca do canto com o peso do corpo",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "{{Quem}} agarra a corda de amarração. A rajada seguinte arranca a estaca do chão com um barulho de rolha e arrasta {{quem}} por dois metros de gramado, de barriga.\n\nA tenda decide ficar de pé por conta própria, presa pelas outras cinco estacas. A grama fica toda na roupa.",
               "efeitos": {
                 "abalo": 1,
@@ -5401,7 +5401,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você sobe numa cadeira, estica o braço, e o fio arrebenta dois ganchos antes da sua mão. Duzentos metros de luzinha caem na grama molhada e apagam de uma vez.\n\nNo escuro, só sobra a lanterna do celular, com três por cento de bateria.",
               "efeitos": {
                 "abalo": 1,
@@ -5423,7 +5423,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você solta uma amarra. Era a do lado errado. A lona faz uma barriga para dentro, enche de água em dez segundos e despeja tudo de uma vez, uns quarenta litros, na sua cabeça.\n\nA física estava certa. A direção do vento é que mudou.",
               "efeitos": {
                 "abalo": 1,
@@ -5690,7 +5690,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você senta no banco de vime. No segundo minuto, já reorganizou de cabeça os vasos de hortênsia por altura. No quarto, está de pé, trocando dois de lugar.\n\nO Barnaby aparece na porta, olha os vasos e troca os dois de volta, sem dizer nada."
             },
             {
@@ -6136,7 +6136,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você levanta, começa com *a minha irmã*, e no meio da frase a voz de trabalho assume o comando. Sai um brinde de fornecedor: agradecimentos, parceiros, o clima ajudou.\n\nA Gemma bate palma mesmo assim. Ela sempre bate."
             },
             {
@@ -6156,7 +6156,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você levanta, sem caderno, e a primeira coisa que sai é o número atômico do ouro. Setenta e nove. Você tenta ligar ouro com aliança. Não liga.\n\nO Tunde ri, de um jeito que ajuda, e levanta o copo para salvar você."
             },
             {
@@ -6249,7 +6249,7 @@
           "se": "(((!(flag:a_verdade)) && (!(flag:a_contou_gemma9))) && (!(flag:a_escondeu9))) && (!(flag:a_perguntou9))",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você abre a boca. Sai: *o Graham e eu...* E a porta abre. É a Rosa, de lenço na mão, com a notícia de que a tia Bisi trouxe o turbante errado, um amarelo, e que *isso é um sinal*.\n\nA Gemma ri. Você ri. A frase some no meio das duas risadas, de um jeito que você já conhece, porque a empresa inteira foi construída em cima de frases que somem.",
               "efeitos": {
                 "abalo": 1,
@@ -6325,7 +6325,7 @@
           "texto": "Dizer que não precisa decidir nada hoje de manhã",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você começa a explicar, e a explicação dura mais do que a paciência dele. No meio de *a cinética da decisão*, o Tunde levanta a mão, devagar.\n\n— {{B.ref}}. Eu te amo. Cala a boca.\n\nEle não está bravo. Está rindo. Dá um tapa no seu ombro, e o abraço que vem depois é meio de lado, de quem não sabe abraçar de frente."
             },
             {
@@ -6384,7 +6384,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você dá as instruções, mas na ordem errada: lona antes das estacas. Dois primos seguram a lona e o vento os leva um metro para o lado, rindo. Eles se divertem. Você não.\n\nA tenda fica de pé na terceira tentativa, mais baixa e mais amassada do que o plano A previa. A Pippa anota num papel: *plano E*.",
               "efeitos": {
                 "abalo": 1,
@@ -6408,7 +6408,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você calcula, mas a rajada é maior do que a que você previu. Duas caixas de gelo viram. Um primo é atingido na canela e solta um palavrão em crioulo que não precisa de tradução.\n\nA tenda fica de pé de qualquer jeito, mas o seu orgulho de professor leva um arranhão.",
               "efeitos": {
                 "abalo": 1,
@@ -6457,7 +6457,7 @@
           "seat": "A",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você anda. No meio do caminho o salto afunda no gramado, a hortênsia do Barnaby rouba o equilíbrio, e a recepção que você ensaiou vira *oi*.\n\n— Oi — diz o Graham, que sabe a diferença.\n\nVocês trocam três frases sobre o tempo. É um começo."
             },
             {
@@ -6500,7 +6500,7 @@
           "seat": "B",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "A frase sai antes do tom: *você está bem?*, como uma pergunta de laboratório, de quem verifica um resultado.\n\n— Estou ótimo — responde o Graham, rápido, e muda de assunto para a balsa. Você percebe que fez a pergunta certa do jeito errado."
             },
             {
@@ -6597,7 +6597,7 @@
           "texto": "Aceitar: um casamento por mês, o resto por conta do boca a boca",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:B",
               "resultado": "Você abre o caderno e fala em prazo, em margem, em *sinergia*. A Dory escuta com a paciência de quem espera maré. No meio de *sinergia*, ela levanta a mão.\n\n— Não precisa traduzir — ela diz. — Eu entendo de maré. Margem é a mesma coisa.\n\nEla corrige o seu número, de cabeça, e dá menos do que você queria, mas acerta. A conta fica boa. A Dory fica melhor do que a conta.",
               "efeitos": {
                 "flag": "dory_socia"
@@ -6677,7 +6677,7 @@
           "texto": "Dizer que não sabe se volta a Providence em setembro",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você abre a boca. A frase não sai. O que sai é: *a escola começa em setembro*, no tom de professor, de quem recita calendário.\n\nO Barnaby ouve, assente, e não insiste.\n\n— Setembro. — Ele pensa. — É longe. Ou é amanhã. Depende de quem pergunta."
             },
             {
@@ -6737,7 +6737,7 @@
           "texto": "Perguntar o que ela viu no seu rosto naquele segundo",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você pergunta, mas sai com tom de reunião: *e qual foi sua leitura?* A Pippa, que é boa, responde no mesmo tom: *percepção de marca, tom autêntico, bom potencial de engajamento.* E ri de si mesma, e você ri junto, mas o momento já passou, como a luz do farol que acendeu cedo demais.",
               "efeitos": {
                 "abalo": 1,
@@ -6810,7 +6810,7 @@
           "texto": "Perguntar pelo seu pai. Só uma pergunta.",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você pergunta. Mas a pergunta sai torta, como um enunciado de prova: *qual é a relação entre a data do casamento e o que a senhora sente pelo meu pai?* A juíza ouve com a expressão de quem lê petição mal redigida.\n\n— A relação — ela diz — é de causalidade, e eu não vou responder a uma pergunta com cinco verbos. — Ela dá uma batidinha com a caneta. — Reformule depois do casamento. Eu respondo.",
               "efeitos": {
                 "abalo": 1,
@@ -6861,7 +6861,7 @@
           "texto": "Dividir o problema: as lonas só precisam proteger o caminho da cerimônia, não a tenda inteira",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você faz a conta de cabeça, de novo, e chega às mesmas quatorze lonas. A Pippa, do outro lado da chuva, fica esperando uma saída que não vem.\n\n— Tá — ela diz, por fim. — Então a gente improvisa.\n\nImprovisar sempre foi a sua parte menos favorita da profissão. É a que mais aparece em foto.",
               "efeitos": {
                 "abalo": 1,
@@ -6921,7 +6921,7 @@
           "texto": "Medir cada disjuntor com o multímetro, um por um, até achar o que caiu",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1",
               "resultado": "Você mede, mas na pressa encosta a ponta do multímetro no lugar errado. Um estalo, um cheiro de queimado, um segundo de luz azul, e a tenda inteira apaga de novo, desta vez com um estalo que o Barnaby, a oitocentos metros dali, de pijama, vai jurar ter ouvido.\n\nVocê respira fundo, desliga o geral, e recomeça do zero. Demora vinte minutos a mais. O orgulho demora mais.",
               "efeitos": {
                 "abalo": 2,
@@ -6991,7 +6991,7 @@
           "texto": "Escolher as que ainda vão abrir. Pela que vai ser.",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você escolhe as que ainda vão abrir, mas calcula mal o tempo: as brancas, na manhã de sábado, vão estar ainda cedo demais para abrir, e na hora da cerimônia ainda vão parecer bolinhas verdes.\n\n— Elas abrem — diz o Barnaby, otimista. — Se o dia for quente. — Ele olha o céu pela janela quebrada. — Mas não prometo.",
               "efeitos": {
                 "flag": "c7c_branca_cedo",
@@ -7061,7 +7061,7 @@
           "texto": "Bater na janela acesa do zelador e perguntar sobre a escola",
           "variantes": [
             {
-              "se": "abalo>=3",
+              "se": "abalo>=1 || eu:A",
               "resultado": "Você bate, mas a janela do zelador está do outro lado de um canteiro de rosas-do-mato, e você pisa na rosa errada. Um grito de dor, um *meu Deus*, um zelador que sai de pijama e botina para ver o intruso. Você se desculpa seis vezes. Ele aceita uma só.\n\nVocê vai embora sem saber de nada sobre a casa. Com um espinho no dedo e um pouco menos de dignidade.",
               "efeitos": {
                 "abalo": 1,
@@ -7175,7 +7175,6 @@
     "a_espera",
     "a_ouviu_tunde",
     "assobio",
-    "astaxantina",
     "b_cabos9",
     "b_equacao9",
     "b_ouviu_recado9",
@@ -7199,8 +7198,6 @@
     "c7d_zelador",
     "cadeiras_porto",
     "cafe7",
-    "cafe_fuga",
-    "cafe_sorriso",
     "cobertor",
     "conduziu",
     "dez_minutos",
@@ -7209,6 +7206,7 @@
     "dory_proposta",
     "dory_receita",
     "dory_socia",
+    "enjoou",
     "ensaiou",
     "estaca",
     "estufa_torta",
@@ -7221,8 +7219,6 @@
     "funmi_promete",
     "funmi_prometeu_de_novo",
     "funmi_quase",
-    "funmi_sabe_ligou",
-    "garra",
     "gesto_pasta",
     "gesto_quase",
     "gesto_quase_b",
@@ -7230,14 +7226,10 @@
     "graham_apresentou",
     "graham_cumprimento",
     "graham_perguntou",
-    "graham_vem",
-    "lagosta_limpa",
     "leu_planod",
     "luzes_salvas",
     "medo_barco",
-    "mentiu_pippa",
     "mentiu_rosa2",
-    "noite3_nao",
     "noite6_nao",
     "olhou4",
     "ouviu_riso",
@@ -7246,15 +7238,12 @@
     "pippa_esperar",
     "pippa_futuro",
     "pippa_video",
-    "quase_pippa",
     "quase_rosa",
-    "regra_mole",
     "releu_regra",
     "repertorio",
     "rosa_desconfia",
     "rosa_funmi",
     "rosa_hortensia",
-    "sem_pasta",
     "som_tunde",
     "v18",
     "vento_calculo",

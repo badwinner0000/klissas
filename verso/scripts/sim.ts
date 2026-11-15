@@ -7,5 +7,6 @@ const r = simular(lerLivro(slug), Number(n));
 console.log(`${r.partidas} partidas (4 políticas × 4 combinações de gênero × ${n}); finais distintos: ${r.finaisDistintos}`);
 for (const e of r.erros.slice(0, 30)) console.log('  ERRO', e);
 if (r.erros.length > 30) console.log(`  ... +${r.erros.length - 30}`);
+if (r.ramosNunca.length) console.log(`aviso: ${r.ramosNunca.length} ramo(s) de resultado nunca apareceram (o jogador não vê esse texto): ${r.ramosNunca.slice(0, 8).join(', ')}${r.ramosNunca.length > 8 ? ' …' : ''}`);
 console.log(r.erros.length ? `FALHOU (${r.erros.length} erros)` : 'OK: zero erros');
 process.exit(r.erros.length ? 1 : 0);

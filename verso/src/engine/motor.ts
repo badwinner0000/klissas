@@ -214,21 +214,23 @@ export function opcoesTurno(no: Extract<No, { tipo: 'dialogo' }>, idx: number, e
 // ───────────── ações (solo / dividir / decisão) ─────────────
 const elegivel = (a: Acao, seat: Seat, e: Estado, jog: Jogadores) => (!a.seat || a.seat === seat) && avaliarCond(a.se, envCond(e, jog, seat));
 
-function resultadoDaAcao(l: Livro, e: Estado, jog: Jogadores, a: Acao, seat: Seat, cap: number, ator: Seat | 'ab'): Record<Seat, string> {
+function resultadoDaAcao(l: Livro, e: Estado, jog: Jogadores, a: Acao, seat: Seat, cap: number, ator: Seat | 'ab'): { t: Record<Seat, string>; v?: number } {
   const partes: string[] = [];
   if (a.resultado) partes.push(a.resultado);
   let efV: Efeitos | undefined;
+  let idx: number | undefined;
   if (a.variantes) {
     // sem dados: a variante depende do estado ANTES da ação (flags, vínculo, nervosismo acumulado)
     const v = a.variantes.find((x) => avaliarCond(x.se, envCond(e, jog, seat)));
     if (!v) throw new ErroJogo(`nenhuma variante vale para a ação ${a.id}`);
     partes.push(v.resultado);
     efV = v.efeitos;
+    idx = a.variantes.indexOf(v);
   }
   const out = paraTodos(l, e, jog, partes.join('\n\n'), seat);
   aplicar(l, e, ator, cap, a.efeitos);
   aplicar(l, e, ator, cap, efV);
-  return out;
+  return { t: out, v: idx };
 }
 
 const pushReg = (sub: any, k: Reg['k'], seat: Seat, texto: Record<Seat, string>) => (sub.reg ??= []).push({ k, seat, texto });
@@ -374,8 +376,9 @@ export function agir(l: Livro, e0: Estado, seat: Seat, acao: Acao_, jog: Jogador
       usadas.push(a.id);
       const rot = render(l, e, jog, a.texto, seat, seat);
       pushReg(sub, 'esc', seat, { A: rot, B: rot });
-      pushReg(sub, 'txt', seat, resultadoDaAcao(l, e, jog, a, seat, no.cap, seat));
-      ev('escolha', { acao: a.id }, seat);
+      const rs = resultadoDaAcao(l, e, jog, a, seat, no.cap, seat);
+      pushReg(sub, 'txt', seat, rs.t);
+      ev('escolha', { acao: a.id, variante: rs.v }, seat);
       if (a.ir) sub.saida = a.ir;
       else if (!no.acoes.some((x) => elegivel(x, seat, e, jog) && (x.repete || x.ir || !usadas.includes(x.id)))) {
         if (!no.ir) throw new ErroJogo(`cena solo ${id} esgotou as ações sem saída`);
@@ -397,8 +400,9 @@ export function agir(l: Livro, e0: Estado, seat: Seat, acao: Acao_, jog: Jogador
       esc[seat].push(a.id);
       const rot = render(l, e, jog, a.texto, seat, seat);
       pushReg(sub, 'esc', seat, { A: rot, B: rot });
-      pushReg(sub, 'txt', seat, resultadoDaAcao(l, e, jog, a, seat, no.cap, seat));
-      ev('escolha', { acao: a.id });
+      const rs = resultadoDaAcao(l, e, jog, a, seat, no.cap, seat);
+      pushReg(sub, 'txt', seat, rs.t);
+      ev('escolha', { acao: a.id, variante: rs.v });
       break;
     }
     case 'decisao': {
@@ -414,9 +418,10 @@ export function agir(l: Livro, e0: Estado, seat: Seat, acao: Acao_, jog: Jogador
       if (votos.A && votos.A === votos.B) {
         const rot = render(l, e, jog, a.texto, seat, seat);
         pushReg(sub, 'esc', seat, { A: rot, B: rot });
-        pushReg(sub, 'txt', 'A', resultadoDaAcao(l, e, jog, a, seat, no.cap, 'ab'));
+        const rs = resultadoDaAcao(l, e, jog, a, seat, no.cap, 'ab');
+        pushReg(sub, 'txt', 'A', rs.t);
         sub.resolvida = true;
-        ev('decisao', { acao: a.id });
+        ev('decisao', { acao: a.id, variante: rs.v });
       }
       break;
     }

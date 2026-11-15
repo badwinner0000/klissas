@@ -25,13 +25,14 @@ Livros-jogo em pt-BR para duas pessoas. Plano completo em `docs/PLANO.md`; schem
 | Cobertura vs gabarito do zip | 96,4% dos parágrafos (400 partidas aleatórias, `npx tsx scripts/migracao/comparar.ts`) |
 
 Decisões da migração:
-- **Sem dados e sem puzzle.** Os 58 testes viram variantes: o ramo `falha` do original vale quando o personagem está com nervosismo ≥ 3 (`abalo>=3`); caso contrário, o ramo `ok`. O único puzzle (a mesa 7) virou uma decisão conjunta.
+- **Sem dados e sem puzzle.** Os 58 testes viram variantes. O ramo `falha` do original vale quando o personagem está abalado (`abalo>=1`) **ou** quando a ação foge do que ele sabe fazer (perfil do personagem em `base.js`: a Ivy é boa de lábia e ruim de força; o Sam, o contrário). Não há número visível nem sorteio; é caracterização. O nervosismo cai 2 pontos a cada fim de capítulo, então cada capítulo começa calmo e escorrega conforme as coisas se acumulam. Medido: com `abalo>=3` (a primeira versão) 56 dos 116 ramos nunca apareciam; agora são 25. `npm run sim` lista esses ramos como aviso. O único puzzle (a mesa 7) virou uma decisão conjunta.
 - **Consentimento:** as 7 cenas `secreto` viraram nós `consentimento`; as flags individuais (`noite3_a`/`_b`...) são **privadas** (`flagsPrivadas()`), e o servidor não pode projetá-las ao cliente.
 - **Correções editoriais** (o original violava as regras do Verso em 4 trechos que narravam fala de protagonista sem escolha) e 2 opções com gênero fixo: ficam listadas em `CORRECOES` no conversor, com o motivo.
 - **Perspectiva:** resultados são escritos em 2ª pessoa de quem age e o parceiro lê em 3ª (porte de `terceira()/vistaDoPar()` do motor original).
 
 Dívida conhecida, a resolver depois (não bloqueia):
-- **114 "escolhas mortas"**: flags que o original grava e nenhuma cena lê. Estão no `escolhasMortasToleradas` do livro (aviso, não erro). Cada uma é uma escolha que não muda nada: ligar a uma cena posterior ou cortar. Livros novos têm baseline vazio.
+- **Escolhas mortas** (flags que o original grava e nenhuma cena lê): de 114, **78 ainda faltam** (capítulos 1 a 3 resolvidos). As reações ficam em `scripts/migracao/consequencias-padrinhos.json`, aplicadas pelo conversor com validação (a cena vem depois da escolha; reação a escolha solo só aparece para quem a fez; há teste de que nada vaza). Relatório do que falta: `node scripts/migracao/relatorio-mortas.mjs <capítulo>`. As que sobrarem ficam em `escolhasMortasToleradas` (aviso). Livros novos têm baseline vazio.
+- **25 ramos de resultado nunca aparecem** (ex.: o enjoo no barco, `pd_c2_armadilhas.o2`, primeira cena do capítulo 2): decisão de roteiro pendente (dar um gatilho por escolha anterior, ou cortar).
 - **Ramos `falha`** só aparecem com nervosismo alto, então são raros (parte dos 3,6% de parágrafos do gabarito não cobertos).
 - **64 cenas < 150 palavras** (a Bíblia pede 150–400); 5 acima de 400.
 - **Cerimônia do cap. 9 corrigida:** o discurso dos protagonistas virou o diálogo `pd_c9_microfone` (3 tons por jogador). Há ainda 34 nós com falas sem atribuição na fila de revisão (`fala-sem-atribuicao`); li os suspeitos e são de NPC.

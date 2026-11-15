@@ -15,7 +15,8 @@ describe('consequências das escolhas (antes mortas)', () => {
   const l = livro();
   const vistos: Record<'A' | 'B', string> = { A: '', B: '' };
   for (let seed = 1; seed <= 90; seed++) {
-    const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, 'ambos', criarRng(seed));
+    // metade das partidas com consentimento, metade sem: algumas reações só existem do lado "sem"
+    const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, seed % 2 ? 'ambos' : 'nenhum', criarRng(seed));
     vistos.A += p.textos.A.join('\n').replace(/\*/g, '');
     vistos.B += p.textos.B.join('\n').replace(/\*/g, '');
   }
