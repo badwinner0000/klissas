@@ -6,6 +6,7 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
   "observability": { "enabled": true },
+  "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "5bf17a8025274267b68bf785186588cc" }],
   "routes": [{ "pattern": "lovesparks.verso.business", "custom_domain": true }]
   // O domínio verso.business precisa estar na mesma conta da Cloudflare; o DNS do subdomínio é criado no deploy.
   // Segredos (não ficam neste arquivo): npx wrangler secret put DATABASE_URL
