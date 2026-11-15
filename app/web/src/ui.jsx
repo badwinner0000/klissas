@@ -112,3 +112,79 @@ export async function reduzirFoto(file, max = 1280) {
     return file
   }
 }
+
+// ---------- animações ----------
+
+// gradiente do fogo, desenhado uma vez na página
+export function FlameDefs() {
+  return (
+    <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
+      <defs>
+        <linearGradient id="fogo" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stopColor="#ff5a1f" /><stop offset=".55" stopColor="#ffae00" /><stop offset="1" stopColor="#e2f163" />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
+
+export function Flame({ size = 24, lit = true, delay = 0 }) {
+  return (
+    <svg className={`flame ${lit ? '' : 'off'}`} viewBox="0 0 24 32" width={size} height={size * 1.33}
+      style={{ animationDelay: `${delay}s, ${delay}s` }} aria-hidden="true">
+      <path d="M12 1C14 7 21 10 21 19a9 9 0 01-18 0c0-4 2-7 4-9 0 3 1.5 5 3.5 5C10.5 10 9 6 12 1z" fill={lit ? 'url(#fogo)' : '#888'} />
+      {lit && <path className="fi" d="M12 15c1 3 4 4 4 8a4 4 0 01-8 0c0-2 1-3 2-4 0 1.5.8 2.5 2 2.5-.3-2.5-.8-4 0-6.5z" fill="#fff3a8" />}
+    </svg>
+  )
+}
+
+// número que sobe contando até o valor
+export function CountUp({ value, ms = 900 }) {
+  const [v, setV] = useState(0)
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return setV(value)
+    let raf, start
+    const from = 0
+    const step = (t) => {
+      start ??= t
+      const k = Math.min(1, (t - start) / ms)
+      setV(Math.round(from + (value - from) * (1 - Math.pow(1 - k, 3))))
+      if (k < 1) raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [value, ms])
+  return <>{v}</>
+}
+
+// comemoração ao postar: confete, carimbo "TÁ PAGO!" e pontos ganhos
+let pushCelebrate = () => {}
+export const celebrate = (pts) => pushCelebrate(pts)
+const CORES_CONFETE = ['#e2f163', '#896cfe', '#b3a0ff', '#ffffff', '#ffae00', '#ff5a1f']
+export function Celebration() {
+  const [c, setC] = useState(null)
+  useEffect(() => {
+    let timer
+    pushCelebrate = (pts) => {
+      const bits = Array.from({ length: 46 }, (_, i) => ({
+        left: Math.random() * 100, x: `${(Math.random() - 0.5) * 160}px`, r: `${Math.random() * 720 - 360}deg`,
+        d: `${1.4 + Math.random() * 1.2}s`, w: `${Math.random() * 0.35}s`, cor: CORES_CONFETE[i % CORES_CONFETE.length],
+      }))
+      setC({ pts, bits, k: Date.now() })
+      clearTimeout(timer)
+      timer = setTimeout(() => setC(null), 2500)
+    }
+    return () => clearTimeout(timer)
+  }, [])
+  if (!c) return null
+  return (
+    <div className="celebrate" key={c.k} role="status" aria-label={`Tá pago! ${c.pts ? sinal(c.pts) + ' pontos' : ''}`}>
+      <div className="bits">{c.bits.map((b, i) => <i key={i} style={{ left: `${b.left}%`, background: b.cor, '--x': b.x, '--r': b.r, '--d': b.d, '--w': b.w }} />)}</div>
+      <div className="box">
+        <span className="bigflame"><Flame size={56} /></span>
+        <div className="stamp">TÁ PAGO!</div>
+        {c.pts !== 0 && <div className="gain">{sinal(c.pts)} pts</div>}
+      </div>
+    </div>
+  )
+}

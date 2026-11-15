@@ -20,7 +20,9 @@ export function LinhaHabito({ item, feito, regras, onClick, direita }) {
   const dot = over ? 'bad' : (!mx && feito >= item.meta) || (mx && !over) ? 'lime' : ''
   return (
     <button className="prow" onClick={onClick}>
-      <span className={`dot ${dot}`}>{mx ? (over ? '!' : 'ok') : `${pc}%`}</span>
+      {dot === 'lime' ? <span className="dot lime"><span>{mx ? 'ok' : <Icon name="check" />}</span></span>
+        : dot === 'bad' ? <span className="dot bad">!</span>
+        : <span className="dot ring" style={{ '--p': pc }}><span>{pc}%</span></span>}
       <span className="tx">
         <b>{h.nome}</b>
         <small>{mx ? 'limite' : 'meta'} {fmt(item.meta)} {h.unidade}{item.doGrupo ? ' · do grupo' : ''}</small>
@@ -63,7 +65,7 @@ export function Promessa({ ctx, acoes, onRegistrar, inicial = 'cur' }) {
   const copiarAtual = () => mudar(ctx.promessaDe(ctx.uid, w.cur).map((i) => ({ ...i })))
 
   return (
-    <div className="screen">
+    <div className="screen enter">
       <Header title="Promessa" actions={acoes} />
       <div className="sec pad">
         <div className="pills">

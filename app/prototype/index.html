@@ -250,9 +250,71 @@ input[type=text],input[type=email],input[type=password],input[type=number],input
 .sug{width:100%;display:flex;flex-direction:column;gap:10px}
 .sug .prow[aria-pressed="false"]{opacity:.5}
 @media (prefers-reduced-motion:no-preference){.mini-bar i{transition:width .35s ease}.screen{animation:in .25s ease}@keyframes in{from{opacity:.4}to{opacity:1}}}
+
+/* ===== animações ===== */
+@property --p{syntax:'<number>';inherits:false;initial-value:0}
+@keyframes flicker{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(1.05,.95) skewX(2deg)}50%{transform:scale(.96,1.06) skewX(-2deg)}75%{transform:scale(1.03,.97) skewX(1deg)}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 3px rgba(255,140,0,.55))}50%{filter:drop-shadow(0 0 9px rgba(255,170,0,.85))}}
+@keyframes fill{from{--p:0}}
+@keyframes pop{0%{transform:scale(.4)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@keyframes slidein{from{transform:translateX(-14px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,241,99,.7)}70%{box-shadow:0 0 0 10px rgba(226,241,99,0)}100%{box-shadow:0 0 0 0 rgba(226,241,99,0)}}
+@keyframes stamp{0%{transform:scale(2.6) rotate(-14deg);opacity:0}55%{transform:scale(.92) rotate(-8deg);opacity:1}75%{transform:scale(1.06) rotate(-9deg)}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0);opacity:1}100%{transform:translate3d(var(--x),105vh,0) rotate(var(--r));opacity:.9}}
+@keyframes fadeout{0%,80%{opacity:1}100%{opacity:0}}
+@keyframes floatup{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+
+.flame{display:block;transform-origin:50% 100%;animation:flicker 1.3s ease-in-out infinite,glow 2.2s ease-in-out infinite;overflow:visible}
+.flame .fi{transform-origin:50% 100%;animation:flicker .9s ease-in-out infinite reverse}
+.flame.off{animation:none;filter:grayscale(1);opacity:.22}
+.flame.off .fi{animation:none}
+
+.streak{display:flex;align-items:center;gap:16px;background:var(--ink);border-radius:20px;padding:14px 18px}
+.streak .num{font-size:40px;font-weight:800;line-height:1;color:var(--lime);font-variant-numeric:tabular-nums}
+.streak .lbl{font-weight:600;font-size:14px}
+.streak small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.weekstrip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px}
+.weekstrip .d{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--ink);padding:6px 0 4px;border-radius:14px;background:rgba(255,255,255,.35)}
+.weekstrip .d.today{background:var(--white);animation:pulse 2s infinite}
+.weekstrip .d.future{opacity:.5}
+
+.cal-d span.fire{position:relative;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;color:var(--ink);font-weight:700;font-size:10px;line-height:1}
+.cal-d span.today{animation:pulse 2s infinite}
+
+.dot.ring{position:relative;background:conic-gradient(var(--lime) calc(var(--p) * 1%),rgba(255,255,255,.18) 0);animation:fill 1s cubic-bezier(.2,.8,.2,1) both}
+.dot.ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--purple)}
+.dot.ring>span{position:relative}
+.dot.lime svg,.dot.lime>span{animation:pop .45s ease-out both}
+
+.acts button[aria-pressed="true"]:not(.flag) svg{fill:var(--lime);animation:pop .4s ease-out}
+.screen.enter .rows>*{animation:slidein .4s ease-out both}
+.screen.enter .rows>*:nth-child(2){animation-delay:.05s}.screen.enter .rows>*:nth-child(3){animation-delay:.1s}
+.screen.enter .rows>*:nth-child(4){animation-delay:.15s}.screen.enter .rows>*:nth-child(5){animation-delay:.2s}
+.screen.enter .rows>*:nth-child(n+6){animation-delay:.25s}
+.screen.enter .pod .p{animation:rise .6s cubic-bezier(.2,.9,.3,1.25) both}
+.screen.enter .pod .p:nth-child(1){animation-delay:.15s}.screen.enter .pod .p:nth-child(3){animation-delay:.3s}
+.screen.enter .grid2>*{animation:floatup .45s ease-out both}
+.screen.enter .grid2>*:nth-child(2){animation-delay:.06s}.screen.enter .grid2>*:nth-child(3){animation-delay:.12s}.screen.enter .grid2>*:nth-child(4){animation-delay:.18s}
+.fab{animation:pop .5s ease-out both}
+
+.celebrate{position:fixed;inset:0;z-index:40;pointer-events:none;display:grid;place-items:center;overflow:hidden;animation:fadeout 2.4s ease-in forwards}
+.celebrate .bits i{position:absolute;top:0;width:9px;height:14px;border-radius:2px;animation:fall var(--d) cubic-bezier(.3,.6,.6,1) var(--w) both}
+.celebrate .box{display:flex;flex-direction:column;align-items:center;gap:10px}
+.celebrate .stamp{font-style:italic;font-weight:800;font-size:46px;color:var(--ink);background:var(--lime);padding:6px 22px;border-radius:16px;border:4px solid var(--ink);box-shadow:0 10px 40px rgba(0,0,0,.5);animation:stamp .7s cubic-bezier(.2,.8,.2,1) both}
+.celebrate .gain{font-weight:700;font-size:20px;color:var(--white);background:var(--purple);padding:4px 16px;border-radius:999px;animation:floatup .4s .35s ease-out both}
+.celebrate .bigflame{animation:pop .6s .1s ease-out both}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .celebrate .bits{display:none}
+  .celebrate{animation:none!important}
+}
 </style>
 
-</head><body><div class="app" id="app"></div>
+</head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="fogo" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff5a1f"/><stop offset=".55" stop-color="#ffae00"/><stop offset="1" stop-color="#e2f163"/></linearGradient></defs></svg>
+<div class="app" id="app"></div>
+<div id="fx"></div>
 <div id="layer"></div>
 <div id="toast-box"></div>
 
@@ -293,7 +355,7 @@ const art=cat=>{const[a,g]=CAT_ART[cat]||['star','g-f'];return{g,svg:`<span clas
 
 const COLORS=['#896cfe','#c46bd6','#e08a3c','#3fa66a','#d6588f','#5a6b8a'];
 const players=[
- {id:0,nome:'Você',base:74,streak:5,total:312,hoje:3},
+ {id:0,nome:'Você',base:74,streak:6,total:312,hoje:3},
  {id:1,nome:'Ana',pts:96,streak:9,total:401,hoje:1},
  {id:2,nome:'Bruno',pts:81,streak:3,total:287,hoje:2},
  {id:3,nome:'Carla',pts:58,streak:6,total:265,hoje:4},
@@ -321,8 +383,16 @@ const state={
     {hab:'agua_ml',quando:'Sex, 13 nov',valor:'500 ml',pts:2},
   ],
   semanas:[{s:'S7',p:42},{s:'S8',p:58},{s:'S9',p:71},{s:'S10',p:64},{s:'S11',p:80}],
-  checkins:[2,3,4,6,7,9,10,11,13,14],
+  checkins:[2,3,4,6,7,9,10,11,12,13,14], porDia:{2:1,3:2,4:1,6:1,7:3,9:2,10:1,11:2,12:1,13:3,14:2},
 };
+const flame=(size=24,lit=true,delay=0)=>`<svg class="flame ${lit?'':'off'}" viewBox="0 0 24 32" width="${size}" height="${Math.round(size*1.33)}" style="animation-delay:${delay}s,${delay}s" aria-hidden="true"><path d="M12 1C14 7 21 10 21 19a9 9 0 01-18 0c0-4 2-7 4-9 0 3 1.5 5 3.5 5C10.5 10 9 6 12 1z" fill="${lit?'url(#fogo)':'#888'}"/>${lit?'<path class="fi" d="M12 15c1 3 4 4 4 8a4 4 0 01-8 0c0-2 1-3 2-4 0 1.5.8 2.5 2 2.5-.3-2.5-.8-4 0-6.5z" fill="#fff3a8"/>':''}</svg>`;
+const reduz=()=>window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function contar(){document.querySelectorAll('[data-count]').forEach(el=>{const v=+el.dataset.count;if(reduz()){el.textContent=v;return}let s;const st=t=>{s??=t;const k=Math.min(1,(t-s)/900);el.textContent=Math.round(v*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)})}
+function minhaSeq(){const set=new Set(state.checkins);let d=set.has(15)?15:14,n=0;while(set.has(d)){n++;d--}return n}
+function celebrar(pts){const cores=['#e2f163','#896cfe','#b3a0ff','#ffffff','#ffae00','#ff5a1f'];
+  const bits=Array.from({length:46},(_,i)=>`<i style="left:${Math.random()*100}%;background:${cores[i%6]};--x:${(Math.random()-.5)*160}px;--r:${Math.random()*720-360}deg;--d:${1.4+Math.random()*1.2}s;--w:${Math.random()*.35}s"></i>`).join('');
+  const fx=document.getElementById('fx');fx.innerHTML=`<div class="celebrate" role="status"><div class="bits">${bits}</div><div class="box"><span class="bigflame">${flame(56)}</span><div class="stamp">TÁ PAGO!</div>${pts?`<div class="gain">${sinal(pts)} pts</div>`:''}</div></div>`;
+  clearTimeout(celebrar.t);celebrar.t=setTimeout(()=>fx.innerHTML='',2500)}
 const BASE_MIN=10, BASE_MAX=6, MULTA=4, BONUS=5, PRAZO='domingo, 23h59';
 
 /* pontuação: meta mínima proporcional; limite máximo ganha dentro do limite e perde por unidade excedente */
@@ -368,6 +438,8 @@ function sHome(){
     <div class="ics"><button aria-label="Buscar no catálogo" data-go-cat>${ic('search')}</button><button aria-label="Avisos" data-bell>${ic('bell')}</button><button aria-label="Perfil e grupo" data-go="grupo">${ic('user')}</button></div></header>
    <div class="quick pad"><button data-tab-go="promessa">${ic('dumbbell')}<span>Promessa</span></button><button data-go="progresso">${ic('chart')}<span>Progresso</span></button>
     <button data-go-cat="Alimentação saudável">${ic('apple')}<span>Nutrição</span></button><button data-tab-go="feed">${ic('group')}<span>Comunidade</span></button></div>
+   ${(()=>{const s=minhaSeq(),hoje=state.checkins.includes(15);return `<div class="band pad"><div class="streak">${flame(46,s>0)}<div><span class="num" data-count="${s}">${s}</span> <span class="lbl">${s===1?'dia seguido':'dias seguidos'}</span><small>${hoje?'Fogo aceso hoje. Volte amanhã para manter.':s>0?'Poste hoje para não apagar o fogo.':'Poste algo hoje para acender o fogo.'}</small></div></div>
+    <div class="weekstrip" aria-label="Dias desta semana com post">${['S','T','Q','Q','S','S','D'].map((l,i)=>{const d=9+i;return `<div class="d ${d===15?'today':''}">${l}${flame(16,state.checkins.includes(d),i*.13)}</div>`}).join('')}</div></div>`})()}
    <div class="sec pad"><div class="sec-h"><h2>Sua promessa</h2><a href="#" data-tab-go="promessa">Ver tudo ›</a></div><div class="grid2">${cards}</div></div>
    <div class="band pad" style="margin-top:14px"><div class="challenge"><div class="l"><b>Desafio da semana</b><small>7 dias seguidos com algum movimento</small><span class="chip lime" style="align-self:flex-start;margin-top:6px">+10 pts de bônus</span></div>
     <div class="photo g-a">${art('Consistência e comunidade').svg}</div></div></div>
@@ -384,9 +456,9 @@ function sRank(){
   const r=ranking(), me=players[0], pos=r.indexOf(me)+1, t3=[r[1],r[0],r[2]];
   return `<div class="screen">${header('Ranking')}
    <div class="band pad"><div class="profile">${av(me,64)}<div class="who"><h2>${me.nome}</h2><div class="stats">
-     <div class="stat"><i></i><div><b>${pos}º</b><small>posição</small></div></div><div class="stat"><i></i><div><b>${me.pts}</b><small>pontos</small></div></div><div class="stat"><i></i><div><b>${me.streak}</b><small>sequência</small></div></div></div></div></div></div>
+     <div class="stat"><i></i><div><b>${pos}º</b><small>posição</small></div></div><div class="stat"><i></i><div><b data-count="${me.pts}">${me.pts}</b><small>pontos</small></div></div><div class="stat"><i></i><div><b>${me.streak}</b><small>sequência</small></div></div></div></div></div></div>
    <div class="sec pad"><div class="pills"><span class="pill" aria-pressed="true">Semana 12</span><span class="pill">Geral</span></div>
-    <div class="pod">${t3.map((p,i)=>`<div class="p ${i===1?'first':''}">${av(p,i===1?52:42)}<div class="nm">${p.nome}</div><div class="pt">${p.pts}</div><div class="ps">${i===1?'1º':i===0?'2º':'3º'} lugar</div></div>`).join('')}</div>
+    <div class="pod">${t3.map((p,i)=>`<div class="p ${i===1?'first':''}">${av(p,i===1?52:42)}<div class="nm">${p.nome}</div><div class="pt" data-count="${p.pts}">${p.pts}</div><div class="ps">${i===1?'1º':i===0?'2º':'3º'} lugar</div></div>`).join('')}</div>
     <div class="rows">${r.map((p,i)=>rowPlayer(p,i)).join('')}</div>
     <div class="pot"><div><small>Pote da semana</small><br><b>R$ 60</b></div><small style="text-align:right">6 jogadores · R$ 10 cada<br>quem lidera leva</small></div></div>
    <div class="spacer"></div></div>`;
@@ -395,7 +467,8 @@ function sProm(){
   const ed=state.fase==='montagem';
   const rows=state.promessa.map((p,idx)=>{const h=H[p.id],pt=ptsHab(p),mx=h.modo==='max',over=mx&&p.real>p.meta,pc=Math.round(pct(p));
     const dot=over?'bad':(!mx&&p.real>=p.meta)||(mx&&!over)?'lime':'';
-    return `<div><button class="prow" ${ed?`data-edit="${idx}"`:`data-log="${idx}"`}><span class="dot ${dot}">${mx?(over?'!':'ok'):pc+'%'}</span>
+    const dotHtml=dot==='lime'?`<span class="dot lime"><span>${mx?'ok':ic('plus').replace('<path d="M12 5v14M5 12h14"/>','<path d="M5 12l5 5L20 7"/>')}</span></span>`:dot==='bad'?'<span class="dot bad">!</span>':`<span class="dot ring" style="--p:${pc}"><span>${pc}%</span></span>`;
+    return `<div><button class="prow" ${ed?`data-edit="${idx}"`:`data-log="${idx}"`}>${dotHtml}
      <span class="tx"><b>${h.nome}</b><small>${mx?'limite':'meta'} ${fmt(p.meta)} ${h.unidade}</small><span class="mini-bar ${over?'over':mx?'ok':''}"><i style="width:${pc}%"></i></span></span>
      <span class="rt">${ed?'Editar':`${fmt(p.real)}/${fmt(p.meta)}`}<small>${sinal(pt)} pts</small></span></button>
      ${ed?`<div class="hab-extra"><span>${h.categoria}</span><button data-rm="${idx}">Remover</button></div>`:''}</div>`}).join('');
@@ -423,7 +496,7 @@ function sProg(){
   let body='';
   if(lg){
     const cells=[];for(let i=0;i<6;i++)cells.push('<span></span>');
-    for(let d=1;d<=30;d++)cells.push(`<span class="${state.checkins.includes(d)?'on':''} ${d===15?'today':''}">${d}</span>`);
+    for(let d=1;d<=30;d++){const n=state.checkins.includes(d)?(state.porDia[d]||1):0;cells.push(n?`<span class="fire ${d===15?'today':''}">${flame(n>=3?20:n===2?17:14,true,(d%7)*.11)}${d}</span>`:`<span class="${d===15?'today':''}">${d}</span>`)}
     body=`<div class="sec-h"><h2 style="color:var(--white);font-size:14px">Novembro 2026</h2><span>${state.checkins.length} check-ins</span></div>
      <div class="cal"><div class="cal-w">${['SEG','TER','QUA','QUI','SEX','SÁB','DOM'].map(x=>`<span>${x}</span>`).join('')}</div><div class="cal-d">${cells.join('')}</div></div>
      <div class="sec-h"><h2>Atividades</h2></div>
@@ -469,9 +542,10 @@ function render(){
     document.getElementById('lg-form').onsubmit=go;document.getElementById('lg-go').onclick=go;return}
   const view=state.sub==='progresso'?sProg():state.sub==='grupo'?sGrupo():{home:sHome,promessa:sProm,rank:sRank,feed:sFeed}[state.tab]();
   const showFab=state.fase==='semana'&&!state.sub;
-  app.innerHTML=view+(showFab?`<button class="fab" id="fab">${ic('plus')}Registrar</button>`:'')+
+  const vk=state.sub||state.tab, novo=vk!==render.last; render.last=vk;
+  app.innerHTML=(novo?view.replace('<div class="screen">','<div class="screen enter">'):view)+(showFab?`<button class="fab" id="fab">${ic('plus')}Registrar</button>`:'')+
    `<nav class="nav" aria-label="Seções"><div class="nav-in" role="tablist">${TABS.map(([k,l,i])=>`<button role="tab" aria-selected="${!state.sub&&state.tab===k}" data-tab="${k}">${ic(i)}${l}</button>`).join('')}</div></nav>`;
-  bind();
+  bind();if(novo)contar();else document.querySelectorAll('[data-count]').forEach(el=>el.textContent=el.dataset.count);
 }
 function bind(){
   const $$=s=>document.querySelectorAll(s);
@@ -548,8 +622,8 @@ function abrirRegistro(pre){
     const p=cur(),h=H[p.id],antes=ptsHab(p);p.real+=q;
     state.posts.unshift({id:Date.now(),autor:0,quando:'agora',hab:p.id,txt:document.getElementById('tx').value||'Registro feito.',valor:`${fmt(q)} ${h.unidade}`,foto:document.getElementById('ft').files.length>0,curt:0,coment:[],flag:0});
     state.atividades.unshift({hab:p.id,quando:'Hoje',valor:`${fmt(q)} ${h.unidade}`,pts:ptsHab(p)-antes});
-    if(!state.checkins.includes(15))state.checkins.push(15);
-    fechar();state.tab='promessa';state.sub=null;render();toast('Publicado. Pontos atualizados.')};
+    if(!state.checkins.includes(15))state.checkins.push(15);state.porDia[15]=(state.porDia[15]||0)+1;
+    fechar();state.tab='promessa';state.sub=null;render();celebrar(ptsHab(p)-antes)};
 }
 
 /* ---------- onboarding ---------- */

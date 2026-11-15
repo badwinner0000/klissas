@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { HABITOS, H, CATEGORIAS } from '../lib/catalog.js'
 import { realizado, pontosItem } from '../lib/scoring.js'
-import { Sheet, fmt, sinal, toast } from '../ui.jsx'
+import { Sheet, fmt, sinal, toast, celebrate } from '../ui.jsx'
 import { registrar } from '../data.js'
 
 // catálogo com busca e filtro; onPick(habit_id) quando a pessoa escolhe
@@ -85,7 +85,7 @@ export function Registro({ ctx, inicial, onClose }) {
     setBusy(true)
     try {
       await registrar({ gid: ctx.group.id, uid: ctx.uid, habit_id: item.habit_id, dia, quantidade: q, texto: texto.trim(), foto })
-      toast('Publicado. Pontos atualizados.')
+      celebrate(Math.round(pd - pa))
       onClose()
       ctx.reload()
     } catch (e) { toast(e.message) } finally { setBusy(false) }

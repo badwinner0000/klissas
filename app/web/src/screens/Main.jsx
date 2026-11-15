@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { H, artDe, itemDe } from '../lib/catalog.js'
 import { realizado, pontosItem } from '../lib/scoring.js'
 import { fmtDia, quando, addDays } from '../lib/week.js'
-import { Header, Icon, Avatar, Art, COLORS, fmt, sinal, dias, toast } from '../ui.jsx'
+import { Header, Icon, Avatar, Art, COLORS, fmt, sinal, dias, toast, Flame, CountUp } from '../ui.jsx'
 import { alternar, comentar, apagarRegistro, atualizarGrupo, salvarMinimo, removerMinimo, salvarPerfil } from '../data.js'
 import { Catalogo, Meta } from './Sheets.jsx'
 import { supabase } from '../lib/supabase.js'
@@ -24,7 +24,7 @@ export function Home({ ctx, acoes, go }) {
   const minhas = ctx.validas(ctx.w.cur).filter((e) => e.user_id === ctx.uid)
   const r = ctx.placarAtual()
   return (
-    <div className="screen">
+    <div className="screen enter">
       <Header title={<div className="hello"><h1 style={{ color: 'var(--purple)' }}>Olá, {ctx.perfil.nome}</h1><p>{ctx.w.diasParaFechar === 0 ? 'Último dia da semana. Poste o que falta.' : `Faltam ${ctx.w.diasParaFechar} dias para fechar a semana.`}</p></div>} actions={acoes} />
       <div className="quick pad">
         <button onClick={() => go('promessa')}><Icon name="dumbbell" /><span>Promessa</span></button>
@@ -32,6 +32,7 @@ export function Home({ ctx, acoes, go }) {
         <button onClick={() => go('catalogo', 'Alimentação saudável')}><Icon name="apple" /><span>Nutrição</span></button>
         <button onClick={() => go('feed')}><Icon name="group" /><span>Comunidade</span></button>
       </div>
+      <Sequencia ctx={ctx} />
       <div className="sec pad">
         <div className="sec-h"><h2>Sua promessa</h2><button className="sec-h" style={{ fontSize: 12 }} onClick={() => go('promessa')}>Ver tudo ›</button></div>
         {itens.length ? (
@@ -62,6 +63,29 @@ export function Home({ ctx, acoes, go }) {
   )
 }
 
+const LETRAS = ['S', 'T', 'Q', 'Q', 'S', 'S', 'D']
+function Sequencia({ ctx }) {
+  const s = ctx.streak(ctx.uid)
+  const meus = new Set(ctx.entries.filter((e) => e.user_id === ctx.uid).map((e) => e.dia))
+  const postouHoje = meus.has(ctx.w.today)
+  return (
+    <div className="band pad">
+      <div className="streak">
+        <Flame size={46} lit={s > 0} />
+        <div><span className="num"><CountUp value={s} /></span> <span className="lbl">{s === 1 ? 'dia seguido' : 'dias seguidos'}</span>
+          <small>{postouHoje ? 'Fogo aceso hoje. Volte amanhã para manter.' : s > 0 ? 'Poste hoje para não apagar o fogo.' : 'Poste algo hoje para acender o fogo.'}</small></div>
+      </div>
+      <div className="weekstrip" aria-label="Dias desta semana com post">
+        {LETRAS.map((l, i) => {
+          const d = addDays(ctx.w.cur, i), lit = meus.has(d), fut = d > ctx.w.today
+          return <div key={d} className={`d ${d === ctx.w.today ? 'today' : ''} ${fut ? 'future' : ''}`} aria-label={`${fmtDia(d)}: ${lit ? 'com post' : 'sem post'}`}>
+            {l}<Flame size={16} lit={lit} delay={i * 0.13} /></div>
+        })}
+      </div>
+    </div>
+  )
+}
+
 export function Ranking({ ctx, acoes }) {
   const [aba, setAba] = useState('semana')
   const lista = aba === 'semana' ? ctx.placarAtual() : ctx.geral
@@ -70,14 +94,14 @@ export function Ranking({ ctx, acoes }) {
   const t3 = [lista[1], lista[0], lista[2]].filter(Boolean)
   const pote = Number(ctx.group.pote_por_pessoa) * ctx.membros.length
   return (
-    <div className="screen">
+    <div className="screen enter">
       <Header title="Ranking" actions={acoes} />
       <div className="band pad"><div className="profile"><Avatar nome={ctx.perfil.nome} cor={ctx.perfil.cor} size={64} /><div className="who"><h2>{ctx.perfil.nome}</h2>
-        <div className="stats"><div className="stat"><i /><div><b>{pos || '-'}º</b><small>posição</small></div></div><div className="stat"><i /><div><b>{me?.pontos ?? 0}</b><small>pontos</small></div></div><div className="stat"><i /><div><b>{ctx.streak(ctx.uid)}</b><small>sequência</small></div></div></div></div></div></div>
+        <div className="stats"><div className="stat"><i /><div><b>{pos || '-'}º</b><small>posição</small></div></div><div className="stat"><i /><div><b><CountUp value={me?.pontos ?? 0} /></b><small>pontos</small></div></div><div className="stat"><i /><div><b>{ctx.streak(ctx.uid)}</b><small>sequência</small></div></div></div></div></div></div>
       <div className="sec pad">
         <div className="pills"><button className="pill" aria-pressed={aba === 'semana'} onClick={() => setAba('semana')}>Semana {ctx.w.numero(ctx.w.cur)}</button><button className="pill" aria-pressed={aba === 'geral'} onClick={() => setAba('geral')}>Geral</button></div>
         {t3.length >= 3 && <div className="pod">{t3.map((p, i) => (
-          <div key={p.user_id} className={`p ${i === 1 ? 'first' : ''}`}><Avatar nome={p.nome} cor={p.cor} size={i === 1 ? 52 : 42} /><div className="nm">{p.nome}</div><div className="pt">{p.pontos}</div><div className="ps">{i === 1 ? '1º' : i === 0 ? '2º' : '3º'} lugar</div></div>
+          <div key={p.user_id} className={`p ${i === 1 ? 'first' : ''}`}><Avatar nome={p.nome} cor={p.cor} size={i === 1 ? 52 : 42} /><div className="nm">{p.nome}</div><div className="pt"><CountUp value={p.pontos} /></div><div className="ps">{i === 1 ? '1º' : i === 0 ? '2º' : '3º'} lugar</div></div>
         ))}</div>}
         <div className="rows">{lista.map((p, i) => <LinhaJogador key={p.user_id} p={p} i={i} ctx={ctx} />)}</div>
         {pote > 0 && <div className="pot"><div><small>Pote</small><br /><b>R$ {fmt(pote)}</b></div><small style={{ textAlign: 'right' }}>{ctx.membros.length} jogadores · R$ {fmt(ctx.group.pote_por_pessoa)} cada<br />o app só mostra; o dinheiro fica com vocês</small></div>}
@@ -97,7 +121,7 @@ export function Feed({ ctx, acoes }) {
   const nome = (id) => ctx.membros.find((m) => m.user_id === id) || { nome: '?', cor: 0 }
   const run = async (f) => { try { await f(); ctx.reload() } catch (e) { toast(e.message) } }
   return (
-    <div className="screen">
+    <div className="screen enter">
       <Header title="Comunidade" actions={acoes} />
       <div className="sec pad">
         <div className="pills">{[['todos', 'Feed'], ['fotos', 'Fotos'], ['contestados', 'Contestados']].map(([k, l]) => <button key={k} className="pill" aria-pressed={filtro === k} onClick={() => setFiltro(k)}>{l}</button>)}</div>
@@ -144,15 +168,16 @@ export function Progresso({ ctx, acoes, onBack }) {
   const nDias = new Date(Date.UTC(ano, mes, 0)).getUTCDate()
   const meus = ctx.entries.filter((e) => e.user_id === ctx.uid)
   const diasComPost = new Set(meus.map((e) => e.dia))
+  const porDia = meus.reduce((m, e) => ((m[e.dia] = (m[e.dia] || 0) + 1), m), {})
   const NOMES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
   const hist = ctx.historico.map((s) => ({ s: `S${ctx.w.numero(s.semana)}`, p: s.placar.find((x) => x.user_id === ctx.uid)?.pontos ?? 0, pos: s.placar.findIndex((x) => x.user_id === ctx.uid) + 1 }))
   const total = ctx.geral.find((x) => x.user_id === ctx.uid)?.pontos ?? 0
   const W = 300, Hh = 170, bw = 22, top = Math.max(50, ...hist.map((h) => h.p)), step = (W - 40) / Math.max(1, hist.length)
   return (
-    <div className="screen">
+    <div className="screen enter">
       <Header title="Progresso" onBack={onBack} actions={acoes} />
       <div className="band pad"><div className="profile"><Avatar nome={ctx.perfil.nome} cor={ctx.perfil.cor} size={60} /><div className="who"><h2>{ctx.perfil.nome}</h2>
-        <div className="stats"><div className="stat"><i /><div><b>{total}</b><small>pontos totais</small></div></div><div className="stat"><i /><div><b>{ctx.streak(ctx.uid)}</b><small>dias seguidos</small></div></div></div></div></div></div>
+        <div className="stats"><div className="stat"><i /><div><b><CountUp value={total} /></b><small>pontos totais</small></div></div><div className="stat"><i /><div><b>{ctx.streak(ctx.uid)}</b><small>dias seguidos</small></div></div></div></div></div></div>
       <div className="sec pad">
         <div className="pills"><button className="pill" aria-pressed={aba === 'log'} onClick={() => setAba('log')}>Registro</button><button className="pill" aria-pressed={aba === 'chart'} onClick={() => setAba('chart')}>Gráficos</button></div>
         {aba === 'log' ? <>
@@ -161,7 +186,9 @@ export function Progresso({ ctx, acoes, onBack }) {
             <div className="cal-w">{['SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB', 'DOM'].map((x) => <span key={x}>{x}</span>)}</div>
             <div className="cal-d">{Array.from({ length: offset }, (_, i) => <span key={'v' + i} />)}{Array.from({ length: nDias }, (_, i) => {
               const d = `${hoje.slice(0, 7)}-${String(i + 1).padStart(2, '0')}`
-              return <span key={d} className={`${diasComPost.has(d) ? 'on' : ''} ${d === hoje ? 'today' : ''}`}>{i + 1}</span>
+              const n = porDia[d] || 0
+              return n ? <span key={d} className={`fire ${d === hoje ? 'today' : ''}`} title={`${n} post${n > 1 ? 's' : ''}`}><Flame size={n >= 3 ? 20 : n === 2 ? 17 : 14} delay={(i % 7) * 0.11} />{i + 1}</span>
+                : <span key={d} className={d === hoje ? 'today' : ''}>{i + 1}</span>
             })}</div>
           </div>
           <div className="sec-h"><h2>Atividades</h2></div>
@@ -196,7 +223,7 @@ export function Grupo({ ctx, acoes, onBack }) {
   const copiar = async () => { try { await navigator.clipboard.writeText(g.codigo); toast('Código copiado.') } catch { toast(`Código: ${g.codigo}`) } }
   const num = (k, label) => <div className="field"><label htmlFor={'g-' + k}>{label}</label><input id={'g-' + k} type="number" min="0" value={f[k]} onChange={(e) => setF({ ...f, [k]: e.target.value })} /></div>
   return (
-    <div className="screen">
+    <div className="screen enter">
       <Header title="Grupo" onBack={onBack} actions={acoes} />
       <div className="band pad"><div className="profile"><span className="av" style={{ background: 'var(--ink)', width: 60, height: 60, color: 'var(--lime)', fontStyle: 'italic', fontSize: 22 }}>TP</span>
         <div className="who"><h2 style={{ color: 'var(--ink)' }}>{g.nome}</h2><div className="stats" style={{ color: 'var(--ink)' }}><div className="stat"><i style={{ background: 'var(--ink)' }} /><div><b>{ctx.membros.length}</b><small>membros</small></div></div><div className="stat"><i style={{ background: 'var(--ink)' }} /><div><b>{ctx.w.numero(ctx.w.cur)}</b><small>semanas</small></div></div></div></div></div></div>

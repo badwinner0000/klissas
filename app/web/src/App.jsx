@@ -3,7 +3,7 @@ import { supabase, configured } from './lib/supabase.js'
 import { useGroupData } from './data.js'
 import { itensEfetivos, entradasValidas, sequencia, REGRAS_PADRAO } from './lib/scoring.js'
 import { addDays } from './lib/week.js'
-import { Icon, Toasts } from './ui.jsx'
+import { Icon, Toasts, FlameDefs, Celebration } from './ui.jsx'
 import { Splash, Login, Setup } from './screens/Auth.jsx'
 import { Onboarding } from './screens/Onboarding.jsx'
 import { Promessa } from './screens/Promessa.jsx'
@@ -25,7 +25,7 @@ function Autenticado() {
   }, [])
   if (session === undefined) return <div className="loading">Carregando...</div>
   if (!session) return <>{tela === 'splash' ? <Splash onStart={() => setTela('login')} /> : <Login onBack={() => setTela('splash')} />}<Toasts /></>
-  return <><Logado session={session} /><Toasts /></>
+  return <><FlameDefs /><Logado session={session} /><Celebration /><Toasts /></>
 }
 
 // junta os dados carregados em funções práticas para as telas
