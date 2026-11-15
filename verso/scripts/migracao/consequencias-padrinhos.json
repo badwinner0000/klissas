@@ -1,0 +1,611 @@
+{
+  "_doc": "Consequências das escolhas que o original gravava e nenhuma cena lia. Cada item acrescenta um trecho condicional a uma cena POSTERIOR. privadoDe: a escolha foi feita numa cena solo, então só aquele assento vê a reação.",
+  "itens": [
+    {
+      "flag": "sabe_courtney",
+      "no": "pd_c1_neblina",
+      "privadoDe": "A",
+      "texto": "A Pippa pula a parte que você já sabe, e a notícia, que podia vir inteira, chega pela metade."
+    },
+    {
+      "flag": "cronograma",
+      "no": "pd_c1_tabela",
+      "privadoDe": "A",
+      "texto": "Você olha a tabela como olhou a pasta na fila: item por item. A lista dos lagosteiros já existe na sua cabeça, na ordem em que vai ligar, e a coluna *QUEM* é a única linha que não tem solução de bolso."
+    },
+    {
+      "flag": "recado_gemma",
+      "no": "pd_c1_balsa",
+      "privadoDe": "A",
+      "texto": "*Seja boazinha*, a voz da Gemma repete no recado que você ouviu de novo, e a balsa, com a máquina de café quebrada e um banco só, não ajuda em nada."
+    },
+    {
+      "flag": "acenou",
+      "no": "pd_c1_farpas",
+      "privadoDe": "A",
+      "texto": "O sorriso de cerimonialista ainda está no seu rosto, de plantão, sem ninguém para quem trabalhar."
+    },
+    {
+      "flag": "frase2",
+      "no": "pd_c1_jantar",
+      "privadoDe": "B",
+      "texto": "No caderno preto, debaixo da mesa, a segunda frase do discurso espera, a lápis, para ser riscada ou não."
+    },
+    {
+      "flag": "ligou_funmi",
+      "no": "pd_c1_maes",
+      "privadoDe": "B",
+      "texto": "Você sabe uma coisa que a tabela da Pippa não sabe: a sua mãe não vai responder à mensagem da mesa sete, nem hoje, nem amanhã."
+    },
+    {
+      "flag": "ouviu_tunde",
+      "no": "pd_c1_maes",
+      "privadoDe": "B",
+      "texto": "O recado do Tunde continua no seu bolso, a dez centímetros de uma decisão que ninguém pediu para você tomar."
+    },
+    {
+      "flag": "cumprimentou",
+      "no": "pd_c1_farpas",
+      "privadoDe": "B",
+      "texto": "O caderno preto está ao lado do seu cotovelo, o mesmo que subiu um palmo na fila e desceu sem dizer nada."
+    },
+    {
+      "flag": "barnaby_flores",
+      "no": "pd_c1_jantar",
+      "texto": "O Barnaby não comenta as hortênsias. Mas a maior concha de ensopado, como quem não está fazendo nada, vai para o prato de quem carregou vaso."
+    },
+    {
+      "flag": "barnaby_viu",
+      "no": "pd_c1_maes",
+      "texto": "Na pia, o Barnaby não perguntou nada a quem ficou na varanda ouvindo o mesmo recado duas vezes. Vindo dele, isso é uma pergunta."
+    },
+    {
+      "flag": "mentiu_rosa",
+      "no": "pd_c2_maes",
+      "texto": "A Rosa abraça e lembra, no meio do abraço, que ontem à noite ouviu pelo telefone que estava tudo sob controle. Olha em volta procurando o controle."
+    },
+    {
+      "flag": "puxou_armadilha",
+      "no": "pd_c2_dory",
+      "texto": "As mãos de quem puxou a armadilha ainda estão abertas em bolha, e a Dory olha para elas antes de olhar para o resto. É por elas que ela decide."
+    },
+    {
+      "flag": "arenque",
+      "no": "pd_c2_dory",
+      "texto": "O cheiro da isca de arenque ficou no cais, e a Dory, no meio da explicação, pigarreia para não rir de novo."
+    },
+    {
+      "flag": "mesa7",
+      "no": "pd_c3_inicio",
+      "texto": "A Pippa passa a caneca de chá com a ponta do dedo apontada para o mapa de mesas, e ninguém precisa perguntar por que a mesa sete lembra tanto a noite passada."
+    },
+    {
+      "flag": "covalente",
+      "no": "pd_c2_bolo",
+      "texto": "A Rosa, que não esquece frase nenhuma, apresenta {{B.nome}} à balconista da confeitaria como *a pessoa da ligação covalente*."
+    },
+    {
+      "flag": "salvou_mapa",
+      "no": "pd_c2_mesas",
+      "texto": "A mesa sete, pelo menos, ainda está a lápis: o mapa saiu do alcance da caneta da Rosa antes da sobremesa."
+    },
+    {
+      "flag": "serviu_funmi",
+      "no": "pd_c2_mesas",
+      "texto": "Por mensagem de voz, a juíza Funmi avisa que a mesa das tias pode mudar quantas vezes quiserem, desde que o prato dela chegue com tudo separado."
+    },
+    {
+      "flag": "traduziu",
+      "no": "pd_c2_mesas",
+      "texto": "A tia Concetta pergunta algo à Pippa em italiano, e a Pippa traduz sem liberdade nenhuma, o que deixa a mesa com uma sinceridade que ninguém pediu."
+    },
+    {
+      "flag": "perdeu_newport",
+      "no": "pd_c2_planod",
+      "privadoDe": "A",
+      "texto": "No celular, a carta que você mandou para a noiva de Newport já tem visualização e nenhuma resposta, que é como o silêncio de cliente perdido costuma soar."
+    },
+    {
+      "flag": "sabe_novembro",
+      "no": "pd_c2_planod",
+      "privadoDe": "A",
+      "texto": "A planilha continua aberta numa aba do seu celular: com dois casamentos no ano, novembro está mais perto do que a segunda-feira."
+    },
+    {
+      "flag": "provas",
+      "no": "pd_c2_planod",
+      "privadoDe": "B",
+      "texto": "A prova da Deja Monteiro, com a nota mais alta da turma e o bilhete a lápis na margem, está dobrada no meio do seu caderno preto."
+    },
+    {
+      "flag": "pippa_filmou",
+      "no": "pd_c3_inicio",
+      "privadoDe": "A",
+      "texto": "A Pippa deixa o celular com a tela para baixo, ao lado da xícara, como prometeu."
+    },
+    {
+      "flag": "carta_deja",
+      "no": "pd_c3_inicio",
+      "privadoDe": "B",
+      "texto": "Na tela do seu celular, a carta de recomendação da Deja espera só o botão de enviar, com prazo na sexta."
+    },
+    {
+      "flag": "grupo_alunos",
+      "no": "pd_c2_bolo",
+      "privadoDe": "B",
+      "texto": "O celular vibra no seu bolso a cada trinta segundos: o grupo dos alunos descobriu que você lê as mensagens."
+    },
+    {
+      "flag": "graham_vem",
+      "no": "pd_c3_vinho",
+      "privadoDe": "A",
+      "texto": "No bolso de trás, o celular guarda a resposta do Graham, que você ainda não leu."
+    },
+    {
+      "flag": "mentiu_pippa",
+      "no": "pd_c3_vinho",
+      "privadoDe": "A",
+      "texto": "A frase que você deu à Pippa de manhã, *já passou*, volta junto com o vinho, e não desce tão bem quanto ele."
+    },
+    {
+      "flag": "quase_pippa",
+      "no": "pd_c3_manha",
+      "privadoDe": "A",
+      "texto": "A Pippa guardou o *um dia eu te conto* e olha para você de vez em quando, como quem anotou a data."
+    },
+    {
+      "flag": "funmi_sabe_ligou",
+      "no": "pd_c3_vinho",
+      "privadoDe": "B",
+      "texto": "A sua mãe sabe que o Tunde ligou e é a única pessoa da ilha que sabe e não perguntou nada. Isso pesa mais do que se tivesse perguntado."
+    },
+    {
+      "flag": "astaxantina",
+      "no": "pd_c3_dory",
+      "texto": "A Dory repete, entre uma garfada e outra, a palavra *astaxantina*, como quem experimenta um sabor novo."
+    },
+    {
+      "flag": "garra",
+      "no": "pd_c3_dory",
+      "texto": "A Dory olha a mão de quem quebrou a garra sem ferramenta e guarda a informação para uma futura negociação."
+    },
+    {
+      "flag": "lagosta_limpa",
+      "no": "pd_c3_dory",
+      "texto": "As cascas da lagosta aberta pelo tutorial estão no balde numa fila tão reta que a Dory as usa como régua."
+    },
+    {
+      "flag": "sem_pasta",
+      "no": "pd_c3_vinho",
+      "texto": "A pasta está no banco da caminhonete e, nesta mesa, pela primeira vez desde sábado, ninguém sabe qual é o plano C."
+    },
+    {
+      "flag": "noite3_nao",
+      "no": "pd_c3_cafe",
+      "texto": "À mesa, ninguém menciona a beira da água. É a pauta mais barulhenta do café."
+    },
+    {
+      "flag": "regra_mole",
+      "no": "pd_c4_inicio",
+      "texto": "No bolso do casaco, o guardanapo da Gull House com a regra 3 em azul: *o resto a gente vê*. No balcão de licenças, é a única regra que ninguém tenta cumprir."
+    },
+    {
+      "flag": "cafe_fuga",
+      "no": "pd_c3_fim",
+      "texto": "A pergunta que ficou sem resposta no café continua na mesa, entre a manteiga e a geleia, onde a Rosa a vê e a Pippa a anota."
+    },
+    {
+      "flag": "cafe_sorriso",
+      "no": "pd_c3_fim",
+      "texto": "O sorriso que escapou para o prato ainda está lá. A Rosa jura que viu e não comentou, o que, para a Rosa, é um ato de heroísmo."
+    },
+    {
+      "flag": "rosa_desconfia",
+      "no": "pd_c4_porao",
+      "texto": "Lá em cima, a Rosa ainda defende as peônias para quem quiser escutar, o que, a esta altura, não é ninguém."
+    },
+    {
+      "flag": "mentiu_rosa2",
+      "no": "pd_c4_macieira",
+      "privadoDe": "A",
+      "texto": "A mão da Rosa deixou na sua uma frase, *você é forte*, que serve para tudo e não consola ninguém."
+    },
+    {
+      "flag": "quase_rosa",
+      "no": "pd_c4_macieira",
+      "privadoDe": "A",
+      "texto": "A frase que você largou no meio, *não foi ele*, continua de pé no banco, esperando o resto."
+    },
+    {
+      "flag": "ensaiou",
+      "no": "pd_c4_macieira",
+      "privadoDe": "B",
+      "texto": "Os três começos que você ensaiou para a estufa estão na ponta da língua, em ordem, e nenhum serve para um banco de dois lugares."
+    },
+    {
+      "flag": "ouviu_riso",
+      "no": "pd_c4_macieira",
+      "privadoDe": "B",
+      "texto": "O último segundo do recado, o ar que o Tunde soltou quase rindo, não sai da sua cabeça. Foi o único som da gravação que não pedia desculpa."
+    },
+    {
+      "flag": "releu_regra",
+      "no": "pd_c4_parede",
+      "privadoDe": "B",
+      "texto": "O guardanapo da Gull House está dobrado na sua carteira, com o item 2 virado para dentro."
+    },
+    {
+      "flag": "rosa_funmi",
+      "no": "pd_c5_aula",
+      "privadoDe": "A",
+      "texto": "Você sabe que a dança das mães é uma frente de batalha entre a Rosa e a Funmi, e que a Mrs. Starbuck, de bengala, não faz ideia de que está no meio."
+    },
+    {
+      "flag": "a_espera",
+      "no": "pd_c4_fim",
+      "texto": "Ficou combinado, num banco debaixo da macieira, que a verdade pode esperar até quinta. A Pippa, que não estava lá, escreve *quinta* na lousa sem saber por quê."
+    },
+    {
+      "flag": "discurso_ajuda",
+      "no": "pd_c4_fim",
+      "texto": "O discurso de padrinho, versão dezessete, ganhou uma ajuda que ninguém comenta em voz alta."
+    },
+    {
+      "flag": "banda_playlist",
+      "no": "pd_c5_ensaio",
+      "texto": "Os primos da Dory estão no ensaio apesar de a playlist ter ganhado, e o tio Armando afina o acordeão como quem não aceitou perder."
+    },
+    {
+      "flag": "conduziu",
+      "no": "pd_c5_fim",
+      "texto": "Na saída, a Mrs. Starbuck anotou na caderneta de capa de couro: *quem conduz precisa aprender a ser conduzido*. Ninguém viu para quem ela olhava ao escrever."
+    },
+    {
+      "flag": "funana_ok",
+      "no": "pd_c5_fim",
+      "texto": "O tio Armando, que não elogia ninguém, chama quem dançou o funaná de *o único turista com joelho*."
+    },
+    {
+      "flag": "funana_torto",
+      "no": "pd_c5_fim",
+      "texto": "O tio Armando, que não perdoa, imita a dança torta para os primos, e os primos riem para dentro, por educação."
+    },
+    {
+      "flag": "repertorio",
+      "no": "pd_c5_fim",
+      "texto": "A lista do tio Armando ganhou uma linha a lápis, na margem: *morna só depois do bolo*."
+    },
+    {
+      "flag": "zumbido",
+      "no": "pd_c5_fim",
+      "texto": "O baixo do primo da Dory toca limpo, sem o zumbido, e ele agradece a quem achou o pino serrado com um aceno que, na família Barros, equivale a uma medalha."
+    },
+    {
+      "flag": "bilhete_vestido",
+      "no": "pd_c5_banda",
+      "privadoDe": "A",
+      "texto": "O quadradinho de pano com linha azul que você achou na barra do vestido continua no seu bolso, e a banda, ao fundo, afina qualquer coisa que não tem nada a ver com ele."
+    },
+    {
+      "flag": "pediu_graham",
+      "no": "pd_c5_ensaio",
+      "privadoDe": "A",
+      "texto": "A balsa das nove e vinte de amanhã já está na sua agenda, entre a lagosta e a valsa, como um compromisso que você não marcou."
+    },
+    {
+      "flag": "viu_vestido",
+      "no": "pd_c5_ensaio",
+      "privadoDe": "A",
+      "texto": "A barra marcada com alfinete, na foto do seu vestido, continua desenhada atrás dos seus olhos quando o acordeão começa."
+    },
+    {
+      "flag": "borra_cafe",
+      "no": "pd_c5_banda",
+      "privadoDe": "B",
+      "texto": "As suas unhas ainda têm terra de hortênsia e borra de café, o que, na Gull House, conta como credencial."
+    },
+    {
+      "flag": "estufa_torta",
+      "no": "pd_c5_banda",
+      "privadoDe": "B",
+      "texto": "Você pensa na estufa torta do Barnaby: duas pessoas, dois materiais, uma estrutura que não caiu."
+    },
+    {
+      "flag": "medo_barco",
+      "no": "pd_c5_ensaio",
+      "privadoDe": "B",
+      "texto": "O que o Barnaby disse sobre beijo ser fácil roda na sua cabeça mais alto do que o acordeão."
+    },
+    {
+      "flag": "pippa_esperar",
+      "no": "pd_c5_fim",
+      "privadoDe": "A",
+      "texto": "A Pippa guardou o vídeo na pasta *rascunho*, onde ele fica, de lente para cima, esperando o prazo que você deu."
+    },
+    {
+      "flag": "pippa_futuro",
+      "no": "pd_c5_fim",
+      "privadoDe": "A",
+      "texto": "A Pippa anda meio centímetro mais alta e jura que é do sapato."
+    },
+    {
+      "flag": "pippa_video",
+      "no": "pd_c5_fim",
+      "privadoDe": "A",
+      "texto": "O que a Pippa viu no seu rosto, naquele segundo do vídeo, é a coisa mais fácil de negar e a mais difícil de esquecer."
+    },
+    {
+      "flag": "funmi_cardiga",
+      "no": "pd_c5_fim",
+      "privadoDe": "B",
+      "texto": "A cardigã azul-marinho da sua mãe, grande nos ombros e perfeita nas mangas, está nas suas costas, e o cheiro dela chega antes dos seus pensamentos."
+    },
+    {
+      "flag": "funmi_cruzadas",
+      "no": "pd_c5_fim",
+      "privadoDe": "B",
+      "texto": "A grade de palavras cruzadas, completa a caneta, é o único documento da semana em que nada ficou em branco."
+    },
+    {
+      "flag": "funmi_prometeu_de_novo",
+      "no": "pd_c5_fim",
+      "privadoDe": "B",
+      "texto": "Pela segunda vez, a sua mãe prometeu contar *depois*, e você, que corrige prova há onze anos, sabe contar quantos *depois* ainda faltam."
+    },
+    {
+      "flag": "cadeiras_porto",
+      "no": "pd_c6_carro",
+      "texto": "Uma cadeira dobrável, a única que a maré levou, boia no porto com a dignidade de um barco pequeno."
+    },
+    {
+      "flag": "estaca",
+      "no": "pd_c6_carro",
+      "texto": "A estaca do canto, abraçada por três minutos, ainda tem a marca de duas mãos na corda molhada."
+    },
+    {
+      "flag": "luzes_salvas",
+      "no": "pd_c6_carro",
+      "texto": "As luzinhas, enroladas em carretel, secam na varanda do clube, ainda acesas, e a Pippa jura que isso é sinal."
+    },
+    {
+      "flag": "c6a_barnaby",
+      "no": "pd_c6_carro",
+      "privadoDe": "A",
+      "texto": "A corda que chega às nove e vinte e cinco é do Barnaby, que atendeu no oitavo toque e preferiu não comentar o horário."
+    },
+    {
+      "flag": "c6a_lonas",
+      "no": "pd_c6_carro",
+      "privadoDe": "A",
+      "texto": "O plano de proteger só o corredor central e a mesa dos noivos está na sua cabeça como rota de evacuação: tudo o que fica de fora é perda aceita."
+    },
+    {
+      "flag": "c6b_carta",
+      "no": "pd_c6_carro",
+      "privadoDe": "B",
+      "texto": "O cheiro de cebola e de capa de pesca da marquise da Dory ainda está nas suas mãos, junto com a chave que ela sabia onde estava."
+    },
+    {
+      "flag": "c6b_luz",
+      "no": "pd_c6_carro",
+      "privadoDe": "B",
+      "texto": "O disjuntor doze, o que tinha caído, tem agora uma etiqueta de fita crepe com a sua letra: *não mexer*."
+    },
+    {
+      "flag": "cobertor",
+      "no": "pd_c6_espera",
+      "texto": "O cobertor de mudança continua aberto em cima do banco, e o jogo do copo corre, pergunta por pergunta, por baixo dele ou ao lado."
+    },
+    {
+      "flag": "pasta_seca",
+      "no": "pd_c6_espera",
+      "texto": "O barulho dos dois sacos plásticos da pasta ainda ecoa na cabine, e cada vez que alguém se mexe, a pasta comenta."
+    },
+    {
+      "flag": "noite6_nao",
+      "no": "pd_c6_fim",
+      "texto": "O terceiro degrau da escada dos fundos range a cada passagem, e o Barnaby, de ouvido apurado, já aprendeu a distinguir quem desce de quem sobe."
+    },
+    {
+      "flag": "assobio",
+      "no": "pd_c7_carteira",
+      "texto": "Uma melodia sem dono ficou no ar da cozinha, e o Barnaby, que jura não ouvir, a assobia pela metade quando acha que ninguém repara."
+    },
+    {
+      "flag": "cafe7",
+      "no": "pd_c7_carteira",
+      "texto": "A caneca lascada, cheia do jeito certo, esfria na bancada sem que ninguém diga uma palavra sobre ela."
+    },
+    {
+      "flag": "dez_minutos",
+      "no": "pd_c7_carteira",
+      "texto": "No banco de vime da varanda ficou a forma de quem passou dez minutos sem arrumar nada, e o Barnaby, que cronometrou por hábito, não diz quanto durou."
+    },
+    {
+      "flag": "v18",
+      "no": "pd_c7_carteira",
+      "texto": "O caderno preto, aberto na versão dezoito, tem agora uma segunda frase que não precisou de borracha."
+    },
+    {
+      "flag": "leu_planod",
+      "no": "pd_c7_briga",
+      "privadoDe": "A",
+      "texto": "A página D, lida a sós esta manhã, está de novo dobrada dentro da pasta, e a tranca quebrada do quarto três faz um barulho que parece vir dela."
+    },
+    {
+      "flag": "falou_graham",
+      "no": "pd_c7_recados",
+      "texto": "No celular de {{A.ref}}, nenhuma mensagem nova do Graham: pela primeira vez em nove meses, o silêncio dele não pesa."
+    },
+    {
+      "flag": "funmi_quase",
+      "no": "pd_c7_recados",
+      "texto": "A juíza Funmi não terminou a frase que começou com *você brigou com*. A frase, no entanto, terminou sozinha."
+    },
+    {
+      "flag": "c7c_azul",
+      "no": "pd_c7_recados",
+      "privadoDe": "A",
+      "texto": "Os doze vasos azuis esperam em fila, embrulhados em papel de jornal, e cada vez que você passa a carriola range o nome da cor."
+    },
+    {
+      "flag": "c7c_ruth",
+      "no": "pd_c7_recados",
+      "privadoDe": "A",
+      "texto": "O nome da Ruth, que o Barnaby não diz sem baixar a voz, ficou entre os vasos."
+    },
+    {
+      "flag": "c7c_janela",
+      "no": "pd_c7_recados",
+      "privadoDe": "A",
+      "texto": "O vidro quebrado do canto da estufa agora tem nome, e você olha para ele como para um velho amigo do Barnaby."
+    },
+    {
+      "flag": "c7d_foto",
+      "no": "pd_c7_recados",
+      "privadoDe": "B",
+      "texto": "A foto torta do cartaz, com o reflexo do seu ombro no vidro, está na galeria do celular, entre duas capturas de tela de recados."
+    },
+    {
+      "flag": "c7d_zelador",
+      "no": "pd_c7_recados",
+      "privadoDe": "B",
+      "texto": "O zelador de camisa de flanela ficou na sua memória como a única pessoa da semana que respondeu sem enfeite."
+    },
+    {
+      "flag": "a_ouviu_tunde",
+      "no": "pd_c8_fim",
+      "privadoDe": "A",
+      "texto": "O pedido do Tunde ficou com você: *adia, sem dizer por quê*. É o único pedido da semana que você não consegue transformar em item de pasta."
+    },
+    {
+      "flag": "dica_pike",
+      "no": "pd_c8_brindes",
+      "texto": "O Judge Pike, de pijama em Hyannis, ficou como uma voz atravessada pela neblina, e é a lembrança que a cozinha guarda de uma solução que não existe."
+    },
+    {
+      "flag": "funmi_promete",
+      "no": "pd_c8_fim",
+      "texto": "A juíza Funmi, que não pode celebrar nada em Massachusetts, prometeu outra coisa, e quem a ouviu sabe que o *depois* dela agora tem data."
+    },
+    {
+      "flag": "rosa_hortensia",
+      "no": "pd_c8_brindes",
+      "texto": "A Rosa, calada pela primeira vez em três dias, olha as hortênsias azuis pela janela da cozinha como quem faz as pazes com uma cor."
+    },
+    {
+      "flag": "som_tunde",
+      "no": "pd_c8_brindes",
+      "texto": "O sistema de som da tenda zumbe baixinho, bem montado, e o Tunde olha para ele, de longe, com o orgulho de quem encontrou uma tarefa que cabe nas mãos."
+    },
+    {
+      "flag": "brinde_gemma",
+      "no": "pd_c8_fim",
+      "texto": "O brinde de verdade para a Gemma, dito sem papel, ficou no ar da cozinha como uma promessa pública: *confiança, não pressa*."
+    },
+    {
+      "flag": "brinde_tunde",
+      "no": "pd_c8_fim",
+      "texto": "A bicicleta de vinte anos do Tunde entrou num brinde sem caderno, e a cozinha, que ria, ficou um instante em silêncio quando ele ouviu."
+    },
+    {
+      "flag": "b_cabos9",
+      "no": "pd_c9_panico",
+      "privadoDe": "B",
+      "texto": "Os cabos que você enrolou em silêncio, de manhã, estão numa pilha arrumada ao lado da mesa de som. É a única coisa na tenda que ninguém precisa conferir duas vezes."
+    },
+    {
+      "flag": "b_equacao9",
+      "no": "pd_c9_panico",
+      "privadoDe": "B",
+      "texto": "As nove horas de que você falou de manhã viraram vinte e cinco minutos, e a equação que parecia tão limpa de manhã agora tem uma incógnita do tamanho de um microfone."
+    },
+    {
+      "flag": "b_ouviu_recado9",
+      "no": "pd_c9_panico",
+      "privadoDe": "B",
+      "texto": "A voz do Tunde, de dois de junho, ainda sai da caixa de som na sua cabeça, mais baixa, mais perto, e dessa vez você sabe de quem ela está falando."
+    },
+    {
+      "flag": "vento_calculo",
+      "no": "pd_c9_cerimonia2",
+      "texto": "As quatro estacas do lado do mar seguram a lona num ângulo que alguém calculou de cabeça, e o vento, que mudou duas vezes, desiste na terceira."
+    },
+    {
+      "flag": "vento_lideranca",
+      "no": "pd_c9_cerimonia2",
+      "texto": "Os primos Barros, de avental, ainda andam em fila indiana por onde o apito de dois dedos mandou, como uma procissão de lagosta."
+    },
+    {
+      "flag": "graham_aceno",
+      "no": "pd_c9_cerimonia2",
+      "texto": "Na terceira fila, o Graham, que chegou em quarenta segundos, acena uma vez para a Rosa e uma vez, bem menor, para a primeira fila."
+    },
+    {
+      "flag": "graham_cumprimento",
+      "no": "pd_c9_cerimonia2",
+      "texto": "O aperto de mão do Graham, no meio do gramado, foi o primeiro em nove meses que não pesou, e a Rosa, que viu de longe, finge que está olhando as peônias que não vieram."
+    },
+    {
+      "flag": "graham_apresentou",
+      "no": "pd_c9_cerimonia2",
+      "texto": "Na mesa onze, o tio Sal e o Graham trocam duas frases de cortesia, uma de futebol e uma de lasanha, e é o diálogo mais pacífico do dia."
+    },
+    {
+      "flag": "graham_perguntou",
+      "no": "pd_c9_cerimonia2",
+      "texto": "*Estou melhor do que quando a gente terminou*, o Graham tinha dito, baixinho, e a frase flutua por entre as cadeiras como uma toalha de mesa que ninguém sabe de quem é."
+    },
+    {
+      "flag": "gesto_pasta",
+      "no": "pd_c10_salao",
+      "texto": "A pasta de couro, quatro dedos de grossura, mudou de mãos esta noite e ainda está na mesa mais próxima, aberta no plano D, como um bicho que acabou de aprender a dormir longe do dono."
+    },
+    {
+      "flag": "gesto_quase",
+      "no": "pd_c10_salao",
+      "texto": "A tenda guardou a frase de quem subiu na cadeira para pedir ajuda em voz alta. Ela não se repete, mas as cadeiras empilhadas do fundo parecem mais alinhadas por causa dela."
+    },
+    {
+      "flag": "final_ruptura",
+      "no": "pd_c10_amanhecer",
+      "texto": "As setenta cadeiras de cada lado ficaram em duas pilhas retas, simétricas, e a pista de madeira, vazia no meio, parece a régua de uma conta que não fechou."
+    },
+    {
+      "flag": "dory_proposta",
+      "no": "pd_c10_salao",
+      "privadoDe": "A",
+      "texto": "O cheiro de palha de aço e manteiga clarificada ainda está nas suas mãos, e a conta que a Dory deixou no ar não é de dinheiro."
+    },
+    {
+      "flag": "dory_receita",
+      "no": "pd_c10_salao",
+      "privadoDe": "A",
+      "texto": "O papelzinho tão gasto que parece pano, a receita da avó da Dory, ficou na sua memória na letra dela, que você só viu por cima do ombro dela."
+    },
+    {
+      "flag": "dory_socia",
+      "no": "pd_c10_salao",
+      "privadoDe": "A",
+      "texto": "Sete casamentos por ano ficaram anotados no seu caderno com a letra de quem faz a conta antes de pensar, e você ainda não decidiu se isso é um começo ou uma fuga."
+    },
+    {
+      "flag": "b_ruth",
+      "no": "pd_c10_salao",
+      "privadoDe": "B",
+      "texto": "*Ela diria que a gente se achou*, o Barnaby disse, e a frase, que você ia guardar para depois, já escolheu um lugar para morar no seu caderno preto."
+    },
+    {
+      "flag": "b_silencio_cais",
+      "no": "pd_c10_salao",
+      "privadoDe": "B",
+      "texto": "A lanterna acesa na popa do *Maria do Fogo*, que ninguém apagou, ainda balança atrás dos seus olhos como um batimento."
+    },
+    {
+      "flag": "b_vaga_ilha",
+      "no": "pd_c10_salao",
+      "privadoDe": "B",
+      "texto": "A frase que você disse em voz alta a um velho florista, *não sei se volto*, deixou de ser só sua, e o peso dela agora tem ouvido."
+    }
+  ]
+}

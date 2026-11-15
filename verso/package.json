@@ -1,0 +1,36 @@
+{
+  "name": "verso",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint:livros": "tsx scripts/lint-livros.ts",
+    "sim": "tsx scripts/sim.ts",
+    "trilha": "tsx scripts/trilha.ts",
+    "contar": "tsx scripts/contar.ts",
+    "migrar:padrinhos": "tsx scripts/migracao/converter.mjs",
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100"
+  },
+  "dependencies": {
+    "next": "^15.5.29",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "acorn": "^8.19.0",
+    "acorn-walk": "^8.3.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
