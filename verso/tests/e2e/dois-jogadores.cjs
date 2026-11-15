@@ -117,7 +117,14 @@ async function passo(page, seat, tag, votou) {
         await B.locator('.cena').first().waitFor({ timeout: 10000 });
         console.log('  (B caiu e voltou no passo', passos + ')');
       }
-      if (!agiu) { ciclosSemAgir++; await new Promise((r) => setTimeout(r, 400)); if (ciclosSemAgir > 400) break; } else ciclosSemAgir = 0;
+      if (!agiu) { ciclosSemAgir++; await new Promise((r) => setTimeout(r, 400)); if (ciclosSemAgir > 120) {
+          for (const [nome, p] of [['A', A], ['B', B]]) {
+            const corpo = (await p.locator('body').innerText()).replace(/\n+/g, ' ⏎ ');
+            const ops = await p.locator('[aria-label="Suas escolhas"] button').evaluateAll((els) => els.map((e) => `${e.getAttribute('data-opcao')}${e.disabled ? '(desab)' : ''}`)).catch(() => []);
+            console.log(`  TRAVADO ${nome}: tipo=${await p.locator('[aria-label="Suas escolhas"]').getAttribute('data-tipo').catch(() => '-')} opcoes=${JSON.stringify(ops)} fim=${corpo.slice(-260)}`);
+          }
+          break;
+        } } else ciclosSemAgir = 0;
       await new Promise((r) => setTimeout(r, 60));
     }
     checa(await fimDe(A) && await fimDe(B), `os dois chegaram ao fim (passos=${passos})`);
