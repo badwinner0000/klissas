@@ -2745,11 +2745,392 @@
       "hora": "Sexta · 21h00",
       "texto": "Às nove da noite de sexta, a Casa Bianchini cheira a manjericão e a lenha: a signora Ottavia, no andar de baixo, preparou uma sopa de pão e feijão, e a deixou, sem aviso, em uma panela de ferro, na porta do apartamento, com uma colher de pau enfiada e um bilhete, em italiano, que as duas, ao mesmo tempo, não entendem e entendem.\n\n{{se flag:a_contou_giulia}}Uma das duas, no café da Piazza Salimbeni, contou a uma amiga o que ainda não disse à outra. {{/se}}{{se flag:a_perguntou_espera}}Uma das duas aprendeu, de uma italiana, que se espera alguém *com um prato de comida na mesa*. {{/se}}{{se flag:b_confessou_matteo}}A outra confessou, a um orientador, em voz baixa, que a distração tem nome. {{/se}}{{se flag:b_defendeu_controle}}A outra defendeu, a um orientador, um método que já não sustenta. {{/se}}{{se flag:b_calou_matteo}}A outra calou diante de um limoeiro, e foi entendida. {{/se}}\n\nNenhuma das duas está na sala. As duas chegam, uma de cada lado do vicolo, com cinco minutos de diferença, e se encontram, de novo, na porta verde, número quatro, diante da panela de sopa que cheira a casa.\n\nA mesa dobrável, na cozinha, tem duas tigelas, duas colheres e uma cadeira puxada, que alguém deixou de propósito, na ponta oposta. Ninguém comenta. As duas se sentam, e a sopa, pela primeira vez em uma semana, tem a temperatura de uma trégua.",
       "gancho": "Uma panela de sopa na porta, duas tigelas na mesa e uma trégua por servir.",
+      "ir": "ts_c7_cozinha"
+    },
+    "ts_c7_cozinha": {
+      "tipo": "segue",
+      "cap": 7,
+      "lugar": "Cozinha, Casa Bianchini",
+      "hora": "Sexta · 21h30",
+      "npcs": [
+        "ottavia"
+      ],
+      "ir": "ts_c7_dialogo",
+      "texto": "A sopa de pão e feijão da signora Ottavia tem o cheiro de uma casa que não é de nenhuma das duas. Uma colher de azeite, no meio da tigela, desenha um círculo dourado. O pão, amolecido, desmancha com a ponta da colher. A mesa dobrável, que balança, tem agora um guardanapo dobrado em quatro sob a perna curta, e duas velas de pote, acesas, que ninguém lembra de ter posto.\n\nHá uma semana, as duas não se sentavam à mesma mesa sem um livro entre elas. Hoje, a única coisa entre elas é uma panela de ferro e um silêncio que, pela primeira vez, não pede desculpa.\n\n{{se flag:b_confessou_matteo}}Uma delas sai de uma conversa em que disse, a um orientador, a palavra *medo*. {{/se}}{{se flag:a_contou_giulia}}A outra sai de uma conversa em que contou, a uma amiga, o que ainda não disse. {{/se}}Alguém, a certa altura, vai ter de dizer o primeiro nome do que aconteceu."
+    },
+    "ts_c7_dialogo": {
+      "tipo": "dialogo",
+      "cap": 7,
+      "lugar": "Cozinha, Casa Bianchini",
+      "hora": "Sexta · 21h45",
+      "comeca": "A",
+      "texto": "Do lado de fora, a noite de Siena tem o cheiro de fumaça de lenha e de chuva distante. Na cozinha, as velas tremem a cada vez que alguém respira. A sopa, depois de dois minutos de silêncio, está pela metade.\n\nA conversa, que ninguém pediu, chega pelo caminho mais torto: pelos ex-namorados.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "q0_a_abre",
+              "texto": "— Eu tive um ex. Quatro anos. Eu fugi dele para vir aqui. Eu nunca contei para ninguém.",
+              "se": "eu:A",
+              "efeitos": {
+                "flag": "a_contou_ex",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "q0_a_flerte",
+              "texto": "— E você? Alguma história de amor trágica, de biblioteca, com um bibliotecário de bigode?",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "q0_a_seco",
+              "texto": "— A sopa está boa. É a coisa mais italiana que eu já comi.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "q0_b_abre",
+              "texto": "— Eu não tive nenhum. Namorado, namorada, nada. Nunca.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "b_contou_nunca",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "q0_b_seco",
+              "texto": "(Mexer a sopa em círculos, sem levantar os olhos, e esperar.)",
+              "se": "eu:B",
+              "acao": true
+            },
+            {
+              "tom": "cuida",
+              "tag": "q0_b_cuida",
+              "texto": "— Eu fiz a sopa durar. Tem mais na panela, se você quiser.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "q1_b_abre",
+              "texto": "— Eu nunca soube como se começa. Eu tinha medo de que, se começasse, eu parasse de estudar.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "q1_b_seco",
+              "texto": "— Eu fugi também. Só que eu fugi para dentro. Para dentro dos livros.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "q1_b_cuida",
+              "texto": "— Quatro anos é muito tempo. Deve ter sido difícil ir embora.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "q1_a_abre",
+              "texto": "— Eu não sabia. Eu achei que você tinha... achei que você sabia tudo.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "q1_a_cuida",
+              "texto": "— Obrigad{{eu.o_a}} por me contar. Eu sei que não é fácil.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "q1_a_seco",
+              "texto": "(Ficar em silêncio, de olhos na tigela, e deixar a frase existir.)",
+              "se": "eu:A",
+              "acao": true
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "q2_a_abre",
+              "texto": "— Eu achei que o beijo tinha sido um erro seu. Eu achei que você tinha se arrependido de mim.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "q2_a_cuida",
+              "texto": "— A gente não precisa falar disso hoje. Eu espero. De verdade.",
+              "se": "eu:A",
+              "efeitos": {
+                "flag": "a_deu_espaco",
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "q2_a_flerte",
+              "texto": "— Tá. Mas eu não vou fingir que a noite do terraço não aconteceu.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "q2_b_abre",
+              "texto": "— Eu não me arrependi de você. Eu me arrependi de ter fugido.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "q2_b_seco",
+              "texto": "— Eu preciso de tempo. Eu sei que é injusto. Mas é verdade.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "q2_b_cuida",
+              "texto": "— Eu tenho medo de te machucar. Eu não sei como não machucar.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da mesa é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "q3_b_abre",
+              "texto": "— Obrigad{{eu.o_a}}. Por não pedir pressa. Ninguém nunca me deu isso.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "q3_b_seco",
+              "texto": "— Boa noite. Amanhã, às seis, a cozinha é minha. Mas eu deixo o café pronto.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "q3_b_cuida",
+              "texto": "(Empurrar a panela, devagar, para o lado da outra pessoa, e levantar.)",
+              "se": "eu:B",
+              "acao": true
+            },
+            {
+              "tom": "abre",
+              "tag": "q3_a_abre",
+              "texto": "— Eu espero. O tempo que for. Eu levo mais jeito para isso do que aparento.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 2
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "q3_a_flerte",
+              "texto": "— Boa noite. E obrigad{{eu.o_a}} pela sopa. Eu vou sonhar com ela.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "q3_a_seco",
+              "texto": "(Soprar uma das velas e deixar a outra acesa, sem explicação.)",
+              "se": "eu:A",
+              "acao": true
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "(Servir mais sopa na tigela da outra pessoa, sem perguntar.)",
+          "acao": true
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "(Olhar a chama da vela, que balança, e esperar que ela firme.)",
+          "acao": true
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "(Sorrir para a tigela, só para ela, e esconder com a mão.)",
+          "acao": true
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu não sei dizer isso direito. Mas eu estou tentando."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "(Largar a colher na tigela, com um tilintar seco, e cruzar os braços.)",
+          "acao": true
+        }
+      ],
+      "fecho": "A signora Ottavia, no andar de baixo, bate, com o cabo da vassoura, duas vezes no teto, em compasso curto, o de quem apenas confere se as duas continuam vivas. As duas olham para cima, e uma ri, e a outra, depois de um segundo, também. A vela que sobrou tem um halo dourado.",
+      "ir": "ts_c7_decisao"
+    },
+    "ts_c7_decisao": {
+      "tipo": "decisao",
+      "cap": 7,
+      "lugar": "Cozinha, Casa Bianchini",
+      "hora": "Sexta · 23h00",
+      "texto": "Dizer a verdade, em voz alta, é como abrir uma janela em um quarto fechado: entra ar, e entra frio. As duas ficam um tempo em silêncio, de pé, na cozinha, com as tigelas vazias. Falta decidir o que fazer com o que foi dito.",
+      "pergunta": "O que as duas fazem com a verdade?",
+      "ir": {
+        "A": "ts_c7_noite_a",
+        "B": "ts_c7_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "tempo",
+          "texto": "Dar tempo: combinar, em voz alta, que não há pressa e que nada precisa ser decidido até o fim do mês",
+          "efeitos": {
+            "flag": "combinaram_tempo",
+            "vinculo": 2
+          },
+          "resultado": "Vocês combinam, em voz alta, sem aperto de mão: nada precisa ser decidido até o fim do mês. É uma promessa curta, e a coisa mais generosa que uma das duas ouviu, e a mais difícil de cumprir que a outra prometeu. A vela, que sobrou, queima um pouco mais forte."
+        },
+        {
+          "id": "regra",
+          "texto": "Fazer uma regra: cada uma dorme do seu lado, sem travesseiro no meio, e as duas conversam se alguma quiser",
+          "efeitos": {
+            "flag": "regra_sem_travesseiro",
+            "vinculo": 1
+          },
+          "resultado": "Vocês combinam uma regra nova: sem travesseiro no meio. É uma regra de confiança, de duas pessoas que sabem, ao mesmo tempo, que a confiança precisa de um gesto. O travesseiro, que voltou na semana do silêncio, é levado, por uma das duas, de volta à cabeceira, e ninguém comenta."
+        },
+        {
+          "id": "nada",
+          "texto": "Não combinar nada: deixar a sopa, a noite e a vela falarem, e ver o que vem de manhã",
+          "efeitos": {
+            "flag": "nada_combinado"
+          },
+          "resultado": "Vocês não combinam nada. É uma decisão de duas pessoas que acabaram de aprender que nem tudo precisa de plano, e que uma delas, que sempre fez plano, acaba de descobrir quanto custa não ter um. A vela, no fim, apaga sozinha."
+        }
+      ]
+    },
+    "ts_c7_noite_a": {
+      "tipo": "solo",
+      "cap": 7,
+      "seat": "A",
+      "lugar": "Quarto, Casa Bianchini",
+      "hora": "Sábado · 00h20",
+      "texto": "Na cama, de lado, de olhos abertos, você olha o teto de madeira, onde a luz da vela da cozinha, que vem pela porta entreaberta, desenha uma faixa fina e dourada. A pessoa que dorme, a um palmo, respira devagar. Há cinco dias que as duas dormem de costas uma para a outra. Hoje, de algum modo, não.\n\nVocê pensa no que ouviu: *eu nunca tive nenhum*. Pensa que, para uma pessoa que nunca teve ninguém, uma noite, uma boca, um beijo debaixo de um arco, deve ter tido o peso de uma queda. E pensa na sua própria vida, no ex de quatro anos, na casa em Los Angeles, na mãe que diz *estamos tentando algumas coisas*, e entende, por fim, que as duas fogem do mesmo tamanho de silêncio.\n\nO seu coração, que sempre soube se defender com barulho, está, pela primeira vez, só.",
+      "acoes": [
+        {
+          "id": "esperar",
+          "texto": "Deixar a mão, de propósito, aberta no meio da cama, sem tocar, como um convite sem obrigação",
+          "ir": "ts_c7_fim",
+          "efeitos": {
+            "flag": "a_deixou_mao",
+            "vinculo": 2
+          },
+          "resultado": "Você deixa a mão no meio da cama, de palma para cima, aberta, sem apertar nada, sem pedir nada. Um convite sem prazo. Você fecha os olhos, e o sono, devagar, vem. Em algum ponto da madrugada, uma coisa quente toca, de leve, a ponta dos seus dedos, e desaparece. Você não abre os olhos. Mas sorri."
+        },
+        {
+          "id": "virar",
+          "texto": "Virar de costas, para respeitar o espaço da outra pessoa, e dormir, mesmo sem sono",
+          "ir": "ts_c7_fim",
+          "efeitos": {
+            "flag": "a_virou_costas",
+            "abalo": 1
+          },
+          "resultado": "Você vira de costas, devagar, para o lado da parede, e abraça o travesseiro. É um gesto de respeito, e de saudade, e você, que nunca respeitou uma regra na vida, a cumpre com uma disciplina que lhe parece, de repente, uma forma de amor. Dorme às quatro, com a sensação de ter dito uma coisa que ninguém ouviu."
+        },
+        {
+          "id": "escrever",
+          "texto": "Pegar o caderno de croquis, no escuro, e desenhar, de memória, a mão da outra pessoa segurando o guarda-chuva",
+          "ir": "ts_c7_fim",
+          "efeitos": {
+            "flag": "a_desenhou_mao",
+            "vinculo": 1
+          },
+          "resultado": "Você pega o caderno de croquis e o lápis, e, à luz da vela que vem da cozinha, desenha, de memória, uma mão em um cabo de madeira em cabeça de pássaro: os dedos longos, as unhas curtas, o calo de segurar lápis. O traço, que sempre foi rápido, sai devagar. Quando termina, às duas, você fecha o caderno, e o põe na cômoda, aberto, de propósito."
+        }
+      ]
+    },
+    "ts_c7_noite_b": {
+      "tipo": "solo",
+      "cap": 7,
+      "seat": "B",
+      "lugar": "Quarto, Casa Bianchini",
+      "hora": "Sábado · 00h20",
+      "texto": "Na cama, de costas, de olhos abertos, você olha a faixa dourada que a vela desenha no teto. A pessoa a seu lado, que lhe contou do ex de quatro anos e que, em seguida, não lhe pediu nada, respira devagar. Há quatro dias que você não consegue dormir.\n\nVocê pensa na frase que lhe saiu, de um modo que não esperava: *eu não tive nenhum, nunca*. Dita em voz alta, numa cozinha, diante de uma sopa, com a luz de uma vela, a frase não pesou. Ao contrário. Saiu, e deixou no peito um espaço que você não sabia que tinha. E a resposta, em vez de piedade, foi um *eu espero*.\n\nVocê, que planejou cada passo, não planejou isto. Nem previu a possibilidade de uma pessoa lhe dar tempo sem lhe cobrar o resultado.",
+      "acoes": [
+        {
+          "id": "tocar",
+          "texto": "Estender a mão, devagar, no escuro, até encostar, de leve, na ponta dos dedos da outra pessoa",
+          "ir": "ts_c7_fim",
+          "efeitos": {
+            "flag": "b_tocou_dedos",
+            "vinculo": 2
+          },
+          "resultado": "Você estende a mão, no escuro, centímetro por centímetro, como quem procura um interruptor. Encontra, no lençol, uma palma aberta, quente, sem apertar. Toca, com a ponta dos dedos, a ponta de outros dedos, uma vez, de leve. Retira. O coração bate com uma força que parece audível, e a respiração ao lado, sem mudar de ritmo, continua. Você adormece, finalmente, com um calor na mão."
+        },
+        {
+          "id": "ficar",
+          "texto": "Ficar em silêncio, de olhos abertos, na própria metade, e deixar a noite passar sem fazer nada",
+          "ir": "ts_c7_fim",
+          "efeitos": {
+            "flag": "b_ficou_quieta",
+            "abalo": 1
+          },
+          "resultado": "Você não faz nada. Fica na sua metade, de olhos abertos, de costas, de mãos cruzadas sobre o peito. O tempo, no escuro, tem a textura de uma dúvida. Você ouve a respiração da outra pessoa, lenta, a cada vez mais longe, e, às três, descobre que está chorando, sem som, de uma coisa que não é tristeza."
+        },
+        {
+          "id": "anotar",
+          "texto": "Acender o abajur, devagar, sem acordar ninguém, e escrever, numa ficha em branco, o que sente",
+          "ir": "ts_c7_fim",
+          "efeitos": {
+            "flag": "b_escreveu_ficha",
+            "vinculo": 1
+          },
+          "resultado": "Você acende o abajur, baixa o brilho com a mão, pega uma ficha em branco e escreve, na letra firme de sempre: *tenho medo de ser feliz.* Olha a frase um tempo. Não a risca. Dobra a ficha em quatro e a guarda dentro do livro de Vasari, na página trinta e dois, entre uma anotação sobre Simone Martini e uma sobre o céu."
+        }
+      ]
+    },
+    "ts_c7_fim": {
+      "tipo": "fim",
+      "cap": 7,
+      "lugar": "Casa Bianchini, Siena",
+      "hora": "Sábado · 08h00",
+      "texto": "Sábado, oito da manhã. A luz, na persiana, desenha listras. {{se flag:combinaram_tempo}}Na porta da geladeira, um pedaço de fita adesiva, sem nada escrito, marca o dia primeiro de dezembro. {{/se}}{{se flag:regra_sem_travesseiro}}O travesseiro, que antes dividia a cama, está, de manhã, na cabeceira, e os dois lados do colchão tocam, de leve, na dobra do lençol. {{/se}}{{se flag:nada_combinado}}Na mesa da cozinha, a vela que sobrou, curta, ainda tem um fio de cera derretida. {{/se}}{{se flag:a_deixou_mao}}Na cama, uma mão repousa, de palma para cima, no meio do colchão. {{/se}}{{se flag:b_tocou_dedos}}E outra, ao lado, tem um calor que ainda não passou. {{/se}}{{se flag:a_desenhou_mao}}Sobre a cômoda, um caderno de croquis, aberto, mostra uma mão em um cabo de guarda-chuva. {{/se}}{{se flag:b_escreveu_ficha}}Entre as páginas de um livro, uma ficha dobrada guarda uma frase de sete palavras. {{/se}}\n\nQuando a primeira acorda, com o sol no rosto, repara, na cozinha, num som que não é rotina: o de uma pessoa que faz café, devagar, sem pressa. Quando chega à porta, vê, na mesa, uma tigela de iogurte com mel, uma torrada com manteiga de amendoim, e, ao lado, uma xícara com leite quente, a que a outra pessoa nunca tomou, e que alguém, que prestou atenção, preparou.\n\nA pessoa que cozinha não se vira. Mas a nuca, vermelha, e a colher, que tilinta na xícara, dizem, sem uma palavra, a coisa que nenhuma das duas, ainda, teve coragem de pôr em voz alta: *eu não estou fugindo.*",
+      "gancho": "Uma xícara de leite quente preparada por alguém que prestou atenção.",
       "ir": "ts_rascunho_fim"
     },
     "ts_rascunho_fim": {
       "tipo": "final",
-      "cap": 6,
+      "cap": 7,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
