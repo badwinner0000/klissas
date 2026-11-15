@@ -18,7 +18,7 @@ STRICT TEXT RULES: the ONLY text on the cover is the title exactly as written, c
 
 ## padrinhos.jpg · Padrinho e Madrinha (Love Story Nº 5)
 ```
-Background: deep cobalt blue with a few pale blue hydrangea blooms and a tiny white lighthouse far behind. Small top line in cream: "LOVE STORY · Nº 5". Title: "Padrinho" in bold cream sans-serif and "& Madrinha" in peach brush script. Characters (be precise): a Black man in his mid-thirties of Nigerian descent, deep brown skin, short black hair, round glasses, rumpled navy suit and loosened tie, holding a black notebook; and a woman in her early thirties of Italian-American descent, olive skin, dark brown hair in a messy bun with loose strands, navy dress, hugging a thick brown binder with colored tabs. They stand very close, foreheads almost touching, on the verge of a kiss, both a little flustered.
+Background: deep cobalt blue with a few pale blue hydrangea blooms and a tiny white lighthouse far behind. Small top line in cream: "LOVE STORY · Nº 5". Title: "Padrinho" in bold cream sans-serif and "& Madrinha" in peach brush script. Characters (be precise): a Black man in his early thirties of Nigerian descent, deep brown skin, short tight curly black hair with a neat fade, a short well-trimmed beard, a small stud earring, deep burgundy velvet-collar tuxedo jacket, white shirt and black bow tie loosened at the neck; and a woman in her early thirties of Italian-American descent, warm olive skin, long wavy dark chestnut-brown hair parted to the side, brown eyes, black satin dress with a small crystal brooch on the shoulder. They stand very close, foreheads almost touching, on the verge of a kiss, both a little flustered.
 ```
 
 ## a-reclamacao-de-barulho.jpg · A Reclamação de Barulho
@@ -45,3 +45,7 @@ Background: soft lilac violet with white wedding flowers. Title: "O Casamento" i
 ```
 Background: vivid teal with a few stars. Title: "A Viagem" in bold cream sans-serif and "de Ônibus" in coral brush script. Characters: a backpacker woman with light brown skin, freckles and a messy braid, travel scarf; and a man in a loosened tie and white shirt with dark skin and short hair. They are squeezed together in a bus seat, shoulders touching, looking at each other with reluctant smiles.
 ```
+
+
+## Referências de aparência
+O usuário passa fotos de referência para a aparência dos protagonistas; descrevemos só os traços (pele, cabelo, barba, roupa) no prompt, sem nomes de pessoas reais.
