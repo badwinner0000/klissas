@@ -38,6 +38,13 @@ Dívida conhecida, a resolver depois (não bloqueia):
 - **Cerimônia do cap. 9 corrigida:** o discurso dos protagonistas virou o diálogo `pd_c9_microfone` (3 tons por jogador). Há ainda 34 nós com falas sem atribuição na fila de revisão (`fala-sem-atribuicao`); li os suspeitos e são de NPC.
 - O lint de agência cobre fala e sentimento de protagonista; ações do próprio personagem em cenas solo lineares ("Você senta...") continuam como no original.
 
+## Publicar
+
+Guia passo a passo (Supabase + Vercel): **`docs/PUBLICAR.md`**. O servidor guarda as salas em Postgres quando `DATABASE_URL` está definida (Supabase, pooler porta 6543) e em arquivo local quando não está (só desenvolvimento; na Vercel sem `DATABASE_URL` o app avisa em vez de perder partidas). O navegador nunca acessa o banco.
+
+Testado contra **PostgreSQL 16 real** (não mocks): a migração `supabase/migrations/0002_salas.sql` aplica sem erro; as roles `anon`/`authenticated` não leem nem escrevem (privilégio revogado, e mesmo com o privilégio devolvido o RLS esconde as linhas); jogo completo com os dois jogadores agindo **ao mesmo tempo** (compare-and-swap por `rev`, 409 tratados, nenhuma gravação perdida); servidor reiniciado no meio da partida e o jogo continua do banco; solo, relatos e exportação a partir do banco; e o teste de dois navegadores (`tests/e2e/dois-jogadores.cjs`) também contra o banco. Rodar: aplique a migração num Postgres e `DATABASE_URL=postgres://... node tests/e2e/postgres.cjs`.
+**Não testado:** o Supabase em si (pooler/SSL reais) e a Vercel; `0001_init.sql` ficou obsoleta (substituída pelo modelo por documento do 0002).
+
 ## Rodar o app (local, dois navegadores)
 
 ```
@@ -51,7 +58,7 @@ Como funciona: o servidor roda o motor (`src/lib/jogo.ts`) e devolve **só a vis
 
 **Verificado (dois navegadores independentes, 375px, Padrinho e Madrinha completo):** as 4 políticas de consentimento (`ambos`, `nenhum`, `soA`, `soB`) chegam ao fim; B fecha a aba no meio e volta pela sessão guardada; texto limpo nas duas telas; nenhum erro de JavaScript; B nunca recebe token, flags, segredos, estado interno, ids de cena nem a cena solo de A; exportação em Markdown com nomes reais; 403/404 com mensagem humana. Modo solo completou o livro inteiro nos dois assentos pela API (sem chave de IA: escolha determinística; o caminho com `ANTHROPIC_API_KEY` não foi testado).
 
-**Não feito / não testado nesta etapa:** adaptador Supabase (auth, Realtime, `secret_votes` por RLS; o SQL de `supabase/migrations/0001_init.sql` nunca foi executado), verificação de idade para conteúdo +18, tela de administração, capas, Tailwind (o CSS é próprio), Lighthouse. O tempo real é por *polling* de 1,2 s.
+**Não feito / não testado nesta etapa:** login/contas, Supabase Realtime (hoje é polling), verificação de idade para conteúdo +18, tela de administração, capas, Tailwind (o CSS é próprio), Lighthouse. O tempo real é por *polling* de 1,2 s.
 
 ## Comandos (dentro de `verso/`)
 

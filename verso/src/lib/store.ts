@@ -1,9 +1,9 @@
-// Armazenamento das salas. Esta implementação grava em arquivo (.data/) e serve para rodar e testar localmente.
-// Em produção a mesma interface deve ser implementada sobre o Supabase (ver supabase/migrations/0001_init.sql).
-import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+// Armazenamento das salas: interface + escolha da implementação.
+//   • DATABASE_URL definido  → Postgres (Supabase em produção)
+//   • senão                  → arquivo local em .data/ (só para desenvolvimento; NÃO funciona na Vercel)
 import type { Livro, Seat } from '../content/schema';
 import type { Estado } from '../engine/motor';
+import { storeArquivo } from './store-arquivo';
 
 export interface Participante {
   token: string; // segredo do jogador; nunca sai do servidor para o outro
@@ -28,7 +28,7 @@ export interface Sala {
   jogadores: Partial<Record<Seat, Participante>>;
   estado?: Estado;
   diario: Record<Seat, EntradaDiario[]>;
-  rev: number; // sobe a cada mudança (lobby ou jogo): o cliente usa para saber se algo mudou
+  rev: number; // sobe a cada mudança: o cliente usa para saber se algo mudou
   criada: number;
 }
 export interface Relato {
@@ -40,72 +40,39 @@ export interface Relato {
   texto: string;
   quando: number;
 }
+export class ErroSalaInexistente extends Error {}
+export class ErroBancoIndisponivel extends Error {}
 
-const DIR = () => process.env.VERSO_DATA_DIR ?? join(process.cwd(), '.data');
-const g = globalThis as unknown as { __verso?: { salas: Map<string, Sala>; relatos: Relato[]; locks: Map<string, Promise<unknown>>; carregado: boolean } };
-const mem = (g.__verso ??= { salas: new Map<string, Sala>(), relatos: [] as Relato[], locks: new Map<string, Promise<unknown>>(), carregado: false });
-
-function carregar() {
-  if (mem.carregado) return;
-  mem.carregado = true;
-  try {
-    const f = join(DIR(), 'salas.json');
-    if (existsSync(f)) for (const s of JSON.parse(readFileSync(f, 'utf8')) as Sala[]) mem.salas.set(s.codigo, s);
-    const r = join(DIR(), 'relatos.json');
-    if (existsSync(r)) mem.relatos = JSON.parse(readFileSync(r, 'utf8'));
-  } catch {
-    /* arquivo corrompido: começa vazio, nunca derruba o servidor */
-  }
-}
-function gravar() {
-  try {
-    mkdirSync(DIR(), { recursive: true });
-    const tmp = join(DIR(), 'salas.json.tmp');
-    writeFileSync(tmp, JSON.stringify([...mem.salas.values()]));
-    renameSync(tmp, join(DIR(), 'salas.json'));
-    writeFileSync(join(DIR(), 'relatos.json'), JSON.stringify(mem.relatos));
-  } catch {
-    /* disco indisponível: segue em memória */
-  }
+export interface Store {
+  obter(codigo: string): Promise<Sala | undefined>;
+  /** false se o código já existe */
+  criar(sala: Sala): Promise<boolean>;
+  /**
+   * Lê a sala, aplica `fn` (que a modifica) e grava com controle de concorrência (rev).
+   * Se outra instância gravou no meio, relê e reaplica `fn`. Se `fn` lança, nada é gravado.
+   */
+  mutar<T>(codigo: string, fn: (sala: Sala) => Promise<T> | T): Promise<T>;
+  relatar(r: Relato): Promise<void>;
+  relatos(): Promise<Relato[]>;
 }
 
-export const store = {
-  obter(codigo: string): Sala | undefined {
-    carregar();
-    return mem.salas.get(codigo.toUpperCase());
-  },
-  salvar(s: Sala) {
-    carregar();
-    s.rev += 1;
-    mem.salas.set(s.codigo, s);
-    gravar();
-  },
-  existe(codigo: string) {
-    carregar();
-    return mem.salas.has(codigo);
-  },
-  relatar(r: Relato) {
-    carregar();
-    mem.relatos.push(r);
-    gravar();
-  },
-  relatos(): Relato[] {
-    carregar();
-    return mem.relatos;
-  },
-  /** Serializa as mudanças de uma sala: dois jogadores agindo juntos nunca se atropelam. */
-  async comTrava<T>(codigo: string, fn: () => T | Promise<T>): Promise<T> {
-    const anterior = mem.locks.get(codigo) ?? Promise.resolve();
-    let solta!: () => void;
-    const atual = new Promise<void>((r) => (solta = r));
-    const fila = anterior.then(() => atual);
-    mem.locks.set(codigo, fila);
-    await anterior;
-    try {
-      return await fn();
-    } finally {
-      solta();
-      if (mem.locks.get(codigo) === fila) mem.locks.delete(codigo);
-    }
-  },
+let impl: Store | undefined;
+async function escolher(): Promise<Store> {
+  if (impl) return impl;
+  if (process.env.DATABASE_URL) {
+    const { storePg } = await import('./store-pg');
+    impl = storePg(process.env.DATABASE_URL);
+  } else {
+    if (process.env.VERCEL) throw new ErroBancoIndisponivel('DATABASE_URL não configurada: a Vercel não guarda arquivos entre requisições.');
+    impl = storeArquivo();
+  }
+  return impl;
+}
+
+export const store: Store = {
+  obter: async (c) => (await escolher()).obter(c),
+  criar: async (s) => (await escolher()).criar(s),
+  mutar: async (c, fn) => (await escolher()).mutar(c, fn),
+  relatar: async (r) => (await escolher()).relatar(r),
+  relatos: async () => (await escolher()).relatos(),
 };

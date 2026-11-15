@@ -22,7 +22,7 @@ const matar = (p) => { try { process.kill(-p.pid, 'SIGKILL'); } catch { try { p.
 async function subirServidor() {
   try { await fetch(`${BASE}/api/livros`); throw new Error(`a porta ${PORTA} já está em uso: encerre o servidor antigo antes de rodar o E2E`); } catch (e) { if (/já está em uso/.test(String(e))) throw e; }
   const dir = mkdtempSync(join(tmpdir(), 'verso-e2e-'));
-  const p = spawn('npx', ['next', 'start', '-p', PORTA], { env: { ...process.env, VERSO_DATA_DIR: dir }, stdio: 'pipe', detached: true });
+  const p = spawn('npx', ['next', 'start', '-p', PORTA], { env: { ...process.env, VERSO_DATA_DIR: dir, ...(process.env.DATABASE_URL ? { DATABASE_SSL: 'disable' } : {}) }, stdio: 'pipe', detached: true });
   p.stderr.on('data', (d) => { if (/error/i.test(String(d))) console.log('[servidor]', String(d).trim()); });
   for (let i = 0; i < 60; i++) {
     try { const r = await fetch(`${BASE}/api/livros`); if (r.ok) return p; } catch {}

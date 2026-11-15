@@ -4,7 +4,7 @@ import type { Seat } from '../content/schema';
 import { type Acao_, ErroJogo, type Jogadores, agir, iniciar, visao } from '../engine/motor';
 import { carregarLivro } from './livros';
 import { escolhaDaIA } from './ia';
-import { type EntradaDiario, type Participante, type Sala, store } from './store';
+import { type EntradaDiario, ErroBancoIndisponivel, ErroSalaInexistente, type Participante, type Sala, store } from './store';
 
 export class ErroApi extends Error {
   constructor(
@@ -18,14 +18,31 @@ const outro = (s: Seat): Seat => (s === 'A' ? 'B' : 'A');
 const SEATS: Seat[] = ['A', 'B'];
 const ALFABETO = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
 
-function novoCodigo(): string {
-  for (let t = 0; t < 50; t++) {
-    const b = randomBytes(5);
-    const c = [...b].map((x) => ALFABETO[x % ALFABETO.length]).join('');
-    if (!store.existe(c)) return c;
-  }
-  throw new ErroApi(500, 'Não consegui gerar um código de sala. Tente de novo.');
+function codigoAleatorio(): string {
+  const b = randomBytes(5);
+  return [...b].map((x) => ALFABETO[x % ALFABETO.length]).join('');
 }
+
+/** Converte falhas de infraestrutura em mensagens humanas; o detalhe vai só para o log. */
+async function protegido<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn();
+  } catch (e) {
+    if (e instanceof ErroSalaInexistente) throw new ErroApi(404, 'Sala não encontrada. Confira o código de 5 letras.');
+    if (e instanceof ErroBancoIndisponivel) {
+      console.error(e.message);
+      throw new ErroApi(503, 'O servidor ainda não está configurado para guardar partidas. Avise quem cuida do jogo.');
+    }
+    throw e;
+  }
+}
+/** Lê, modifica e grava a sala com controle de concorrência. */
+const mutar = <T>(codigo: string, fn: (s: Sala) => T | Promise<T>): Promise<T> => protegido(() => store.mutar(codigo.toUpperCase(), fn));
+const salaOuErro = async (codigo: string): Promise<Sala> => {
+  const s = await protegido(() => store.obter(codigo));
+  if (!s) throw new ErroApi(404, 'Sala não encontrada. Confira o código de 5 letras.');
+  return s;
+};
 
 function limpaNome(n: unknown): string {
   const s = String(n ?? '').replace(/[\u0000-\u001f<>{}]/g, '').trim().slice(0, 24);
@@ -47,14 +64,9 @@ function seatDoToken(sala: Sala, token: string | null): Seat {
   if (token) for (const s of SEATS) if (sala.jogadores[s]?.token === token && !sala.jogadores[s]?.ia) return s;
   throw new ErroApi(403, 'Você não faz parte desta sala. Entre pelo código ou pelo link de convite.');
 }
-function salaOuErro(codigo: string): Sala {
-  const s = store.obter(codigo);
-  if (!s) throw new ErroApi(404, 'Sala não encontrada. Confira o código de 5 letras.');
-  return s;
-}
 
 // ───────────── criar / entrar ─────────────
-export function criarSala(body: { slug: string; modo: string; nome: string; genero: string; seat?: string }) {
+export async function criarSala(body: { slug: string; modo: string; nome: string; genero: string; seat?: string }) {
   let carregado;
   try {
     carregado = carregarLivro(String(body.slug));
@@ -67,20 +79,22 @@ export function criarSala(body: { slug: string; modo: string; nome: string; gene
   const seat = asSeat(body.seat);
   const eu: Participante = { token: randomUUID(), nome: limpaNome(body.nome), genero: genero(body.genero) };
   const sala: Sala = {
-    codigo: novoCodigo(), slug: String(body.slug), hash, livro, modo, status: 'lobby', criador: seat,
+    codigo: '', slug: String(body.slug), hash, livro, modo, status: 'lobby', criador: seat,
     jogadores: { [seat]: eu }, diario: { A: [], B: [] }, rev: 0, criada: Date.now(),
   };
   if (modo === 'solo') {
     const p = livro.personagens[outro(seat)];
     sala.jogadores[outro(seat)] = { token: randomUUID(), nome: p.nomePadrao, genero: p.generoPadrao, ia: true };
   }
-  store.salvar(sala);
-  return { codigo: sala.codigo, token: eu.token, seat };
+  for (let t = 0; t < 30; t++) {
+    sala.codigo = codigoAleatorio();
+    if (await protegido(() => store.criar(sala))) return { codigo: sala.codigo, token: eu.token, seat };
+  }
+  throw new ErroApi(500, 'Não consegui gerar um código de sala. Tente de novo.');
 }
 
 export async function entrarNaSala(codigo: string, body: { nome: string; genero: string }) {
-  return store.comTrava(codigo.toUpperCase(), () => {
-    const sala = salaOuErro(codigo);
+  return mutar(codigo, (sala) => {
     if (sala.modo === 'solo') throw new ErroApi(400, 'Essa sala é de jogo solo.');
     if (sala.status !== 'lobby') throw new ErroApi(409, `A partida de "${sala.livro.titulo}" já começou.`);
     const livre = SEATS.find((s) => !sala.jogadores[s]);
@@ -88,7 +102,6 @@ export async function entrarNaSala(codigo: string, body: { nome: string; genero:
     const eu: Participante = { token: randomUUID(), nome: limpaNome(body.nome), genero: genero(body.genero) };
     if (SEATS.some((s) => sala.jogadores[s]?.nome.toLowerCase() === eu.nome.toLowerCase())) throw new ErroApi(400, 'Os dois personagens precisam ter nomes diferentes.');
     sala.jogadores[livre] = eu;
-    store.salvar(sala);
     return { token: eu.token, seat: livre };
   });
 }
@@ -138,8 +151,7 @@ async function rodarIA(sala: Sala) {
 }
 
 export async function comecar(codigo: string, token: string | null) {
-  return store.comTrava(codigo.toUpperCase(), async () => {
-    const sala = salaOuErro(codigo);
+  return mutar(codigo, async (sala) => {
     const seat = seatDoToken(sala, token);
     if (seat !== sala.criador) throw new ErroApi(403, 'Só quem criou a sala pode começar.');
     if (sala.status !== 'lobby') throw new ErroApi(409, 'A partida já começou.');
@@ -147,14 +159,12 @@ export async function comecar(codigo: string, token: string | null) {
     sala.estado = iniciar(sala.livro, jogadoresDe(sala));
     sala.status = 'jogando';
     await rodarIA(sala);
-    store.salvar(sala);
     return { ok: true };
   });
 }
 
 export async function agirNaSala(codigo: string, token: string | null, body: { tipo?: string; id?: string; rev?: number }) {
-  return store.comTrava(codigo.toUpperCase(), async () => {
-    const sala = salaOuErro(codigo);
+  return mutar(codigo, async (sala) => {
     const seat = seatDoToken(sala, token);
     if (sala.status !== 'jogando' || !sala.estado) throw new ErroApi(409, 'A partida não está em andamento.');
     if (typeof body.rev === 'number' && body.rev !== sala.rev) throw new ErroApi(409, 'A tela estava desatualizada. Atualizei, escolha de novo.');
@@ -170,14 +180,13 @@ export async function agirNaSala(codigo: string, token: string | null, body: { t
       throw e;
     }
     await rodarIA(sala);
-    store.salvar(sala);
     return { ok: true };
   });
 }
 
 // ───────────── o que cada jogador pode ver ─────────────
-export function visaoDaSala(codigo: string, token: string | null) {
-  const sala = salaOuErro(codigo);
+export async function visaoDaSala(codigo: string, token: string | null) {
+  const sala = await salaOuErro(codigo);
   const seat = seatDoToken(sala, token);
   const par = sala.jogadores[outro(seat)];
   const base = {
@@ -221,14 +230,14 @@ function fichaDe(sala: Sala, seat: Seat) {
   };
 }
 
-export function diarioDaSala(codigo: string, token: string | null) {
-  const sala = salaOuErro(codigo);
+export async function diarioDaSala(codigo: string, token: string | null) {
+  const sala = await salaOuErro(codigo);
   const seat = seatDoToken(sala, token);
   return { titulo: sala.livro.titulo, entradas: sala.diario[seat], nomes: { A: sala.jogadores.A?.nome, B: sala.jogadores.B?.nome } };
 }
 
-export function exportarMarkdown(codigo: string, token: string | null): string {
-  const d = diarioDaSala(codigo, token);
+export async function exportarMarkdown(codigo: string, token: string | null): Promise<string> {
+  const d = await diarioDaSala(codigo, token);
   const partes = [`# ${d.titulo}`, `_${d.nomes.A} e ${d.nomes.B}_`];
   let cap = 0;
   for (const e of d.entradas) {
@@ -243,13 +252,13 @@ export function exportarMarkdown(codigo: string, token: string | null): string {
   return partes.join('\n\n');
 }
 
-export function registrarRelato(codigo: string, token: string | null, texto: unknown) {
-  const sala = salaOuErro(codigo);
+export async function registrarRelato(codigo: string, token: string | null, texto: unknown) {
+  const sala = await salaOuErro(codigo);
   const seat = seatDoToken(sala, token);
   const t = String(texto ?? '').trim().slice(0, 2000);
   if (t.length < 3) throw new ErroApi(400, 'Descreva o problema em poucas palavras.');
   // o id interno do nó vai só para o log do admin, nunca para a mensagem ao jogador
   const no = sala.estado?.pos[seat];
-  store.relatar({ id: randomUUID(), codigo: sala.codigo, livro: sala.livro.titulo, noInterno: no, seat, texto: t, quando: Date.now() });
+  await protegido(() => store.relatar({ id: randomUUID(), codigo: sala.codigo, livro: sala.livro.titulo, noInterno: no, seat, texto: t, quando: Date.now() }));
   return { ok: true };
 }
