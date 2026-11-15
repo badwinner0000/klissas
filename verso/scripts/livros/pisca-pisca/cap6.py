@@ -116,4 +116,4 @@ Em cima da mesa de marceneiro, a prancheta azul de {{A.nome}} está aberta no c�
 
 Não é a folha da carga. É a folha de trás, a que ninguém devia ver: um arquivo impresso, de abas coloridas, com um título comprido, uma data de dois anos atrás, e, na margem, a letra de {{B.nome}}, a lápis, de hoje: *isso é um contrato, não um plano*.""",
  gancho="A planilha caiu no chão, aberta, com uma frase a lápis na margem que ninguém deveria ter lido.",
- ir='pp_rascunho_fim')
+ ir='pp_c7_manha')
