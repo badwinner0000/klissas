@@ -154,8 +154,8 @@ async function passo(page, seat, tag, votou) {
 
     // diário e exportação (nomes reais, sem ids)
     const md = await (await fetch(`${BASE}/api/salas/${codigo}/exportar?token=${tokenA}`)).text();
-    const mm = md.match(/pd_c\d|pp_c\d|up_c\d|undefined|\{\{/);
-    const ESP = { 'pisca-pisca': ['# Pisca-Pisca', 'Roz'], 'ultima-promocao': ['# A Última Promoção', 'Joanna'] }[process.env.E2E_LIVRO] || ['# Padrinho e Madrinha', 'Ivy'];
+    const mm = md.match(/pd_c\d|pp_c\d|up_c\d|rv_c\d|undefined|\{\{/);
+    const ESP = { 'pisca-pisca': ['# Pisca-Pisca', 'Roz'], 'ultima-promocao': ['# A Última Promoção', 'Joanna'], 'refrao-de-verao': ['# Refrão de Verão', 'Maya'] }[process.env.E2E_LIVRO] || ['# Padrinho e Madrinha', 'Ivy'];
     checa(md.includes(ESP[0]) && md.includes(ESP[1]) && !mm, 'exportação em Markdown com nomes reais e sem ids internos' + (mm ? ` (achei "${mm[0]}")` : ''));
     // quem não é da sala não lê nada
     const r403 = await fetch(`${BASE}/api/salas/${codigo}`, { headers: { 'x-token': 'invalido' } });
