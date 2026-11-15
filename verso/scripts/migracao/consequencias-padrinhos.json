@@ -471,6 +471,42 @@
       "no": "pd_c7_recados",
       "privadoDe": "B",
       "texto": "O zelador de camisa de flanela ficou na sua memória como a única pessoa da semana que respondeu sem enfeite."
+    },
+    {
+      "flag": "a_ouviu_tunde",
+      "no": "pd_c8_fim",
+      "privadoDe": "A",
+      "texto": "O pedido do Tunde ficou com você: *adia, sem dizer por quê*. É o único pedido da semana que você não consegue transformar em item de pasta."
+    },
+    {
+      "flag": "dica_pike",
+      "no": "pd_c8_brindes",
+      "texto": "O Judge Pike, de pijama em Hyannis, ficou como uma voz atravessada pela neblina, e é a lembrança que a cozinha guarda de uma solução que não existe."
+    },
+    {
+      "flag": "funmi_promete",
+      "no": "pd_c8_fim",
+      "texto": "A juíza Funmi, que não pode celebrar nada em Massachusetts, prometeu outra coisa, e quem a ouviu sabe que o *depois* dela agora tem data."
+    },
+    {
+      "flag": "rosa_hortensia",
+      "no": "pd_c8_brindes",
+      "texto": "A Rosa, calada pela primeira vez em três dias, olha as hortênsias azuis pela janela da cozinha como quem faz as pazes com uma cor."
+    },
+    {
+      "flag": "som_tunde",
+      "no": "pd_c8_brindes",
+      "texto": "O sistema de som da tenda zumbe baixinho, bem montado, e o Tunde olha para ele, de longe, com o orgulho de quem encontrou uma tarefa que cabe nas mãos."
+    },
+    {
+      "flag": "brinde_gemma",
+      "no": "pd_c8_fim",
+      "texto": "O brinde de verdade para a Gemma, dito sem papel, ficou no ar da cozinha como uma promessa pública: *confiança, não pressa*."
+    },
+    {
+      "flag": "brinde_tunde",
+      "no": "pd_c8_fim",
+      "texto": "A bicicleta de vinte anos do Tunde entrou num brinde sem caderno, e a cozinha, que ria, ficou um instante em silêncio quando ele ouviu."
     }
   ]
 }

@@ -6121,7 +6121,7 @@
         "rosa"
       ],
       "tipo": "dividir",
-      "texto": "Vinte e oito copos esperam. Os primos Barros param a morna no meio de um compasso. A Gemma apoia o queixo nas mãos. O Tunde olha para o prato.\n\nDuas pessoas, uma em cada ponta de uma mesa de cavaletes, com um copo na mão e uma semana inteira na garganta.",
+      "texto": "Vinte e oito copos esperam. Os primos Barros param a morna no meio de um compasso. A Gemma apoia o queixo nas mãos. O Tunde olha para o prato.\n\nDuas pessoas, uma em cada ponta de uma mesa de cavaletes, com um copo na mão e uma semana inteira na garganta.\n\n{{se flag:dica_pike}}O Judge Pike, de pijama em Hyannis, ficou como uma voz atravessada pela neblina, e é a lembrança que a cozinha guarda de uma solução que não existe.{{/se}}\n\n{{se flag:rosa_hortensia}}A Rosa, calada pela primeira vez em três dias, olha as hortênsias azuis pela janela da cozinha como quem faz as pazes com uma cor.{{/se}}\n\n{{se flag:som_tunde}}O sistema de som da tenda zumbe baixinho, bem montado, e o Tunde olha para ele, de longe, com o orgulho de quem encontrou uma tarefa que cabe nas mãos.{{/se}}",
       "cada": 1,
       "acoes": [
         {
@@ -6228,7 +6228,7 @@
       "lugar": "Gull House",
       "hora": "Sábado, 17 de junho · 1h00",
       "tipo": "fim",
-      "texto": "Uma da manhã. A neblina levantou. O céu de Nantucket, sem lua, tem mais estrela do que qualquer céu de Boston ou de Providence.\n\nA primeira balsa sai de Hyannis às seis e meia. A tia Bisi vem nela. O Judge Pike não vem, porque já não precisa.\n\nNa lousa da cozinha, alguém apagou o placar inteiro durante a madrugada. A aposta, os nomes, as estrelas da Pippa, o *Eu ganhei* do Barnaby.\n\nNo lugar ficou uma linha só, em duas letras. A primeira metade é redonda, de quem escolhe vestido em vinte minutos: *Sábado, 17. 17h30. Gramado {{se flag:tenda_agua}}de baixo{{senao}}de cima{{/se}}.*\n\nA segunda metade é miúda e demorada: *A gente decide lá.*",
+      "texto": "Uma da manhã. A neblina levantou. O céu de Nantucket, sem lua, tem mais estrela do que qualquer céu de Boston ou de Providence.\n\nA primeira balsa sai de Hyannis às seis e meia. A tia Bisi vem nela. O Judge Pike não vem, porque já não precisa.\n\nNa lousa da cozinha, alguém apagou o placar inteiro durante a madrugada. A aposta, os nomes, as estrelas da Pippa, o *Eu ganhei* do Barnaby.\n\nNo lugar ficou uma linha só, em duas letras. A primeira metade é redonda, de quem escolhe vestido em vinte minutos: *Sábado, 17. 17h30. Gramado {{se flag:tenda_agua}}de baixo{{senao}}de cima{{/se}}.*\n\nA segunda metade é miúda e demorada: *A gente decide lá.*\n\n{{se eu:A && flag:a_ouviu_tunde}}O pedido do Tunde ficou com você: *adia, sem dizer por quê*. É o único pedido da semana que você não consegue transformar em item de pasta.{{/se}}\n\n{{se flag:funmi_promete}}A juíza Funmi, que não pode celebrar nada em Massachusetts, prometeu outra coisa, e quem a ouviu sabe que o *depois* dela agora tem data.{{/se}}\n\n{{se flag:brinde_gemma}}O brinde de verdade para a Gemma, dito sem papel, ficou no ar da cozinha como uma promessa pública: *confiança, não pressa*.{{/se}}\n\n{{se flag:brinde_tunde}}A bicicleta de vinte anos do Tunde entrou num brinde sem caderno, e a cozinha, que ria, ficou um instante em silêncio quando ele ouviu.{{/se}}",
       "ir": "pd_c9_manha"
     },
     "pd_c9_a": {
@@ -7172,23 +7172,18 @@
     }
   },
   "escolhasMortasToleradas": [
-    "a_ouviu_tunde",
     "b_cabos9",
     "b_equacao9",
     "b_ouviu_recado9",
     "b_ruth",
     "b_silencio_cais",
     "b_vaga_ilha",
-    "brinde_gemma",
-    "brinde_tunde",
     "c7c_branca_cedo",
-    "dica_pike",
     "dory_proposta",
     "dory_receita",
     "dory_socia",
     "enjoou",
     "final_ruptura",
-    "funmi_promete",
     "gesto_pasta",
     "gesto_quase",
     "gesto_quase_b",
@@ -7197,8 +7192,6 @@
     "graham_cumprimento",
     "graham_perguntou",
     "olhou4",
-    "rosa_hortensia",
-    "som_tunde",
     "vento_calculo",
     "vento_lideranca"
   ]
