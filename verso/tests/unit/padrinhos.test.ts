@@ -13,6 +13,11 @@ describe('Padrinho e Madrinha (livro migrado)', () => {
     expect(r.erros).toEqual([]);
   });
 
+  it('regressão (item 1): nenhuma ação com resultado condicional/teste é compartilhada entre os dois', () => {
+    for (const [id, n] of Object.entries(livro().nos))
+      if ('acoes' in n) for (const a of n.acoes) expect(!!(a.compartilhada && a.variantes), `${id}.${a.id}`).toBe(false);
+  });
+
   it('sem dados, sem atributos, sem puzzle', () => {
     const bruto = lerBruto('padrinhos');
     expect(bruto).not.toMatch(/"teste"|"atributos"|"puzzle"|2d6/);
@@ -21,7 +26,7 @@ describe('Padrinho e Madrinha (livro migrado)', () => {
 
   it('regressão: trechos em que o original narrava fala de protagonista sem escolha foram corrigidos', () => {
     const bruto = lerBruto('padrinhos');
-    for (const frag of ['disse *tudo bem*', '— Respira — você diz', '— Cético — você diz', 'Você diz que ouviu o recado'])
+    for (const frag of ['\n\n— Mãe.\n\n', '\n\n— Às vezes.\n\n', 'disse *tudo bem*', '— Respira — você diz', '— Cético — você diz', 'Você diz que ouviu o recado'])
       expect(bruto, frag).not.toContain(frag);
   });
 

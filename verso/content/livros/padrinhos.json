@@ -994,7 +994,6 @@
         {
           "id": "o5",
           "texto": "Ajudar o Barnaby a carregar as hortênsias do caminhão, que ninguém pediu",
-          "compartilhada": true,
           "variantes": [
             {
               "se": "abalo>=3",
@@ -1046,7 +1045,6 @@
         {
           "id": "o1",
           "texto": "Puxar armadilha. De verdade. Até a mão abrir.",
-          "compartilhada": true,
           "variantes": [
             {
               "se": "abalo>=3",
@@ -2055,7 +2053,7 @@
       ],
       "tipo": "solo",
       "seat": "A",
-      "texto": "Oito da noite. A varanda das hortênsias. Sua mãe senta do seu lado no banco de vime, de robe de seda, sem maquiagem, o que é raro, e com uma taça de vinho branco, o que não é.\n\n{{se (flag:olhou4_a) || (flag:olhou4_b)}}— Eu vi a foto — ela diz. — Catorze vezes.{{senao}}— Eu vi a foto — ela diz. — Dois postes. Ninguém fica duro daquele jeito do lado de quem não importa.{{/se}}\n\n— Mãe.\n\n— Eu não estou brava. Eu estou feliz. Eu estou com medo. É a mesma coisa, na minha idade. — Ela bebe. — Depois do Graham, eu achei que você nunca mais ia olhar para ninguém assim. Ele te machucou tanto.\n\nVocê não diz nada.\n\n— Você nunca chorou — ela continua. — Nem uma vez. Eu chorei por você. A Gemma chorou. A tia Concetta acendeu vela na igreja por seis meses, para ele pegar uma doença. Você não chorou. — Ela segura a sua mão. — Por quê?",
+      "texto": "Oito da noite. A varanda das hortênsias. Sua mãe senta do seu lado no banco de vime, de robe de seda, sem maquiagem, o que é raro, e com uma taça de vinho branco, o que não é.\n\n{{se (flag:olhou4_a) || (flag:olhou4_b)}}— Eu vi a foto — ela diz. — Catorze vezes.{{senao}}— Eu vi a foto — ela diz. — Dois postes. Ninguém fica duro daquele jeito do lado de quem não importa.{{/se}}\n\nVocê abre a boca para dizer *mãe*, e ela não deixa.\n\n— Eu não estou brava. Eu estou feliz. Eu estou com medo. É a mesma coisa, na minha idade. — Ela bebe. — Depois do Graham, eu achei que você nunca mais ia olhar para ninguém assim. Ele te machucou tanto.\n\nVocê não diz nada.\n\n— Você nunca chorou — ela continua. — Nem uma vez. Eu chorei por você. A Gemma chorou. A tia Concetta acendeu vela na igreja por seis meses, para ele pegar uma doença. Você não chorou. — Ela segura a sua mão. — Por quê?",
       "acoes": [
         {
           "id": "o1",
@@ -2332,7 +2330,6 @@
         {
           "id": "o1",
           "texto": "Tentar fazer o motor pegar: a bateria, o afogador, alguma coisa",
-          "compartilhada": true,
           "variantes": [
             {
               "se": "abalo>=3",
@@ -2850,7 +2847,7 @@
       ],
       "tipo": "solo",
       "seat": "A",
-      "texto": "O Tunde senta no banco de vime das hortênsias. Você senta do lado. Ele demora um tempo comprido para falar. É do jeito dele. Escolhe devagar, porque quer escolher uma vez só.\n\n— Você é a pessoa que resolve as coisas — ele diz, por fim. — A Gemma sempre diz isso. *{{se eu.ela}}Minha irmã{{senao}}Meu irmão{{/se}} resolve qualquer coisa sem ninguém perceber.*\n\n— Às vezes.\n\n— Eu preciso que você resolva uma coisa sem ninguém perceber. — Ele olha as mãos. — Eu preciso de um pouco mais de tempo. Antes de casar. Não é ela. Eu amo ela. Sou eu. Eu passei cinco dias em silêncio e eu não consegui parar de pensar no meu pai, que casou com a minha mãe sem ter certeza, ou não casou, eu nunca soube direito, e foi embora duas vezes.\n\nEle respira.\n\n— Você consegue adiar? Sem dizer por quê? Dizer que é a neblina, a balsa, o juiz que não chegou, qualquer coisa. Uma semana. Um mês. Um *pequeno ajuste*. — Ele quase sorri. — Ela me ensinou essa. A Gemma. Ela disse que você diz isso quando é um desastre.",
+      "texto": "O Tunde senta no banco de vime das hortênsias. Você senta do lado. Ele demora um tempo comprido para falar. É do jeito dele. Escolhe devagar, porque quer escolher uma vez só.\n\n— Você é a pessoa que resolve as coisas — ele diz, por fim. — A Gemma sempre diz isso. *{{se eu.ela}}Minha irmã{{senao}}Meu irmão{{/se}} resolve qualquer coisa sem ninguém perceber.*\n\nNem sempre, você pensa. Mas não é isso que ele veio ouvir.\n\n— Eu preciso que você resolva uma coisa sem ninguém perceber. — Ele olha as mãos. — Eu preciso de um pouco mais de tempo. Antes de casar. Não é ela. Eu amo ela. Sou eu. Eu passei cinco dias em silêncio e eu não consegui parar de pensar no meu pai, que casou com a minha mãe sem ter certeza, ou não casou, eu nunca soube direito, e foi embora duas vezes.\n\nEle respira.\n\n— Você consegue adiar? Sem dizer por quê? Dizer que é a neblina, a balsa, o juiz que não chegou, qualquer coisa. Uma semana. Um mês. Um *pequeno ajuste*. — Ele quase sorri. — Ela me ensinou essa. A Gemma. Ela disse que você diz isso quando é um desastre.",
       "acoes": [
         {
           "id": "o1",
@@ -5263,7 +5260,6 @@
         {
           "id": "o1",
           "texto": "Dançar o funaná. De verdade, no ritmo do acordeão.",
-          "compartilhada": true,
           "variantes": [
             {
               "se": "abalo>=3",
@@ -5355,7 +5351,6 @@
         {
           "id": "o1",
           "texto": "Segurar a estaca do canto com o peso do corpo",
-          "compartilhada": true,
           "variantes": [
             {
               "se": "abalo>=3",

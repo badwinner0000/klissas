@@ -242,7 +242,7 @@ function acao(o, id) {
   const nao = prop(o, 'nao'); if (nao) se = e_(se, `!flag:${nao.value}`);
   const so = prop(o, 'so'); if (so) a.seat = so.value === 'a' ? 'A' : 'B';
   if (se) a.se = se;
-  if (prop(o, 'ambos')) a.compartilhada = true;
+  if (prop(o, 'ambos') && !prop(o, 'at')) a.compartilhada = true; // como no original: ação com teste é de UM só
   if (prop(o, 'repete')) a.repete = true;
   const ir = prop(o, 'ir'); if (ir) a.ir = ir.value;
   const ef = efeitos(prop(o, 'ef'));
@@ -473,6 +473,8 @@ const CORRECOES = [
   { no: 'pd_c9_b', de: 'Você diz que ouviu o recado dele. Não precisa explicar qual.', para: 'O recado dele está no seu bolso, e ele sabe que você o ouviu. Não precisa explicar qual.', motivo: 'agência: narrava fala de protagonista sem escolha' },
   { no: 'pd_c5_d', de: '— Cético — você diz, antes de pensar. — Cético tem seis. É… — Você conta. — *Cabeça-dura*. Cabeça-dura tem onze.', para: 'A resposta chega antes de você pensar: *cético*, que tem seis letras e não serve. Você conta de cabeça. *Cabeça-dura*. Onze.', motivo: 'agência: narrava fala de protagonista sem escolha' },
   { no: 'pd_c6_a', de: '— Respira — você diz. — Eu tenho uma ideia.\n\nVocê não tem ideia nenhuma. É a frase que você diz desde 2015 para ganhar quarenta segundos, e funciona sobre a Pippa também.', para: 'Você tem uma frase pronta para isso, a mesma desde 2015, para ganhar quarenta segundos: *eu tenho uma ideia*. Você não tem ideia nenhuma, e a frase funciona sobre a Pippa também.', motivo: 'agência: narrava fala de protagonista sem escolha' },
+  { no: 'pd_c4_a', de: '\n\n— Mãe.\n\n', para: '\n\nVocê abre a boca para dizer *mãe*, e ela não deixa.\n\n', motivo: 'agência: protagonista falava sem escolha (fala sem atribuição)' },
+  { no: 'pd_c8_a', de: '\n\n— Às vezes.\n\n', para: '\n\nNem sempre, você pensa. Mas não é isso que ele veio ouvir.\n\n', motivo: 'agência: protagonista falava sem escolha (fala sem atribuição)' },
   { no: 'pd_c1_noite', de: 'Ouvir de novo o recado do Tunde, sozinho, na varanda', para: 'Ouvir de novo o recado do Tunde, sozinh{{eu.o_a}}, na varanda', motivo: 'gênero fixo em opção escolhível' },
   { no: 'pd_c7_a', de: 'Ler sozinha, pela primeira vez em nove meses.', para: 'Ler sozinh{{eu.o_a}}, pela primeira vez em nove meses.', motivo: 'gênero fixo em opção escolhível' },
 ];

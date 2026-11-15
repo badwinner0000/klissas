@@ -243,6 +243,11 @@ describe('lint reprova defeitos plantados (regressão)', () => {
     (l.nos.c1_dialogo as any).turnos[0].opcoes[1].texto = 'Estou cansada disso.';
     expect(regras(lintarLivro(l))).toContain('genero-fixo');
   });
+  it('ação com resultado condicional não pode ser compartilhada', () => {
+    const l = livro();
+    (l.nos.c1_dividir as any).acoes[2].compartilhada = true; // d_frigobar tem variantes
+    expect(regras(lintarLivro(l))).toContain('acao-com-teste-compartilhada');
+  });
   it('dividir com ações insuficientes por assento', () => {
     const l = livro();
     (l.nos.c1_dividir as any).acoes = (l.nos.c1_dividir as any).acoes.slice(0, 2);

@@ -34,6 +34,7 @@ Dívida conhecida, a resolver depois (não bloqueia):
 - **114 "escolhas mortas"**: flags que o original grava e nenhuma cena lê. Estão no `escolhasMortasToleradas` do livro (aviso, não erro). Cada uma é uma escolha que não muda nada: ligar a uma cena posterior ou cortar. Livros novos têm baseline vazio.
 - **Ramos `falha`** só aparecem com nervosismo alto, então são raros (parte dos 3,6% de parágrafos do gabarito não cobertos).
 - **64 cenas < 150 palavras** (a Bíblia pede 150–400); 5 acima de 400.
+- **Violação conhecida e NÃO corrigida:** `pd_c9_cerimonia` (capítulo 9) escreve o discurso do protagonista A no microfone ("— Boa tarde. Eu sou a irmã da noiva...") sem escolha do jogador. Precisa virar diálogo com escolhas (decisão de roteiro). Há ainda 34 nós com falas sem atribuição na fila de revisão (`fala-sem-atribuicao`), a maioria de NPC.
 - O lint de agência cobre fala e sentimento de protagonista; ações do próprio personagem em cenas solo lineares ("Você senta...") continuam como no original.
 
 ## Comandos (dentro de `verso/`)

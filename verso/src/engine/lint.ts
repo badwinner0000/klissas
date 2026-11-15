@@ -309,6 +309,7 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
       for (const a of no.acoes) {
         if (idsA.has(a.id)) E('id-duplicado', id, `ação repetida: ${a.id}`);
         idsA.add(a.id);
+        if (a.compartilhada && a.variantes) E('acao-com-teste-compartilhada', id, `ação ${a.id}: tem resultado condicional e é compartilhada; ação assim é de um jogador só`);
         if (a.variantes && a.variantes[a.variantes.length - 1]!.se.trim() !== '') E('variante-sem-padrao', id, `ação ${a.id}: a última variante precisa ter se vazio (padrão)`);
       }
     }
@@ -370,6 +371,14 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
     if (no.tipo !== 'final') continue;
     if (!no.texto && !no.finais) E('final-vazio', id, 'final sem texto');
     if (no.finais && (no.finais[no.finais.length - 1]!.se ?? '').trim() !== '') E('final-sem-padrao', id, 'último final precisa ter se vazio (padrão)');
+  }
+
+  // falas em narração sem atribuição: o lint não sabe quem fala; fica numa fila de revisão humana
+  for (const [id, no] of Object.entries(l.nos)) {
+    if (no.tipo === 'final' || !('texto' in no) || !no.texto) continue;
+    const limpo = no.texto.replace(/\{\{(?:se [^}]*|senao|\/se)\}\}/g, '');
+    const sem = limpo.split('\n').filter((p) => /^\s*[—–]\s*\S/.test(p) && !new RegExp(`\\b(?:${VERBOS}|ri|conta|geme|grita|ergue|completa|acrescenta|insiste)\\b`, 'i').test(p));
+    if (sem.length) W('fala-sem-atribuicao', id, `${sem.length} fala(s) em narração sem verbo de fala; revisar se algum PROTAGONISTA fala sem ter escolhido (ex.: "${sem[0]!.trim().slice(0, 50)}")`);
   }
 
   // tamanho
