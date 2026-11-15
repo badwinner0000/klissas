@@ -16,16 +16,19 @@ const rnd = () => ((s = (s + 0x6d2b79f5) >>> 0), (((s ^ (s >>> 15)) * (1 | s)) >
 const falhas = [];
 const checa = (ok, msg) => { if (!ok) { falhas.push(msg); console.log('  ✗', msg); } };
 
+// encerra o grupo inteiro (npx + next-server); matar só o npx deixava o servidor vivo na porta
+const matar = (p) => { try { process.kill(-p.pid, 'SIGKILL'); } catch { try { p.kill('SIGKILL'); } catch {} } };
+
 async function subirServidor() {
   try { await fetch(`${BASE}/api/livros`); throw new Error(`a porta ${PORTA} já está em uso: encerre o servidor antigo antes de rodar o E2E`); } catch (e) { if (/já está em uso/.test(String(e))) throw e; }
   const dir = mkdtempSync(join(tmpdir(), 'verso-e2e-'));
-  const p = spawn('npx', ['next', 'start', '-p', PORTA], { env: { ...process.env, VERSO_DATA_DIR: dir }, stdio: 'pipe' });
+  const p = spawn('npx', ['next', 'start', '-p', PORTA], { env: { ...process.env, VERSO_DATA_DIR: dir }, stdio: 'pipe', detached: true });
   p.stderr.on('data', (d) => { if (/error/i.test(String(d))) console.log('[servidor]', String(d).trim()); });
   for (let i = 0; i < 60; i++) {
     try { const r = await fetch(`${BASE}/api/livros`); if (r.ok) return p; } catch {}
     await new Promise((r) => setTimeout(r, 500));
   }
-  p.kill('SIGKILL'); throw new Error('servidor não subiu');
+  matar(p); throw new Error('servidor não subiu');
 }
 
 async function passo(page, seat, tag, votou) {
@@ -162,7 +165,7 @@ async function passo(page, seat, tag, votou) {
     falhas.push('exceção: ' + (e.stack || e));
     console.log(e);
   } finally {
-    await browser.close(); srv.kill('SIGKILL');
+    await browser.close(); matar(srv);
   }
   console.log(falhas.length ? `FALHOU (${falhas.length})` : `OK em ${((Date.now() - t0) / 1000).toFixed(0)}s (política ${POLITICA})`);
   process.exit(falhas.length ? 1 : 0);
