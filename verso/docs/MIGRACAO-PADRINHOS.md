@@ -31,3 +31,6 @@ Se você preferir outra regra (por exemplo, sempre o ramo `ok`), é só uma troc
 
 ## Depois
 Novos livros seguindo a Bíblia (10 caps, 8–12 cenas, 150–400 palavras, grande gesto, variantes "sem"). Um livro completo tem ~25–35 mil palavras; serão escritos um por vez, com lint e simulação a cada capítulo.
+
+## Ajuste editorial: a profissão do padrinho
+O padrinho (B, Sam) era professor de química de ensino médio. Como a mãe dele é uma juíza e a família é de status, ele passou a ser **professor titular de química na Brown** (o mais novo da história do departamento). `scripts/migracao/ajustes-sam.mjs` troca as 29 passagens (orientandos em vez de alunos, laboratório em vez de sala de aula, a vaga de ciências da escola de Nantucket virou a direção da Estação de Pesquisa Costeira, "o semestre começa em setembro"). O script roda depois do conversor em `npm run migrar:padrinhos`.
