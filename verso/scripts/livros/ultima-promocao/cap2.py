@@ -37,7 +37,7 @@ A pessoa que vai se sentar no 24B está na outra ponta do portão, de gravata af
  ])
 
 NOS['up_c2_b'] = dict(tipo='solo', cap=2, seat='B', lugar="Portão K14, O'Hare", hora='Quinta · 16h50',
- texto="""O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentado numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.
+ texto="""O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentad{{eu.o_a}} numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.
 
 Na tela, uma mensagem da Chloe, de oito minutos atrás, com um anexo de duas páginas: *Meridian Group. Três diretores saíram em dezoito meses. Todos de áreas que o Marcus Webb comandou. Ninguém quis falar. Priya Patel foi a única que atendeu o telefone e desligou em quatro segundos. Mais amanhã.*
 
