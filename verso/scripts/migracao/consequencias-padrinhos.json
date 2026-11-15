@@ -351,6 +351,60 @@
       "no": "pd_c5_fim",
       "privadoDe": "B",
       "texto": "Pela segunda vez, a sua mãe prometeu contar *depois*, e você, que corrige prova há onze anos, sabe contar quantos *depois* ainda faltam."
+    },
+    {
+      "flag": "cadeiras_porto",
+      "no": "pd_c6_carro",
+      "texto": "Uma cadeira dobrável, a única que a maré levou, boia no porto com a dignidade de um barco pequeno."
+    },
+    {
+      "flag": "estaca",
+      "no": "pd_c6_carro",
+      "texto": "A estaca do canto, abraçada por três minutos, ainda tem a marca de duas mãos na corda molhada."
+    },
+    {
+      "flag": "luzes_salvas",
+      "no": "pd_c6_carro",
+      "texto": "As luzinhas, enroladas em carretel, secam na varanda do clube, ainda acesas, e a Pippa jura que isso é sinal."
+    },
+    {
+      "flag": "c6a_barnaby",
+      "no": "pd_c6_carro",
+      "privadoDe": "A",
+      "texto": "A corda que chega às nove e vinte e cinco é do Barnaby, que atendeu no oitavo toque e preferiu não comentar o horário."
+    },
+    {
+      "flag": "c6a_lonas",
+      "no": "pd_c6_carro",
+      "privadoDe": "A",
+      "texto": "O plano de proteger só o corredor central e a mesa dos noivos está na sua cabeça como rota de evacuação: tudo o que fica de fora é perda aceita."
+    },
+    {
+      "flag": "c6b_carta",
+      "no": "pd_c6_carro",
+      "privadoDe": "B",
+      "texto": "O cheiro de cebola e de capa de pesca da marquise da Dory ainda está nas suas mãos, junto com a chave que ela sabia onde estava."
+    },
+    {
+      "flag": "c6b_luz",
+      "no": "pd_c6_carro",
+      "privadoDe": "B",
+      "texto": "O disjuntor doze, o que tinha caído, tem agora uma etiqueta de fita crepe com a sua letra: *não mexer*."
+    },
+    {
+      "flag": "cobertor",
+      "no": "pd_c6_espera",
+      "texto": "O cobertor de mudança continua aberto em cima do banco, e o jogo do copo corre, pergunta por pergunta, por baixo dele ou ao lado."
+    },
+    {
+      "flag": "pasta_seca",
+      "no": "pd_c6_espera",
+      "texto": "O barulho dos dois sacos plásticos da pasta ainda ecoa na cabine, e cada vez que alguém se mexe, a pasta comenta."
+    },
+    {
+      "flag": "noite6_nao",
+      "no": "pd_c6_fim",
+      "texto": "O terceiro degrau da escada dos fundos range a cada passagem, e o Barnaby, de ouvido apurado, já aprendeu a distinguir quem desce de quem sobe."
     }
   ]
 }
