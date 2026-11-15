@@ -2598,7 +2598,7 @@
         "pippa"
       ],
       "tipo": "segue",
-      "texto": "Oito e meia. Na bancada da cozinha, em cima de um pano de prato, o Barnaby espalhou tudo o que molhou ontem à noite, para secar ao sol da janela: dois celulares dentro de uma tigela de arroz cru, uma carteira aberta, notas de dólar uma do lado da outra, um cartão da biblioteca de Providence, uma carteira de motorista de Rhode Island.\n\n{{se flag:guardanapo_caiu}}E, por cima de tudo, um guardanapo de pano branco, dobrado em quatro, com um *A* azul bordado no canto.\n\n— Achei debaixo do banco da caminhonete — diz o Barnaby, para ninguém em particular, servindo café. — Hoje cedo. Quando fui ver o estrago do teto.{{senao}}E, no meio das notas, saído de dentro da carteira, um guardanapo de pano branco, dobrado em quatro, com um *A* azul bordado no canto, que o Barnaby desdobrou para secar, porque o Barnaby seca tudo aberto.{{/se}}\n\nO guardanapo está aberto, porque o Barnaby seca tudo aberto. No meio do pano, em caneta azul, numa letra de cerimonialista, apressada, tem quatro palavras de dois anos atrás, escritas no meio daquele jantar, por baixo da mesa, como quem anota num cronograma:\n\n*{{se B.ela}}Madrinha{{senao}}Padrinho{{/se}}: cooperação zero.*\n\nA tinta borrou um pouco com a chuva de ontem. Dá para ler mesmo assim. Dá para ver também as quatro dobras de um pano que passou dois anos dentro de uma carteira.\n\nA carteira é de {{B.ref}}. A letra é de {{A.ref}}. Os dois estão na cozinha.\n\nA Pippa, encostada na pia, olha de um para o outro, e pela primeira vez em cinco dias não pega o celular para avisar ninguém.\n\nÉ a manhã mais bonita da semana. Dura mais onze minutos.",
+      "texto": "Oito e meia. Na bancada da cozinha, em cima de um pano de prato, o Barnaby espalhou tudo o que molhou ontem à noite, para secar ao sol da janela: dois celulares dentro de uma tigela de arroz cru, uma carteira aberta, notas de dólar uma do lado da outra, um cartão da biblioteca de Providence, uma carteira de motorista de Rhode Island.\n\n{{se flag:guardanapo_caiu}}E, por cima de tudo, um guardanapo de pano branco, dobrado em quatro, com um *A* azul bordado no canto.\n\n— Achei debaixo do banco da caminhonete — diz o Barnaby, para ninguém em particular, servindo café. — Hoje cedo. Quando fui ver o estrago do teto.{{senao}}E, no meio das notas, saído de dentro da carteira, um guardanapo de pano branco, dobrado em quatro, com um *A* azul bordado no canto, que o Barnaby desdobrou para secar, porque o Barnaby seca tudo aberto.{{/se}}\n\nO guardanapo está aberto, porque o Barnaby seca tudo aberto. No meio do pano, em caneta azul, numa letra de cerimonialista, apressada, tem quatro palavras de dois anos atrás, escritas no meio daquele jantar, por baixo da mesa, como quem anota num cronograma:\n\n*{{se B.ela}}Madrinha{{senao}}Padrinho{{/se}}: cooperação zero.*\n\nA tinta borrou um pouco com a chuva de ontem. Dá para ler mesmo assim. Dá para ver também as quatro dobras de um pano que passou dois anos dentro de uma carteira.\n\nA carteira é de {{B.ref}}. A letra é de {{A.ref}}. Os dois estão na cozinha.\n\nA Pippa, encostada na pia, olha de um para o outro, e pela primeira vez em cinco dias não pega o celular para avisar ninguém.\n\nÉ a manhã mais bonita da semana. Dura mais onze minutos.\n\n{{se flag:assobio}}Uma melodia sem dono ficou no ar da cozinha, e o Barnaby, que jura não ouvir, a assobia pela metade quando acha que ninguém repara.{{/se}}\n\n{{se flag:cafe7}}A caneca lascada, cheia do jeito certo, esfria na bancada sem que ninguém diga uma palavra sobre ela.{{/se}}\n\n{{se flag:dez_minutos}}No banco de vime da varanda ficou a forma de quem passou dez minutos sem arrumar nada, e o Barnaby, que cronometrou por hábito, não diz quanto durou.{{/se}}\n\n{{se flag:v18}}O caderno preto, aberto na versão dezoito, tem agora uma segunda frase que não precisou de borracha.{{/se}}",
       "ir": "pd_c7_guardanapo",
       "efeitos": {
         "pista": "pd_guardanapo"
@@ -5740,7 +5740,7 @@
       "lugar": "Quarto três da Gull House",
       "hora": "Quinta, 15 de junho · 10h00",
       "tipo": "dialogo",
-      "texto": "Quarto três. A tranca quebrada desde 1997. Pela janela, o porto e a neblina começando a entrar.\n\nOs dois de pé, um de cada lado da cama, cada um com uma coisa que o outro não contou.\n\n{{se flag:contou_a_tunde}}Um caderno preto, aberto na versão dezoito de um discurso que foi escrito para ser lido a cento e quarenta pessoas.{{senao}}Um celular com a transcrição de um recado de voz na tela de bloqueio.{{/se}} E um nome, Graham, que desceu da balsa das nove e vinte com uma mala de rodinha e uma verdade que não era dele.",
+      "texto": "Quarto três. A tranca quebrada desde 1997. Pela janela, o porto e a neblina começando a entrar.\n\nOs dois de pé, um de cada lado da cama, cada um com uma coisa que o outro não contou.\n\n{{se flag:contou_a_tunde}}Um caderno preto, aberto na versão dezoito de um discurso que foi escrito para ser lido a cento e quarenta pessoas.{{senao}}Um celular com a transcrição de um recado de voz na tela de bloqueio.{{/se}} E um nome, Graham, que desceu da balsa das nove e vinte com uma mala de rodinha e uma verdade que não era dele.\n\n{{se eu:A && flag:leu_planod}}A página D, lida a sós esta manhã, está de novo dobrada dentro da pasta, e a tranca quebrada do quarto três faz um barulho que parece vir dela.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -5955,7 +5955,7 @@
         "pippa"
       ],
       "tipo": "dividir",
-      "texto": "Seis da tarde. Faltam dois dias, e a lista de tarefas não quer saber quem brigou com quem.\n\nA Pippa aparece com o verso da tabela, as duas colunas e uma caneta atrás da orelha.\n\n— Eu levo recado — ela avisa. — Um de cada. Sobre o casamento, ou não. Eu não leio.\n\nEla lê. Todo mundo sabe que ela lê.",
+      "texto": "Seis da tarde. Faltam dois dias, e a lista de tarefas não quer saber quem brigou com quem.\n\nA Pippa aparece com o verso da tabela, as duas colunas e uma caneta atrás da orelha.\n\n— Eu levo recado — ela avisa. — Um de cada. Sobre o casamento, ou não. Eu não leio.\n\nEla lê. Todo mundo sabe que ela lê.\n\n{{se flag:falou_graham}}No celular de {{A.ref}}, nenhuma mensagem nova do Graham: pela primeira vez em nove meses, o silêncio dele não pesa.{{/se}}\n\n{{se flag:funmi_quase}}A juíza Funmi não terminou a frase que começou com *você brigou com*. A frase, no entanto, terminou sozinha.{{/se}}\n\n{{se eu:A && flag:c7c_azul}}Os doze vasos azuis esperam em fila, embrulhados em papel de jornal, e cada vez que você passa a carriola range o nome da cor.{{/se}}\n\n{{se eu:A && flag:c7c_ruth}}O nome da Ruth, que o Barnaby não diz sem baixar a voz, ficou entre os vasos.{{/se}}\n\n{{se eu:A && flag:c7c_janela}}O vidro quebrado do canto da estufa agora tem nome, e você olha para ele como para um velho amigo do Barnaby.{{/se}}\n\n{{se eu:B && flag:c7d_foto}}A foto torta do cartaz, com o reflexo do seu ombro no vidro, está na galeria do celular, entre duas capturas de tela de recados.{{/se}}\n\n{{se eu:B && flag:c7d_zelador}}O zelador de camisa de flanela ficou na sua memória como a única pessoa da semana que respondeu sem enfeite.{{/se}}",
       "cada": 1,
       "acoes": [
         {
@@ -7173,7 +7173,6 @@
   },
   "escolhasMortasToleradas": [
     "a_ouviu_tunde",
-    "assobio",
     "b_cabos9",
     "b_equacao9",
     "b_ouviu_recado9",
@@ -7182,23 +7181,14 @@
     "b_vaga_ilha",
     "brinde_gemma",
     "brinde_tunde",
-    "c7c_azul",
     "c7c_branca_cedo",
-    "c7c_janela",
-    "c7c_ruth",
-    "c7d_foto",
-    "c7d_zelador",
-    "cafe7",
-    "dez_minutos",
     "dica_pike",
     "dory_proposta",
     "dory_receita",
     "dory_socia",
     "enjoou",
-    "falou_graham",
     "final_ruptura",
     "funmi_promete",
-    "funmi_quase",
     "gesto_pasta",
     "gesto_quase",
     "gesto_quase_b",
@@ -7206,11 +7196,9 @@
     "graham_apresentou",
     "graham_cumprimento",
     "graham_perguntou",
-    "leu_planod",
     "olhou4",
     "rosa_hortensia",
     "som_tunde",
-    "v18",
     "vento_calculo",
     "vento_lideranca"
   ]

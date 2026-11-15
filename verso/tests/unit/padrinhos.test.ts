@@ -14,13 +14,16 @@ describe('consequências das escolhas (antes mortas)', () => {
   };
   const l = livro();
   const vistos: Record<'A' | 'B', string> = { A: '', B: '' };
-  const chave0 = (t: string) => t.replace(/\*/g, '').slice(0, 40);
+  // maior trecho literal do texto (sem {{tokens}} nem *): é o que aparece igual na tela
+  const chave0 = (t: string) => t.replace(/\*/g, '').split(/\{\{[^}]*\}\}/).sort((a, b) => b.length - a.length)[0]!.trim().slice(0, 40);
   const faltam = () => arq.itens.filter((it) => (it.privadoDe ? !vistos[it.privadoDe].includes(chave0(it.texto)) : !(vistos.A + vistos.B).includes(chave0(it.texto))));
   // joga até ver todas as reações (ou 700 partidas): metade com consentimento, metade sem
-  for (let seed = 1; seed <= 700 && (seed <= 40 || faltam().length); seed++) {
+  let pendentes = arq.itens.length;
+  for (let seed = 1; seed <= 700 && pendentes > 0; seed++) {
     const p = jogar(l, { A: { nome: 'Ivy', genero: 'ela' }, B: { nome: 'Sam', genero: 'ele' } }, seed % 2 ? 'ambos' : 'nenhum', criarRng(seed));
     vistos.A += p.textos.A.join('\n').replace(/\*/g, '');
     vistos.B += p.textos.B.join('\n').replace(/\*/g, '');
+    if (seed % 25 === 0) pendentes = faltam().length; // varre só de vez em quando: os textos crescem
   }
   const render = (t: string) => t.replace(/\*/g, '');
   it('nenhuma flag consequente continua morta', () => {
@@ -28,7 +31,7 @@ describe('consequências das escolhas (antes mortas)', () => {
     for (const it of arq.itens) expect(baseline.has(it.flag), it.flag).toBe(false);
   });
   it('reação privada: aparece para quem fez a escolha e NUNCA para o outro jogador', () => {
-    const chave = (t: string) => render(t).slice(0, 40);
+    const chave = chave0;
     for (const it of arq.itens.filter((x) => x.privadoDe)) {
       const dono = it.privadoDe!;
       const outro = dono === 'A' ? 'B' : 'A';
@@ -37,7 +40,7 @@ describe('consequências das escolhas (antes mortas)', () => {
     }
   });
   it('reação pública aparece para os dois', () => {
-    const chave = (t: string) => render(t).slice(0, 40);
+    const chave = chave0;
     for (const it of arq.itens.filter((x) => !x.privadoDe)) {
       expect(vistos.A.includes(chave(it.texto)) || vistos.B.includes(chave(it.texto)), `${it.flag} nunca apareceu`).toBe(true);
     }

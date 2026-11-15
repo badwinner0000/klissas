@@ -405,6 +405,72 @@
       "flag": "noite6_nao",
       "no": "pd_c6_fim",
       "texto": "O terceiro degrau da escada dos fundos range a cada passagem, e o Barnaby, de ouvido apurado, já aprendeu a distinguir quem desce de quem sobe."
+    },
+    {
+      "flag": "assobio",
+      "no": "pd_c7_carteira",
+      "texto": "Uma melodia sem dono ficou no ar da cozinha, e o Barnaby, que jura não ouvir, a assobia pela metade quando acha que ninguém repara."
+    },
+    {
+      "flag": "cafe7",
+      "no": "pd_c7_carteira",
+      "texto": "A caneca lascada, cheia do jeito certo, esfria na bancada sem que ninguém diga uma palavra sobre ela."
+    },
+    {
+      "flag": "dez_minutos",
+      "no": "pd_c7_carteira",
+      "texto": "No banco de vime da varanda ficou a forma de quem passou dez minutos sem arrumar nada, e o Barnaby, que cronometrou por hábito, não diz quanto durou."
+    },
+    {
+      "flag": "v18",
+      "no": "pd_c7_carteira",
+      "texto": "O caderno preto, aberto na versão dezoito, tem agora uma segunda frase que não precisou de borracha."
+    },
+    {
+      "flag": "leu_planod",
+      "no": "pd_c7_briga",
+      "privadoDe": "A",
+      "texto": "A página D, lida a sós esta manhã, está de novo dobrada dentro da pasta, e a tranca quebrada do quarto três faz um barulho que parece vir dela."
+    },
+    {
+      "flag": "falou_graham",
+      "no": "pd_c7_recados",
+      "texto": "No celular de {{A.ref}}, nenhuma mensagem nova do Graham: pela primeira vez em nove meses, o silêncio dele não pesa."
+    },
+    {
+      "flag": "funmi_quase",
+      "no": "pd_c7_recados",
+      "texto": "A juíza Funmi não terminou a frase que começou com *você brigou com*. A frase, no entanto, terminou sozinha."
+    },
+    {
+      "flag": "c7c_azul",
+      "no": "pd_c7_recados",
+      "privadoDe": "A",
+      "texto": "Os doze vasos azuis esperam em fila, embrulhados em papel de jornal, e cada vez que você passa a carriola range o nome da cor."
+    },
+    {
+      "flag": "c7c_ruth",
+      "no": "pd_c7_recados",
+      "privadoDe": "A",
+      "texto": "O nome da Ruth, que o Barnaby não diz sem baixar a voz, ficou entre os vasos."
+    },
+    {
+      "flag": "c7c_janela",
+      "no": "pd_c7_recados",
+      "privadoDe": "A",
+      "texto": "O vidro quebrado do canto da estufa agora tem nome, e você olha para ele como para um velho amigo do Barnaby."
+    },
+    {
+      "flag": "c7d_foto",
+      "no": "pd_c7_recados",
+      "privadoDe": "B",
+      "texto": "A foto torta do cartaz, com o reflexo do seu ombro no vidro, está na galeria do celular, entre duas capturas de tela de recados."
+    },
+    {
+      "flag": "c7d_zelador",
+      "no": "pd_c7_recados",
+      "privadoDe": "B",
+      "texto": "O zelador de camisa de flanela ficou na sua memória como a única pessoa da semana que respondeu sem enfeite."
     }
   ]
 }
