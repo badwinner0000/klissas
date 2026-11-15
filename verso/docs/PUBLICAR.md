@@ -43,3 +43,11 @@ Endereço: **https://lovesparks.verso.business** (domínio `verso.business` na C
 4. Conferir `https://lovesparks.verso.business/api/saude` (deve vir `"ok": true`).
 
 Notas técnicas: os livros entram no bundle (`scripts/gerar-biblioteca.mjs`, no `prebuild`); o Workers abre uma conexão Postgres por consulta (não reaproveita entre requisições); teste local: `npm run cf:preview` (segredos em `.dev.vars`, fora do Git).
+
+### Cloudflare + Supabase: Hyperdrive
+
+O Worker não consegue validar o certificado do Supabase, e a conexão cai com "Connection terminated unexpectedly". O Hyperdrive resolve isso:
+
+1. Painel → Storage & databases → Hyperdrive → Create. Cole a URL do Supabase (Transaction pooler, porta 6543, senha preenchida). Copie o **ID** da configuração (não é segredo).
+2. Em `wrangler.jsonc`, adicione `"hyperdrive": [{ "binding": "HYPERDRIVE", "id": "<ID>" }]`.
+3. Novo deploy. O código usa o Hyperdrive quando o binding existe e cai para `DATABASE_URL` quando não existe.

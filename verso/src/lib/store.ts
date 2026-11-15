@@ -57,9 +57,26 @@ export interface Store {
 }
 
 let impl: Store | undefined;
+
+/** Na Cloudflare, o Hyperdrive (se ligado no wrangler.jsonc) faz a conexão segura com o Supabase; o Worker não consegue validar o certificado do Supabase sozinho. */
+async function urlDoHyperdrive(): Promise<string | undefined> {
+  if (typeof navigator === 'undefined' || navigator.userAgent !== 'Cloudflare-Workers') return undefined;
+  try {
+    const { getCloudflareContext } = await import('@opennextjs/cloudflare');
+    const h = (getCloudflareContext().env as { HYPERDRIVE?: { connectionString?: string } }).HYPERDRIVE;
+    return h?.connectionString || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 async function escolher(): Promise<Store> {
   if (impl) return impl;
-  if (process.env.DATABASE_URL) {
+  const hyper = await urlDoHyperdrive();
+  if (hyper) {
+    const { storePg } = await import('./store-pg');
+    impl = storePg(hyper, { semSsl: true });
+  } else if (process.env.DATABASE_URL) {
     const { storePg } = await import('./store-pg');
     impl = storePg(process.env.DATABASE_URL);
   } else {
