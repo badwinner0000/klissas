@@ -6505,8 +6505,16 @@
         "rosa"
       ],
       "tipo": "segue",
-      "texto": "{{se flag:verdade_antes}}O casamento atrasa cinquenta e um minutos.\n\nDurante cinquenta e um minutos, num quarto do segundo andar, de porta fechada, com a Rosa e a tia Concetta expulsas para o corredor, a Gemma e o Tunde conversam. Ninguém ouve o que eles dizem. A Rosa encosta o ouvido na porta e a juíza Funmi, sem dizer nada, tira ela de lá pelo braço.\n\nNo gramado, os dois padrinhos seguram cento e trinta e oito convidados. {{se flag:banda_primos}}Os Barros tocam morna. Depois funaná. A tia Bisi tira a tia Concetta para dançar e a tia Concetta, que não fala inglês desde 1974, aceita.{{senao}}A playlist da Pippa toca, e quando a playlist acaba, o tio Armando pega o acordeão do chão e toca morna, e a tia Bisi tira a tia Concetta para dançar.{{/se}} A Dory serve bolinho de bacalhau de entrada. Ninguém reclama do atraso. Ninguém sabe do atraso.\n\nÀs seis e vinte e um, a porta do clube abre. O Tunde e a Gemma descem a escada juntos, de mãos dadas, contra todas as regras, com os olhos vermelhos dos dois. A Gemma está rindo. Não o riso alto de sempre. Um mais baixo.\n\n— Ele tem medo — ela diz, no microfone, para cento e trinta e oito pessoas, antes que o Barnaby diga qualquer coisa. — Eu também tenho. A gente combinou de ter medo junto.{{senao}}{{se flag:adiar_juntos}}Às cinco e cinquenta, os dois padrinhos sobem juntos no tablado do altar{{se flag:altar_girado}}, girado trinta e oito graus{{/se}}, com o sol de lado, na água. O Barnaby, de terno de linho, dá um passo para trás.\n\n{{se eu:A}}Você pega{{senao}}{{A.Ref}} pega{{/se}} o microfone. A mão treme. Cento e trinta e oito pessoas.\n\n— Boa tarde. Eu sou {{se A.ela}}a irmã{{senao}}o irmão{{/se}} da noiva, e organizo casamentos há oito anos, e eu tenho uma coisa para dizer que eu nunca disse em nenhum deles. — Uma pausa. — Hoje não vai ter casamento. O noivo precisa de um pouco mais de tempo. A noiva já sabe por quê, porque ele contou para ela primeiro, que é como devia ser. E eu estou dizendo isso no microfone, na frente de todo mundo, porque eu passei nove meses fazendo o contrário com o meu próprio casamento. Eu cancelei. Não fui largad{{A.o_a}}. E deixei todo mundo achar outra coisa. — Uma respiração. — Hoje ninguém precisa achar nada.\n\nSilêncio. O vento. As gaivotas.\n\n{{se eu:B}}Você pega{{senao}}{{B.Ref}} pega{{/se}} o microfone.\n\n— Tem cento e cinquenta e quatro lagostas na cozinha. E uma banda. E a gente ensaiou uma valsa. — Uma pausa. — A festa continua.\n\nNa primeira fila, a juíza Funmi Okoro levanta. Sozinha. E começa a bater palmas.{{senao}}{{se ((flag:verdade_antes) || ((flag:empurrou) && (((flag:b_contou_gemma) || (flag:a_verdade)) || (flag:b_devolveu))))}}O Tunde entra no gramado com a gravata mal amarrada e o medo inteiro no peito. Mas quando a Gemma desce a escada do clube, de vestido, descalça, ela não está rindo alto. Está olhando para ele, só para ele, do jeito de quem sabe exatamente de que ele tem medo, porque ficou sabendo ontem, e escolheu descer a escada mesmo assim.\n\nNo altar, antes que o Barnaby comece, ela pega a mão dele e diz, baixinho, mas o microfone de lapela pega:\n\n— Eu sei. Tudo bem. Eu também.\n\nO Tunde respira. Pela primeira vez no dia.{{senao}}O Tunde entra no gramado com a gravata mal amarrada. A Gemma desce a escada do clube, de vestido, descalça, rindo alto, de mão dada com a Rosa.\n\nO Barnaby começa. *Estamos aqui reunidos.* A voz grossa, de quem só fala com planta.\n\nNo meio da frase, o Tunde levanta a mão. Devagar. Como um aluno.\n\n— Desculpa — ele diz. — Barnaby. Você disse que se alguém quisesse parar...\n\nO Barnaby fecha a pasta de juiz de paz. Faz que sim.\n\n— Para.\n\nO Tunde vira para a Gemma. Fala baixo. O microfone de lapela pega tudo, e cento e trinta e oito pessoas ouvem um homem de trinta e um anos dizer para a mulher que ama que tem medo de ser o pai dele, e que não contou para ela antes porque tinha medo de que ela fosse embora, e que está contando agora, no pior lugar possível, porque não aguenta mais casar com um segredo.\n\nA Gemma escuta tudo. De vestido. Descalça. E quando ele termina, ela tira o véu, entrega para a tia Concetta, e diz, no microfone, para todo mundo:\n\n— A gente não vai casar hoje. — Uma pausa. — Mas a gente não vai embora. Ninguém vai embora. Tem lagosta.{{/se}}{{/se}}{{/se}}\n\n{{se ((flag:verdade_antes) || ((flag:empurrou) && (((flag:b_contou_gemma) || (flag:a_verdade)) || (flag:b_devolveu))))}}O Barnaby Cole, juiz de paz do estado de Massachusetts desde 1991, casa Gemma Castellano e Tunde Okoro às seis e trinta e oito da tarde, com o sol {{se flag:altar_girado}}de lado, na água, exatamente onde alguém calculou que ia estar{{senao}}nos olhos de cento e trinta e oito convidados, que choram e não dá para saber se é do sol{{/se}}. A cerimônia dura onze minutos. No fim, ele diz *pode beijar*, e depois, fora do microfone, para ninguém: *Ruth, você ia gostar dessa.*\n\n{{se eu:B}}Você lê{{senao}}{{B.Ref}} lê{{/se}} o discurso de {{se B.ela}}madrinha{{senao}}padrinho{{/se}} no jantar. {{se flag:discurso19}}Versão dezenove. A da confiança. Ninguém ri na terceira frase. Na quarta, a juíza Funmi tira os óculos.{{senao}}A versão que sai, no microfone, não está em nenhuma folha do caderno preto. Tem três frases. A terceira faz a juíza Funmi tirar os óculos.{{/se}}{{/se}}\n\nE então, {{se ((flag:verdade_antes) || ((flag:empurrou) && (((flag:b_contou_gemma) || (flag:a_verdade)) || (flag:b_devolveu))))}}depois da valsa dos noivos{{senao}}depois que alguém tira o tablado do altar{{/se}}, a Pippa, de fone de ouvido, chorando, aperta o play.\n\n*Moon River.* Três minutos e meio.\n\nA valsa dos padrinhos.",
-      "ir": "pd_c9_valsa",
+      "texto": "{{se flag:verdade_antes}}O casamento atrasa cinquenta e um minutos.\n\nDurante cinquenta e um minutos, num quarto do segundo andar, de porta fechada, com a Rosa e a tia Concetta expulsas para o corredor, a Gemma e o Tunde conversam. Ninguém ouve o que eles dizem. A Rosa encosta o ouvido na porta e a juíza Funmi, sem dizer nada, tira ela de lá pelo braço.\n\nNo gramado, os dois padrinhos seguram cento e trinta e oito convidados. {{se flag:banda_primos}}Os Barros tocam morna. Depois funaná. A tia Bisi tira a tia Concetta para dançar e a tia Concetta, que não fala inglês desde 1974, aceita.{{senao}}A playlist da Pippa toca, e quando a playlist acaba, o tio Armando pega o acordeão do chão e toca morna, e a tia Bisi tira a tia Concetta para dançar.{{/se}} A Dory serve bolinho de bacalhau de entrada. Ninguém reclama do atraso. Ninguém sabe do atraso.\n\nÀs seis e vinte e um, a porta do clube abre. O Tunde e a Gemma descem a escada juntos, de mãos dadas, contra todas as regras, com os olhos vermelhos dos dois. A Gemma está rindo. Não o riso alto de sempre. Um mais baixo.\n\n— Ele tem medo — ela diz, no microfone, para cento e trinta e oito pessoas, antes que o Barnaby diga qualquer coisa. — Eu também tenho. A gente combinou de ter medo junto.{{senao}}{{se flag:adiar_juntos}}Às cinco e cinquenta, os dois padrinhos sobem juntos no tablado do altar{{se flag:altar_girado}}, girado trinta e oito graus{{/se}}, com o sol de lado, na água. O Barnaby, de terno de linho, dá um passo para trás.\n\nO microfone de lapela está ligado. Cento e trinta e oito pessoas esperam que alguém fale.{{senao}}{{se ((flag:verdade_antes) || ((flag:empurrou) && (((flag:b_contou_gemma) || (flag:a_verdade)) || (flag:b_devolveu))))}}O Tunde entra no gramado com a gravata mal amarrada e o medo inteiro no peito. Mas quando a Gemma desce a escada do clube, de vestido, descalça, ela não está rindo alto. Está olhando para ele, só para ele, do jeito de quem sabe exatamente de que ele tem medo, porque ficou sabendo ontem, e escolheu descer a escada mesmo assim.\n\nNo altar, antes que o Barnaby comece, ela pega a mão dele e diz, baixinho, mas o microfone de lapela pega:\n\n— Eu sei. Tudo bem. Eu também.\n\nO Tunde respira. Pela primeira vez no dia.{{senao}}O Tunde entra no gramado com a gravata mal amarrada. A Gemma desce a escada do clube, de vestido, descalça, rindo alto, de mão dada com a Rosa.\n\nO Barnaby começa. *Estamos aqui reunidos.* A voz grossa, de quem só fala com planta.\n\nNo meio da frase, o Tunde levanta a mão. Devagar. Como um aluno.\n\n— Desculpa — ele diz. — Barnaby. Você disse que se alguém quisesse parar...\n\nO Barnaby fecha a pasta de juiz de paz. Faz que sim.\n\n— Para.\n\nO Tunde vira para a Gemma. Fala baixo. O microfone de lapela pega tudo, e cento e trinta e oito pessoas ouvem um homem de trinta e um anos dizer para a mulher que ama que tem medo de ser o pai dele, e que não contou para ela antes porque tinha medo de que ela fosse embora, e que está contando agora, no pior lugar possível, porque não aguenta mais casar com um segredo.\n\nA Gemma escuta tudo. De vestido. Descalça. E quando ele termina, ela tira o véu, entrega para a tia Concetta, e diz, no microfone, para todo mundo:\n\n— A gente não vai casar hoje. — Uma pausa. — Mas a gente não vai embora. Ninguém vai embora. Tem lagosta.{{/se}}{{/se}}{{/se}}",
+      "ir": [
+        {
+          "se": "flag:adiar_juntos && !flag:verdade_antes",
+          "ir": "pd_c9_microfone"
+        },
+        {
+          "ir": "pd_c9_cerimonia2"
+        }
+      ],
       "efeitosSe": [
         {
           "se": "(flag:verdade_antes) || ((flag:empurrou) && (((flag:b_contou_gemma) || (flag:a_verdade)) || (flag:b_devolveu)))",
@@ -7054,6 +7062,88 @@
           "resultado": ""
         }
       ]
+    },
+    "pd_c9_microfone": {
+      "cap": 9,
+      "lugar": "Gramado {{se flag:tenda_agua}}de baixo{{senao}}de cima{{/se}} do Yacht Club",
+      "hora": "Sábado, 17 de junho · pôr do sol",
+      "npcs": [
+        "gemma",
+        "tunde",
+        "barnaby",
+        "funmi",
+        "rosa"
+      ],
+      "tipo": "dialogo",
+      "comeca": "A",
+      "texto": "O Barnaby, de terno de linho, dá um passo para trás. O microfone de lapela está ligado, o sol bate de lado{{se flag:altar_girado}}, no altar girado trinta e oito graus{{/se}}, e cento e trinta e oito pessoas esperam de frente para o tablado. Alguém tem que falar primeiro, e depois o outro.",
+      "turnos": [
+        {
+          "prompt": "Você pega o microfone. A mão treme. Cento e trinta e oito pessoas.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "mic_a_abre",
+              "texto": "— Boa tarde. Eu sou {{se A.ela}}a irmã{{senao}}o irmão{{/se}} da noiva, e organizo casamentos há oito anos, e eu tenho uma coisa para dizer que eu nunca disse em nenhum deles. Hoje não vai ter casamento. O noivo precisa de um pouco mais de tempo. A noiva já sabe por quê, porque ele contou para ela primeiro, que é como devia ser. E eu estou dizendo isso no microfone porque eu passei nove meses fazendo o contrário com o meu próprio casamento. Eu cancelei. Não fui largad{{A.o_a}}. E deixei todo mundo achar outra coisa. Hoje ninguém precisa achar nada.",
+              "efeitos": {
+                "flag": "a_confessou_microfone",
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "mic_a_seco",
+              "texto": "— Boa tarde. O casamento fica para outro dia. O noivo e a noiva sabem por quê, e é problema deles, não de vocês. A festa, não: a festa é hoje. Tem comida, tem música e tem cadeira para todo mundo."
+            },
+            {
+              "tom": "cuida",
+              "tag": "mic_a_cuida",
+              "texto": "— Boa tarde. Antes de qualquer coisa: ninguém aqui fez nada errado. O casamento fica para outro dia, e eu peço, de coração, que vocês tratem esses dois com a mesma delicadeza com que eles tratariam vocês. Hoje a gente cuida deles."
+            }
+          ]
+        },
+        {
+          "prompt": "O microfone passa para você.",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "tag": "mic_b_cuida",
+              "texto": "— Tem cento e cinquenta e quatro lagostas na cozinha. E uma banda. E a gente ensaiou uma valsa. A festa continua."
+            },
+            {
+              "tom": "abre",
+              "tag": "mic_b_abre",
+              "texto": "— Eu passei cinco dias guardando um segredo que não era meu, e hoje eu aprendi que dá para largar. A festa continua. Tem lagosta.",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "mic_b_seco",
+              "texto": "— Tem lagosta, tem banda e tem bar aberto. Quem quiser ir embora, a saída é pelos fundos. A festa continua."
+            }
+          ]
+        }
+      ],
+      "pool": [],
+      "fecho": "Silêncio. O vento. As gaivotas.\n\nNa primeira fila, a juíza Funmi Okoro levanta. Sozinha. E começa a bater palmas.",
+      "ir": "pd_c9_cerimonia2"
+    },
+    "pd_c9_cerimonia2": {
+      "cap": 9,
+      "lugar": "Gramado {{se flag:tenda_agua}}de baixo{{senao}}de cima{{/se}} do Yacht Club",
+      "hora": "Sábado, 17 de junho · pôr do sol",
+      "npcs": [
+        "gemma",
+        "tunde",
+        "barnaby",
+        "funmi",
+        "rosa"
+      ],
+      "tipo": "segue",
+      "texto": "{{se flag:a_confessou_microfone}}Na terceira fila, alguém assoa o nariz sem disfarçar. Ninguém ri.{{/se}}\n\n{{se flag:casou}}O Barnaby Cole, juiz de paz do estado de Massachusetts desde 1991, casa Gemma Castellano e Tunde Okoro às seis e trinta e oito da tarde, com o sol {{se flag:altar_girado}}de lado, na água, exatamente onde alguém calculou que ia estar{{senao}}nos olhos de cento e trinta e oito convidados, que choram e não dá para saber se é do sol{{/se}}. A cerimônia dura onze minutos. No fim, ele diz *pode beijar*, e depois, fora do microfone, para ninguém: *Ruth, você ia gostar dessa.*\n\n{{se eu:B}}Você lê{{senao}}{{B.Ref}} lê{{/se}} o discurso de {{se B.ela}}madrinha{{senao}}padrinho{{/se}} no jantar. {{se flag:discurso19}}Versão dezenove. A da confiança. Ninguém ri na terceira frase. Na quarta, a juíza Funmi tira os óculos.{{senao}}A versão que sai, no microfone, não está em nenhuma folha do caderno preto. Tem três frases. A terceira faz a juíza Funmi tirar os óculos.{{/se}}{{/se}}\n\nE então, {{se flag:casou}}depois da valsa dos noivos{{senao}}depois que alguém tira o tablado do altar{{/se}}, a Pippa, de fone de ouvido, chorando, aperta o play.\n\n*Moon River.* Três minutos e meio.\n\nA valsa dos padrinhos.",
+      "ir": "pd_c9_valsa"
     }
   },
   "escolhasMortasToleradas": [

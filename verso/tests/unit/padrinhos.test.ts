@@ -18,6 +18,16 @@ describe('Padrinho e Madrinha (livro migrado)', () => {
       if ('acoes' in n) for (const a of n.acoes) expect(!!(a.compartilhada && a.variantes), `${id}.${a.id}`).toBe(false);
   });
 
+  it('regressão (cap. 9): o discurso do microfone é diálogo com 3 tons por jogador, não narração', () => {
+    const l = livro();
+    const mic = l.nos.pd_c9_microfone as any;
+    expect(mic.tipo).toBe('dialogo');
+    for (const t of mic.turnos) expect(new Set(t.opcoes.map((o: any) => o.tom)).size).toBeGreaterThanOrEqual(3);
+    expect(JSON.stringify(l.nos.pd_c9_cerimonia)).not.toContain('Boa tarde. Eu sou');
+    const r = simular(l, 6);
+    expect(r.naoVisitados).not.toContain('pd_c9_microfone');
+  });
+
   it('sem dados, sem atributos, sem puzzle', () => {
     const bruto = lerBruto('padrinhos');
     expect(bruto).not.toMatch(/"teste"|"atributos"|"puzzle"|2d6/);
@@ -26,11 +36,11 @@ describe('Padrinho e Madrinha (livro migrado)', () => {
 
   it('regressão: trechos em que o original narrava fala de protagonista sem escolha foram corrigidos', () => {
     const bruto = lerBruto('padrinhos');
-    for (const frag of ['\n\n— Mãe.\n\n', '\n\n— Às vezes.\n\n', 'disse *tudo bem*', '— Respira — você diz', '— Cético — você diz', 'Você diz que ouviu o recado'])
+    for (const frag of ['{{se eu:A}}Você pega{{senao}}{{A.Ref}} pega{{/se}} o microfone.', '\n\n— Mãe.\n\n', '\n\n— Às vezes.\n\n', 'disse *tudo bem*', '— Respira — você diz', '— Cético — você diz', 'Você diz que ouviu o recado'])
       expect(bruto, frag).not.toContain(frag);
   });
 
-  it('simulação: 4 políticas × 4 gêneros, zero erros e todos os 122 nós visitados', () => {
+  it('simulação: 4 políticas × 4 gêneros, zero erros e todos os nós visitados', () => {
     const r = simular(livro(), 12);
     expect(r.erros).toEqual([]);
     expect(r.naoVisitados).toEqual([]);

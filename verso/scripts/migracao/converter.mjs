@@ -490,6 +490,47 @@ for (const c of CORRECOES) {
   if (cont.n !== 1) problemas.push(`${c.no}: correção aplicada ${cont.n}x (esperado 1): ${c.de.slice(0, 40)}`);
 }
 
+
+// ───────────── reestruturação: a cerimônia (cap. 9) escrevia o discurso dos protagonistas sem escolha ─────────────
+{
+  const n = nos.pd_c9_cerimonia;
+  const t = n.texto;
+  const ini = t.indexOf('{{se eu:A}}Você pega{{senao}}{{A.Ref}} pega{{/se}} o microfone.');
+  const fimTxt = 'começa a bater palmas.';
+  const fim = t.indexOf(fimTxt) + fimTxt.length;
+  const cauda = t.indexOf('{{se ((flag:verdade_antes)', t.indexOf('{{/se}}{{/se}}{{/se}}'));
+  if (ini < 0 || fim < fimTxt.length || cauda < 0) problemas.push('pd_c9_cerimonia: marcadores da reestruturação não encontrados');
+  else {
+    const casou = 'flag:casou';
+    let head = t.slice(0, ini) + 'O microfone de lapela está ligado. Cento e trinta e oito pessoas esperam que alguém fale.' + t.slice(fim, cauda).trimEnd();
+    let tail = t.slice(cauda).replace(/\{\{se \(\(flag:verdade_antes\)[^}]*\}\}/g, `{{se ${casou}}}`);
+    tail = '{{se flag:a_confessou_microfone}}Na terceira fila, alguém assoa o nariz sem disfarçar. Ninguém ri.{{/se}}\n\n' + tail;
+    const aqui = { cap: n.cap, lugar: n.lugar, hora: n.hora, npcs: n.npcs };
+    n.texto = head;
+    n.ir = [{ se: 'flag:adiar_juntos && !flag:verdade_antes', ir: 'pd_c9_microfone' }, { ir: 'pd_c9_cerimonia2' }];
+    nos.pd_c9_microfone = {
+      ...aqui, tipo: 'dialogo', comeca: 'A',
+      texto: 'O Barnaby, de terno de linho, dá um passo para trás. O microfone de lapela está ligado, o sol bate de lado{{se flag:altar_girado}}, no altar girado trinta e oito graus{{/se}}, e cento e trinta e oito pessoas esperam de frente para o tablado. Alguém tem que falar primeiro, e depois o outro.',
+      turnos: [
+        { prompt: 'Você pega o microfone. A mão treme. Cento e trinta e oito pessoas.', opcoes: [
+          { tom: 'abre', tag: 'mic_a_abre', texto: '— Boa tarde. Eu sou {{se A.ela}}a irmã{{senao}}o irmão{{/se}} da noiva, e organizo casamentos há oito anos, e eu tenho uma coisa para dizer que eu nunca disse em nenhum deles. Hoje não vai ter casamento. O noivo precisa de um pouco mais de tempo. A noiva já sabe por quê, porque ele contou para ela primeiro, que é como devia ser. E eu estou dizendo isso no microfone porque eu passei nove meses fazendo o contrário com o meu próprio casamento. Eu cancelei. Não fui largad{{A.o_a}}. E deixei todo mundo achar outra coisa. Hoje ninguém precisa achar nada.', efeitos: { flag: 'a_confessou_microfone', vinculo: 1 } },
+          { tom: 'seco', tag: 'mic_a_seco', texto: '— Boa tarde. O casamento fica para outro dia. O noivo e a noiva sabem por quê, e é problema deles, não de vocês. A festa, não: a festa é hoje. Tem comida, tem música e tem cadeira para todo mundo.' },
+          { tom: 'cuida', tag: 'mic_a_cuida', texto: '— Boa tarde. Antes de qualquer coisa: ninguém aqui fez nada errado. O casamento fica para outro dia, e eu peço, de coração, que vocês tratem esses dois com a mesma delicadeza com que eles tratariam vocês. Hoje a gente cuida deles.' },
+        ] },
+        { prompt: 'O microfone passa para você.', opcoes: [
+          { tom: 'cuida', tag: 'mic_b_cuida', texto: '— Tem cento e cinquenta e quatro lagostas na cozinha. E uma banda. E a gente ensaiou uma valsa. A festa continua.' },
+          { tom: 'abre', tag: 'mic_b_abre', texto: '— Eu passei cinco dias guardando um segredo que não era meu, e hoje eu aprendi que dá para largar. A festa continua. Tem lagosta.', efeitos: { vinculo: 1 } },
+          { tom: 'seco', tag: 'mic_b_seco', texto: '— Tem lagosta, tem banda e tem bar aberto. Quem quiser ir embora, a saída é pelos fundos. A festa continua.' },
+        ] },
+      ],
+      pool: [],
+      fecho: 'Silêncio. O vento. As gaivotas.\n\nNa primeira fila, a juíza Funmi Okoro levanta. Sozinha. E começa a bater palmas.',
+      ir: 'pd_c9_cerimonia2',
+    };
+    nos.pd_c9_cerimonia2 = { ...aqui, tipo: 'segue', texto: tail, ir: n.__irOriginal ?? 'pd_c9_valsa' };
+  }
+}
+
 // consentimento com destinos distintos: cada destino só existe do seu lado
 for (const n of Object.values(nos)) {
   if (n.tipo !== 'consentimento' || n.irAvancou === n.irSem) continue;
