@@ -198,11 +198,13 @@ function irPara(l: Livro, e: Estado, jog: Jogadores, d: Dest, seats: Seat[]) {
 function falante(no: Extract<No, { tipo: 'dialogo' }>, i: number): Seat {
   return i % 2 === 0 ? no.comeca : outro(no.comeca);
 }
-export function opcoesTurno(no: Extract<No, { tipo: 'dialogo' }>, idx: number, env: EnvCond): OpDialogo[] {
+export function opcoesTurno(no: Extract<No, { tipo: 'dialogo' }>, idx: number, env: EnvCond, poolGeral: OpDialogo[] = []): OpDialogo[] {
   const base = no.turnos[idx]!.opcoes.filter((o) => avaliarCond(o.se, env));
   const tons = new Set(base.map((o) => o.tom));
-  for (const p of no.pool) {
+  for (const p of [...no.pool, ...poolGeral]) {
     if (tons.size >= 3) break;
+    // uma fala de reserva já dita neste diálogo não volta a ser oferecida
+    if (env.hist.some((h) => h.tag === p.tag)) continue;
     if (!tons.has(p.tom) && avaliarCond(p.se, env)) {
       base.push(p);
       tons.add(p.tom);
@@ -314,7 +316,7 @@ export function visao(l: Livro, e: Estado, seat: Seat, jog: Jogadores): Visao {
         ...base,
         texto,
         prompt: t.prompt ? r(t.prompt) : undefined,
-        opcoes: opcoesTurno(no, idx, envCond(e, jog, seat, hist)).map((o) => ({ id: `${idx}:${o.tag}`, texto: render(l, e, jog, o.texto, seat, seat, hist), tom: o.tom })),
+        opcoes: opcoesTurno(no, idx, envCond(e, jog, seat, hist), l.poolGeral).map((o) => ({ id: `${idx}:${o.tag}`, texto: render(l, e, jog, o.texto, seat, seat, hist), tom: o.tom })),
       };
     }
   }
@@ -452,7 +454,7 @@ export function agir(l: Livro, e0: Estado, seat: Seat, acao: Acao_, jog: Jogador
       const aid = escolha();
       const hist = (sub.falas ??= []) as { seat: Seat; tag: string; tom: string }[];
       const h = hist.map((x) => ({ tag: x.tag, tom: x.tom }));
-      const op = opcoesTurno(no, idx, envCond(e, jog, seat, h)).find((o) => `${idx}:${o.tag}` === aid);
+      const op = opcoesTurno(no, idx, envCond(e, jog, seat, h), l.poolGeral).find((o) => `${idx}:${o.tag}` === aid);
       if (!op) throw new ErroJogo('opção inválida neste turno');
       if (op.acao) pushReg(sub, 'fala', seat, { A: render(l, e, jog, op.texto, 'A', seat, h), B: render(l, e, jog, op.texto, 'B', seat, h) });
       else {

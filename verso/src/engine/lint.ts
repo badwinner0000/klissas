@@ -279,7 +279,7 @@ export function lintarLivro(l: LivroT, outrosNomes: string[] = []): Resultado {
       const dfs = (i: number, hist: EnvCond['hist']) => {
         if (i >= no.turnos.length) return;
         const quem: Seat = i % 2 === 0 ? no.comeca : no.comeca === 'A' ? 'B' : 'A';
-        const o = opcoesTurno(no, i, envBase(flags, num, quem, hist));
+        const o = opcoesTurno(no, i, envBase(flags, num, quem, hist), l.poolGeral);
         const tons = new Set(o.map((x) => x.tom));
         const tg = o.map((x) => x.tag);
         if (new Set(tg).size !== tg.length) {
