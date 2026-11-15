@@ -55,10 +55,14 @@ async function passo(page, seat, tag, votou) {
       const i = textos.findIndex((x) => m && x && x.includes(m[1]));
       alvo = i >= 0 ? i : Math.floor(rnd() * n);
     } else alvo = Math.floor(rnd() * n);
-    votou.add(chave);
   } else alvo = Math.floor(rnd() * n);
   if (alvo < 0) alvo = 0;
-  await btns.nth(alvo).click({ timeout: 5000 }).catch(() => {});
+  // só conta como "votou" se o servidor confirmou (200); antes eu marcava no clique e travava quando o clique falhava
+  const [resp] = await Promise.all([
+    page.waitForResponse((r) => r.url().includes('/acao') && r.request().method() === 'POST', { timeout: 6000 }).catch(() => null),
+    btns.nth(alvo).click({ timeout: 5000 }).catch(() => {}),
+  ]);
+  if (tipo === 'decisao' && resp && resp.status() === 200) votou.add(chave);
   return true;
 }
 
