@@ -17,7 +17,7 @@
       "ferida": "Não ser amada sem estar útil."
     },
     "B": {
-      "papel": "O professor de química",
+      "papel": "O professor titular de química",
       "nomePadrao": "Sam",
       "generoPadrao": "ele",
       "idade": 35,
@@ -543,7 +543,7 @@
       "hora": "Sábado, 10 de junho · 15h55",
       "tipo": "solo",
       "seat": "A",
-      "texto": "Junho de 2021. O Alba, um restaurante italiano em Back Bay, com toalha branca e um garçom que se chamava Luca e vinha de Worcester.\n\nA Gemma arrumou. *Um amigo de um amigo do trabalho. Professor. Muito inteligente. Você vai gostar, ele é o seu oposto.* Você foi de vestido verde, com a agenda de três casamentos daquele fim de semana no celular.\n\n{{B.nome}} chegou dezenove minutos atrasad{{B.o_a}}. Você contou. Sentou, olhou a carta de vinhos e corrigiu a sua pronúncia de *Montepulciano*. Quando o molho de vitela chegou, explicou, sem ninguém perguntar, a química da redução: a água evapora, as moléculas de açúcar caramelizam, a reação de Maillard, como se você fosse uma turma do segundo ano. Quando você contou do casamento que estava fazendo naquele sábado, {{B.ele_ela}} disse: *ah, a indústria do casamento.* Com aquele tom.\n\nE quando a conta veio, dividiu. Por item. Com uma caneta de quatro cores.\n\nVocê saiu antes da sobremesa. Fim.\n\nÉ assim que você conta essa noite. Contou para a Gemma, para a sua mãe, para a Pippa, para duas noivas que perguntaram se você namorava. Sempre igual. Sempre terminando ali, no *fim*.\n\nA pessoa da camisa amassada está seis lugares na sua frente na fila. Vira. Olha para trás. Para em você.\n\nVocê vê o reconhecimento chegar. Devagar, como uma reação química que alguém explicaria sem ninguém pedir.",
+      "texto": "Junho de 2021. O Alba, um restaurante italiano em Back Bay, com toalha branca e um garçom que se chamava Luca e vinha de Worcester.\n\nA Gemma arrumou. *Um amigo de um amigo do trabalho. Professor titular na Brown. Muito inteligente. Você vai gostar, ele é o seu oposto.* Você foi de vestido verde, com a agenda de três casamentos daquele fim de semana no celular.\n\n{{B.nome}} chegou dezenove minutos atrasad{{B.o_a}}. Você contou. Sentou, olhou a carta de vinhos e corrigiu a sua pronúncia de *Montepulciano*. Quando o molho de vitela chegou, explicou, sem ninguém perguntar, a química da redução: a água evapora, as moléculas de açúcar caramelizam, a reação de Maillard, como se você fosse uma turma do segundo ano. Quando você contou do casamento que estava fazendo naquele sábado, {{B.ele_ela}} disse: *ah, a indústria do casamento.* Com aquele tom.\n\nE quando a conta veio, dividiu. Por item. Com uma caneta de quatro cores.\n\nVocê saiu antes da sobremesa. Fim.\n\nÉ assim que você conta essa noite. Contou para a Gemma, para a sua mãe, para a Pippa, para duas noivas que perguntaram se você namorava. Sempre igual. Sempre terminando ali, no *fim*.\n\nA pessoa da camisa amassada está seis lugares na sua frente na fila. Vira. Olha para trás. Para em você.\n\nVocê vê o reconhecimento chegar. Devagar, como uma reação química que alguém explicaria sem ninguém pedir.",
       "acoes": [
         {
           "id": "o1",
@@ -630,7 +630,7 @@
       "hora": "Sábado, 10 de junho · 15h55",
       "tipo": "solo",
       "seat": "B",
-      "texto": "Junho de 2021. O Alba, um restaurante italiano em Back Bay, com toalha branca e um garçom que se chamava Luca e vinha de Worcester.\n\nO Tunde arrumou. *Alguém que um cara do trabalho conhece. Organiza casamentos. Muito eficiente. Você vai gostar, {{A.ele_ela}} é o seu oposto.*\n\nVocê chegou dezenove minutos atrasad{{eu.o_a}}, porque a ponte de Providence estava parada, e pediu desculpa duas vezes. *Tudo bem* saiu da boca de {{A.nome}}, e *anotado*, do resto da cara.\n\nDurante o jantar, o celular tocou onze vezes. Você contou. {{A.Ele_ela}} atendeu as onze. Trocou de mesa duas vezes sem perguntar, porque a primeira tinha *uma corrente de ar* e a segunda *uma luz ruim para conversar*. Chamou o garçom de *querido*. Quando você tentou falar da sua turma, a do segundo ano, da reação de Maillard, que é o que deixa um molho bom, {{A.ele_ela}} olhou o relógio. No meio da frase.\n\nE quando a conta veio, {{A.ele_ela}} quis pagar tudo. Com um cartão da empresa. Como se você fosse um fornecedor.\n\n{{A.Ele_ela}} saiu antes da sobremesa. Fim.\n\nÉ assim que você conta essa noite. Contou para o Tunde, para a sua mãe, para o professor de física que divide a sala com você. Sempre igual. Sempre terminando ali, no *fim*.\n\nVocê vira para trás, na fila, sem saber por quê. E para.",
+      "texto": "Junho de 2021. O Alba, um restaurante italiano em Back Bay, com toalha branca e um garçom que se chamava Luca e vinha de Worcester.\n\nO Tunde arrumou. *Alguém que um cara do trabalho conhece. Organiza casamentos. Muito eficiente. Você vai gostar, {{A.ele_ela}} é o seu oposto.*\n\nVocê chegou dezenove minutos atrasad{{eu.o_a}}, porque a ponte de Providence estava parada, e pediu desculpa duas vezes. *Tudo bem* saiu da boca de {{A.nome}}, e *anotado*, do resto da cara.\n\nDurante o jantar, o celular tocou onze vezes. Você contou. {{A.Ele_ela}} atendeu as onze. Trocou de mesa duas vezes sem perguntar, porque a primeira tinha *uma corrente de ar* e a segunda *uma luz ruim para conversar*. Chamou o garçom de *querido*. Quando você tentou falar da sua turma, a do segundo ano, da reação de Maillard, que é o que deixa um molho bom, {{A.ele_ela}} olhou o relógio. No meio da frase.\n\nE quando a conta veio, {{A.ele_ela}} quis pagar tudo. Com um cartão da empresa. Como se você fosse um fornecedor.\n\n{{A.Ele_ela}} saiu antes da sobremesa. Fim.\n\nÉ assim que você conta essa noite. Contou para o Tunde, para a sua mãe, para o professor de física que divide o corredor do departamento com você. Sempre igual. Sempre terminando ali, no *fim*.\n\nVocê vira para trás, na fila, sem saber por quê. E para.",
       "acoes": [
         {
           "id": "o1",
@@ -681,7 +681,7 @@
             },
             {
               "tom": "seco",
-              "texto": "— Como vai a indústria do ensino médio?",
+              "texto": "— Como vai a indústria das bolsas de pesquisa?",
               "tag": "industria"
             }
           ],
@@ -703,7 +703,7 @@
             },
             {
               "tom": "flerte",
-              "texto": "— Rentável. Doze mil por ano em giz de cera. Os alunos comem.",
+              "texto": "— Rentável. Doze mil por ano em vidraria quebrada. Os orientandos derrubam.",
               "tag": "giz",
               "se": "hist[0]:industria"
             },
@@ -1380,7 +1380,7 @@
         "rosa"
       ],
       "tipo": "dialogo",
-      "texto": "A Brant Point Bakery é uma confeitaria do tamanho de um armário, com vitrine de doces e um ventilador de teto que gira devagar. Seis fatias de bolo numa bandeja: baunilha com framboesa, chocolate com avelã, cenoura, coco, amêndoa e limão-siciliano com merengue.\n\nA Rosa provou duas fatias e chorou nas duas. Agora está lá fora, na calçada, ao telefone com a tia Concetta, chorando a terceira.\n\nSobraram vocês dois, quatro garfos, e a pasta aberta na aba *Bolo*.\n\n{{se flag:covalente}}A Rosa, que não esquece frase nenhuma, apresenta {{B.nome}} à balconista da confeitaria como *a pessoa da ligação covalente*.{{/se}}\n\n{{se eu:B && flag:grupo_alunos}}O celular vibra no seu bolso a cada trinta segundos: o grupo dos alunos descobriu que você lê as mensagens.{{/se}}",
+      "texto": "A Brant Point Bakery é uma confeitaria do tamanho de um armário, com vitrine de doces e um ventilador de teto que gira devagar. Seis fatias de bolo numa bandeja: baunilha com framboesa, chocolate com avelã, cenoura, coco, amêndoa e limão-siciliano com merengue.\n\nA Rosa provou duas fatias e chorou nas duas. Agora está lá fora, na calçada, ao telefone com a tia Concetta, chorando a terceira.\n\nSobraram vocês dois, quatro garfos, e a pasta aberta na aba *Bolo*.\n\n{{se flag:covalente}}A Rosa, que não esquece frase nenhuma, apresenta {{B.nome}} à balconista da confeitaria como *a pessoa da ligação covalente*.{{/se}}\n\n{{se eu:B && flag:grupo_alunos}}O celular vibra no seu bolso a cada trinta segundos: o grupo do laboratório descobriu que você lê as mensagens.{{/se}}",
       "comeca": "A",
       "turnos": [
         {
@@ -1808,7 +1808,7 @@
             },
             {
               "tom": "flerte",
-              "texto": "— Interessante. — (Uma pausa.) — Ninguém nunca me chamou de interessante. Os alunos me chamam de Mol.",
+              "texto": "— Interessante. — (Uma pausa.) — Ninguém nunca me chamou de interessante. Os orientandos me chamam de Mol.",
               "tag": "mol",
               "se": "hist[1]:interessante"
             },
@@ -1933,7 +1933,7 @@
       "lugar": "Praia de Madaket",
       "hora": "Terça, 13 de junho · 6h10",
       "tipo": "segue",
-      "texto": "Ninguém atravessa. Os dois ficam na beira da água, perto, até a maré subir até os joelhos, e então voltam para a mesa de piquenique, e sentam no banco, lado a lado, com a lona da Dory por cima dos ombros, porque esfriou.\n\nA Dory volta às dez e cinco. Encontra os dois sentados no banco, debaixo da lona, falando baixo. Ela não interrompe. Deixa uma garrafa térmica de café na mesa, e duas bolachas de água e sal, e vai embora de novo, a pé, até a casa dela, do outro lado da enseada.\n\nVocês conversam até as três. Sobre a escola de Providence e os alunos que comem giz. Sobre casamentos em Newport que desmoronam. Sobre pais. Sobre nada que dê para contar para os irmãos.\n\n—\n\nSeis e dez da manhã.\n\nLuz cinza de neblina. Uma gaivota. A brasa apagada. Duas pessoas dormindo sentadas no banco de uma mesa de piquenique, encostadas uma na outra, debaixo de uma lona molhada que cheira a alga.\n\nUma acorda. A outra também. As duas fingem que não.",
+      "texto": "Ninguém atravessa. Os dois ficam na beira da água, perto, até a maré subir até os joelhos, e então voltam para a mesa de piquenique, e sentam no banco, lado a lado, com a lona da Dory por cima dos ombros, porque esfriou.\n\nA Dory volta às dez e cinco. Encontra os dois sentados no banco, debaixo da lona, falando baixo. Ela não interrompe. Deixa uma garrafa térmica de café na mesa, e duas bolachas de água e sal, e vai embora de novo, a pé, até a casa dela, do outro lado da enseada.\n\nVocês conversam até as três. Sobre o departamento de Providence e os orientandos que derrubam vidraria. Sobre casamentos em Newport que desmoronam. Sobre pais. Sobre nada que dê para contar para os irmãos.\n\n—\n\nSeis e dez da manhã.\n\nLuz cinza de neblina. Uma gaivota. A brasa apagada. Duas pessoas dormindo sentadas no banco de uma mesa de piquenique, encostadas uma na outra, debaixo de uma lona molhada que cheira a alga.\n\nUma acorda. A outra também. As duas fingem que não.",
       "ir": "pd_c3_manha",
       "efeitos": {
         "flag": "noite3_nao",
@@ -3528,7 +3528,7 @@
             },
             {
               "se": "",
-              "resultado": "Você tira a passagem do bolso do terno. *Steamship Authority. Nantucket–Hyannis. Dom 18/06. 9h00.*\n\nRasga ao meio. Depois em quatro. Põe os pedaços em cima da mesa da frente, a mesa sete, onde a tia Concetta e a tia Bisi passaram a noite de mãos dadas.\n\nVocê não tem plano. Você não sabe quando volta para Providence. A escola começa em setembro. Você nunca, na vida, rasgou uma passagem sem ter outra comprada.\n\nDo outro lado da pista, alguém vê os quatro pedaços de papel na mesa sete.",
+              "resultado": "Você tira a passagem do bolso do terno. *Steamship Authority. Nantucket–Hyannis. Dom 18/06. 9h00.*\n\nRasga ao meio. Depois em quatro. Põe os pedaços em cima da mesa da frente, a mesa sete, onde a tia Concetta e a tia Bisi passaram a noite de mãos dadas.\n\nVocê não tem plano. Você não sabe quando volta para Providence. O semestre começa em setembro. Você nunca, na vida, rasgou uma passagem sem ter outra comprada.\n\nDo outro lado da pista, alguém vê os quatro pedaços de papel na mesa sete.",
               "efeitos": {
                 "flag": "gesto_fica",
                 "vinculo": 1,
@@ -3702,7 +3702,7 @@
           "efeitos": {
             "flag": "final_pasta"
           },
-          "resultado": "Ninguém estende a mão. Os dois ficam na pista, a um metro, até as luzinhas começarem a parecer apagadas contra o céu que clareia.\n\nUm lembra que tem uma escola em setembro. O outro, uma empresa para salvar. Os dois sabem. Um diz que liga. O outro lembra que em dois anos ele nunca ligou. E a resposta é a única frase da noite que nenhum dos dois ensaiou: desta vez, sim.\n\nÀs nove, a balsa. Dois lugares no banco do fundo, encostados na máquina de café quebrada, que continua quebrada. Duas horas de travessia. Em Hyannis, dois carros, um para o norte, outro para o oeste."
+          "resultado": "Ninguém estende a mão. Os dois ficam na pista, a um metro, até as luzinhas começarem a parecer apagadas contra o céu que clareia.\n\nUm lembra que tem aula em setembro. O outro, uma empresa para salvar. Os dois sabem. Um diz que liga. O outro lembra que em dois anos ele nunca ligou. E a resposta é a única frase da noite que nenhum dos dois ensaiou: desta vez, sim.\n\nÀs nove, a balsa. Dois lugares no banco do fundo, encostados na máquina de café quebrada, que continua quebrada. Duas horas de travessia. Em Hyannis, dois carros, um para o norte, outro para o oeste."
         },
         {
           "id": "o4",
@@ -3722,7 +3722,7 @@
       "lugar": "Epílogo",
       "hora": "Junho de 2024",
       "tipo": "final",
-      "texto": "{{se flag:casou}}A Gemma e o Tunde fizeram um ano de casados em dezessete de junho de 2024. Comemoraram na Gull House, quarto três, a tranca quebrada desde 1997. O Barnaby consertou a tranca de presente. Eles pediram para ele desconsertar.{{senao}}A Gemma e o Tunde se casaram em vinte e três de setembro de 2023, numa terça-feira, na praia de Madaket, às seis da manhã, de bota de borracha, com o Barnaby celebrando e a Dory de testemunha. Ninguém mais foi convidado. Ninguém ficou ofendido. O Tunde, antes do *sim*, disse em voz alta, na frente do Barnaby, da Dory e de três gaivotas, do que tinha medo. A Gemma disse do que ela tinha. Depois disseram sim.{{/se}}\n\nA juíza Funmi Okoro foi a três casamentos em 2024. Dançou nos três. Mal. A Rosa Castellano foi aos três também, porque a Funmi convidou, e chorou nos três, e a Funmi passou o lenço nas três vezes, sem olhar, como quem entrega um documento.\n\nA Barros Lobster, de Madaket, fez dezessete casamentos no verão de 2024. O cardápio diz: *Lagosta do Maria do Fogo, Madaket, desde 1921.* A Dory contratou os cinco primos. O tio Armando toca acordeão em todos.\n\nO Barnaby Cole casou mais onze pessoas na praia. A Gull House voltou a servir café da manhã, na cozinha da Ruth, com a licença que nunca venceu. A Pippa mora no quarto quatro durante o verão e cuida das reservas.\n\n{{se flag:gesto_ajuda}}A Castellano Eventos fez vinte e dois casamentos em 2024. O vídeo da Pippa, *a semana em que a cerimonialista fugiu*, teve dois milhões de visualizações. No fim do vídeo, uma pessoa sobe numa cadeira dobrável e diz *eu preciso de ajuda*, e a legenda diz: *a melhor cerimonialista de Boston*. As noivas ligam pedindo exatamente aquilo: alguém que saiba que as coisas dão errado.{{senao}}A Castellano Eventos sobreviveu a 2023 por pouco. Em 2024, fez nove casamentos. A Pippa sempre diz que podia ser o dobro, se alguém deixasse ela postar o vídeo da semana de Nantucket. Ninguém deixa ainda.{{/se}}\n\n{{se flag:final_juntos}}Junho de 2024. Um apartamento pequeno em Pawtucket, exatamente no meio do caminho entre Boston e Providence, quarenta minutos de trem para cada lado, escolhido com uma planilha e uma tabela de horários. Na geladeira, dois ímãs: a tabela periódica e um calendário de casamentos com vinte e dois círculos vermelhos.\n\n{{A.Ref}} ainda diz *pequeno ajuste*. Agora explica, depois, qual. {{B.Ref}} ainda conta os passos da valsa em voz alta. Agora só quando quer que alguém ria.\n\nNa carteira de {{B.ref}}, entre a carteira de motorista e o cartão da biblioteca, um guardanapo de pano do Alba, dobrado em quatro, com duas linhas. {{se flag:gesto_guardanapo}}A segunda, em letra de professor: *cooperação total. Reação irreversível.*{{senao}}A segunda, em letra de cerimonialista, escrita no trem: *Revisão: cooperação aceitável.*{{/se}}\n\nEles ainda contam versões diferentes daquela noite de 2021. As duas, agora, terminam no estacionamento. E não terminam.{{senao}}{{se flag:final_salao}}Junho de 2024. A Gemma e o Tunde casaram de bota em setembro. Os dois padrinhos não estavam. Não foram convidados. Estavam, naquela mesma manhã de terça, a quatrocentos metros dali, na mesma praia, numa canga, assistindo de longe com um café da Dory, porque a Gemma tinha mandado uma mensagem: *ninguém convidado, mas a praia é pública*.\n\nDesde aquela noite na tenda, os dois dançam em todo salão vazio que encontram. Na escola de Providence, no ginásio, depois do baile de formatura, quando os alunos vão embora. Num salão de festas em Newport, às três da manhã, depois de um casamento da Castellano Eventos. Sem música. Um, dois, três.\n\n{{B.Ref}} ainda conta os passos. Baixinho. Só para o outro ouvir.{{senao}}{{se flag:final_pasta}}Novembro de 2023. Boston. Chove.\n\nNa caixa de correio do apartamento de Back Bay, {{A.o_a}} {{A.nome}} encontra um envelope pardo de Providence, grosso, de quatro dedos.\n\nDentro, uma pasta. Não de couro. De papelão, comprada em loja de material escolar, com abas de cartolina recortadas à mão. Na capa, em letra pequena de professor de química, com caneta de quatro cores:\n\n*PLANO E.*\n\nAba azul: *Sábado, 2 de dezembro. Trem das 9h12, Providence–Boston. Chega 10h24.*\nAba verde: *Se chover: o mesmo trem, com guarda-chuva. Que eu não vou deixar na cadeira.*\nAba amarela: *Se você não quiser: não precisa explicar. Item 4.*\nAba vermelha: *Se você quiser: não precisa explicar também.*\n\nE no fim, grampeada por cima, uma página com um *D* riscado, e embaixo, escrito à mão:\n\n*Eu liguei. Você não atendeu. Eu entendo. Mas eu não sei mentir, então: eu ainda penso no estacionamento toda vez que chove. Choveu muito em Providence esse mês.*\n\nNo dia dois de dezembro, às dez e vinte e quatro, a estação South Station, em Boston, está cheia. Na plataforma sete, alguém espera com uma pasta de couro debaixo do braço. E um guarda-chuva fechado.{{senao}}Junho de 2024. Ninguém ligou.\n\n{{A.Ref}} faz casamentos em Boston. {{B.Ref}} dá aula em Providence. No casamento da Gemma e do Tunde, em setembro, de bota, na praia, nenhum dos dois estava, porque ninguém foi convidado, e a praia, naquela terça, estava vazia.\n\nCada um ainda conta a sua versão da noite de 2021. As duas terminam antes da sobremesa. Ninguém conta o estacionamento. Ninguém conta a caminhonete. Ninguém conta a semana.\n\nNa lousa da cozinha da Gull House, que ninguém apagou desde junho, a última linha da Pippa ainda está lá, meio borrada: *Eles pararam de fingir.* O Barnaby passa por ela todo dia, de manhã, com a caneca de café, e não apaga. Ele diz que é para lembrar que nem toda aposta paga.{{/se}}{{/se}}{{/se}}\n\n*Padrinho e Madrinha · fim.*"
+      "texto": "{{se flag:casou}}A Gemma e o Tunde fizeram um ano de casados em dezessete de junho de 2024. Comemoraram na Gull House, quarto três, a tranca quebrada desde 1997. O Barnaby consertou a tranca de presente. Eles pediram para ele desconsertar.{{senao}}A Gemma e o Tunde se casaram em vinte e três de setembro de 2023, numa terça-feira, na praia de Madaket, às seis da manhã, de bota de borracha, com o Barnaby celebrando e a Dory de testemunha. Ninguém mais foi convidado. Ninguém ficou ofendido. O Tunde, antes do *sim*, disse em voz alta, na frente do Barnaby, da Dory e de três gaivotas, do que tinha medo. A Gemma disse do que ela tinha. Depois disseram sim.{{/se}}\n\nA juíza Funmi Okoro foi a três casamentos em 2024. Dançou nos três. Mal. A Rosa Castellano foi aos três também, porque a Funmi convidou, e chorou nos três, e a Funmi passou o lenço nas três vezes, sem olhar, como quem entrega um documento.\n\nA Barros Lobster, de Madaket, fez dezessete casamentos no verão de 2024. O cardápio diz: *Lagosta do Maria do Fogo, Madaket, desde 1921.* A Dory contratou os cinco primos. O tio Armando toca acordeão em todos.\n\nO Barnaby Cole casou mais onze pessoas na praia. A Gull House voltou a servir café da manhã, na cozinha da Ruth, com a licença que nunca venceu. A Pippa mora no quarto quatro durante o verão e cuida das reservas.\n\n{{se flag:gesto_ajuda}}A Castellano Eventos fez vinte e dois casamentos em 2024. O vídeo da Pippa, *a semana em que a cerimonialista fugiu*, teve dois milhões de visualizações. No fim do vídeo, uma pessoa sobe numa cadeira dobrável e diz *eu preciso de ajuda*, e a legenda diz: *a melhor cerimonialista de Boston*. As noivas ligam pedindo exatamente aquilo: alguém que saiba que as coisas dão errado.{{senao}}A Castellano Eventos sobreviveu a 2023 por pouco. Em 2024, fez nove casamentos. A Pippa sempre diz que podia ser o dobro, se alguém deixasse ela postar o vídeo da semana de Nantucket. Ninguém deixa ainda.{{/se}}\n\n{{se flag:final_juntos}}Junho de 2024. Um apartamento pequeno em Pawtucket, exatamente no meio do caminho entre Boston e Providence, quarenta minutos de trem para cada lado, escolhido com uma planilha e uma tabela de horários. Na geladeira, dois ímãs: a tabela periódica e um calendário de casamentos com vinte e dois círculos vermelhos.\n\n{{A.Ref}} ainda diz *pequeno ajuste*. Agora explica, depois, qual. {{B.Ref}} ainda conta os passos da valsa em voz alta. Agora só quando quer que alguém ria.\n\nNa carteira de {{B.ref}}, entre a carteira de motorista e o cartão da biblioteca, um guardanapo de pano do Alba, dobrado em quatro, com duas linhas. {{se flag:gesto_guardanapo}}A segunda, em letra de professor: *cooperação total. Reação irreversível.*{{senao}}A segunda, em letra de cerimonialista, escrita no trem: *Revisão: cooperação aceitável.*{{/se}}\n\nEles ainda contam versões diferentes daquela noite de 2021. As duas, agora, terminam no estacionamento. E não terminam.{{senao}}{{se flag:final_salao}}Junho de 2024. A Gemma e o Tunde casaram de bota em setembro. Os dois padrinhos não estavam. Não foram convidados. Estavam, naquela mesma manhã de terça, a quatrocentos metros dali, na mesma praia, numa canga, assistindo de longe com um café da Dory, porque a Gemma tinha mandado uma mensagem: *ninguém convidado, mas a praia é pública*.\n\nDesde aquela noite na tenda, os dois dançam em todo salão vazio que encontram. No campus de Providence, no ginásio vazio, depois da formatura, quando os alunos vão embora. Num salão de festas em Newport, às três da manhã, depois de um casamento da Castellano Eventos. Sem música. Um, dois, três.\n\n{{B.Ref}} ainda conta os passos. Baixinho. Só para o outro ouvir.{{senao}}{{se flag:final_pasta}}Novembro de 2023. Boston. Chove.\n\nNa caixa de correio do apartamento de Back Bay, {{A.o_a}} {{A.nome}} encontra um envelope pardo de Providence, grosso, de quatro dedos.\n\nDentro, uma pasta. Não de couro. De papelão, comprada em loja de material escolar, com abas de cartolina recortadas à mão. Na capa, em letra pequena de professor de química, com caneta de quatro cores:\n\n*PLANO E.*\n\nAba azul: *Sábado, 2 de dezembro. Trem das 9h12, Providence–Boston. Chega 10h24.*\nAba verde: *Se chover: o mesmo trem, com guarda-chuva. Que eu não vou deixar na cadeira.*\nAba amarela: *Se você não quiser: não precisa explicar. Item 4.*\nAba vermelha: *Se você quiser: não precisa explicar também.*\n\nE no fim, grampeada por cima, uma página com um *D* riscado, e embaixo, escrito à mão:\n\n*Eu liguei. Você não atendeu. Eu entendo. Mas eu não sei mentir, então: eu ainda penso no estacionamento toda vez que chove. Choveu muito em Providence esse mês.*\n\nNo dia dois de dezembro, às dez e vinte e quatro, a estação South Station, em Boston, está cheia. Na plataforma sete, alguém espera com uma pasta de couro debaixo do braço. E um guarda-chuva fechado.{{senao}}Junho de 2024. Ninguém ligou.\n\n{{A.Ref}} faz casamentos em Boston. {{B.Ref}} dá aula em Providence. No casamento da Gemma e do Tunde, em setembro, de bota, na praia, nenhum dos dois estava, porque ninguém foi convidado, e a praia, naquela terça, estava vazia.\n\nCada um ainda conta a sua versão da noite de 2021. As duas terminam antes da sobremesa. Ninguém conta o estacionamento. Ninguém conta a caminhonete. Ninguém conta a semana.\n\nNa lousa da cozinha da Gull House, que ninguém apagou desde junho, a última linha da Pippa ainda está lá, meio borrada: *Eles pararam de fingir.* O Barnaby passa por ela todo dia, de manhã, com a caneca de café, e não apaga. Ele diz que é para lembrar que nem toda aposta paga.{{/se}}{{/se}}{{/se}}\n\n*Padrinho e Madrinha · fim.*"
     },
     "pd_c1_balsa": {
       "cap": 1,
@@ -4133,7 +4133,7 @@
       "hora": "Domingo, 11 de junho · 15h30",
       "tipo": "solo",
       "seat": "B",
-      "texto": "O banco debaixo da macieira. Uma hora e meia até a prova de bolo. Você tira da mochila o que trouxe de Providence sem contar a ninguém: vinte e oito provas finais de química do segundo ano, presas com um elástico.\n\nO ano letivo acabou na sexta. As notas fecham na quarta. Você dá aula na mesma escola pública há onze anos, na sala 214, a que tem a tabela periódica com o canto queimado, e os alunos chamam você de Mol desde antes de você descobrir.\n\nO celular vibra. É o grupo *Química 2ºB (sem o Mol)*, do qual você faz parte desde março, por descuido de quem criou. Alguém mandou uma foto sua, tirada escondido na aula sobre ligações químicas, com a legenda: *ele explicando ligação e sendo solteir{{eu.o_a}}*.\n\nQuarenta e uma risadas.",
+      "texto": "O banco debaixo da macieira. Uma hora e meia até a prova de bolo. Você tira da mochila o que trouxe de Providence sem contar a ninguém: vinte e oito provas finais de química do segundo ano, presas com um elástico.\n\nO ano letivo acabou na sexta. As notas fecham na quarta. Você dá aula na mesma universidade há onze anos, e é titular desde os trinta e quatro, o mais novo da história do departamento. A sala 214 é a do canto queimado da tabela periódica, e os orientandos chamam você de Mol desde antes de você descobrir.\n\nO celular vibra. É o grupo *Química 2ºB (sem o Mol)*, do qual você faz parte desde março, por descuido de quem criou. Alguém mandou uma foto sua, tirada escondido na aula sobre ligações químicas, com a legenda: *ele explicando ligação e sendo solteir{{eu.o_a}}*.\n\nQuarenta e uma risadas.",
       "acoes": [
         {
           "id": "o1",
@@ -4159,11 +4159,11 @@
           "efeitos": {
             "flag": "carta_deja"
           },
-          "resultado": "A Deja quer estudar engenharia química em Amherst. O formulário pede uma carta de um professor.\n\nVocê não sabe escrever carta de recomendação do jeito que se escreve. Sabe escrever o que viu.\n\n*A Deja erra em voz alta. Em onze anos, é a única aluna que eu tive que levanta a mão para dizer que errou a conta do quadro, a minha ou a dela. Um laboratório precisa mais disso do que de qualquer nota.*\n\nVocê lê de novo. Não tem um elogio que não seja um fato. Você envia."
+          "resultado": "A Deja quer fazer o doutorado em engenharia química em Pittsburgh. O formulário pede uma carta de recomendação de um orientador.\n\nVocê não sabe escrever carta de recomendação do jeito que se escreve. Sabe escrever o que viu.\n\n*A Deja erra em voz alta. Em onze anos, é a única aluna que eu tive que levanta a mão para dizer que errou a conta do quadro, a minha ou a dela. Um laboratório precisa mais disso do que de qualquer nota.*\n\nVocê lê de novo. Não tem um elogio que não seja um fato. Você envia."
         },
         {
           "id": "o3",
-          "texto": "Responder no grupo dos alunos",
+          "texto": "Responder no grupo do laboratório",
           "efeitos": {
             "flag": "grupo_alunos"
           },
@@ -4392,7 +4392,7 @@
             },
             {
               "se": "",
-              "resultado": "Você põe a garra na palma, fecha a mão e aperta. Estala. A casca abre em duas metades limpas e a carne sai inteira.\n\nA Dory levanta as sobrancelhas, as duas.\n\n— Isso não se aprende em escola.\n\n— Onze anos abrindo janela emperrada de sala de aula — você diz.",
+              "resultado": "Você põe a garra na palma, fecha a mão e aperta. Estala. A casca abre em duas metades limpas e a carne sai inteira.\n\nA Dory levanta as sobrancelhas, as duas.\n\n— Isso não se aprende em escola.\n\n— Onze anos abrindo janela emperrada de laboratório — você diz.",
               "efeitos": {
                 "flag": "garra",
                 "fa": 1
@@ -5339,7 +5339,7 @@
             },
             {
               "se": "",
-              "resultado": "O amplificador zumbe numa nota só, grave, que entra no dente. Você segue o cabo até uma extensão de três pinos com o pino do meio serrado.\n\n— Falta aterramento — você diz. — A corrente que devia descer para a terra fica passeando no circuito.\n\nVocê troca a extensão por outra, da caixa de ferramentas do primo. O zumbido some. No silêncio, dá para ouvir o mar.\n\n— Engenheiro? — pergunta o primo do baixo.\n\n— Escola pública. Ensino médio.\n\nO primo assobia, impressionado com alguma das duas coisas.",
+              "resultado": "O amplificador zumbe numa nota só, grave, que entra no dente. Você segue o cabo até uma extensão de três pinos com o pino do meio serrado.\n\n— Falta aterramento — você diz. — A corrente que devia descer para a terra fica passeando no circuito.\n\nVocê troca a extensão por outra, da caixa de ferramentas do primo. O zumbido some. No silêncio, dá para ouvir o mar.\n\n— Engenheiro? — pergunta o primo do baixo.\n\n— Professor. Química, na Brown.\n\nO primo assobia, impressionado com alguma das duas coisas.",
               "efeitos": {
                 "flag": "zumbido",
                 "fa": 1
@@ -6031,7 +6031,7 @@
             },
             {
               "tom": "flerte",
-              "texto": "— E prometo ouvir. Isso eu sei fazer. Onze anos de reunião de pais.",
+              "texto": "— E prometo ouvir. Isso eu sei fazer. Onze anos de reunião de departamento.",
               "tag": "pais"
             },
             {
@@ -6684,11 +6684,11 @@
           "variantes": [
             {
               "se": "abalo>=1",
-              "resultado": "Você abre a boca. A frase não sai. O que sai é: *a escola começa em setembro*, no tom de professor, de quem recita calendário.\n\nO Barnaby ouve, assente, e não insiste.\n\n— Setembro. — Ele pensa. — É longe. Ou é amanhã. Depende de quem pergunta."
+              "resultado": "Você abre a boca. A frase não sai. O que sai é: *o semestre começa em setembro*, no tom de professor, de quem recita calendário.\n\nO Barnaby ouve, assente, e não insiste.\n\n— Setembro. — Ele pensa. — É longe. Ou é amanhã. Depende de quem pergunta."
             },
             {
               "se": "",
-              "resultado": "Você diz. Em voz alta, para um velho florista num cais, às duas da manhã, a frase que não disse nem para o espelho: que não sabe se volta. Que a escola é boa, que os alunos gostam, que onze anos é uma vida, e que, pela primeira vez, a ideia de uma sala 214 sem tabela periódica queimada nas bordas não dá pavor.\n\nO Barnaby escuta tudo de cabeça baixa.\n\n— Não precisa decidir hoje — ele diz. — Eu decidi em 2009, sozinho, e não recomendo. Mas já que {{se B.ela}}a senhora{{senao}}o senhor{{/se}} perguntou: tem uma escola de ensino médio aqui, sabia? A única da ilha. Está sem professor de ciências desde fevereiro.\n\nEle não diz mais nada. Entrega o copo. Você segura o copo, e a informação, e os dois pesam igual.",
+              "resultado": "Você diz. Em voz alta, para um velho florista num cais, às duas da manhã, a frase que não disse nem para o espelho: que não sabe se volta. Que o departamento é bom, que os orientandos precisam de você, que onze anos é uma vida, e que, pela primeira vez, a ideia de uma sala 214 sem tabela periódica queimada nas bordas não dá pavor.\n\nO Barnaby escuta tudo de cabeça baixa.\n\n— Não precisa decidir hoje — ele diz. — Eu decidi em 2009, sozinho, e não recomendo. Mas já que {{se B.ela}}a senhora{{senao}}o senhor{{/se}} perguntou: tem uma estação de pesquisa aqui, sabia? A única da ilha. Está sem pesquisador de química desde fevereiro.\n\nEle não diz mais nada. Entrega o copo. Você segura o copo, e a informação, e os dois pesam igual.",
               "efeitos": {
                 "flag": "b_vaga_ilha",
                 "vinculo": 1,
@@ -7037,11 +7037,11 @@
     },
     "pd_c7_d": {
       "cap": 7,
-      "lugar": "Escola de Ensino Médio de Nantucket",
+      "lugar": "Estação de Pesquisa Costeira de Nantucket",
       "hora": "Quinta, 15 de junho · tarde",
       "tipo": "solo",
       "seat": "B",
-      "texto": "Você caminha sem rumo e acaba na frente da Escola de Ensino Médio de Nantucket, um prédio de tijolo claro com um relógio parado em cima da porta e, no gramado da frente, um mastro com a bandeira enrolada em volta de si mesma pelo vento da tarde.\n\nEstá fechada. É junho, as aulas acabaram, a única janela acesa é a do zelador.\n\nVocê não tem motivo nenhum para estar ali. Você nunca tem motivo para entrar em escola: já trabalha em uma. Mas os seus pés tomaram o caminho sozinhos, o que costuma significar alguma coisa.\n\nNa porta principal, colado com fita transparente no vidro, um cartaz de folha sulfite, escrito à mão, com a data riscada e reescrita três vezes:\n\n*PROCURA-SE PROFESSOR(A) DE CIÊNCIAS. Ensino médio. Biologia, química, física. Casa da escola disponível. Contato: sra. Alderman, secretaria. (Desde fevereiro.)*\n\nA casa da escola disponível. O verbo é *disponível*. Não *incluída*, não *alugada*. Como quem deixa a porta destrancada.",
+      "texto": "Você caminha sem rumo e acaba na frente da Estação de Pesquisa Costeira de Nantucket, um prédio de tijolo claro com um relógio parado em cima da porta e, no gramado da frente, um mastro com a bandeira enrolada em volta de si mesma pelo vento da tarde.\n\nEstá fechada. É junho, a temporada de campo ainda não começou, a única janela acesa é a do zelador.\n\nVocê não tem motivo nenhum para estar ali. Você nunca tem motivo para entrar em laboratório alheio: já tem o seu. Mas os seus pés tomaram o caminho sozinhos, o que costuma significar alguma coisa.\n\nNa porta principal, colado com fita transparente no vidro, um cartaz de folha sulfite, escrito à mão, com a data riscada e reescrita três vezes:\n\n*PROCURA-SE PESQUISADOR(A) PRINCIPAL EM QUÍMICA COSTEIRA. Laboratório equipado, barco de coleta, casa da estação disponível. Contato: sra. Alderman, direção. (Desde fevereiro.)*\n\nA casa da estação disponível. O verbo é *disponível*. Não *incluída*, não *alugada*. Como quem deixa a porta destrancada.",
       "acoes": [
         {
           "id": "o1",
@@ -7051,7 +7051,7 @@
             "vinculo": 1,
             "motivoV": "a foto do cartaz"
           },
-          "resultado": "Você tira. A foto sai torta, com o reflexo do seu ombro no vidro. Você olha a imagem na tela: o cartaz, o relógio parado, a bandeira enrolada.\n\nGuarda no celular, na pasta *Fotos*, junto das trezentas fotos de aluno em feira de ciências. Fica a última, por enquanto.\n\nVocê nunca foi uma pessoa de fugir. Você é uma pessoa de ficar, ficou onze anos na mesma sala. Então não é fuga. É outra coisa que a foto não revela. Você ainda não sabe o nome, e a foto fica ali, esperando que você descubra."
+          "resultado": "Você tira. A foto sai torta, com o reflexo do seu ombro no vidro. Você olha a imagem na tela: o cartaz, o relógio parado, a bandeira enrolada.\n\nGuarda no celular, na pasta *Fotos*, junto das trezentas fotos de bancada e de congresso. Fica a última, por enquanto.\n\nVocê nunca foi uma pessoa de fugir. Você é uma pessoa de ficar, ficou onze anos na mesma universidade. Então não é fuga. É outra coisa que a foto não revela. Você ainda não sabe o nome, e a foto fica ali, esperando que você descubra."
         },
         {
           "id": "o2",
@@ -7064,7 +7064,7 @@
         },
         {
           "id": "o3",
-          "texto": "Bater na janela acesa do zelador e perguntar sobre a escola",
+          "texto": "Bater na janela acesa do zelador e perguntar sobre a estação",
           "variantes": [
             {
               "se": "abalo>=1",
@@ -7076,11 +7076,11 @@
             },
             {
               "se": "",
-              "resultado": "Um homem de sessenta anos, de camisa de flanela, abre a janela de guilhotina e olha para você por cima dos óculos de leitura.\n\n— Fechado — ele diz. — Volta em setembro.\n\nVocê pergunta do cartaz. Ele olha o vidro, olha você.\n\n— A sra. Alderman? Ela é a diretora. — Ele considera. — A casa é de verdade. Dois quartos, uma varanda, uma macieira. Está vazia desde o último que ficou. — Ele hesita. — Era um professor de química. Pediu transferência para o continente em fevereiro. Ele *odiou* o inverno.\n\nVocê agradece. Ele fecha a janela, mas depois abre de novo.\n\n— No inverno — ele diz — a ilha fica com quatro mil pessoas. Quem fica, fica porque quer.",
+              "resultado": "Um homem de sessenta anos, de camisa de flanela, abre a janela de guilhotina e olha para você por cima dos óculos de leitura.\n\n— Fechado — ele diz. — Volta em setembro.\n\nVocê pergunta do cartaz. Ele olha o vidro, olha você.\n\n— A sra. Alderman? Ela é a diretora. — Ele considera. — A casa é de verdade. Dois quartos, uma varanda, uma macieira. Está vazia desde o último que ficou. — Ele hesita. — Era um pesquisador de química. Pediu transferência para o continente em fevereiro. Ele *odiou* o inverno.\n\nVocê agradece. Ele fecha a janela, mas depois abre de novo.\n\n— No inverno — ele diz — a ilha fica com quatro mil pessoas. Quem fica, fica porque quer.",
               "efeitos": {
                 "flag": "c7d_zelador",
                 "vinculo": 1,
-                "motivoV": "perguntar sobre a escola",
+                "motivoV": "perguntar sobre a estação",
                 "motivo": "a casa da macieira"
               }
             }

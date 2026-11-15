@@ -10,7 +10,7 @@
     "sim": "tsx scripts/sim.ts",
     "trilha": "tsx scripts/trilha.ts",
     "contar": "tsx scripts/contar.ts",
-    "migrar:padrinhos": "tsx scripts/migracao/converter.mjs",
+    "migrar:padrinhos": "tsx scripts/migracao/converter.mjs && node scripts/migracao/ajustes-sam.mjs",
     "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start -p 3100"
