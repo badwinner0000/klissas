@@ -149,4 +149,4 @@ NOS['pp_c7_fim'] = dict(tipo='fim', cap=7, lugar='Harmon Place', hora='Quarta, 2
 
 Doze metros de cabo trançado, em Cooper Green, estremecem sob o primeiro vento. A árvore que ia acender às sete da noite precisa, antes, sobreviver à manhã.""",
  gancho="Uma tempestade de inverno chegou doze horas antes da Noite da Árvore, e um dos dois não está em casa.",
- ir='pp_rascunho_fim')
+ ir='pp_c8_tempestade')
