@@ -48,6 +48,8 @@ Abra duas janelas (ou dois aparelhos na mesma rede): numa, "Jogar a dois" → c�
 
 Como funciona: o servidor roda o motor (`src/lib/jogo.ts`) e devolve **só a visão do assento** de quem pergunta (`GET /api/salas/:codigo`, cabeçalho `x-token`). O cliente nunca recebe flags, estado, votos nem ids internos de cena. A sala guarda um **snapshot do livro** (hash) e nunca muda de versão no meio da partida. As salas ficam em `.data/` (arquivo): `src/lib/store.ts` é a interface a trocar pelo Supabase.
 
+**Verificado (dois navegadores independentes, 375px, Padrinho e Madrinha completo):** as 4 políticas de consentimento (`ambos`, `nenhum`, `soA`, `soB`) chegam ao fim; B fecha a aba no meio e volta pela sessão guardada; texto limpo nas duas telas; nenhum erro de JavaScript; B nunca recebe token, flags, segredos, estado interno, ids de cena nem a cena solo de A; exportação em Markdown com nomes reais; 403/404 com mensagem humana. Modo solo completou o livro inteiro nos dois assentos pela API (sem chave de IA: escolha determinística; o caminho com `ANTHROPIC_API_KEY` não foi testado).
+
 **Não feito / não testado nesta etapa:** adaptador Supabase (auth, Realtime, `secret_votes` por RLS; o SQL de `supabase/migrations/0001_init.sql` nunca foi executado), verificação de idade para conteúdo +18, tela de administração, capas, Tailwind (o CSS é próprio), Lighthouse. O tempo real é por *polling* de 1,2 s.
 
 ## Comandos (dentro de `verso/`)
