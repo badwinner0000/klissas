@@ -28,6 +28,14 @@ describe('Padrinho e Madrinha (livro migrado)', () => {
     expect(r.naoVisitados).not.toContain('pd_c9_microfone');
   });
 
+  it('regressão: lugar e hora (cabeçalho da cena) são renderizados, sem {{ }} cru', () => {
+    const l = livro();
+    const p = jogar(l, jogadoresDe(l, 'ela', 'ele'), 'ambos', criarRng(5));
+    expect(p.erros).toEqual([]);
+    const todos = Object.values(l.nos).filter((n) => /\{\{/.test(`${n.lugar ?? ''}${n.hora ?? ''}`));
+    expect(todos.length).toBeGreaterThan(0); // o livro de fato usa condicional no cabeçalho
+  });
+
   it('sem dados, sem atributos, sem puzzle', () => {
     const bruto = lerBruto('padrinhos');
     expect(bruto).not.toMatch(/"teste"|"atributos"|"puzzle"|2d6/);

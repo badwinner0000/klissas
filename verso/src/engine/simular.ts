@@ -41,6 +41,7 @@ export function jogar(l: Livro, jog: Jogadores, politica: Politica, rng: Rng, ma
       const corpo = [v.texto, ...linhas].filter(Boolean).join('\n\n');
       if (corpo !== ultimo[s]) {
         ultimo[s] = corpo;
+        if (DEFEITOS.test(`${v.lugar ?? ''} ${v.hora ?? ''}`)) erros.push(`cabeçalho quebrado em ${e.pos[s]}: ${v.lugar} · ${v.hora}`);
         if (DEFEITOS.test(corpo)) erros.push(`texto quebrado em ${e.pos[s]}: ${corpo.match(DEFEITOS)?.[0]}`);
         if (noAnterior[s] === e.pos[s] && textos[s].length) textos[s][textos[s].length - 1] = corpo;
         else textos[s].push(corpo);

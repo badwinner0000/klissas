@@ -63,6 +63,8 @@ export function textosDoNo(no: No): { campo: string; texto: string; kind: Kind }
       add(`acao:${a.id}.resultado`, a.resultado, 'resultado');
       a.variantes?.forEach((v, i) => add(`acao:${a.id}.v${i}`, v.resultado, 'resultado'));
     });
+  add('lugar', no.lugar, 'opcao');
+  add('hora', no.hora, 'opcao');
   if ('texto' in no) add('texto', no.texto, 'narracao');
   if ('pergunta' in no) add('pergunta', no.pergunta, 'opcao');
   switch (no.tipo) {

@@ -17,6 +17,7 @@ const falhas = [];
 const checa = (ok, msg) => { if (!ok) { falhas.push(msg); console.log('  ✗', msg); } };
 
 async function subirServidor() {
+  try { await fetch(`${BASE}/api/livros`); throw new Error(`a porta ${PORTA} já está em uso: encerre o servidor antigo antes de rodar o E2E`); } catch (e) { if (/já está em uso/.test(String(e))) throw e; }
   const dir = mkdtempSync(join(tmpdir(), 'verso-e2e-'));
   const p = spawn('npx', ['next', 'start', '-p', PORTA], { env: { ...process.env, VERSO_DATA_DIR: dir }, stdio: 'pipe' });
   p.stderr.on('data', (d) => { if (/error/i.test(String(d))) console.log('[servidor]', String(d).trim()); });
@@ -24,7 +25,7 @@ async function subirServidor() {
     try { const r = await fetch(`${BASE}/api/livros`); if (r.ok) return p; } catch {}
     await new Promise((r) => setTimeout(r, 500));
   }
-  p.kill(); throw new Error('servidor não subiu');
+  p.kill('SIGKILL'); throw new Error('servidor não subiu');
 }
 
 async function passo(page, seat, tag, votou) {
@@ -124,7 +125,8 @@ async function passo(page, seat, tag, votou) {
     // texto limpo
     for (const [nome, p] of [['A', A], ['B', B]]) {
       const t = await p.locator('body').innerText();
-      checa(!/undefined|\[object|\$\{|\{\{|⟦ERRO|NaN/.test(t), `texto limpo na tela de ${nome}`);
+      const m = t.match(/undefined|\[object|\$\{|\{\{|⟦ERRO|NaN/);
+      checa(!m, `texto limpo na tela de ${nome}` + (m ? ` (achei "${m[0]}" em …${t.slice(Math.max(0, m.index - 40), m.index + 40).replace(/\n/g, ' ')}…)` : ''));
     }
     checa(errosJs.length === 0, `sem erros de JavaScript no navegador (${errosJs.slice(0, 2).join(' | ')})`);
 
@@ -137,7 +139,8 @@ async function passo(page, seat, tag, votou) {
 
     // diário e exportação (nomes reais, sem ids)
     const md = await (await fetch(`${BASE}/api/salas/${codigo}/exportar?token=${tokenA}`)).text();
-    checa(md.includes('# Padrinho e Madrinha') && md.includes('Ivy') && !/pd_c\d|undefined|\{\{/.test(md), 'exportação em Markdown com nomes reais e sem ids internos');
+    const mm = md.match(/pd_c\d|undefined|\{\{/);
+    checa(md.includes('# Padrinho e Madrinha') && md.includes('Ivy') && !mm, 'exportação em Markdown com nomes reais e sem ids internos' + (mm ? ` (achei "${mm[0]}")` : ''));
     // quem não é da sala não lê nada
     const r403 = await fetch(`${BASE}/api/salas/${codigo}`, { headers: { 'x-token': 'invalido' } });
     checa(r403.status === 403, 'token inválido recebe 403');
@@ -147,7 +150,7 @@ async function passo(page, seat, tag, votou) {
     falhas.push('exceção: ' + (e.stack || e));
     console.log(e);
   } finally {
-    await browser.close(); srv.kill();
+    await browser.close(); srv.kill('SIGKILL');
   }
   console.log(falhas.length ? `FALHOU (${falhas.length})` : `OK em ${((Date.now() - t0) / 1000).toFixed(0)}s (política ${POLITICA})`);
   process.exit(falhas.length ? 1 : 0);
