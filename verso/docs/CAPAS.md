@@ -1,44 +1,45 @@
 # Capas ilustradas
 
-As 6 capas atuais foram geradas com o modelo gratuito `recraft/recraft-v4.1-flash-v2:free` da OpenRouter, endpoint `POST /api/v1/images`, tamanho `896x1280` (o único vertical que ele aceita). A chave da OpenRouter nunca é guardada no repositório. Modelos como Nano Banana exigem saldo mínimo de US$ 1 na conta.
+**Estilo (definido pela referência da Tânia Tamires / rom-coms contemporâneos):** fundo de UMA cor chapada e saturada, título grande e grosso, casal pequeno em ilustração vetorial chapada, de corpo inteiro, rostos minimalistas, poucos detalhes e muito espaço vazio. Nada pintado, sem gradiente.
 
-Regra do texto: o gerador inventa texto (nomes de autor, slogans, placas). Todo prompt termina exigindo que o ÚNICO texto seja o título, e cada capa é conferida a olho antes de entrar.
+As capas foram geradas com o modelo gratuito `recraft/recraft-v4.1-flash-v2:free` da OpenRouter (`POST /api/v1/images`, tamanho `896x1280`, o único vertical que ele aceita; proporção 7:10). A chave da OpenRouter nunca é guardada no repositório.
 
-# Prompts
+**Regra do texto:** o gerador inventa texto (nomes de autor, slogans, placas) e às vezes perde palavras do título. Todo prompt exige que o ÚNICO texto seja o título completo, e **cada capa é conferida a olho antes de entrar**. Gere 2 variantes e escolha.
 
-Alternativa para eu gerar as imagens daqui: crie uma chave do Gemini em aistudio.google.com/apikey e salve-a como segredo do ambiente (nas configurações do ambiente do Claude Code, variável `SKILL_IMAGE_GEN_GEMINI_KEY`), sem colar no chat. Aí eu gero e coloco em `public/capas/`.
+Salve em `verso/public/capas/<slug>.jpg`; o site usa sozinho.
 
-Como usar: cole o prompt no gerador (Gemini "Nano Banana", ChatGPT/gpt-image, Midjourney...), peça **proporção vertical 2:3** (1024×1536), salve como JPG e coloque em `verso/public/capas/<slug>.jpg`. O site usa a imagem sozinho. Faça deploy (merge no `main`).
+## Prompt-base (cole antes da cena)
+```
+Contemporary romantic comedy book cover, modern flat vector illustration style as in current bestselling rom-coms: ONE solid saturated flat background color covering the whole cover, no gradients, no texture. A big, bold, friendly sans-serif title with comfortable margins (never touching the edges), exactly as written with every word. Below it, a stylized flat-color couple drawn full-body (simple minimal faces, no outlines, chunky colorful shapes), LARGE: the couple fills about 40 percent of the cover height, with only two or three tiny scene details. Graphic poster design, clean and playful. Vertical 7:10.
+STRICT TEXT RULES: the ONLY text on the cover is the title exactly as written, complete, with correct accents. No author name, no publisher, no subtitle, no slogan, no quotation marks, no signs, no extra words anywhere.
+```
 
-Dica: peça **com o título escrito na imagem** (os geradores atuais escrevem bem). Se o título sair errado, gere de novo ou peça "sem texto" e adicione o título num editor.
-
-Estilo comum: ilustração digital de capa de romance contemporâneo (romcom / dorama), cores quentes de fim de tarde, composição vertical, personagens de costas ou em silhueta parcial (para o leitor se projetar), sem rostos detalhados.
-
----
 ## padrinhos.jpg · Padrinho e Madrinha (Love Story Nº 5)
 ```
-Vertical book cover illustration, 2:3 ratio, modern romantic comedy novel style, flat painterly digital illustration. Title at top in large elegant serif lettering, cream colored: "Padrinho & Madrinha". Small line above the title: "LOVE STORY · Nº 5". Scene: an old wooden pier in Nantucket at golden-hour dusk, a thin sea fog, the Brant Point lighthouse glowing in the distance, a car ferry fading into the mist. Two adults stand apart on the pier with a visible gap between them, seen from behind or three-quarters, not facing the viewer: a woman in a navy-blue dress hugging a thick brown leather event-planner binder with colorful tabs, and a man in a dark suit holding a black notebook. Strings of warm festoon lights across the sky above them. Foreground framed by big blue hydrangea bushes. Palette: dusty blue, peach, cream, soft gold. Tagline at the bottom in italic: "Uma pasta, sete dias e um encontro às cegas que cada um conta de um jeito." Cozy, witty, nostalgic mood.
+Background: deep cobalt blue. Small top line in cream: "LOVE STORY · Nº 5". Title in cream and warm peach, stacked: "Padrinho" / "& Madrinha". Couple: a woman in a navy dress hugging a thick brown binder with colorful tabs and a man in a dark suit holding a black notebook, standing a few steps apart (a visible gap) on a tiny wooden dock; tiny details: a small white lighthouse, a blue hydrangea bush, a string of warm lights.
 ```
 
----
-## Em breve (Love Sparks, comédia romântica)
-**a-reclamacao-de-barulho.jpg** · *A Reclamação de Barulho*
+## a-reclamacao-de-barulho.jpg · A Reclamação de Barulho
 ```
-Vertical romcom book cover, 2:3, flat colorful illustration. Title large, playful lettering: "A Reclamação de Barulho". A city apartment building cut in cross-section at dawn: on the lower floor a woman in workout clothes teaching a spinning class with headphones, speakers and a disco ball; on the floor above, a man asleep with a pillow over his head and a "do not disturb" sign. Musical notes shaking the ceiling. Palette coral pink, sky blue, butter yellow. Funny, warm, enemies-to-lovers energy.
+Background: bright tomato red. Title in cream: "A Reclamação de Barulho". Couple: a woman in workout clothes on a spinning bike with headphones, and a grumpy man in pajamas covering his ears with a pillow standing next to her on a small floor; tiny details: musical notes, a speaker.
 ```
-**o-teste-de-visto.jpg** · *O Teste de Visto*
+
+## o-teste-de-visto.jpg · O Teste de Visto
 ```
-Vertical romcom book cover, 2:3, flat illustration. Title: "O Teste de Visto". A small kitchen with two roommates (a woman and a man) sitting stiffly side by side on a sofa trying to look like a couple, holding an old photo album and two mismatched coffee mugs, a stern immigration officer's clipboard and a stamp in the foreground corner. Palette sky blue, warm yellow, red accents. Fake-dating comedy mood.
+Background: sunny mustard yellow. Title in deep navy blue in two lines: "O Teste" / "de Visto". Couple: a woman in a pink sweater and a man in a green jacket sitting stiffly side by side on a bright blue sofa, holding hands awkwardly with worried smiles; tiny details: two mismatched coffee mugs and a small framed photo.
 ```
-**a-aposta-do-escritorio.jpg** · *A Aposta do Escritório*
+
+## a-aposta-do-escritorio.jpg · A Aposta do Escritório
 ```
-Vertical romcom book cover, 2:3, flat illustration. Title: "A Aposta do Escritório". Open-plan office seen from above: two coworkers holding hands under the desk while a crowd of colleagues behind glass walls holds a betting poster and balloons shaped like a baby shower. Palette orange, sky blue, cream. Fake-dating workplace comedy.
+Background: bold orange. Title in cream in two lines: "A Aposta" / "do Escritório". Couple: a woman in a white blouse and a man in a blue shirt sitting close at a small desk with hands clasped under it, nervous smiles; tiny details: two balloons and a few tiny coworkers peeking from behind a small partition.
 ```
-**o-casamento-do-ex.jpg** · *O Casamento do Ex*
+
+## o-casamento-do-ex.jpg · O Casamento do Ex
 ```
-Vertical romcom book cover, 2:3, flat illustration. Title: "O Casamento do Ex". Garden wedding at sunset: a woman in a green dress and a man in a rumpled suit sneaking away from the aisle behind the hydrangeas, glancing at each other, white chairs in rows and a floral arch in the distance. Palette lilac, blush pink, gold. Second-chance / fake-date tension.
+Background: soft lilac violet. Title in deep plum in two lines: "O Casamento" / "do Ex". Couple: a woman in an emerald green dress and a man in a white suit tiptoeing away together hand in hand and glancing back with guilty smiles; tiny details: a small floral wedding arch and two white chairs.
 ```
-**a-viagem-de-onibus.jpg** · *A Viagem de Ônibus*
+
+## a-viagem-de-onibus.jpg · A Viagem de Ônibus
 ```
-Vertical romcom book cover, 2:3, flat illustration. Title: "A Viagem de Ônibus". Two travelers squeezed into the back seat of a long-distance bus at night: a backpacker woman with a big map and a grumpy man in a business shirt gripping his armrest, a window with a starry road and mountains. Palette teal, mint, coral. Grumpy x sunshine.
+Background: vivid teal. Title in cream: "A Viagem de Ônibus". Couple: a backpacker woman with a big map and a grumpy man in a shirt and tie gripping his armrest, sitting side by side in a double bus seat; tiny details: a bus window with stars, a small backpack.
 ```
