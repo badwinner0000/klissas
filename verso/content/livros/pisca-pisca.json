@@ -3,7 +3,7 @@
   "titulo": "Pisca-Pisca",
   "secao": "love-sparks",
   "adulto": false,
-  "rascunho": true,
+  "rascunho": false,
   "tropes": [
     "rivals-to-lovers",
     "forced-proximity",
@@ -51,6 +51,35 @@
     "Teddy"
   ],
   "escolhasMortasToleradas": [],
+  "tema": {
+    "a": "#8c1738",
+    "b": "#c4515f",
+    "destaque": "#f5c76b"
+  },
+  "personagens": {
+    "A": {
+      "papel": "Quem planeja tudo (casa nº 8)",
+      "nomePadrao": "Roz",
+      "generoPadrao": "ela",
+      "idade": 18,
+      "origem": "Dyker Heights, Brooklyn",
+      "ferida": "Medo de ser largada: quem se afasta some."
+    },
+    "B": {
+      "papel": "Quem desenha em silêncio (casa nº 11)",
+      "nomePadrao": "Teddy",
+      "generoPadrao": "ele",
+      "idade": 18,
+      "origem": "Dyker Heights, Brooklyn",
+      "ferida": "Medo de decepcionar: cala para não brigar, e o silêncio vira a briga."
+    }
+  },
+  "fatos": [
+    "Dyker Heights, Brooklyn, de 17 a 25 de dezembro de 2025.",
+    "As casas nº 8 (ítalo-americanos) e nº 11 (sino-americanos) de Harmon Place não se falam há anos.",
+    "A associação do bairro decretou uma só árvore de doze metros, feita pelos dois mais novos das casas.",
+    "A estrela da árvore é de 1987 e só acende com duas chaves, giradas ao mesmo tempo."
+  ],
   "inicio": "pp_c1_rua",
   "nos": {
     "pp_c1_rua": {
