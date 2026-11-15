@@ -1,6 +1,6 @@
 // Capa tipográfica (sem ilustração gerada): gradiente do tema do livro, grão suave e título em letras grandes.
 // É o substituto até existir arte de capa; a arte entra por `imagem` quando houver.
-import type { CSSProperties } from 'react';
+import { type CSSProperties, useState } from 'react';
 import { ARTES } from './ArteCapa';
 
 export interface DadosCapa {
@@ -14,6 +14,8 @@ export interface DadosCapa {
 const PADRAO = { a: '#2b3a4a', b: '#7a8fa3', destaque: '#a9c4d6' };
 
 export default function Capa({ c, tamanho = 'm', inclinacao = 0 }: { c: DadosCapa; tamanho?: 'p' | 'm' | 'g'; inclinacao?: number }) {
+  // arte de verdade: se existir /capas/<slug>.jpg ela cobre tudo; se não existir (404), some e fica o desenho/gradiente
+  const [semImagem, setSemImagem] = useState(false);
   const t = c.tema ?? PADRAO;
   const estilo = { '--ca': t.a, '--cb': t.b, '--cd': t.destaque, transform: inclinacao ? `rotate(${inclinacao}deg)` : undefined } as CSSProperties;
   const Arte = !c.imagem && c.slug ? ARTES[c.slug] : undefined;
@@ -24,6 +26,7 @@ export default function Capa({ c, tamanho = 'm', inclinacao = 0 }: { c: DadosCap
   return (
     <div className={`capa capa-${tamanho}${c.embreve ? ' capa-embreve' : ''}${Arte ? ' capa-arte' : ''}`} style={estilo} role="img" aria-label={`Capa de ${c.titulo}${c.embreve ? ' (em breve)' : ''}`}>
       {c.imagem && <img src={c.imagem} alt="" />}
+      {!c.imagem && c.slug && !semImagem && <img className="capa-foto" src={`/capas/${c.slug}.jpg`} alt="" onError={() => setSemImagem(true)} />}
       {Arte && <div className="capa-ilustracao">{Arte()}</div>}
       {!c.imagem && !Arte && (
         <div className="capa-corpo">

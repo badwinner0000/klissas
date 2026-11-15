@@ -1,0 +1,4 @@
+Coloque aqui a capa de cada livro, com o nome do livro:  <slug>.jpg
+  padrinhos.jpg   (Padrinho e Madrinha)
+Proporção 2:3 (ex.: 1024x1536), JPG. O site usa automaticamente; sem o arquivo, mostra o desenho provisório.
+Prompts prontos: docs/CAPAS.md
