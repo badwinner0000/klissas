@@ -128,4 +128,4 @@ NOS['up_c4_fim'] = dict(tipo='fim', cap=4, lugar='Palácio Auersperg, Viena', ho
 
 Quatrocentas taças sobem. Ele disse *diretora*. Não disse o nome. Em duas cadeiras da mesa 14, duas pessoas de taça na mão trocam um olhar, e cada uma, em silêncio, faz a mesma conta: a palavra *diretora* é feminina, e o cargo, até onde se sabe, ainda é de um dos dois.""",
  gancho="O chefe brindou à 'nova diretora regional' sem dizer o nome, e nenhum dos dois sabe de quem ele fala.",
- ir='up_c5_jantar')
+ ir='up_c5_mesa')

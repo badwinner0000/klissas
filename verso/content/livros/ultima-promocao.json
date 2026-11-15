@@ -1681,11 +1681,421 @@
       ],
       "texto": "O jantar de gala do congresso é no Palácio Auersperg, um salão barroco de colunas douradas, mesas de vinte lugares e garçons de luvas brancas que servem um consomé de rabo de boi como se fosse um segredo de Estado. {{se flag:apresentou_dados}}A apresentação de dados rendeu um brinde de um delegado sueco. {{/se}}{{se flag:apresentou_historias}}A história do Walter rendeu uma conversa de vinte minutos com a mulher de blazer vermelho, que se descobriu ser diretora de uma rede de varejo em Seul. {{/se}}{{se flag:apresentou_misto}}A mistura de gráfico e rosto rendeu três cartões de visita. {{/se}}{{se flag:ajudou_projetor}}E a cooperação no projetor rendeu a Marcus Webb a primeira ruga de contrariedade da semana. {{/se}}{{se flag:deixou_projetor}}O projetor travado rendeu uma pergunta que ninguém respondeu, e um silêncio que alguém contou. {{/se}}{{se flag:dividiu_projetor}}O número da dupla no projetor virou assunto de quatro mesas. {{/se}}\n\nÀs nove e quarenta, entre o consomé e o vitello tonnato, Marcus Webb se levanta, bate com a colher numa taça de cristal e esvazia a sala com o sorriso.\n\n— Quero fazer um brinde — diz ele. — A esta semana, a esta casa e ao futuro da Meridian no Meio-Oeste. E a nossa nova diretora regional, que, em breve, vocês conhecerão.\n\nQuatrocentas taças sobem. Ele disse *diretora*. Não disse o nome. Em duas cadeiras da mesa 14, duas pessoas de taça na mão trocam um olhar, e cada uma, em silêncio, faz a mesma conta: a palavra *diretora* é feminina, e o cargo, até onde se sabe, ainda é de um dos dois.",
       "gancho": "O chefe brindou à 'nova diretora regional' sem dizer o nome, e nenhum dos dois sabe de quem ele fala.",
+      "ir": "up_c5_mesa"
+    },
+    "up_c5_mesa": {
+      "tipo": "segue",
+      "cap": 5,
+      "lugar": "Palácio Auersperg, mesa 14",
+      "hora": "Sábado · 22h00",
+      "ir": "up_c5_dividir",
+      "texto": "A mesa 14 tem vinte lugares e dezoito pessoas, e os dois do 412 estão sentados lado a lado, por determinação de um cartão de papel grosso, caligrafado, que alguém do cerimonial colocou diante de cada prato. Entre eles, um centro de mesa de rosas brancas que impede, de propósito ou por acidente, uma conversa direta.\n\nÀ esquerda do centro, Herr Doktor Lukas Brandstätter, sessenta e dois anos, presidente de uma rede de transporte da Baixa Áustria, de monóculo de décor e paciência de quem já viu três recessões. À direita, Ingrid Solheim, de Oslo, cinquenta e oito, dona de uma frota de balsas, que fala quatro idiomas e escolhe o quinto só para brigar.\n\n— Os senhores — diz Brandstätter, com o garfo no ar e o sotaque de quem ensaiou a frase no avião — são o casal da apresentação. Aquele do projetor. A coisa mais engraçada que vi neste congresso em vinte anos.\n\nA mesa fica em silêncio, o silêncio educado de quem espera uma correção que não vem."
+    },
+    "up_c5_dividir": {
+      "tipo": "dividir",
+      "cap": 5,
+      "lugar": "Palácio Auersperg, mesa 14",
+      "hora": "Sábado · 22h10",
+      "cada": 1,
+      "texto": "A palavra *casal* fica na mesa como um prato que ninguém pediu. Dezoito rostos, em silêncio, esperam. Os dois do 412 têm três opções, e cada uma custa uma coisa diferente.\n\nNa primeira fila, a três mesas de distância, Marcus Webb ergue uma taça na direção da mesa 14, sem sorrir.",
+      "pergunta": "O que você diz?",
+      "acoes": [
+        {
+          "id": "corrigir",
+          "texto": "Corrigir, com educação: somos colegas, e concorrentes à mesma vaga",
+          "efeitos": {
+            "flag": "corrigiu_casal"
+          },
+          "resultado": "Você diz, em um tom que consegue ser firme e gentil: *somos colegas. E concorrentes.* Herr Brandstätter ri, não por maldade, mas pela surpresa. *Concorrentes?* diz ele, e olha o outro, e olha você, com uma sobrancelha de quem aprendeu a ler pessoas em reuniões de conselho. *Então é pior do que um casal. É um casamento arranjado.*"
+        },
+        {
+          "id": "farsa",
+          "texto": "Entrar na farsa: sim, somos parceiros, e nos damos muito bem",
+          "efeitos": {
+            "flag": "entrou_na_farsa",
+            "vinculo": 1
+          },
+          "resultado": "Você sorri e diz, sem hesitar: *somos parceiros.* A palavra *parceiros* é uma ponte entre o trabalho e o outro sentido, e Brandstätter entende o segundo. A mesa inteira aprova com um *ahhh*. A pessoa ao seu lado, por um segundo, esquece de respirar, mas, a seguir, entra no jogo, com a mão apoiada no seu encosto."
+        },
+        {
+          "id": "mudar",
+          "texto": "Mudar de assunto: perguntar ao Dr. Brandstätter sobre a rede de transporte dele",
+          "efeitos": {
+            "flag": "mudou_assunto"
+          },
+          "resultado": "Você diz *e o senhor, como vai a Baixa Áustria?*, e Brandstätter, que adora falar de caminhões, passa os próximos vinte minutos explicando as novas regras de pedágio da União Europeia. A palavra *casal* some da mesa, como se nunca tivesse sido dita. Mas, de longe, Marcus Webb ainda olha."
+        }
+      ],
+      "desfecho": "Entre o consomé e o vitello tonnato, a mesa decide uma coisa por unanimidade, sem votação: os dois devem dançar. Uma orquestra, de fraque, começou a tocar *O Danúbio Azul* no centro do salão, e Ingrid Solheim, com uma taça de Grüner Veltliner na mão, declara que é uma obrigação diplomática.",
+      "ir": "up_c5_dialogo"
+    },
+    "up_c5_dialogo": {
+      "tipo": "dialogo",
+      "cap": 5,
+      "lugar": "Salão de baile, Palácio Auersperg",
+      "hora": "Sábado · 23h00",
+      "comeca": "B",
+      "texto": "Dançar valsa, para duas pessoas que nunca dançaram valsa, é uma conversa em que os pés falam primeiro. A orquestra toca, em compasso de três por quatro, uma melodia que todo mundo conhece e ninguém acompanha. Entre os casais de uma plateia de executivos, no meio de um salão barroco, os dois contam, baixinho, *um, dois, três*.\n\nUma mão na cintura, outra na mão. A distância, a menor que já houve, é uma regra do jogo.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "h0_b_seco",
+              "texto": "— Você pisou no meu pé. Duas vezes.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "h0_b_flerte",
+              "texto": "— Se alguém perguntar, somos um casal que ensaiou muito.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "h0_b_cuida",
+              "texto": "— Eu conduzo. Você só segue o ritmo. É mais fácil.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "h0_a_seco",
+              "texto": "— Eu não danço. Eu calculo. Um, dois, três.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "h0_a_flerte",
+              "texto": "— Você dança melhor do que apresenta. E apresenta bem.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "h0_a_abre",
+              "texto": "— Eu nunca dancei valsa. Nunca tive com quem.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "flerte",
+              "tag": "h1_b_flerte",
+              "texto": "— Eu tive aulas aos doze anos. A minha mãe insistiu. Nunca contei para ninguém.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "h1_b_seco",
+              "texto": "— Não fala. Conta. Um, dois, três.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "h1_b_abre",
+              "texto": "— Eu também nunca dancei com alguém que eu não conhecesse. Isso é novo.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "h1_a_seco",
+              "texto": "— Isso é mais difícil do que parece.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "h1_a_abre",
+              "texto": "— Eu estou me divertindo. Isso me assusta.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "h1_a_fere",
+              "texto": "— Você se faz de simpático porque quer a vaga.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "h2_b_abre",
+              "texto": "— A mamãe teria gostado de ver. Ela dançou valsa até o fim.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "h2_b_flerte",
+              "texto": "— Se perdermos a vaga, abrimos uma escola de valsa para executivos.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "fere",
+              "tag": "h2_b_fere",
+              "texto": "— O Marcus está olhando. Ele quer ver se a gente se odeia de verdade.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "h2_a_abre",
+              "texto": "— A minha mãe também. Ela vive em Dayton, num apartamento que cheira a lavanda. Eu não ligo há três semanas.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "h2_a_flerte",
+              "texto": "— Abrimos a escola. E cobramos em euros.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "h2_a_seco",
+              "texto": "— O Marcus sempre olha. É o trabalho dele.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da valsa é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "h3_b_abre",
+              "texto": "— Eu gostei. Dessa noite. De você, um pouco.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "h3_b_flerte",
+              "texto": "— A música acaba daqui a pouco. Quer sair antes dos outros?",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "h3_b_seco",
+              "texto": "— Foi eficiente. Vamos voltar à mesa.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "h3_a_abre",
+              "texto": "— Eu gostei. Mais do que devia.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "h3_a_flerte",
+              "texto": "— Quero sair daqui. Sem falar de trabalho. Conhece algum café?",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "h3_a_seco",
+              "texto": "— Valeu pela dança. Agora, as pessoas.",
+              "se": "eu:A"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Quer parar um pouco? Eu pego uma água."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Segue o ritmo."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Você cheira bem. Isso é distração."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu não sei o que estamos fazendo."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Isso é teatro, e nós sabemos."
+        }
+      ],
+      "fecho": "A orquestra termina a valsa com um floreio de violinos. O salão aplaude. Os dois, no centro, ainda de mãos dadas, demoram um segundo a mais do que deviam para se soltar.",
+      "ir": "up_c5_decisao"
+    },
+    "up_c5_decisao": {
+      "tipo": "decisao",
+      "cap": 5,
+      "lugar": "Escadaria do Palácio Auersperg",
+      "hora": "Domingo · 00h20",
+      "texto": "Do lado de fora, a noite de Viena é fria, limpa e silenciosa. Na escadaria do palácio, uma fila de táxis espera os executivos, e o motorista do primeiro olha para os dois, com a porta aberta.\n\nO hotel fica a quinze minutos a pé, ou a seis de carro. Antes de ir, falta decidir como.",
+      "pergunta": "Como vocês voltam ao hotel?",
+      "ir": {
+        "A": "up_c5_noite_a",
+        "B": "up_c5_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "taxi",
+          "texto": "De táxi: já foi dia demais, e o quarto único espera",
+          "efeitos": {
+            "flag": "voltou_taxi"
+          },
+          "resultado": "Vocês entram no táxi, um Mercedes antigo, com o motorista de quepe que não diz uma palavra. O trajeto de seis minutos dura uma eternidade e um suspiro. A cidade passa pela janela em ouro e preto. Ninguém fala, e o silêncio, desta vez, é de quem escolheu."
+        },
+        {
+          "id": "andar",
+          "texto": "A pé: o frio faz bem, e Viena à noite merece ser vista",
+          "efeitos": {
+            "flag": "voltou_a_pe",
+            "vinculo": 1
+          },
+          "resultado": "Vocês descem a escadaria e caminham. A Ringstrasse tem os prédios iluminados como um cenário, o bonde amarelo passa silencioso, e os passos, em ritmo diferente no começo, acertam o mesmo compasso na altura da Ópera. A neve não cai, mas o ar tem o cheiro dela."
+        },
+        {
+          "id": "cafe",
+          "texto": "Parar num café aberto: ninguém dormiu o bastante, mas ninguém está com sono",
+          "efeitos": {
+            "flag": "foi_ao_cafe",
+            "vinculo": 1
+          },
+          "resultado": "Vocês passam em frente a um café de janelas acesas, com mesas de mármore e garçons de colete, e um dos dois diz *aberto*, e o outro diz *meia-noite e vinte*, e os dois entram. Dentro, o cheiro é de café torrado e de papel de jornal, e um piano de armário, no canto, toca sozinho, em uma gravação."
+        }
+      ]
+    },
+    "up_c5_noite_a": {
+      "tipo": "solo",
+      "cap": 5,
+      "seat": "A",
+      "lugar": "Rua de Viena, a caminho do hotel",
+      "hora": "Domingo · 00h40",
+      "npcs": [
+        "priya"
+      ],
+      "texto": "O celular vibra no bolso do casaco, no meio de uma rua vazia de Viena. É Priya Patel, de Chicago, com um texto que parece ter sido escrito e apagado sete vezes: *Eu não devia estar mandando isso. O Marcus pediu que eu imprimisse uma lista, ontem. Era a lista dos candidatos. Só um nome tinha um asterisco ao lado.*\n\nVocê lê duas vezes. Digita: *Qual nome?* A resposta chega depois de um minuto de pontinhos: *Eu não posso dizer. Você vai entender na hora certa.* E depois, uma mensagem a mais, curta: *Cuidado com quem você ama, e com quem você confia. São duas coisas diferentes.*",
+      "acoes": [
+        {
+          "id": "insistir",
+          "texto": "Insistir: perguntar de novo, exigir o nome",
+          "ir": "up_c5_fim",
+          "efeitos": {
+            "flag": "a_insistiu_priya",
+            "abalo": 1
+          },
+          "resultado": "Você escreve: *Priya, eu preciso saber.* A resposta, de novo, leva um minuto: *Eu tenho uma mãe em Mumbai que depende do meu salário. Desculpa.* Você não escreve mais nada. A frase, simples, é uma explicação inteira do funcionamento da Meridian, e você sente uma pena que não sabe onde pôr."
+        },
+        {
+          "id": "agradecer",
+          "texto": "Agradecer, sem insistir: a Priya já fez mais do que devia",
+          "ir": "up_c5_fim",
+          "efeitos": {
+            "flag": "a_poupou_priya",
+            "vinculo": 1
+          },
+          "resultado": "Você escreve: *Obrigada. De verdade. Não precisa dizer mais nada.* A resposta, em um segundo: *Obrigada por não insistir.* O mundo é feito de pequenas gentilezas que ninguém registra, e esta, você decide, vai ficar na sua memória."
+        },
+        {
+          "id": "guardar",
+          "texto": "Guardar a mensagem sem responder e olhar a pessoa ao lado, que anda um passo à frente",
+          "ir": "up_c5_fim",
+          "efeitos": {
+            "flag": "a_guardou_priya"
+          },
+          "resultado": "Você guarda o celular, devagar, no bolso do casaco. A pessoa ao seu lado, um passo à frente, de mãos no bolso, não olha para trás, mas diminui o passo, de leve, como quem espera sem querer parecer que espera. Você pensa na frase da Priya. *Cuidado com quem você confia.* E acelera, de leve, para alcançar essa pessoa."
+        }
+      ]
+    },
+    "up_c5_noite_b": {
+      "tipo": "solo",
+      "cap": 5,
+      "seat": "B",
+      "lugar": "Rua de Viena, a caminho do hotel",
+      "hora": "Domingo · 00h40",
+      "texto": "O celular vibra no bolso do casaco, no meio da noite vienense. É Chloe, de Chicago, com uma foto e uma mensagem: *Achei isso no site da Secretaria de Estado de Illinois. A Meridian Group registrou uma subsidiária três dias antes de comprar a empresa do seu pai. Chama-se MW Holdings. Os sócios não estão no registro, mas o endereço é uma caixa postal em Lincoln Park.*\n\nVocê olha a foto, em preto e branco, de um formulário de registro, com a letra de uma assinatura ilegível. Digita: *Lincoln Park?* A resposta, em oito segundos: *A sua concorrente mora em Lincoln Park.*",
+      "acoes": [
+        {
+          "id": "suspeitar",
+          "texto": "Pensar que a concorrente é a dona da subsidiária e guardar a informação",
+          "ir": "up_c5_fim",
+          "efeitos": {
+            "flag": "b_suspeitou",
+            "abalo": 1
+          },
+          "resultado": "Você guarda a informação como uma pedra no bolso. Lincoln Park é um bairro de cem mil pessoas, e a caixa postal pode ser de qualquer uma. Mas a coincidência, a de a pessoa que dançou com você há vinte minutos morar a dois quarteirões, não sai da sua cabeça. Você, que sempre aprendeu a confiar nas pessoas, descobre o gosto da dúvida."
+        },
+        {
+          "id": "defender",
+          "texto": "Responder à Chloe: não pode ser, ela não faria isso, e pedir que continue investigando",
+          "ir": "up_c5_fim",
+          "efeitos": {
+            "flag": "b_defendeu",
+            "vinculo": 1
+          },
+          "resultado": "Você escreve: *Não é ela. Pode confiar. Procura o Marcus.* A Chloe responde com um emoji de sobrancelha levantada e uma frase seca: *Você a conhece há três dias.* Você pensa em responder, e não responde, porque a resposta honesta seria *e por isso mesmo*."
+        },
+        {
+          "id": "contar",
+          "texto": "Esperar o momento e contar o que descobriu à pessoa ao lado, sem acusar",
+          "ir": "up_c5_fim",
+          "efeitos": {
+            "flag": "b_vai_contar",
+            "vinculo": 1
+          },
+          "resultado": "Você decide, ali mesmo, na rua vazia: vai contar. Não por ingenuidade, mas por uma aposta, a de que há pessoas que mentem quando acusadas e dizem a verdade quando perguntadas. Guarda o celular, aperta o passo e alcança a pessoa à frente, com uma frase que ainda não sabe como começar."
+        }
+      ]
+    },
+    "up_c5_fim": {
+      "tipo": "fim",
+      "cap": 5,
+      "lugar": "Café Sperl, Gumpendorfer Straße, Viena",
+      "hora": "Domingo · 01h10",
+      "texto": "Existe um café em Viena, na Gumpendorfer Straße, que está aberto desde 1880 e que parece não ter mudado uma cadeira desde então. O Café Sperl tem mesas de mármore, bancos de veludo verde, jornais pendurados em varões de madeira e uma mesa de bilhar no fundo, onde ninguém joga há décadas. Às uma e dez da manhã, tem um garçom de colete e bigode, um casal de idosos que divide uma torta Sachertorte e uma mesa de canto, perto da janela, vazia.\n\n{{se flag:voltou_taxi}}Vocês voltaram de táxi, e o táxi passou duas vezes em frente ao café, sem que ninguém pedisse. {{/se}}{{se flag:voltou_a_pe}}Vocês voltaram a pé, e as pernas, sozinhas, escolheram esta rua. {{/se}}{{se flag:foi_ao_cafe}}Vocês escolheram o café, de comum acordo, sem dizer o nome. {{/se}}{{se flag:entrou_na_farsa}}A farsa dos parceiros ainda está no ar, e ninguém a desfez. {{/se}}{{se flag:corrigiu_casal}}A palavra *casamento arranjado*, dita à mesa, ficou martelando nos dois. {{/se}}\n\nO garçom, de bandeja, aponta a mesa de canto sem perguntar. Dois menus em alemão, duas velas pequenas, uma janela que dá para uma rua de calçada molhada. O garçom volta com uma garrafa de vinho que ninguém pediu, serve dois copos e diz, num inglês de dicionário:\n\n— A casa oferece. Para quem está cansado de ser inteligente.\n\nEm cima da mesa, entre os dois copos, a vela pisca uma vez.",
+      "gancho": "Meia-noite e dez em Viena, uma mesa de canto, uma vela e duas pessoas cansadas de ser inteligentes.",
       "ir": "up_rascunho_fim"
     },
     "up_rascunho_fim": {
       "tipo": "final",
-      "cap": 4,
+      "cap": 5,
       "texto": "Fim do trecho escrito até agora (rascunho)."
     }
   }
