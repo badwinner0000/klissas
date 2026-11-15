@@ -88,7 +88,7 @@ export default function Inicio() {
         ))}
         {breve.map((l) => (
           <div key={l.titulo} className="livro-link" aria-disabled="true">
-            <Capa c={{ titulo: l.titulo, tema: l.tema, embreve: true }} tamanho="m" />
+            <Capa c={{ titulo: l.titulo, tema: l.tema, slug: l.slug, embreve: true }} tamanho="m" />
             <div className="tit">{l.titulo}</div><div className="sub">em breve</div>
           </div>
         ))}

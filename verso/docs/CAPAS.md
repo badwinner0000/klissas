@@ -1,4 +1,10 @@
-# Capas ilustradas: prompts
+# Capas ilustradas
+
+As 6 capas atuais foram geradas com o modelo gratuito `recraft/recraft-v4.1-flash-v2:free` da OpenRouter, endpoint `POST /api/v1/images`, tamanho `896x1280` (o único vertical que ele aceita). A chave da OpenRouter nunca é guardada no repositório. Modelos como Nano Banana exigem saldo mínimo de US$ 1 na conta.
+
+Regra do texto: o gerador inventa texto (nomes de autor, slogans, placas). Todo prompt termina exigindo que o ÚNICO texto seja o título, e cada capa é conferida a olho antes de entrar.
+
+# Prompts
 
 Alternativa para eu gerar as imagens daqui: crie uma chave do Gemini em aistudio.google.com/apikey e salve-a como segredo do ambiente (nas configurações do ambiente do Claude Code, variável `SKILL_IMAGE_GEN_GEMINI_KEY`), sem colar no chat. Aí eu gero e coloco em `public/capas/`.
 
