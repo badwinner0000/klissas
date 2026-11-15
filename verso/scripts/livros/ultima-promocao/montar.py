@@ -21,6 +21,9 @@ ult = max(n['cap'] for n in nos.values())
 tem_final = any(n['tipo'] == 'final' for n in nos.values())
 if not tem_final:
     nos['up_rascunho_fim'] = dict(tipo='final', cap=ult, texto='Fim do trecho escrito até agora (rascunho).')
+    # alvos que o próximo capítulo ainda vai criar apontam para o final provisório
+    for n in nos.values():
+        if n['tipo'] == 'fim' and n['ir'] not in nos: n['ir'] = 'up_rascunho_fim'
 livro = dict(
   id='ultima-promocao', titulo='A Última Promoção', secao='love-sparks', adulto=True, rascunho=not tem_final,
   tropes=['rivals-to-lovers', 'workplace-romance', 'forced-proximity', 'only-one-bed'],

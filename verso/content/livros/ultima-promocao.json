@@ -1,0 +1,1019 @@
+{
+  "id": "ultima-promocao",
+  "titulo": "A Última Promoção",
+  "secao": "love-sparks",
+  "adulto": true,
+  "rascunho": true,
+  "tropes": [
+    "rivals-to-lovers",
+    "workplace-romance",
+    "forced-proximity",
+    "only-one-bed"
+  ],
+  "serie": "Love Sparks · Livro 1",
+  "sinopse": "Chicago e Viena. Duas pessoas disputam a mesma vaga de diretoria numa multinacional, viajam juntas a um congresso e dividem um quarto só. Quando descobrem que a vaga é uma isca para encobrir uma fraude, o único jeito de sair inteiras é juntas.",
+  "linhaDoTempo": [
+    {
+      "quando": "Segunda · 17 de março",
+      "evento": "Venda da Tillman & Sons e anúncio da vaga"
+    },
+    {
+      "quando": "Quinta · 20 de março",
+      "evento": "Voo para Viena"
+    },
+    {
+      "quando": "Sábado · 22 de março",
+      "evento": "Apresentações no congresso"
+    }
+  ],
+  "vinculoPorCapitulo": 2,
+  "idades": {
+    "A": 38,
+    "B": 41
+  },
+  "npcs": {
+    "marcus": {
+      "nome": "Marcus Webb",
+      "voz": "50 anos, chefe, sorriso de comercial de seguro de vida, fala em frases de comunicado"
+    },
+    "richard": {
+      "nome": "Richard Tillman",
+      "voz": "70 anos, pai de Dean, camisa de manga curta, cuida do cachorro, nunca lê o que escreve"
+    },
+    "chloe": {
+      "nome": "Chloe Bennett",
+      "voz": "24 anos, estagiária, diz o que ninguém quer ouvir"
+    },
+    "priya": {
+      "nome": "Priya Patel",
+      "voz": "28 anos, assistente administrativa, sabe de tudo e tem medo de falar"
+    },
+    "nina": {
+      "nome": "Nina Alvarez",
+      "voz": "38 anos, melhor amiga, direta e carinhosa"
+    },
+    "megan": {
+      "nome": "Megan Nicholls",
+      "voz": "42 anos, irmã, cansada e engraçada"
+    },
+    "frank": {
+      "nome": "Frank Delaney",
+      "voz": "60 anos, cliente antigo, devagar e leal"
+    }
+  },
+  "nomesProibidos": [
+    "Joanna",
+    "Dean"
+  ],
+  "escolhasMortasToleradas": [],
+  "inicio": {
+    "A": "up_c1_a",
+    "B": "up_c1_b"
+  },
+  "nos": {
+    "up_c1_a": {
+      "tipo": "solo",
+      "cap": 1,
+      "seat": "A",
+      "lugar": "Meridian Group, 41º andar, Chicago",
+      "hora": "Segunda · 9h40",
+      "npcs": [
+        "priya"
+      ],
+      "texto": "O 41º andar da Meridian Group tem vista para o lago e nenhum cheiro. Carpete cinza, vidro fosco, uma planta que ninguém rega porque ninguém tem tempo de descobrir se ela é de verdade. Você é a única pessoa do andar que chegou antes das sete e ainda está aqui às nove e quarenta, com um café frio e a pasta do contrato da Hartwell Freight aberta na tela.\n\nFaltam duas assinaturas. O cliente quer um desconto de quatro por cento que a Meridian não vai dar, e você tem uma resposta pronta, em três frases, sem adjetivo.\n\nPriya Patel passa pela sua mesa com o laptop contra o peito, de olhos baixos, e deixa um post-it amarelo ao lado do seu teclado sem parar de andar. *Marcus quer ver você às 16h. Cartório da fusão, Hale & Brandvold. Vai ter mais gente.* Ela já está na outra ponta do corredor quando você levanta a cabeça.\n\nO comunicado interno de sexta falava em *integração de uma empresa regional ao portfólio*. Você sabe que empresa é. Foi você quem escreveu a análise que a Meridian usou para comprar a Tillman & Sons, e nenhum dos seus nomes está em nenhum slide.",
+      "acoes": [
+        {
+          "id": "fechar",
+          "texto": "Fechar a Hartwell agora, sem desconto, com a sua resposta de três frases",
+          "ir": "up_c1_cartorio",
+          "efeitos": {
+            "flag": "a_fechou_hartwell",
+            "vinculo": 0
+          },
+          "resultado": "Você liga. Diz o preço, diz o prazo, diz o que acontece se o cliente esperar até janeiro. O diretor da Hartwell fica quieto por quatro segundos, que você conta, e assina às dez e cinco. Ninguém vem bater na sua porta para elogiar. Você anota o fechamento na planilha, com a hora, e fecha a planilha.\n\nA única coisa que muda no andar é o post-it de Priya, que continua amarelo ao lado do teclado."
+        },
+        {
+          "id": "priya",
+          "texto": "Ir atrás da Priya e perguntar quem mais vai estar no cartório",
+          "ir": "up_c1_cartorio",
+          "efeitos": {
+            "flag": "a_perguntou_priya",
+            "abalo": 1
+          },
+          "resultado": "Você alcança Priya na copa, onde ela finge procurar uma colher. A pergunta sai curta e completa, como todas as suas. Priya olha para a porta, depois para o chão, e responde em voz tão baixa que parece ser dirigida à cafeteira: *o outro candidato.* Mais nada. Ela sai com a colher que não queria.\n\n*Outro candidato.* Você nunca tinha ouvido a palavra dentro dessa empresa."
+        },
+        {
+          "id": "arquivo",
+          "texto": "Reabrir o arquivo da aquisição da Tillman & Sons e conferir os números antes da reunião",
+          "ir": "up_c1_cartorio",
+          "efeitos": {
+            "flag": "a_conferiu_arquivo",
+            "abalo": 1
+          },
+          "resultado": "Você abre a pasta que sabe de cor: valuation, projeção de receita, due diligence. Os números que você entregou em março estão lá. Os números que a Meridian pagou, não. Entre os dois há uma diferença de quarenta e um milhões de dólares, e uma nota de rodapé que você não escreveu.\n\nVocê fotografa a página com o celular, como quem tira uma foto de um acidente que ainda não aconteceu."
+        }
+      ]
+    },
+    "up_c1_b": {
+      "tipo": "solo",
+      "cap": 1,
+      "seat": "B",
+      "lugar": "Tillman & Sons, River North, Chicago",
+      "hora": "Segunda · 9h40",
+      "npcs": [
+        "richard",
+        "chloe"
+      ],
+      "texto": "O galpão da Tillman & Sons, em River North, tem pé-direito de seis metros, quarenta mesas e a única cafeteira da cidade que faz café pior do que o do metrô. Seu avô construiu o prédio em 1962, e a cafeteira provavelmente é da mesma época. Às nove e quarenta, todos os cento e doze funcionários estão em pé em volta da mesa de reuniões, que não é de reunião: é a mesa onde seu pai almoçou todo dia, durante cinquenta anos.\n\nRichard Tillman, setenta anos, camisa de manga curta e gravata de lã, segura uma folha de papel que não vai ler. Ele nunca lê o que escreve.\n\n— Eu queria dizer isso de um jeito que não parecesse ruim — diz ele. — Não tem um jeito. A Tillman & Sons foi vendida. Hoje de manhã. Todo mundo continua com emprego. Eu continuo com o cachorro.\n\nHá uma risada nervosa, de uma pessoa só. Chloe Bennett, vinte e quatro anos, estagiária, de moletom da Northwestern e post-it colado na testa por distração, olha para você de longe, sem dizer nada, e ergue as sobrancelhas. Ela sabe que você sabia.",
+      "acoes": [
+        {
+          "id": "aplaudir",
+          "texto": "Aplaudir, porque é isso que um filho faz quando o pai termina um discurso",
+          "ir": "up_c1_cartorio",
+          "efeitos": {
+            "flag": "b_aplaudiu",
+            "abalo": 1
+          },
+          "resultado": "Você aplaude. Sozinho, por um segundo, depois com mais três pessoas, depois com a sala inteira, num som que parece mais uma despedida do que uma celebração. O seu pai olha na sua direção e faz um aceno pequeno, de quem agradece uma gentileza que não pediu. Você sorri com a boca e com mais nada."
+        },
+        {
+          "id": "perguntar",
+          "texto": "Levantar a mão e perguntar ao pai, na frente de todos, quem comprou e quanto pagou",
+          "ir": "up_c1_cartorio",
+          "efeitos": {
+            "flag": "b_perguntou_pai",
+            "abalo": 1
+          },
+          "resultado": "Você levanta a mão, o que não fazia desde o sexto ano. O seu pai demora a olhar, e quando olha, parece mais velho do que ontem. *Meridian*, diz ele. *Quanto, eu digo depois.* A palavra *depois* cai na sala como uma bandeja no chão. Chloe, no fundo, escreve alguma coisa num caderno e a risca em seguida."
+        },
+        {
+          "id": "sair",
+          "texto": "Sair do galpão sem falar com ninguém e dar uma volta no quarteirão",
+          "ir": "up_c1_cartorio",
+          "efeitos": {
+            "flag": "b_saiu",
+            "abalo": 1
+          },
+          "resultado": "Você atravessa as quarenta mesas com o rosto no lugar, empurra a porta de ferro e sai para o vento de Chicago, que, em março, ainda é um insulto. Dá a volta no quarteirão sem pensar em nada, e de repente pensa em tudo: nos três anos de balanços que você abriu e fechou, e em uma planilha que ninguém, além de você, nunca perguntou por que dava errado."
+        }
+      ]
+    },
+    "up_c1_cartorio": {
+      "tipo": "segue",
+      "cap": 1,
+      "lugar": "Hale & Brandvold LLP, LaSalle Street, Chicago",
+      "hora": "Segunda · 16h05",
+      "npcs": [
+        "marcus"
+      ],
+      "ir": "up_c1_dialogo",
+      "texto": "Às quatro da tarde, a sala de reuniões do 29º andar da Hale & Brandvold, no coração de LaSalle Street, tem uma mesa de nogueira para vinte, uma garrafa de água San Pellegrino por pessoa e a atmosfera de um corredor de hospital onde ninguém quer ser o primeiro a perguntar o diagnóstico.\n\nDo lado esquerdo da mesa, de terno cinza, de crachá da Meridian ainda virado para dentro, está uma pessoa que você conhece apenas por currículo e por e-mails sem saudação. Do lado direito, de terno emprestado de ocasião, com uma gravata que parece ter sido escolhida no escuro, está outra pessoa que você conhece desde sempre, e desde sempre quis evitar.\n\nMarcus Webb, cinquenta anos, sorriso de comercial de seguro de vida, entra por último. Fecha a porta com o quadril. Pousa as duas mãos na mesa, como um mágico que mostra que não tem nada nas mangas.\n\n— Vou ser breve — diz ele, e não é. — Com a integração da Tillman & Sons, a Meridian abre uma posição de Diretor Regional do Meio-Oeste. Uma. Eu vou escolher dentro de três semanas, depois do congresso de Viena. Os dois estão na lista. — O sorriso aumenta. — Que vença o melhor.\n\nNinguém sorri de volta. Do corredor, alguém passa empurrando um carrinho de café, e o barulho das rodas é o único som da sala por um tempo comprido."
+    },
+    "up_c1_dialogo": {
+      "tipo": "dialogo",
+      "cap": 1,
+      "lugar": "Elevador, Hale & Brandvold",
+      "hora": "Segunda · 16h50",
+      "comeca": "A",
+      "texto": "O elevador do 29º andar leva quarenta e dois segundos para chegar ao térreo, e Marcus Webb ficou para trás, no telefone, com a porta de nogueira fechada. Dentro da cabine, de espelho dourado e música ambiente de alguém tocando piano contra a vontade, estão dois candidatos à mesma vaga.\n\nEm quarenta e dois segundos dá para dizer muita coisa, ou nenhuma.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "e0_a_seco",
+              "texto": "— {{eu.nome}} Nicholls. Diretora de contas. Não precisamos nos apresentar, mas é educado.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "e0_a_flerte",
+              "texto": "— Você é mais alto do que no organograma.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "cuida",
+              "tag": "e0_a_cuida",
+              "texto": "— Sinto muito pela venda. Imagino que não tenha sido fácil.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "e0_b_seco",
+              "texto": "— {{eu.nome}} Tillman. Eu seria filh{{eu.o_a}} do dono, mas parece que agora sou só filh{{eu.o_a}}.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "e0_b_flerte",
+              "texto": "— Então você é a pessoa que escreveu a análise. Eu tinha uma imagem diferente. Menos... horário comercial.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "e0_b_abre",
+              "texto": "— Eu não sabia que ia ter concorrência. Achei que fosse formalidade.",
+              "se": "eu:B"
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "e1_a_seco",
+              "texto": "— Não é concorrência. É um processo seletivo. Há um critério, e eu o conheço.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "fere",
+              "tag": "e1_a_fere",
+              "texto": "— Você tem sobrenome. Eu tenho resultados. Vamos ver o que pesa mais.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "e1_a_abre",
+              "texto": "— Eu também não sabia. Descobri hoje às 9h40, por um post-it.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "e1_b_seco",
+              "texto": "— Eu conheço o mercado regional, os clientes, os caminhões e o nome de cada motorista. O que você conhece é planilha.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "fere",
+              "tag": "e1_b_fere",
+              "texto": "— Sobrenome, resultados, post-it. Que lista de justificativas completa para uma pessoa que não precisa se justificar.",
+              "se": "eu:B",
+              "efeitos": {
+                "abalo": 1
+              }
+            },
+            {
+              "tom": "abre",
+              "tag": "e1_b_abre",
+              "texto": "— Post-it? A Meridian informa promoções por post-it? Isso explica muita coisa.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "e2_a_seco",
+              "texto": "— Vou ser direta: não tenho nada pessoal contra você. Vou ganhar essa vaga.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "e2_a_flerte",
+              "texto": "— Se perder, será para alguém que mereça. Prefiro que seja eu.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "cuida",
+              "tag": "e2_a_cuida",
+              "texto": "— Pelo menos jante comigo hoje. Dois candidatos que não se falam é pior do que dois que se odeiam.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "e2_b_seco",
+              "texto": "— Nada pessoal, claro. Só a minha vida inteira, e a dos cento e doze funcionários do galpão.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "e2_b_flerte",
+              "texto": "— Eu admiro o desprendimento. Vai ser divertido perder para uma pessoa assim. Mas não vou perder.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "cuida",
+              "tag": "e2_b_cuida",
+              "texto": "— Eu aceito o jantar, mas pago eu. A empresa ainda é minha por mais uns quinze dias.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra antes da porta abrir é sua.",
+          "opcoes": [
+            {
+              "tom": "seco",
+              "tag": "e3_a_seco",
+              "texto": "— Que vença o melhor. É o que o Marcus disse.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "e3_a_flerte",
+              "texto": "— Foi um prazer descobrir que o meu inimigo tem um bom perfume.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "e3_a_abre",
+              "texto": "— Eu estou com medo. Só para constar. Não é medo de você.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "e3_b_seco",
+              "texto": "— Que vença o melhor. Que, a esta altura, não sei quem é.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "e3_b_flerte",
+              "texto": "— O perfume foi acidente. Sorte a minha, que acidentes são o que sei fazer de melhor.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "e3_b_abre",
+              "texto": "— Eu também. Medo, não do inimigo. Do resto.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Isso é tudo?"
+        },
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Você está com cara de quem não dormiu. Quer carona?"
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— Quarenta e dois segundos dão para muita coisa."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu não sei fazer isso, sabe. Ser educado com quem eu deveria odiar."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Você tem cara de quem vai me atrapalhar."
+        }
+      ],
+      "fecho": "A cabine chega ao térreo com um *ding* de elevador de hotel. As portas abrem, e na rua de LaSalle, no fim de tarde de Chicago, os dois saem, cada um por um lado, sem se despedirem.",
+      "ir": "up_c1_decisao"
+    },
+    "up_c1_decisao": {
+      "tipo": "decisao",
+      "cap": 1,
+      "lugar": "Calçada de LaSalle Street",
+      "hora": "Segunda · 17h20",
+      "texto": "Na calçada de LaSalle, entre uma estação de táxi e um vendedor de pretzels, os dois ficam parados por um instante, sem saber se cada um espera o outro ir embora. Uma garoa fina cai. Um ônibus passa.\n\nVão ser três semanas, uma vaga e dois candidatos. Alguém precisa dizer como se joga.",
+      "pergunta": "Como vocês vão competir?",
+      "ir": {
+        "A": "up_c1_noite_a",
+        "B": "up_c1_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "limpo",
+          "texto": "Competir limpo: cada um faz o seu melhor trabalho, sem sabotagem",
+          "efeitos": {
+            "flag": "competir_limpo",
+            "vinculo": 1
+          },
+          "resultado": "Vocês combinam a coisa mais simples e mais rara: cada um faz o melhor trabalho que consegue, e ganha quem ganhar. Não há aperto de mão, só um aceno de cabeça de quem avisa o outro de que viu."
+        },
+        {
+          "id": "sem_regras",
+          "texto": "Sem regras: o que não é proibido por contrato é permitido",
+          "efeitos": {
+            "flag": "sem_regras",
+            "abalo": 1
+          },
+          "resultado": "Vocês não dizem nada, e é a pior resposta, porque cada um entende a seu modo. Na cabeça de um, é uma trégua tácita. Na do outro, é uma permissão. A garoa engrossa, e os dois se separam sem confiar."
+        },
+        {
+          "id": "informar",
+          "texto": "Trocar informação: o que cada um descobrir sobre a vaga, o outro fica sabendo",
+          "efeitos": {
+            "flag": "trocar_info",
+            "vinculo": 1
+          },
+          "resultado": "Vocês fazem um pacto estranho, de poucas palavras: se um descobrir algo sobre a vaga, avisa o outro. Nenhum dos dois acredita que o outro vai cumprir. Os dois, em segredo, já planejam cumprir."
+        }
+      ]
+    },
+    "up_c1_noite_a": {
+      "tipo": "solo",
+      "cap": 1,
+      "seat": "A",
+      "lugar": "Apartamento, Lincoln Park",
+      "hora": "Segunda · 22h30",
+      "texto": "O seu apartamento, em Lincoln Park, tem um sofá cinza, uma mesa de jantar sem cadeira de jantar e uma geladeira com três potes de iogurte e uma garrafa de vinho aberta há cinco dias. Você nunca foi uma pessoa de móveis. Foi uma pessoa de resultados.\n\nÀs dez e meia da noite, de meias, em pé na cozinha, você abre o laptop e olha a fotografia que tirou da página do arquivo da aquisição: *US$ 41 milhões*, uma nota de rodapé em letra miúda, e uma assinatura de Marcus Webb ao lado de uma cláusula que você nunca tinha visto.\n\nO celular vibra duas vezes. A sua irmã, Megan, de Dayton: *Você viu a mamãe? Ela perguntou de você. Liga.* E, embaixo, uma segunda mensagem, de Nina: *{{A.nome}}. Come alguma coisa que não seja iogurte.*",
+      "acoes": [
+        {
+          "id": "investigar",
+          "texto": "Ignorar as mensagens e investigar a nota de rodapé até achar a origem",
+          "ir": "up_c1_fim",
+          "efeitos": {
+            "flag": "a_investigou",
+            "abalo": 1
+          },
+          "resultado": "Você ignora as mensagens. Abre o histórico do documento, o controle de versões, as datas de edição. A nota de rodapé foi inserida às 23h47 de uma quinta-feira, por um usuário que não tem nome: só uma matrícula, *MW-0017*. Você escreve a matrícula numa folha, e a risca, e a escreve de novo."
+        },
+        {
+          "id": "ligar_megan",
+          "texto": "Ligar para a Megan e dizer a primeira coisa que vier à cabeça",
+          "ir": "up_c1_fim",
+          "efeitos": {
+            "flag": "a_ligou_megan",
+            "vinculo": 1
+          },
+          "resultado": "Você liga. A Megan atende no segundo toque, com uma criança chorando ao fundo e a voz de quem faz três coisas ao mesmo tempo. *{{A.nome}}?* O que sai da sua boca é: *eu tenho um concorrente.* Do outro lado, um silêncio curto, e depois, sem ironia nenhuma, a frase mais gentil que alguém disse a você em semanas: *então ele que se cuide.*"
+        },
+        {
+          "id": "comer",
+          "texto": "Fechar o laptop e preparar um jantar de verdade, pela primeira vez em um mês",
+          "ir": "up_c1_fim",
+          "efeitos": {
+            "flag": "a_cozinhou"
+          },
+          "resultado": "Você fecha o laptop. Procura na geladeira, nos armários, no congelador, e acha uma massa de espaguete e um limão que não está de todo morto. Cozinha devagar, de pé, olhando o relógio do forno. É uma refeição pequena, sem nome, e você come na bancada, sem pressa, ouvindo o silêncio do apartamento."
+        }
+      ]
+    },
+    "up_c1_noite_b": {
+      "tipo": "solo",
+      "cap": 1,
+      "seat": "B",
+      "lugar": "Tillman & Sons, River North",
+      "hora": "Segunda · 22h30",
+      "texto": "O galpão da Tillman & Sons, às dez e meia da noite, é o lugar mais amplo e mais vazio de Chicago. Você mora aqui, numa sala de arquivo reformada às pressas, com um sofá-cama, uma chapa elétrica e uma foto do seu avô na parede que você nunca teve coragem de tirar. O seu divórcio fez cinco anos em outubro e você nunca comprou uma cama.\n\nO celular vibra. É o seu pai, em chamada de vídeo, com o rosto tão perto da câmera que só se vê um olho. Atrás dele, no sofá, um vira-lata marrom de dois anos, com uma orelha caída e outra em pé, olha você pela tela com a expressão de um adolescente que não aprova nenhuma das suas escolhas de vida.\n\n— O Buster está com saudade — diz o seu pai. — Eu também, mas eu não digo.",
+      "acoes": [
+        {
+          "id": "buster",
+          "texto": "Conversar com o Buster, como se ele entendesse",
+          "ir": "up_c1_fim",
+          "efeitos": {
+            "flag": "b_falou_buster",
+            "vinculo": 1
+          },
+          "resultado": "Você diz *oi, cara*, e o Buster levanta a orelha em pé. Diz *a gente vai dar um jeito*, e ele inclina a cabeça, de um jeito que parece cálculo. O seu pai, ao fundo, fica quieto por um minuto, e quando fala de novo, é só: *ele é igualzinho a você, quando você tinha dezessete.*"
+        },
+        {
+          "id": "pai",
+          "texto": "Perguntar ao pai, em voz baixa, por quanto exatamente a empresa foi vendida",
+          "ir": "up_c1_fim",
+          "efeitos": {
+            "flag": "b_perguntou_valor",
+            "abalo": 1
+          },
+          "resultado": "A pergunta sai antes que você decida. O seu pai demora a responder. *Menos do que eu devia ter pedido*, diz, afinal. *Mais do que eu devia ter pagado, se você contar o que devo.* A conversa termina com um *boa noite* seco, e a tela do celular, preta, guarda por um instante o seu rosto cansado."
+        },
+        {
+          "id": "chloe",
+          "texto": "Mandar uma mensagem para a Chloe e pedir que ela descubra o que puder sobre a Meridian",
+          "ir": "up_c1_fim",
+          "efeitos": {
+            "flag": "b_pediu_chloe"
+          },
+          "resultado": "Você escreve: *Preciso de tudo que for público sobre a Meridian. Quem manda, quem saiu, quem entrou.* A resposta de Chloe chega em doze segundos: *Eu estava esperando você pedir. Já comecei. Dorme.* Você sabe que ela vai passar a noite acordada, e sabe que é a coisa mais leal que alguém fez por você neste mês."
+        }
+      ]
+    },
+    "up_c1_fim": {
+      "tipo": "fim",
+      "cap": 1,
+      "lugar": "Chicago",
+      "hora": "Terça · 06h12",
+      "texto": "Na manhã de terça, às seis e doze, dois e-mails idênticos chegam a duas caixas de entrada em lados diferentes de Chicago, com o mesmo assunto e a mesma assinatura:\n\n*De: Marcus Webb. Assunto: Congresso Global de Operações, Viena. Os dois candidatos viajam juntos, quinta-feira, voo noturno da Austrian Airlines, saída às 17h40. Passagens e hotel já reservados. Apresentações no sábado. Quero ver como vocês trabalham em equipe. Que vença o melhor. — M.*\n\n{{se flag:competir_limpo}}Os dois combinaram competir limpo, e a primeira ordem do chefe é viajarem juntos, no mesmo voo, no mesmo hotel, por seis dias. {{/se}}{{se flag:sem_regras}}Nenhum dos dois combinou nada, e agora vão dividir um avião. {{/se}}{{se flag:trocar_info}}Os dois prometeram trocar informação, e a primeira informação é esta: eles vão viajar juntos. {{/se}}\n\nAo lado do e-mail, em anexo, a confirmação da reserva: *Hotel Imperial Wien, 1 quarto, 1 cama king, 6 noites.* O erro, se foi um erro, vem em letra de sistema, sem rosto.",
+      "gancho": "Viena, seis noites, e uma reserva que diz um quarto só.",
+      "ir": "up_c2_aeroporto"
+    },
+    "up_c2_aeroporto": {
+      "tipo": "segue",
+      "cap": 2,
+      "lugar": "Terminal 5, O'Hare, Chicago",
+      "hora": "Quinta · 16h10",
+      "npcs": [
+        "priya"
+      ],
+      "ir": {
+        "A": "up_c2_a",
+        "B": "up_c2_b"
+      },
+      "texto": "O Terminal 5 do O'Hare, numa quinta-feira de março, tem o cheiro de todo aeroporto internacional: carpete, pretzel quente e o álcool em gel que alguém acabou de passar nas mãos. Dois mil e duzentos passageiros, quatro portões de embarque para a Europa e uma fila de controle de passaporte que dá a volta no balcão de café.\n\nA confirmação da reserva diz *poltronas 24A e 24B*, lado a lado, janela e corredor. Quem comprou foi Priya Patel, a assistente do Marcus, a mando do Marcus, e o que quer que Marcus pense de trabalho em equipe vem impresso numa folha A4 que já está amassada nos bolsos de dois candidatos.\n\n{{se flag:competir_limpo}}Vocês combinaram competir limpo, e competir limpo, pelo visto, começa com dividir um braço de poltrona. {{/se}}{{se flag:sem_regras}}Nada ficou combinado, então a poltrona do lado é, por enquanto, território neutro. {{/se}}{{se flag:trocar_info}}Vocês combinaram trocar informação, e a primeira ficha chega na fila do passaporte: nenhum dos dois sabe nada. {{/se}}\n\nCada um, por um motivo diferente, preferia ter ido sozinho."
+    },
+    "up_c2_a": {
+      "tipo": "solo",
+      "cap": 2,
+      "seat": "A",
+      "lugar": "Portão K14, O'Hare",
+      "hora": "Quinta · 16h50",
+      "texto": "Você tem trinta e oito anos, um passaporte com quarenta e dois carimbos e um segredo que nunca contou a ninguém da Meridian: você tem pavor de avião.\n\nNão é um medo comum. É um medo organizado, com ritual. Você chega duas horas antes, escolhe sempre o corredor, conta as saídas de emergência, e não bebe nada com álcool antes da decolagem porque o álcool, dizem, piora. Fez isso em quarenta e dois países. Nunca disse a ninguém, nem a Nina, nem à Megan, porque *medo de avião* é um assunto que alguém resolve com uma frase gentil, e você não suporta frase gentil.\n\nA pessoa que vai se sentar no 24B está na outra ponta do portão, de gravata afrouxada, olhando para o celular com a testa franzida. Você sente a palma da mão úmida contra o couro da pasta.",
+      "acoes": [
+        {
+          "id": "ritual",
+          "texto": "Fazer o ritual completo: contar as saídas, respirar em quatro tempos, sem olhar para ninguém",
+          "ir": "up_c2_voo",
+          "efeitos": {
+            "flag": "a_fez_ritual"
+          },
+          "resultado": "Você conta: duas saídas na frente, duas no meio, duas atrás. Respira em quatro tempos, segura quatro, solta quatro. A palma da mão seca devagar. Ninguém no portão percebe nada, e essa é a única medida de sucesso que você aceita."
+        },
+        {
+          "id": "bar",
+          "texto": "Ir ao bar do terminal e pedir uma dose, contra todas as suas regras",
+          "ir": "up_c2_voo",
+          "efeitos": {
+            "flag": "a_bebeu",
+            "abalo": 1
+          },
+          "resultado": "Você atravessa o saguão e senta no balcão de um bar de aeroporto que serve vodca em copo plástico. Pede uma dose dupla, a primeira em um ano. Quando está na metade, o bartender, um homem de bigode, pergunta se você vai viajar a trabalho. *A trabalho*, você responde. Ele diz que então vai precisar de outra."
+        },
+        {
+          "id": "mensagem",
+          "texto": "Mandar uma mensagem para a Nina dizendo a verdade, pela primeira vez",
+          "ir": "up_c2_voo",
+          "efeitos": {
+            "flag": "a_contou_nina",
+            "vinculo": 1
+          },
+          "resultado": "Você escreve: *Nina. Eu tenho medo de avião. Sempre tive. Nunca te contei.* Envia antes de pensar. A resposta chega em vinte segundos: *{{A.nome}}. Eu sei desde 2019, quando você segurou a minha mão no voo para Denver e disse que era frio. Liga quando pousar.* Você lê duas vezes. Descobre que há coisas que as pessoas sabem sem terem sido informadas."
+        }
+      ]
+    },
+    "up_c2_b": {
+      "tipo": "solo",
+      "cap": 2,
+      "seat": "B",
+      "lugar": "Portão K14, O'Hare",
+      "hora": "Quinta · 16h50",
+      "texto": "O portão K14 tem um painel eletrônico que diz *VIENA, ATRASADO 20 MIN*, e quarenta passageiros que olham para o painel com a expressão de quem espera que ele mude por vontade própria. Você, que nunca sentou numa cadeira de aeroporto sem sentir que está no lugar errado, está sentado numa cadeira de aeroporto, no lugar errado, com a gravata afrouxada e o celular na mão.\n\nNa tela, uma mensagem da Chloe, de oito minutos atrás, com um anexo de duas páginas: *Meridian Group. Três diretores saíram em dezoito meses. Todos de áreas que o Marcus Webb comandou. Ninguém quis falar. Priya Patel foi a única que atendeu o telefone e desligou em quatro segundos. Mais amanhã.*\n\nDo outro lado do portão, a pessoa que vai se sentar no 24A está de pé, de costas, segurando a alça de uma pasta de couro com tanta força que os nós dos dedos estão brancos. Você conhece essa postura. É a de quem está tentando não cair de um lugar alto.",
+      "acoes": [
+        {
+          "id": "observar",
+          "texto": "Observar de longe, sem dizer nada, e guardar a informação",
+          "ir": "up_c2_voo",
+          "efeitos": {
+            "flag": "b_notou_medo"
+          },
+          "resultado": "Você não vai até lá. Observa. A mão que aperta a pasta, a respiração contada, a boca que se mexe sem som. Você já viu isso antes, em um irmão que tinha medo do escuro. Guarda, como quem guarda um trunfo e sente vergonha de guardar."
+        },
+        {
+          "id": "cafe",
+          "texto": "Ir à cafeteria e voltar com dois cafés, sem dizer por quê",
+          "ir": "up_c2_voo",
+          "efeitos": {
+            "flag": "b_levou_cafe",
+            "vinculo": 1
+          },
+          "resultado": "Você atravessa o saguão, espera na fila, volta com dois copos de papel. Estende um sem olhar. *Não sei como você toma*, diz. *Eu pedi igual ao meu.* Ninguém agradece, e o café, que está horrível, é a primeira coisa que os dois dividem."
+        },
+        {
+          "id": "chloe",
+          "texto": "Responder à Chloe e pedir que ela procure o que o Marcus assinou nos últimos dois anos",
+          "ir": "up_c2_voo",
+          "efeitos": {
+            "flag": "b_pediu_marcus",
+            "abalo": 1
+          },
+          "resultado": "Você responde: *Procura tudo que o Marcus assinou nos últimos dois anos. Contratos, aquisições, qualquer coisa.* Chloe digita por um minuto e depois escreve só: *Estou dentro. Cuidado com ela. Ou com ele. Sei lá. Cuidado com todo mundo.* A palavra *todo mundo* fica na tela por mais tempo do que devia."
+        }
+      ]
+    },
+    "up_c2_voo": {
+      "tipo": "dividir",
+      "cap": 2,
+      "lugar": "Austrian Airlines, poltronas 24A e 24B",
+      "hora": "Quinta · 20h30",
+      "cada": 1,
+      "texto": "O voo decolou com vinte e cinco minutos de atraso, sobre um lago Michigan que parecia uma placa de metal escuro. Agora, a dez mil metros, com a cabine em penumbra e o serviço de bordo servido, as duas poltronas do 24 dividem um braço de apoio que ninguém sabe quem tem direito de usar.\n\nOito horas e quarenta minutos até Viena. O avião estremece de leve. Um dos dois escuta o tremor como uma coisa que está acontecendo em outro lugar, e o outro como um aviso.",
+      "pergunta": "O que você faz com as oito horas?",
+      "acoes": [
+        {
+          "id": "trabalhar",
+          "texto": "Abrir o laptop e trabalhar na apresentação, ignorando a pessoa do lado",
+          "efeitos": {
+            "flag": "voo_trabalhou"
+          },
+          "resultado": "Você abre o laptop e revisa a apresentação, slide por slide. É um jeito de estar presente e ausente ao mesmo tempo, e funciona por uma hora e meia. Depois uma turbulência sacode a cabine, a tela treme, e a sua concentração cai com ela."
+        },
+        {
+          "id": "conversar",
+          "texto": "Puxar conversa, nem que seja sobre o filme da tela",
+          "efeitos": {
+            "flag": "voo_conversou",
+            "vinculo": 1
+          },
+          "resultado": "Você diz *que filme está passando?*, que é a pergunta mais boba que existe. A outra pessoa responde *uma comédia romântica ruim*, e vocês olham juntos para a tela por quarenta minutos, com o volume baixo e uma mini-garrafa de vinho dividida em dois copos de plástico. É a primeira conversa em que ninguém quer ganhar."
+        },
+        {
+          "id": "dormir",
+          "texto": "Tentar dormir, com a manta até o queixo, fingindo que não existe ninguém ali",
+          "efeitos": {
+            "flag": "voo_dormiu"
+          },
+          "resultado": "Você puxa a manta, ajeita o travesseiro e fecha os olhos. Dormir, para você, é uma competência, uma disciplina de quem passou anos dormindo em lugares onde não devia. Em vinte minutos o corpo desliga. Mas, em algum ponto da madrugada, uma cabeça cai do lado errado, e você acorda com um peso conhecido no ombro."
+        }
+      ],
+      "desfecho": "Às duas da manhã, hora de Chicago, o piloto avisa em alemão e em inglês, com a voz de quem recita uma poesia chata, que vão atravessar uma zona de turbulência sobre o Atlântico Norte, e que, por favor, todos permaneçam sentados e com o cinto afivelado.",
+      "ir": "up_c2_dialogo"
+    },
+    "up_c2_dialogo": {
+      "tipo": "dialogo",
+      "cap": 2,
+      "lugar": "Poltronas 24A e 24B",
+      "hora": "Sexta · 02h15",
+      "comeca": "B",
+      "texto": "A turbulência dura quarenta minutos e é do tipo que faz o café saltar do copo. Os passageiros, em volta, seguram o que podem: braços de poltrona, mãos de desconhecidos, o próprio cinto. No 24, há dois braços de apoio, um deles ocupado por uma mão que, a cada solavanco, aperta mais.\n\nCom a cabine em penumbra e o motor roncando, é a primeira vez em três dias em que ninguém tem plateia.",
+      "turnos": [
+        {
+          "prompt": "A primeira frase é sua.",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "tag": "f0_cuida",
+              "texto": "— Ei. Está tudo bem. Isso é normal, o avião foi feito para isso.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "f0_flerte",
+              "texto": "— Se a gente cair, pelo menos eu ganho a vaga por W.O.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "f0_abre",
+              "texto": "— Pode segurar a minha mão. Eu não conto para ninguém.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "f0_a_seco",
+              "texto": "— Não olhe para mim assim. Eu estou perfeitamente bem.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "abre",
+              "tag": "f0_a_abre",
+              "texto": "— Eu tenho medo de avião. Sempre tive. Ninguém sabe.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "fere",
+              "tag": "f0_a_fere",
+              "texto": "— Se você contar isso para o Marcus, eu acabo com você.",
+              "se": "eu:A",
+              "efeitos": {
+                "abalo": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "Agora você responde.",
+          "opcoes": [
+            {
+              "tom": "cuida",
+              "tag": "f1_cuida",
+              "texto": "— Eu sei. Percebi no portão. Você contou as saídas de emergência.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "f1_flerte",
+              "texto": "— Quarenta e dois países, e ainda assim a mão aperta como se fosse o primeiro.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "f1_seco",
+              "texto": "— Não vou contar. Eu não sou esse tipo de rival.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "f1_a_abre",
+              "texto": "— Obrigada ou obrigado. Por não rir.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "seco",
+              "tag": "f1_a_seco",
+              "texto": "— Chega. Eu não preciso de plateia.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "flerte",
+              "tag": "f1_a_flerte",
+              "texto": "— Você é mais atento do que o seu perfil no LinkedIn.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A conversa é sua de novo.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "f2_abre",
+              "texto": "— Eu também tenho um segredo. Eu moro no escritório. Faz cinco anos.",
+              "se": "eu:B",
+              "efeitos": {
+                "flag": "dean_contou_escritorio",
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "f2_cuida",
+              "texto": "— Fala comigo enquanto passa. Fala qualquer coisa. Do trabalho, do que for.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "flerte",
+              "tag": "f2_flerte",
+              "texto": "— Se você aguentou quarenta minutos de turbulência, aguenta seis dias de mim.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "f2_a_abre",
+              "texto": "— O meu apartamento tem uma mesa sem cadeira. Eu nunca recebi ninguém.",
+              "se": "eu:A",
+              "efeitos": {
+                "flag": "joanna_contou_apto",
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "cuida",
+              "tag": "f2_a_cuida",
+              "texto": "— Fala você. A sua voz ajuda.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "f2_a_seco",
+              "texto": "— Eu vou me concentrar na respiração. Não precisa responder.",
+              "se": "eu:A"
+            }
+          ]
+        },
+        {
+          "prompt": "A última palavra da noite é sua.",
+          "opcoes": [
+            {
+              "tom": "abre",
+              "tag": "f3_abre",
+              "texto": "— Boa noite. E, se ajudar, eu não vou a lugar nenhum.",
+              "se": "eu:B",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "f3_flerte",
+              "texto": "— Se eu cair no sono no seu ombro, finja que não viu.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "seco",
+              "tag": "f3_seco",
+              "texto": "— Boa noite. Amanhã a gente volta a ser inimigos.",
+              "se": "eu:B"
+            },
+            {
+              "tom": "abre",
+              "tag": "f3_a_abre",
+              "texto": "— Boa noite. E obrigada, de verdade.",
+              "se": "eu:A",
+              "efeitos": {
+                "vinculo": 1
+              }
+            },
+            {
+              "tom": "flerte",
+              "tag": "f3_a_flerte",
+              "texto": "— Se eu cair no sono no seu ombro, finja que foi acidente.",
+              "se": "eu:A"
+            },
+            {
+              "tom": "seco",
+              "tag": "f3_a_seco",
+              "texto": "— Boa noite. Amanhã, de volta ao sobrenome.",
+              "se": "eu:A"
+            }
+          ]
+        }
+      ],
+      "pool": [
+        {
+          "tom": "cuida",
+          "tag": "pl_cuida",
+          "texto": "— Quer água? Eu pego."
+        },
+        {
+          "tom": "seco",
+          "tag": "pl_seco",
+          "texto": "— Ok."
+        },
+        {
+          "tom": "flerte",
+          "tag": "pl_flerte",
+          "texto": "— O braço de apoio é meu. Mas hoje eu cedo."
+        },
+        {
+          "tom": "abre",
+          "tag": "pl_abre",
+          "texto": "— Eu não esperava que isso fosse tão fácil."
+        },
+        {
+          "tom": "fere",
+          "tag": "pl_fere",
+          "texto": "— Você sempre se faz de forte?"
+        }
+      ],
+      "fecho": "A turbulência passa. O capitão agradece, em dois idiomas, a paciência de todos. No 24, as duas mãos continuam onde estavam, e nenhuma delas se mexe.",
+      "ir": "up_c2_hotel"
+    },
+    "up_c2_hotel": {
+      "tipo": "decisao",
+      "cap": 2,
+      "lugar": "Hotel Imperial, Kärntner Ring, Viena",
+      "hora": "Sexta · 14h20",
+      "texto": "O Hotel Imperial, em Viena, tem lustres do tamanho de carros pequenos, tapetes que absorvem o som das pessoas e um balcão de recepção onde uma mulher de coque perfeito, crachá *Frau Hofer*, digita por trinta e oito segundos e olha, enfim, para duas pessoas que estão há vinte horas sem dormir.\n\n— Há um problema — diz ela, no tom de quem avisa que o problema é de outra pessoa. — O congresso lotou o hotel. Tenho uma reserva em nome dos senhores: um quarto, cama king, seis noites. Não tenho nenhum outro.\n\nAtrás dos dois, uma fila de executivos de terno amarrotado espera para dizer a mesma coisa.",
+      "pergunta": "O que vocês fazem?",
+      "ir": {
+        "A": "up_c2_noite_a",
+        "B": "up_c2_noite_b"
+      },
+      "acoes": [
+        {
+          "id": "aceitar",
+          "texto": "Aceitar o quarto: são só seis noites, e há um sofá",
+          "efeitos": {
+            "flag": "quarto_unico",
+            "vinculo": 1
+          },
+          "resultado": "Vocês aceitam. É a decisão mais prática e a mais perigosa, e os dois sabem. Frau Hofer entrega um cartão-chave dourado, com um sorriso que pode ser de simpatia ou de piedade, e diz *Willkommen im Imperial*, e se vira para a fila."
+        },
+        {
+          "id": "outro",
+          "texto": "Procurar outro hotel: nenhum dos dois quer dividir o quarto com a concorrência",
+          "efeitos": {
+            "flag": "procurou_outro",
+            "abalo": 1
+          },
+          "resultado": "Vocês saem do Imperial com as malas e passam duas horas, sob uma garoa fina, tentando achar um quarto em uma cidade lotada de executivos. Tentam o Sacher, o Bristol, uma pensão de esquina. Tudo cheio. Voltam, molhados e sem dignidade, e Frau Hofer, sem dizer nada, entrega o mesmo cartão dourado."
+        },
+        {
+          "id": "priya",
+          "texto": "Ligar para a Priya e exigir uma solução do Marcus",
+          "efeitos": {
+            "flag": "ligou_priya"
+          },
+          "resultado": "Vocês ligam. Priya atende no terceiro toque, com a voz mais baixa do que nunca. *Foi o Marcus que pediu um quarto só*, ela diz, depressa, como quem confessa um crime, *Eu avisei. Ele disse que era para economizar.* Ela desliga antes de qualquer resposta, e a palavra *economizar* fica pendurada entre os dois como um fio solto."
+        }
+      ]
+    },
+    "up_c2_noite_a": {
+      "tipo": "solo",
+      "cap": 2,
+      "seat": "A",
+      "lugar": "Quarto 412, Hotel Imperial",
+      "hora": "Sexta · 15h10",
+      "texto": "O quarto 412 tem pé-direito de quatro metros, uma cama king de colcha de damasco, duas poltronas de veludo cor de vinho e uma janela que dá para o Ring, onde um bonde amarelo passa em silêncio. Há um frigobar, uma escrivaninha, um sofá de dois lugares que você mede, com os olhos, em centímetros, e conclui que ninguém dorme ali.\n\nNa mesa de cabeceira, uma garrafa de champanhe num balde de gelo, com um cartão: *À dupla mais promissora da Meridian. Que vença o melhor. — M.W.* Você segura o cartão com dois dedos. A letra de Marcus é grande, redonda, de quem escreve para ser lido por outras pessoas.",
+      "acoes": [
+        {
+          "id": "cama",
+          "texto": "Escolher o lado da cama e deixar a bolsa lá, para marcar território",
+          "ir": "up_c2_fim",
+          "efeitos": {
+            "flag": "a_marcou_lado"
+          },
+          "resultado": "Você escolhe o lado da janela e deixa a pasta sobre o travesseiro, com a alça pendurada para fora, como uma bandeira. É infantil e você sabe. Funciona do jeito que sempre funcionou: você se sente menos perdida."
+        },
+        {
+          "id": "champanhe",
+          "texto": "Ler o cartão de novo e se perguntar por que o Marcus quis um quarto só",
+          "ir": "up_c2_fim",
+          "efeitos": {
+            "flag": "a_desconfiou_marcus",
+            "abalo": 1
+          },
+          "resultado": "Você lê de novo. *À dupla.* Marcus nunca usou essa palavra. Em onze anos na Meridian, você foi *a melhor*, *a única*, *a de resultados*. Nunca *dupla*. E a coisa que mais incomoda é a economia: um quarto só, para dois candidatos, em um hotel que cobra seiscentos euros por noite. Marcus nunca economiza."
+        },
+        {
+          "id": "banho",
+          "texto": "Tomar um banho quente, de uma hora, antes que a outra pessoa chegue",
+          "ir": "up_c2_fim",
+          "efeitos": {
+            "flag": "a_tomou_banho"
+          },
+          "resultado": "Você tranca a porta do banheiro, enche a banheira de água quente, e fica lá por uma hora, de olhos fechados, ouvindo o som distante do Ring. É a primeira hora que você tem para si mesma desde segunda-feira. Quando sai, de roupão, a pessoa do outro lado da porta já voltou, e você sabe pelo cheiro de café."
+        }
+      ]
+    },
+    "up_c2_noite_b": {
+      "tipo": "solo",
+      "cap": 2,
+      "seat": "B",
+      "lugar": "Lobby, Hotel Imperial",
+      "hora": "Sexta · 15h10",
+      "texto": "Você deixa a pessoa subir primeiro, com a desculpa de ligar para casa. Na cadeira de couro do lobby, sob um lustre de cristal que provavelmente vale mais do que o seu primeiro carro, você abre o celular e liga para o seu pai.\n\nEm Chicago, são oito da manhã. O seu pai atende no quinto toque, e a sua voz sai sozinha, antes de você pensar: *Pai, eu fui para Viena com uma pessoa que quer a minha vaga.* Do outro lado, o barulho de uma colher batendo numa xícara, e depois o Buster latindo, longe, para um carteiro.\n\n— E ela é boa? — pergunta o seu pai.",
+      "acoes": [
+        {
+          "id": "verdade",
+          "texto": "Dizer a verdade: ela é a melhor profissional que você já encontrou",
+          "ir": "up_c2_fim",
+          "efeitos": {
+            "flag": "b_admitiu_pai",
+            "vinculo": 1
+          },
+          "resultado": "— É — você diz. — É melhor do que eu. Ela fechou um contrato de seis dígitos na segunda de manhã, antes das dez, sem desconto. — Do outro lado, o seu pai ri baixo, o riso de quem ouviu uma coisa que esperava ouvir há anos. *Então você tem um problema que vale a pena ter*, ele diz."
+        },
+        {
+          "id": "mentir",
+          "texto": "Dizer que é fraca, que vai ser fácil",
+          "ir": "up_c2_fim",
+          "efeitos": {
+            "flag": "b_mentiu_pai",
+            "abalo": 1
+          },
+          "resultado": "— Nem tanto — você diz. — Dá para ganhar. — A mentira sai com a facilidade de uma coisa antiga. O seu pai fica em silêncio por um segundo a mais do que devia, e depois só diz: *tá bom, filho.* Você sente, pela primeira vez, que ele não acreditou."
+        },
+        {
+          "id": "buster",
+          "texto": "Pedir para falar com o Buster e ouvir o cachorro latir",
+          "ir": "up_c2_fim",
+          "efeitos": {
+            "flag": "b_ouviu_buster",
+            "vinculo": 1
+          },
+          "resultado": "Você pede para pôr o celular perto da orelha do Buster. Ouve o barulho de unhas no piso de madeira, a respiração ofegante, e um latido curto de reconhecimento. Você diz *oi, amigo* em voz baixa, no lobby de um hotel de seiscentos euros por noite, e um garçom que passa com uma bandeja finge que não ouviu."
+        }
+      ]
+    },
+    "up_c2_fim": {
+      "tipo": "fim",
+      "cap": 2,
+      "lugar": "Quarto 412, Hotel Imperial",
+      "hora": "Sexta · 16h30",
+      "texto": "Às quatro e meia da tarde, o quarto 412 tem uma cama king, um sofá de dois lugares, duas malas abertas e duas pessoas que não dormem há trinta horas, sentadas em lados opostos do mesmo colchão, a um metro um do outro, olhando para o mesmo ponto na parede.\n\n{{se flag:quarto_unico}}Vocês aceitaram o quarto, e aceitar é a palavra certa: não houve escolha. {{/se}}{{se flag:procurou_outro}}Depois de duas horas de garoa e de hotéis lotados, o cartão dourado da Frau Hofer pareceu, de repente, uma rendição. {{/se}}{{se flag:ligou_priya}}A palavra *economizar* ainda está no ar, no tom exato da Priya. {{/se}}{{se flag:dean_contou_escritorio}}A pessoa na cama já sabe que o outro mora no escritório, e agora, no quarto de um hotel, parece que ela encontrou o primeiro dormitório da vida dele. {{/se}}{{se flag:joanna_contou_apto}}O outro já sabe que o apartamento tem uma mesa sem cadeira, e olha para os móveis do quarto 412 com uma pena que não é pena. {{/se}}\n\nO sofá, medido em centímetros, tem um metro e sessenta e cinco. Ninguém, em nenhuma das duas famílias, tem um metro e sessenta e cinco.\n\nNa parede em frente, um relógio de bronze marca 16h31. Em algum lugar do corredor, um carrinho de camareira passa. E ao lado da porta, no chão, onde alguém o deslizou por baixo da fresta, um envelope branco, com o logo da Meridian e uma única linha, em letra redonda:\n\n*Apresentações sábado, 9h. Os dois no mesmo palco, no mesmo horário. Divirtam-se. — M.W.*",
+      "gancho": "Sábado, às nove, os dois vão apresentar no mesmo palco, no mesmo horário.",
+      "ir": "up_rascunho_fim"
+    },
+    "up_rascunho_fim": {
+      "tipo": "final",
+      "cap": 2,
+      "texto": "Fim do trecho escrito até agora (rascunho)."
+    }
+  }
+}
