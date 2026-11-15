@@ -195,4 +195,4 @@ NOS['pp_c1_fim'] = dict(tipo='fim', cap=1, lugar=L, hora='Quinta, 18 de dezembro
 
 *A estrela da árvore não vai ser comprada. Ela já existe. Está no depósito da Kessler desde 1987. Amanhã, às sete. Eu abro. S.*""",
  gancho="Quem guardou uma estrela por trinta e oito anos, e por que as duas famílias nunca mais falaram dela?",
- ir='pp_rascunho_fim')
+ ir='pp_c2_chegada')
