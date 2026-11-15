@@ -1,185 +1,268 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Liga da Promessa</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap">
 <style>
-/* Layout: app de celular em coluna única, barra de abas embaixo, folhas deslizantes para registrar e escolher hábitos. */
+/* Layout: app de celular em coluna única no estilo do kit de referência: fundo grafite, faixas lilás, pílulas brancas, destaques limão, barra inferior lilás. Tema escuro único, por escolha. */
 :root{
-  --bg:#eef2f5; --surface:#ffffff; --ink:#0f1b2d; --muted:#5b6b7d; --line:#d9e1e8;
-  --accent:#0a6c8f; --accent-ink:#ffffff; --gold:#b8860b; --gold-bg:#fbf1d3;
-  --good:#17803d; --good-bg:#dff3e5; --bad:#b42318; --bad-bg:#fbe3e0; --warn-bg:#fdf0d5;
-  --shadow:0 1px 2px rgba(15,27,45,.08),0 6px 20px rgba(15,27,45,.06);
-  --font-display:'Space Grotesk',system-ui,sans-serif; --font-body:'Inter',system-ui,sans-serif;
+  --bg:#232323; --panel:#2e2e2e; --line:#3a3a3a;
+  --lav:#b3a0ff; --purple:#896cfe; --lime:#e2f163;
+  --white:#ffffff; --ink:#232323; --muted:#a6a6a6; --soft:#f2f0ff;
+  --bad:#ff7a6b; --bad-bg:#4a2622;
+  --font:'Poppins',system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0d151f; --surface:#16212e; --ink:#e8eef4; --muted:#93a3b4; --line:#26364a;
-  --accent:#4cc0e6; --accent-ink:#06202b; --gold:#e6b94a; --gold-bg:#3a2f12;
-  --good:#52d17c; --good-bg:#15321f; --bad:#ff8a7e; --bad-bg:#3d1a17; --warn-bg:#3a2f12;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3); color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0d151f; --surface:#16212e; --ink:#e8eef4; --muted:#93a3b4; --line:#26364a;
-  --accent:#4cc0e6; --accent-ink:#06202b; --gold:#e6b94a; --gold-bg:#3a2f12;
-  --good:#52d17c; --good-bg:#15321f; --bad:#ff8a7e; --bad-bg:#3d1a17; --warn-bg:#3a2f12;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3); color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;
-  padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px));margin:0}
-h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance}
-button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;position:relative}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
-  padding:12px max(16px,env(safe-area-inset-left,0px)) 8px max(16px,env(safe-area-inset-right,0px))}
+html,body{background:var(--bg)}
+body{color:var(--white);font-family:var(--font);font-size:14px;line-height:1.45;margin:0;
+  padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:700;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app{max-width:480px;margin:0 auto;min-height:100vh;position:relative;background:var(--bg)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.brand{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand h1{font-size:20px}
-.phase{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px;font-size:12px}
-.phase button{border:0;background:none;padding:5px 10px;border-radius:999px;color:var(--muted)}
-.phase button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
-.weekline{margin-top:8px;display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted);flex-wrap:wrap}
-.weekline strong{color:var(--ink)}
-main{flex:1;padding:8px max(16px,env(safe-area-inset-left,0px)) 110px max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
-.card{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:14px}
-.sec-title{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:4px 0 -4px}
-.sec-title h2{font-size:17px}
-.sec-title span{font-size:12px;color:var(--muted)}
-.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
-  display:flex;justify-content:center;padding:6px 0 calc(6px + env(safe-area-inset-bottom,0px))}
-.tabs-in{width:100%;max-width:480px;display:grid;grid-template-columns:repeat(4,1fr);padding:0 max(8px,env(safe-area-inset-left,0px))}
-.tab{border:0;background:none;padding:6px 4px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--muted)}
-.tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.tab[aria-selected="true"]{color:var(--accent);font-weight:600}
-.fab{position:fixed;z-index:7;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(72px + env(safe-area-inset-bottom,0px));
-  background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:12px 18px;font-weight:600;box-shadow:var(--shadow)}
-.view[hidden]{display:none}
-/* ranking */
-.pod{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end}
-.pod .p{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:10px 6px;text-align:center;min-width:0}
-.pod .p.first{padding-top:18px;padding-bottom:16px}
-.pod .name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pod .pts{font-family:var(--font-display);font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
-.pod .pos{font-size:11px;color:var(--muted)}
-.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:15px;margin:0 auto 6px;color:#fff;flex:none}
-.rank{display:flex;flex-direction:column}
-.row{display:grid;grid-template-columns:26px 40px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
-.row:first-child{border-top:0}
-.row .n{font-family:var(--font-display);font-weight:700;color:var(--muted)}
-.row .who{min-width:0}
-.row .who b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .who small{color:var(--muted)}
-.row .av{margin:0;width:40px;height:40px}
-.row .score{text-align:right;font-family:var(--font-display);font-weight:700;font-size:18px;font-variant-numeric:tabular-nums}
-.row .score small{display:block;font-family:var(--font-body);font-weight:500;font-size:11px}
-.me{background:var(--gold-bg);margin:0 -14px;padding-left:14px;padding-right:14px;border-radius:10px;border-top-color:transparent!important}
-.up{color:var(--good)} .down{color:var(--bad)}
-.pot{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.pot b{font-family:var(--font-display);font-size:22px}
-/* promessa */
-.lock{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;font-size:13px;background:var(--warn-bg)}
-.lock.on{background:var(--good-bg)}
-.hab{display:flex;flex-direction:column;gap:8px}
-.hab+.hab{border-top:1px solid var(--line);padding-top:12px;margin-top:4px}
-.hab-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.hab-top b{display:block}
-.hab-top small{color:var(--muted)}
-.chip{display:inline-block;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
-.chip.good{background:var(--good-bg);color:var(--good)}
+.pad{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+
+/* cabeçalho */
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;gap:10px;padding-top:14px;padding-bottom:12px}
+.hd .back{color:var(--lime);display:flex;align-items:center;margin-left:-6px}
+.hd h1{color:var(--purple);font-size:20px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hd .ics{display:flex;gap:12px;color:var(--purple)}
+.hd .ics svg{width:20px;height:20px}
+.hello{flex:1;min-width:0}
+.hello h1{font-size:22px}
+.hello p{margin:0;font-size:12px;color:var(--white);font-weight:500}
+
+/* blocos */
+.band{background:var(--lav);padding-top:18px;padding-bottom:18px}
+.sec{padding-top:16px;padding-bottom:6px;display:flex;flex-direction:column;gap:12px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.sec-h h2{color:var(--lime);font-size:17px;font-weight:600}
+.sec-h a,.sec-h span{font-size:12px;color:var(--white);font-weight:500;text-decoration:none}
+.muted{color:var(--muted)}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);padding-top:4px;padding-bottom:10px}
+.quick button{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--lime);font-size:11px;padding:4px 0}
+.quick button span{color:var(--lav);font-weight:500}
+.quick button+button{border-left:1px solid var(--lav)}
+.quick svg{width:28px;height:28px}
+
+/* pílulas */
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{border-radius:999px;padding:7px 18px;font-weight:500;font-size:13px;background:var(--white);color:var(--purple)}
+.pill[aria-pressed="true"]{background:var(--lime);color:var(--ink)}
+.btn{border-radius:999px;padding:11px 22px;font-weight:600;font-size:14px;text-align:center}
+.btn.lime{background:var(--lime);color:var(--ink)}
+.btn.dark{background:var(--panel);color:var(--white);border:1px solid #555}
+.btn.white{background:var(--white);color:var(--purple)}
+.btn.sm{padding:6px 14px;font-size:12px}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.chip{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.chip.lime{background:var(--lime);color:var(--ink)}
+.chip.purple{background:var(--purple);color:var(--white)}
 .chip.bad{background:var(--bad-bg);color:var(--bad)}
-.chip.neutral{background:var(--bg);color:var(--muted)}
-.bar{height:8px;border-radius:99px;background:var(--bg);overflow:hidden;position:relative}
-.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
-.bar.max i{background:var(--good)} .bar.over i{background:var(--bad)}
-.hab-foot{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);flex-wrap:wrap}
-.btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px}
-.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.sm{padding:5px 9px;font-size:12px}
-.btn[disabled]{opacity:.45;cursor:not-allowed}
-.row-actions{display:flex;gap:8px;flex-wrap:wrap}
-.empty{color:var(--muted);text-align:center;padding:16px}
+.chip.ghost{background:rgba(255,255,255,.12);color:var(--white)}
+
+/* linha em pílula branca (estilo "Round 1") */
+.rows{display:flex;flex-direction:column;gap:10px}
+.prow{background:var(--white);color:var(--ink);border-radius:999px;display:flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;text-align:left;width:100%}
+.prow .dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;font-weight:700;font-size:12px;color:var(--white);background:var(--purple)}
+.prow .dot.lime{background:var(--lime);color:var(--ink)}
+.prow .dot.bad{background:var(--bad);color:var(--white)}
+.prow .tx{flex:1;min-width:0}
+.prow .tx b{display:block;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prow .tx small{color:#6b6b6b;font-size:11px;display:flex;align-items:center;gap:4px}
+.prow .rt{color:var(--purple);font-weight:600;font-size:13px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.prow .rt small{display:block;font-size:11px;font-weight:500;color:#6b6b6b}
+.prow.me{background:var(--lime)}
+.prow.me .rt,.prow.me .rt small,.prow.me .tx small{color:var(--ink)}
+.mini-bar{height:5px;border-radius:9px;background:#e6e1ff;margin-top:4px;overflow:hidden}
+.mini-bar i{display:block;height:100%;background:var(--purple);border-radius:9px}
+.mini-bar.over i{background:var(--bad)}
+.mini-bar.ok i{background:#9ab31b}
+
+/* cartões com "foto" */
+.photo{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/10;max-width:100%;display:block;color:var(--white)}
+.photo .art{position:absolute;inset:0}
+.photo .art svg{position:absolute;right:-8%;bottom:-12%;width:70%;height:auto;opacity:.22;stroke:#fff;fill:none;stroke-width:1.2}
+.photo .star{position:absolute;top:8px;right:8px;color:var(--lime)}
+.photo .star svg{width:18px;height:18px;fill:var(--lime);stroke:var(--lime)}
+.photo .tag{position:absolute;top:0;right:0;background:var(--lime);color:var(--ink);font-size:11px;font-weight:600;padding:4px 12px;border-radius:0 0 0 14px}
+.photo .cap{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+.photo .cap b{display:block;color:var(--lime);font-size:13px;font-weight:600}
+.photo .cap small{display:flex;gap:10px;font-size:10px;color:var(--white)}
+.g-a{background:linear-gradient(135deg,#3b3355,#6b58c9)} .g-b{background:linear-gradient(135deg,#2f4a3a,#5e8f5a)}
+.g-c{background:linear-gradient(135deg,#4d3a2e,#a06a45)} .g-d{background:linear-gradient(135deg,#2c3c55,#4f78b0)}
+.g-e{background:linear-gradient(135deg,#4a2f4a,#9b5a9b)} .g-f{background:linear-gradient(135deg,#3a3a3a,#6a6a6a)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid2>*{min-width:0}
+.card-out{border:1px solid var(--lime);border-radius:16px;padding:12px}
+.challenge{display:grid;grid-template-columns:1.1fr 1fr;background:var(--ink);border-radius:20px;overflow:hidden;min-height:120px}
+.challenge .l{padding:16px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.challenge .l b{color:var(--lime);font-size:22px;line-height:1.1;font-weight:600}
+.challenge .l small{font-size:11px}
+.challenge .photo{border-radius:0;aspect-ratio:auto;height:100%}
+
+/* ranking */
+.profile{display:flex;align-items:center;gap:14px;color:var(--white)}
+.profile .who{flex:1;min-width:0}
+.profile h2{font-size:22px}
+.stats{display:flex;gap:18px;margin-top:6px}
+.stat{display:flex;gap:8px;align-items:stretch}
+.stat i{width:4px;border-radius:4px;background:var(--lime)}
+.stat b{display:block;font-size:15px;line-height:1.2}
+.stat small{font-size:11px}
+.av{border-radius:50%;display:grid;place-items:center;font-weight:700;color:var(--white);flex:none}
+.pod{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end}
+.pod .p{background:var(--ink);border-radius:18px;padding:12px 6px;text-align:center;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.pod .p.first{padding-top:20px;padding-bottom:18px;outline:2px solid var(--lime)}
+.pod .nm{font-size:13px;font-weight:600;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pod .pt{color:var(--lime);font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.pod .ps{font-size:11px;color:var(--lav)}
+.pot{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--purple);border-radius:18px;padding:14px 18px}
+.pot b{font-size:24px;color:var(--lime)}
+
+/* promessa */
+.banner{border-radius:16px;padding:12px 14px;font-size:13px;font-weight:500;background:var(--ink);color:var(--white)}
+.banner b{color:var(--lime)}
+.hab-extra{display:flex;justify-content:space-between;gap:8px;padding:2px 18px 0;font-size:11px;color:var(--muted)}
+
 /* feed */
 .post{display:flex;flex-direction:column;gap:10px}
 .post-h{display:flex;gap:10px;align-items:center}
-.post-h .av{margin:0;width:36px;height:36px;font-size:13px}
-.post-h small{color:var(--muted);display:block}
-.ph{border-radius:10px;aspect-ratio:16/10;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:500;
-  background:linear-gradient(135deg,#2c7da0,#468faf);max-width:100%}
-.ph.b{background:linear-gradient(135deg,#3a7d5c,#52a37a)} .ph.c{background:linear-gradient(135deg,#8a5a3c,#b57a52)} .ph.d{background:linear-gradient(135deg,#5a4a8a,#7a68b5)}
-.post-tag{display:flex;gap:6px;flex-wrap:wrap}
-.acts{display:flex;gap:8px;flex-wrap:wrap}
-.acts .btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.acts .btn.flag[aria-pressed="true"]{background:var(--bad-bg);color:var(--bad);border-color:var(--bad)}
-.cmt{font-size:13px;color:var(--muted)} .cmt b{color:var(--ink)}
-/* sheet */
-.scrim{position:fixed;inset:0;background:rgba(5,12,20,.5);z-index:20}
+.post-h b{color:var(--lime);font-size:14px}
+.post-h small{display:block;color:var(--muted);font-size:11px}
+.post-h .fav{margin-left:auto;color:var(--lime)}
+.post p{margin:0;font-size:13px}
+.acts{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--lav)}
+.acts button{display:flex;align-items:center;gap:5px;color:var(--lav)}
+.acts button svg{width:16px;height:16px}
+.acts button[aria-pressed="true"]{color:var(--lime)}
+.acts button.flag[aria-pressed="true"]{color:var(--bad)}
+.cmt{font-size:12px;color:var(--muted)} .cmt b{color:var(--white)}
+
+/* progresso */
+.cal{background:var(--white);color:var(--ink);border-radius:20px;padding:14px}
+.cal-w{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:8px}
+.cal-w span{background:var(--purple);color:var(--white);border-radius:999px;font-size:10px;font-weight:600;text-align:center;padding:2px 0}
+.cal-d{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:12px;color:var(--purple);font-weight:500}
+.cal-d span{aspect-ratio:1;display:grid;place-items:center;border-radius:50%;max-width:100%}
+.cal-d .on{background:var(--lime);color:var(--ink);font-weight:700}
+.cal-d .today{outline:2px solid var(--purple)}
+.chart{border:1px solid #6a6a6a;border-radius:18px;padding:14px}
+.chart svg text{fill:var(--white);font-family:var(--font);font-size:11px}
+.strip{display:grid;grid-template-columns:auto 1px 1fr 1fr;gap:12px;align-items:center;background:var(--purple);border-radius:12px;padding:10px 14px}
+.strip .d{text-align:center;line-height:1.1}
+.strip .d small{font-size:11px} .strip .d b{font-size:20px;display:block}
+.strip hr{border:0;width:1px;height:34px;background:rgba(255,255,255,.5);margin:0}
+.strip .v small{display:block;font-size:11px}
+.strip .v b{font-size:17px;font-variant-numeric:tabular-nums}
+
+/* abertura e login */
+.splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center;background:radial-gradient(circle at 50% 35%,#3a3358,var(--bg) 65%)}
+.logo{display:flex;flex-direction:column;align-items:center;gap:6px}
+.mark{font-style:italic;font-weight:800;font-size:58px;line-height:1;color:var(--purple);letter-spacing:-2px}
+.mark span{color:var(--lime)}
+.word{font-style:italic;font-weight:800;font-size:26px;color:var(--lime);letter-spacing:.5px;text-transform:uppercase}
+.word span{color:var(--lav)}
+.splash p{margin:0;max-width:30ch;color:var(--white);font-size:13px}
+.login h2{color:var(--lime);text-align:center;font-size:20px;padding-top:6px}
+.login .welcome{text-align:center;padding-bottom:18px}
+.login .welcome h3{font-size:22px}
+.login .welcome p{margin:6px auto 0;max-width:34ch;font-size:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{color:var(--ink);font-size:13px;font-weight:600}
+input[type=text],input[type=email],input[type=password],input[type=number],input[type=search],select{width:100%;font:inherit;color:var(--ink);background:var(--white);border:0;border-radius:14px;padding:11px 14px}
+.form{display:flex;flex-direction:column;gap:12px}
+.center{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:22px;padding-bottom:30px}
+.socials{display:flex;gap:12px}
+.socials span{width:38px;height:38px;border-radius:50%;background:var(--white);color:var(--purple);display:grid;place-items:center;font-weight:700;font-size:14px}
+
+/* barra inferior e botão flutuante */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;justify-content:center}
+.nav-in{width:100%;max-width:480px;background:var(--lav);border-radius:22px 22px 0 0;display:grid;grid-template-columns:repeat(4,1fr);
+  padding:10px max(8px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-right,0px))}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--white);font-size:10px;font-weight:500;padding:4px 0}
+.nav button svg{width:26px;height:26px}
+.nav button[aria-selected="true"]{color:var(--ink);font-weight:700}
+.fab{position:fixed;z-index:7;right:max(18px,calc(50% - 222px));bottom:calc(84px + env(safe-area-inset-bottom,0px));
+  background:var(--lime);color:var(--ink);border-radius:999px;padding:12px 18px;font-weight:700;display:flex;gap:6px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.fab svg{width:18px;height:18px}
+.spacer{height:120px}
+
+/* folhas */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:20}
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;display:flex;justify-content:center}
-.sheet-in{background:var(--surface);width:100%;max-width:480px;border-radius:18px 18px 0 0;max-height:88vh;overflow:auto;
-  padding:16px max(16px,env(safe-area-inset-left,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-right,0px));
-  display:flex;flex-direction:column;gap:12px}
-.sheet-h{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.sheet-h h2{font-size:18px}
-label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
-input[type=text],input[type=number],input[type=search],select{width:100%;font:inherit;color:var(--ink);background:var(--bg);
-  border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.cats{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
-.cats button{white-space:nowrap;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 11px;font-size:13px}
-.cats button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.sheet-in{background:var(--bg);width:100%;max-width:480px;border-radius:24px 24px 0 0;max-height:88vh;overflow:auto;border-top:3px solid var(--lav)}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:16px;padding-bottom:10px}
+.sheet-h h2{color:var(--purple);font-size:19px}
+.sheet-b{padding-top:14px;padding-bottom:calc(22px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:12px}
+.sheet .band{display:flex;flex-direction:column;gap:12px}
+.preview{background:var(--ink);color:var(--white);border-radius:14px;padding:10px 14px;font-size:12px}
+.preview b{color:var(--lime)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.cats .pill{white-space:nowrap;padding:6px 14px;font-size:12px}
 .cat-item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
-.cat-item div{min-width:0}
-.cat-item small{color:var(--muted);display:block}
-.seg{display:flex;gap:6px}
-.seg button{flex:1;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:8px}
-.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.preview{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:13px}
-.rules li{margin-bottom:6px}
-.note{font-size:12px;color:var(--muted)}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);
-  border-radius:10px;padding:9px 14px;font-size:13px;z-index:30;max-width:90vw}
-@media (prefers-reduced-motion:no-preference){.bar i{transition:width .35s ease}}
+.cat-item>div{min-width:0}
+.cat-item b{font-weight:600;font-size:13px}
+.cat-item small{color:var(--muted);display:block;font-size:11px}
+.note{font-size:11px;color:var(--muted)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(150px + env(safe-area-inset-bottom,0px));background:var(--lime);color:var(--ink);font-weight:600;
+  border-radius:999px;padding:9px 18px;font-size:12px;z-index:30;max-width:90vw;text-align:center}
+.rules{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:13px}
+.rules li::marker{color:var(--lime)}
+@media (prefers-reduced-motion:no-preference){.mini-bar i{transition:width .35s ease}.screen{animation:in .25s ease}@keyframes in{from{opacity:.4}to{opacity:1}}}
 </style>
 
-</head><body><div class="app" id="app">
-  <header class="top">
-    <div class="brand">
-      <h1>Liga da Promessa</h1>
-      <div class="phase" role="group" aria-label="Fase da semana (só no protótipo)">
-        <button id="ph-montar" aria-pressed="false">Montagem</button>
-        <button id="ph-semana" aria-pressed="true">Semana</button>
-      </div>
-    </div>
-    <div class="weekline" id="weekline"></div>
-  </header>
-  <main>
-    <section class="view" id="v-rank"></section>
-    <section class="view" id="v-promessa" hidden></section>
-    <section class="view" id="v-feed" hidden></section>
-    <section class="view" id="v-grupo" hidden></section>
-  </main>
-  <button class="fab" id="fab" aria-label="Registrar atividade">+ Registrar</button>
-  <nav class="tabs" aria-label="Seções"><div class="tabs-in" role="tablist" id="tabs"></div></nav>
-</div>
+</head><body><div class="app" id="app"></div>
 <div id="layer"></div>
 <div id="toast-box"></div>
 
 <script>
 const CATALOG = {"versao":1,"modos":{"min":"Meta mínima: pontos proporcionais ao realizado (parcial conta)","max":"Limite máximo: dentro do limite ganha; excedeu perde por unidade"},"habitos":[{"id":"forca_sessao","categoria":"Treino de força","nome":"Treino de força (sessão completa)","unidade":"sessão","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"foto/print do treino ou nota com exercícios","nota":null},{"id":"forca_kettlebell","categoria":"Treino de força","nome":"Treino com kettlebell","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"forca_halteres","categoria":"Treino de força","nome":"Treino com halteres","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"forca_peso_corporal","categoria":"Treino de força","nome":"Treino com peso do corpo (calistenia)","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto/vídeo ou nota","nota":null},{"id":"forca_elastico","categoria":"Treino de força","nome":"Treino com elásticos","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"forca_academia","categoria":"Treino de força","nome":"Treino na academia","unidade":"sessão","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"foto, check-in da academia ou print do app","nota":null},{"id":"forca_series","categoria":"Treino de força","nome":"Séries de trabalho feitas na semana","unidade":"série","modo":"min","meta_sugerida":30,"teto_por_dia":15,"evidencia":"nota com exercício, séries e repetições","nota":"Série de trabalho = série séria, perto da falha técnica"},{"id":"forca_inferiores","categoria":"Treino de força","nome":"Treino de pernas e glúteos","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"forca_superiores","categoria":"Treino de força","nome":"Treino de peito, costas e ombros","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"forca_core","categoria":"Treino de força","nome":"Treino de abdômen e core","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"flexoes","categoria":"Treino de força","nome":"Flexões","unidade":"repetição","modo":"min","meta_sugerida":100,"teto_por_dia":100,"evidencia":"nota ou vídeo curto","nota":null},{"id":"barra","categoria":"Treino de força","nome":"Barra fixa","unidade":"repetição","modo":"min","meta_sugerida":20,"teto_por_dia":30,"evidencia":"nota ou vídeo curto","nota":null},{"id":"agachamentos","categoria":"Treino de força","nome":"Agachamentos","unidade":"repetição","modo":"min","meta_sugerida":150,"teto_por_dia":150,"evidencia":"nota ou vídeo curto","nota":null},{"id":"prancha","categoria":"Treino de força","nome":"Prancha","unidade":"min","modo":"min","meta_sugerida":5,"teto_por_dia":5,"evidencia":"print do cronômetro ou nota","nota":"Acumule o tempo total no dia"},{"id":"kb_swing","categoria":"Treino de força","nome":"Swings de kettlebell","unidade":"repetição","modo":"min","meta_sugerida":200,"teto_por_dia":200,"evidencia":"vídeo curto ou nota","nota":null},{"id":"kb_goblet","categoria":"Treino de força","nome":"Goblet squat","unidade":"série","modo":"min","meta_sugerida":12,"teto_por_dia":8,"evidencia":"nota","nota":null},{"id":"turkish_getup","categoria":"Treino de força","nome":"Turkish get-up","unidade":"repetição","modo":"min","meta_sugerida":12,"teto_por_dia":12,"evidencia":"vídeo curto","nota":null},{"id":"farmer_carry","categoria":"Treino de força","nome":"Caminhada carregando peso (farmer carry)","unidade":"min","modo":"min","meta_sugerida":6,"teto_por_dia":5,"evidencia":"nota ou vídeo","nota":null},{"id":"afundo","categoria":"Treino de força","nome":"Afundos","unidade":"repetição","modo":"min","meta_sugerida":100,"teto_por_dia":100,"evidencia":"nota","nota":null},{"id":"ponte_gluteo","categoria":"Treino de força","nome":"Ponte de glúteos","unidade":"repetição","modo":"min","meta_sugerida":100,"teto_por_dia":100,"evidencia":"nota","nota":null},{"id":"remada","categoria":"Treino de força","nome":"Remadas","unidade":"série","modo":"min","meta_sugerida":9,"teto_por_dia":6,"evidencia":"nota","nota":null},{"id":"desenvolvimento","categoria":"Treino de força","nome":"Desenvolvimento de ombros","unidade":"série","modo":"min","meta_sugerida":9,"teto_por_dia":6,"evidencia":"nota","nota":null},{"id":"terra_romeno","categoria":"Treino de força","nome":"Terra romeno","unidade":"série","modo":"min","meta_sugerida":9,"teto_por_dia":6,"evidencia":"nota","nota":null},{"id":"dips","categoria":"Treino de força","nome":"Mergulho (dips) ou tríceps no banco","unidade":"repetição","modo":"min","meta_sugerida":60,"teto_por_dia":60,"evidencia":"nota","nota":null},{"id":"treino_casa","categoria":"Treino de força","nome":"Treino em casa","unidade":"sessão","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"treino_manha","categoria":"Treino de força","nome":"Treino pela manhã","unidade":"sessão","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"treino_novo","categoria":"Treino de força","nome":"Treino novo ou exercício que nunca fez","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"recorde_pessoal","categoria":"Treino de força","nome":"Bateu recorde pessoal (carga ou repetições)","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"nota com os números","nota":null},{"id":"treino_amigo","categoria":"Treino de força","nome":"Treino junto com alguém do grupo","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"treino_30","categoria":"Treino de força","nome":"Treino de pelo menos 30 minutos","unidade":"sessão","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"print do cronômetro","nota":null},{"id":"treino_curto","categoria":"Treino de força","nome":"Treino curto de 10 minutos (dia corrido)","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":2,"evidencia":"nota","nota":null},{"id":"mobilidade_pos_treino","categoria":"Treino de força","nome":"Mobilidade depois do treino","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"bike_sessao","categoria":"Cardio e condicionamento","nome":"Pedalar (sessão)","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":2,"evidencia":"print do app de bike/relógio ou foto","nota":null},{"id":"bike_min","categoria":"Cardio e condicionamento","nome":"Minutos de bicicleta","unidade":"min","modo":"min","meta_sugerida":120,"teto_por_dia":120,"evidencia":"print do app ou nota","nota":null},{"id":"bike_km","categoria":"Cardio e condicionamento","nome":"Quilômetros de bicicleta","unidade":"km","modo":"min","meta_sugerida":30,"teto_por_dia":60,"evidencia":"print do app","nota":null},{"id":"corrida_sessao","categoria":"Cardio e condicionamento","nome":"Corrida (sessão)","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"print do app","nota":null},{"id":"corrida_km","categoria":"Cardio e condicionamento","nome":"Quilômetros de corrida","unidade":"km","modo":"min","meta_sugerida":10,"teto_por_dia":15,"evidencia":"print do app","nota":null},{"id":"caminhada_min","categoria":"Cardio e condicionamento","nome":"Minutos de caminhada","unidade":"min","modo":"min","meta_sugerida":150,"teto_por_dia":120,"evidencia":"print do app ou nota","nota":null},{"id":"caminhada_km","categoria":"Cardio e condicionamento","nome":"Quilômetros caminhados","unidade":"km","modo":"min","meta_sugerida":20,"teto_por_dia":20,"evidencia":"print do app","nota":null},{"id":"passos","categoria":"Cardio e condicionamento","nome":"Passos","unidade":"passos","modo":"min","meta_sugerida":56000,"teto_por_dia":25000,"evidencia":"print do contador de passos","nota":"Meta semanal; teto diário evita exagero"},{"id":"natacao","categoria":"Cardio e condicionamento","nome":"Natação","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":90,"evidencia":"print ou nota","nota":null},{"id":"hiit","categoria":"Cardio e condicionamento","nome":"HIIT / treino intervalado","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"print ou nota","nota":"Comece leve; intervalado intenso não é para todo mundo"},{"id":"corda","categoria":"Cardio e condicionamento","nome":"Pular corda","unidade":"min","modo":"min","meta_sugerida":20,"teto_por_dia":30,"evidencia":"nota ou vídeo","nota":null},{"id":"escada","categoria":"Cardio e condicionamento","nome":"Subir escadas em vez do elevador","unidade":"andares","modo":"min","meta_sugerida":20,"teto_por_dia":30,"evidencia":"nota","nota":null},{"id":"cardio_zona_conversa","categoria":"Cardio e condicionamento","nome":"Cardio leve (dá para conversar)","unidade":"min","modo":"min","meta_sugerida":120,"teto_por_dia":90,"evidencia":"print do app ou nota","nota":"Ritmo em que você consegue falar frases inteiras"},{"id":"esporte_coletivo","categoria":"Cardio e condicionamento","nome":"Esporte coletivo (futebol, vôlei, basquete...)","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"danca","categoria":"Cardio e condicionamento","nome":"Dança","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":90,"evidencia":"vídeo ou nota","nota":null},{"id":"trilha","categoria":"Cardio e condicionamento","nome":"Trilha ou caminhada em natureza","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"patins_skate","categoria":"Cardio e condicionamento","nome":"Patins, skate ou similares","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":90,"evidencia":"foto ou nota","nota":null},{"id":"luta","categoria":"Cardio e condicionamento","nome":"Aula de luta ou artes marciais","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"yoga_pilates","categoria":"Cardio e condicionamento","nome":"Yoga ou pilates","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"remo","categoria":"Cardio e condicionamento","nome":"Remo","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":60,"evidencia":"print ou nota","nota":null},{"id":"eliptico","categoria":"Cardio e condicionamento","nome":"Elíptico","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":60,"evidencia":"print ou nota","nota":null},{"id":"spinning","categoria":"Cardio e condicionamento","nome":"Spinning ou bike indoor","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou print","nota":null},{"id":"esteira","categoria":"Cardio e condicionamento","nome":"Esteira","unidade":"min","modo":"min","meta_sugerida":90,"teto_por_dia":60,"evidencia":"print ou nota","nota":null},{"id":"caminhada_pos_refeicao","categoria":"Cardio e condicionamento","nome":"Caminhada de 10 min depois de refeição","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"print ou nota","nota":null},{"id":"caminhada_cachorro","categoria":"Cardio e condicionamento","nome":"Passear com o cachorro","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"bike_deslocamento","categoria":"Cardio e condicionamento","nome":"Bicicleta como deslocamento (trabalho, mercado)","unidade":"km","modo":"min","meta_sugerida":10,"teto_por_dia":20,"evidencia":"print do app","nota":null},{"id":"corrida_longa","categoria":"Cardio e condicionamento","nome":"Corrida longa (mais de 40 min)","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"print do app","nota":null},{"id":"tempo_5k","categoria":"Cardio e condicionamento","nome":"Completar 5 km","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"print do app","nota":null},{"id":"sprints","categoria":"Cardio e condicionamento","nome":"Tiros curtos (sprints)","unidade":"série","modo":"min","meta_sugerida":6,"teto_por_dia":10,"evidencia":"nota","nota":null},{"id":"burpees","categoria":"Cardio e condicionamento","nome":"Burpees","unidade":"repetição","modo":"min","meta_sugerida":50,"teto_por_dia":50,"evidencia":"vídeo curto ou nota","nota":null},{"id":"polichinelo","categoria":"Cardio e condicionamento","nome":"Polichinelos","unidade":"repetição","modo":"min","meta_sugerida":200,"teto_por_dia":200,"evidencia":"nota","nota":null},{"id":"cardio_jejum_zero","categoria":"Cardio e condicionamento","nome":"Cardio leve de manhã","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"print ou nota","nota":null},{"id":"alongamento","categoria":"Mobilidade e recuperação","nome":"Alongamento","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":20,"evidencia":"nota ou foto","nota":null},{"id":"mobilidade","categoria":"Mobilidade e recuperação","nome":"Mobilidade (quadril, ombro, coluna)","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":20,"evidencia":"nota ou vídeo","nota":null},{"id":"aquecimento","categoria":"Mobilidade e recuperação","nome":"Aquecimento antes do treino","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"check no post do treino","nota":null},{"id":"rolo","categoria":"Mobilidade e recuperação","nome":"Liberação com rolo ou bola","unidade":"min","modo":"min","meta_sugerida":30,"teto_por_dia":15,"evidencia":"nota","nota":null},{"id":"descanso_ativo","categoria":"Mobilidade e recuperação","nome":"Dia de descanso ativo (caminhada leve, alongamento)","unidade":"dia","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"banho_frio","categoria":"Mobilidade e recuperação","nome":"Banho frio ou contraste","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"check","nota":"Opcional e não indicado para todos"},{"id":"massagem","categoria":"Mobilidade e recuperação","nome":"Massagem ou autocuidado muscular","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"dia_off","categoria":"Mobilidade e recuperação","nome":"Dia de descanso completo respeitado","unidade":"dia","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"check","nota":"Descansar também conta"},{"id":"agua_ml","categoria":"Hidratação","nome":"Água","unidade":"ml","modo":"min","meta_sugerida":2000,"teto_por_dia":4000,"evidencia":"foto da garrafa ou nota com ml","nota":"Pontua proporcional: meta 3000, bebeu 500 → 17%. Teto diário protege contra exagero"},{"id":"garrafa_cheia","categoria":"Hidratação","nome":"Garrafa de água terminada","unidade":"garrafa","modo":"min","meta_sugerida":14,"teto_por_dia":4,"evidencia":"foto","nota":null},{"id":"agua_ao_acordar","categoria":"Hidratação","nome":"Copo de água ao acordar","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"agua_antes_refeicao","categoria":"Hidratação","nome":"Copo de água antes das refeições","unidade":"vez","modo":"min","meta_sugerida":14,"teto_por_dia":3,"evidencia":"check","nota":null},{"id":"chas_sem_acucar","categoria":"Hidratação","nome":"Chá sem açúcar","unidade":"xícara","modo":"min","meta_sugerida":7,"teto_por_dia":3,"evidencia":"foto ou nota","nota":null},{"id":"refri_limite","categoria":"Hidratação","nome":"Refrigerante","unidade":"lata","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"nota","nota":"Limite: passou, perde pontos"},{"id":"suco_acucar_limite","categoria":"Hidratação","nome":"Suco industrializado ou com açúcar","unidade":"copo","modo":"max","meta_sugerida":3,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"energetico_limite","categoria":"Hidratação","nome":"Energético","unidade":"lata","modo":"max","meta_sugerida":1,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"cafe_limite","categoria":"Hidratação","nome":"Café","unidade":"xícara","modo":"max","meta_sugerida":21,"teto_por_dia":null,"evidencia":"nota","nota":"Teto razoável para quem quer cuidar do sono"},{"id":"alcool_limite","categoria":"Hidratação","nome":"Bebida alcoólica","unidade":"dose","modo":"max","meta_sugerida":3,"teto_por_dia":null,"evidencia":"nota","nota":"Quanto menor, melhor; o grupo escolhe o limite"},{"id":"sem_alcool","categoria":"Hidratação","nome":"Dia sem álcool","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"agua_manha_ml","categoria":"Hidratação","nome":"Água até o meio-dia","unidade":"ml","modo":"min","meta_sugerida":7000,"teto_por_dia":1000,"evidencia":"foto da garrafa ou nota","nota":null},{"id":"agua_treino_ml","categoria":"Hidratação","nome":"Água durante o treino","unidade":"ml","modo":"min","meta_sugerida":1500,"teto_por_dia":700,"evidencia":"foto ou nota","nota":null},{"id":"isotonico_limite","categoria":"Hidratação","nome":"Isotônico ou bebida esportiva","unidade":"garrafa","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"agua_com_gas","categoria":"Hidratação","nome":"Trocar refri por água com gás","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"porcoes_vegetais","categoria":"Alimentação saudável","nome":"Porções de vegetais e verduras","unidade":"porção","modo":"min","meta_sugerida":14,"teto_por_dia":4,"evidencia":"foto do prato","nota":null},{"id":"porcoes_frutas","categoria":"Alimentação saudável","nome":"Porções de frutas","unidade":"porção","modo":"min","meta_sugerida":14,"teto_por_dia":3,"evidencia":"foto ou nota","nota":null},{"id":"salada","categoria":"Alimentação saudável","nome":"Salada no prato","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"foto do prato","nota":null},{"id":"prato_colorido","categoria":"Alimentação saudável","nome":"Prato colorido (3+ cores de vegetais)","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"proteina_refeicao","categoria":"Alimentação saudável","nome":"Fonte de proteína na refeição","unidade":"refeição","modo":"min","meta_sugerida":14,"teto_por_dia":3,"evidencia":"foto","nota":null},{"id":"proteina_g","categoria":"Alimentação saudável","nome":"Proteína do dia","unidade":"g","modo":"min","meta_sugerida":840,"teto_por_dia":200,"evidencia":"nota ou print do app de dieta","nota":"Meta semanal em gramas; individual"},{"id":"fibras","categoria":"Alimentação saudável","nome":"Alimentos ricos em fibra (feijão, aveia, integrais)","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"leguminosas","categoria":"Alimentação saudável","nome":"Feijão, lentilha ou grão-de-bico","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"integrais","categoria":"Alimentação saudável","nome":"Escolha integral no lugar do refinado","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"peixe","categoria":"Alimentação saudável","nome":"Peixe ou fonte de ômega 3","unidade":"vez","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"oleaginosas","categoria":"Alimentação saudável","nome":"Castanhas ou oleaginosas (punhado)","unidade":"porção","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"cafe_manha_proteina","categoria":"Alimentação saudável","nome":"Café da manhã com proteína","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"refeicao_caseira","categoria":"Alimentação saudável","nome":"Refeição caseira","unidade":"refeição","modo":"min","meta_sugerida":10,"teto_por_dia":3,"evidencia":"foto","nota":null},{"id":"marmita_prep","categoria":"Alimentação saudável","nome":"Marmitas preparadas na semana","unidade":"marmita","modo":"min","meta_sugerida":5,"teto_por_dia":5,"evidencia":"foto","nota":null},{"id":"lanche_saudavel","categoria":"Alimentação saudável","nome":"Lanche saudável planejado","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"cozinhar_nova_receita","categoria":"Alimentação saudável","nome":"Cozinhar uma receita nova e saudável","unidade":"receita","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto + nome da receita","nota":null},{"id":"mercado_lista","categoria":"Alimentação saudável","nome":"Compras feitas com lista","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto da lista","nota":null},{"id":"comer_devagar","categoria":"Alimentação saudável","nome":"Refeição sem tela, comendo com atenção","unidade":"refeição","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"check","nota":null},{"id":"sem_ultraprocessado","categoria":"Alimentação saudável","nome":"Dia sem ultraprocessados","unidade":"dia","modo":"min","meta_sugerida":4,"teto_por_dia":1,"evidencia":"check ou foto do prato","nota":null},{"id":"sem_fritura","categoria":"Alimentação saudável","nome":"Dia sem fritura","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"jantar_leve_cedo","categoria":"Alimentação saudável","nome":"Jantar até certo horário","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check com horário","nota":null},{"id":"sem_beliscar_noite","categoria":"Alimentação saudável","nome":"Sem beliscar depois do jantar","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"prato_pesado_limite","categoria":"Alimentação saudável","nome":"Fast food","unidade":"vez","modo":"max","meta_sugerida":1,"teto_por_dia":null,"evidencia":"nota ou foto","nota":null},{"id":"doce_limite","categoria":"Alimentação saudável","nome":"Doce ou sobremesa","unidade":"vez","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"nota ou foto","nota":"Meta 0 vale: qualquer doce penaliza"},{"id":"fritura_limite","categoria":"Alimentação saudável","nome":"Fritura","unidade":"vez","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"salgadinho_limite","categoria":"Alimentação saudável","nome":"Salgadinho, biscoito recheado ou similar","unidade":"vez","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"acucar_adicionado_limite","categoria":"Alimentação saudável","nome":"Açúcar adicionado em bebidas","unidade":"colher","modo":"max","meta_sugerida":7,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"repeticao_limite","categoria":"Alimentação saudável","nome":"Repetir prato (segunda porção)","unidade":"vez","modo":"max","meta_sugerida":3,"teto_por_dia":null,"evidencia":"nota","nota":"Só para quem quer; o grupo decide se vale"},{"id":"pesar_comida","categoria":"Alimentação saudável","nome":"Pesar ou medir porções","unidade":"refeição","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"foto","nota":"Opcional; não indicado para quem tem histórico de transtorno alimentar"},{"id":"sem_pular_refeicao","categoria":"Alimentação saudável","nome":"Não pular refeição planejada","unidade":"refeição","modo":"min","meta_sugerida":14,"teto_por_dia":3,"evidencia":"check","nota":null},{"id":"cafe_manha","categoria":"Alimentação saudável","nome":"Tomar café da manhã","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"pos_treino_proteina","categoria":"Alimentação saudável","nome":"Refeição com proteína depois do treino","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"verdura_almoco_jantar","categoria":"Alimentação saudável","nome":"Verdura no almoço e no jantar","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"folhosos","categoria":"Alimentação saudável","nome":"Verduras folhosas","unidade":"porção","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"ovos","categoria":"Alimentação saudável","nome":"Ovos","unidade":"unidade","modo":"min","meta_sugerida":7,"teto_por_dia":4,"evidencia":"foto","nota":null},{"id":"iogurte_leite","categoria":"Alimentação saudável","nome":"Iogurte natural ou leite","unidade":"porção","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"foto","nota":null},{"id":"tempero_natural","categoria":"Alimentação saudável","nome":"Temperar com ervas e temperos naturais","unidade":"refeição","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"check","nota":null},{"id":"sopa_caldo","categoria":"Alimentação saudável","nome":"Sopa ou caldo caseiro","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"planejar_cardapio","categoria":"Alimentação saudável","nome":"Planejar o cardápio da semana","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"prato_novo_vegetal","categoria":"Alimentação saudável","nome":"Experimentar um vegetal novo","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"agua_antes_fome","categoria":"Alimentação saudável","nome":"Beber água antes de pegar um lanche","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":2,"evidencia":"check","nota":null},{"id":"chocolate_limite","categoria":"Alimentação saudável","nome":"Chocolate","unidade":"porção","modo":"max","meta_sugerida":3,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"sorvete_limite","categoria":"Alimentação saudável","nome":"Sorvete","unidade":"vez","modo":"max","meta_sugerida":1,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"pizza_limite","categoria":"Alimentação saudável","nome":"Pizza","unidade":"vez","modo":"max","meta_sugerida":1,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"delivery_limite","categoria":"Alimentação saudável","nome":"Pedido por delivery","unidade":"vez","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"print do pedido","nota":null},{"id":"comer_fora_limite","categoria":"Alimentação saudável","nome":"Refeição em restaurante ou lanchonete","unidade":"vez","modo":"max","meta_sugerida":4,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"pao_branco_limite","categoria":"Alimentação saudável","nome":"Pão branco ou massa refinada","unidade":"porção","modo":"max","meta_sugerida":7,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"embutidos_limite","categoria":"Alimentação saudável","nome":"Embutidos (salsicha, presunto, linguiça)","unidade":"porção","modo":"max","meta_sugerida":2,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"molho_pronto_limite","categoria":"Alimentação saudável","nome":"Molhos prontos","unidade":"vez","modo":"max","meta_sugerida":3,"teto_por_dia":null,"evidencia":"nota","nota":null},{"id":"sono_horas","categoria":"Sono","nome":"Horas de sono","unidade":"h","modo":"min","meta_sugerida":49,"teto_por_dia":9,"evidencia":"print do relógio ou nota","nota":null},{"id":"sono_noites_7h","categoria":"Sono","nome":"Noites com 7h ou mais de sono","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"print ou nota","nota":null},{"id":"dormir_ate","categoria":"Sono","nome":"Dormir até determinado horário","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check com horário","nota":null},{"id":"acordar_ate","categoria":"Sono","nome":"Acordar até determinado horário","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check com horário","nota":null},{"id":"sem_tela_antes_dormir","categoria":"Sono","nome":"Sem tela 30 min antes de dormir","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"quarto_escuro","categoria":"Sono","nome":"Quarto escuro e arejado","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"sem_cafe_tarde","categoria":"Sono","nome":"Sem cafeína após o almoço","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"rotina_noite","categoria":"Sono","nome":"Rotina de relaxar antes de dormir","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"soneca_limite","categoria":"Sono","nome":"Soneca de no máximo 30 min","unidade":"dia","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"sol_manha","categoria":"Sono","nome":"Luz do sol na primeira hora do dia","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check ou foto","nota":null},{"id":"sem_soneca_alarme","categoria":"Sono","nome":"Levantar no primeiro alarme","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"horario_regular","categoria":"Sono","nome":"Horário regular de dormir e acordar (variação até 1h)","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"sem_comida_pesada_noite","categoria":"Sono","nome":"Sem comida pesada nas 2h antes de dormir","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"ler_antes_dormir","categoria":"Sono","nome":"Ler antes de dormir","unidade":"min","modo":"min","meta_sugerida":70,"teto_por_dia":30,"evidencia":"nota","nota":null},{"id":"sono_qualidade","categoria":"Sono","nome":"Acordar descansado","unidade":"dia","modo":"min","meta_sugerida":4,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"meditacao","categoria":"Mente e bem-estar","nome":"Meditação","unidade":"min","modo":"min","meta_sugerida":35,"teto_por_dia":20,"evidencia":"print do app ou nota","nota":null},{"id":"respiracao","categoria":"Mente e bem-estar","nome":"Respiração guiada","unidade":"min","modo":"min","meta_sugerida":35,"teto_por_dia":10,"evidencia":"nota","nota":null},{"id":"diario","categoria":"Mente e bem-estar","nome":"Escrever no diário","unidade":"vez","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"foto ou nota privada","nota":null},{"id":"gratidao","categoria":"Mente e bem-estar","nome":"Três coisas pelas quais você é grato","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"nota","nota":null},{"id":"leitura","categoria":"Mente e bem-estar","nome":"Ler","unidade":"min","modo":"min","meta_sugerida":105,"teto_por_dia":60,"evidencia":"foto da página ou nota","nota":null},{"id":"sem_redes_limite","categoria":"Mente e bem-estar","nome":"Tempo em redes sociais","unidade":"min","modo":"max","meta_sugerida":1260,"teto_por_dia":null,"evidencia":"print do tempo de tela","nota":"Limite semanal em minutos"},{"id":"tela_limite","categoria":"Mente e bem-estar","nome":"Tempo de tela no celular","unidade":"h","modo":"max","meta_sugerida":28,"teto_por_dia":null,"evidencia":"print do tempo de tela","nota":null},{"id":"tempo_ar_livre","categoria":"Mente e bem-estar","nome":"Tempo ao ar livre","unidade":"min","modo":"min","meta_sugerida":210,"teto_por_dia":120,"evidencia":"foto","nota":null},{"id":"socializar","categoria":"Mente e bem-estar","nome":"Encontro com amigos ou família sem tela","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"hobby","categoria":"Mente e bem-estar","nome":"Tempo em hobby ou criatividade","unidade":"min","modo":"min","meta_sugerida":120,"teto_por_dia":120,"evidencia":"foto ou nota","nota":null},{"id":"terapia_autocuidado","categoria":"Mente e bem-estar","nome":"Terapia ou autocuidado marcado","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"estudo","categoria":"Mente e bem-estar","nome":"Estudar ou aprender algo","unidade":"min","modo":"min","meta_sugerida":150,"teto_por_dia":120,"evidencia":"nota","nota":null},{"id":"planejar_dia","categoria":"Mente e bem-estar","nome":"Planejar o dia seguinte","unidade":"noite","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"caminhada_sem_celular","categoria":"Mente e bem-estar","nome":"Caminhada sem celular","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":60,"evidencia":"foto","nota":null},{"id":"ligar_alguem","categoria":"Mente e bem-estar","nome":"Ligar para alguém querido","unidade":"vez","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"voluntariado","categoria":"Mente e bem-estar","nome":"Ajudar alguém ou voluntariado","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"nota","nota":null},{"id":"arrumar_espaco","categoria":"Mente e bem-estar","nome":"Arrumar o espaço onde vive ou trabalha","unidade":"vez","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"detox_digital","categoria":"Mente e bem-estar","nome":"Meio dia sem redes sociais","unidade":"dia","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"print do tempo de tela","nota":null},{"id":"podcast_educativo","categoria":"Mente e bem-estar","nome":"Podcast ou aula educativa","unidade":"min","modo":"min","meta_sugerida":90,"teto_por_dia":60,"evidencia":"nota","nota":null},{"id":"instrumento","categoria":"Mente e bem-estar","nome":"Tocar instrumento ou praticar habilidade","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":60,"evidencia":"vídeo ou nota","nota":null},{"id":"sem_celular_refeicao","categoria":"Mente e bem-estar","nome":"Refeição sem celular","unidade":"refeição","modo":"min","meta_sugerida":7,"teto_por_dia":2,"evidencia":"check","nota":null},{"id":"tempo_sozinho","categoria":"Mente e bem-estar","nome":"Tempo sozinho para descansar a mente","unidade":"min","modo":"min","meta_sugerida":70,"teto_por_dia":30,"evidencia":"check","nota":null},{"id":"suplemento","categoria":"Saúde e cuidados","nome":"Tomar suplemento ou vitamina indicada","unidade":"vez","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"foto","nota":"Só o que foi indicado por profissional"},{"id":"remedio","categoria":"Saúde e cuidados","nome":"Tomar remédio de uso contínuo no horário","unidade":"dia","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"exame_consulta","categoria":"Saúde e cuidados","nome":"Exame ou consulta marcada ou realizada","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"protetor_solar","categoria":"Saúde e cuidados","nome":"Protetor solar","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"escovar_fio","categoria":"Saúde e cuidados","nome":"Escovar os dentes e usar fio dental","unidade":"dia","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"postura_pausa","categoria":"Saúde e cuidados","nome":"Pausas para levantar e se mexer no trabalho","unidade":"pausa","modo":"min","meta_sugerida":20,"teto_por_dia":5,"evidencia":"check","nota":null},{"id":"sem_cigarro","categoria":"Saúde e cuidados","nome":"Dia sem cigarro","unidade":"dia","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"peso_registro","categoria":"Saúde e cuidados","nome":"Registrar peso corporal","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"print","nota":"Só registro; não pontua perder ou ganhar"},{"id":"medidas_registro","categoria":"Saúde e cuidados","nome":"Registrar medidas e foto de progresso","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":"Só registro; não pontua mudança corporal"},{"id":"pausa_hidratar","categoria":"Saúde e cuidados","nome":"Pausa para beber água a cada hora de trabalho","unidade":"vez","modo":"min","meta_sugerida":20,"teto_por_dia":8,"evidencia":"check","nota":null},{"id":"ergonomia","categoria":"Saúde e cuidados","nome":"Postura e ergonomia ajustadas no trabalho","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"reuniao_andando","categoria":"Saúde e cuidados","nome":"Ligação ou reunião caminhando","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":2,"evidencia":"check","nota":null},{"id":"fisio_exercicios","categoria":"Saúde e cuidados","nome":"Exercícios indicados pelo fisioterapeuta","unidade":"sessão","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"sem_sentar_1h","categoria":"Saúde e cuidados","nome":"Não ficar mais de 1h sentado seguida","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"dentista","categoria":"Saúde e cuidados","nome":"Consulta de rotina (dentista, check-up)","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"checkin_dia","categoria":"Consistência e comunidade","nome":"Check-in diário","unidade":"dia","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"check","nota":null},{"id":"streak_treino","categoria":"Consistência e comunidade","nome":"Dias seguidos com algum movimento","unidade":"dia","modo":"min","meta_sugerida":7,"teto_por_dia":1,"evidencia":"post de qualquer atividade","nota":"Gera bônus de sequência"},{"id":"comentar","categoria":"Consistência e comunidade","nome":"Comentar ou reagir nos posts dos outros","unidade":"comentário","modo":"min","meta_sugerida":10,"teto_por_dia":5,"evidencia":"automático","nota":null},{"id":"incentivar","categoria":"Consistência e comunidade","nome":"Incentivar alguém do grupo","unidade":"vez","modo":"min","meta_sugerida":3,"teto_por_dia":1,"evidencia":"automático","nota":null},{"id":"postar_antes_prazo","categoria":"Consistência e comunidade","nome":"Postar tudo do dia antes do fechamento","unidade":"dia","modo":"min","meta_sugerida":5,"teto_por_dia":1,"evidencia":"automático","nota":null},{"id":"semana_completa","categoria":"Consistência e comunidade","nome":"Fechar a promessa da semana inteira","unidade":"semana","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"automático","nota":null},{"id":"desafio_grupo","categoria":"Consistência e comunidade","nome":"Cumprir o desafio da semana do grupo","unidade":"semana","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"definido pelo admin","nota":null},{"id":"tenis","categoria":"Esportes e atividades","nome":"Tênis, padel ou beach tennis","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"surf_sup","categoria":"Esportes e atividades","nome":"Surf ou stand-up paddle","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"escalada","categoria":"Esportes e atividades","nome":"Escalada","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"crossfit_funcional","categoria":"Esportes e atividades","nome":"Treino funcional ou crossfit","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"boxe","categoria":"Esportes e atividades","nome":"Boxe ou muay thai","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"jiu_jitsu","categoria":"Esportes e atividades","nome":"Jiu-jitsu ou judô","unidade":"sessão","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"futsal","categoria":"Esportes e atividades","nome":"Futsal ou futebol","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"volei","categoria":"Esportes e atividades","nome":"Vôlei ou vôlei de praia","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"basquete","categoria":"Esportes e atividades","nome":"Basquete","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"ciclismo_outdoor","categoria":"Esportes e atividades","nome":"Pedal longo ao ar livre","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"print do app","nota":null},{"id":"ginastica","categoria":"Esportes e atividades","nome":"Ginástica ou acrobacia","unidade":"sessão","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"brincar_ativo","categoria":"Esportes e atividades","nome":"Brincar ativamente com filhos ou sobrinhos","unidade":"min","modo":"min","meta_sugerida":60,"teto_por_dia":60,"evidencia":"foto","nota":null},{"id":"atividade_fds","categoria":"Esportes e atividades","nome":"Atividade física no fim de semana","unidade":"dia","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto ou nota","nota":null},{"id":"dia_perfeito","categoria":"Desafios prontos","nome":"Dia perfeito: cumpriu tudo que prometeu","unidade":"dia","modo":"min","meta_sugerida":2,"teto_por_dia":1,"evidencia":"automático","nota":null},{"id":"treino_chuva","categoria":"Desafios prontos","nome":"Treinou apesar do mau tempo","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"foto","nota":null},{"id":"retomou","categoria":"Desafios prontos","nome":"Retomou depois de uma semana ruim","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"automático","nota":null},{"id":"semana_sem_faltar","categoria":"Desafios prontos","nome":"Semana sem faltar em nenhum compromisso","unidade":"semana","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"automático","nota":null},{"id":"sem_desculpa","categoria":"Desafios prontos","nome":"Treinou num dia em que não queria","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"nota curta","nota":null},{"id":"ajudou_grupo","categoria":"Desafios prontos","nome":"Ajudou alguém do grupo a cumprir a meta","unidade":"vez","modo":"min","meta_sugerida":1,"teto_por_dia":1,"evidencia":"automático","nota":null}]};
 const H = Object.fromEntries(CATALOG.habitos.map(h=>[h.id,h]));
-const ICON = {
- rank:'<path d="M6 20V10M12 20V4M18 20v-7"/>',
- promessa:'<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/>',
- feed:'<path d="M4 5h16M4 12h16M4 19h10"/>',
- grupo:'<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5a3 3 0 010 6M18 14c2 .6 3 2.4 3 6"/>'
+const P = {
+ home:'<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
+ doc:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/><path d="M15 17l1.5 1.5L19 16"/>',
+ star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+ group:'<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5M14 15.2c.6-.1 1.3-.2 2-.2 3.3 0 6 2 6 5"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+ bell:'<path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>',
+ back:'<path d="M15 5l-7 7 7 7"/>',
+ dumbbell:'<path d="M3 9v6M6 6v12M18 6v12M21 9v6M6 12h12"/>',
+ chart:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 16v-3M12 16V9M16 16v-5"/>',
+ apple:'<path d="M12 7c-2-2-7-1.5-7 4 0 4 3 9 5 9 1 0 1.3-.6 2-.6s1 .6 2 .6c2 0 5-5 5-9 0-5.5-5-6-7-4z"/><path d="M12 7c0-2 1-3.5 3-4"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',
+ heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/>',
+ chat:'<path d="M4 5h16v11H9l-5 4z"/>',
+ flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+ flame:'<path d="M12 3c1 4 5 5 5 10a5 5 0 01-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-8.5z"/>',
+ clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ kb:'<path d="M8 9a4 4 0 118 0"/><rect x="5" y="9" width="14" height="12" rx="6"/>',
+ bike:'<circle cx="6" cy="16" r="4"/><circle cx="18" cy="16" r="4"/><path d="M6 16l4-8h5l3 8M10 8l2 8"/>',
+ drop:'<path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z"/>',
+ moon:'<path d="M20 14A8 8 0 0110 4a8 8 0 1010 10z"/>',
+ leaf:'<path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19l8-8"/>',
+ brain:'<path d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 0V4a3 3 0 00-3 0zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 0"/>',
+ trophy:'<path d="M8 4h8v5a4 4 0 01-8 0zM8 6H5a3 3 0 003 4M16 6h3a3 3 0 01-3 4M12 13v4M8 20h8"/>',
 };
-const TABS=[['rank','Ranking'],['promessa','Promessa'],['feed','Feed'],['grupo','Grupo']];
-const COLORS=['#0a6c8f','#7a4fa3','#b5651d','#2f855a','#b83280','#4a5568'];
+const ic=(k,c='i')=>`<svg class="${c}" viewBox="0 0 24 24" aria-hidden="true">${P[k]}</svg>`;
+const CAT_ART={'Treino de força':['kb','g-a'],'Cardio e condicionamento':['bike','g-d'],'Esportes e atividades':['trophy','g-c'],
+ 'Mobilidade e recuperação':['leaf','g-b'],'Hidratação':['drop','g-d'],'Alimentação saudável':['apple','g-b'],'Sono':['moon','g-e'],
+ 'Mente e bem-estar':['brain','g-e'],'Saúde e cuidados':['heart','g-c'],'Consistência e comunidade':['flame','g-a'],'Desafios prontos':['trophy','g-a']};
+const art=cat=>{const[a,g]=CAT_ART[cat]||['star','g-f'];return{g,svg:`<span class="art"><svg viewBox="0 0 24 24">${P[a]}</svg></span>`}};
+
+const COLORS=['#896cfe','#c46bd6','#e08a3c','#3fa66a','#d6588f','#5a6b8a'];
 const players=[
- {id:0,nome:'Você',pts:0,base:74,streak:5,total:312,ontem:3},
- {id:1,nome:'Ana',pts:96,streak:9,total:401,ontem:1},
- {id:2,nome:'Bruno',pts:81,streak:3,total:287,ontem:2},
- {id:3,nome:'Carla',pts:58,streak:6,total:265,ontem:4},
- {id:4,nome:'Diego',pts:34,streak:0,total:198,ontem:5},
- {id:5,nome:'Elisa',pts:-6,streak:1,total:143,ontem:6},
+ {id:0,nome:'Você',base:74,streak:5,total:312,hoje:3},
+ {id:1,nome:'Ana',pts:96,streak:9,total:401,hoje:1},
+ {id:2,nome:'Bruno',pts:81,streak:3,total:287,hoje:2},
+ {id:3,nome:'Carla',pts:58,streak:6,total:265,hoje:4},
+ {id:4,nome:'Diego',pts:34,streak:0,total:198,hoje:0},
+ {id:5,nome:'Elisa',pts:-6,streak:1,total:143,hoje:1},
 ];
 const state={
-  tab:'rank', fase:'semana', catFilter:'Todas', busca:'',
+  screen:'splash', tab:'home', sub:null, fase:'semana', progTab:'log', catFilter:'Todas', busca:'',
   promessa:[
     {id:'forca_sessao',meta:3,real:1},
     {id:'agua_ml',meta:3000,real:500},
@@ -188,198 +271,246 @@ const state={
     {id:'doce_limite',meta:0,real:1},
   ],
   posts:[
-    {id:1,autor:1,quando:'há 1 h',hab:'bike_km',txt:'Pedalei 14 km na orla, ritmo leve.',valor:'14 km',foto:'a',curt:3,coment:[['Bruno','Esse ritmo eu aguento.']],flag:0},
-    {id:2,autor:3,quando:'há 3 h',hab:'porcoes_vegetais',txt:'Almoço com 3 vegetais e frango grelhado.',valor:'3 porções',foto:'b',curt:2,coment:[],flag:0},
-    {id:3,autor:2,quando:'ontem',hab:'doce_limite',txt:'Confesso: brigadeiro na festa. Conta como 1.',valor:'1 vez',foto:null,curt:4,coment:[['Ana','Respeito a sinceridade.']],flag:0},
-    {id:4,autor:4,quando:'ontem',hab:'kb_swing',txt:'Dois blocos de swing com o kettlebell.',valor:'80 repetições',foto:'c',curt:1,coment:[],flag:1},
+    {id:1,autor:1,quando:'há 1 h',hab:'bike_km',txt:'Pedalei 14 km na orla, ritmo leve.',valor:'14 km',foto:true,curt:3,coment:[['Bruno','Esse ritmo eu aguento.']],flag:0},
+    {id:2,autor:3,quando:'há 3 h',hab:'porcoes_vegetais',txt:'Almoço com 3 vegetais e frango grelhado.',valor:'3 porções',foto:true,curt:2,coment:[],flag:0},
+    {id:3,autor:2,quando:'ontem',hab:'doce_limite',txt:'Confesso: brigadeiro na festa. Conta como 1.',valor:'1 vez',foto:false,curt:4,coment:[['Ana','Respeito a sinceridade.']],flag:0},
+    {id:4,autor:4,quando:'ontem',hab:'kb_swing',txt:'Dois blocos de swing com o kettlebell.',valor:'80 repetições',foto:true,curt:1,coment:[],flag:1},
   ],
+  atividades:[
+    {hab:'forca_sessao',quando:'Sáb, 14 nov',valor:'1 sessão',pts:3},
+    {hab:'bike_min',quando:'Sex, 13 nov',valor:'45 min',pts:4},
+    {hab:'agua_ml',quando:'Sex, 13 nov',valor:'500 ml',pts:2},
+  ],
+  semanas:[{s:'S7',p:42},{s:'S8',p:58},{s:'S9',p:71},{s:'S10',p:64},{s:'S11',p:80}],
+  checkins:[2,3,4,6,7,9,10,11,13,14],
 };
-const BASE_MIN=10, BASE_MAX=6, MULTA=4, BONUS=5, PRAZO='domingo 20h';
+const BASE_MIN=10, BASE_MAX=6, MULTA=4, BONUS=5, PRAZO='domingo, 20h';
 
-/* pontuação: meta mínima proporcional; limite máximo ganha dentro do limite e perde por excesso */
+/* pontuação: meta mínima proporcional; limite máximo ganha dentro do limite e perde por unidade excedente */
 function ptsHab(p){
   const h=H[p.id];
-  if(h.modo==='min'){
-    const f=Math.min(1,p.real/p.meta);
-    return Math.round(BASE_MIN*f + (p.real>=p.meta?BONUS:0));
-  }
-  if(p.real<=p.meta) return BASE_MAX;
-  return -(p.real-p.meta)*MULTA;
+  if(h.modo==='min'){const f=Math.min(1,p.real/p.meta);return Math.round(BASE_MIN*f+(p.real>=p.meta?BONUS:0))}
+  return p.real<=p.meta?BASE_MAX:-(p.real-p.meta)*MULTA;
 }
-function meusPts(){return state.promessa.reduce((s,p)=>s+ptsHab(p),0)}
-function fmt(n){return n.toLocaleString('pt-BR')}
-function sinal(n){return (n>0?'+':'')+n}
-function ranking(){
-  const me=players[0]; me.pts=me.base+meusPts();
-  return [...players].sort((a,b)=>b.pts-a.pts);
-}
-function av(p,s){const i=p.id;return `<div class="av" style="background:${COLORS[i%6]}${s?`;width:${s}px;height:${s}px`:''}">${p.nome[0]}</div>`}
+const meusPts=()=>state.promessa.reduce((s,p)=>s+ptsHab(p),0);
+const fmt=n=>n.toLocaleString('pt-BR');
+const sinal=n=>(n>0?'+':'')+n;
+const dias=n=>n===1?'1 dia seguido':`${n} dias seguidos`;
+function ranking(){players[0].pts=players[0].base+meusPts();return[...players].sort((a,b)=>b.pts-a.pts)}
+const av=(p,s=40)=>`<span class="av" style="background:${COLORS[p.id%6]};width:${s}px;height:${s}px;font-size:${Math.round(s*.38)}px">${p.nome[0]}</span>`;
+function pct(p){const h=H[p.id];if(h.modo==='max')return p.meta===0?(p.real>0?100:0):Math.min(100,p.real/p.meta*100);return Math.min(100,p.real/p.meta*100)}
 
-function topo(){
-  document.getElementById('weekline').innerHTML = state.fase==='montagem'
-    ? `<span>Semana 12 · <strong>Montando promessas</strong></span><span>Trava em <strong>${PRAZO}</strong></span>`
-    : `<span>Semana 12 · <strong>Em andamento</strong></span><span>Fecha em <strong>3 dias</strong></span>`;
-  document.getElementById('ph-montar').setAttribute('aria-pressed',state.fase==='montagem');
-  document.getElementById('ph-semana').setAttribute('aria-pressed',state.fase==='semana');
-  document.getElementById('fab').hidden = state.fase!=='semana' || state.tab==='grupo';
-}
-function abas(){
-  document.getElementById('tabs').innerHTML = TABS.map(([k,l])=>
-   `<button class="tab" role="tab" aria-selected="${state.tab===k}" data-tab="${k}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>${l}</button>`).join('');
-  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{state.tab=b.dataset.tab;render()});
+function header(title,back){
+  return `<header class="hd pad">${back?`<button class="back" data-back aria-label="Voltar">${ic('back')}</button>`:''}<h1>${title}</h1>
+   <div class="ics"><button aria-label="Buscar no catálogo" data-go-cat>${ic('search')}</button><button aria-label="Avisos" data-bell>${ic('bell')}</button><button aria-label="Perfil e grupo" data-go="grupo">${ic('user')}</button></div></header>`;
 }
 
-function vRank(){
-  const r=ranking(), t3=[r[1],r[0],r[2]];
-  const pod=t3.map((p,i)=>`<div class="p ${i===1?'first':''}">${av(p)}<div class="name">${p.nome}</div><div class="pts">${p.pts}</div><div class="pos">${i===1?'1º':i===0?'2º':'3º'} lugar</div></div>`).join('');
-  const rows=r.map((p,i)=>`<div class="row ${p.id===0?'me':''}"><span class="n">${i+1}</span>${av(p)}
-    <div class="who"><b>${p.nome}${p.id===0?' (você)':''}</b><small>${p.streak>0?`${p.streak} ${p.streak===1?'dia seguido':'dias seguidos'}`:'sem sequência'} · total ${fmt(p.total+(p.pts-(p.base||p.pts)))}</small></div>
-    <div class="score">${p.pts}<small class="${p.ontem>=3?'up':'down'}">${p.ontem>=3?'▲':'▼'} ${p.ontem} hoje</small></div></div>`).join('');
-  document.getElementById('v-rank').innerHTML=`
-   <div class="pod">${pod}</div>
-   <div class="sec-title"><h2>Semana 12</h2><span>pontos da semana</span></div>
-   <div class="card rank">${rows}</div>
-   <div class="card pot"><div><span class="note">Pote da semana</span><br><b>R$ 60</b></div><div class="note">6 jogadores · R$ 10 cada<br>quem lidera leva o pote</div></div>`;
+/* ---------- telas ---------- */
+function sSplash(){
+  return `<div class="splash screen pad"><div class="logo"><div class="mark">L<span>P</span></div><div class="word">Liga <span>da</span> Promessa</div></div>
+   <p>Prometa a semana, poste o que fez e dispute o ranking com o seu grupo.</p>
+   <button class="btn lime" id="start">Começar</button></div>`;
 }
-
-function barHab(p){
-  const h=H[p.id], max=h.modo==='max';
-  const pct=max?Math.min(100,p.meta===0?(p.real>0?100:0):p.real/p.meta*100):Math.min(100,p.real/p.meta*100);
-  const over=max&&p.real>p.meta;
-  return `<div class="bar ${max?'max':''} ${over?'over':''}" role="progressbar" aria-valuenow="${Math.round(pct)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>`;
+function sLogin(){
+  return `<div class="screen login"><header class="hd pad"><button class="back" id="lg-back" aria-label="Voltar">${ic('back')}</button><h1 style="color:var(--lime);text-align:center">Entrar</h1><span style="width:22px"></span></header>
+   <div class="welcome pad"><h3>Bem-vindo de volta</h3><p>Use o e-mail que o admin do grupo cadastrou. Você recebe um link para entrar, sem senha.</p></div>
+   <form class="band pad form" id="lg-form" novalidate><div class="field"><label for="lg-mail">E-mail</label><input type="email" id="lg-mail" placeholder="voce@exemplo.com" autocomplete="email"></div>
+    <div class="field"><label for="lg-code">Código do grupo</label><input type="text" id="lg-code" placeholder="Ex.: LIGA-2026" value="LIGA-2026"></div></form>
+   <div class="center pad"><button class="btn dark" id="lg-go">Receber link de acesso</button><span class="note">ou entre com</span>
+    <div class="socials"><span>G</span><span>A</span></div><span class="note">Protótipo: qualquer e-mail entra.</span></div></div>`;
 }
-function vProm(){
-  const editavel=state.fase==='montagem';
-  const lista=state.promessa.map((p,idx)=>{
-    const h=H[p.id], pt=ptsHab(p), max=h.modo==='max';
-    const tit = max ? `no máximo ${fmt(p.meta)} ${h.unidade}` : `${fmt(p.meta)} ${h.unidade}`;
-    const prog = max ? `${fmt(p.real)} de ${fmt(p.meta)} ${h.unidade}` : `${fmt(p.real)} de ${fmt(p.meta)} ${h.unidade}`;
-    const stat = max ? (p.real>p.meta?`<span class="chip bad">${pt} pts</span>`:`<span class="chip good">${sinal(pt)} pts</span>`)
-                     : `<span class="chip ${pt>0?'good':'neutral'}">${sinal(pt)} pts</span>`;
-    const dica = max ? (p.real>p.meta?`Passou do limite: ${MULTA} pts a menos por unidade`:`Dentro do limite vale ${BASE_MAX} pts`)
-                     : (p.real>=p.meta?`Meta batida: bônus de ${BONUS} pts`:`${Math.round(p.real/p.meta*100)}% da meta, vale ${Math.round(BASE_MIN*p.real/p.meta)} de ${BASE_MIN} pts`);
-    return `<div class="hab"><div class="hab-top"><div><b>${h.nome}</b><small>${h.categoria} · ${tit}</small></div>${stat}</div>
-      ${barHab(p)}<div class="hab-foot"><span>${editavel?'Meta definida na montagem':prog}</span><span>${dica}</span></div>
-      ${editavel?`<div class="row-actions"><button class="btn sm" data-edit="${idx}">Alterar meta</button><button class="btn sm" data-rm="${idx}">Remover</button></div>`:''}</div>`}).join('');
-  document.getElementById('v-promessa').innerHTML=`
-   <div class="lock ${editavel?'':'on'}">${editavel?`<span>Monte sua promessa até <strong>${PRAZO}</strong>. Depois disso ela trava e ninguém edita.</span>`:`<span>Promessa travada. Agora é postar o que você fez. Sem post, não vale.</span>`}</div>
-   <div class="sec-title"><h2>Minha promessa</h2><span>${state.promessa.length} hábitos · ${sinal(meusPts())} pts</span></div>
-   <div class="card">${state.promessa.length?lista:'<div class="empty">Nenhum hábito ainda. Adicione do catálogo.</div>'}</div>
-   ${editavel?`<button class="btn pri" id="add">+ Adicionar hábito do catálogo (${CATALOG.habitos.length})</button>`:''}
-   <div class="card"><b>Mínimos do grupo</b><div class="note" style="margin-top:4px">Valem para todos: 3 sessões de treino e 0 a 2 doces. Eles entram na sua promessa automaticamente.</div></div>`;
-  if(editavel){
-    document.getElementById('add').onclick=abrirCatalogo;
-    document.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{state.promessa.splice(+b.dataset.rm,1);render()});
-    document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>abrirMeta(+b.dataset.edit));
-  }
+function sHome(){
+  const r=ranking(), me=players[0];
+  const cards=state.promessa.slice(0,4).map((p,i)=>{const h=H[p.id],a=art(h.categoria);const over=h.modo==='max'&&p.real>p.meta;
+    return `<button class="photo ${a.g}" data-tab-go="promessa" aria-label="${h.nome}">${a.svg}<span class="star">${ic('star')}</span>
+     <span class="cap"><b>${h.nome}</b><small><span>${fmt(p.real)}/${fmt(p.meta)} ${h.unidade}</span><span>${over?'acima do limite':sinal(ptsHab(p))+' pts'}</span></small></span></button>`}).join('');
+  return `<div class="screen">
+   <header class="hd pad"><div class="hello"><h1 style="color:var(--purple)">Olá, ${me.nome}</h1><p>Hora de cumprir a promessa da semana.</p></div>
+    <div class="ics"><button aria-label="Buscar no catálogo" data-go-cat>${ic('search')}</button><button aria-label="Avisos" data-bell>${ic('bell')}</button><button aria-label="Perfil e grupo" data-go="grupo">${ic('user')}</button></div></header>
+   <div class="quick pad"><button data-tab-go="promessa">${ic('dumbbell')}<span>Promessa</span></button><button data-go="progresso">${ic('chart')}<span>Progresso</span></button>
+    <button data-go-cat="Alimentação saudável">${ic('apple')}<span>Nutrição</span></button><button data-tab-go="feed">${ic('group')}<span>Comunidade</span></button></div>
+   <div class="sec pad"><div class="sec-h"><h2>Sua promessa</h2><a href="#" data-tab-go="promessa">Ver tudo ›</a></div><div class="grid2">${cards}</div></div>
+   <div class="band pad" style="margin-top:14px"><div class="challenge"><div class="l"><b>Desafio da semana</b><small>7 dias seguidos com algum movimento</small><span class="chip lime" style="align-self:flex-start;margin-top:6px">+10 pts de bônus</span></div>
+    <div class="photo g-a">${art('Consistência e comunidade').svg}</div></div></div>
+   <div class="sec pad"><div class="sec-h"><h2>Ranking da semana</h2><a href="#" data-tab-go="rank">Ver tudo ›</a></div>
+    <div class="rows">${r.slice(0,3).map((p,i)=>rowPlayer(p,i)).join('')}</div></div>
+   <div class="spacer"></div></div>`;
 }
-
-function vFeed(){
-  const html=state.posts.map(po=>{
-    const a=players[po.autor], h=H[po.hab];
-    return `<article class="card post"><div class="post-h">${av(a,36)}<div><b>${a.nome}</b><small>${po.quando} · ${h.nome}</small></div></div>
-     <div>${po.txt}</div>
-     ${po.foto?`<div class="ph ${po.foto}">foto da evidência</div>`:''}
-     <div class="post-tag"><span class="chip neutral">${po.valor}</span>${po.flag?`<span class="chip bad">${po.flag} contestação</span>`:''}</div>
+function rowPlayer(p,i){
+  return `<div class="prow ${p.id===0?'me':''}"><span class="dot ${i===0?'lime':''}">${i+1}º</span>${av(p,34)}
+   <div class="tx"><b>${p.nome}${p.id===0?' (você)':''}</b><small>${ic('flame','i" style="width:13px;height:13px')}${p.streak>0?dias(p.streak):'sem sequência'}</small></div>
+   <div class="rt">${p.pts} pts<small>+${p.hoje} hoje</small></div></div>`;
+}
+function sRank(){
+  const r=ranking(), me=players[0], pos=r.indexOf(me)+1, t3=[r[1],r[0],r[2]];
+  return `<div class="screen">${header('Ranking')}
+   <div class="band pad"><div class="profile">${av(me,64)}<div class="who"><h2>${me.nome}</h2><div class="stats">
+     <div class="stat"><i></i><div><b>${pos}º</b><small>posição</small></div></div><div class="stat"><i></i><div><b>${me.pts}</b><small>pontos</small></div></div><div class="stat"><i></i><div><b>${me.streak}</b><small>sequência</small></div></div></div></div></div></div>
+   <div class="sec pad"><div class="pills"><span class="pill" aria-pressed="true">Semana 12</span><span class="pill">Geral</span></div>
+    <div class="pod">${t3.map((p,i)=>`<div class="p ${i===1?'first':''}">${av(p,i===1?52:42)}<div class="nm">${p.nome}</div><div class="pt">${p.pts}</div><div class="ps">${i===1?'1º':i===0?'2º':'3º'} lugar</div></div>`).join('')}</div>
+    <div class="rows">${r.map((p,i)=>rowPlayer(p,i)).join('')}</div>
+    <div class="pot"><div><small>Pote da semana</small><br><b>R$ 60</b></div><small style="text-align:right">6 jogadores · R$ 10 cada<br>quem lidera leva</small></div></div>
+   <div class="spacer"></div></div>`;
+}
+function sProm(){
+  const ed=state.fase==='montagem';
+  const rows=state.promessa.map((p,idx)=>{const h=H[p.id],pt=ptsHab(p),mx=h.modo==='max',over=mx&&p.real>p.meta,pc=Math.round(pct(p));
+    const dot=over?'bad':(!mx&&p.real>=p.meta)||(mx&&!over)?'lime':'';
+    return `<div><button class="prow" ${ed?`data-edit="${idx}"`:`data-log="${idx}"`}><span class="dot ${dot}">${mx?(over?'!':'ok'):pc+'%'}</span>
+     <span class="tx"><b>${h.nome}</b><small>${mx?'limite':'meta'} ${fmt(p.meta)} ${h.unidade}</small><span class="mini-bar ${over?'over':mx?'ok':''}"><i style="width:${pc}%"></i></span></span>
+     <span class="rt">${ed?'Editar':`${fmt(p.real)}/${fmt(p.meta)}`}<small>${sinal(pt)} pts</small></span></button>
+     ${ed?`<div class="hab-extra"><span>${h.categoria}</span><button class="note" data-rm="${idx}" style="color:var(--bad)">Remover</button></div>`:''}</div>`}).join('');
+  return `<div class="screen">${header('Promessa')}
+   <div class="sec pad"><div class="pills" role="group" aria-label="Simular fase (protótipo)"><button class="pill" id="f-m" aria-pressed="${ed}">Montagem</button><button class="pill" id="f-s" aria-pressed="${!ed}">Semana</button></div>
+    <div class="banner">${ed?`Monte sua promessa até <b>${PRAZO}</b>. Depois disso ela trava e ninguém edita.`:`Promessa travada. Toque num hábito para registrar. <b>Sem post, não vale.</b>`}</div></div>
+   <div class="band pad"><div class="sec-h" style="margin-bottom:12px"><h2 style="color:var(--ink)">Semana 12</h2><span style="color:var(--ink)">${state.promessa.length} hábitos · <b>${sinal(meusPts())} pts</b></span></div>
+    <div class="rows">${rows||'<p style="color:var(--ink)">Nenhum hábito ainda.</p>'}</div>
+    ${ed?`<button class="btn white" id="add" style="width:100%;margin-top:14px">+ Adicionar do catálogo (${CATALOG.habitos.length})</button>`:''}</div>
+   <div class="sec pad"><div class="sec-h"><h2>Mínimos do grupo</h2></div><div class="card-out" style="font-size:13px">Valem para todos: 3 sessões de treino e no máximo 2 doces. Entram na promessa automaticamente.</div></div>
+   <div class="spacer"></div></div>`;
+}
+function sFeed(){
+  const posts=state.posts.map(po=>{const a=players[po.autor],h=H[po.hab],ar=art(h.categoria);
+    return `<article class="card-out post"><div class="post-h">${av(a,36)}<div><b>${a.nome}</b><small>${po.quando} · ${h.nome}</small></div><span class="fav">${ic('star')}</span></div>
+     <p>${po.txt}</p>${po.foto?`<div class="photo ${ar.g}">${ar.svg}<span class="tag">${po.valor}</span><span class="cap"><small>foto da evidência</small></span></div>`:`<span class="chip lime" style="align-self:flex-start">${po.valor}</span>`}
+     ${po.flag?`<span class="chip bad" style="align-self:flex-start">${po.flag} contestação</span>`:''}
      ${po.coment.map(c=>`<div class="cmt"><b>${c[0]}</b> ${c[1]}</div>`).join('')}
-     <div class="acts"><button class="btn sm" data-like="${po.id}" aria-pressed="${!!po.eu}">Curtir · ${po.curt}</button>
-      <button class="btn sm" data-cm="${po.id}">Comentar</button>
-      <button class="btn sm flag" data-flag="${po.id}" aria-pressed="${!!po.contestei}">Contestar</button></div></article>`}).join('');
-  document.getElementById('v-feed').innerHTML=`<div class="sec-title"><h2>Feed do grupo</h2><span>${state.posts.length} posts</span></div>${html}`;
-  document.querySelectorAll('[data-like]').forEach(b=>b.onclick=()=>{const p=state.posts.find(x=>x.id==b.dataset.like);p.eu=!p.eu;p.curt+=p.eu?1:-1;render()});
-  document.querySelectorAll('[data-flag]').forEach(b=>b.onclick=()=>{const p=state.posts.find(x=>x.id==b.dataset.flag);p.contestei=!p.contestei;p.flag+=p.contestei?1:-1;toast(p.contestei?'Contestação enviada. Com 3 votos o post cai.':'Contestação retirada.');render()});
-  document.querySelectorAll('[data-cm]').forEach(b=>b.onclick=()=>{const p=state.posts.find(x=>x.id==b.dataset.cm);p.coment.push(['Você','Boa!']);render()});
+     <div class="acts"><button data-like="${po.id}" aria-pressed="${!!po.eu}">${ic('heart')}${po.curt}</button><button data-cm="${po.id}">${ic('chat')}${po.coment.length}</button>
+      <button class="flag" data-flag="${po.id}" aria-pressed="${!!po.contestei}">${ic('flag')}Contestar</button></div></article>`}).join('');
+  return `<div class="screen">${header('Comunidade')}<div class="sec pad"><div class="pills"><span class="pill" aria-pressed="true">Feed</span><span class="pill">Fotos</span><span class="pill">Contestados</span></div>${posts}</div><div class="spacer"></div></div>`;
 }
-
-function vGrupo(){
-  document.getElementById('v-grupo').innerHTML=`
-   <div class="sec-title"><h2>Regras do grupo</h2><span>definidas pelo admin</span></div>
-   <div class="card"><ul class="rules" style="margin:0;padding-left:18px">
-    <li>Promessa trava em <b>${PRAZO}</b>. Quem não montar fica com os mínimos do grupo.</li>
+function sProg(){
+  const lg=state.progTab==='log';
+  let body='';
+  if(lg){
+    const cells=[];for(let i=0;i<6;i++)cells.push('<span></span>');
+    for(let d=1;d<=30;d++)cells.push(`<span class="${state.checkins.includes(d)?'on':''} ${d===15?'today':''}">${d}</span>`);
+    body=`<div class="sec-h"><h2 style="color:var(--white);font-size:14px">Novembro 2026</h2><span>${state.checkins.length} check-ins</span></div>
+     <div class="cal"><div class="cal-w">${['SEG','TER','QUA','QUI','SEX','SÁB','DOM'].map(x=>`<span>${x}</span>`).join('')}</div><div class="cal-d">${cells.join('')}</div></div>
+     <div class="sec-h"><h2>Atividades</h2></div>
+     <div class="rows">${state.atividades.map(a=>{const h=H[a.hab],k=(CAT_ART[h.categoria]||['star'])[0];
+       return `<div class="prow"><span class="dot">${ic(k)}</span><span class="tx"><b>${h.nome}</b><small>${a.quando}</small></span><span class="rt">${a.valor}<small>${sinal(a.pts)} pts</small></span></div>`}).join('')}</div>`;
+  } else {
+    const ws=[...state.semanas,{s:'S12',p:players[0].base+meusPts()}], mx=100, W=300, Hh=170, bw=22;
+    const step=(W-40)/ws.length;
+    const bars=ws.map((w,i)=>{const x=40+step*i+(step-bw)/2,h=Math.max(0,w.p)/mx*(Hh-30);return `<rect x="${x}" y="10" width="${bw}" height="${Hh-30}" rx="11" fill="#d9d9d9"/><rect x="${x}" y="${10+(Hh-30)-h}" width="${bw}" height="${h}" rx="11" fill="${i===ws.length-1?'#e2f163':'#c9d94f'}"/><text x="${x+bw/2}" y="${Hh-2}" text-anchor="middle">${w.s}</text>`}).join('');
+    const ticks=[0,50,100].map(t=>`<text x="30" y="${10+(Hh-30)-(t/mx)*(Hh-30)+4}" text-anchor="end">${t}</text>`).join('');
+    body=`<div><div class="muted" style="font-size:12px">Meu progresso</div><h2 style="color:var(--lime);font-size:22px">Pontos por semana</h2></div>
+     <div class="chart"><svg viewBox="0 0 ${W} ${Hh}" width="100%" role="img" aria-label="Pontos nas últimas 6 semanas">${ticks}${bars}</svg></div>
+     <div class="rows">${ws.slice(-3).reverse().map(w=>`<div class="strip"><div class="d"><small>Sem.</small><b>${w.s.slice(1)}</b></div><hr><div class="v"><small>Pontos</small><b>${w.p}</b></div><div class="v"><small>Posição</small><b>${w.p>75?'1º':w.p>60?'2º':'3º'}</b></div></div>`).join('')}</div>`;
+  }
+  return `<div class="screen">${header('Progresso',true)}
+   <div class="band pad"><div class="profile">${av(players[0],60)}<div class="who"><h2>${players[0].nome}</h2><div class="stats"><div class="stat"><i></i><div><b>${players[0].total+meusPts()}</b><small>pontos totais</small></div></div><div class="stat"><i></i><div><b>${players[0].streak}</b><small>dias seguidos</small></div></div></div></div></div></div>
+   <div class="sec pad"><div class="pills"><button class="pill" data-pt="log" aria-pressed="${lg}">Registro</button><button class="pill" data-pt="chart" aria-pressed="${!lg}">Gráficos</button></div>${body}</div><div class="spacer"></div></div>`;
+}
+function sGrupo(){
+  return `<div class="screen">${header('Grupo',true)}
+   <div class="band pad"><div class="profile"><span class="av" style="background:var(--ink);width:60px;height:60px;color:var(--lime);font-style:italic;font-size:22px">LP</span><div class="who"><h2 style="color:var(--ink)">Liga dos Seis</h2><div class="stats" style="color:var(--ink)"><div class="stat"><i style="background:var(--ink)"></i><div><b>6</b><small>membros</small></div></div><div class="stat"><i style="background:var(--ink)"></i><div><b>12</b><small>semanas</small></div></div></div></div></div></div>
+   <div class="sec pad"><div class="sec-h"><h2>Regras</h2><span>definidas pelo admin</span></div><ul class="rules">
+    <li>Promessa trava ${PRAZO}. Quem não montar fica com os mínimos do grupo.</li>
     <li>Meta mínima: pontos proporcionais ao que foi postado. Sem post, zero.</li>
-    <li>Limite máximo: ${BASE_MAX} pts dentro do limite, −${MULTA} pts por unidade acima.</li>
+    <li>Limite máximo: ${BASE_MAX} pts dentro do limite, −${MULTA} por unidade acima.</li>
     <li>Bateu a meta inteira: bônus de ${BONUS} pts.</li>
-    <li>Todo post pode ser contestado. Três contestações derrubam os pontos.</li>
-    <li>Peso e medidas são só registro e não pontuam.</li></ul></div>
-   <div class="sec-title"><h2>Pontuação de exemplo</h2><span>simulador</span></div>
-   <div class="card"><div class="preview">Meta 3 L de água, postou 500 ml → <b>${Math.round(BASE_MIN*500/3000)} de ${BASE_MIN} pts</b>.<br>Meta 0 doces, comeu 1 → <b>−${MULTA} pts</b>.<br>Meta 3 treinos, fez 3 → <b>${BASE_MIN+BONUS} pts</b> com bônus.</div></div>
-   <div class="sec-title"><h2>Membros</h2><span>${players.length}</span></div>
-   <div class="card">${players.map(p=>`<div class="row" style="grid-template-columns:40px 1fr auto">${av(p)}<div class="who"><b>${p.nome}</b><small>${p.streak} ${p.streak===1?'dia seguido':'dias seguidos'}</small></div><span class="chip neutral">${p.id===0?'admin':'membro'}</span></div>`).join('')}</div>
-   <div class="note">Protótipo de layout. Os dados são exemplos e nada é salvo.</div>`;
+    <li>Três contestações derrubam os pontos de um post.</li>
+    <li>Peso e medidas são só registro e não pontuam.</li></ul>
+    <div class="preview">Meta 3 L de água, postou 500 ml → <b>${Math.round(BASE_MIN*500/3000)} de ${BASE_MIN} pts</b><br>Meta 0 doce, comeu 1 → <b>−${MULTA} pts</b><br>Meta 3 treinos, fez 3 → <b>${BASE_MIN+BONUS} pts</b></div>
+    <div class="sec-h"><h2>Membros</h2></div><div class="rows">${players.map(p=>`<div class="prow">${av(p,40)}<span class="tx"><b>${p.nome}</b><small>${p.streak>0?dias(p.streak):'sem sequência'}</small></span><span class="rt">${p.id===0?'admin':'membro'}</span></div>`).join('')}</div>
+    <button class="btn dark" id="logout">Sair</button><p class="note">Protótipo de layout. Dados de exemplo; nada é salvo.</p></div><div class="spacer"></div></div>`;
 }
 
+/* ---------- render ---------- */
+const TABS=[['home','Início','home'],['promessa','Promessa','doc'],['rank','Ranking','star'],['feed','Comunidade','group']];
 function render(){
-  topo();abas();
-  document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!=='v-'+state.tab);
-  if(state.tab==='rank')vRank(); if(state.tab==='promessa')vProm(); if(state.tab==='feed')vFeed(); if(state.tab==='grupo')vGrupo();
+  const app=document.getElementById('app');
+  if(state.screen==='splash'){app.innerHTML=sSplash();document.getElementById('start').onclick=()=>{state.screen='login';render()};return}
+  if(state.screen==='login'){app.innerHTML=sLogin();
+    document.getElementById('lg-back').onclick=()=>{state.screen='splash';render()};
+    const go=e=>{e&&e.preventDefault();state.screen='app';render();toast('Você entrou no grupo Liga dos Seis.')};
+    document.getElementById('lg-form').onsubmit=go;document.getElementById('lg-go').onclick=go;return}
+  const view=state.sub==='progresso'?sProg():state.sub==='grupo'?sGrupo():{home:sHome,promessa:sProm,rank:sRank,feed:sFeed}[state.tab]();
+  const showFab=state.fase==='semana'&&!state.sub;
+  app.innerHTML=view+(showFab?`<button class="fab" id="fab">${ic('plus')}Registrar</button>`:'')+
+   `<nav class="nav" aria-label="Seções"><div class="nav-in" role="tablist">${TABS.map(([k,l,i])=>`<button role="tab" aria-selected="${!state.sub&&state.tab===k}" data-tab="${k}">${ic(i)}${l}</button>`).join('')}</div></nav>`;
+  bind();
+}
+function bind(){
+  const $$=s=>document.querySelectorAll(s);
+  $$('[data-tab]').forEach(b=>b.onclick=()=>{state.tab=b.dataset.tab;state.sub=null;render();scrollTo(0,0)});
+  $$('[data-tab-go]').forEach(b=>b.onclick=e=>{e.preventDefault();state.tab=b.dataset.tabGo;state.sub=null;render();scrollTo(0,0)});
+  $$('[data-go]').forEach(b=>b.onclick=()=>{state.sub=b.dataset.go;render();scrollTo(0,0)});
+  $$('[data-back]').forEach(b=>b.onclick=()=>{state.sub=null;render()});
+  $$('[data-go-cat]').forEach(b=>b.onclick=()=>{if(b.dataset.goCat)state.catFilter=b.dataset.goCat;abrirCatalogo()});
+  $$('[data-bell]').forEach(b=>b.onclick=()=>toast('Ana curtiu seu treino. Faltam 3 dias para fechar a semana.'));
+  $$('[data-pt]').forEach(b=>b.onclick=()=>{state.progTab=b.dataset.pt;render()});
+  const fab=document.getElementById('fab');if(fab)fab.onclick=()=>abrirRegistro();
+  const fm=document.getElementById('f-m');if(fm){fm.onclick=()=>{state.fase='montagem';render()};document.getElementById('f-s').onclick=()=>{state.fase='semana';render()}}
+  const add=document.getElementById('add');if(add)add.onclick=()=>abrirCatalogo();
+  $$('[data-rm]').forEach(b=>b.onclick=()=>{state.promessa.splice(+b.dataset.rm,1);render()});
+  $$('[data-edit]').forEach(b=>b.onclick=()=>abrirMeta(+b.dataset.edit));
+  $$('[data-log]').forEach(b=>b.onclick=()=>abrirRegistro(+b.dataset.log));
+  $$('[data-like]').forEach(b=>b.onclick=()=>{const p=state.posts.find(x=>x.id==b.dataset.like);p.eu=!p.eu;p.curt+=p.eu?1:-1;render()});
+  $$('[data-flag]').forEach(b=>b.onclick=()=>{const p=state.posts.find(x=>x.id==b.dataset.flag);p.contestei=!p.contestei;p.flag+=p.contestei?1:-1;toast(p.contestei?'Contestação enviada. Com 3 votos o post perde os pontos.':'Contestação retirada.');render()});
+  $$('[data-cm]').forEach(b=>b.onclick=()=>{const p=state.posts.find(x=>x.id==b.dataset.cm);p.coment.push(['Você','Boa!']);render()});
+  const lo=document.getElementById('logout');if(lo)lo.onclick=()=>{state.screen='splash';state.sub=null;state.tab='home';render()};
 }
 
-/* folhas */
-function folha(titulo,corpo){
-  const l=document.getElementById('layer');
-  l.innerHTML=`<div class="scrim" id="scrim"></div><div class="sheet"><div class="sheet-in" role="dialog" aria-modal="true" aria-label="${titulo}">
-    <div class="sheet-h"><h2>${titulo}</h2><button class="btn sm" id="close">Fechar</button></div>${corpo}</div></div>`;
+/* ---------- folhas ---------- */
+function folha(titulo,topo,corpo){
+  document.getElementById('layer').innerHTML=`<div class="scrim" id="scrim"></div><div class="sheet"><div class="sheet-in" role="dialog" aria-modal="true" aria-label="${titulo}">
+   <div class="sheet-h pad"><h2>${titulo}</h2><button class="btn sm white" id="close">Fechar</button></div>${topo?`<div class="band pad">${topo}</div>`:''}<div class="sheet-b pad">${corpo}</div></div></div>`;
   document.getElementById('scrim').onclick=fechar;document.getElementById('close').onclick=fechar;
 }
 function fechar(){document.getElementById('layer').innerHTML=''}
-function toast(t){const b=document.getElementById('toast-box');b.innerHTML=`<div class="toast">${t}</div>`;setTimeout(()=>b.innerHTML='',2600)}
+function toast(t){const b=document.getElementById('toast-box');b.innerHTML=`<div class="toast">${t}</div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>b.innerHTML='',2800)}
 
 function abrirCatalogo(){
   const cats=['Todas',...new Set(CATALOG.habitos.map(h=>h.categoria))];
-  folha('Catálogo de hábitos',`<input type="search" id="q" placeholder="Buscar: água, bike, doce, sono..." value="${state.busca}">
-   <div class="cats" id="cats">${cats.map(c=>`<button aria-pressed="${state.catFilter===c}" data-c="${c}">${c}</button>`).join('')}</div><div id="lista"></div>`);
+  folha('Catálogo de hábitos',`<input type="search" id="q" placeholder="Buscar: água, bike, doce, sono..." value="${state.busca}" aria-label="Buscar hábito">
+   <div class="cats" id="cats">${cats.map(c=>`<button class="pill" aria-pressed="${state.catFilter===c}" data-c="${c}">${c}</button>`).join('')}</div>`,`<div id="lista"></div>`);
   const pinta=()=>{
-    const q=state.busca.toLowerCase();
-    const itens=CATALOG.habitos.filter(h=>(state.catFilter==='Todas'||h.categoria===state.catFilter)&&(!q||h.nome.toLowerCase().includes(q)||h.categoria.toLowerCase().includes(q)));
-    document.getElementById('lista').innerHTML=itens.length?itens.map(h=>{
-      const tem=state.promessa.some(p=>p.id===h.id);
-      return `<div class="cat-item"><div><b>${h.nome}</b><small>${h.categoria} · ${h.modo==='max'?'limite máx. ':'meta '}${fmt(h.meta_sugerida)} ${h.unidade}</small></div>
-      <button class="btn sm ${tem?'':'pri'}" data-add="${h.id}" ${tem?'disabled':''}>${tem?'Na promessa':'Adicionar'}</button></div>`}).join(''):'<div class="empty">Nada encontrado.</div>';
+    const q=state.busca.toLowerCase(),ed=state.fase==='montagem';
+    const it=CATALOG.habitos.filter(h=>(state.catFilter==='Todas'||h.categoria===state.catFilter)&&(!q||h.nome.toLowerCase().includes(q)||h.categoria.toLowerCase().includes(q)));
+    document.getElementById('lista').innerHTML=`<div class="note">${it.length} hábitos${ed?'':' · adicionar só na fase de montagem'}</div>`+(it.map(h=>{const tem=state.promessa.some(p=>p.id===h.id);
+      return `<div class="cat-item"><div><b>${h.nome}</b><small>${h.categoria} · ${h.modo==='max'?'limite máx.':'meta'} ${fmt(h.meta_sugerida)} ${h.unidade}</small></div>
+       <button class="btn sm ${tem?'dark':'lime'}" data-add="${h.id}" ${tem||!ed?'disabled':''}>${tem?'Na promessa':'Adicionar'}</button></div>`}).join('')||'<p class="note">Nada encontrado.</p>');
     document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>abrirMeta(null,b.dataset.add));
   };
   document.getElementById('q').oninput=e=>{state.busca=e.target.value;pinta()};
-  document.querySelectorAll('#cats button').forEach(b=>b.onclick=()=>{state.catFilter=b.dataset.c;document.querySelectorAll('#cats button').forEach(x=>x.setAttribute('aria-pressed',x===b));pinta()});
+  document.querySelectorAll('#cats .pill').forEach(b=>b.onclick=()=>{state.catFilter=b.dataset.c;document.querySelectorAll('#cats .pill').forEach(x=>x.setAttribute('aria-pressed',x===b));pinta()});
   pinta();
 }
 function abrirMeta(idx,id){
-  const novo=idx===null, h=H[novo?id:state.promessa[idx].id], atual=novo?h.meta_sugerida:state.promessa[idx].meta;
-  folha(novo?'Adicionar à promessa':'Alterar meta',`<div><b>${h.nome}</b><div class="note">${h.categoria} · evidência: ${h.evidencia}</div>${h.nota?`<div class="note">${h.nota}</div>`:''}</div>
-   <div><label for="m">${h.modo==='max'?'Limite máximo':'Meta da semana'} (${h.unidade})</label><input type="number" id="m" min="0" value="${atual}" inputmode="decimal"></div>
-   <div class="preview" id="pv"></div><button class="btn pri" id="ok">${novo?'Adicionar':'Salvar meta'}</button>`);
-  const pv=()=>{const m=+document.getElementById('m').value;
-    document.getElementById('pv').innerHTML=h.modo==='max'?`Ficar em até ${fmt(m)} ${h.unidade} vale ${BASE_MAX} pts. Cada unidade acima tira ${MULTA} pts.`:`Cumprir ${fmt(m)} ${h.unidade} vale ${BASE_MIN+BONUS} pts. Cumprir metade vale ${BASE_MIN/2} pts.`};
+  const novo=idx===null,h=H[novo?id:state.promessa[idx].id],atual=novo?h.meta_sugerida:state.promessa[idx].meta;
+  folha(novo?'Adicionar à promessa':'Alterar meta',`<div style="color:var(--ink)"><b style="font-size:16px">${h.nome}</b><div style="font-size:12px">${h.categoria} · evidência: ${h.evidencia}</div>${h.nota?`<div style="font-size:12px;margin-top:4px">${h.nota}</div>`:''}</div>
+   <div class="field"><label for="m">${h.modo==='max'?'Limite máximo':'Meta da semana'} (${h.unidade})</label><input type="number" id="m" min="0" value="${atual}" inputmode="decimal"></div>`,
+   `<div class="preview" id="pv"></div><button class="btn lime" id="ok">${novo?'Adicionar':'Salvar meta'}</button>`);
+  const pv=()=>{const m=+document.getElementById('m').value;document.getElementById('pv').innerHTML=h.modo==='max'?`Ficar em até ${fmt(m)} ${h.unidade} vale <b>${BASE_MAX} pts</b>. Cada unidade acima tira <b>${MULTA} pts</b>.`:`Cumprir ${fmt(m)} ${h.unidade} vale <b>${BASE_MIN+BONUS} pts</b>. Metade vale <b>${BASE_MIN/2} pts</b>.`};
   document.getElementById('m').oninput=pv;pv();
   document.getElementById('ok').onclick=()=>{const m=+document.getElementById('m').value;
     if(h.modo==='min'&&!(m>0)){toast('Informe uma meta maior que zero.');return}
     if(novo)state.promessa.push({id:h.id,meta:m,real:0});else state.promessa[idx].meta=m;
-    fechar();render();toast(novo?'Hábito adicionado.':'Meta atualizada.')};
+    fechar();state.tab='promessa';state.sub=null;render();toast(novo?'Hábito adicionado à promessa.':'Meta atualizada.')};
 }
-function abrirRegistro(){
-  folha('Registrar atividade',`<div><label for="sel">Hábito da promessa</label><select id="sel">${state.promessa.map((p,i)=>`<option value="${i}">${H[p.id].nome}</option>`).join('')}</select></div>
-   <div><label for="qt" id="ql">Quantidade</label><input type="number" id="qt" min="0" step="any" inputmode="decimal" placeholder="0"></div>
-   <div><label for="tx">Comentário</label><input type="text" id="tx" placeholder="Como foi?"></div>
-   <div><label for="ft">Evidência (foto ou print)</label><input type="file" id="ft" accept="image/*"><div class="note" id="ev"></div></div>
-   <div class="preview" id="pv"></div><button class="btn pri" id="ok">Publicar</button>`);
-  const sel=document.getElementById('sel');
-  const atual=()=>state.promessa[+sel.value];
-  const pv=()=>{const p=atual(),h=H[p.id],q=+document.getElementById('qt').value||0;
-    document.getElementById('ql').textContent=`Quantidade (${h.unidade})`;
-    document.getElementById('ev').textContent='Pede: '+h.evidencia;
-    const depois={...p,real:p.real+q};const d=ptsHab(depois)-ptsHab(p);
-    document.getElementById('pv').innerHTML=`Depois deste post: ${fmt(depois.real)} de ${fmt(p.meta)} ${h.unidade}. Pontos do hábito: ${sinal(ptsHab(depois))} (${sinal(d)}).`};
+function abrirRegistro(pre){
+  if(!state.promessa.length){toast('Sua promessa está vazia.');return}
+  folha('Registrar atividade',`<div class="field"><label for="sel">Hábito da promessa</label><select id="sel">${state.promessa.map((p,i)=>`<option value="${i}" ${i===pre?'selected':''}>${H[p.id].nome}</option>`).join('')}</select></div>
+   <div class="field"><label for="qt" id="ql">Quantidade</label><input type="number" id="qt" min="0" step="any" inputmode="decimal" placeholder="0"></div>
+   <div class="field"><label for="tx">Comentário</label><input type="text" id="tx" placeholder="Como foi?"></div>`,
+   `<div class="field"><label for="ft" style="color:var(--white)">Evidência (foto ou print)</label><input type="file" id="ft" accept="image/*"><span class="note" id="ev"></span></div>
+   <div class="preview" id="pv"></div><button class="btn lime" id="ok">Publicar</button>`);
+  const sel=document.getElementById('sel'),cur=()=>state.promessa[+sel.value];
+  const pv=()=>{const p=cur(),h=H[p.id],q=+document.getElementById('qt').value||0,d={...p,real:p.real+q};
+    document.getElementById('ql').textContent=`Quantidade (${h.unidade})`;document.getElementById('ev').textContent='Pede: '+h.evidencia;
+    document.getElementById('pv').innerHTML=`Depois deste post: ${fmt(d.real)} de ${fmt(p.meta)} ${h.unidade}. Pontos do hábito: <b>${sinal(ptsHab(d))}</b> (${sinal(ptsHab(d)-ptsHab(p))}).`};
   sel.onchange=pv;document.getElementById('qt').oninput=pv;pv();
-  document.getElementById('ok').onclick=()=>{
-    const q=+document.getElementById('qt').value;
+  document.getElementById('ok').onclick=()=>{const q=+document.getElementById('qt').value;
     if(!(q>0)){toast('Informe uma quantidade maior que zero. Sem número, não vale.');return}
-    const p=atual(),h=H[p.id];p.real+=q;
-    state.posts.unshift({id:Date.now(),autor:0,quando:'agora',hab:p.id,txt:document.getElementById('tx').value||'Registro feito.',valor:`${fmt(q)} ${h.unidade}`,
-      foto:document.getElementById('ft').files.length?'d':null,curt:0,coment:[],flag:0});
-    fechar();state.tab='promessa';render();toast('Publicado. Pontos atualizados.')};
+    const p=cur(),h=H[p.id],antes=ptsHab(p);p.real+=q;
+    state.posts.unshift({id:Date.now(),autor:0,quando:'agora',hab:p.id,txt:document.getElementById('tx').value||'Registro feito.',valor:`${fmt(q)} ${h.unidade}`,foto:document.getElementById('ft').files.length>0,curt:0,coment:[],flag:0});
+    state.atividades.unshift({hab:p.id,quando:'Hoje',valor:`${fmt(q)} ${h.unidade}`,pts:ptsHab(p)-antes});
+    if(!state.checkins.includes(15))state.checkins.push(15);
+    fechar();state.tab='promessa';state.sub=null;render();toast('Publicado. Pontos atualizados.')};
 }
-
-document.getElementById('fab').onclick=abrirRegistro;
-document.getElementById('ph-montar').onclick=()=>{state.fase='montagem';if(state.tab==='rank')state.tab='promessa';render()};
-document.getElementById('ph-semana').onclick=()=>{state.fase='semana';render()};
 render();
 </script>
 </body></html>
